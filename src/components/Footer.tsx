@@ -25,9 +25,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-green-900 border-t border-green-700/30 relative overflow-hidden">
+    <footer className="border-t relative overflow-hidden" style={{ backgroundColor: '#002113', borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/95 to-green-800/95"></div>
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0, 33, 19, 0.95) 0%, rgba(0, 33, 19, 0.98) 100%)' }}></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Main Footer Content */}
@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-green-700/30 pt-8">
+        <div className="border-t pt-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-gray-300 text-sm font-medium">
               Copyright 2025 | Todos direitos reservados.

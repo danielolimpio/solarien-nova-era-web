@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Users, Target, Eye, Calendar, Handshake, Building, Network } from 'lucide-react';
+import { Users, Target, Eye } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -35,31 +35,6 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Commitment Section */}
-        <div className="mb-16">
-          <div className="bg-white border border-solarien-primary/30 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-solarien-primary to-solarien-secondary"></div>
-            <h3 className="text-3xl font-bold text-solarien-primary mb-8 text-center">NOSSO COMPROMISSO</h3>
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Na Solarien, nosso compromisso é impulsionar a sustentabilidade e a inovação, garantindo acesso à energia limpa e econômica para todos. Utilizamos tecnologia avançada e soluções personalizadas para reduzir emissões, otimizar custos e promover um futuro energético justo.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Cada projeto reflete nosso pacto com o meio ambiente, a eficiência e a satisfação dos clientes, consolidando-nos como aliados na construção de um mundo mais verde e próspero.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-48 h-48 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-full flex items-center justify-center shadow-lg">
-                  <div className="w-32 h-32 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                    <Handshake className="w-16 h-16 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Mission and Vision */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           <div className="bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 border border-solarien-primary/20 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group">
@@ -84,59 +59,6 @@ const AboutSection = () => {
             <p className="text-gray-700 leading-relaxed">
               Ser referência global em soluções energéticas inteligentes, liderando a transição para um modelo sustentável e transformando o mercado de energia com inovação e excelência.
             </p>
-          </div>
-        </div>
-
-        {/* Journey Timeline */}
-        <div className="bg-white border border-solarien-primary/20 rounded-3xl p-8 md:p-12 shadow-xl">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            <span className="text-gradient">Nossa</span> <span className="text-gray-800">Jornada</span>
-          </h3>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Calendar className="w-10 h-10 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-solarien-primary mb-2">2022</h4>
-              <h5 className="font-semibold text-gray-800 mb-3">Chegamos em 2022</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Chegamos ao mercado com uma proposta inovadora: oferecer aos brasileiros uma nova forma de lidar com o consumo de energia.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Handshake className="w-10 h-10 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-solarien-secondary mb-2">Parcerias</h4>
-              <h5 className="font-semibold text-gray-800 mb-3">Parcerias Estratégicas</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Ao longo desses 3 anos ampliamos as parcerias estratégicas por todo Brasil, atingindo todos os perfis de consumidores de energia elétrica.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Building className="w-10 h-10 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-solarien-tertiary mb-2">Unidades</h4>
-              <h5 className="font-semibold text-gray-800 mb-3">Unidades de Negócio</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Ofertamos energia de fontes 100% renováveis e financeiramente mais acessíveis, com até 30% de desconto na tarifa para Grupo A e Grupo B.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Network className="w-10 h-10 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-solarien-primary mb-2">Expansão</h4>
-              <h5 className="font-semibold text-gray-800 mb-3">Expansão de Rede</h5>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Além dos serviços já oferecidos, abrimos a oportunidade para você criar seu legado e transformar o futuro com energia sustentável.
-              </p>
-            </div>
           </div>
         </div>
       </div>

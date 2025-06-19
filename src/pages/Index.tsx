@@ -6,6 +6,7 @@ import PartnersCarousel from '../components/PartnersCarousel';
 import SolarPlantsCarousel from '../components/SolarPlantsCarousel';
 import BrazilMap from '../components/BrazilMap';
 import LicenseSection from '../components/LicenseSection';
+import EntrepreneurshipSection from '../components/EntrepreneurshipSection';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { Separator } from '../components/ui/separator';
@@ -20,6 +21,7 @@ const Index = () => {
       <SolarPlantsCarousel />
       <BrazilMap />
       <LicenseSection />
+      <EntrepreneurshipSection />
       <Separator className="h-1 bg-gradient-to-r from-transparent via-solarien-primary to-transparent opacity-60" />
       <Footer />
       <WhatsAppFloat />

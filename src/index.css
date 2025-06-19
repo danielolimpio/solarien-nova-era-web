@@ -75,6 +75,14 @@
     filter: drop-shadow(0 0 20px rgba(2, 255, 145, 0.3));
   }
   
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(2, 255, 145, 0.5), 0 0 40px rgba(2, 255, 145, 0.3), 0 0 60px rgba(2, 255, 145, 0.1);
+  }
+  
+  .glow-effect:hover {
+    box-shadow: 0 0 30px rgba(2, 255, 145, 0.8), 0 0 60px rgba(2, 255, 145, 0.5), 0 0 90px rgba(2, 255, 145, 0.3);
+  }
+  
   .nav-hover {
     @apply relative overflow-hidden;
   }

@@ -1,10 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,13 @@ const Header = () => {
   }, []);
 
   const handleScrollToSection = (sectionId: string) => {
+    // If it's the contact section, navigate to the contact page
+    if (sectionId === 'contato') {
+      navigate('/contact');
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ 

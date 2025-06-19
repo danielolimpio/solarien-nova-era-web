@@ -28,14 +28,39 @@ const LicenseSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-solarien-secondary/10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Target circles background - centered and reaching the top */}
-      <div className="absolute inset-0 flex items-start justify-center" style={{ paddingTop: '0px' }}>
-        <div className="relative" style={{ top: '-100px' }}>
-          <div className="absolute w-[1000px] h-[1000px] border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px', top: '0px', left: '-500px' }}></div>
-          <div className="absolute w-[800px] h-[800px] border border-[#00c26f] rounded-full opacity-25" style={{ borderWidth: '1px', top: '100px', left: '-400px' }}></div>
-          <div className="absolute w-[600px] h-[600px] border border-[#00844e] rounded-full opacity-30" style={{ borderWidth: '1px', top: '200px', left: '-300px' }}></div>
-          <div className="absolute w-[400px] h-[400px] border border-[#02ff91] rounded-full opacity-35" style={{ borderWidth: '1px', top: '300px', left: '-200px' }}></div>
-          <div className="absolute w-[200px] h-[200px] border border-[#00c26f] rounded-full opacity-40" style={{ borderWidth: '1px', top: '400px', left: '-100px' }}></div>
+      {/* Target circles background - positioned below "BENEFÍCIOS" text */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative" style={{ top: '120px' }}>
+          <div className="absolute w-[1200px] h-[1200px] border border-[#02ff91] rounded-full opacity-15 animate-pulse" style={{ 
+            borderWidth: '1px', 
+            left: '-600px', 
+            top: '-200px',
+            animation: 'target-pulse 4s ease-in-out infinite'
+          }}></div>
+          <div className="absolute w-[960px] h-[960px] border border-[#00c26f] rounded-full opacity-20" style={{ 
+            borderWidth: '1px', 
+            left: '-480px', 
+            top: '-80px',
+            animation: 'target-pulse 4s ease-in-out infinite 0.8s'
+          }}></div>
+          <div className="absolute w-[720px] h-[720px] border border-[#00844e] rounded-full opacity-25" style={{ 
+            borderWidth: '1px', 
+            left: '-360px', 
+            top: '40px',
+            animation: 'target-pulse 4s ease-in-out infinite 1.6s'
+          }}></div>
+          <div className="absolute w-[480px] h-[480px] border border-[#02ff91] rounded-full opacity-30" style={{ 
+            borderWidth: '1px', 
+            left: '-240px', 
+            top: '160px',
+            animation: 'target-pulse 4s ease-in-out infinite 2.4s'
+          }}></div>
+          <div className="absolute w-[240px] h-[240px] border border-[#00c26f] rounded-full opacity-35" style={{ 
+            borderWidth: '1px', 
+            left: '-120px', 
+            top: '280px',
+            animation: 'target-pulse 4s ease-in-out infinite 3.2s'
+          }}></div>
         </div>
       </div>
 
@@ -98,6 +123,19 @@ const LicenseSection = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes target-pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.15;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.35;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -27,14 +28,14 @@ const LicenseSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-solarien-secondary/10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Target circles background - full height */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative">
-          <div className="absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px', top: '-200px', left: '-200px' }}></div>
-          <div className="absolute w-[640px] h-[640px] border border-[#00c26f] rounded-full opacity-25" style={{ borderWidth: '1px', top: '-120px', left: '-120px' }}></div>
-          <div className="absolute w-[480px] h-[480px] border border-[#00844e] rounded-full opacity-30" style={{ borderWidth: '1px', top: '-40px', left: '-40px' }}></div>
-          <div className="absolute w-[320px] h-[320px] border border-[#02ff91] rounded-full opacity-35" style={{ borderWidth: '1px', top: '40px', left: '40px' }}></div>
-          <div className="absolute w-[160px] h-[160px] border border-[#00c26f] rounded-full opacity-40" style={{ borderWidth: '1px', top: '120px', left: '120px' }}></div>
+      {/* Target circles background - centered and reaching the top */}
+      <div className="absolute inset-0 flex items-start justify-center" style={{ paddingTop: '0px' }}>
+        <div className="relative" style={{ top: '-100px' }}>
+          <div className="absolute w-[1000px] h-[1000px] border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px', top: '0px', left: '-500px' }}></div>
+          <div className="absolute w-[800px] h-[800px] border border-[#00c26f] rounded-full opacity-25" style={{ borderWidth: '1px', top: '100px', left: '-400px' }}></div>
+          <div className="absolute w-[600px] h-[600px] border border-[#00844e] rounded-full opacity-30" style={{ borderWidth: '1px', top: '200px', left: '-300px' }}></div>
+          <div className="absolute w-[400px] h-[400px] border border-[#02ff91] rounded-full opacity-35" style={{ borderWidth: '1px', top: '300px', left: '-200px' }}></div>
+          <div className="absolute w-[200px] h-[200px] border border-[#00c26f] rounded-full opacity-40" style={{ borderWidth: '1px', top: '400px', left: '-100px' }}></div>
         </div>
       </div>
 

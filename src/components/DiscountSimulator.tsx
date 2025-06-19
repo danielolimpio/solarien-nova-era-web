@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Calculator, Zap, TrendingDown } from 'lucide-react';
+import { Calculator, Zap, TrendingDown, X } from 'lucide-react';
 
 interface DiscountSimulatorProps {
   children: React.ReactNode;
@@ -14,6 +14,7 @@ interface DiscountSimulatorProps {
 const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimulatorProps) => {
   const [billValue, setBillValue] = useState('');
   const [showResult, setShowResult] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const calculateDiscount = () => {
     const value = parseFloat(billValue.replace(',', '.'));
@@ -31,12 +32,27 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
     setShowResult(false);
   };
 
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen);
+    if (!isOpen) {
+      resetSimulator();
+    }
+  };
+
   return (
-    <Dialog onOpenChange={(open) => !open && resetSimulator()}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-white border-solarien-primary/20">
+      <DialogContent className="sm:max-w-md bg-white border-solarien-primary/20 relative">
+        {/* Enhanced close button */}
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute right-4 top-4 z-50 p-2 rounded-full bg-red-500 hover:bg-red-600 text-white transition-all duration-200 hover:scale-110 shadow-lg"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
             <span className="text-gradient">Simulador de Economia</span>
@@ -52,8 +68,13 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   Calcule sua economia mensal
                 </h3>
+                <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-3 mb-4">
+                  <p className="text-sm text-yellow-800">
+                    <strong>Importante:</strong> Digite o valor médio anual da sua conta de luz dos últimos 12 meses para uma simulação mais precisa.
+                  </p>
+                </div>
                 <p className="text-gray-600">
-                  Digite a média da sua conta de luz dos últimos 12 meses
+                  Grupo B - Desconto de 15% na tarifa de energia
                 </p>
               </div>
 
@@ -107,15 +128,15 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                 </div>
 
                 <div className="text-center border-t border-solarien-primary/20 pt-4">
-                  <div className="text-sm text-gray-600">Economia Mensal</div>
-                  <div className="text-2xl font-bold text-solarien-secondary">
+                  <div className="text-sm text-gray-600">💰 Economia Mensal</div>
+                  <div className="text-3xl font-bold text-solarien-secondary bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent">
                     R$ {discountAmount.toFixed(2).replace('.', ',')}
                   </div>
                 </div>
 
-                <div className="text-center">
-                  <div className="text-sm text-gray-600">Economia Anual</div>
-                  <div className="text-3xl font-bold text-gradient">
+                <div className="text-center bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 rounded-lg p-4">
+                  <div className="text-sm text-gray-600">🎯 Economia Anual</div>
+                  <div className="text-4xl font-bold text-gradient animate-pulse">
                     R$ {yearlyEconomy.toFixed(2).replace('.', ',')}
                   </div>
                 </div>
@@ -129,7 +150,10 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                 >
                   Nova Simulação
                 </Button>
-                <Button className="flex-1 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold">
+                <Button 
+                  className="flex-1 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold"
+                  onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
+                >
                   Contratar Agora
                 </Button>
               </div>

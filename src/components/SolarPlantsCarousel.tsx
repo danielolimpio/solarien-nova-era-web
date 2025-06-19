@@ -7,43 +7,43 @@ const SolarPlantsCarousel = () => {
   const solarPlants = [
     {
       id: 1,
-      name: 'Usina Solar Bahia',
+      name: 'Complexo Solar Bahia',
       location: 'Bahia, Brasil',
-      capacity: '500 MW',
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Uma das maiores usinas solares do Nordeste brasileiro'
+      capacity: '850 MW',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Uma das maiores fazendas solares do Nordeste brasileiro com tecnologia de ponta'
     },
     {
       id: 2,
-      name: 'Complexo Solar Ceará',
+      name: 'Fazenda Solar Ceará',
       location: 'Ceará, Brasil',
-      capacity: '750 MW',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Tecnologia de ponta em energia fotovoltaica'
+      capacity: '1.2 GW',
+      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Complexo de energia solar de grande escala com milhares de painéis fotovoltaicos'
     },
     {
       id: 3,
       name: 'Parque Solar Minas',
       location: 'Minas Gerais, Brasil',
-      capacity: '320 MW',
-      image: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Energia limpa para mais de 200 mil residências'
+      capacity: '675 MW',
+      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Fazenda solar de grande porte gerando energia limpa para centenas de milhares de residências'
     },
     {
       id: 4,
       name: 'Solar Farm São Paulo',
       location: 'São Paulo, Brasil',
-      capacity: '450 MW',
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Inovação e sustentabilidade no interior paulista'
+      capacity: '950 MW',
+      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Instalação solar industrial de grande escala no interior paulista'
     },
     {
       id: 5,
       name: 'Usina Pernambuco',
       location: 'Pernambuco, Brasil',
-      capacity: '600 MW',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Gerando energia para o desenvolvimento regional'
+      capacity: '780 MW',
+      image: 'https://images.unsplash.com/photo-1562804698-94ab4a37cb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Complexo fotovoltaico de grande porte contribuindo para o desenvolvimento regional'
     }
   ];
 
@@ -52,7 +52,8 @@ const SolarPlantsCarousel = () => {
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Full width container */}
+      <div className="w-full px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gradient">Nossas</span> <span className="text-white">Usinas Solares</span>
@@ -62,18 +63,19 @@ const SolarPlantsCarousel = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-4 max-w-7xl mx-auto">
+        {/* Full width carousel */}
+        <div className="flex flex-col lg:flex-row gap-4 w-full">
           {solarPlants.map((plant, index) => (
             <div
               key={plant.id}
               className={`relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-700 ease-in-out ${
                 activeIndex === index 
-                  ? 'flex-grow lg:flex-[3] h-96' 
-                  : 'flex-shrink-0 lg:flex-[1] h-96 lg:h-96'
+                  ? 'flex-grow lg:flex-[4] h-[500px]' 
+                  : 'flex-shrink-0 lg:flex-[1] h-[500px]'
               }`}
               onClick={() => setActiveIndex(index)}
             >
-              {/* Background Image */}
+              {/* Background Image - larger and more prominent */}
               <div className="absolute inset-0">
                 <img
                   src={plant.image}
@@ -88,27 +90,27 @@ const SolarPlantsCarousel = () => {
               </div>
 
               {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <div className={`transition-all duration-700 ${
                   activeIndex === index ? 'opacity-100 transform translate-y-0' : 'opacity-80 transform translate-y-2'
                 }`}>
-                  <h3 className={`font-bold text-white mb-2 transition-all duration-500 ${
-                    activeIndex === index ? 'text-2xl lg:text-3xl' : 'text-lg lg:text-xl'
+                  <h3 className={`font-bold text-white mb-3 transition-all duration-500 ${
+                    activeIndex === index ? 'text-3xl lg:text-4xl' : 'text-xl lg:text-2xl'
                   }`}>
                     {plant.name}
                   </h3>
                   
                   <div className={`transition-all duration-700 overflow-hidden ${
-                    activeIndex === index ? 'max-h-96 opacity-100' : 'max-h-8 opacity-70'
+                    activeIndex === index ? 'max-h-96 opacity-100' : 'max-h-12 opacity-70'
                   }`}>
-                    <p className="text-solarien-primary font-semibold mb-2">
+                    <p className="text-solarien-primary font-semibold mb-3 text-lg">
                       📍 {plant.location}
                     </p>
-                    <p className="text-solarien-secondary font-semibold mb-3">
+                    <p className="text-solarien-secondary font-semibold mb-4 text-lg">
                       ⚡ {plant.capacity}
                     </p>
                     {activeIndex === index && (
-                      <p className="text-gray-300 leading-relaxed animate-fade-in">
+                      <p className="text-gray-300 leading-relaxed animate-fade-in text-lg">
                         {plant.description}
                       </p>
                     )}
@@ -117,7 +119,7 @@ const SolarPlantsCarousel = () => {
               </div>
 
               {/* Active Indicator */}
-              <div className={`absolute top-4 right-4 w-3 h-3 rounded-full transition-all duration-500 ${
+              <div className={`absolute top-6 right-6 w-4 h-4 rounded-full transition-all duration-500 ${
                 activeIndex === index ? 'bg-solarien-primary scale-125' : 'bg-white/50'
               }`}></div>
             </div>
@@ -125,12 +127,12 @@ const SolarPlantsCarousel = () => {
         </div>
 
         {/* Navigation Dots */}
-        <div className="flex justify-center mt-8 space-x-3">
+        <div className="flex justify-center mt-8 space-x-4">
           {solarPlants.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
                 index === activeIndex 
                   ? 'bg-solarien-primary scale-125' 
                   : 'bg-gray-500 hover:bg-gray-400'

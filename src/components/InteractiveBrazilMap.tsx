@@ -11,33 +11,23 @@ interface State {
 }
 
 const states: State[] = [
-  { id: 'ac', name: 'Acre', discount: '13%', distributor: 'ENERGISA' },
-  { id: 'al', name: 'Alagoas', discount: '12%', distributor: 'CEAL' },
-  { id: 'ap', name: 'Amapá', discount: '14%', distributor: 'CEA' },
-  { id: 'am', name: 'Amazonas', discount: '12%', distributor: 'AMAZONAS ENERGIA' },
-  { id: 'ba', name: 'Bahia', discount: '17%', distributor: 'COELBA' },
-  { id: 'ce', name: 'Ceará', discount: '16%', distributor: 'ENEL Ceará' },
-  { id: 'df', name: 'Distrito Federal', discount: '14%', distributor: 'CEB' },
-  { id: 'es', name: 'Espírito Santo', discount: '16%', distributor: 'EDP' },
+  { id: 'al', name: 'Alagoas', discount: '15%', distributor: 'CEAL' },
+  { id: 'ba', name: 'Bahia', discount: '15%', distributor: 'COELBA' },
+  { id: 'ce', name: 'Ceará', discount: '15%', distributor: 'ENEL Ceará' },
+  { id: 'df', name: 'Distrito Federal', discount: '15%', distributor: 'CEB' },
   { id: 'go', name: 'Goiás', discount: '15%', distributor: 'ENEL Goiás' },
   { id: 'ma', name: 'Maranhão', discount: '15%', distributor: 'CEMAR' },
-  { id: 'mt', name: 'Mato Grosso', discount: '17%', distributor: 'ENERGISA' },
+  { id: 'mt', name: 'Mato Grosso', discount: '15%', distributor: 'ENERGISA' },
   { id: 'ms', name: 'Mato Grosso do Sul', discount: '15%', distributor: 'ENERGISA' },
-  { id: 'mg', name: 'Minas Gerais', discount: '18%', distributor: 'CEMIG' },
-  { id: 'pa', name: 'Pará', discount: '13%', distributor: 'CELPA' },
-  { id: 'pb', name: 'Paraíba', discount: '14%', distributor: 'ENERGISA' },
-  { id: 'pr', name: 'Paraná', discount: '14%', distributor: 'COPEL' },
-  { id: 'pe', name: 'Pernambuco', discount: '14%', distributor: 'CELPE' },
-  { id: 'pi', name: 'Piauí', discount: '14%', distributor: 'CEPISA' },
-  { id: 'rj', name: 'Rio de Janeiro', discount: '12%', distributor: 'Light' },
+  { id: 'mg', name: 'Minas Gerais', discount: '15%', distributor: 'CEMIG' },
+  { id: 'pa', name: 'Pará', discount: '15%', distributor: 'CELPA' },
+  { id: 'pr', name: 'Paraná', discount: '15%', distributor: 'COPEL' },
+  { id: 'pe', name: 'Pernambuco', discount: '15%', distributor: 'CELPE' },
+  { id: 'pi', name: 'Piauí', discount: '15%', distributor: 'CEPISA' },
   { id: 'rn', name: 'Rio Grande do Norte', discount: '15%', distributor: 'COSERN' },
-  { id: 'rs', name: 'Rio Grande do Sul', discount: '16%', distributor: 'RGE' },
-  { id: 'ro', name: 'Rondônia', discount: '16%', distributor: 'ENERGISA' },
-  { id: 'rr', name: 'Roraima', discount: '15%', distributor: 'RR ENERGIA' },
-  { id: 'sc', name: 'Santa Catarina', discount: '13%', distributor: 'CELESC' },
+  { id: 'sc', name: 'Santa Catarina', discount: '15%', distributor: 'CELESC' },
   { id: 'sp', name: 'São Paulo', discount: '15%', distributor: 'CPFL Energia' },
-  { id: 'se', name: 'Sergipe', discount: '13%', distributor: 'ENERGISA' },
-  { id: 'to', name: 'Tocantins', discount: '13%', distributor: 'CELTINS' }
+  { id: 'to', name: 'Tocantins', discount: '15%', distributor: 'CELTINS' }
 ];
 
 const InteractiveBrazilMap = () => {

@@ -26,8 +26,17 @@ const Footer = () => {
 
   return (
     <footer className="border-t relative overflow-hidden" style={{ backgroundColor: '#002113', borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
-      {/* Background overlay */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0, 33, 19, 0.95) 0%, rgba(0, 33, 19, 0.98) 100%)' }}></div>
+      {/* Solar Plant Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="Usina Solar"
+          className="w-full h-full object-cover opacity-15"
+        />
+      </div>
+
+      {/* Background overlay with green transparency */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0, 33, 19, 0.85) 0%, rgba(0, 33, 19, 0.90) 100%)' }}></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Main Footer Content */}

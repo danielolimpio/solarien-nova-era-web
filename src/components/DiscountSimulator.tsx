@@ -39,13 +39,19 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
     }
   };
 
+  const handleWhatsAppContact = () => {
+    const phoneNumber = '+5511997361698';
+    const message = `Olá! Gostaria de contratar o serviço de energia solar. Simulei uma economia de R$ ${discountAmount.toFixed(2).replace('.', ',')} mensais na minha conta de luz.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-md bg-white border-solarien-primary/20 relative">
-        {/* Enhanced close button */}
         <button
           onClick={() => setOpen(false)}
           className="absolute right-4 top-4 z-50 p-2 rounded-full bg-red-500 hover:bg-red-600 text-white transition-all duration-200 hover:scale-110 shadow-lg"
@@ -55,7 +61,9 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
 
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            <span className="text-gradient">Simulador de Economia</span>
+            <span className="bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent">
+              Simulador de Economia
+            </span>
             {state && <div className="text-lg text-gray-600 mt-2">{state}</div>}
           </DialogTitle>
         </DialogHeader>
@@ -85,10 +93,12 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                   </label>
                   <Input
                     type="number"
-                    placeholder="Ex: 350,00"
+                    placeholder="Ex: 350"
                     value={billValue}
                     onChange={(e) => setBillValue(e.target.value)}
                     className="text-lg text-center border-solarien-primary/30 focus:border-solarien-primary"
+                    min="0"
+                    step="0.01"
                   />
                 </div>
 
@@ -136,7 +146,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
 
                 <div className="text-center bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 rounded-lg p-4">
                   <div className="text-sm text-gray-600">🎯 Economia Anual</div>
-                  <div className="text-4xl font-bold text-gradient animate-pulse">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent animate-pulse">
                     R$ {yearlyEconomy.toFixed(2).replace('.', ',')}
                   </div>
                 </div>
@@ -152,7 +162,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                 </Button>
                 <Button 
                   className="flex-1 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold"
-                  onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
+                  onClick={handleWhatsAppContact}
                 >
                   Contratar Agora
                 </Button>

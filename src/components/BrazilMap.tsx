@@ -5,28 +5,28 @@ const BrazilMap = () => {
   const [selectedState, setSelectedState] = useState(null);
 
   const statesData = [
-    { name: 'São Paulo', discount: '15%', distributor: 'CPFL Energia', code: 'SP' },
-    { name: 'Rio de Janeiro', discount: '12%', distributor: 'Light', code: 'RJ' },
-    { name: 'Minas Gerais', discount: '18%', distributor: 'Cemig', code: 'MG' },
-    { name: 'Paraná', discount: '14%', distributor: 'Copel', code: 'PR' },
-    { name: 'Rio Grande do Sul', discount: '16%', distributor: 'RGE', code: 'RS' },
-    { name: 'Bahia', discount: '13%', distributor: 'Neoenergia', code: 'BA' },
-    { name: 'Ceará', discount: '17%', distributor: 'Enel', code: 'CE' },
-    { name: 'Pernambuco', discount: '15%', distributor: 'Neoenergia', code: 'PE' },
-    { name: 'Goiás', discount: '14%', distributor: 'Equatorial', code: 'GO' },
-    { name: 'Maranhão', discount: '19%', distributor: 'Equatorial', code: 'MA' },
-    { name: 'Pará', discount: '16%', distributor: 'Equatorial', code: 'PA' },
+    { name: 'São Paulo', discount: '15%', distributor: 'CPFL Paulista, Elektro, Energisa, Copel', code: 'SP' },
     { name: 'Santa Catarina', discount: '15%', distributor: 'Celesc', code: 'SC' },
+    { name: 'Paraná', discount: '15%', distributor: 'Energisa, Copel', code: 'PR' },
+    { name: 'Mato Grosso do Sul', discount: '15%', distributor: 'Energisa', code: 'MS' },
+    { name: 'Mato Grosso', discount: '15%', distributor: 'Energisa', code: 'MT' },
+    { name: 'Goiás', discount: '15%', distributor: 'Equatorial', code: 'GO' },
+    { name: 'Distrito Federal', discount: '15%', distributor: 'CEB Neoenergia', code: 'DF' },
+    { name: 'Minas Gerais', discount: '15%', distributor: 'Cemig, Energisa', code: 'MG' },
+    { name: 'Bahia', discount: '15%', distributor: 'Coelba Neoenergia', code: 'BA' },
+    { name: 'Tocantins', discount: '15%', distributor: 'Energisa', code: 'TO' },
+    { name: 'Pará', discount: '15%', distributor: 'Equatorial', code: 'PA' },
+    { name: 'Maranhão', discount: '15%', distributor: 'Equatorial', code: 'MA' },
+    { name: 'Piauí', discount: '15%', distributor: 'Equatorial', code: 'PI' },
+    { name: 'Ceará', discount: '15%', distributor: 'Enel', code: 'CE' },
+    { name: 'Rio Grande do Norte', discount: '15%', distributor: 'Cosern Neoenergia', code: 'RN' },
+    { name: 'Pernambuco', discount: '15%', distributor: 'Celpe Neoenergia', code: 'PE' },
+    { name: 'Sergipe', discount: '15%', distributor: 'Energisa', code: 'SE' },
+    { name: 'Rio de Janeiro', discount: '12%', distributor: 'Light', code: 'RJ' },
     { name: 'Espírito Santo', discount: '13%', distributor: 'EDP', code: 'ES' },
+    { name: 'Rio Grande do Sul', discount: '16%', distributor: 'RGE', code: 'RS' },
     { name: 'Paraíba', discount: '18%', distributor: 'Energisa', code: 'PB' },
     { name: 'Alagoas', discount: '17%', distributor: 'Equatorial', code: 'AL' },
-    { name: 'Sergipe', discount: '16%', distributor: 'Energisa', code: 'SE' },
-    { name: 'Rio Grande do Norte', discount: '15%', distributor: 'Cosern', code: 'RN' },
-    { name: 'Piauí', discount: '18%', distributor: 'Equatorial', code: 'PI' },
-    { name: 'Mato Grosso', discount: '14%', distributor: 'Energisa', code: 'MT' },
-    { name: 'Mato Grosso do Sul', discount: '16%', distributor: 'Energisa', code: 'MS' },
-    { name: 'Distrito Federal', discount: '12%', distributor: 'CEB', code: 'DF' },
-    { name: 'Tocantins', discount: '17%', distributor: 'Energisa', code: 'TO' },
     { name: 'Rondônia', discount: '15%', distributor: 'Energisa', code: 'RO' },
     { name: 'Acre', discount: '16%', distributor: 'Energisa', code: 'AC' },
     { name: 'Amazonas', discount: '14%', distributor: 'Amazonas Energia', code: 'AM' },
@@ -118,22 +118,24 @@ const BrazilMap = () => {
         )}
       </div>
 
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(30, 41, 59, 0.5);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #02ff91;
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #00c26f;
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 3px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #02ff91;
+            border-radius: 3px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #00c26f;
+          }
+        `
+      }} />
     </section>
   );
 };

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Zap, Users, Target, TrendingUp, Star, Award, Banknote } from 'lucide-react';
+import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket } from 'lucide-react';
 import { Button } from './ui/button';
 
 const EntrepreneurshipSection = () => {
@@ -142,6 +141,28 @@ const EntrepreneurshipSection = () => {
           <p className="text-gray-400 mt-6 text-lg">
             Comece sua jornada de sucesso no mercado livre de energia
           </p>
+
+          {/* Icons below the text */}
+          <div className="flex justify-center items-center gap-8 mt-8">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse">
+                <Rocket className="w-8 h-8 text-black" />
+              </div>
+              <span className="text-solarien-primary text-sm font-medium">Inovação</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-300">
+                <Zap className="w-8 h-8 text-black" />
+              </div>
+              <span className="text-solarien-primary text-sm font-medium">Energia</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-500">
+                <Target className="w-8 h-8 text-black" />
+              </div>
+              <span className="text-solarien-primary text-sm font-medium">Objetivo</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

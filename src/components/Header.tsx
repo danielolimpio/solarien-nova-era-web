@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +20,13 @@ const Header = () => {
     // If it's the contact section, navigate to the contact page
     if (sectionId === 'contato') {
       navigate('/contact');
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    // If it's the home section, navigate to the home page
+    if (sectionId === 'home') {
+      navigate('/');
       setIsMobileMenuOpen(false);
       return;
     }

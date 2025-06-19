@@ -4,15 +4,15 @@ import { Users, Target, Eye, Calendar, Handshake, Building, Network } from 'luci
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 relative overflow-hidden">
+    <section id="sobre" className="py-20 bg-white relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
           alt="Clean energy landscape" 
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-5"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-solarien-primary/10 via-white/90 to-solarien-secondary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-solarien-primary/5"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -26,9 +26,9 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Main Description */}
-        <div className="mb-20">
-          <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-8 shadow-lg">
+        {/* Main Description Card */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 md:p-12 shadow-xl backdrop-blur-sm">
             <p className="text-lg text-gray-700 leading-relaxed text-center max-w-5xl mx-auto">
               Somos uma empresa comprometida com a sustentabilidade e a economia, conectando pessoas e empresas ao futuro da energia limpa e acessível. Com tecnologia de ponta e atendimento personalizado, garantimos resultados que impactam positivamente o planeta e sua conta de luz.
             </p>
@@ -36,23 +36,37 @@ const AboutSection = () => {
         </div>
 
         {/* Commitment Section */}
-        <div className="mb-20">
-          <div className="bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 rounded-2xl p-8 border border-solarien-primary/30 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold text-solarien-primary mb-6 text-center">COMPROMISSO</h3>
-            <p className="text-gray-700 leading-relaxed text-center max-w-4xl mx-auto mb-4">
-              Na Solarien, nosso compromisso é impulsionar a sustentabilidade e a inovação, garantindo acesso à energia limpa e econômica para todos. Utilizamos tecnologia avançada e soluções personalizadas para reduzir emissões, otimizar custos e promover um futuro energético justo.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
-              Cada projeto reflete nosso pacto com o meio ambiente, a eficiência e a satisfação dos clientes, consolidando-nos como aliados na construção de um mundo mais verde e próspero.
-            </p>
+        <div className="mb-16">
+          <div className="bg-white border border-solarien-primary/30 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-solarien-primary to-solarien-secondary"></div>
+            <h3 className="text-3xl font-bold text-solarien-primary mb-8 text-center">NOSSO COMPROMISSO</h3>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Na Solarien, nosso compromisso é impulsionar a sustentabilidade e a inovação, garantindo acesso à energia limpa e econômica para todos. Utilizamos tecnologia avançada e soluções personalizadas para reduzir emissões, otimizar custos e promover um futuro energético justo.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Cada projeto reflete nosso pacto com o meio ambiente, a eficiência e a satisfação dos clientes, consolidando-nos como aliados na construção de um mundo mais verde e próspero.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <div className="w-48 h-48 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-32 h-32 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
+                    <Handshake className="w-16 h-16 text-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Mission and Vision */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-8 hover:bg-solarien-primary/5 transition-all duration-300 group shadow-lg">
-            <div className="flex items-center mb-4">
-              <Target className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 border border-solarien-primary/20 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group">
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-8 h-8 text-white" />
+              </div>
               <h3 className="text-2xl font-bold text-solarien-primary">Missão</h3>
             </div>
             <p className="text-gray-700 leading-relaxed">
@@ -60,10 +74,12 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-8 hover:bg-solarien-primary/5 transition-all duration-300 group shadow-lg">
-            <div className="flex items-center mb-4">
-              <Eye className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
-              <h3 className="text-2xl font-bold text-solarien-primary">Visão</h3>
+          <div className="bg-gradient-to-br from-solarien-secondary/5 to-solarien-tertiary/5 border border-solarien-secondary/20 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group">
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                <Eye className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-solarien-secondary">Visão</h3>
             </div>
             <p className="text-gray-700 leading-relaxed">
               Ser referência global em soluções energéticas inteligentes, liderando a transição para um modelo sustentável e transformando o mercado de energia com inovação e excelência.
@@ -71,53 +87,53 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Timeline Section */}
-        <div className="space-y-8">
+        {/* Journey Timeline */}
+        <div className="bg-white border border-solarien-primary/20 rounded-3xl p-8 md:p-12 shadow-xl">
           <h3 className="text-3xl font-bold text-center mb-12">
             <span className="text-gradient">Nossa</span> <span className="text-gray-800">Jornada</span>
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:bg-solarien-primary/5 transition-all duration-300 group animate-slide-up shadow-lg">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
-                <h4 className="text-xl font-bold text-solarien-primary">2022</h4>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Calendar className="w-10 h-10 text-white" />
               </div>
-              <h5 className="font-semibold text-gray-800 mb-2">Chegamos em 2022</h5>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-solarien-primary mb-2">2022</h4>
+              <h5 className="font-semibold text-gray-800 mb-3">Chegamos em 2022</h5>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Chegamos ao mercado com uma proposta inovadora: oferecer aos brasileiros uma nova forma de lidar com o consumo de energia.
               </p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:bg-solarien-primary/5 transition-all duration-300 group animate-slide-up shadow-lg" style={{animationDelay: '0.1s'}}>
-              <div className="flex items-center mb-4">
-                <Handshake className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
-                <h4 className="text-xl font-bold text-solarien-primary">Parcerias</h4>
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Handshake className="w-10 h-10 text-white" />
               </div>
-              <h5 className="font-semibold text-gray-800 mb-2">Parcerias Estratégicas</h5>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-solarien-secondary mb-2">Parcerias</h4>
+              <h5 className="font-semibold text-gray-800 mb-3">Parcerias Estratégicas</h5>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Ao longo desses 3 anos ampliamos as parcerias estratégicas por todo Brasil, atingindo todos os perfis de consumidores de energia elétrica.
               </p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:bg-solarien-primary/5 transition-all duration-300 group animate-slide-up shadow-lg" style={{animationDelay: '0.2s'}}>
-              <div className="flex items-center mb-4">
-                <Building className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
-                <h4 className="text-xl font-bold text-solarien-primary">Unidades</h4>
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Building className="w-10 h-10 text-white" />
               </div>
-              <h5 className="font-semibold text-gray-800 mb-2">Unidades de Negócio</h5>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-solarien-tertiary mb-2">Unidades</h4>
+              <h5 className="font-semibold text-gray-800 mb-3">Unidades de Negócio</h5>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Ofertamos energia de fontes 100% renováveis e financeiramente mais acessíveis, com até 30% de desconto na tarifa para Grupo A e Grupo B.
               </p>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:bg-solarien-primary/5 transition-all duration-300 group animate-slide-up shadow-lg" style={{animationDelay: '0.3s'}}>
-              <div className="flex items-center mb-4">
-                <Network className="w-8 h-8 text-solarien-primary mr-3 group-hover:animate-pulse" />
-                <h4 className="text-xl font-bold text-solarien-primary">Expansão</h4>
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Network className="w-10 h-10 text-white" />
               </div>
-              <h5 className="font-semibold text-gray-800 mb-2">Expansão de Rede</h5>
-              <p className="text-gray-600 text-sm">
+              <h4 className="text-xl font-bold text-solarien-primary mb-2">Expansão</h4>
+              <h5 className="font-semibold text-gray-800 mb-3">Expansão de Rede</h5>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Além dos serviços já oferecidos, abrimos a oportunidade para você criar seu legado e transformar o futuro com energia sustentável.
               </p>
             </div>

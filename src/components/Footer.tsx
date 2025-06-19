@@ -1,7 +1,6 @@
-
-
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -84,12 +83,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium"
-                    >
-                      {link}
-                    </a>
+                    {link === 'FAQ' ? (
+                      <Link
+                        to="/faq"
+                        className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium"
+                      >
+                        {link}
+                      </Link>
+                    ) : (
+                      <a
+                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium"
+                      >
+                        {link}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -162,4 +170,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -6,6 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Zap, Users, ArrowLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const FAQ = () => {
   const navigate = useNavigate();
@@ -97,126 +99,131 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#002113' }}>
-      {/* Header */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center gap-4 mb-8">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/')}
-            className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Voltar
-          </Button>
-          <div>
-            <h1 className="text-4xl font-bold text-white mb-2">
-              Perguntas Frequentes
-            </h1>
-            <p className="text-gray-300">
-              Encontre respostas para suas principais dúvidas
-            </p>
+    <div className="min-h-screen">
+      <Header />
+      <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+        {/* Header */}
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex items-center gap-4 mb-8">
+            <Button
+              variant="outline"
+              onClick={() => navigate('/')}
+              className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Voltar
+            </Button>
+            <div>
+              <h1 className="text-4xl font-bold text-white mb-2">
+                Perguntas Frequentes
+              </h1>
+              <p className="text-gray-300">
+                Encontre respostas para suas principais dúvidas
+              </p>
+            </div>
+          </div>
+
+          {/* FAQ Tabs */}
+          <Tabs defaultValue="energy" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 mb-8 bg-green-800">
+              <TabsTrigger 
+                value="energy" 
+                className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
+              >
+                <Zap className="w-4 h-4 mr-2" />
+                Energia por Assinatura
+              </TabsTrigger>
+              <TabsTrigger 
+                value="network" 
+                className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
+              >
+                <Users className="w-4 h-4 mr-2" />
+                Marketing de Rede
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Energy FAQ Tab */}
+            <TabsContent value="energy">
+              <Card className="bg-green-800/20 border-green-700">
+                <CardHeader>
+                  <CardTitle className="text-solarien-primary flex items-center gap-2">
+                    <Zap className="w-6 h-6" />
+                    Energia Solar por Assinatura
+                  </CardTitle>
+                  <CardDescription className="text-gray-300">
+                    Tudo sobre descontos na conta de energia e como funciona nosso serviço
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible className="w-full">
+                    {energyFAQ.map((faq, index) => (
+                      <AccordionItem key={index} value={`energy-${index}`} className="border-green-700">
+                        <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-gray-300 whitespace-pre-line">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Network Marketing FAQ Tab */}
+            <TabsContent value="network">
+              <Card className="bg-green-800/20 border-green-700">
+                <CardHeader>
+                  <CardTitle className="text-solarien-primary flex items-center gap-2">
+                    <Users className="w-6 h-6" />
+                    Multinível Solarien
+                  </CardTitle>
+                  <CardDescription className="text-gray-300">
+                    Informações sobre o programa de indicações e ganhos
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Accordion type="single" collapsible className="w-full">
+                    {networkFAQ.map((faq, index) => (
+                      <AccordionItem key={index} value={`network-${index}`} className="border-green-700">
+                        <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-gray-300 whitespace-pre-line">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+
+          {/* Contact CTA */}
+          <div className="mt-12 text-center">
+            <Card className="bg-gradient-to-r from-green-800/30 to-green-700/30 border-solarien-primary/30">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Não encontrou sua resposta?
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  Entre em contato conosco pelo WhatsApp e receba atendimento personalizado
+                </p>
+                <Button
+                  className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-3 text-lg rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
+                  onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
+                >
+                  Falar no WhatsApp
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
-
-        {/* FAQ Tabs */}
-        <Tabs defaultValue="energy" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8 bg-green-800">
-            <TabsTrigger 
-              value="energy" 
-              className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
-            >
-              <Zap className="w-4 h-4 mr-2" />
-              Energia por Assinatura
-            </TabsTrigger>
-            <TabsTrigger 
-              value="network" 
-              className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
-            >
-              <Users className="w-4 h-4 mr-2" />
-              Marketing de Rede
-            </TabsTrigger>
-          </TabsList>
-
-          {/* Energy FAQ Tab */}
-          <TabsContent value="energy">
-            <Card className="bg-green-800/20 border-green-700">
-              <CardHeader>
-                <CardTitle className="text-solarien-primary flex items-center gap-2">
-                  <Zap className="w-6 h-6" />
-                  Energia Solar por Assinatura
-                </CardTitle>
-                <CardDescription className="text-gray-300">
-                  Tudo sobre descontos na conta de energia e como funciona nosso serviço
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  {energyFAQ.map((faq, index) => (
-                    <AccordionItem key={index} value={`energy-${index}`} className="border-green-700">
-                      <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-gray-300 whitespace-pre-line">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* Network Marketing FAQ Tab */}
-          <TabsContent value="network">
-            <Card className="bg-green-800/20 border-green-700">
-              <CardHeader>
-                <CardTitle className="text-solarien-primary flex items-center gap-2">
-                  <Users className="w-6 h-6" />
-                  Multinível Solarien
-                </CardTitle>
-                <CardDescription className="text-gray-300">
-                  Informações sobre o programa de indicações e ganhos
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  {networkFAQ.map((faq, index) => (
-                    <AccordionItem key={index} value={`network-${index}`} className="border-green-700">
-                      <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-gray-300 whitespace-pre-line">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
-
-        {/* Contact CTA */}
-        <div className="mt-12 text-center">
-          <Card className="bg-gradient-to-r from-green-800/30 to-green-700/30 border-solarien-primary/30">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Não encontrou sua resposta?
-              </h3>
-              <p className="text-gray-300 mb-6">
-                Entre em contato conosco pelo WhatsApp e receba atendimento personalizado
-              </p>
-              <Button
-                className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-3 text-lg rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
-                onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
-              >
-                Falar no WhatsApp
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
       </div>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

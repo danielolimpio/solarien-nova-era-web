@@ -26,6 +26,32 @@ const AboutSection = () => {
           </p>
         </div>
 
+        {/* Modern Building Image with Logo */}
+        <div className="mb-16">
+          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+              alt="Fachada moderna de prédio de vidro futurista" 
+              className="w-full h-96 md:h-[500px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            
+            {/* Solarien Logo Overlay */}
+            <div className="absolute bottom-8 left-8 right-8 flex items-center justify-center">
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <img 
+                  src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
+                  alt="Solarien Energy" 
+                  className="h-16 md:h-20 w-auto mx-auto"
+                />
+              </div>
+            </div>
+            
+            {/* Glass reflection effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+
         {/* Main Description Card */}
         <div className="mb-16">
           <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 md:p-12 shadow-xl backdrop-blur-sm">

@@ -26,38 +26,77 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Modern Building Image with Logo */}
-        <div className="mb-16">
-          <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-              alt="Fachada moderna de prédio de vidro futurista" 
-              className="w-full h-96 md:h-[500px] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            
-            {/* Solarien Logo Overlay */}
-            <div className="absolute bottom-8 left-8 right-8 flex items-center justify-center">
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
-                <img 
-                  src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
-                  alt="Solarien Energy" 
-                  className="h-16 md:h-20 w-auto mx-auto"
-                />
+        {/* Company Presentation with Futuristic Building Mockup */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left side - Square Building Mockup */}
+          <div className="relative">
+            <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
+              <img 
+                src="https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Fachada futurista da Solarien Energy" 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Dark overlay for logo integration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
+              
+              {/* Integrated Logo - appears as part of the building facade */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/50">
+                  <img 
+                    src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
+                    alt="Solarien Energy" 
+                    className="h-20 md:h-24 w-auto mx-auto"
+                  />
+                </div>
               </div>
+              
+              {/* Glass reflection effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
             </div>
             
-            {/* Glass reflection effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
+            {/* Decorative elements */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-solarien-secondary/20 to-solarien-tertiary/20 rounded-full blur-xl"></div>
           </div>
-        </div>
 
-        {/* Main Description Card */}
-        <div className="mb-16">
-          <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 md:p-12 shadow-xl backdrop-blur-sm">
-            <p className="text-lg text-gray-700 leading-relaxed text-center max-w-5xl mx-auto">
-              Somos uma empresa comprometida com a sustentabilidade e a economia, conectando pessoas e empresas ao futuro da energia limpa e acessível. Com tecnologia de ponta e atendimento personalizado, garantimos resultados que impactam positivamente o planeta e sua conta de luz.
-            </p>
+          {/* Right side - Company Description */}
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm">
+              <h3 className="text-2xl font-bold text-solarien-primary mb-4">
+                Quem Somos
+              </h3>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Somos uma empresa comprometida com a sustentabilidade e a economia, conectando pessoas e empresas ao futuro da energia limpa e acessível.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Com tecnologia de ponta e atendimento personalizado, garantimos resultados que impactam positivamente o planeta e sua conta de luz.
+              </p>
+            </div>
+
+            {/* Key Features */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center space-x-3 p-4 bg-white/50 rounded-xl border border-solarien-primary/10">
+                <div className="w-12 h-12 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-lg flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Atendimento</h4>
+                  <p className="text-sm text-gray-600">Personalizado</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3 p-4 bg-white/50 rounded-xl border border-solarien-secondary/10">
+                <div className="w-12 h-12 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-lg flex items-center justify-center">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Resultados</h4>
+                  <p className="text-sm text-gray-600">Garantidos</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 
@@ -49,121 +48,109 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Realistic Solar Rays Animation */}
+        {/* Ultra Realistic Solar Rays Animation */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Raios principais mais realistas */}
-          {[...Array(60)].map((_, i) => (
+          {/* Raios primários ultra-finos */}
+          {[...Array(40)].map((_, i) => (
             <div
-              key={`sunray-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-200/40 via-yellow-100/25 to-transparent"
-              style={{
-                left: `${Math.random() * 120 - 10}%`,
-                top: `-20%`,
-                width: '0.5px',
-                height: '120%',
-                animationDelay: `${Math.random() * 20}s`,
-                animationDuration: `${25 + Math.random() * 15}s`,
-                transform: `rotate(${8 + Math.random() * 6}deg) translateY(-50px)`,
-                opacity: Math.random() * 0.4 + 0.3,
-                borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
-                boxShadow: '0 0 8px rgba(255, 223, 127, 0.3), 0 0 16px rgba(255, 193, 7, 0.15)',
-                background: 'linear-gradient(to bottom, rgba(255, 223, 127, 0.4) 0%, rgba(255, 215, 0, 0.25) 20%, rgba(255, 193, 7, 0.15) 50%, transparent 100%)',
-                animation: `sunrayFall ${25 + Math.random() * 15}s linear infinite`,
-              }}
-            />
-          ))}
-          
-          {/* Raios secundários mais finos */}
-          {[...Array(80)].map((_, i) => (
-            <div
-              key={`sunray-thin-${i}`}
+              key={`sunray-primary-${i}`}
               className="absolute"
               style={{
-                left: `${Math.random() * 130 - 15}%`,
-                top: `-15%`,
-                width: '0.3px',
-                height: '115%',
-                animationDelay: `${Math.random() * 25}s`,
-                animationDuration: `${30 + Math.random() * 20}s`,
-                transform: `rotate(${6 + Math.random() * 8}deg) translateY(-30px)`,
-                opacity: Math.random() * 0.25 + 0.2,
-                borderRadius: '50% 50% 50% 50% / 85% 85% 15% 15%',
-                boxShadow: '0 0 6px rgba(255, 235, 157, 0.2)',
-                background: 'linear-gradient(to bottom, rgba(255, 235, 157, 0.3) 0%, rgba(255, 223, 127, 0.2) 30%, rgba(255, 215, 0, 0.1) 60%, transparent 100%)',
-                animation: `sunrayFall ${30 + Math.random() * 20}s linear infinite`,
+                left: `${Math.random() * 120 - 10}%`,
+                top: `-30%`,
+                width: '0.2px',
+                height: '130%',
+                animationDelay: `${Math.random() * 40}s`,
+                animationDuration: `${35 + Math.random() * 25}s`,
+                transform: `rotate(${12 + Math.random() * 8}deg) translateY(-60px)`,
+                opacity: Math.random() * 0.08 + 0.05,
+                borderRadius: '50% 50% 50% 50% / 90% 90% 10% 10%',
+                background: 'linear-gradient(to bottom, rgba(255, 215, 0, 0.12) 0%, rgba(255, 223, 127, 0.08) 25%, rgba(255, 235, 157, 0.05) 60%, transparent 100%)',
+                animation: `sunrayFall ${35 + Math.random() * 25}s linear infinite`,
               }}
             />
           ))}
           
-          {/* Raios de destaque dourados */}
+          {/* Raios secundários dourados */}
           {[...Array(25)].map((_, i) => (
             <div
               key={`sunray-gold-${i}`}
               className="absolute"
               style={{
-                left: `${Math.random() * 110 - 5}%`,
+                left: `${Math.random() * 115 - 7}%`,
                 top: `-25%`,
-                width: '0.7px',
+                width: '0.3px',
                 height: '125%',
-                animationDelay: `${Math.random() * 15}s`,
-                animationDuration: `${20 + Math.random() * 10}s`,
-                transform: `rotate(${10 + Math.random() * 4}deg) translateY(-40px)`,
-                opacity: Math.random() * 0.35 + 0.4,
-                borderRadius: '50% 50% 50% 50% / 75% 75% 25% 25%',
-                boxShadow: '0 0 12px rgba(255, 193, 7, 0.4), 0 0 24px rgba(255, 215, 0, 0.2)',
-                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.45) 0%, rgba(255, 215, 0, 0.35) 15%, rgba(255, 223, 127, 0.2) 40%, rgba(255, 235, 157, 0.1) 70%, transparent 100%)',
-                animation: `sunrayFall ${20 + Math.random() * 10}s linear infinite`,
+                animationDelay: `${Math.random() * 30}s`,
+                animationDuration: `${25 + Math.random() * 20}s`,
+                transform: `rotate(${10 + Math.random() * 6}deg) translateY(-45px)`,
+                opacity: Math.random() * 0.12 + 0.08,
+                borderRadius: '50% 50% 50% 50% / 85% 85% 15% 15%',
+                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.15) 0%, rgba(255, 215, 0, 0.12) 20%, rgba(255, 223, 127, 0.08) 50%, rgba(255, 235, 157, 0.04) 80%, transparent 100%)',
+                animation: `sunrayFall ${25 + Math.random() * 20}s linear infinite`,
               }}
             />
           ))}
           
-          {/* Micro raios ambiente */}
-          {[...Array(100)].map((_, i) => (
+          {/* Raios mais espessos para profundidade */}
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={`sunray-thick-${i}`}
+              className="absolute"
+              style={{
+                left: `${Math.random() * 110 - 5}%`,
+                top: `-35%`,
+                width: '0.5px',
+                height: '135%',
+                animationDelay: `${Math.random() * 50}s`,
+                animationDuration: `${20 + Math.random() * 15}s`,
+                transform: `rotate(${8 + Math.random() * 4}deg) translateY(-50px)`,
+                opacity: Math.random() * 0.15 + 0.1,
+                borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
+                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.18) 0%, rgba(255, 215, 0, 0.14) 15%, rgba(255, 223, 127, 0.1) 40%, rgba(255, 235, 157, 0.06) 70%, transparent 100%)',
+                animation: `sunrayFall ${20 + Math.random() * 15}s linear infinite`,
+              }}
+            />
+          ))}
+          
+          {/* Micro raios ambiente ultra-sutis */}
+          {[...Array(60)].map((_, i) => (
             <div
               key={`sunray-micro-${i}`}
               className="absolute"
               style={{
-                left: `${Math.random() * 140 - 20}%`,
-                top: `-10%`,
-                width: '0.2px',
-                height: '110%',
-                animationDelay: `${Math.random() * 30}s`,
-                animationDuration: `${35 + Math.random() * 25}s`,
-                transform: `rotate(${5 + Math.random() * 10}deg) translateY(-20px)`,
-                opacity: Math.random() * 0.15 + 0.1,
-                borderRadius: '50% 50% 50% 50% / 90% 90% 10% 10%',
-                background: 'linear-gradient(to bottom, rgba(255, 245, 178, 0.2) 0%, rgba(255, 235, 157, 0.15) 40%, transparent 100%)',
-                animation: `sunrayFall ${35 + Math.random() * 25}s linear infinite`,
+                left: `${Math.random() * 130 - 15}%`,
+                top: `-20%`,
+                width: '0.15px',
+                height: '120%',
+                animationDelay: `${Math.random() * 60}s`,
+                animationDuration: `${50 + Math.random() * 30}s`,
+                transform: `rotate(${15 + Math.random() * 10}deg) translateY(-30px)`,
+                opacity: Math.random() * 0.06 + 0.03,
+                borderRadius: '50% 50% 50% 50% / 95% 95% 5% 5%',
+                background: 'linear-gradient(to bottom, rgba(255, 245, 178, 0.08) 0%, rgba(255, 235, 157, 0.05) 50%, transparent 100%)',
+                animation: `sunrayFall ${50 + Math.random() * 30}s linear infinite`,
               }}
             />
           ))}
         </div>
 
-        {/* CSS Animation for realistic sun rays */}
+        {/* CSS Animation for ultra-realistic sun rays */}
         <style>{`
           @keyframes sunrayFall {
             0% {
-              transform: translateY(-120vh) rotate(var(--rotation, 12deg));
+              transform: translateY(-130vh) rotate(var(--rotation, 12deg));
               opacity: 0;
             }
-            5% {
-              opacity: var(--max-opacity, 0.4);
+            8% {
+              opacity: var(--max-opacity, 0.1);
             }
-            95% {
-              opacity: var(--max-opacity, 0.4);
+            92% {
+              opacity: var(--max-opacity, 0.1);
             }
             100% {
-              transform: translateY(120vh) rotate(var(--rotation, 12deg));
+              transform: translateY(130vh) rotate(var(--rotation, 12deg));
               opacity: 0;
-            }
-          }
-          
-          @keyframes sunrayFloat {
-            0%, 100% {
-              transform: translateX(0) rotate(var(--rotation, 12deg));
-            }
-            50% {
-              transform: translateX(5px) rotate(var(--rotation, 12deg));
             }
           }
         `}</style>

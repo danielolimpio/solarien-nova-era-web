@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
+import { Zap, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
 
 const LicenseSection = () => {
@@ -142,8 +142,8 @@ const LicenseSection = () => {
                 className="flex items-start gap-4 p-4 rounded-xl border border-solarien-primary/20 hover:border-solarien-primary/40 transition-all duration-300 hover:shadow-lg"
                 style={{ backgroundColor: '#002113' }}
               >
-                <div className="flex-shrink-0 w-6 h-6 bg-solarien-primary rounded-full flex items-center justify-center mt-0.5">
-                  <Check className="w-4 h-4 text-black" />
+                <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mt-0.5">
+                  <Zap className="w-4 h-4 text-solarien-tertiary" />
                 </div>
                 <span className="text-white text-left font-medium">{benefit}</span>
               </div>

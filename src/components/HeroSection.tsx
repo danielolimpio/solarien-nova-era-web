@@ -49,99 +49,104 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Solar Rain Animation - Gotículas de raios amarelados descendo até as placas */}
+        {/* Solar Rain Animation - Gotículas de raios amarelados mais visíveis */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Partículas principais - gotículas esticadas */}
-          {[...Array(300)].map((_, i) => (
+          {/* Partículas principais - gotículas esticadas mais visíveis */}
+          {[...Array(200)].map((_, i) => (
             <div
               key={`drop-${i}`}
-              className="absolute rounded-full bg-gradient-to-b from-yellow-400/20 via-yellow-300/15 to-amber-400/10 animate-pulse"
+              className="absolute rounded-full bg-gradient-to-b from-yellow-400/60 via-yellow-300/45 to-amber-400/30 animate-pulse"
               style={{
                 left: `${Math.random() * 120 - 10}%`,
                 top: `${Math.random() * -100}%`,
-                width: '2px',
-                height: `${Math.random() * 20 + 15}px`,
+                width: '3px',
+                height: `${Math.random() * 25 + 20}px`,
                 animationDelay: `${Math.random() * 8}s`,
                 animationDuration: `${Math.random() * 4 + 6}s`,
                 transform: `rotate(15deg)`,
-                opacity: Math.random() * 0.4 + 0.1,
+                opacity: Math.random() * 0.7 + 0.3,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                boxShadow: '0 0 10px rgba(255, 193, 7, 0.4)',
               }}
             />
           ))}
           
-          {/* Partículas médias */}
-          {[...Array(400)].map((_, i) => (
+          {/* Partículas médias mais visíveis */}
+          {[...Array(300)].map((_, i) => (
             <div
               key={`med-drop-${i}`}
-              className="absolute rounded-full bg-gradient-to-b from-yellow-300/15 via-amber-300/12 to-orange-300/8 animate-pulse"
+              className="absolute rounded-full bg-gradient-to-b from-yellow-300/50 via-amber-300/35 to-orange-300/25 animate-pulse"
               style={{
                 left: `${Math.random() * 130 - 15}%`,
                 top: `${Math.random() * -80}%`,
-                width: '1.5px',
-                height: `${Math.random() * 15 + 12}px`,
+                width: '2.5px',
+                height: `${Math.random() * 20 + 15}px`,
                 animationDelay: `${Math.random() * 10}s`,
                 animationDuration: `${Math.random() * 5 + 5}s`,
                 transform: `rotate(12deg)`,
-                opacity: Math.random() * 0.3 + 0.08,
+                opacity: Math.random() * 0.6 + 0.25,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                boxShadow: '0 0 8px rgba(255, 193, 7, 0.3)',
               }}
             />
           ))}
           
-          {/* Micro partículas - muito sutis */}
-          {[...Array(500)].map((_, i) => (
+          {/* Micro partículas mais visíveis */}
+          {[...Array(400)].map((_, i) => (
             <div
               key={`micro-drop-${i}`}
-              className="absolute rounded-full bg-gradient-to-b from-amber-200/12 via-yellow-100/8 to-orange-100/5 animate-pulse"
+              className="absolute rounded-full bg-gradient-to-b from-amber-200/40 via-yellow-100/30 to-orange-100/20 animate-pulse"
               style={{
                 left: `${Math.random() * 140 - 20}%`,
                 top: `${Math.random() * -60}%`,
-                width: '1px',
-                height: `${Math.random() * 10 + 8}px`,
+                width: '2px',
+                height: `${Math.random() * 15 + 10}px`,
                 animationDelay: `${Math.random() * 12}s`,
                 animationDuration: `${Math.random() * 6 + 7}s`,
                 transform: `rotate(18deg)`,
-                opacity: Math.random() * 0.25 + 0.05,
+                opacity: Math.random() * 0.5 + 0.2,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                boxShadow: '0 0 6px rgba(255, 193, 7, 0.2)',
               }}
             />
           ))}
           
-          {/* Partículas intensas - mais visíveis */}
-          {[...Array(150)].map((_, i) => (
+          {/* Partículas intensas - mais brilhantes */}
+          {[...Array(100)].map((_, i) => (
             <div
               key={`intense-drop-${i}`}
-              className="absolute rounded-full bg-gradient-to-b from-yellow-400/25 via-amber-400/18 to-orange-300/12 animate-pulse"
+              className="absolute rounded-full bg-gradient-to-b from-yellow-400/80 via-amber-400/60 to-orange-300/40 animate-pulse"
               style={{
                 left: `${Math.random() * 110 - 5}%`,
                 top: `${Math.random() * -90}%`,
-                width: '2.5px',
-                height: `${Math.random() * 25 + 20}px`,
+                width: '4px',
+                height: `${Math.random() * 30 + 25}px`,
                 animationDelay: `${Math.random() * 6}s`,
                 animationDuration: `${Math.random() * 3 + 4}s`,
                 transform: `rotate(10deg)`,
-                opacity: Math.random() * 0.5 + 0.2,
+                opacity: Math.random() * 0.8 + 0.4,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                boxShadow: '0 0 15px rgba(255, 193, 7, 0.6)',
               }}
             />
           ))}
 
-          {/* Partículas de fundo - cobrindo toda a extensão */}
-          {[...Array(600)].map((_, i) => (
+          {/* Partículas de fundo mais visíveis */}
+          {[...Array(500)].map((_, i) => (
             <div
               key={`bg-drop-${i}`}
-              className="absolute rounded-full bg-gradient-to-b from-amber-300/10 via-yellow-200/6 to-orange-200/4 animate-pulse"
+              className="absolute rounded-full bg-gradient-to-b from-amber-300/35 via-yellow-200/25 to-orange-200/15 animate-pulse"
               style={{
                 left: `${Math.random() * 150 - 25}%`,
                 top: `${Math.random() * -40}%`,
-                width: '0.8px',
-                height: `${Math.random() * 12 + 6}px`,
+                width: '1.5px',
+                height: `${Math.random() * 18 + 8}px`,
                 animationDelay: `${Math.random() * 15}s`,
                 animationDuration: `${Math.random() * 8 + 8}s`,
                 transform: `rotate(20deg)`,
-                opacity: Math.random() * 0.2 + 0.03,
+                opacity: Math.random() * 0.4 + 0.15,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                boxShadow: '0 0 4px rgba(255, 193, 7, 0.15)',
               }}
             />
           ))}

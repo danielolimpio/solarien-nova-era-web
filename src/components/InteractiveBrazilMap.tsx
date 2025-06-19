@@ -52,22 +52,25 @@ const InteractiveBrazilMap = () => {
               Mapa Interativo do Brasil
             </h3>
             
-            {/* Simplified Brazil Map Representation */}
-            <div className="relative bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-xl p-8 min-h-[400px] flex items-center justify-center border border-solarien-primary/30">
+            {/* Enhanced Brazil Map Representation */}
+            <div className="relative bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-xl p-8 min-h-[500px] flex items-center justify-center border border-solarien-primary/30">
               <div className="text-center text-white">
-                <div className="w-32 h-32 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4 flex items-center justify-center border-4 border-white/20">
-                  <span className="text-3xl font-bold text-black">BR</span>
+                <div className="w-40 h-40 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl mx-auto mb-4 flex items-center justify-center border-4 border-white/20 shadow-2xl">
+                  <span className="text-4xl font-bold text-black">BR</span>
                 </div>
-                <h4 className="text-xl font-semibold mb-2">Brasil</h4>
-                <p className="text-sm text-gray-300">
-                  Selecione um estado na lista ao lado para ver os detalhes
+                <h4 className="text-2xl font-semibold mb-3">Brasil</h4>
+                <p className="text-sm text-gray-300 max-w-xs mx-auto leading-relaxed">
+                  Selecione um estado na lista ao lado para ver os detalhes e simular sua economia
                 </p>
               </div>
               
-              {/* Visual Elements */}
-              <div className="absolute top-4 left-4 w-4 h-4 bg-solarien-primary rounded-full animate-pulse"></div>
-              <div className="absolute bottom-6 right-6 w-3 h-3 bg-solarien-secondary rounded-full animate-pulse delay-300"></div>
-              <div className="absolute top-1/3 right-8 w-2 h-2 bg-solarien-tertiary rounded-full animate-pulse delay-700"></div>
+              {/* Enhanced Visual Elements representing states */}
+              <div className="absolute top-6 left-6 w-5 h-5 bg-solarien-primary rounded-full animate-pulse shadow-lg"></div>
+              <div className="absolute bottom-8 right-8 w-4 h-4 bg-solarien-secondary rounded-full animate-pulse delay-300 shadow-lg"></div>
+              <div className="absolute top-1/3 right-10 w-3 h-3 bg-solarien-tertiary rounded-full animate-pulse delay-700 shadow-lg"></div>
+              <div className="absolute top-1/2 left-10 w-4 h-4 bg-solarien-primary/80 rounded-full animate-pulse delay-1000 shadow-lg"></div>
+              <div className="absolute bottom-1/3 left-16 w-3 h-3 bg-solarien-secondary/80 rounded-full animate-pulse delay-500 shadow-lg"></div>
+              <div className="absolute top-20 right-20 w-3 h-3 bg-solarien-tertiary/90 rounded-full animate-pulse delay-1200 shadow-lg"></div>
             </div>
           </div>
         </div>
@@ -134,23 +137,6 @@ const InteractiveBrazilMap = () => {
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(51, 65, 85, 0.3);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #10b981, #059669);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #059669, #047857);
-        }
-      `}</style>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +15,13 @@ const Footer = () => {
     e.preventDefault();
     console.log('Newsletter signup:', email);
     setEmail('');
-    // Add your newsletter signup logic here
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -88,23 +95,60 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-solarien-primary/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-600 text-sm mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-gray-600 text-sm">
               Copyright 2025 | Todos direitos reservados.
             </div>
             
             {/* Social Links */}
-            <div className="flex space-x-4">
-              {['Facebook', 'Instagram', 'LinkedIn', 'YouTube'].map((social) => (
-                <a
-                  key={social}
-                  href={`#${social.toLowerCase()}`}
-                  className="w-10 h-10 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
-                  aria-label={social}
-                >
-                  <div className="w-5 h-5 bg-solarien-primary/70 group-hover:bg-solarien-primary rounded transition-colors duration-300"></div>
-                </a>
-              ))}
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                aria-label="X (Twitter)"
+              >
+                <div className="w-6 h-6 bg-solarien-primary/70 group-hover:bg-solarien-primary rounded transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">X</span>
+                </div>
+              </a>
+              
+              {/* Back to Top Button */}
+              <button
+                onClick={scrollToTop}
+                className="w-12 h-12 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-lg flex items-center justify-center hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 ml-4"
+                aria-label="Voltar ao topo"
+              >
+                <ArrowUp className="w-6 h-6 text-black" />
+              </button>
             </div>
           </div>
         </div>

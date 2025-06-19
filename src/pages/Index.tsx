@@ -5,6 +5,7 @@ import AboutSection from '../components/AboutSection';
 import PartnersCarousel from '../components/PartnersCarousel';
 import BrazilMap from '../components/BrazilMap';
 import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <PartnersCarousel />
       <BrazilMap />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

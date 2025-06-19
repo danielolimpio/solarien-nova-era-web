@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -29,14 +27,14 @@ const LicenseSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-solarien-secondary/10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Target circles background */}
+      {/* Target circles background - full height */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative">
-          <div className="absolute w-96 h-96 border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px' }}></div>
-          <div className="absolute w-80 h-80 border border-[#00c26f] rounded-full opacity-25 top-8 left-8" style={{ borderWidth: '1px' }}></div>
-          <div className="absolute w-64 h-64 border border-[#00844e] rounded-full opacity-30 top-16 left-16" style={{ borderWidth: '1px' }}></div>
-          <div className="absolute w-48 h-48 border border-[#02ff91] rounded-full opacity-35 top-24 left-24" style={{ borderWidth: '1px' }}></div>
-          <div className="absolute w-32 h-32 border border-[#00c26f] rounded-full opacity-40 top-32 left-32" style={{ borderWidth: '1px' }}></div>
+          <div className="absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px', top: '-200px', left: '-200px' }}></div>
+          <div className="absolute w-[640px] h-[640px] border border-[#00c26f] rounded-full opacity-25" style={{ borderWidth: '1px', top: '-120px', left: '-120px' }}></div>
+          <div className="absolute w-[480px] h-[480px] border border-[#00844e] rounded-full opacity-30" style={{ borderWidth: '1px', top: '-40px', left: '-40px' }}></div>
+          <div className="absolute w-[320px] h-[320px] border border-[#02ff91] rounded-full opacity-35" style={{ borderWidth: '1px', top: '40px', left: '40px' }}></div>
+          <div className="absolute w-[160px] h-[160px] border border-[#00c26f] rounded-full opacity-40" style={{ borderWidth: '1px', top: '120px', left: '120px' }}></div>
         </div>
       </div>
 
@@ -104,4 +102,3 @@ const LicenseSection = () => {
 };
 
 export default LicenseSection;
-

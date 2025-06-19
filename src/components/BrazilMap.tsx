@@ -35,13 +35,23 @@ const BrazilMap = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 relative">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          alt="Modern building" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-solarien-primary/10 via-white/90 to-solarien-secondary/10"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient">Cobertura</span> Nacional
+            <span className="text-gradient">Cobertura</span> <span className="text-gray-800">Nacional</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Descubra o desconto disponível em seu estado e a distribuidora parceira
           </p>
         </div>
@@ -49,14 +59,14 @@ const BrazilMap = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Map Placeholder */}
           <div className="relative">
-            <div className="bg-card/30 backdrop-blur-sm border border-border rounded-2xl p-8 energy-glow">
+            <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-8 shadow-lg">
               <div className="aspect-square bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-24 h-24 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
                     <span className="text-2xl font-bold text-black">BR</span>
                   </div>
                   <h3 className="text-xl font-bold text-gradient mb-2">Mapa Interativo do Brasil</h3>
-                  <p className="text-gray-400">Clique em um estado da lista para ver os detalhes</p>
+                  <p className="text-gray-600">Clique em um estado da lista para ver os detalhes</p>
                 </div>
                 
                 {/* Animated particles */}
@@ -73,20 +83,20 @@ const BrazilMap = () => {
               <div
                 key={state.code}
                 onClick={() => setSelectedState(state)}
-                className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 hover:scale-102 ${
+                className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 hover:scale-102 shadow-sm ${
                   selectedState?.code === state.code
                     ? 'bg-solarien-primary/20 border-solarien-primary'
-                    : 'bg-card/50 border-border hover:bg-solarien-primary/10 hover:border-solarien-primary/30'
+                    : 'bg-white/90 border-solarien-primary/20 hover:bg-solarien-primary/10 hover:border-solarien-primary/30'
                 }`}
               >
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="font-semibold text-white">{state.name}</h3>
-                    <p className="text-sm text-gray-400">{state.distributor}</p>
+                    <h3 className="font-semibold text-gray-800">{state.name}</h3>
+                    <p className="text-sm text-gray-600">{state.distributor}</p>
                   </div>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-solarien-primary">{state.discount}</div>
-                    <div className="text-xs text-gray-400">desconto</div>
+                    <div className="text-xs text-gray-500">desconto</div>
                   </div>
                 </div>
               </div>
@@ -95,17 +105,17 @@ const BrazilMap = () => {
         </div>
 
         {selectedState && (
-          <div className="mt-12 bg-card/50 backdrop-blur-sm border border-solarien-primary/30 rounded-2xl p-8 animate-slide-up">
+          <div className="mt-12 bg-white/90 backdrop-blur-sm border border-solarien-primary/30 rounded-2xl p-8 animate-slide-up shadow-lg">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-gradient mb-4">{selectedState.name}</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-solarien-primary mb-2">{selectedState.discount}</div>
-                  <div className="text-gray-400">Desconto Garantido</div>
+                  <div className="text-gray-600">Desconto Garantido</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-white mb-2">{selectedState.distributor}</div>
-                  <div className="text-gray-400">Distribuidora Parceira</div>
+                  <div className="text-lg font-semibold text-gray-800 mb-2">{selectedState.distributor}</div>
+                  <div className="text-gray-600">Distribuidora Parceira</div>
                 </div>
                 <div className="text-center">
                   <button className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300">
@@ -124,7 +134,7 @@ const BrazilMap = () => {
             width: 6px;
           }
           .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(30, 41, 59, 0.5);
+            background: rgba(248, 250, 252, 0.5);
             border-radius: 3px;
           }
           .custom-scrollbar::-webkit-scrollbar-thumb {

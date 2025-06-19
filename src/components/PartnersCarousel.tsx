@@ -18,13 +18,23 @@ const PartnersCarousel = () => {
   }, [partners.length]);
 
   return (
-    <section className="py-20 bg-energy-gradient">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          alt="Technology background" 
+          className="w-full h-full object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-solarien-primary/5"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient">Parceiros</span> Distribuidoras
+            <span className="text-gradient">Parceiros</span> <span className="text-gray-800">Distribuidoras</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Conectamos você às principais distribuidoras de energia do Brasil
           </p>
         </div>
@@ -40,12 +50,12 @@ const PartnersCarousel = () => {
                   {partners.slice(slideIndex * 5, (slideIndex + 1) * 5).map((partner, index) => (
                     <div 
                       key={partner}
-                      className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/30 transition-all duration-300 transform hover:scale-105 cursor-pointer group"
+                      className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg"
                     >
                       <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:from-solarien-primary/40 group-hover:to-solarien-secondary/40 transition-all duration-300">
                         <div className="w-8 h-8 bg-solarien-primary rounded opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
-                      <h3 className="font-semibold text-white group-hover:text-solarien-primary transition-colors duration-300">
+                      <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300">
                         {partner}
                       </h3>
                     </div>
@@ -63,7 +73,7 @@ const PartnersCarousel = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? 'bg-solarien-primary' : 'bg-gray-600'
+                index === currentIndex ? 'bg-solarien-primary' : 'bg-gray-300'
               }`}
             />
           ))}

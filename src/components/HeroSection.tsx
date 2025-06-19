@@ -23,7 +23,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 pt-32 md:pt-20">
+      <div className="relative z-10 text-center px-4 pt-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight">
             A <span className="text-gradient">Energia Solar</span><br />

@@ -48,7 +48,8 @@ const LicenseSection = () => {
             {benefits.map((benefit, index) => (
               <div 
                 key={index}
-                className="flex items-start gap-4 p-4 bg-gray-800 rounded-xl border border-solarien-primary/20 hover:border-solarien-primary/40 transition-all duration-300 hover:shadow-lg"
+                className="flex items-start gap-4 p-4 rounded-xl border border-solarien-primary/20 hover:border-solarien-primary/40 transition-all duration-300 hover:shadow-lg"
+                style={{ backgroundColor: '#002113' }}
               >
                 <div className="flex-shrink-0 w-6 h-6 bg-solarien-primary rounded-full flex items-center justify-center mt-0.5">
                   <Check className="w-4 h-4 text-black" />

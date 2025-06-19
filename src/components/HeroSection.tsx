@@ -49,32 +49,76 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Cosmic Rays Animation */}
+        {/* Solar Rain Animation - Thousands of subtle rays */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(50)].map((_, i) => (
+          {/* Main solar rays - thin lines */}
+          {[...Array(200)].map((_, i) => (
             <div
-              key={i}
-              className="absolute w-[1px] bg-gradient-to-b from-solarien-primary/60 via-solarien-secondary/40 to-transparent animate-pulse"
+              key={`main-ray-${i}`}
+              className="absolute bg-gradient-to-b from-[#02ff91]/20 via-[#02ff91]/10 to-transparent animate-pulse"
               style={{
-                left: `${Math.random() * 100}%`,
-                height: `${Math.random() * 200 + 100}px`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${Math.random() * 2 + 2}s`,
-                transform: `rotate(${Math.random() * 20 - 10}deg)`,
+                left: `${Math.random() * 120 - 10}%`,
+                top: `${Math.random() * -100}%`,
+                width: '1px',
+                height: `${Math.random() * 150 + 100}px`,
+                animationDelay: `${Math.random() * 8}s`,
+                animationDuration: `${Math.random() * 4 + 3}s`,
+                transform: `rotate(15deg)`,
+                opacity: Math.random() * 0.6 + 0.2,
               }}
             />
           ))}
           
-          {[...Array(30)].map((_, i) => (
+          {/* Secondary layer - micro particles */}
+          {[...Array(300)].map((_, i) => (
             <div
-              key={`ray-${i}`}
-              className="absolute w-[2px] h-32 bg-gradient-to-b from-solarien-primary/30 to-transparent animate-pulse opacity-70"
+              key={`micro-ray-${i}`}
+              className="absolute bg-gradient-to-b from-[#00c26f]/15 via-[#00c26f]/8 to-transparent animate-pulse"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * -50}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${Math.random() * 3 + 1}s`,
-                transform: `rotate(${Math.random() * 15 - 7.5}deg)`,
+                left: `${Math.random() * 120 - 10}%`,
+                top: `${Math.random() * -150}%`,
+                width: '0.5px',
+                height: `${Math.random() * 80 + 60}px`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${Math.random() * 5 + 2}s`,
+                transform: `rotate(12deg)`,
+                opacity: Math.random() * 0.4 + 0.1,
+              }}
+            />
+          ))}
+          
+          {/* Background particles - very subtle */}
+          {[...Array(400)].map((_, i) => (
+            <div
+              key={`bg-particle-${i}`}
+              className="absolute bg-gradient-to-b from-[#00844e]/10 via-[#00844e]/5 to-transparent animate-pulse"
+              style={{
+                left: `${Math.random() * 130 - 15}%`,
+                top: `${Math.random() * -200}%`,
+                width: '0.3px',
+                height: `${Math.random() * 40 + 30}px`,
+                animationDelay: `${Math.random() * 12}s`,
+                animationDuration: `${Math.random() * 6 + 4}s`,
+                transform: `rotate(18deg)`,
+                opacity: Math.random() * 0.3 + 0.05,
+              }}
+            />
+          ))}
+          
+          {/* Foreground intense rays */}
+          {[...Array(100)].map((_, i) => (
+            <div
+              key={`intense-ray-${i}`}
+              className="absolute bg-gradient-to-b from-[#02ff91]/30 via-[#00c26f]/20 to-transparent animate-pulse"
+              style={{
+                left: `${Math.random() * 110 - 5}%`,
+                top: `${Math.random() * -80}%`,
+                width: '1.5px',
+                height: `${Math.random() * 200 + 120}px`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${Math.random() * 3 + 2}s`,
+                transform: `rotate(10deg)`,
+                opacity: Math.random() * 0.8 + 0.3,
               }}
             />
           ))}
@@ -82,9 +126,9 @@ const HeroSection = () => {
 
         {/* Enhanced Energy Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-solarien-primary/30 via-solarien-primary/15 to-transparent rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-radial from-solarien-secondary/20 via-solarien-secondary/10 to-transparent rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-radial from-solarien-tertiary/15 via-solarien-tertiary/8 to-transparent rounded-full blur-xl animate-pulse delay-2000"></div>
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-[#02ff91]/30 via-[#02ff91]/15 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-radial from-[#00c26f]/20 via-[#00c26f]/10 to-transparent rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-radial from-[#00844e]/15 via-[#00844e]/8 to-transparent rounded-full blur-xl animate-pulse delay-2000"></div>
         </div>
 
         {/* Content */}

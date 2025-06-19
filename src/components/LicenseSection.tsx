@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -66,20 +67,20 @@ const LicenseSection = () => {
           {/* Icons below the button */}
           <div className="flex justify-center items-center gap-8 mt-8">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse">
-                <Shield className="w-8 h-8 text-black" />
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse">
+                <Shield className="w-4 h-4 text-black" />
               </div>
               <span className="text-gray-700 text-sm font-medium">Segurança</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-300">
-                <ShieldCheck className="w-8 h-8 text-black" />
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-300">
+                <ShieldCheck className="w-4 h-4 text-black" />
               </div>
               <span className="text-gray-700 text-sm font-medium">Garantia</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-500">
-                <BadgeCheck className="w-8 h-8 text-black" />
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-500">
+                <BadgeCheck className="w-4 h-4 text-black" />
               </div>
               <span className="text-gray-700 text-sm font-medium">Autenticidade</span>
             </div>

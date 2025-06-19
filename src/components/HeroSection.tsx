@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 
@@ -48,88 +49,88 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Solar Rain Animation - Partículas mais finas e sutis */}
+        {/* Solar Rain Animation - Raios ultra finos e sutis */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Partículas principais - linhas mais finas */}
-          {[...Array(100)].map((_, i) => (
+          {/* Partículas principais - raios muito finos */}
+          {[...Array(80)].map((_, i) => (
             <div
               key={`drop-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-300/40 via-yellow-200/30 to-amber-200/20"
+              className="absolute bg-gradient-to-b from-yellow-300/25 via-yellow-200/20 to-amber-200/15"
               style={{
                 left: `${Math.random() * 120 - 10}%`,
                 top: `${Math.random() * -100}%`,
-                width: '1.5px',
-                height: `${Math.random() * 20 + 15}px`,
-                animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${Math.random() * 4 + 6}s`,
+                width: '0.8px',
+                height: `${Math.random() * 15 + 12}px`,
+                animationDelay: `${Math.random() * 12}s`,
+                animationDuration: `${Math.random() * 8 + 12}s`,
                 transform: `rotate(15deg)`,
-                opacity: Math.random() * 0.2 + 0.3,
+                opacity: Math.random() * 0.15 + 0.2,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                boxShadow: '0 0 8px rgba(255, 193, 7, 0.2)',
-                animation: `fall ${Math.random() * 4 + 6}s linear infinite`,
+                boxShadow: '0 0 4px rgba(255, 193, 7, 0.1)',
+                animation: `fall ${Math.random() * 8 + 12}s linear infinite`,
               }}
             />
           ))}
           
           {/* Partículas médias mais sutis */}
-          {[...Array(150)].map((_, i) => (
+          {[...Array(120)].map((_, i) => (
             <div
               key={`med-drop-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-200/35 via-amber-200/25 to-orange-200/15"
+              className="absolute bg-gradient-to-b from-yellow-200/20 via-amber-200/15 to-orange-200/10"
               style={{
                 left: `${Math.random() * 130 - 15}%`,
                 top: `${Math.random() * -80}%`,
-                width: '1px',
-                height: `${Math.random() * 18 + 12}px`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${Math.random() * 5 + 5}s`,
+                width: '0.6px',
+                height: `${Math.random() * 12 + 8}px`,
+                animationDelay: `${Math.random() * 15}s`,
+                animationDuration: `${Math.random() * 10 + 15}s`,
                 transform: `rotate(12deg)`,
-                opacity: Math.random() * 0.15 + 0.25,
+                opacity: Math.random() * 0.1 + 0.15,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                boxShadow: '0 0 6px rgba(255, 193, 7, 0.15)',
-                animation: `fall ${Math.random() * 5 + 5}s linear infinite`,
+                boxShadow: '0 0 3px rgba(255, 193, 7, 0.08)',
+                animation: `fall ${Math.random() * 10 + 15}s linear infinite`,
               }}
             />
           ))}
           
-          {/* Micro partículas muito sutis */}
-          {[...Array(200)].map((_, i) => (
+          {/* Micro partículas ultra sutis */}
+          {[...Array(150)].map((_, i) => (
             <div
               key={`micro-drop-${i}`}
-              className="absolute bg-gradient-to-b from-amber-100/30 via-yellow-100/20 to-orange-100/10"
+              className="absolute bg-gradient-to-b from-amber-100/18 via-yellow-100/12 to-orange-100/8"
               style={{
                 left: `${Math.random() * 140 - 20}%`,
                 top: `${Math.random() * -60}%`,
-                width: '0.8px',
-                height: `${Math.random() * 15 + 10}px`,
-                animationDelay: `${Math.random() * 12}s`,
-                animationDuration: `${Math.random() * 6 + 7}s`,
+                width: '0.4px',
+                height: `${Math.random() * 10 + 6}px`,
+                animationDelay: `${Math.random() * 18}s`,
+                animationDuration: `${Math.random() * 12 + 18}s`,
                 transform: `rotate(18deg)`,
-                opacity: Math.random() * 0.1 + 0.2,
+                opacity: Math.random() * 0.08 + 0.12,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                boxShadow: '0 0 4px rgba(255, 193, 7, 0.1)',
-                animation: `fall ${Math.random() * 6 + 7}s linear infinite`,
+                boxShadow: '0 0 2px rgba(255, 193, 7, 0.05)',
+                animation: `fall ${Math.random() * 12 + 18}s linear infinite`,
               }}
             />
           ))}
           
-          {/* Algumas partículas um pouco mais visíveis para destaque sutil */}
-          {[...Array(50)].map((_, i) => (
+          {/* Algumas partículas levemente mais visíveis para destaque muito sutil */}
+          {[...Array(30)].map((_, i) => (
             <div
               key={`accent-drop-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-300/50 via-amber-300/40 to-orange-200/30"
+              className="absolute bg-gradient-to-b from-yellow-300/30 via-amber-300/25 to-orange-200/20"
               style={{
                 left: `${Math.random() * 110 - 5}%`,
                 top: `${Math.random() * -90}%`,
-                width: '2px',
-                height: `${Math.random() * 25 + 20}px`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${Math.random() * 3 + 4}s`,
+                width: '1px',
+                height: `${Math.random() * 18 + 15}px`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${Math.random() * 6 + 8}s`,
                 transform: `rotate(10deg)`,
-                opacity: Math.random() * 0.2 + 0.4,
+                opacity: Math.random() * 0.15 + 0.25,
                 borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                boxShadow: '0 0 10px rgba(255, 193, 7, 0.25)',
-                animation: `fall ${Math.random() * 3 + 4}s linear infinite`,
+                boxShadow: '0 0 6px rgba(255, 193, 7, 0.15)',
+                animation: `fall ${Math.random() * 6 + 8}s linear infinite`,
               }}
             />
           ))}

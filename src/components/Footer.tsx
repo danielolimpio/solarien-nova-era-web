@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 
@@ -25,11 +26,11 @@ const Footer = () => {
 
   return (
     <footer className="border-t relative overflow-hidden" style={{ backgroundColor: '#002113', borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
-      {/* Solar Plant Background Image */}
+      {/* Solar Panels Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-          alt="Usina Solar"
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="Placas Solares"
           className="w-full h-full object-cover opacity-30"
         />
       </div>

@@ -49,94 +49,99 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Solar Rain Animation - Milhares de raios amarelados descendo até as placas */}
+        {/* Solar Rain Animation - Gotículas de raios amarelados descendo até as placas */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Raios principais - tom amarelado descendo até as placas */}
-          {[...Array(400)].map((_, i) => (
+          {/* Partículas principais - gotículas esticadas */}
+          {[...Array(300)].map((_, i) => (
             <div
-              key={`main-ray-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-400/30 via-yellow-300/20 via-amber-400/15 to-orange-300/10 animate-pulse"
+              key={`drop-${i}`}
+              className="absolute rounded-full bg-gradient-to-b from-yellow-400/20 via-yellow-300/15 to-amber-400/10 animate-pulse"
               style={{
                 left: `${Math.random() * 120 - 10}%`,
-                top: `${Math.random() * -50}%`,
-                width: '1px',
-                height: `${Math.random() * 300 + 200}px`,
+                top: `${Math.random() * -100}%`,
+                width: '2px',
+                height: `${Math.random() * 20 + 15}px`,
                 animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${Math.random() * 4 + 4}s`,
+                animationDuration: `${Math.random() * 4 + 6}s`,
                 transform: `rotate(15deg)`,
-                opacity: Math.random() * 0.7 + 0.3,
+                opacity: Math.random() * 0.4 + 0.1,
+                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
               }}
             />
           ))}
           
-          {/* Raios secundários - mais sutis e longos */}
-          {[...Array(600)].map((_, i) => (
+          {/* Partículas médias */}
+          {[...Array(400)].map((_, i) => (
             <div
-              key={`secondary-ray-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-300/25 via-amber-300/15 via-yellow-200/10 to-orange-200/8 animate-pulse"
+              key={`med-drop-${i}`}
+              className="absolute rounded-full bg-gradient-to-b from-yellow-300/15 via-amber-300/12 to-orange-300/8 animate-pulse"
               style={{
                 left: `${Math.random() * 130 - 15}%`,
-                top: `${Math.random() * -30}%`,
-                width: '0.8px',
-                height: `${Math.random() * 400 + 250}px`,
+                top: `${Math.random() * -80}%`,
+                width: '1.5px',
+                height: `${Math.random() * 15 + 12}px`,
                 animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${Math.random() * 5 + 3}s`,
+                animationDuration: `${Math.random() * 5 + 5}s`,
                 transform: `rotate(12deg)`,
-                opacity: Math.random() * 0.5 + 0.2,
+                opacity: Math.random() * 0.3 + 0.08,
+                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
               }}
             />
           ))}
           
-          {/* Micro partículas - muito sutis descendo até o fundo */}
-          {[...Array(800)].map((_, i) => (
+          {/* Micro partículas - muito sutis */}
+          {[...Array(500)].map((_, i) => (
             <div
-              key={`micro-particle-${i}`}
-              className="absolute bg-gradient-to-b from-amber-200/20 via-yellow-100/12 via-orange-100/8 to-yellow-50/5 animate-pulse"
+              key={`micro-drop-${i}`}
+              className="absolute rounded-full bg-gradient-to-b from-amber-200/12 via-yellow-100/8 to-orange-100/5 animate-pulse"
               style={{
                 left: `${Math.random() * 140 - 20}%`,
-                top: `${Math.random() * -20}%`,
-                width: '0.5px',
-                height: `${Math.random() * 500 + 300}px`,
+                top: `${Math.random() * -60}%`,
+                width: '1px',
+                height: `${Math.random() * 10 + 8}px`,
                 animationDelay: `${Math.random() * 12}s`,
-                animationDuration: `${Math.random() * 6 + 5}s`,
+                animationDuration: `${Math.random() * 6 + 7}s`,
                 transform: `rotate(18deg)`,
-                opacity: Math.random() * 0.4 + 0.1,
+                opacity: Math.random() * 0.25 + 0.05,
+                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
               }}
             />
           ))}
           
-          {/* Raios intensos - mais visíveis atingindo as placas */}
-          {[...Array(200)].map((_, i) => (
+          {/* Partículas intensas - mais visíveis */}
+          {[...Array(150)].map((_, i) => (
             <div
-              key={`intense-ray-${i}`}
-              className="absolute bg-gradient-to-b from-yellow-400/40 via-amber-400/25 via-yellow-300/15 to-orange-300/12 animate-pulse"
+              key={`intense-drop-${i}`}
+              className="absolute rounded-full bg-gradient-to-b from-yellow-400/25 via-amber-400/18 to-orange-300/12 animate-pulse"
               style={{
                 left: `${Math.random() * 110 - 5}%`,
-                top: `${Math.random() * -40}%`,
-                width: '1.2px',
-                height: `${Math.random() * 350 + 280}px`,
+                top: `${Math.random() * -90}%`,
+                width: '2.5px',
+                height: `${Math.random() * 25 + 20}px`,
                 animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${Math.random() * 3 + 3}s`,
+                animationDuration: `${Math.random() * 3 + 4}s`,
                 transform: `rotate(10deg)`,
-                opacity: Math.random() * 0.8 + 0.4,
+                opacity: Math.random() * 0.5 + 0.2,
+                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
               }}
             />
           ))}
 
-          {/* Raios de fundo - cobrindo toda a extensão até as placas */}
-          {[...Array(500)].map((_, i) => (
+          {/* Partículas de fundo - cobrindo toda a extensão */}
+          {[...Array(600)].map((_, i) => (
             <div
-              key={`bg-ray-${i}`}
-              className="absolute bg-gradient-to-b from-amber-300/15 via-yellow-200/10 via-orange-200/8 to-yellow-100/6 animate-pulse"
+              key={`bg-drop-${i}`}
+              className="absolute rounded-full bg-gradient-to-b from-amber-300/10 via-yellow-200/6 to-orange-200/4 animate-pulse"
               style={{
                 left: `${Math.random() * 150 - 25}%`,
-                top: `${Math.random() * -10}%`,
-                width: '0.3px',
-                height: `${Math.random() * 600 + 400}px`,
+                top: `${Math.random() * -40}%`,
+                width: '0.8px',
+                height: `${Math.random() * 12 + 6}px`,
                 animationDelay: `${Math.random() * 15}s`,
-                animationDuration: `${Math.random() * 8 + 6}s`,
+                animationDuration: `${Math.random() * 8 + 8}s`,
                 transform: `rotate(20deg)`,
-                opacity: Math.random() * 0.3 + 0.08,
+                opacity: Math.random() * 0.2 + 0.03,
+                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
               }}
             />
           ))}

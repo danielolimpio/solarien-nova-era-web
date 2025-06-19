@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const SolarPlantsCarousel = () => {
@@ -10,7 +9,7 @@ const SolarPlantsCarousel = () => {
       name: 'Complexo Solar Bahia',
       location: 'Bahia, Brasil',
       capacity: '850 MW',
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/d9ff5b49-3fe5-4226-84bc-5c6cf3cf15eb.png',
       description: 'Uma das maiores fazendas solares do Nordeste brasileiro com tecnologia de ponta'
     },
     {
@@ -18,7 +17,7 @@ const SolarPlantsCarousel = () => {
       name: 'Fazenda Solar Ceará',
       location: 'Ceará, Brasil',
       capacity: '1.2 GW',
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/dd9f3c27-a8e2-4f99-9259-9be8edb3a44f.png',
       description: 'Complexo de energia solar de grande escala com milhares de painéis fotovoltaicos'
     },
     {
@@ -26,7 +25,7 @@ const SolarPlantsCarousel = () => {
       name: 'Parque Solar Minas',
       location: 'Minas Gerais, Brasil',
       capacity: '675 MW',
-      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/f03a9e0a-3305-4975-be71-a61f25d76fbc.png',
       description: 'Fazenda solar de grande porte gerando energia limpa para centenas de milhares de residências'
     },
     {
@@ -34,7 +33,7 @@ const SolarPlantsCarousel = () => {
       name: 'Solar Farm São Paulo',
       location: 'São Paulo, Brasil',
       capacity: '950 MW',
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/3e5c2fc7-f605-4bcb-a0e6-401d009716ec.png',
       description: 'Instalação solar industrial de grande escala no interior paulista'
     },
     {
@@ -42,7 +41,7 @@ const SolarPlantsCarousel = () => {
       name: 'Usina Pernambuco',
       location: 'Pernambuco, Brasil',
       capacity: '780 MW',
-      image: 'https://images.unsplash.com/photo-1562804698-94ab4a37cb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      image: '/lovable-uploads/7af34aca-57a1-464a-b3a9-6b2a8d383e5a.png',
       description: 'Complexo fotovoltaico de grande porte contribuindo para o desenvolvimento regional'
     }
   ];

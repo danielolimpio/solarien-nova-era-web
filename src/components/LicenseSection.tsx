@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -26,6 +27,17 @@ const LicenseSection = () => {
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-solarien-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-solarien-secondary/10 rounded-full blur-2xl"></div>
+      </div>
+
+      {/* Target circles background */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative">
+          <div className="absolute w-96 h-96 border border-[#02ff91] rounded-full opacity-20" style={{ borderWidth: '1px' }}></div>
+          <div className="absolute w-80 h-80 border border-[#00c26f] rounded-full opacity-25 top-8 left-8" style={{ borderWidth: '1px' }}></div>
+          <div className="absolute w-64 h-64 border border-[#00844e] rounded-full opacity-30 top-16 left-16" style={{ borderWidth: '1px' }}></div>
+          <div className="absolute w-48 h-48 border border-[#02ff91] rounded-full opacity-35 top-24 left-24" style={{ borderWidth: '1px' }}></div>
+          <div className="absolute w-32 h-32 border border-[#00c26f] rounded-full opacity-40 top-32 left-32" style={{ borderWidth: '1px' }}></div>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -92,3 +104,4 @@ const LicenseSection = () => {
 };
 
 export default LicenseSection;
+

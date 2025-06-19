@@ -5,9 +5,42 @@ const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const partners = [
-    'CPFL Energia', 'Light', 'Enel', 'Equatorial', 'Energisa',
-    'RGE', 'Copel', 'Cemig', 'AES', 'Neoenergia',
-    'EDP', 'Eletrobras', 'DME', 'Sulgás', 'CEEE'
+    {
+      name: 'CPFL Energia',
+      logo: '/lovable-uploads/e3658109-3b3e-4c5d-b1d4-3dc59ab8cdd3.png'
+    },
+    {
+      name: 'Enel',
+      logo: '/lovable-uploads/4ba25f0c-48df-448c-bc43-ef950a861b83.png'
+    },
+    {
+      name: 'Equatorial',
+      logo: '/lovable-uploads/37c6cbac-89ea-4a8b-a8c2-4b4920db0e91.png'
+    },
+    {
+      name: 'Energisa',
+      logo: '/lovable-uploads/a6cf21ff-4709-40dd-ad43-dfddc9efc2b1.png'
+    },
+    {
+      name: 'Copel',
+      logo: '/lovable-uploads/b1cd18e3-0db0-44b7-a87a-08e9e9598387.png'
+    },
+    {
+      name: 'Cemig',
+      logo: '/lovable-uploads/e209420d-ae97-4ae5-a886-589a6cbe5bfd.png'
+    },
+    {
+      name: 'Neoenergia',
+      logo: '/lovable-uploads/a63a765e-b3b7-47b9-8823-a554fbacaaf5.png'
+    },
+    {
+      name: 'Celesc',
+      logo: '/lovable-uploads/d828b2af-a1c3-491b-99f9-a63a6d3d2e7f.png'
+    },
+    {
+      name: 'Coelba',
+      logo: '/lovable-uploads/bd5aafb2-99d6-4f3e-a189-759b2a83ae1f.png'
+    }
   ];
 
   useEffect(() => {
@@ -49,14 +82,18 @@ const PartnersCarousel = () => {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                   {partners.slice(slideIndex * 5, (slideIndex + 1) * 5).map((partner, index) => (
                     <div 
-                      key={partner}
+                      key={partner.name}
                       className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg"
                     >
-                      <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:from-solarien-primary/40 group-hover:to-solarien-secondary/40 transition-all duration-300">
-                        <div className="w-8 h-8 bg-solarien-primary rounded opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <img 
+                          src={partner.logo} 
+                          alt={partner.name}
+                          className="max-w-full max-h-full object-contain"
+                        />
                       </div>
-                      <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300">
-                        {partner}
+                      <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300 text-sm">
+                        {partner.name}
                       </h3>
                     </div>
                   ))}

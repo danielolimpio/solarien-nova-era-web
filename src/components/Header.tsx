@@ -14,6 +14,25 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const menuItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'Sobre', id: 'sobre' },
+    { name: 'Serviços', id: 'servicos' },
+    { name: 'Licenciado', id: 'licenciado' },
+    { name: 'Contato', id: 'contato' }
+  ];
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-background/95 backdrop-blur-md border-b border-border' : 'bg-transparent'
@@ -30,14 +49,14 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {['Home', 'Sobre', 'Serviços', 'Licenciado', 'Contato'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+            {menuItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleScrollToSection(item.id)}
                 className="nav-hover px-4 py-2 rounded-lg transition-all duration-300 hover:text-solarien-primary font-medium"
               >
-                {item}
-              </a>
+                {item.name}
+              </button>
             ))}
           </nav>
 
@@ -64,15 +83,14 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-md border-b border-border">
             <nav className="flex flex-col p-4 space-y-2">
-              {['Home', 'Sobre', 'Serviços', 'Licenciado', 'Contato'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="p-3 rounded-lg hover:bg-solarien-primary/10 transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
+              {menuItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleScrollToSection(item.id)}
+                  className="p-3 rounded-lg hover:bg-solarien-primary/10 transition-colors duration-300 text-left"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <button className="p-3 text-solarien-primary hover:bg-solarien-primary/10 rounded-lg transition-colors duration-300">

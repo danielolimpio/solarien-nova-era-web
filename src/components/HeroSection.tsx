@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 
@@ -63,9 +64,9 @@ const HeroSection = () => {
                 animationDelay: `${Math.random() * 40}s`,
                 animationDuration: `${35 + Math.random() * 25}s`,
                 transform: `rotate(${12 + Math.random() * 8}deg) translateY(-60px)`,
-                opacity: Math.random() * 0.08 + 0.05,
+                opacity: Math.random() * 0.15 + 0.10,
                 borderRadius: '50% 50% 50% 50% / 90% 90% 10% 10%',
-                background: 'linear-gradient(to bottom, rgba(255, 215, 0, 0.12) 0%, rgba(255, 223, 127, 0.08) 25%, rgba(255, 235, 157, 0.05) 60%, transparent 100%)',
+                background: 'linear-gradient(to bottom, rgba(255, 215, 0, 0.18) 0%, rgba(255, 223, 127, 0.12) 25%, rgba(255, 235, 157, 0.08) 60%, transparent 100%)',
                 animation: `sunrayFall ${35 + Math.random() * 25}s linear infinite`,
               }}
             />
@@ -84,9 +85,9 @@ const HeroSection = () => {
                 animationDelay: `${Math.random() * 30}s`,
                 animationDuration: `${25 + Math.random() * 20}s`,
                 transform: `rotate(${10 + Math.random() * 6}deg) translateY(-45px)`,
-                opacity: Math.random() * 0.12 + 0.08,
+                opacity: Math.random() * 0.18 + 0.12,
                 borderRadius: '50% 50% 50% 50% / 85% 85% 15% 15%',
-                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.15) 0%, rgba(255, 215, 0, 0.12) 20%, rgba(255, 223, 127, 0.08) 50%, rgba(255, 235, 157, 0.04) 80%, transparent 100%)',
+                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.22) 0%, rgba(255, 215, 0, 0.18) 20%, rgba(255, 223, 127, 0.14) 50%, rgba(255, 235, 157, 0.08) 80%, transparent 100%)',
                 animation: `sunrayFall ${25 + Math.random() * 20}s linear infinite`,
               }}
             />
@@ -105,9 +106,9 @@ const HeroSection = () => {
                 animationDelay: `${Math.random() * 50}s`,
                 animationDuration: `${20 + Math.random() * 15}s`,
                 transform: `rotate(${8 + Math.random() * 4}deg) translateY(-50px)`,
-                opacity: Math.random() * 0.15 + 0.1,
+                opacity: Math.random() * 0.20 + 0.15,
                 borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
-                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.18) 0%, rgba(255, 215, 0, 0.14) 15%, rgba(255, 223, 127, 0.1) 40%, rgba(255, 235, 157, 0.06) 70%, transparent 100%)',
+                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.25) 0%, rgba(255, 215, 0, 0.20) 15%, rgba(255, 223, 127, 0.15) 40%, rgba(255, 235, 157, 0.10) 70%, transparent 100%)',
                 animation: `sunrayFall ${20 + Math.random() * 15}s linear infinite`,
               }}
             />
@@ -126,9 +127,9 @@ const HeroSection = () => {
                 animationDelay: `${Math.random() * 60}s`,
                 animationDuration: `${50 + Math.random() * 30}s`,
                 transform: `rotate(${15 + Math.random() * 10}deg) translateY(-30px)`,
-                opacity: Math.random() * 0.06 + 0.03,
+                opacity: Math.random() * 0.10 + 0.08,
                 borderRadius: '50% 50% 50% 50% / 95% 95% 5% 5%',
-                background: 'linear-gradient(to bottom, rgba(255, 245, 178, 0.08) 0%, rgba(255, 235, 157, 0.05) 50%, transparent 100%)',
+                background: 'linear-gradient(to bottom, rgba(255, 245, 178, 0.12) 0%, rgba(255, 235, 157, 0.08) 50%, transparent 100%)',
                 animation: `sunrayFall ${50 + Math.random() * 30}s linear infinite`,
               }}
             />
@@ -143,10 +144,10 @@ const HeroSection = () => {
               opacity: 0;
             }
             8% {
-              opacity: var(--max-opacity, 0.1);
+              opacity: var(--max-opacity, 0.15);
             }
             92% {
-              opacity: var(--max-opacity, 0.1);
+              opacity: var(--max-opacity, 0.15);
             }
             100% {
               transform: translateY(130vh) rotate(var(--rotation, 12deg));

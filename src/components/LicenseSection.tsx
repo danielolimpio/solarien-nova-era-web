@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -31,35 +30,65 @@ const LicenseSection = () => {
       {/* Target circles background - positioned below "BENEFÍCIOS" text */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative" style={{ top: '120px' }}>
-          <div className="absolute w-[1200px] h-[1200px] border border-[#02ff91] rounded-full opacity-15 animate-pulse" style={{ 
+          <div className="absolute w-[1400px] h-[1400px] border border-[#02ff91] rounded-full opacity-10" style={{ 
+            borderWidth: '1px', 
+            left: '-700px', 
+            top: '-300px',
+            animation: 'target-pulse 4s ease-in-out infinite'
+          }}></div>
+          <div className="absolute w-[1200px] h-[1200px] border border-[#00c26f] rounded-full opacity-12" style={{ 
             borderWidth: '1px', 
             left: '-600px', 
             top: '-200px',
-            animation: 'target-pulse 4s ease-in-out infinite'
+            animation: 'target-pulse 4s ease-in-out infinite 0.4s'
           }}></div>
-          <div className="absolute w-[960px] h-[960px] border border-[#00c26f] rounded-full opacity-20" style={{ 
+          <div className="absolute w-[1000px] h-[1000px] border border-[#00844e] rounded-full opacity-15" style={{ 
             borderWidth: '1px', 
-            left: '-480px', 
-            top: '-80px',
+            left: '-500px', 
+            top: '-100px',
             animation: 'target-pulse 4s ease-in-out infinite 0.8s'
           }}></div>
-          <div className="absolute w-[720px] h-[720px] border border-[#00844e] rounded-full opacity-25" style={{ 
+          <div className="absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-18" style={{ 
             borderWidth: '1px', 
-            left: '-360px', 
-            top: '40px',
+            left: '-400px', 
+            top: '0px',
+            animation: 'target-pulse 4s ease-in-out infinite 1.2s'
+          }}></div>
+          <div className="absolute w-[640px] h-[640px] border border-[#00c26f] rounded-full opacity-20" style={{ 
+            borderWidth: '1px', 
+            left: '-320px', 
+            top: '80px',
             animation: 'target-pulse 4s ease-in-out infinite 1.6s'
           }}></div>
-          <div className="absolute w-[480px] h-[480px] border border-[#02ff91] rounded-full opacity-30" style={{ 
+          <div className="absolute w-[480px] h-[480px] border border-[#00844e] rounded-full opacity-25" style={{ 
             borderWidth: '1px', 
             left: '-240px', 
             top: '160px',
+            animation: 'target-pulse 4s ease-in-out infinite 2.0s'
+          }}></div>
+          <div className="absolute w-[360px] h-[360px] border border-[#02ff91] rounded-full opacity-28" style={{ 
+            borderWidth: '1px', 
+            left: '-180px', 
+            top: '220px',
             animation: 'target-pulse 4s ease-in-out infinite 2.4s'
           }}></div>
-          <div className="absolute w-[240px] h-[240px] border border-[#00c26f] rounded-full opacity-35" style={{ 
+          <div className="absolute w-[240px] h-[240px] border border-[#00c26f] rounded-full opacity-30" style={{ 
             borderWidth: '1px', 
             left: '-120px', 
             top: '280px',
+            animation: 'target-pulse 4s ease-in-out infinite 2.8s'
+          }}></div>
+          <div className="absolute w-[160px] h-[160px] border border-[#00844e] rounded-full opacity-35" style={{ 
+            borderWidth: '1px', 
+            left: '-80px', 
+            top: '320px',
             animation: 'target-pulse 4s ease-in-out infinite 3.2s'
+          }}></div>
+          <div className="absolute w-[80px] h-[80px] border border-[#02ff91] rounded-full opacity-40" style={{ 
+            borderWidth: '1px', 
+            left: '-40px', 
+            top: '360px',
+            animation: 'target-pulse 4s ease-in-out infinite 3.6s'
           }}></div>
         </div>
       </div>
@@ -124,7 +153,7 @@ const LicenseSection = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes target-pulse {
           0%, 100% {
             transform: scale(1);

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				solarien: {
+					primary: '#02ff91',
+					secondary: '#00c26f',
+					tertiary: '#00844e'
 				}
+			},
+			fontFamily: {
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +93,37 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				'glow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'energy-pulse': {
+					'0%': { boxShadow: '0 0 0 0 rgba(2, 255, 145, 0.7)' },
+					'50%': { boxShadow: '0 0 0 20px rgba(2, 255, 145, 0)' },
+					'100%': { boxShadow: '0 0 0 0 rgba(2, 255, 145, 0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'slide-up': 'slide-up 0.8s ease-out',
+				'fade-in': 'fade-in 1s ease-out',
+				'energy-pulse': 'energy-pulse 2s infinite'
 			}
 		}
 	},

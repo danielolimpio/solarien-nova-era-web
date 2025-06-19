@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 
@@ -29,8 +30,8 @@ const Footer = () => {
       {/* Solar Panels Background Image */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-          alt="Placas Solares"
+          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="Painéis Solares"
           className="w-full h-full object-cover opacity-30"
         />
       </div>
@@ -161,3 +162,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

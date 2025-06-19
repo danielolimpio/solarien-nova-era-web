@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
+import DiscountSimulator from './DiscountSimulator';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
@@ -13,6 +13,13 @@ const HeroSection = () => {
     'Migração Gratuita Garantida',
     'Suporte 24h Disponível'
   ];
+
+  const handleSaibaMaisClick = () => {
+    const phoneNumber = '+5511997361698';
+    const message = 'Olá! Gostaria de saber mais sobre energia limpa e economia na conta de luz.';
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   useEffect(() => {
     const currentText = texts[currentIndex];
@@ -184,12 +191,15 @@ const HeroSection = () => {
             
             {/* Enhanced Buttons with Neon Effect */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button className="w-full sm:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl animate-pulse border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect">
-                Simular Economia
-              </Button>
+              <DiscountSimulator>
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl animate-pulse border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect">
+                  Simular Economia
+                </Button>
+              </DiscountSimulator>
               <Button 
                 variant="outline" 
                 className="w-full sm:w-auto border-3 border-[#02ff91] text-[#02ff91] hover:bg-gradient-to-r hover:from-[#02ff91] hover:to-[#00c26f] hover:text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl animate-pulse hover:shadow-[#02ff91]/50 glow-effect"
+                onClick={handleSaibaMaisClick}
               >
                 Saiba Mais
               </Button>

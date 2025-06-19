@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { Zap, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
-import DiscountSimulator from './DiscountSimulator';
 
 const LicenseSection = () => {
   const benefits = [
@@ -151,14 +149,8 @@ const LicenseSection = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <DiscountSimulator>
-              <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
-                SIMULAR ECONOMIA
-              </Button>
-            </DiscountSimulator>
-            
+          {/* CTA Button - Only SEJA UM LICENCIADO button */}
+          <div className="flex justify-center items-center mb-8">
             <Button 
               className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect"
               onClick={() => window.open('https://wa.me/5511997361698', '_blank')}

@@ -32,7 +32,7 @@ const AboutSection = () => {
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
               <img 
-                src="https://images.unsplash.com/photo-1497604401993-f2e922e5cb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/lovable-uploads/033ede5a-9cc5-494b-ba09-435877b6a870.png" 
                 alt="Fachada futurista da Solarien Energy" 
                 className="w-full h-full object-cover"
               />

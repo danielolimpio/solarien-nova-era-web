@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Target, Eye } from 'lucide-react';
 
@@ -28,7 +27,7 @@ const AboutSection = () => {
 
         {/* Company Presentation with Futuristic Building Mockup */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left side - Square Building Mockup */}
+          {/* Left side - Square Building Image */}
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
               <img 
@@ -36,20 +35,6 @@ const AboutSection = () => {
                 alt="Fachada futurista da Solarien Energy" 
                 className="w-full h-full object-cover"
               />
-              
-              {/* Dark overlay for logo integration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
-              
-              {/* Integrated Logo - appears as part of the building facade */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/50">
-                  <img 
-                    src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
-                    alt="Solarien Energy" 
-                    className="h-20 md:h-24 w-auto mx-auto"
-                  />
-                </div>
-              </div>
               
               {/* Glass reflection effects */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>

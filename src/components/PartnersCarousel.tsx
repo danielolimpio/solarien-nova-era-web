@@ -85,7 +85,7 @@ const PartnersCarousel = () => {
                       key={partner.name}
                       className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg"
                     >
-                      <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
                         <img 
                           src={partner.logo} 
                           alt={partner.name}

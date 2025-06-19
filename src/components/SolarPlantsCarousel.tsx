@@ -7,43 +7,43 @@ const SolarPlantsCarousel = () => {
   const solarPlants = [
     {
       id: 1,
-      name: 'Complexo Solar Bahia',
-      location: 'Bahia, Brasil',
-      capacity: '850 MW',
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Uma das maiores fazendas solares do Nordeste brasileiro com tecnologia de ponta'
+      name: 'Complexo Solar São Gonçalo',
+      location: 'Piauí, Brasil',
+      capacity: '608 MW',
+      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Uma das maiores usinas solares do Brasil, localizada no município de São Gonçalo do Gurguéia'
     },
     {
       id: 2,
-      name: 'Fazenda Solar Ceará',
-      location: 'Ceará, Brasil',
-      capacity: '1.2 GW',
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Complexo de energia solar de grande escala com milhares de painéis fotovoltaicos'
+      name: 'Usina Solar Lapa',
+      location: 'Bahia, Brasil',
+      capacity: '158 MW',
+      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Complexo fotovoltaico de grande porte localizado no oeste da Bahia'
     },
     {
       id: 3,
-      name: 'Parque Solar Minas',
-      location: 'Minas Gerais, Brasil',
-      capacity: '675 MW',
-      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Fazenda solar de grande porte gerando energia limpa para centenas de milhares de residências'
+      name: 'Parque Solar Ituverava',
+      location: 'Bahia, Brasil',
+      capacity: '254 MW',
+      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Uma das principais usinas solares do Nordeste brasileiro'
     },
     {
       id: 4,
-      name: 'Solar Farm São Paulo',
-      location: 'São Paulo, Brasil',
-      capacity: '950 MW',
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Instalação solar industrial de grande escala no interior paulista'
+      name: 'Complexo Solar Pirapora',
+      location: 'Minas Gerais, Brasil',
+      capacity: '321 MW',
+      image: 'https://images.unsplash.com/photo-1508614999368-9260051292e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Maior complexo solar em operação no Brasil, localizado em Pirapora'
     },
     {
       id: 5,
-      name: 'Usina Pernambuco',
-      location: 'Pernambuco, Brasil',
-      capacity: '780 MW',
-      image: 'https://images.unsplash.com/photo-1562804698-94ab4a37cb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      description: 'Complexo fotovoltaico de grande porte contribuindo para o desenvolvimento regional'
+      name: 'Usina Solar Horizon',
+      location: 'Bahia, Brasil',
+      capacity: '103 MW',
+      image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+      description: 'Usina solar estratégica para o desenvolvimento energético do Nordeste'
     }
   ];
 

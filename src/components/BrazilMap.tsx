@@ -6,9 +6,9 @@ const BrazilMap = () => {
   return (
     <section className="py-20 relative">
       {/* Full width gray background */}
-      <div className="absolute inset-0 bg-gray-100"></div>
+      <div className="absolute inset-0 bg-gray-100 w-full"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gradient">Cobertura</span> <span className="text-gray-800">Nacional</span>

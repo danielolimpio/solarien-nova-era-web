@@ -25,42 +25,36 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-solarien-primary/20 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-          alt="Mountain landscape" 
-          className="w-full h-full object-cover opacity-5"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-solarien-primary/5"></div>
-      </div>
+    <footer className="bg-green-900 border-t border-green-700/30 relative overflow-hidden">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/95 to-green-800/95"></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Main Footer Content */}
         <div className="grid lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-black font-bold text-xl">S</span>
-              </div>
-              <span className="text-2xl font-bold text-gradient">Solarien Energy</span>
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
+                alt="Solarien Energy" 
+                className="h-12 w-auto"
+              />
             </div>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed">
               Especialistas em gestão de contratos e consultoria energética. Oferecemos migração gratuita para energia por assinatura e mercado livre, atendendo todo o Brasil.
             </p>
             
             {/* Newsletter */}
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Newsletter</h3>
+              <h3 className="text-lg font-bold text-white mb-4">Newsletter</h3>
               <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Seu melhor e-mail"
-                  className="flex-1 px-4 py-3 bg-white border border-solarien-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-gray-800 placeholder-gray-500"
+                  className="flex-1 px-4 py-3 bg-green-800 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white placeholder-gray-400"
                   required
                 />
                 <button
@@ -76,13 +70,13 @@ const Footer = () => {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">{category}</h3>
+              <h3 className="text-lg font-bold text-white mb-4">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-gray-600 hover:text-solarien-primary transition-colors duration-300 text-sm"
+                      className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium"
                     >
                       {link}
                     </a>
@@ -94,9 +88,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-solarien-primary/20 pt-8">
+        <div className="border-t border-green-700/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-gray-600 text-sm">
+            <div className="text-gray-300 text-sm font-medium">
               Copyright 2025 | Todos direitos reservados.
             </div>
             
@@ -106,38 +100,38 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
                 aria-label="Facebook"
               >
-                <Facebook className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+                <Facebook className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
                 aria-label="Instagram"
               >
-                <Instagram className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+                <Instagram className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
                 aria-label="YouTube"
               >
-                <Youtube className="w-6 h-6 text-solarien-primary/70 group-hover:text-solarien-primary transition-colors duration-300" />
+                <Youtube className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
                 href="https://x.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white border border-solarien-primary/20 rounded-lg flex items-center justify-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
                 aria-label="X (Twitter)"
               >
-                <div className="w-6 h-6 bg-solarien-primary/70 group-hover:bg-solarien-primary rounded transition-colors duration-300 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">X</span>
+                <div className="w-6 h-6 bg-white group-hover:bg-solarien-primary rounded transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-green-800 font-bold text-sm">X</span>
                 </div>
               </a>
               

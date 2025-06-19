@@ -60,7 +60,7 @@ const LicenseSection = () => {
           </div>
 
           {/* CTA Button */}
-          <Button className="bg-solarien-primary hover:bg-solarien-secondary text-black font-bold px-12 py-6 text-xl rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl">
+          <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
             SEJA UM LICENCIADO
           </Button>
         </div>

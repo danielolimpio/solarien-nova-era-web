@@ -1,5 +1,6 @@
 
 import React from 'react';
+import InteractiveBrazilMap from './InteractiveBrazilMap';
 
 const BrazilMap = () => {
   return (
@@ -10,25 +11,11 @@ const BrazilMap = () => {
             <span className="text-gradient">Cobertura</span> <span className="text-gray-800">Nacional</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Presente em todo o Brasil, oferecemos soluções de energia limpa e econômica para residências e empresas.
+            Descubra o desconto disponível em seu estado e a distribuidora parceira. Clique em qualquer estado para simular sua economia.
           </p>
         </div>
 
-        <div className="relative">
-          <img 
-            src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-            alt="Mapa do Brasil com cobertura nacional" 
-            className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl"
-          />
-          
-          {/* Overlay with coverage info */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-3xl flex items-end justify-center p-8">
-            <div className="text-center text-white">
-              <h3 className="text-3xl font-bold mb-4">27 Estados + DF</h3>
-              <p className="text-xl">Cobertura Nacional Completa</p>
-            </div>
-          </div>
-        </div>
+        <InteractiveBrazilMap />
 
         {/* Coverage Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">

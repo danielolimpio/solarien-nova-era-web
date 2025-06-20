@@ -17,6 +17,8 @@ const Footer = () => {
       navigate('/privacy');
     } else if (link === 'Política de Cookies') {
       navigate('/cookies');
+    } else if (link === 'Política de Transparência') {
+      navigate('/transparency');
     } else if (link === 'Contatos') {
       navigate('/contact');
     } else if (link === 'Como Funciona') {
@@ -102,7 +104,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Contatos', 'Como Funciona'].includes(link) ? (
+                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

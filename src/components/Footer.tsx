@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,6 +5,20 @@ import { Link, useNavigate } from 'react-router-dom';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+
+  const handleLinkClick = (link: string) => {
+    if (link === 'Home') {
+      navigate('/');
+    } else if (link === 'FAQ') {
+      navigate('/faq');
+    } else if (link === 'Termos de Uso') {
+      navigate('/terms');
+    } else if (link === 'Política de Privacidade') {
+      navigate('/privacy');
+    } else if (link === 'Contatos') {
+      navigate('/contact');
+    }
+  };
 
   const footerLinks = {
     'Institucional': ['Home', 'Sobre', 'Serviços', 'Usinas', 'Contatos', 'FAQ'],
@@ -24,18 +37,6 @@ const Footer = () => {
       top: 0,
       behavior: 'smooth'
     });
-  };
-
-  const handleLinkClick = (link: string) => {
-    if (link === 'Home') {
-      navigate('/');
-    } else if (link === 'FAQ') {
-      navigate('/faq');
-    } else if (link === 'Termos de Uso') {
-      navigate('/terms');
-    } else if (link === 'Contatos') {
-      navigate('/contact');
-    }
   };
 
   return (
@@ -97,7 +98,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'FAQ', 'Termos de Uso', 'Contatos'].includes(link) ? (
+                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Contatos'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

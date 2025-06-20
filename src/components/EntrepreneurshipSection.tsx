@@ -27,6 +27,18 @@ const EntrepreneurshipSection = () => {
     }
   ];
 
+  // Componente de nota de real
+  const RealNote = ({ value, color }: { value: string, color: string }) => (
+    <svg width="60" height="30" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="60" height="30" rx="3" fill={color} fillOpacity="0.8"/>
+      <rect x="1" y="1" width="58" height="28" rx="2" stroke="#fff" strokeWidth="0.5" strokeOpacity="0.6"/>
+      <text x="30" y="12" textAnchor="middle" fontSize="6" fill="#fff" fontWeight="bold">R$</text>
+      <text x="30" y="20" textAnchor="middle" fontSize="8" fill="#fff" fontWeight="bold">{value}</text>
+      <circle cx="8" cy="8" r="2" fill="#fff" fillOpacity="0.3"/>
+      <circle cx="52" cy="22" r="2" fill="#fff" fillOpacity="0.3"/>
+    </svg>
+  );
+
   return (
     <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001a0e 0%, #002113 50%, #003d20 100%)' }}>
       {/* Animated Background Elements */}
@@ -97,51 +109,50 @@ const EntrepreneurshipSection = () => {
 
         {/* Commission Section with Money Background */}
         <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
-          {/* Animated Money Background */}
-          <div className="absolute inset-0 opacity-20 overflow-hidden">
-            {[...Array(25)].map((_, i) => (
+          {/* Animated Real Notes Background */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Notas de R$ 100 */}
+            {[...Array(12)].map((_, i) => (
               <div
-                key={i}
-                className="absolute text-4xl money-animation"
+                key={`note-100-${i}`}
+                className="absolute money-animation"
                 style={{
                   left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${4 + Math.random() * 3}s`,
-                  color: '#00c26f',
-                  textShadow: '0 0 10px rgba(0, 194, 111, 0.5)'
+                  animationDelay: `${Math.random() * 8}s`,
+                  animationDuration: `${6 + Math.random() * 4}s`,
                 }}
               >
-                💰
+                <RealNote value="100" color="#1f5f3f" />
               </div>
             ))}
-            {[...Array(20)].map((_, i) => (
+            
+            {/* Notas de R$ 50 */}
+            {[...Array(10)].map((_, i) => (
               <div
-                key={`real-${i}`}
-                className="absolute text-3xl money-animation"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${5 + Math.random() * 2}s`,
-                  color: '#02ff91',
-                  textShadow: '0 0 8px rgba(2, 255, 145, 0.4)'
-                }}
-              >
-                💵
-              </div>
-            ))}
-            {[...Array(15)].map((_, i) => (
-              <div
-                key={`note-${i}`}
-                className="absolute text-2xl money-animation"
+                key={`note-50-${i}`}
+                className="absolute money-animation"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 6}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`,
-                  color: '#00844e',
-                  textShadow: '0 0 6px rgba(0, 132, 78, 0.3)'
+                  animationDuration: `${5 + Math.random() * 3}s`,
                 }}
               >
-                🤑
+                <RealNote value="50" color="#2d7a4a" />
+              </div>
+            ))}
+            
+            {/* Notas de R$ 20 */}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={`note-20-${i}`}
+                className="absolute money-animation"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 10}s`,
+                  animationDuration: `${4 + Math.random() * 3}s`,
+                }}
+              >
+                <RealNote value="20" color="#00c26f" />
               </div>
             ))}
           </div>

@@ -31,12 +31,27 @@ const Header = () => {
       return;
     }
 
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // Check if we're not on the home page
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -44,6 +59,7 @@ const Header = () => {
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'Sobre', id: 'sobre' },
+    { name: 'Parcerias', id: 'parcerias' },
     { name: 'Serviços', id: 'servicos' },
     { name: 'Licenciado', id: 'licenciado' },
     { name: 'Contato', id: 'contato' }

@@ -83,14 +83,14 @@ const Feedback = () => {
     setQuizCompleted(false);
   };
 
-  const handlePollVote = (pollType: keyof typeof polls, option: string) => {
+  const handlePollVote = (pollType: string, option: string) => {
     if (userVotes[pollType]) return; // Already voted
     
     setPolls(prev => ({
       ...prev,
       [pollType]: {
-        ...prev[pollType],
-        [option]: (prev[pollType][option as keyof typeof prev[pollType]] as number) + 1
+        ...prev[pollType as keyof typeof prev],
+        [option]: (prev[pollType as keyof typeof prev][option as keyof typeof prev[pollType]] as number) + 1
       }
     }));
     

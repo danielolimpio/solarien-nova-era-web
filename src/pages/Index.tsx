@@ -17,10 +17,14 @@ const Index = () => {
       <Header />
       <HeroSection />
       <AboutSection />
-      <PartnersCarousel />
+      <div id="parcerias">
+        <PartnersCarousel />
+      </div>
       <SolarPlantsCarousel />
       <BrazilMap />
-      <EntrepreneurshipSection />
+      <div id="licenciado">
+        <EntrepreneurshipSection />
+      </div>
       <LicenseSection />
       <Separator className="h-1 bg-gradient-to-r from-transparent via-solarien-primary to-transparent opacity-60" />
       <Footer />

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import DiscountSimulator from '../components/DiscountSimulator';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
@@ -60,28 +61,28 @@ const HowItWorks = () => {
   ];
 
   const distribuidoras = [
-    { estado: "Bahia", empresa: "Coelba (Neoenergia)", desconto: "15%" },
-    { estado: "Brasília (DF)", empresa: "CEB (Neoenergia)", desconto: "15%" },
-    { estado: "Ceará", empresa: "Enel", desconto: "15%" },
-    { estado: "Goiás", empresa: "Equatorial", desconto: "15%" },
-    { estado: "Maranhão", empresa: "Equatorial", desconto: "15%" },
-    { estado: "Mato Grosso", empresa: "Energisa", desconto: "15%" },
-    { estado: "Mato Grosso do Sul", empresa: "Energisa", desconto: "15%" },
-    { estado: "Minas Gerais", empresa: "Cemig", desconto: "15%" },
-    { estado: "Minas Gerais", empresa: "Energisa", desconto: "15%" },
-    { estado: "Pará", empresa: "Equatorial", desconto: "15%" },
-    { estado: "Paraná", empresa: "Copel", desconto: "15%" },
-    { estado: "Paraná", empresa: "Energisa", desconto: "15%" },
-    { estado: "Pernambuco", empresa: "Celpe (Neoenergia)", desconto: "15%" },
-    { estado: "Piauí", empresa: "Equatorial", desconto: "15%" },
-    { estado: "Rio Grande do Norte", empresa: "Cosern (Neoenergia)", desconto: "15%" },
-    { estado: "Santa Catarina", empresa: "Celesc", desconto: "15%" },
-    { estado: "São Paulo", empresa: "CPFL Paulista", desconto: "15%" },
-    { estado: "São Paulo", empresa: "Elektro (Neoenergia)", desconto: "15%" },
-    { estado: "São Paulo", empresa: "Energisa", desconto: "15%" },
-    { estado: "São Paulo", empresa: "Copel", desconto: "15%" },
-    { estado: "Sergipe", empresa: "Energisa", desconto: "15%" },
-    { estado: "Tocantins", empresa: "Energisa", desconto: "15%" }
+    { estado: "Bahia", empresa: "Coelba (Neoenergia)", desconto: "25%" },
+    { estado: "Brasília (DF)", empresa: "CEB (Neoenergia)", desconto: "25%" },
+    { estado: "Ceará", empresa: "Enel", desconto: "25%" },
+    { estado: "Goiás", empresa: "Equatorial", desconto: "25%" },
+    { estado: "Maranhão", empresa: "Equatorial", desconto: "25%" },
+    { estado: "Mato Grosso", empresa: "Energisa", desconto: "25%" },
+    { estado: "Mato Grosso do Sul", empresa: "Energisa", desconto: "25%" },
+    { estado: "Minas Gerais", empresa: "Cemig", desconto: "25%" },
+    { estado: "Minas Gerais", empresa: "Energisa", desconto: "25%" },
+    { estado: "Pará", empresa: "Equatorial", desconto: "25%" },
+    { estado: "Paraná", empresa: "Copel", desconto: "25%" },
+    { estado: "Paraná", empresa: "Energisa", desconto: "25%" },
+    { estado: "Pernambuco", empresa: "Celpe (Neoenergia)", desconto: "25%" },
+    { estado: "Piauí", empresa: "Equatorial", desconto: "25%" },
+    { estado: "Rio Grande do Norte", empresa: "Cosern (Neoenergia)", desconto: "25%" },
+    { estado: "Santa Catarina", empresa: "Celesc", desconto: "25%" },
+    { estado: "São Paulo", empresa: "CPFL Paulista", desconto: "25%" },
+    { estado: "São Paulo", empresa: "Elektro (Neoenergia)", desconto: "25%" },
+    { estado: "São Paulo", empresa: "Energisa", desconto: "25%" },
+    { estado: "São Paulo", empresa: "Copel", desconto: "25%" },
+    { estado: "Sergipe", empresa: "Energisa", desconto: "25%" },
+    { estado: "Tocantins", empresa: "Energisa", desconto: "25%" }
   ];
 
   const faqs = [
@@ -141,7 +142,7 @@ const HowItWorks = () => {
                   Energia Solar Sem Instalação
                 </h2>
                 <p className="text-gray-300 text-lg mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Na Solarien Energy, você pode reduzir sua conta de luz em <span className="text-solarien-primary font-bold">até 15% no Grupo B</span> e <span className="text-solarien-primary font-bold">até 45% no Mercado Livre</span>, sem precisar instalar placas solares em casa ou na sua empresa. Tudo isso graças ao <span className="text-solarien-primary font-bold">Mercado de Energia por Assinatura</span>.
+                  Na Solarien Energy, você pode reduzir sua conta de luz em <span className="text-solarien-primary font-bold">até 25% no Grupo B</span> e <span className="text-solarien-primary font-bold">até 45% no Mercado Livre</span>, sem precisar instalar placas solares em casa ou na sua empresa. Tudo isso graças ao <span className="text-solarien-primary font-bold">Mercado de Energia por Assinatura</span>.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
@@ -185,7 +186,7 @@ const HowItWorks = () => {
           {/* Tabs para Grupos A e B */}
           <div className="mb-12">
             <div className="flex justify-center mb-8">
-              <div className="bg-green-800/30 p-2 rounded-lg border border-green-700">
+              <div className="bg-green-800/30 p-2 rounded-lg border border-green-700 flex">
                 <button
                   onClick={() => setActiveTab('grupo-b')}
                   className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
@@ -199,7 +200,7 @@ const HowItWorks = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab('grupo-a')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ml-2 ${
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                     activeTab === 'grupo-a'
                       ? 'bg-solarien-primary text-black'
                       : 'text-white hover:bg-green-700/50'
@@ -233,7 +234,7 @@ const HowItWorks = () => {
                         <ul className="space-y-2 text-gray-300">
                           <li className="flex items-center gap-2">
                             <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Desconto de até 15% na conta de luz
+                            Desconto de até 25% na conta de luz
                           </li>
                           <li className="flex items-center gap-2">
                             <CheckCircle className="w-5 h-5 text-solarien-primary" />
@@ -302,7 +303,7 @@ const HowItWorks = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                       {distribuidoras.map((dist, index) => (
                         <div key={index} className="bg-green-800/30 p-4 rounded-lg border border-green-700">
                           <div className="flex items-center justify-between">
@@ -314,6 +315,12 @@ const HowItWorks = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+                    
+                    {/* Simulador */}
+                    <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
+                      <h4 className="text-white font-bold text-xl mb-4 text-center">Simule sua Economia</h4>
+                      <DiscountSimulator />
                     </div>
                   </CardContent>
                 </Card>
@@ -336,7 +343,7 @@ const HowItWorks = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                         <Award className="w-6 h-6 text-solarien-primary" />
-                        Benefícios:
+                        Vantagens:
                       </h3>
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center gap-2">
@@ -368,7 +375,7 @@ const HowItWorks = () => {
                     <div>
                       <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                         <Settings className="w-6 h-6 text-solarien-primary" />
-                        Como migrar?
+                        Como funciona?
                       </h3>
                       <div className="space-y-4">
                         {grupoASteps.map((step, index) => (
@@ -430,7 +437,7 @@ const HowItWorks = () => {
                     <li>• Residências e pequenos comércios</li>
                     <li>• Baixa Tensão (até 2,3 kV)</li>
                     <li>• Casas, escritórios, salões de beleza</li>
-                    <li>• <span className="text-solarien-primary font-bold">Até 15% de desconto</span></li>
+                    <li>• <span className="text-solarien-primary font-bold">Até 25% de desconto</span></li>
                   </ul>
                 </div>
               </div>

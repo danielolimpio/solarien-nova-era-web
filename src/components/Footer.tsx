@@ -23,6 +23,8 @@ const Footer = () => {
       navigate('/contact');
     } else if (link === 'Como Funciona') {
       navigate('/como-funciona');
+    } else if (link === 'Envie o Feedback') {
+      navigate('/feedback');
     }
   };
 
@@ -104,7 +106,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona'].includes(link) ? (
+                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

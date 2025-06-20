@@ -12,6 +12,7 @@ import Privacy from "./pages/Privacy";
 import Cookies from "./pages/Cookies";
 import HowItWorks from "./pages/HowItWorks";
 import Transparency from "./pages/Transparency";
+import Feedback from "./pages/Feedback";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/como-funciona" element={<HowItWorks />} />
           <Route path="/transparency" element={<Transparency />} />
+          <Route path="/feedback" element={<Feedback />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

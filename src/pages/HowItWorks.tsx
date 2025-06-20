@@ -7,19 +7,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
-import DiscountSimulator from '../components/DiscountSimulator';
+import StateCoverageSimulator from '../components/StateCoverageSimulator';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
-  const [selectedState, setSelectedState] = useState('');
-
-  const states = [
-    'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal',
-    'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul',
-    'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí',
-    'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia',
-    'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
-  ];
 
   const distributors = [
     'CPFL Energia', 'Enel', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
@@ -47,6 +38,11 @@ const HowItWorks = () => {
                 Entenda todo o processo e comece a economizar hoje mesmo
               </p>
             </div>
+          </div>
+
+          {/* Advanced State Coverage Simulator */}
+          <div className="mb-8">
+            <StateCoverageSimulator />
           </div>
 
           {/* Como funciona? */}
@@ -126,7 +122,7 @@ const HowItWorks = () => {
             </CardContent>
           </Card>
 
-          {/* Group Selection */}
+          {/* Group Selection - Side by Side */}
           <Card className="bg-green-800/20 border-green-700 mb-8">
             <CardHeader>
               <CardTitle className="text-solarien-primary text-2xl">Escolha seu Grupo</CardTitle>
@@ -160,11 +156,11 @@ const HowItWorks = () => {
                     <Building className="w-8 h-8 text-solarien-secondary" />
                     <h3 className="text-2xl font-bold text-white">Grupo A - Empresas</h3>
                   </div>
-                  <p className="text-gray-300 mb-4">Para indúst rias e grandes empresas</p>
+                  <p className="text-gray-300 mb-4">Para indústrias e grandes empresas</p>
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-solarien-secondary" />
-                      Desconto de até 15%
+                      Desconto de até 45%
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-solarien-secondary" />
@@ -226,7 +222,7 @@ const HowItWorks = () => {
                     <tr className="border-b border-green-800/50">
                       <td className="p-4 text-gray-300">Desconto</td>
                       <td className="p-4 text-solarien-primary font-semibold">Até 25%</td>
-                      <td className="p-4 text-solarien-secondary font-semibold">Até 15%</td>
+                      <td className="p-4 text-solarien-secondary font-semibold">Até 45%</td>
                     </tr>
                     <tr className="border-b border-green-800/50">
                       <td className="p-4 text-gray-300">Processo</td>
@@ -236,37 +232,6 @@ const HowItWorks = () => {
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* State Simulator */}
-          <Card className="bg-green-800/20 border-green-700 mb-8">
-            <CardHeader>
-              <CardTitle className="text-solarien-primary text-2xl">Simulador por Estado</CardTitle>
-              <CardDescription className="text-gray-300">
-                Selecione um estado para simular sua economia
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="mb-6">
-                <label className="block text-white font-semibold mb-2">Escolha seu Estado:</label>
-                <select
-                  value={selectedState}
-                  onChange={(e) => setSelectedState(e.target.value)}
-                  className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white"
-                >
-                  <option value="">Selecione um estado...</option>
-                  {states.map((state) => (
-                    <option key={state} value={state}>{state}</option>
-                  ))}
-                </select>
-              </div>
-              
-              {selectedState && (
-                <div className="mt-6">
-                  <DiscountSimulator selectedState={selectedState} />
-                </div>
-              )}
             </CardContent>
           </Card>
 

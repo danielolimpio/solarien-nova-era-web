@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Shield } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -27,7 +27,8 @@ const Privacy = () => {
               Voltar
             </Button>
             <div>
-              <h1 className="text-4xl font-bold text-white mb-2">
+              <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
+                <Shield className="w-10 h-10 text-solarien-primary" />
                 Política de Privacidade
               </h1>
               <p className="text-gray-300">
@@ -57,10 +58,10 @@ const Privacy = () => {
                     Para oferecer nossos serviços de forma eficiente e gratuita, coletamos as seguintes informações dos usuários:
                   </p>
                   <p>
-                    Dados da conta de energia: número da conta contrato, unidade consumidora, histórico de consumo e demais informações contidas na fatura.
+                    <strong>Dados da conta de energia:</strong> número da conta contrato, unidade consumidora, histórico de consumo e demais informações contidas na fatura.
                   </p>
                   <p>
-                    Dados pessoais: nome completo, CPF, e-mail e número de WhatsApp.
+                    <strong>Dados pessoais:</strong> nome completo, CPF, e-mail e número de WhatsApp.
                   </p>
                   <p>
                     Outras informações relevantes para o processamento e envio das faturas de energia.
@@ -75,21 +76,13 @@ const Privacy = () => {
                   <p>
                     Os dados coletados são utilizados exclusivamente para os seguintes fins:
                   </p>
-                  <p>
-                    Processar a portabilidade da conta de energia do cliente;
-                  </p>
-                  <p>
-                    Realizar análises para oferecer os melhores descontos na energia;
-                  </p>
-                  <p>
-                    Gerar e enviar as faturas de energia mensalmente;
-                  </p>
-                  <p>
-                    Manter comunicação com o cliente via WhatsApp e e-mail sobre seu consumo e serviços contratados;
-                  </p>
-                  <p>
-                    Garantir a segurança e conformidade com normas regulatórias do setor de energia.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Processar a portabilidade da conta de energia do cliente;</li>
+                    <li>Realizar análises para oferecer os melhores descontos na energia;</li>
+                    <li>Gerar e enviar as faturas de energia mensalmente;</li>
+                    <li>Manter comunicação com o cliente via WhatsApp e e-mail sobre seu consumo e serviços contratados;</li>
+                    <li>Garantir a segurança e conformidade com normas regulatórias do setor de energia.</li>
+                  </ul>
                 </section>
 
                 <section>
@@ -97,15 +90,11 @@ const Privacy = () => {
                   <p>
                     A Solarien não vende, aluga ou compartilha os dados pessoais dos clientes com terceiros, exceto nos seguintes casos:
                   </p>
-                  <p>
-                    Com parceiros e fornecedores responsáveis pelo processamento da portabilidade e geração de faturas de energia;
-                  </p>
-                  <p>
-                    Quando exigido por lei ou por determinação judicial;
-                  </p>
-                  <p>
-                    Para garantir a segurança e proteção contra fraudes.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Com parceiros e fornecedores responsáveis pelo processamento da portabilidade e geração de faturas de energia;</li>
+                    <li>Quando exigido por lei ou por determinação judicial;</li>
+                    <li>Para garantir a segurança e proteção contra fraudes.</li>
+                  </ul>
                 </section>
 
                 <section>
@@ -123,21 +112,13 @@ const Privacy = () => {
                   <p>
                     De acordo com a Lei Geral de Proteção de Dados (LGPD), os clientes da Solarien têm os seguintes direitos sobre seus dados pessoais:
                   </p>
-                  <p>
-                    Acessar, corrigir ou atualizar seus dados pessoais;
-                  </p>
-                  <p>
-                    Solicitar a exclusão de seus dados (salvo quando houver obrigação legal de retenção);
-                  </p>
-                  <p>
-                    Solicitar a portabilidade dos dados;
-                  </p>
-                  <p>
-                    Revogar consentimentos previamente concedidos;
-                  </p>
-                  <p>
-                    Solicitar informações sobre o uso e compartilhamento de seus dados.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Acessar, corrigir ou atualizar seus dados pessoais;</li>
+                    <li>Solicitar a exclusão de seus dados (salvo quando houver obrigação legal de retenção);</li>
+                    <li>Solicitar a portabilidade dos dados;</li>
+                    <li>Revogar consentimentos previamente concedidos;</li>
+                    <li>Solicitar informações sobre o uso e compartilhamento de seus dados.</li>
+                  </ul>
                   <p>
                     Para exercer qualquer um desses direitos, entre em contato pelo e-mail: contato@solarien.com.br
                   </p>

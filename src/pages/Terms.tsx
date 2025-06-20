@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -27,11 +27,12 @@ const Terms = () => {
               Voltar
             </Button>
             <div>
-              <h1 className="text-4xl font-bold text-white mb-2">
-                Termos de Uso da Solarien
+              <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
+                <FileText className="w-10 h-10 text-solarien-primary" />
+                Termos de Uso
               </h1>
               <p className="text-gray-300">
-                Bem-vindo à Solarien! Leia atentamente antes de utilizar nossos serviços.
+                Leia os termos e condições que regem o uso dos nossos serviços de energia limpa.
               </p>
             </div>
           </div>

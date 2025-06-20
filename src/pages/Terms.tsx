@@ -66,12 +66,16 @@ const Terms = () => {
                   <p>
                     Para utilizar nossos serviços, o usuário deverá fornecer as seguintes informações:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Dados da conta de energia (número da unidade consumidora, histórico de consumo, etc.);</li>
-                    <li>Dados pessoais (nome, CPF, e-mail e WhatsApp);</li>
-                    <li>Anexo da conta de energia, necessário para análise e processamento da portabilidade.</li>
-                  </ul>
-                  <p className="mt-4">
+                  <p>
+                    Dados da conta de energia (número da unidade consumidora, histórico de consumo, etc.);
+                  </p>
+                  <p>
+                    Dados pessoais (nome, CPF, e-mail e WhatsApp);
+                  </p>
+                  <p>
+                    Anexo da conta de energia, necessário para análise e processamento da portabilidade.
+                  </p>
+                  <p>
                     O usuário declara que as informações fornecidas são verdadeiras e se responsabiliza pela veracidade dos dados inseridos.
                   </p>
                 </section>
@@ -81,12 +85,16 @@ const Terms = () => {
                   <p>
                     Ao aderir aos serviços da Solarien, o usuário autoriza:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>O uso dos dados fornecidos para análise e intermediação da portabilidade da conta de energia;</li>
-                    <li>O recebimento das faturas mensais e comunicações via WhatsApp e e-mail;</li>
-                    <li>A análise de perfil de consumo para oferecer as melhores condições no fornecimento de energia.</li>
-                  </ul>
-                  <p className="mt-4">
+                  <p>
+                    O uso dos dados fornecidos para análise e intermediação da portabilidade da conta de energia;
+                  </p>
+                  <p>
+                    O recebimento das faturas mensais e comunicações via WhatsApp e e-mail;
+                  </p>
+                  <p>
+                    A análise de perfil de consumo para oferecer as melhores condições no fornecimento de energia.
+                  </p>
+                  <p>
                     O uso dos serviços está sujeito à disponibilidade do modelo de portabilidade na região do cliente e às regras regulatórias do setor energético brasileiro.
                   </p>
                 </section>
@@ -96,12 +104,18 @@ const Terms = () => {
                   <p>
                     O usuário se compromete a:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Fornecer informações corretas e atualizadas;</li>
-                    <li>Manter contato ativo para recebimento das faturas e comunicações;</li>
-                    <li>Respeitar os termos estabelecidos neste documento;</li>
-                    <li>Não utilizar os serviços para fins ilícitos ou fraudulentos.</li>
-                  </ul>
+                  <p>
+                    Fornecer informações corretas e atualizadas;
+                  </p>
+                  <p>
+                    Manter contato ativo para recebimento das faturas e comunicações;
+                  </p>
+                  <p>
+                    Respeitar os termos estabelecidos neste documento;
+                  </p>
+                  <p>
+                    Não utilizar os serviços para fins ilícitos ou fraudulentos.
+                  </p>
                 </section>
 
                 <section>
@@ -109,12 +123,18 @@ const Terms = () => {
                   <p>
                     A Solarien se compromete a:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Proteger os dados fornecidos pelos usuários, conforme nossa Política de Privacidade;</li>
-                    <li>Oferecer suporte e esclarecer dúvidas sobre os serviços prestados;</li>
-                    <li>Atuar como intermediadora na portabilidade da conta de energia, garantindo transparência no processo;</li>
-                    <li>Respeitar as normas regulatórias do setor energético.</li>
-                  </ul>
+                  <p>
+                    Proteger os dados fornecidos pelos usuários, conforme nossa Política de Privacidade;
+                  </p>
+                  <p>
+                    Oferecer suporte e esclarecer dúvidas sobre os serviços prestados;
+                  </p>
+                  <p>
+                    Atuar como intermediadora na portabilidade da conta de energia, garantindo transparência no processo;
+                  </p>
+                  <p>
+                    Respeitar as normas regulatórias do setor energético.
+                  </p>
                 </section>
 
                 <section>
@@ -122,12 +142,18 @@ const Terms = () => {
                   <p>
                     A Solarien não se responsabiliza por:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Informações incorretas fornecidas pelo usuário;</li>
-                    <li>Mudanças nas normas e regras do setor energético que possam impactar a portabilidade;</li>
-                    <li>Interferências externas, como falhas em sistemas de terceiros ou indisponibilidade dos serviços de fornecedores de energia;</li>
-                    <li>Danos decorrentes do mau uso dos serviços por parte do usuário.</li>
-                  </ul>
+                  <p>
+                    Informações incorretas fornecidas pelo usuário;
+                  </p>
+                  <p>
+                    Mudanças nas normas e regras do setor energético que possam impactar a portabilidade;
+                  </p>
+                  <p>
+                    Interferências externas, como falhas em sistemas de terceiros ou indisponibilidade dos serviços de fornecedores de energia;
+                  </p>
+                  <p>
+                    Danos decorrentes do mau uso dos serviços por parte do usuário.
+                  </p>
                 </section>
 
                 <section>
@@ -149,11 +175,15 @@ const Terms = () => {
                   <p>
                     Caso tenha dúvidas sobre estes Termos de Uso, entre em contato conosco:
                   </p>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>E-mail: contato@solarien.com.br</li>
-                    <li>WhatsApp: +55 (11) 99736-1698</li>
-                    <li>Site: www.solarien.com.br</li>
-                  </ul>
+                  <p>
+                    E-mail: contato@solarien.com.br
+                  </p>
+                  <p>
+                    WhatsApp: +55 (11) 99736-1698
+                  </p>
+                  <p>
+                    Site: www.solarien.com.br
+                  </p>
                   <p className="mt-4 font-semibold text-solarien-primary">
                     Ao utilizar nossos serviços, você declara estar ciente e de acordo com os termos estabelecidos neste documento.
                   </p>

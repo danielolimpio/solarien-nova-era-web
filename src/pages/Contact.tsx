@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Mail, Phone, MapPin, Clock, ArrowLeft } from 'lucide-react';
+import { Mail, Phone, Clock, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 import Header from '../components/Header';
@@ -60,12 +60,6 @@ const Contact = () => {
       title: "Email",
       description: "contato@solarien.com.br",
       action: () => window.open('mailto:contato@solarien.com.br', '_blank')
-    },
-    {
-      icon: MapPin,
-      title: "Localização",
-      description: "São Paulo - SP, Brasil",
-      action: null
     },
     {
       icon: Clock,

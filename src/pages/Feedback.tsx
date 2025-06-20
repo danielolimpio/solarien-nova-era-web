@@ -1,95 +1,124 @@
-
 import React, { useState } from 'react';
-import { ArrowLeft, Star, MessageSquare, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Star, ThumbsUp, TrendingUp, Users, Target, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 
+interface PollMetrics {
+  satisfaction: {
+    excellent: number;
+    good: number;
+    average: number;
+    poor: number;
+  };
+  recommendation: {
+    definitely: number;
+    probably: number;
+    maybe: number;
+    no: number;
+  };
+  improvements: {
+    website: number;
+    support: number;
+    prices: number;
+    process: number;
+  };
+}
+
 const Feedback = () => {
   const navigate = useNavigate();
   const [feedback, setFeedback] = useState('');
-  const [satisfaction, setSatisfaction] = useState('');
-  const [recommendation, setRecommendation] = useState('');
-  const [improvement, setImprovement] = useState('');
-  
-  // State for poll metrics
-  const [pollMetrics, setPollMetrics] = useState({
+  const [quizAnswers, setQuizAnswers] = useState({
+    satisfaction: '',
+    recommendation: '',
+    improvements: ''
+  });
+
+  const [pollMetrics, setPollMetrics] = useState<PollMetrics>({
     satisfaction: {
       excellent: 45,
-      good: 30,
+      good: 35,
       average: 15,
-      poor: 10
+      poor: 5
     },
     recommendation: {
-      definitely: 55,
-      probably: 25,
+      definitely: 50,
+      probably: 30,
       maybe: 15,
       no: 5
     },
-    improvement: {
-      website: 25,
-      support: 30,
+    improvements: {
+      website: 40,
+      support: 25,
       prices: 20,
-      process: 25
+      process: 15
     }
   });
 
-  const handleQuizAnswer = (category: 'satisfaction' | 'recommendation' | 'improvement', answer: string) => {
-    // Update the metrics based on the quiz answer
+  const handleQuizAnswer = (category: keyof typeof quizAnswers, value: string) => {
+    setQuizAnswers(prev => ({
+      ...prev,
+      [category]: value
+    }));
+
+    // Update poll metrics based on the answer
     setPollMetrics(prev => {
       const newMetrics = { ...prev };
-      const categoryData = newMetrics[category];
       
-      // Increment the selected answer by 1 and normalize to 100%
-      const totalAnswers = Object.values(categoryData).reduce((sum, val) => sum + val, 0) + 1;
-      const updatedCategory = { ...categoryData };
-      
-      if (answer in updatedCategory) {
-        (updatedCategory as any)[answer] += 1;
+      if (category === 'satisfaction') {
+        // Reset satisfaction metrics and increment the selected one
+        const keys = Object.keys(newMetrics.satisfaction) as Array<keyof typeof newMetrics.satisfaction>;
+        keys.forEach(key => {
+          if (key === value) {
+            newMetrics.satisfaction[key] += 1;
+          }
+        });
+      } else if (category === 'recommendation') {
+        // Reset recommendation metrics  and increment the selected one
+        const keys = Object.keys(newMetrics.recommendation) as Array<keyof typeof newMetrics.recommendation>;
+        keys.forEach(key => {
+          if (key === value) {
+            newMetrics.recommendation[key] += 1;
+          }
+        });
+      } else if (category === 'improvements') {
+        // Reset improvements metrics and increment the selected one
+        const keys = Object.keys(newMetrics.improvements) as Array<keyof typeof newMetrics.improvements>;
+        keys.forEach(key => {
+          if (key === value) {
+            newMetrics.improvements[key] += 1;
+          }
+        });
       }
-      
-      // Normalize to percentages
-      Object.keys(updatedCategory).forEach(key => {
-        (updatedCategory as any)[key] = Math.round(((updatedCategory as any)[key] / totalAnswers) * 100);
-      });
-      
-      newMetrics[category] = updatedCategory;
+
       return newMetrics;
     });
   };
 
-  const handleSatisfactionChange = (value: string) => {
-    setSatisfaction(value);
-    handleQuizAnswer('satisfaction', value);
-  };
-
-  const handleRecommendationChange = (value: string) => {
-    setRecommendation(value);
-    handleQuizAnswer('recommendation', value);
-  };
-
-  const handleImprovementChange = (value: string) => {
-    setImprovement(value);
-    handleQuizAnswer('improvement', value);
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({
-      feedback,
-      satisfaction,
-      recommendation,
-      improvement
-    });
-    // Here you would typically send the data to your backend
+    console.log('Feedback submitted:', { feedback, quizAnswers });
     alert('Obrigado pelo seu feedback!');
+    setFeedback('');
+    setQuizAnswers({
+      satisfaction: '',
+      recommendation: '',
+      improvements: ''
+    });
+  };
+
+  const calculatePercentage = (value: number, total: number) => {
+    return Math.round((value / total) * 100);
+  };
+
+  const getTotalVotes = (metrics: Record<string, number>) => {
+    return Object.values(metrics).reduce((sum, value) => sum + value, 0);
   };
 
   return (
@@ -110,127 +139,115 @@ const Feedback = () => {
             <div>
               <h1 className="text-4xl font-bold text-white mb-2">Envie seu Feedback</h1>
               <p className="text-gray-300">
-                Sua opinião é muito importante para nós
+                Sua opinião é fundamental para melhorarmos nossos serviços
               </p>
             </div>
           </div>
 
-          {/* Feedback Form */}
+          {/* Quiz Section */}
           <Card className="bg-green-800/20 border-green-700 mb-8">
             <CardHeader>
               <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
                 <MessageSquare className="w-8 h-8" />
-                Quiz de Feedback
+                Quiz de Satisfação
               </CardTitle>
               <CardDescription className="text-gray-300">
                 Responda algumas perguntas rápidas sobre sua experiência
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Satisfaction Question */}
-                <div>
-                  <Label className="text-white text-lg font-semibold mb-4 block">
-                    Como você avalia sua satisfação geral com nosso serviço?
-                  </Label>
-                  <RadioGroup value={satisfaction} onValueChange={handleSatisfactionChange}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="excellent" id="excellent" />
-                      <Label htmlFor="excellent" className="text-gray-300">Excelente</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="good" id="good" />
-                      <Label htmlFor="good" className="text-gray-300">Bom</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="average" id="average" />
-                      <Label htmlFor="average" className="text-gray-300">Regular</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="poor" id="poor" />
-                      <Label htmlFor="poor" className="text-gray-300">Ruim</Label>
-                    </div>
-                  </RadioGroup>
+            <CardContent className="space-y-8">
+              {/* Question 1: Satisfaction */}
+              <div className="space-y-4">
+                <h3 className="text-white text-lg font-semibold">1. Como você avalia nossa plataforma?</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { value: 'excellent', label: 'Excelente', icon: '⭐' },
+                    { value: 'good', label: 'Boa', icon: '👍' },
+                    { value: 'average', label: 'Regular', icon: '👌' },
+                    { value: 'poor', label: 'Ruim', icon: '👎' }
+                  ].map((option) => (
+                    <Button
+                      key={option.value}
+                      variant={quizAnswers.satisfaction === option.value ? "default" : "outline"}
+                      onClick={() => handleQuizAnswer('satisfaction', option.value)}
+                      className={`h-auto p-4 ${
+                        quizAnswers.satisfaction === option.value
+                          ? 'bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black'
+                          : 'border-solarien-primary/30 text-white hover:bg-solarien-primary/10'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <div className="font-semibold">{option.label}</div>
+                      </div>
+                    </Button>
+                  ))}
                 </div>
+              </div>
 
-                {/* Recommendation Question */}
-                <div>
-                  <Label className="text-white text-lg font-semibold mb-4 block">
-                    Você recomendaria nossos serviços para amigos e familiares?
-                  </Label>
-                  <RadioGroup value={recommendation} onValueChange={handleRecommendationChange}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="definitely" id="definitely" />
-                      <Label htmlFor="definitely" className="text-gray-300">Definitivamente</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="probably" id="probably" />
-                      <Label htmlFor="probably" className="text-gray-300">Provavelmente</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="maybe" id="maybe" />
-                      <Label htmlFor="maybe" className="text-gray-300">Talvez</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="no" id="no" />
-                      <Label htmlFor="no" className="text-gray-300">Não</Label>
-                    </div>
-                  </RadioGroup>
+              {/* Question 2: Recommendation */}
+              <div className="space-y-4">
+                <h3 className="text-white text-lg font-semibold">2. Você recomendaria nossos serviços?</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { value: 'definitely', label: 'Definitivamente', icon: '💯' },
+                    { value: 'probably', label: 'Provavelmente', icon: '👍' },
+                    { value: 'maybe', label: 'Talvez', icon: '🤔' },
+                    { value: 'no', label: 'Não', icon: '❌' }
+                  ].map((option) => (
+                    <Button
+                      key={option.value}
+                      variant={quizAnswers.recommendation === option.value ? "default" : "outline"}
+                      onClick={() => handleQuizAnswer('recommendation', option.value)}
+                      className={`h-auto p-4 ${
+                        quizAnswers.recommendation === option.value
+                          ? 'bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black'
+                          : 'border-solarien-primary/30 text-white hover:bg-solarien-primary/10'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <div className="font-semibold">{option.label}</div>
+                      </div>
+                    </Button>
+                  ))}
                 </div>
+              </div>
 
-                {/* Improvement Question */}
-                <div>
-                  <Label className="text-white text-lg font-semibold mb-4 block">
-                    Qual aspecto você acha que mais precisa de melhorias?
-                  </Label>
-                  <RadioGroup value={improvement} onValueChange={handleImprovementChange}>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="website" id="website" />
-                      <Label htmlFor="website" className="text-gray-300">Website</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="support" id="support" />
-                      <Label htmlFor="support" className="text-gray-300">Atendimento</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="prices" id="prices" />
-                      <Label htmlFor="prices" className="text-gray-300">Preços</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="process" id="process" />
-                      <Label htmlFor="process" className="text-gray-300">Processo</Label>
-                    </div>
-                  </RadioGroup>
+              {/* Question 3: Improvements */}
+              <div className="space-y-4">
+                <h3 className="text-white text-lg font-semibold">3. O que podemos melhorar?</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { value: 'website', label: 'Website', icon: '💻' },
+                    { value: 'support', label: 'Atendimento', icon: '🎧' },
+                    { value: 'prices', label: 'Preços', icon: '💰' },
+                    { value: 'process', label: 'Processo', icon: '⚙️' }
+                  ].map((option) => (
+                    <Button
+                      key={option.value}
+                      variant={quizAnswers.improvements === option.value ? "default" : "outline"}
+                      onClick={() => handleQuizAnswer('improvements', option.value)}
+                      className={`h-auto p-4 ${
+                        quizAnswers.improvements === option.value
+                          ? 'bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black'
+                          : 'border-solarien-primary/30 text-white hover:bg-solarien-primary/10'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <div className="font-semibold">{option.label}</div>
+                      </div>
+                    </Button>
+                  ))}
                 </div>
-
-                {/* Additional Feedback */}
-                <div>
-                  <Label htmlFor="feedback" className="text-white text-lg font-semibold mb-4 block">
-                    Comentários adicionais (opcional)
-                  </Label>
-                  <Textarea
-                    id="feedback"
-                    placeholder="Compartilhe mais detalhes sobre sua experiência..."
-                    value={feedback}
-                    onChange={(e) => setFeedback(e.target.value)}
-                    className="bg-green-800/30 border-green-700 text-white placeholder-gray-400 focus:border-solarien-primary"
-                    rows={4}
-                  />
-                </div>
-
-                <Button 
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold py-3 text-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
-                >
-                  Enviar Feedback
-                </Button>
-              </form>
+              </div>
             </CardContent>
           </Card>
 
-          {/* Poll Results */}
+          {/* Real-time Poll Metrics */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {/* Satisfaction Results */}
+            {/* Satisfaction Metrics */}
             <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
                 <CardTitle className="text-solarien-primary text-xl flex items-center gap-2">
@@ -238,79 +255,73 @@ const Feedback = () => {
                   Satisfação Geral
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Excelente</span>
-                    <span className="text-solarien-primary">{pollMetrics.satisfaction.excellent}%</span>
-                  </div>
-                  <Progress value={pollMetrics.satisfaction.excellent} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Bom</span>
-                    <span className="text-solarien-primary">{pollMetrics.satisfaction.good}%</span>
-                  </div>
-                  <Progress value={pollMetrics.satisfaction.good} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Regular</span>
-                    <span className="text-solarien-primary">{pollMetrics.satisfaction.average}%</span>
-                  </div>
-                  <Progress value={pollMetrics.satisfaction.average} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Ruim</span>
-                    <span className="text-solarien-primary">{pollMetrics.satisfaction.poor}%</span>
-                  </div>
-                  <Progress value={pollMetrics.satisfaction.poor} className="h-2" />
+              <CardContent className="space-y-4">
+                {Object.entries(pollMetrics.satisfaction).map(([key, value]) => {
+                  const total = getTotalVotes(pollMetrics.satisfaction);
+                  const percentage = calculatePercentage(value, total);
+                  const labels = {
+                    excellent: 'Excelente',
+                    good: 'Boa', 
+                    average: 'Regular',
+                    poor: 'Ruim'
+                  };
+                  
+                  return (
+                    <div key={key} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-300">{labels[key as keyof typeof labels]}</span>
+                        <span className="text-solarien-primary font-semibold">{percentage}%</span>
+                      </div>
+                      <Progress value={percentage} className="h-2" />
+                    </div>
+                  );
+                })}
+                <div className="text-center pt-2 border-t border-green-700">
+                  <Badge variant="secondary" className="bg-solarien-primary/20 text-solarien-primary">
+                    {getTotalVotes(pollMetrics.satisfaction)} votos
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Recommendation Results */}
+            {/* Recommendation Metrics */}
             <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
                 <CardTitle className="text-solarien-primary text-xl flex items-center gap-2">
-                  <Users className="w-6 h-6" />
+                  <ThumbsUp className="w-6 h-6" />
                   Recomendação
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Definitivamente</span>
-                    <span className="text-solarien-primary">{pollMetrics.recommendation.definitely}%</span>
-                  </div>
-                  <Progress value={pollMetrics.recommendation.definitely} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Provavelmente</span>
-                    <span className="text-solarien-primary">{pollMetrics.recommendation.probably}%</span>
-                  </div>
-                  <Progress value={pollMetrics.recommendation.probably} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Talvez</span>
-                    <span className="text-solarien-primary">{pollMetrics.recommendation.maybe}%</span>
-                  </div>
-                  <Progress value={pollMetrics.recommendation.maybe} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Não</span>
-                    <span className="text-solarien-primary">{pollMetrics.recommendation.no}%</span>
-                  </div>
-                  <Progress value={pollMetrics.recommendation.no} className="h-2" />
+              <CardContent className="space-y-4">
+                {Object.entries(pollMetrics.recommendation).map(([key, value]) => {
+                  const total = getTotalVotes(pollMetrics.recommendation);
+                  const percentage = calculatePercentage(value, total);
+                  const labels = {
+                    definitely: 'Definitivamente',
+                    probably: 'Provavelmente',
+                    maybe: 'Talvez',
+                    no: 'Não'
+                  };
+                  
+                  return (
+                    <div key={key} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-300">{labels[key as keyof typeof labels]}</span>
+                        <span className="text-solarien-primary font-semibold">{percentage}%</span>
+                      </div>
+                      <Progress value={percentage} className="h-2" />
+                    </div>
+                  );
+                })}
+                <div className="text-center pt-2 border-t border-green-700">
+                  <Badge variant="secondary" className="bg-solarien-primary/20 text-solarien-primary">
+                    {getTotalVotes(pollMetrics.recommendation)} votos
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Improvement Results */}
+            {/* Improvements Metrics */}
             <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
                 <CardTitle className="text-solarien-primary text-xl flex items-center gap-2">
@@ -318,65 +329,90 @@ const Feedback = () => {
                   Melhorias
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Website</span>
-                    <span className="text-solarien-primary">{pollMetrics.improvement.website}%</span>
-                  </div>
-                  <Progress value={pollMetrics.improvement.website} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Atendimento</span>
-                    <span className="text-solarien-primary">{pollMetrics.improvement.support}%</span>
-                  </div>
-                  <Progress value={pollMetrics.improvement.support} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Preços</span>
-                    <span className="text-solarien-primary">{pollMetrics.improvement.prices}%</span>
-                  </div>
-                  <Progress value={pollMetrics.improvement.prices} className="h-2" />
-                </div>
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-300">Processo</span>
-                    <span className="text-solarien-primary">{pollMetrics.improvement.process}%</span>
-                  </div>
-                  <Progress value={pollMetrics.improvement.process} className="h-2" />
+              <CardContent className="space-y-4">
+                {Object.entries(pollMetrics.improvements).map(([key, value]) => {
+                  const total = getTotalVotes(pollMetrics.improvements);
+                  const percentage = calculatePercentage(value, total);
+                  const labels = {
+                    website: 'Website',
+                    support: 'Atendimento',
+                    prices: 'Preços',
+                    process: 'Processo'
+                  };
+                  
+                  return (
+                    <div key={key} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-300">{labels[key as keyof typeof labels]}</span>
+                        <span className="text-solarien-primary font-semibold">{percentage}%</span>
+                      </div>
+                      <Progress value={percentage} className="h-2" />
+                    </div>
+                  );
+                })}
+                <div className="text-center pt-2 border-t border-green-700">
+                  <Badge variant="secondary" className="bg-solarien-primary/20 text-solarien-primary">
+                    {getTotalVotes(pollMetrics.improvements)} votos
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Statistics */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 border-solarien-primary/20">
-              <CardContent className="p-6 text-center">
-                <BarChart3 className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
-                <div className="text-3xl font-bold text-solarien-primary mb-2">1,247</div>
-                <div className="text-gray-300">Feedbacks Recebidos</div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gradient-to-br from-solarien-secondary/10 to-solarien-tertiary/10 border-solarien-secondary/20">
-              <CardContent className="p-6 text-center">
-                <Award className="w-12 h-12 text-solarien-secondary mx-auto mb-4" />
-                <div className="text-3xl font-bold text-solarien-secondary mb-2">4.8</div>
-                <div className="text-gray-300">Nota Média</div>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gradient-to-br from-solarien-tertiary/10 to-solarien-primary/10 border-solarien-tertiary/20">
-              <CardContent className="p-6 text-center">
-                <Users className="w-12 h-12 text-solarien-tertiary mx-auto mb-4" />
-                <div className="text-3xl font-bold text-solarien-tertiary mb-2">96%</div>
+          {/* Feedback Form */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <MessageSquare className="w-8 h-8" />
+                Formulário de Feedback
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Deixe seu feedback detalhado sobre nossos serviços
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Textarea 
+                    placeholder="Escreva aqui seu feedback..."
+                    value={feedback}
+                    onChange={(e) => setFeedback(e.target.value)}
+                    className="bg-green-900/40 border-green-700 text-white placeholder-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  />
+                </div>
+                <Button className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold">
+                  Enviar Feedback
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Statistics Section */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <BarChart3 className="w-8 h-8" />
+                Estatísticas
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Confira algumas estatísticas sobre nossa plataforma
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solarien-primary mb-2">2,500+</div>
+                <div className="text-gray-300">Clientes Ativos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solarien-secondary mb-2">98%</div>
                 <div className="text-gray-300">Satisfação Geral</div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solarien-tertiary mb-2">4.8/5</div>
+                <div className="text-gray-300">Avaliação Média</div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
       <Footer />

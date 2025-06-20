@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ArrowLeft, Zap, CheckCircle, Users, Building, TrendingUp, HelpCircle, BarChart3, Target } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,8 @@ const HowItWorks = () => {
   const navigate = useNavigate();
 
   const distributors = [
-    'CPFL Energia', 'Enel', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
+    'CPFL Energia', '
+', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
     'Cemig', 'Copel', 'Celesc', 'RGE', 'CEB', 'Celpe', 'Coelba', 'Cosern'
   ];
 
@@ -38,11 +40,6 @@ const HowItWorks = () => {
                 Entenda todo o processo e comece a economizar hoje mesmo
               </p>
             </div>
-          </div>
-
-          {/* Advanced State Coverage Simulator */}
-          <div className="mb-8">
-            <StateCoverageSimulator />
           </div>
 
           {/* Como funciona? */}
@@ -194,6 +191,11 @@ const HowItWorks = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Advanced State Coverage Simulator - Moved here */}
+          <div className="mb-8">
+            <StateCoverageSimulator />
+          </div>
 
           {/* Difference between Groups */}
           <Card className="bg-green-800/20 border-green-700 mb-8">

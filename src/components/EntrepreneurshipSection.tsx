@@ -26,39 +26,106 @@ const EntrepreneurshipSection = () => {
     }
   ];
 
-  // Componente de nota de real mais realista
+  // Componente de nota de real extremamente realista e curvada
   const RealNote = ({ value, color }: { value: string, color: string }) => (
-    <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Sombra da nota */}
-      <rect x="2" y="2" width="80" height="40" rx="4" fill="rgba(0,0,0,0.1)"/>
+    <svg width="100" height="50" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        {/* Gradiente para simular curvatura */}
+        <linearGradient id={`noteGradient-${value}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={color} stopOpacity="0.4"/>
+          <stop offset="30%" stopColor={color} stopOpacity="0.25"/>
+          <stop offset="70%" stopColor={color} stopOpacity="0.35"/>
+          <stop offset="100%" stopColor={color} stopOpacity="0.2"/>
+        </linearGradient>
+        
+        {/* Gradiente para sombra 3D */}
+        <linearGradient id={`shadowGradient-${value}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="rgba(0,0,0,0.15)"/>
+          <stop offset="50%" stopColor="rgba(0,0,0,0.08)"/>
+          <stop offset="100%" stopColor="rgba(0,0,0,0.05)"/>
+        </linearGradient>
+        
+        {/* Filtro para desfoque da marca d'água */}
+        <filter id={`blur-${value}`}>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+        </filter>
+        
+        {/* Padrão de textura */}
+        <pattern id={`texture-${value}`} x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse" opacity="0.03">
+          <rect x="0" y="0" width="4" height="4" fill="#fff"/>
+          <rect x="4" y="4" width="4" height="4" fill="#fff"/>
+        </pattern>
+      </defs>
       
-      {/* Corpo principal da nota */}
-      <rect width="80" height="40" rx="4" fill={color} fillOpacity="0.4"/>
+      {/* Sombra 3D curvada */}
+      <path 
+        d="M8 5 Q50 -2 92 5 Q96 25 92 45 Q50 52 8 45 Q4 25 8 5 Z" 
+        fill={`url(#shadowGradient-${value})`}
+        transform="translate(3, 3)"
+      />
       
-      {/* Borda principal */}
-      <rect x="1" y="1" width="78" height="38" rx="3" stroke="#fff" strokeWidth="1" strokeOpacity="0.3"/>
+      {/* Corpo principal da nota curvada */}
+      <path 
+        d="M5 2 Q50 -5 95 2 Q98 25 95 48 Q50 55 5 48 Q2 25 5 2 Z" 
+        fill={`url(#noteGradient-${value})`}
+        stroke="#fff" 
+        strokeWidth="0.5" 
+        strokeOpacity="0.2"
+      />
       
-      {/* Borda interna decorativa */}
-      <rect x="3" y="3" width="74" height="34" rx="2" stroke="#fff" strokeWidth="0.5" strokeOpacity="0.2"/>
+      {/* Textura da nota */}
+      <path 
+        d="M5 2 Q50 -5 95 2 Q98 25 95 48 Q50 55 5 48 Q2 25 5 2 Z" 
+        fill={`url(#texture-${value})`}
+      />
+      
+      {/* Borda interna decorativa curvada */}
+      <path 
+        d="M8 5 Q50 -2 92 5 Q95 25 92 45 Q50 52 8 45 Q5 25 8 5 Z" 
+        fill="none"
+        stroke="#fff" 
+        strokeWidth="0.3" 
+        strokeOpacity="0.15"
+      />
+      
+      {/* Marca do Banco Central (simulada) */}
+      <ellipse cx="20" cy="15" rx="6" ry="8" fill="#fff" fillOpacity="0.08" filter={`url(#blur-${value})`}/>
+      <text x="20" y="18" textAnchor="middle" fontSize="3" fill="#fff" opacity="0.1" fontWeight="bold">BC</text>
       
       {/* Texto R$ */}
-      <text x="15" y="15" fontSize="8" fill="#fff" fontWeight="bold" opacity="0.6">R$</text>
+      <text x="15" y="28" fontSize="6" fill="#fff" fontWeight="bold" opacity="0.4">R$</text>
       
-      {/* Valor da nota */}
-      <text x="40" y="25" textAnchor="middle" fontSize="16" fill="#fff" fontWeight="bold" opacity="0.7">{value}</text>
+      {/* Valor da nota - tamanho maior e posicionamento melhor */}
+      <text x="50" y="30" textAnchor="middle" fontSize="14" fill="#fff" fontWeight="bold" opacity="0.5">{value}</text>
       
-      {/* Elementos decorativos da nota */}
-      <circle cx="12" cy="28" r="3" fill="#fff" fillOpacity="0.15"/>
-      <circle cx="68" cy="12" r="3" fill="#fff" fillOpacity="0.15"/>
+      {/* Elementos decorativos das bordas */}
+      <circle cx="15" cy="10" r="2" fill="#fff" fillOpacity="0.08"/>
+      <circle cx="85" cy="15" r="1.5" fill="#fff" fillOpacity="0.08"/>
+      <circle cx="12" cy="40" r="1.8" fill="#fff" fillOpacity="0.08"/>
+      <circle cx="88" cy="35" r="2.2" fill="#fff" fillOpacity="0.08"/>
       
-      {/* Padrão decorativo central */}
-      <rect x="25" y="18" width="30" height="4" rx="2" fill="#fff" fillOpacity="0.1"/>
+      {/* Padrão decorativo central simulando desenhos da nota */}
+      <ellipse cx="65" cy="25" rx="12" ry="8" fill="#fff" fillOpacity="0.06" filter={`url(#blur-${value})`}/>
+      <rect x="40" y="20" width="25" height="3" rx="1.5" fill="#fff" fillOpacity="0.08"/>
+      <rect x="35" y="26" width="15" height="2" rx="1" fill="#fff" fillOpacity="0.06"/>
       
-      {/* Marca d'água simulada */}
-      <ellipse cx="60" cy="20" rx="8" ry="12" fill="#fff" fillOpacity="0.05"/>
+      {/* Linhas decorativas simulando micro impressões */}
+      <line x1="25" y1="35" x2="45" y2="35" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.08"/>
+      <line x1="25" y1="37" x2="40" y2="37" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.06"/>
+      <line x1="25" y1="39" x2="35" y2="39" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.04"/>
       
-      {/* Número serial simulado */}
-      <text x="15" y="35" fontSize="4" fill="#fff" opacity="0.3" fontFamily="monospace">BC{Math.floor(Math.random() * 10000000)}</text>
+      {/* Número de série mais realista */}
+      <text x="12" y="46" fontSize="3" fill="#fff" opacity="0.2" fontFamily="monospace">
+        {value === "100" ? "AA" : value === "50" ? "BB" : "CC"}{Math.floor(Math.random() * 10000000).toString().padStart(7, '0')}
+      </text>
+      
+      {/* Marca d'água central */}
+      <ellipse cx="75" cy="25" rx="8" ry="12" fill="#fff" fillOpacity="0.03" filter={`url(#blur-${value})`}/>
+      
+      {/* Elementos de segurança simulados */}
+      <rect x="70" y="8" width="20" height="1" rx="0.5" fill="#fff" fillOpacity="0.05"/>
+      <rect x="72" y="10" width="16" height="0.8" rx="0.4" fill="#fff" fillOpacity="0.04"/>
+      <rect x="74" y="12" width="12" height="0.6" rx="0.3" fill="#fff" fillOpacity="0.03"/>
     </svg>
   );
 
@@ -133,9 +200,9 @@ const EntrepreneurshipSection = () => {
         {/* Commission Section with Money Background */}
         <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
           {/* Animated Real Notes Background */}
-          <div className="absolute inset-0 overflow-hidden opacity-50">
+          <div className="absolute inset-0 overflow-hidden opacity-35">
             {/* Notas de R$ 100 */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div
                 key={`note-100-${i}`}
                 className="absolute money-animation"
@@ -150,7 +217,7 @@ const EntrepreneurshipSection = () => {
             ))}
             
             {/* Notas de R$ 50 */}
-            {[...Array(8)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <div
                 key={`note-50-${i}`}
                 className="absolute money-animation"
@@ -165,7 +232,7 @@ const EntrepreneurshipSection = () => {
             ))}
             
             {/* Notas de R$ 20 */}
-            {[...Array(6)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <div
                 key={`note-20-${i}`}
                 className="absolute money-animation"

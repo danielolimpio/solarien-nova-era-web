@@ -28,10 +28,10 @@ const Terms = () => {
             </Button>
             <div>
               <h1 className="text-4xl font-bold text-white mb-2">
-                Termos de Uso
+                Termos de Uso da Solarien
               </h1>
               <p className="text-gray-300">
-                Termos e condições de uso da Solarien Energy
+                Bem-vindo à Solarien! Leia atentamente antes de utilizar nossos serviços.
               </p>
             </div>
           </div>
@@ -39,136 +39,124 @@ const Terms = () => {
           <Card className="bg-green-800/20 border-green-700">
             <CardHeader>
               <CardTitle className="text-solarien-primary">
-                Termos e Condições de Uso
+                Termos de Uso da Solarien
               </CardTitle>
               <CardDescription className="text-gray-300">
-                Última atualização: Janeiro de 2025
+                Bem-vindo à Solarien! Ao acessar e utilizar nosso site e serviços, você concorda com os termos e condições descritos abaixo. Leia atentamente este documento antes de continuar a navegação ou utilizar nossos serviços.
               </CardDescription>
             </CardHeader>
             <CardContent className="prose prose-invert max-w-none">
               <div className="text-gray-300 space-y-6 leading-relaxed">
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">1. Definições</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">1. Aceitação dos Termos</h2>
                   <p>
-                    Para os fins destes Termos de Uso, as seguintes definições se aplicam:
+                    Ao utilizar os serviços oferecidos pela Solarien, você declara ter lido, compreendido e aceitado estes Termos de Uso. Caso não concorde com alguma cláusula, solicitamos que não utilize nossos serviços.
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-xl font-bold text-white mb-4">2. Sobre a Solarien</h2>
+                  <p>
+                    A Solarien oferece serviços de portabilidade nas contas de energia para residências, comércios e indústrias por meio da Energia Compartilhada por Assinatura e do Mercado Livre de Energia. Nosso serviço é gratuito e visa proporcionar descontos na fatura de energia elétrica dos clientes.
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-xl font-bold text-white mb-4">3. Cadastro e Envio de Dados</h2>
+                  <p>
+                    Para utilizar nossos serviços, o usuário deverá fornecer as seguintes informações:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li><strong>Solarien Energy:</strong> Empresa especializada em gestão de contratos e consultoria energética.</li>
-                    <li><strong>Usuário:</strong> Pessoa física ou jurídica que utiliza os serviços da Solarien Energy.</li>
-                    <li><strong>Plataforma:</strong> Website, aplicativos e sistemas da Solarien Energy.</li>
-                    <li><strong>Serviços:</strong> Consultoria energética, migração para energia por assinatura e mercado livre.</li>
+                    <li>Dados da conta de energia (número da unidade consumidora, histórico de consumo, etc.);</li>
+                    <li>Dados pessoais (nome, CPF, e-mail e WhatsApp);</li>
+                    <li>Anexo da conta de energia, necessário para análise e processamento da portabilidade.</li>
                   </ul>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">2. Aceitação dos Termos</h2>
-                  <p>
-                    Ao acessar e utilizar os serviços da Solarien Energy, você concorda em cumprir e estar sujeito a estes Termos de Uso. 
-                    Se você não concordar com qualquer parte destes termos, não deve utilizar nossos serviços.
+                  <p className="mt-4">
+                    O usuário declara que as informações fornecidas são verdadeiras e se responsabiliza pela veracidade dos dados inseridos.
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">3. Descrição dos Serviços</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">4. Uso dos Serviços</h2>
                   <p>
-                    A Solarien Energy oferece:
+                    Ao aderir aos serviços da Solarien, o usuário autoriza:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Consultoria especializada em energia elétrica</li>
-                    <li>Migração gratuita para energia por assinatura</li>
-                    <li>Assessoria para migração ao mercado livre de energia</li>
-                    <li>Gestão de contratos energéticos</li>
-                    <li>Análise de viabilidade econômica</li>
-                    <li>Acompanhamento e suporte técnico</li>
+                    <li>O uso dos dados fornecidos para análise e intermediação da portabilidade da conta de energia;</li>
+                    <li>O recebimento das faturas mensais e comunicações via WhatsApp e e-mail;</li>
+                    <li>A análise de perfil de consumo para oferecer as melhores condições no fornecimento de energia.</li>
                   </ul>
+                  <p className="mt-4">
+                    O uso dos serviços está sujeito à disponibilidade do modelo de portabilidade na região do cliente e às regras regulatórias do setor energético brasileiro.
+                  </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">4. Responsabilidades do Usuário</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">5. Responsabilidades do Usuário</h2>
                   <p>
                     O usuário se compromete a:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Fornecer informações verdadeiras e atualizadas</li>
-                    <li>Manter a confidencialidade de suas credenciais de acesso</li>
-                    <li>Utilizar os serviços de forma legal e adequada</li>
-                    <li>Cumprir com todas as obrigações contratuais</li>
-                    <li>Comunicar imediatamente qualquer uso não autorizado de sua conta</li>
+                    <li>Fornecer informações corretas e atualizadas;</li>
+                    <li>Manter contato ativo para recebimento das faturas e comunicações;</li>
+                    <li>Respeitar os termos estabelecidos neste documento;</li>
+                    <li>Não utilizar os serviços para fins ilícitos ou fraudulentos.</li>
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">5. Responsabilidades da Solarien Energy</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">6. Responsabilidades da Solarien</h2>
                   <p>
-                    A Solarien Energy se compromete a:
+                    A Solarien se compromete a:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Prestar serviços com qualidade e transparência</li>
-                    <li>Manter a confidencialidade das informações do cliente</li>
-                    <li>Fornecer suporte técnico adequado</li>
-                    <li>Cumprir com todas as regulamentações do setor elétrico</li>
-                    <li>Oferecer migração gratuita conforme condições estabelecidas</li>
+                    <li>Proteger os dados fornecidos pelos usuários, conforme nossa Política de Privacidade;</li>
+                    <li>Oferecer suporte e esclarecer dúvidas sobre os serviços prestados;</li>
+                    <li>Atuar como intermediadora na portabilidade da conta de energia, garantindo transparência no processo;</li>
+                    <li>Respeitar as normas regulatórias do setor energético.</li>
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">6. Privacidade e Proteção de Dados</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">7. Limitações de Responsabilidade</h2>
                   <p>
-                    A Solarien Energy está comprometida com a proteção da privacidade dos usuários. 
-                    Todas as informações pessoais são tratadas de acordo com nossa Política de Privacidade e 
-                    em conformidade com a Lei Geral de Proteção de Dados (LGPD).
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">7. Limitação de Responsabilidade</h2>
-                  <p>
-                    A Solarien Energy não se responsabiliza por:
+                    A Solarien não se responsabiliza por:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Falhas no fornecimento de energia elétrica por parte das distribuidoras</li>
-                    <li>Mudanças na regulamentação do setor elétrico</li>
-                    <li>Perdas indiretas ou consequenciais</li>
-                    <li>Interrupções temporárias dos serviços para manutenção</li>
+                    <li>Informações incorretas fornecidas pelo usuário;</li>
+                    <li>Mudanças nas normas e regras do setor energético que possam impactar a portabilidade;</li>
+                    <li>Interferências externas, como falhas em sistemas de terceiros ou indisponibilidade dos serviços de fornecedores de energia;</li>
+                    <li>Danos decorrentes do mau uso dos serviços por parte do usuário.</li>
                   </ul>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">8. Modificações dos Termos</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">8. Alterações nos Termos de Uso</h2>
                   <p>
-                    A Solarien Energy reserva-se o direito de modificar estes Termos de Uso a qualquer momento. 
-                    As alterações entrarão em vigor imediatamente após sua publicação na plataforma. 
-                    É responsabilidade do usuário verificar periodicamente os termos atualizados.
+                    A Solarien pode modificar estes Termos de Uso a qualquer momento para atender a novas regulamentações ou melhorias no serviço. Qualquer alteração será publicada em nosso site (www.solarien.com.br) e comunicada aos usuários quando necessário.
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">9. Rescisão</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">9. Rescisão e Cancelamento</h2>
                   <p>
-                    Estes termos permanecerão em vigor até serem rescindidos por qualquer das partes. 
-                    A Solarien Energy pode rescindir ou suspender o acesso aos serviços imediatamente, 
-                    sem aviso prévio, em caso de violação destes termos.
+                    O usuário pode solicitar o cancelamento da participação no serviço de portabilidade a qualquer momento, entrando em contato pelo e-mail ou WhatsApp disponíveis no site. A Solarien também pode suspender ou encerrar o acesso ao serviço em caso de descumprimento destes termos ou por motivos técnicos e regulatórios.
                   </p>
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-bold text-white mb-4">10. Lei Aplicável</h2>
+                  <h2 className="text-xl font-bold text-white mb-4">10. Contato</h2>
                   <p>
-                    Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. 
-                    Qualquer disputa será resolvida no foro da comarca de São Paulo, SP.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">11. Contato</h2>
-                  <p>
-                    Em caso de dúvidas sobre estes Termos de Uso, entre em contato conosco:
+                    Caso tenha dúvidas sobre estes Termos de Uso, entre em contato conosco:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Email: contato@solarien.com.br</li>
-                    <li>Telefone: +55 (11) 99736-1698</li>
-                    <li>Endereço: São Paulo - SP, Brasil</li>
+                    <li>E-mail: contato@solarien.com.br</li>
+                    <li>WhatsApp: +55 (11) 99736-1698</li>
+                    <li>Site: www.solarien.com.br</li>
                   </ul>
+                  <p className="mt-4 font-semibold text-solarien-primary">
+                    Ao utilizar nossos serviços, você declara estar ciente e de acordo com os termos estabelecidos neste documento.
+                  </p>
                 </section>
               </div>
             </CardContent>

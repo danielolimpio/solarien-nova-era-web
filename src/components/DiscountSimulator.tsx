@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Calculator, Zap, TrendingDown, X } from 'lucide-react';
+import { Calculator, Zap, TrendingDown } from 'lucide-react';
 
 interface DiscountSimulatorProps {
   children: React.ReactNode;
@@ -55,14 +55,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md bg-white border-solarien-primary/20 relative">
-        <button
-          onClick={() => setOpen(false)}
-          className="absolute right-4 top-4 z-50 p-2 rounded-full bg-red-500 hover:bg-red-600 text-white transition-all duration-200 hover:scale-110 shadow-lg"
-        >
-          <X className="h-5 w-5" />
-        </button>
-
+      <DialogContent className="sm:max-w-md bg-white border-solarien-primary/20">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
             <span className="bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent">

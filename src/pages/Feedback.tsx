@@ -16,11 +16,11 @@ const Feedback = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [quizCompleted, setQuizCompleted] = useState(false);
   
-  // Poll states
+  // Poll states - updated to sync with quiz
   const [polls, setPolls] = useState({
-    satisfaction: { excellent: 0, good: 0, average: 0, poor: 0 },
-    recommendation: { definitely: 0, probably: 0, maybe: 0, no: 0 },
-    improvement: { website: 0, support: 0, prices: 0, process: 0 }
+    satisfaction: { excellent: 5, good: 3, average: 2, poor: 1 },
+    recommendation: { definitely: 8, probably: 4, maybe: 2, no: 1 },
+    improvement: { website: 3, support: 5, prices: 4, process: 2 }
   });
   
   const [userVotes, setUserVotes] = useState<Record<string, boolean>>({});
@@ -42,33 +42,69 @@ const Feedback = () => {
         'Boa - Estou considerando migrar',
         'Regular - Preciso de mais informações',
         'Ruim - Não tenho interesse'
-      ]
+      ],
+      mapToPoll: 'satisfaction',
+      mapping: {
+        'Excelente - Já tenho e recomendo': 'excellent',
+        'Boa - Estou considerando migrar': 'good',
+        'Regular - Preciso de mais informações': 'average',
+        'Ruim - Não tenho interesse': 'poor'
+      }
     },
     {
       id: 'priority',
-      question: 'O que é mais importante para você na escolha de energia?',
+      question: 'Você recomendaria energia solar para outras pessoas?',
       options: [
-        'Economia na conta de luz',
-        'Sustentabilidade ambiental',
-        'Facilidade do processo',
-        'Suporte ao cliente'
-      ]
+        'Definitivamente sim',
+        'Provavelmente sim',
+        'Talvez, depende da situação',
+        'Não recomendaria'
+      ],
+      mapToPoll: 'recommendation',
+      mapping: {
+        'Definitivamente sim': 'definitely',
+        'Provavelmente sim': 'probably',
+        'Talvez, depende da situação': 'maybe',
+        'Não recomendaria': 'no'
+      }
     },
     {
-      id: 'barrier',
-      question: 'Qual é o maior obstáculo para migrar para energia solar?',
+      id: 'improvement',
+      question: 'Em qual área você gostaria de ver melhorias?',
       options: [
-        'Falta de informação',
-        'Desconfiança no processo',
-        'Questões burocráticas',
-        'Não vejo obstáculos'
-      ]
+        'Website e informações online',
+        'Atendimento ao cliente',
+        'Preços e condições',
+        'Processo de instalação'
+      ],
+      mapToPoll: 'improvement',
+      mapping: {
+        'Website e informações online': 'website',
+        'Atendimento ao cliente': 'support',
+        'Preços e condições': 'prices',
+        'Processo de instalação': 'process'
+      }
     }
   ];
 
   const handleQuizAnswer = (answer: string) => {
-    const newAnswers = { ...answers, [quizQuestions[currentQuestion].id]: answer };
+    const currentQ = quizQuestions[currentQuestion];
+    const newAnswers = { ...answers, [currentQ.id]: answer };
     setAnswers(newAnswers);
+
+    // Update corresponding poll metric
+    const pollType = currentQ.mapToPoll;
+    const pollOption = currentQ.mapping[answer as keyof typeof currentQ.mapping];
+    
+    if (pollType && pollOption) {
+      setPolls(prev => ({
+        ...prev,
+        [pollType]: {
+          ...prev[pollType as keyof typeof prev],
+          [pollOption]: (prev[pollType as keyof typeof prev][pollOption as keyof (typeof prev)[typeof pollType]] as number) + 1
+        }
+      }));
+    }
 
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -86,13 +122,16 @@ const Feedback = () => {
   const handlePollVote = (pollType: string, option: string) => {
     if (userVotes[pollType]) return; // Already voted
     
-    setPolls(prev => ({
-      ...prev,
-      [pollType]: {
-        ...prev[pollType as keyof typeof prev],
-        [option]: (prev[pollType as keyof typeof prev][option as keyof typeof prev[pollType]] as number) + 1
-      }
-    }));
+    setPolls(prev => {
+      const currentPoll = prev[pollType as keyof typeof prev];
+      return {
+        ...prev,
+        [pollType]: {
+          ...currentPoll,
+          [option]: (currentPoll[option as keyof typeof currentPoll] as number) + 1
+        }
+      };
+    });
     
     setUserVotes(prev => ({ ...prev, [pollType]: true }));
   };
@@ -144,10 +183,10 @@ const Feedback = () => {
             <CardHeader>
               <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
                 <Users className="w-8 h-8" />
-                Quiz Rápido sobre Energia Solar
+                Quiz Interativo sobre Energia Solar
               </CardTitle>
               <CardDescription className="text-gray-300">
-                Responda algumas perguntas e nos ajude a entender melhor o perfil dos nossos clientes.
+                Responda algumas perguntas e suas respostas serão contabilizadas nas métricas abaixo.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -173,7 +212,7 @@ const Feedback = () => {
                         <button
                           key={index}
                           onClick={() => handleQuizAnswer(option)}
-                          className="w-full p-4 text-left bg-green-800/30 border border-green-700 rounded-lg hover:bg-green-700/50 transition-colors duration-300 text-white"
+                          className="w-full p-4 text-left bg-green-800/30 border border-green-700 rounded-lg hover:bg-green-700/50 transition-colors duration-300 text-white hover:border-solarien-primary"
                         >
                           {option}
                         </button>
@@ -185,7 +224,7 @@ const Feedback = () => {
                 <div className="text-center">
                   <CheckCircle className="w-16 h-16 text-solarien-primary mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-4">Obrigado por participar!</h3>
-                  <p className="text-gray-300 mb-6">Suas respostas nos ajudam a melhorar nossos serviços.</p>
+                  <p className="text-gray-300 mb-6">Suas respostas foram contabilizadas nas métricas abaixo.</p>
                   <Button
                     onClick={resetQuiz}
                     className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold"
@@ -197,7 +236,7 @@ const Feedback = () => {
             </CardContent>
           </Card>
 
-          {/* Polls Section */}
+          {/* Polls Section with Real-time Results */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {/* Satisfaction Poll */}
             <Card className="bg-green-800/20 border-green-700">

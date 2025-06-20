@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
+import { ArrowLeft, Zap, CheckCircle, Users, Building, TrendingUp, HelpCircle, BarChart3, Target } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Sun, Zap, Building, Home, CheckCircle, MessageCircle, FileText, Clock, MapPin, Phone, Mail, Settings, Award, Building2, HelpCircle, TrendingUp, Users } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
@@ -11,101 +11,19 @@ import DiscountSimulator from '../components/DiscountSimulator';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('grupo-b');
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [selectedState, setSelectedState] = useState('');
 
-  const grupoASteps = [
-    {
-      icon: MessageCircle,
-      title: "Entre em contato",
-      description: "Fale com um Licenciado Solarien via WhatsApp"
-    },
-    {
-      icon: FileText,
-      title: "Análise detalhada",
-      description: "Análise do seu consumo e histórico energético"
-    },
-    {
-      icon: Zap,
-      title: "Negociação",
-      description: "Apresentação de fornecedores e negociação direta"
-    },
-    {
-      icon: CheckCircle,
-      title: "Ativação",
-      description: "Formalização do contrato e início da migração"
-    }
+  const states = [
+    'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal',
+    'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul',
+    'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí',
+    'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia',
+    'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'
   ];
 
-  const grupoBSteps = [
-    {
-      icon: MessageCircle,
-      title: "Contato inicial",
-      description: "Entre em contato conosco pelo WhatsApp"
-    },
-    {
-      icon: FileText,
-      title: "Análise personalizada",
-      description: "Licenciado analisa seu perfil e envia proposta"
-    },
-    {
-      icon: CheckCircle,
-      title: "Contrato digital",
-      description: "Assine o contrato e aguarde a ativação"
-    },
-    {
-      icon: Clock,
-      title: "Créditos solares",
-      description: "Em até 90 dias, receba os créditos na sua conta"
-    }
-  ];
-
-  const distribuidoras = [
-    { estado: "Bahia", empresa: "Coelba (Neoenergia)", desconto: "25%" },
-    { estado: "Brasília (DF)", empresa: "CEB (Neoenergia)", desconto: "25%" },
-    { estado: "Ceará", empresa: "Enel", desconto: "25%" },
-    { estado: "Goiás", empresa: "Equatorial", desconto: "25%" },
-    { estado: "Maranhão", empresa: "Equatorial", desconto: "25%" },
-    { estado: "Mato Grosso", empresa: "Energisa", desconto: "25%" },
-    { estado: "Mato Grosso do Sul", empresa: "Energisa", desconto: "25%" },
-    { estado: "Minas Gerais", empresa: "Cemig", desconto: "25%" },
-    { estado: "Minas Gerais", empresa: "Energisa", desconto: "25%" },
-    { estado: "Pará", empresa: "Equatorial", desconto: "25%" },
-    { estado: "Paraná", empresa: "Copel", desconto: "25%" },
-    { estado: "Paraná", empresa: "Energisa", desconto: "25%" },
-    { estado: "Pernambuco", empresa: "Celpe (Neoenergia)", desconto: "25%" },
-    { estado: "Piauí", empresa: "Equatorial", desconto: "25%" },
-    { estado: "Rio Grande do Norte", empresa: "Cosern (Neoenergia)", desconto: "25%" },
-    { estado: "Santa Catarina", empresa: "Celesc", desconto: "25%" },
-    { estado: "São Paulo", empresa: "CPFL Paulista", desconto: "25%" },
-    { estado: "São Paulo", empresa: "Elektro (Neoenergia)", desconto: "25%" },
-    { estado: "São Paulo", empresa: "Energisa", desconto: "25%" },
-    { estado: "São Paulo", empresa: "Copel", desconto: "25%" },
-    { estado: "Sergipe", empresa: "Energisa", desconto: "25%" },
-    { estado: "Tocantins", empresa: "Energisa", desconto: "25%" }
-  ];
-
-  const faqs = [
-    {
-      question: "A mudança é legalizada?",
-      answer: "Sim! A portabilidade é regulada pela ANEEL e garantida pela Lei 14.300/2022, que permite a livre escolha do fornecedor de energia."
-    },
-    {
-      question: "É preciso pagar algo para migrar?",
-      answer: "Não! A adesão é gratuita e não há cobrança de taxas ou custos adicionais."
-    },
-    {
-      question: "Preciso instalar algo na minha casa ou empresa?",
-      answer: "Não! Você continua usando a mesma rede elétrica da distribuidora. Nenhuma obra ou instalação é necessária."
-    },
-    {
-      question: "Como acompanho os descontos na conta?",
-      answer: "Você receberá créditos energéticos diretamente na fatura da distribuidora, com destaque claro do valor abatido."
-    },
-    {
-      question: "Posso cancelar a qualquer momento?",
-      answer: "Sim! Após cumprir o período de fidelização (12 meses para grupo B ou 5 anos para grupo A), você pode cancelar quando quiser, sem multa."
-    }
+  const distributors = [
+    'CPFL Energia', 'Enel', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
+    'Cemig', 'Copel', 'Celesc', 'RGE', 'CEB', 'Celpe', 'Coelba', 'Cosern'
   ];
 
   return (
@@ -124,331 +42,236 @@ const HowItWorks = () => {
               Voltar
             </Button>
             <div>
-              <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-                <Sun className="w-10 h-10 text-solarien-primary" />
-                Como Funciona | Solarien Energy
-              </h1>
+              <h1 className="text-4xl font-bold text-white mb-2">Como Funciona a Energia Solar</h1>
               <p className="text-gray-300">
-                Seja muito bem-vindo(a) à revolução da energia limpa no Brasil!
+                Entenda todo o processo e comece a economizar hoje mesmo
               </p>
             </div>
           </div>
 
-          {/* Hero Section */}
-          <Card className="bg-energy-gradient border-green-700 mb-12">
-            <CardContent className="p-8">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  Energia Solar Sem Instalação
-                </h2>
-                <p className="text-gray-300 text-lg mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Na Solarien Energy, você pode reduzir sua conta de luz em <span className="text-solarien-primary font-bold">até 25% no Grupo B</span> e <span className="text-solarien-primary font-bold">até 45% no Mercado Livre</span>, sem precisar instalar placas solares em casa ou na sua empresa. Tudo isso graças ao <span className="text-solarien-primary font-bold">Mercado de Energia por Assinatura</span>.
-                </p>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                    <Zap className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
-                    <h3 className="text-white font-bold text-lg mb-2">Sem Obras</h3>
-                    <p className="text-gray-300">Nenhuma instalação necessária</p>
+          {/* Como funciona? */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Zap className="w-8 h-8" />
+                Como funciona?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="bg-solarien-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-solarien-primary">1</span>
                   </div>
-                  <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                    <CheckCircle className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
-                    <h3 className="text-white font-bold text-lg mb-2">Sem Custos Extras</h3>
-                    <p className="text-gray-300">Migração totalmente gratuita</p>
+                  <h3 className="text-white font-semibold mb-2">Cadastro Simples</h3>
+                  <p className="text-gray-300">Faça seu cadastro em nossa plataforma em menos de 5 minutos</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-solarien-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-solarien-primary">2</span>
                   </div>
-                  <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                    <Sun className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
-                    <h3 className="text-white font-bold text-lg mb-2">Energia Limpa</h3>
+                  <h3 className="text-white font-semibold mb-2">Escolha seu Plano</h3>
+                  <p className="text-gray-300">Selecione o plano que melhor se adequa ao seu consumo</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-solarien-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-solarien-primary">3</span>
+                  </div>
+                  <h3 className="text-white font-semibold mb-2">Comece a Economizar</h3>
+                  <p className="text-gray-300">Receba créditos de energia solar direto na sua conta</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Vantagens */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <CheckCircle className="w-8 h-8" />
+                Vantagens:
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-solarien-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Economia Imediata</h3>
+                    <p className="text-gray-300">Reduza sua conta de luz em até 25% desde o primeiro mês</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-solarien-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Sem Investimento Inicial</h3>
+                    <p className="text-gray-300">Não precisa instalar painéis ou fazer obras</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-solarien-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Energia Limpa</h3>
                     <p className="text-gray-300">100% renovável e sustentável</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-solarien-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-white font-semibold mb-1">Flexibilidade Total</h3>
+                    <p className="text-gray-300">Cancele quando quiser, sem multas</p>
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Portabilidade Energética */}
-          <Card className="bg-green-800/20 border-green-700 mb-12">
+          {/* Group Selection */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
             <CardHeader>
-              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
-                <Zap className="w-8 h-8" />
-                Portabilidade Energética: Acesso Simples e Sustentável
-              </CardTitle>
+              <CardTitle className="text-solarien-primary text-2xl">Escolha seu Grupo</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                A <span className="text-solarien-primary font-bold">Lei 14.300/2022</span> trouxe grandes transformações ao setor elétrico brasileiro, permitindo que consumidores dos Grupos A (Alta Tensão) e B (Baixa Tensão) possam escolher de onde querem receber sua energia — mesmo sem ter geradores físicos instalados em suas unidades.
-              </p>
-              <p className="text-gray-300 text-lg leading-relaxed mt-4">
-                Isso significa que você não precisa mais depender apenas da distribuidora local. Com a Solarien Energy, você se conecta a <span className="text-solarien-primary font-bold">usinas solares certificadas</span>, e recebe créditos energéticos diretamente na sua conta de luz.
-              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-lg p-6 border border-solarien-primary/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="w-8 h-8 text-solarien-primary" />
+                    <h3 className="text-2xl font-bold text-white">Grupo B - Residências</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">Para residências e pequenos comércios</p>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-primary" />
+                      Desconto de até 25%
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-primary" />
+                      Processo simplificado
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-primary" />
+                      Sem burocracia
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-gradient-to-br from-solarien-secondary/10 to-solarien-tertiary/10 rounded-lg p-6 border border-solarien-secondary/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Building className="w-8 h-8 text-solarien-secondary" />
+                    <h3 className="text-2xl font-bold text-white">Grupo A - Empresas</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">Para indúst rias e grandes empresas</p>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-secondary" />
+                      Desconto de até 15%
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-secondary" />
+                      Volumes maiores
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-solarien-secondary" />
+                      Consultoria especializada
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
-          {/* Tabs para Grupos A e B */}
-          <div className="mb-12">
-            <div className="flex justify-center mb-8">
-              <div className="bg-green-800/30 p-2 rounded-lg border border-green-700 flex">
-                <button
-                  onClick={() => setActiveTab('grupo-b')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
-                    activeTab === 'grupo-b'
-                      ? 'bg-solarien-primary text-black'
-                      : 'text-white hover:bg-green-700/50'
-                  }`}
-                >
-                  <Home className="w-5 h-5" />
-                  Grupo B - Residências
-                </button>
-                <button
-                  onClick={() => setActiveTab('grupo-a')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
-                    activeTab === 'grupo-a'
-                      ? 'bg-solarien-primary text-black'
-                      : 'text-white hover:bg-green-700/50'
-                  }`}
-                >
-                  <Building className="w-5 h-5" />
-                  Grupo A - Empresas
-                </button>
-              </div>
-            </div>
-
-            {activeTab === 'grupo-b' && (
-              <div className="space-y-8">
-                <Card className="bg-green-800/20 border-green-700">
-                  <CardHeader>
-                    <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
-                      <Home className="w-8 h-8" />
-                      Para Residências e Pequenos Comércios – Grupo B (Baixa Tensão)
-                    </CardTitle>
-                    <CardDescription className="text-gray-300 text-lg">
-                      Se sua conta tem consumo médio de <span className="text-solarien-primary font-bold">150 kWh/mês ou mais</span>, você pode fazer parte da geração compartilhada e começar a economizar já!
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 gap-8">
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                          <Award className="w-6 h-6 text-solarien-primary" />
-                          Vantagens:
-                        </h3>
-                        <ul className="space-y-2 text-gray-300">
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Desconto de até 25% na conta de luz
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Sem instalações ou obras
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Não paga nada para migrar
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Utiliza a mesma rede elétrica atual
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Fidelidade de 12 meses
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Injeção de créditos a partir de 90 dias
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                            Atendemos 16 estados + Distrito Federal
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                          <Settings className="w-6 h-6 text-solarien-primary" />
-                          Como funciona?
-                        </h3>
-                        <div className="space-y-4">
-                          {grupoBSteps.map((step, index) => (
-                            <div key={index} className="flex items-start gap-4 p-4 bg-green-800/30 rounded-lg border border-green-700">
-                              <div className="bg-solarien-primary p-2 rounded-full">
-                                <step.icon className="w-5 h-5 text-black" />
-                              </div>
-                              <div>
-                                <h4 className="text-white font-semibold">{step.title}</h4>
-                                <p className="text-gray-300 text-sm">{step.description}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-8 text-center">
-                      <Button
-                        onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
-                        className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-4 text-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
-                      >
-                        <MessageCircle className="w-6 h-6 mr-2" />
-                        Fale com um Licenciado Agora
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Tabela de Distribuidoras */}
-                <Card className="bg-green-800/20 border-green-700">
-                  <CardHeader>
-                    <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
-                      <Building2 className="w-8 h-8" />
-                      Distribuidoras Participantes no Grupo B
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                      {distribuidoras.map((dist, index) => (
-                        <div key={index} className="bg-green-800/30 p-4 rounded-lg border border-green-700">
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <h4 className="text-white font-semibold">{dist.estado}</h4>
-                              <p className="text-gray-300 text-sm">{dist.empresa}</p>
-                            </div>
-                            <span className="text-solarien-primary font-bold text-lg">{dist.desconto}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Simulador */}
-                    <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                      <h4 className="text-white font-bold text-xl mb-4 text-center">Simule sua Economia</h4>
-                      <DiscountSimulator />
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
-
-            {activeTab === 'grupo-a' && (
-              <Card className="bg-green-800/20 border-green-700">
-                <CardHeader>
-                  <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
-                    <Building className="w-8 h-8" />
-                    Para Empresas e Indústrias – Mercado Livre de Energia – Grupo A (Alta Tensão)
-                  </CardTitle>
-                  <CardDescription className="text-gray-300 text-lg">
-                    Para empresas e indústrias, oferecemos acesso ao Mercado Livre de Energia, onde é possível negociar contratos com preços competitivos e fontes renováveis.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <Award className="w-6 h-6 text-solarien-primary" />
-                        Vantagens:
-                      </h3>
-                      <ul className="space-y-2 text-gray-300">
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Redução real na tarifa de energia de até 45%
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Contrato com duração mínima de 5 anos
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Injeção de energia a partir de 90 a 180 dias
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Atendemos todo o Brasil — 26 estados + DF
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Sistema interligado nacional
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-solarien-primary" />
-                          Sem burocracia e sem custos extras
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <Settings className="w-6 h-6 text-solarien-primary" />
-                        Como funciona?
-                      </h3>
-                      <div className="space-y-4">
-                        {grupoASteps.map((step, index) => (
-                          <div key={index} className="flex items-start gap-4 p-4 bg-green-800/30 rounded-lg border border-green-700">
-                            <div className="bg-solarien-primary p-2 rounded-full">
-                              <step.icon className="w-5 h-5 text-black" />
-                            </div>
-                            <div>
-                              <h4 className="text-white font-semibold">{step.title}</h4>
-                              <p className="text-gray-300 text-sm">{step.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-8 text-center">
-                    <Button
-                      onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
-                      className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-4 text-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
-                    >
-                      <MessageCircle className="w-6 h-6 mr-2" />
-                      Fale com um Especialista
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-
-          {/* Diferença entre Grupos */}
-          <Card className="bg-green-800/20 border-green-700 mb-12">
+          {/* Distribuidoras Participantes */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
             <CardHeader>
               <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
-                <Users className="w-8 h-8" />
+                <Building className="w-8 h-8" />
+                Distribuidoras Participantes no Grupo B
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {distributors.map((distributor, index) => (
+                  <div key={index} className="bg-green-800/30 rounded-lg p-4 text-center">
+                    <p className="text-white font-semibold">{distributor}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Difference between Groups */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Target className="w-8 h-8" />
                 Diferença entre Grupo A e Grupo B
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                  <h3 className="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                    <Building className="w-6 h-6 text-solarien-primary" />
-                    Grupo A
-                  </h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Grandes empresas, indústrias e comércios</li>
-                    <li>• Alta Tensão (69 kV a 2,4 kV)</li>
-                    <li>• Shoppings, fábricas, centros comerciais</li>
-                    <li>• <span className="text-solarien-primary font-bold">Até 45% de desconto</span></li>
-                  </ul>
-                </div>
-                <div className="bg-green-800/30 p-6 rounded-lg border border-green-700">
-                  <h3 className="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                    <Home className="w-6 h-6 text-solarien-primary" />
-                    Grupo B
-                  </h3>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Residências e pequenos comércios</li>
-                    <li>• Baixa Tensão (até 2,3 kV)</li>
-                    <li>• Casas, escritórios, salões de beleza</li>
-                    <li>• <span className="text-solarien-primary font-bold">Até 25% de desconto</span></li>
-                  </ul>
-                </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-white">
+                  <thead>
+                    <tr className="border-b border-green-700">
+                      <th className="text-left p-4">Característica</th>
+                      <th className="text-left p-4">Grupo B (Residencial)</th>
+                      <th className="text-left p-4">Grupo A (Empresarial)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-green-800/50">
+                      <td className="p-4 text-gray-300">Tensão</td>
+                      <td className="p-4">Baixa tensão (&lt; 2.3 kV)</td>
+                      <td className="p-4">Alta tensão (&gt; 2.3 kV)</td>
+                    </tr>
+                    <tr className="border-b border-green-800/50">
+                      <td className="p-4 text-gray-300">Desconto</td>
+                      <td className="p-4 text-solarien-primary font-semibold">Até 25%</td>
+                      <td className="p-4 text-solarien-secondary font-semibold">Até 15%</td>
+                    </tr>
+                    <tr className="border-b border-green-800/50">
+                      <td className="p-4 text-gray-300">Processo</td>
+                      <td className="p-4">Simplificado</td>
+                      <td className="p-4">Mais complexo</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <p className="text-center text-gray-300 mt-6 text-lg">
-                Com a Solarien, ambos os grupos têm acesso a energia limpa e econômica — cada um com a solução ideal para seu perfil.
-              </p>
+            </CardContent>
+          </Card>
+
+          {/* State Simulator */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl">Simulador por Estado</CardTitle>
+              <CardDescription className="text-gray-300">
+                Selecione um estado para simular sua economia
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="mb-6">
+                <label className="block text-white font-semibold mb-2">Escolha seu Estado:</label>
+                <select
+                  value={selectedState}
+                  onChange={(e) => setSelectedState(e.target.value)}
+                  className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white"
+                >
+                  <option value="">Selecione um estado...</option>
+                  {states.map((state) => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
+              </div>
+              
+              {selectedState && (
+                <div className="mt-6">
+                  <DiscountSimulator selectedState={selectedState} />
+                </div>
+              )}
             </CardContent>
           </Card>
 
           {/* FAQ */}
-          <Card className="bg-green-800/20 border-green-700 mb-12">
+          <Card className="bg-green-800/20 border-green-700 mb-8">
             <CardHeader>
               <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
                 <HelpCircle className="w-8 h-8" />
@@ -457,67 +280,74 @@ const HowItWorks = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <div key={index} className="border border-green-700 rounded-lg">
-                    <button
-                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                      className="w-full p-4 text-left hover:bg-green-800/30 transition-colors duration-300 flex justify-between items-center"
-                    >
-                      <span className="text-white font-semibold">{faq.question}</span>
-                      <span className="text-solarien-primary text-xl">
-                        {openFaq === index ? '−' : '+'}
-                      </span>
-                    </button>
-                    {openFaq === index && (
-                      <div className="p-4 pt-0 border-t border-green-700">
-                        <p className="text-gray-300">{faq.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                <div className="border-b border-green-800/50 pb-4">
+                  <h3 className="text-white font-semibold mb-2">Como funciona o desconto na conta de luz?</h3>
+                  <p className="text-gray-300">O desconto é aplicado automaticamente na sua conta de luz através dos créditos de energia solar que você adquire conosco.</p>
+                </div>
+                <div className="border-b border-green-800/50 pb-4">
+                  <h3 className="text-white font-semibold mb-2">Preciso instalar algo na minha casa?</h3>
+                  <p className="text-gray-300">Não! Nossa energia solar é compartilhada. Você apenas precisa se cadastrar e escolher seu plano.</p>
+                </div>
+                <div className="border-b border-green-800/50 pb-4">
+                  <h3 className="text-white font-semibold mb-2">Posso cancelar quando quiser?</h3>
+                  <p className="text-gray-300">Sim! Você tem total flexibilidade para cancelar seu plano a qualquer momento, sem multas ou taxas.</p>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Crescimento do Mercado */}
-          <Card className="bg-energy-gradient border-green-700 mb-12">
-            <CardContent className="p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3">
-                <TrendingUp className="w-10 h-10 text-solarien-primary" />
+          {/* Market Growth */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <BarChart3 className="w-8 h-8" />
                 Crescimento do Mercado de Energia Renovável no Brasil
-              </h2>
-              <p className="text-gray-300 text-lg mb-6 max-w-4xl mx-auto leading-relaxed">
-                O mercado de energia renovável no Brasil está em <span className="text-solarien-primary font-bold">forte expansão</span>. Cada vez mais pessoas e empresas estão buscando alternativas sustentáveis e econômicas para reduzir custos e contribuir com o meio ambiente.
-              </p>
-              <p className="text-gray-300 text-lg mb-8 max-w-4xl mx-auto leading-relaxed">
-                Com a <span className="text-solarien-primary font-bold">energia por assinatura</span>, o Brasil está se tornando líder em geração compartilhada, unindo tecnologia, transparência e responsabilidade ambiental.
-              </p>
-              <p className="text-white text-xl font-bold">
-                E com a Solarien Energy, você faz parte dessa transformação desde o primeiro passo.
-              </p>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-lg p-6">
+                  <TrendingUp className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-solarien-primary mb-2">156%</div>
+                  <div className="text-gray-300">Crescimento em 2023</div>
+                </div>
+                <div className="text-center bg-gradient-to-br from-solarien-secondary/10 to-solarien-tertiary/10 rounded-lg p-6">
+                  <Users className="w-12 h-12 text-solarien-secondary mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-solarien-secondary mb-2">2.5M</div>
+                  <div className="text-gray-300">Conexões ativas</div>
+                </div>
+                <div className="text-center bg-gradient-to-br from-solarien-tertiary/10 to-solarien-primary/10 rounded-lg p-6">
+                  <Zap className="w-12 h-12 text-solarien-tertiary mx-auto mb-4" />
+                  <div className="text-3xl font-bold text-solarien-tertiary mb-2">24 GW</div>
+                  <div className="text-gray-300">Potência instalada</div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
-          {/* CTA Final */}
-          <Card className="bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 border-solarien-primary">
-            <CardContent className="p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3">
-                <Users className="w-10 h-10 text-solarien-primary" />
+          {/* Ready to Start */}
+          <Card className="bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 border-solarien-primary mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Target className="w-8 h-8" />
                 Pronto para começar?
-              </h2>
-              <p className="text-gray-300 text-xl mb-8">
-                Conecte-se a uma usina solar e comece a reduzir sua conta de luz hoje mesmo!
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-gray-300 mb-6 text-lg">
+                Junte-se a milhares de brasileiros que já estão economizando com energia solar!
               </p>
-              <Button
-                onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
-                className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-12 py-6 text-xl hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 glow-effect"
-              >
-                <MessageCircle className="w-8 h-8 mr-3" />
-                Fale Conosco no WhatsApp
-              </Button>
-              <div className="flex items-center justify-center gap-2 mt-4 text-gray-300">
-                <Phone className="w-5 h-5" />
-                <span>+55 (11) 99736-1698</span>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-4 text-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300">
+                  Cadastrar Agora
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => navigate('/contact')}
+                  className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black px-8 py-4 text-lg"
+                >
+                  Falar com Consultor
+                </Button>
               </div>
             </CardContent>
           </Card>

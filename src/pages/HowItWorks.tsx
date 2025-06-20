@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Sun, Zap, Building, Home, CheckCircle, MessageCircle, FileText, Clock, MapPin, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Sun, Zap, Building, Home, CheckCircle, MessageCircle, FileText, Clock, MapPin, Phone, Mail, Settings, Award, Building2, HelpCircle, TrendingUp, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -226,7 +226,10 @@ const HowItWorks = () => {
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-4">✅ Vantagens:</h3>
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                          <Award className="w-6 h-6 text-solarien-primary" />
+                          Vantagens:
+                        </h3>
                         <ul className="space-y-2 text-gray-300">
                           <li className="flex items-center gap-2">
                             <CheckCircle className="w-5 h-5 text-solarien-primary" />
@@ -259,7 +262,10 @@ const HowItWorks = () => {
                         </ul>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-4">🔁 Como funciona?</h3>
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                          <Settings className="w-6 h-6 text-solarien-primary" />
+                          Como funciona?
+                        </h3>
                         <div className="space-y-4">
                           {grupoBSteps.map((step, index) => (
                             <div key={index} className="flex items-start gap-4 p-4 bg-green-800/30 rounded-lg border border-green-700">
@@ -290,8 +296,9 @@ const HowItWorks = () => {
                 {/* Tabela de Distribuidoras */}
                 <Card className="bg-green-800/20 border-green-700">
                   <CardHeader>
-                    <CardTitle className="text-solarien-primary text-2xl">
-                      🧾 Distribuidoras Participantes no Grupo B
+                    <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                      <Building2 className="w-8 h-8" />
+                      Distribuidoras Participantes no Grupo B
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -327,7 +334,10 @@ const HowItWorks = () => {
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-4">✅ Benefícios:</h3>
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <Award className="w-6 h-6 text-solarien-primary" />
+                        Benefícios:
+                      </h3>
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="w-5 h-5 text-solarien-primary" />
@@ -356,7 +366,10 @@ const HowItWorks = () => {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-4">🔁 Como migrar?</h3>
+                      <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <Settings className="w-6 h-6 text-solarien-primary" />
+                        Como migrar?
+                      </h3>
                       <div className="space-y-4">
                         {grupoASteps.map((step, index) => (
                           <div key={index} className="flex items-start gap-4 p-4 bg-green-800/30 rounded-lg border border-green-700">
@@ -389,8 +402,9 @@ const HowItWorks = () => {
           {/* Diferença entre Grupos */}
           <Card className="bg-green-800/20 border-green-700 mb-12">
             <CardHeader>
-              <CardTitle className="text-solarien-primary text-2xl">
-                🔄 Diferença entre Grupo A e Grupo B
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Users className="w-8 h-8" />
+                Diferença entre Grupo A e Grupo B
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -429,8 +443,9 @@ const HowItWorks = () => {
           {/* FAQ */}
           <Card className="bg-green-800/20 border-green-700 mb-12">
             <CardHeader>
-              <CardTitle className="text-solarien-primary text-2xl">
-                ❓ Perguntas Frequentes
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <HelpCircle className="w-8 h-8" />
+                Perguntas Frequentes
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -460,8 +475,9 @@ const HowItWorks = () => {
           {/* Crescimento do Mercado */}
           <Card className="bg-energy-gradient border-green-700 mb-12">
             <CardContent className="p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                🌍 Crescimento do Mercado de Energia Renovável no Brasil
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3">
+                <TrendingUp className="w-10 h-10 text-solarien-primary" />
+                Crescimento do Mercado de Energia Renovável no Brasil
               </h2>
               <p className="text-gray-300 text-lg mb-6 max-w-4xl mx-auto leading-relaxed">
                 O mercado de energia renovável no Brasil está em <span className="text-solarien-primary font-bold">forte expansão</span>. Cada vez mais pessoas e empresas estão buscando alternativas sustentáveis e econômicas para reduzir custos e contribuir com o meio ambiente.
@@ -478,8 +494,9 @@ const HowItWorks = () => {
           {/* CTA Final */}
           <Card className="bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 border-solarien-primary">
             <CardContent className="p-8 text-center">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                🤝 Pronto para começar?
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center justify-center gap-3">
+                <Users className="w-10 h-10 text-solarien-primary" />
+                Pronto para começar?
               </h2>
               <p className="text-gray-300 text-xl mb-8">
                 Conecte-se a uma usina solar e comece a reduzir sua conta de luz hoje mesmo!

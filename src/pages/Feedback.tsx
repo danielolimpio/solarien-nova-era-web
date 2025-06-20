@@ -1,425 +1,430 @@
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
-import { MessageSquare, Star, TrendingUp, Users, Award, CheckCircle } from 'lucide-react';
-import { useToast } from "@/hooks/use-toast";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, MessageSquare, Users, TrendingUp, Send, Star, ThumbsUp, ThumbsDown, CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const Feedback = () => {
-  const [activeTab, setActiveTab] = useState('quiz');
-  const [quizAnswers, setQuizAnswers] = useState({});
-  const [pollVotes, setPollVotes] = useState({
-    satisfaction: { excelente: 45, bom: 30, regular: 15, ruim: 10 },
-    recommendation: { sim: 78, nao: 12, talvez: 10 },
-    improvement: { atendimento: 25, preco: 35, agilidade: 40 }
-  });
-  const [hasVoted, setHasVoted] = useState({});
+  const navigate = useNavigate();
   
-  const { toast } = useToast();
-  const form = useForm();
+  // Quiz state
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  
+  // Poll states
+  const [polls, setPolls] = useState({
+    satisfaction: { excellent: 0, good: 0, average: 0, poor: 0 },
+    recommendation: { definitely: 0, probably: 0, maybe: 0, no: 0 },
+    improvement: { website: 0, support: 0, prices: 0, process: 0 }
+  });
+  
+  const [userVotes, setUserVotes] = useState<Record<string, boolean>>({});
+  
+  // Form state
+  const [feedback, setFeedback] = useState({
+    name: '',
+    email: '',
+    type: 'suggestion',
+    message: ''
+  });
 
   const quizQuestions = [
     {
       id: 'experience',
-      question: 'Como você avalia sua experiência com a Solarien Energy?',
+      question: 'Como você classificaria sua experiência geral com energia solar?',
       options: [
-        { value: 'excelente', label: 'Excelente - Superou expectativas' },
-        { value: 'muito-boa', label: 'Muito boa - Atendeu expectativas' },
-        { value: 'boa', label: 'Boa - Satisfatório' },
-        { value: 'regular', label: 'Regular - Pode melhorar' },
-        { value: 'ruim', label: 'Ruim - Não recomendo' }
+        'Excelente - Já tenho e recomendo',
+        'Boa - Estou considerando migrar',
+        'Regular - Preciso de mais informações',
+        'Ruim - Não tenho interesse'
       ]
     },
     {
-      id: 'savings',
-      question: 'O quanto você economizou na sua conta de energia?',
+      id: 'priority',
+      question: 'O que é mais importante para você na escolha de energia?',
       options: [
-        { value: '0-5', label: '0% a 5%' },
-        { value: '6-10', label: '6% a 10%' },
-        { value: '11-15', label: '11% a 15%' },
-        { value: '16-20', label: '16% a 20%' },
-        { value: '20+', label: 'Mais de 20%' }
+        'Economia na conta de luz',
+        'Sustentabilidade ambiental',
+        'Facilidade do processo',
+        'Suporte ao cliente'
       ]
     },
     {
-      id: 'process',
-      question: 'Como foi o processo de adesão?',
+      id: 'barrier',
+      question: 'Qual é o maior obstáculo para migrar para energia solar?',
       options: [
-        { value: 'muito-facil', label: 'Muito fácil e rápido' },
-        { value: 'facil', label: 'Fácil' },
-        { value: 'normal', label: 'Normal' },
-        { value: 'complicado', label: 'Um pouco complicado' },
-        { value: 'muito-complicado', label: 'Muito complicado' }
+        'Falta de informação',
+        'Desconfiança no processo',
+        'Questões burocráticas',
+        'Não vejo obstáculos'
       ]
     }
   ];
 
-  const handleQuizAnswer = (questionId: string, value: string) => {
-    setQuizAnswers(prev => ({ ...prev, [questionId]: value }));
+  const handleQuizAnswer = (answer: string) => {
+    const newAnswers = { ...answers, [quizQuestions[currentQuestion].id]: answer };
+    setAnswers(newAnswers);
+
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setQuizCompleted(true);
+    }
   };
 
-  const handlePollVote = (pollType: string, option: string) => {
-    if (hasVoted[pollType]) return;
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setAnswers({});
+    setQuizCompleted(false);
+  };
+
+  const handlePollVote = (pollType: keyof typeof polls, option: string) => {
+    if (userVotes[pollType]) return; // Already voted
     
-    setPollVotes(prev => ({
+    setPolls(prev => ({
       ...prev,
       [pollType]: {
         ...prev[pollType],
-        [option]: prev[pollType][option] + 1
+        [option]: (prev[pollType][option as keyof typeof prev[pollType]] as number) + 1
       }
     }));
     
-    setHasVoted(prev => ({ ...prev, [pollType]: true }));
-    
-    toast({
-      title: "Voto registrado!",
-      description: "Obrigado por participar da nossa enquete.",
-    });
+    setUserVotes(prev => ({ ...prev, [pollType]: true }));
   };
 
-  const onSubmitFeedback = (data: any) => {
-    console.log('Feedback enviado:', data);
-    toast({
-      title: "Feedback enviado com sucesso!",
-      description: "Sua opinião é muito importante para nós. Entraremos em contato em breve.",
-    });
-    form.reset();
+  const handleFeedbackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Feedback enviado:', feedback);
+    // Here you would typically send the data to your backend
+    alert('Obrigado pelo seu feedback! Sua mensagem foi enviada com sucesso.');
+    setFeedback({ name: '', email: '', type: 'suggestion', message: '' });
   };
 
-  const onSubmitQuiz = () => {
-    console.log('Quiz respondido:', quizAnswers);
-    toast({
-      title: "Quiz concluído!",
-      description: "Obrigado por compartilhar sua experiência conosco.",
-    });
+  const getPollTotal = (poll: Record<string, number>) => {
+    return Object.values(poll).reduce((sum, count) => sum + count, 0);
   };
 
-  const getPollPercentage = (pollType: string, option: string) => {
-    const total = Object.values(pollVotes[pollType]).reduce((sum: number, votes: number) => sum + votes, 0);
-    return Math.round((pollVotes[pollType][option] / total) * 100);
+  const getPercentage = (count: number, total: number) => {
+    return total > 0 ? Math.round((count / total) * 100) : 0;
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary py-20">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <MessageSquare className="w-12 h-12 text-black mr-4" />
-            <h1 className="text-4xl md:text-6xl font-bold text-black">
-              Envie seu Feedback
-            </h1>
-          </div>
-          <p className="text-xl text-black/80 max-w-3xl mx-auto">
-            Sua opinião é fundamental para continuarmos melhorando nossos serviços. 
-            Participe do nosso quiz, vote nas enquetes e envie suas sugestões!
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-16">
-        {/* Navigation Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {[
-            { id: 'quiz', label: 'Quiz de Experiência', icon: Star },
-            { id: 'poll', label: 'Enquetes', icon: TrendingUp },
-            { id: 'form', label: 'Sugestões', icon: MessageSquare }
-          ].map(({ id, label, icon: Icon }) => (
+    <div className="min-h-screen">
+      <Header />
+      <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-8">
+          {/* Header */}
+          <div className="flex items-center gap-4 mb-8">
             <Button
-              key={id}
-              variant={activeTab === id ? "default" : "outline"}
-              onClick={() => setActiveTab(id)}
-              className="flex items-center gap-2"
+              variant="outline"
+              onClick={() => navigate('/')}
+              className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black"
             >
-              <Icon className="w-4 h-4" />
-              {label}
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Voltar
             </Button>
-          ))}
-        </div>
-
-        {/* Quiz Tab */}
-        {activeTab === 'quiz' && (
-          <div className="max-w-4xl mx-auto">
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Star className="w-6 h-6 text-solarien-primary" />
-                  Quiz de Experiência
-                </CardTitle>
-                <CardDescription>
-                  Conte-nos sobre sua experiência com a Solarien Energy
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-8">
-                {quizQuestions.map((question) => (
-                  <div key={question.id} className="space-y-4">
-                    <h3 className="text-lg font-semibold">{question.question}</h3>
-                    <RadioGroup
-                      value={quizAnswers[question.id]}
-                      onValueChange={(value) => handleQuizAnswer(question.id, value)}
-                    >
-                      {question.options.map((option) => (
-                        <div key={option.value} className="flex items-center space-x-2">
-                          <RadioGroupItem value={option.value} id={option.value} />
-                          <Label htmlFor={option.value} className="cursor-pointer">
-                            {option.label}
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
-                  </div>
-                ))}
-                
-                <Button 
-                  onClick={onSubmitQuiz}
-                  className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black"
-                  disabled={Object.keys(quizAnswers).length < quizQuestions.length}
-                >
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Enviar Respostas
-                </Button>
-              </CardContent>
-            </Card>
+            <div>
+              <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
+                <MessageSquare className="w-10 h-10 text-solarien-primary" />
+                Envie seu Feedback
+              </h1>
+              <p className="text-gray-300">
+                Sua opinião é muito importante para nós! Participe e ajude-nos a melhorar.
+              </p>
+            </div>
           </div>
-        )}
 
-        {/* Poll Tab */}
-        {activeTab === 'poll' && (
-          <div className="max-w-4xl mx-auto space-y-8">
+          {/* Quiz Section */}
+          <Card className="bg-green-800/20 border-green-700 mb-8">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Users className="w-8 h-8" />
+                Quiz Rápido sobre Energia Solar
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Responda algumas perguntas e nos ajude a entender melhor o perfil dos nossos clientes.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {!quizCompleted ? (
+                <div>
+                  <div className="mb-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-white font-semibold">
+                        Pergunta {currentQuestion + 1} de {quizQuestions.length}
+                      </span>
+                      <div className="bg-green-800/30 rounded-full h-2 w-32">
+                        <div 
+                          className="bg-solarien-primary h-2 rounded-full transition-all duration-300"
+                          style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                    <h3 className="text-xl text-white mb-6">
+                      {quizQuestions[currentQuestion].question}
+                    </h3>
+                    <div className="space-y-3">
+                      {quizQuestions[currentQuestion].options.map((option, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleQuizAnswer(option)}
+                          className="w-full p-4 text-left bg-green-800/30 border border-green-700 rounded-lg hover:bg-green-700/50 transition-colors duration-300 text-white"
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <CheckCircle className="w-16 h-16 text-solarien-primary mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-4">Obrigado por participar!</h3>
+                  <p className="text-gray-300 mb-6">Suas respostas nos ajudam a melhorar nossos serviços.</p>
+                  <Button
+                    onClick={resetQuiz}
+                    className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold"
+                  >
+                    Fazer Quiz Novamente
+                  </Button>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Polls Section */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {/* Satisfaction Poll */}
-            <Card>
+            <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Award className="w-6 h-6 text-solarien-primary" />
-                  Nível de Satisfação
+                <CardTitle className="text-solarien-primary text-lg flex items-center gap-2">
+                  <Star className="w-6 h-6" />
+                  Satisfação Geral
                 </CardTitle>
-                <CardDescription>Como você avalia nossos serviços?</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {Object.entries(pollVotes.satisfaction).map(([option, votes]) => (
-                    <Button
-                      key={option}
-                      variant={hasVoted.satisfaction ? "outline" : "secondary"}
-                      onClick={() => handlePollVote('satisfaction', option)}
-                      disabled={hasVoted.satisfaction}
-                      className="h-auto p-4 flex flex-col items-center"
-                    >
-                      <div className="text-2xl font-bold text-solarien-primary">
-                        {getPollPercentage('satisfaction', option)}%
+                <p className="text-gray-300 mb-4">Como você avalia nossos serviços?</p>
+                <div className="space-y-2">
+                  {Object.entries(polls.satisfaction).map(([key, count]) => {
+                    const total = getPollTotal(polls.satisfaction);
+                    const percentage = getPercentage(count, total);
+                    const labels = {
+                      excellent: 'Excelente',
+                      good: 'Bom',
+                      average: 'Regular',
+                      poor: 'Ruim'
+                    };
+                    
+                    return (
+                      <div key={key}>
+                        <div className="flex justify-between items-center mb-1">
+                          <button
+                            onClick={() => handlePollVote('satisfaction', key)}
+                            disabled={userVotes.satisfaction}
+                            className="text-white hover:text-solarien-primary transition-colors disabled:cursor-not-allowed"
+                          >
+                            {labels[key as keyof typeof labels]}
+                          </button>
+                          <span className="text-gray-300 text-sm">{count} ({percentage}%)</span>
+                        </div>
+                        <div className="bg-green-800/30 rounded-full h-2">
+                          <div 
+                            className="bg-solarien-primary h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
                       </div>
-                      <div className="text-sm capitalize">{option}</div>
-                      <div className="text-xs text-muted-foreground">{votes} votos</div>
-                    </Button>
-                  ))}
+                    );
+                  })}
                 </div>
+                {userVotes.satisfaction && (
+                  <p className="text-solarien-primary text-sm mt-2">✓ Obrigado pelo seu voto!</p>
+                )}
               </CardContent>
             </Card>
 
             {/* Recommendation Poll */}
-            <Card>
+            <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="w-6 h-6 text-solarien-primary" />
+                <CardTitle className="text-solarien-primary text-lg flex items-center gap-2">
+                  <ThumbsUp className="w-6 h-6" />
                   Recomendação
                 </CardTitle>
-                <CardDescription>Você recomendaria a Solarien para amigos?</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-3 gap-4">
-                  {Object.entries(pollVotes.recommendation).map(([option, votes]) => (
-                    <Button
-                      key={option}
-                      variant={hasVoted.recommendation ? "outline" : "secondary"}
-                      onClick={() => handlePollVote('recommendation', option)}
-                      disabled={hasVoted.recommendation}
-                      className="h-auto p-4 flex flex-col items-center"
-                    >
-                      <div className="text-2xl font-bold text-solarien-primary">
-                        {getPollPercentage('recommendation', option)}%
+                <p className="text-gray-300 mb-4">Recomendaria nossos serviços?</p>
+                <div className="space-y-2">
+                  {Object.entries(polls.recommendation).map(([key, count]) => {
+                    const total = getPollTotal(polls.recommendation);
+                    const percentage = getPercentage(count, total);
+                    const labels = {
+                      definitely: 'Definitivamente',
+                      probably: 'Provavelmente',
+                      maybe: 'Talvez',
+                      no: 'Não'
+                    };
+                    
+                    return (
+                      <div key={key}>
+                        <div className="flex justify-between items-center mb-1">
+                          <button
+                            onClick={() => handlePollVote('recommendation', key)}
+                            disabled={userVotes.recommendation}
+                            className="text-white hover:text-solarien-primary transition-colors disabled:cursor-not-allowed"
+                          >
+                            {labels[key as keyof typeof labels]}
+                          </button>
+                          <span className="text-gray-300 text-sm">{count} ({percentage}%)</span>
+                        </div>
+                        <div className="bg-green-800/30 rounded-full h-2">
+                          <div 
+                            className="bg-solarien-primary h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
                       </div>
-                      <div className="text-sm capitalize">{option === 'nao' ? 'Não' : option}</div>
-                      <div className="text-xs text-muted-foreground">{votes} votos</div>
-                    </Button>
-                  ))}
+                    );
+                  })}
                 </div>
+                {userVotes.recommendation && (
+                  <p className="text-solarien-primary text-sm mt-2">✓ Obrigado pelo seu voto!</p>
+                )}
               </CardContent>
             </Card>
 
             {/* Improvement Poll */}
-            <Card>
+            <Card className="bg-green-800/20 border-green-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="w-6 h-6 text-solarien-primary" />
-                  Área de Melhoria
+                <CardTitle className="text-solarien-primary text-lg flex items-center gap-2">
+                  <TrendingUp className="w-6 h-6" />
+                  Melhorias
                 </CardTitle>
-                <CardDescription>Qual área devemos priorizar para melhorar?</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-3 gap-4">
-                  {Object.entries(pollVotes.improvement).map(([option, votes]) => (
-                    <Button
-                      key={option}
-                      variant={hasVoted.improvement ? "outline" : "secondary"}
-                      onClick={() => handlePollVote('improvement', option)}
-                      disabled={hasVoted.improvement}
-                      className="h-auto p-4 flex flex-col items-center"
-                    >
-                      <div className="text-2xl font-bold text-solarien-primary">
-                        {getPollPercentage('improvement', option)}%
+                <p className="text-gray-300 mb-4">O que podemos melhorar?</p>
+                <div className="space-y-2">
+                  {Object.entries(polls.improvement).map(([key, count]) => {
+                    const total = getPollTotal(polls.improvement);
+                    const percentage = getPercentage(count, total);
+                    const labels = {
+                      website: 'Website',
+                      support: 'Atendimento',
+                      prices: 'Preços',
+                      process: 'Processo'
+                    };
+                    
+                    return (
+                      <div key={key}>
+                        <div className="flex justify-between items-center mb-1">
+                          <button
+                            onClick={() => handlePollVote('improvement', key)}
+                            disabled={userVotes.improvement}
+                            className="text-white hover:text-solarien-primary transition-colors disabled:cursor-not-allowed"
+                          >
+                            {labels[key as keyof typeof labels]}
+                          </button>
+                          <span className="text-gray-300 text-sm">{count} ({percentage}%)</span>
+                        </div>
+                        <div className="bg-green-800/30 rounded-full h-2">
+                          <div 
+                            className="bg-solarien-primary h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
                       </div>
-                      <div className="text-sm capitalize">{option}</div>
-                      <div className="text-xs text-muted-foreground">{votes} votos</div>
-                    </Button>
-                  ))}
+                    );
+                  })}
                 </div>
+                {userVotes.improvement && (
+                  <p className="text-solarien-primary text-sm mt-2">✓ Obrigado pelo seu voto!</p>
+                )}
               </CardContent>
             </Card>
           </div>
-        )}
 
-        {/* Form Tab */}
-        {activeTab === 'form' && (
-          <div className="max-w-2xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="w-6 h-6 text-solarien-primary" />
-                  Formulário de Sugestões
-                </CardTitle>
-                <CardDescription>
-                  Envie suas críticas, sugestões ou elogios. Sua opinião é muito importante!
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmitFeedback)} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Nome *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Seu nome completo" {...field} required />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>E-mail *</FormLabel>
-                            <FormControl>
-                              <Input type="email" placeholder="seu@email.com" {...field} required />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Telefone</FormLabel>
-                          <FormControl>
-                            <Input placeholder="(11) 99999-9999" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+          {/* Feedback Form */}
+          <Card className="bg-green-800/20 border-green-700">
+            <CardHeader>
+              <CardTitle className="text-solarien-primary text-2xl flex items-center gap-3">
+                <Send className="w-8 h-8" />
+                Envie sua Sugestão ou Crítica
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Compartilhe suas ideias, sugestões ou críticas construtivas conosco.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleFeedbackSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white font-semibold mb-2">Nome</label>
+                    <input
+                      type="text"
+                      value={feedback.name}
+                      onChange={(e) => setFeedback({ ...feedback, name: e.target.value })}
+                      className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white"
+                      required
                     />
-
-                    <FormField
-                      control={form.control}
-                      name="type"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Tipo de Feedback *</FormLabel>
-                          <Select onValueChange={field.onChange} value={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Selecione o tipo" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="elogio">Elogio</SelectItem>
-                              <SelectItem value="sugestao">Sugestão</SelectItem>
-                              <SelectItem value="critica">Crítica</SelectItem>
-                              <SelectItem value="reclamacao">Reclamação</SelectItem>
-                              <SelectItem value="duvida">Dúvida</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+                  </div>
+                  <div>
+                    <label className="block text-white font-semibold mb-2">E-mail</label>
+                    <input
+                      type="email"
+                      value={feedback.email}
+                      onChange={(e) => setFeedback({ ...feedback, email: e.target.value })}
+                      className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white"
+                      required
                     />
-
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Assunto *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Resumo do seu feedback" {...field} required />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Mensagem *</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Descreva detalhadamente seu feedback..."
-                              className="min-h-[120px]"
-                              {...field}
-                              required
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black text-lg py-6"
-                    >
-                      <MessageSquare className="w-5 h-5 mr-2" />
-                      Enviar Feedback
-                    </Button>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
-          </div>
-        )}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-white font-semibold mb-2">Tipo de Feedback</label>
+                  <select
+                    value={feedback.type}
+                    onChange={(e) => setFeedback({ ...feedback, type: e.target.value })}
+                    className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white"
+                  >
+                    <option value="suggestion">Sugestão</option>
+                    <option value="complaint">Reclamação</option>
+                    <option value="compliment">Elogio</option>
+                    <option value="question">Pergunta</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-white font-semibold mb-2">Mensagem</label>
+                  <textarea
+                    value={feedback.message}
+                    onChange={(e) => setFeedback({ ...feedback, message: e.target.value })}
+                    rows={6}
+                    className="w-full p-3 bg-green-800/30 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white resize-none"
+                    placeholder="Conte-nos sua opinião, sugestão ou experiência..."
+                    required
+                  />
+                </div>
+                
+                <div className="text-center">
+                  <Button
+                    type="submit"
+                    className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-4 text-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
+                  >
+                    <Send className="w-6 h-6 mr-2" />
+                    Enviar Feedback
+                  </Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket } from 'lucide-react';
 import { Button } from './ui/button';
@@ -97,16 +98,15 @@ const EntrepreneurshipSection = () => {
         {/* Commission Section with Money Background */}
         <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
           {/* Animated Money Background */}
-          <div className="absolute inset-0 opacity-15 overflow-hidden">
+          <div className="absolute inset-0 opacity-20 overflow-hidden">
             {[...Array(25)].map((_, i) => (
               <div
                 key={i}
-                className="absolute text-4xl animate-bounce"
+                className="absolute text-4xl money-animation"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 5}s`,
                   animationDuration: `${4 + Math.random() * 3}s`,
-                  top: '-50px',
                   color: '#00c26f',
                   textShadow: '0 0 10px rgba(0, 194, 111, 0.5)'
                 }}
@@ -117,12 +117,11 @@ const EntrepreneurshipSection = () => {
             {[...Array(20)].map((_, i) => (
               <div
                 key={`real-${i}`}
-                className="absolute text-3xl animate-bounce"
+                className="absolute text-3xl money-animation"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 5}s`,
                   animationDuration: `${5 + Math.random() * 2}s`,
-                  top: '-40px',
                   color: '#02ff91',
                   textShadow: '0 0 8px rgba(2, 255, 145, 0.4)'
                 }}
@@ -133,12 +132,11 @@ const EntrepreneurshipSection = () => {
             {[...Array(15)].map((_, i) => (
               <div
                 key={`note-${i}`}
-                className="absolute text-2xl animate-bounce"
+                className="absolute text-2xl money-animation"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 6}s`,
                   animationDuration: `${3 + Math.random() * 4}s`,
-                  top: '-30px',
                   color: '#00844e',
                   textShadow: '0 0 6px rgba(0, 132, 78, 0.3)'
                 }}
@@ -217,29 +215,6 @@ const EntrepreneurshipSection = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes money-fall {
-          0% {
-            transform: translateY(-100px) rotate(0deg);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(calc(100vh + 100px)) rotate(360deg);
-            opacity: 0;
-          }
-        }
-        
-        .money-animation {
-          animation: money-fall linear infinite;
-        }
-      `}</style>
     </section>
   );
 };

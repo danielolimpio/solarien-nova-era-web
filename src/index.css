@@ -116,41 +116,4 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, #059669, #047857);
   }
-
-  /* Animação de notas de dinheiro caindo - Melhorada */
-  @keyframes money-fall {
-    0% {
-      transform: translateY(-120px) rotate(0deg) scale(0.8);
-      opacity: 0;
-    }
-    5% {
-      opacity: 1;
-      transform: translateY(-100px) rotate(10deg) scale(0.9);
-    }
-    25% {
-      transform: translateY(100px) rotate(90deg) scale(1);
-      opacity: 0.8;
-    }
-    50% {
-      transform: translateY(300px) rotate(180deg) scale(1.1);
-      opacity: 0.6;
-    }
-    75% {
-      transform: translateY(500px) rotate(270deg) scale(0.9);
-      opacity: 0.4;
-    }
-    95% {
-      opacity: 0.2;
-      transform: translateY(700px) rotate(350deg) scale(0.8);
-    }
-    100% {
-      transform: translateY(800px) rotate(360deg) scale(0.6);
-      opacity: 0;
-    }
-  }
-  
-  .money-animation {
-    animation: money-fall linear infinite;
-    will-change: transform, opacity;
-  }
 }

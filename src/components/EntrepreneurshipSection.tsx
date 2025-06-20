@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket } from 'lucide-react';
 import { Button } from './ui/button';
@@ -27,15 +26,39 @@ const EntrepreneurshipSection = () => {
     }
   ];
 
-  // Componente de nota de real
+  // Componente de nota de real mais realista
   const RealNote = ({ value, color }: { value: string, color: string }) => (
-    <svg width="60" height="30" viewBox="0 0 60 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="60" height="30" rx="3" fill={color} fillOpacity="0.8"/>
-      <rect x="1" y="1" width="58" height="28" rx="2" stroke="#fff" strokeWidth="0.5" strokeOpacity="0.6"/>
-      <text x="30" y="12" textAnchor="middle" fontSize="6" fill="#fff" fontWeight="bold">R$</text>
-      <text x="30" y="20" textAnchor="middle" fontSize="8" fill="#fff" fontWeight="bold">{value}</text>
-      <circle cx="8" cy="8" r="2" fill="#fff" fillOpacity="0.3"/>
-      <circle cx="52" cy="22" r="2" fill="#fff" fillOpacity="0.3"/>
+    <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Sombra da nota */}
+      <rect x="2" y="2" width="80" height="40" rx="4" fill="rgba(0,0,0,0.1)"/>
+      
+      {/* Corpo principal da nota */}
+      <rect width="80" height="40" rx="4" fill={color} fillOpacity="0.4"/>
+      
+      {/* Borda principal */}
+      <rect x="1" y="1" width="78" height="38" rx="3" stroke="#fff" strokeWidth="1" strokeOpacity="0.3"/>
+      
+      {/* Borda interna decorativa */}
+      <rect x="3" y="3" width="74" height="34" rx="2" stroke="#fff" strokeWidth="0.5" strokeOpacity="0.2"/>
+      
+      {/* Texto R$ */}
+      <text x="15" y="15" fontSize="8" fill="#fff" fontWeight="bold" opacity="0.6">R$</text>
+      
+      {/* Valor da nota */}
+      <text x="40" y="25" textAnchor="middle" fontSize="16" fill="#fff" fontWeight="bold" opacity="0.7">{value}</text>
+      
+      {/* Elementos decorativos da nota */}
+      <circle cx="12" cy="28" r="3" fill="#fff" fillOpacity="0.15"/>
+      <circle cx="68" cy="12" r="3" fill="#fff" fillOpacity="0.15"/>
+      
+      {/* Padrão decorativo central */}
+      <rect x="25" y="18" width="30" height="4" rx="2" fill="#fff" fillOpacity="0.1"/>
+      
+      {/* Marca d'água simulada */}
+      <ellipse cx="60" cy="20" rx="8" ry="12" fill="#fff" fillOpacity="0.05"/>
+      
+      {/* Número serial simulado */}
+      <text x="15" y="35" fontSize="4" fill="#fff" opacity="0.3" fontFamily="monospace">BC{Math.floor(Math.random() * 10000000)}</text>
     </svg>
   );
 
@@ -110,9 +133,9 @@ const EntrepreneurshipSection = () => {
         {/* Commission Section with Money Background */}
         <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
           {/* Animated Real Notes Background */}
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden opacity-50">
             {/* Notas de R$ 100 */}
-            {[...Array(12)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <div
                 key={`note-100-${i}`}
                 className="absolute money-animation"
@@ -122,12 +145,12 @@ const EntrepreneurshipSection = () => {
                   animationDuration: `${6 + Math.random() * 4}s`,
                 }}
               >
-                <RealNote value="100" color="#1f5f3f" />
+                <RealNote value="100" color="#1a472a" />
               </div>
             ))}
             
             {/* Notas de R$ 50 */}
-            {[...Array(10)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div
                 key={`note-50-${i}`}
                 className="absolute money-animation"
@@ -137,12 +160,12 @@ const EntrepreneurshipSection = () => {
                   animationDuration: `${5 + Math.random() * 3}s`,
                 }}
               >
-                <RealNote value="50" color="#2d7a4a" />
+                <RealNote value="50" color="#2d5a3d" />
               </div>
             ))}
             
             {/* Notas de R$ 20 */}
-            {[...Array(8)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <div
                 key={`note-20-${i}`}
                 className="absolute money-animation"
@@ -152,7 +175,7 @@ const EntrepreneurshipSection = () => {
                   animationDuration: `${4 + Math.random() * 3}s`,
                 }}
               >
-                <RealNote value="20" color="#00c26f" />
+                <RealNote value="20" color="#00a85c" />
               </div>
             ))}
           </div>

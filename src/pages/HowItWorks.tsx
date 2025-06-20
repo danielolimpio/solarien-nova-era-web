@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowLeft, Zap, CheckCircle, Users, Building, TrendingUp, HelpCircle, BarChart3, Target } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -14,8 +13,7 @@ const HowItWorks = () => {
   const navigate = useNavigate();
 
   const distributors = [
-    'CPFL Energia', '
-', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
+    'CPFL Energia', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
     'Cemig', 'Copel', 'Celesc', 'RGE', 'CEB', 'Celpe', 'Coelba', 'Cosern'
   ];
 
@@ -135,7 +133,7 @@ const HowItWorks = () => {
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-solarien-primary" />
-                      Desconto de até 25%
+                      Desconto de até 15%
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-solarien-primary" />
@@ -192,7 +190,7 @@ const HowItWorks = () => {
             </CardContent>
           </Card>
 
-          {/* Advanced State Coverage Simulator - Moved here */}
+          {/* State Coverage Simulator - Now positioned here */}
           <div className="mb-8">
             <StateCoverageSimulator />
           </div>
@@ -223,7 +221,7 @@ const HowItWorks = () => {
                     </tr>
                     <tr className="border-b border-green-800/50">
                       <td className="p-4 text-gray-300">Desconto</td>
-                      <td className="p-4 text-solarien-primary font-semibold">Até 25%</td>
+                      <td className="p-4 text-solarien-primary font-semibold">Até 15%</td>
                       <td className="p-4 text-solarien-secondary font-semibold">Até 45%</td>
                     </tr>
                     <tr className="border-b border-green-800/50">

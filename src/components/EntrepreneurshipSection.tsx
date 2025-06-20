@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket } from 'lucide-react';
 import { Button } from './ui/button';
@@ -27,106 +28,168 @@ const EntrepreneurshipSection = () => {
   ];
 
   // Componente de nota de real extremamente realista e curvada
-  const RealNote = ({ value, color }: { value: string, color: string }) => (
-    <svg width="100" height="50" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        {/* Gradiente para simular curvatura */}
-        <linearGradient id={`noteGradient-${value}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={color} stopOpacity="0.4"/>
-          <stop offset="30%" stopColor={color} stopOpacity="0.25"/>
-          <stop offset="70%" stopColor={color} stopOpacity="0.35"/>
-          <stop offset="100%" stopColor={color} stopOpacity="0.2"/>
-        </linearGradient>
+  const RealNote = ({ value, color, animationDelay, animationDuration }: { 
+    value: string, 
+    color: string,
+    animationDelay: number,
+    animationDuration: number 
+  }) => (
+    <div 
+      className="absolute money-animation opacity-20"
+      style={{
+        left: `${Math.random() * 100}%`,
+        animationDelay: `${animationDelay}s`,
+        animationDuration: `${animationDuration}s`,
+        transform: `rotate(${Math.random() * 60 - 30}deg)`
+      }}
+    >
+      <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          {/* Gradiente principal para simular curvatura 3D */}
+          <radialGradient id={`noteGradient-${value}-${animationDelay}`} cx="40%" cy="30%" r="80%">
+            <stop offset="0%" stopColor={color} stopOpacity="0.8"/>
+            <stop offset="40%" stopColor={color} stopOpacity="0.6"/>
+            <stop offset="70%" stopColor={color} stopOpacity="0.4"/>
+            <stop offset="100%" stopColor={color} stopOpacity="0.2"/>
+          </radialGradient>
+          
+          {/* Gradiente para sombra 3D */}
+          <linearGradient id={`shadowGradient-${value}-${animationDelay}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(0,0,0,0.4)"/>
+            <stop offset="50%" stopColor="rgba(0,0,0,0.2)"/>
+            <stop offset="100%" stopColor="rgba(0,0,0,0.1)"/>
+          </linearGradient>
+          
+          {/* Gradiente para bordas */}
+          <linearGradient id={`borderGradient-${value}-${animationDelay}`} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#fff" stopOpacity="0.6"/>
+            <stop offset="50%" stopColor="#fff" stopOpacity="0.3"/>
+            <stop offset="100%" stopColor="#fff" stopOpacity="0.6"/>
+          </linearGradient>
+          
+          {/* Filtros para efeitos */}
+          <filter id={`blur-${value}-${animationDelay}`}>
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.8"/>
+          </filter>
+          
+          <filter id={`shadow-${value}-${animationDelay}`}>
+            <feDropShadow dx="2" dy="4" stdDeviation="3" floodOpacity="0.3"/>
+          </filter>
+          
+          {/* Padrão de textura micro */}
+          <pattern id={`microTexture-${value}-${animationDelay}`} x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" opacity="0.05">
+            <circle cx="2" cy="2" r="0.5" fill="#fff"/>
+            <rect x="0" y="0" width="2" height="2" fill="none" stroke="#fff" strokeWidth="0.1"/>
+          </pattern>
+        </defs>
         
-        {/* Gradiente para sombra 3D */}
-        <linearGradient id={`shadowGradient-${value}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgba(0,0,0,0.15)"/>
-          <stop offset="50%" stopColor="rgba(0,0,0,0.08)"/>
-          <stop offset="100%" stopColor="rgba(0,0,0,0.05)"/>
-        </linearGradient>
+        {/* Sombra projetada */}
+        <path 
+          d="M12 8 Q60 -2 108 8 Q115 30 108 52 Q60 62 12 52 Q5 30 12 8 Z" 
+          fill={`url(#shadowGradient-${value}-${animationDelay})`}
+          transform="translate(4, 6)"
+          filter={`url(#blur-${value}-${animationDelay})`}
+        />
         
-        {/* Filtro para desfoque da marca d'água */}
-        <filter id={`blur-${value}`}>
-          <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
-        </filter>
+        {/* Corpo principal da nota com curvatura extrema */}
+        <path 
+          d="M8 4 Q60 -8 112 4 Q118 30 112 56 Q60 68 8 56 Q2 30 8 4 Z" 
+          fill={`url(#noteGradient-${value}-${animationDelay})`}
+          stroke={`url(#borderGradient-${value}-${animationDelay})`}
+          strokeWidth="1" 
+          filter={`url(#shadow-${value}-${animationDelay})`}
+        />
         
-        {/* Padrão de textura */}
-        <pattern id={`texture-${value}`} x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse" opacity="0.03">
-          <rect x="0" y="0" width="4" height="4" fill="#fff"/>
-          <rect x="4" y="4" width="4" height="4" fill="#fff"/>
-        </pattern>
-      </defs>
-      
-      {/* Sombra 3D curvada */}
-      <path 
-        d="M8 5 Q50 -2 92 5 Q96 25 92 45 Q50 52 8 45 Q4 25 8 5 Z" 
-        fill={`url(#shadowGradient-${value})`}
-        transform="translate(3, 3)"
-      />
-      
-      {/* Corpo principal da nota curvada */}
-      <path 
-        d="M5 2 Q50 -5 95 2 Q98 25 95 48 Q50 55 5 48 Q2 25 5 2 Z" 
-        fill={`url(#noteGradient-${value})`}
-        stroke="#fff" 
-        strokeWidth="0.5" 
-        strokeOpacity="0.2"
-      />
-      
-      {/* Textura da nota */}
-      <path 
-        d="M5 2 Q50 -5 95 2 Q98 25 95 48 Q50 55 5 48 Q2 25 5 2 Z" 
-        fill={`url(#texture-${value})`}
-      />
-      
-      {/* Borda interna decorativa curvada */}
-      <path 
-        d="M8 5 Q50 -2 92 5 Q95 25 92 45 Q50 52 8 45 Q5 25 8 5 Z" 
-        fill="none"
-        stroke="#fff" 
-        strokeWidth="0.3" 
-        strokeOpacity="0.15"
-      />
-      
-      {/* Marca do Banco Central (simulada) */}
-      <ellipse cx="20" cy="15" rx="6" ry="8" fill="#fff" fillOpacity="0.08" filter={`url(#blur-${value})`}/>
-      <text x="20" y="18" textAnchor="middle" fontSize="3" fill="#fff" opacity="0.1" fontWeight="bold">BC</text>
-      
-      {/* Texto R$ */}
-      <text x="15" y="28" fontSize="6" fill="#fff" fontWeight="bold" opacity="0.4">R$</text>
-      
-      {/* Valor da nota - tamanho maior e posicionamento melhor */}
-      <text x="50" y="30" textAnchor="middle" fontSize="14" fill="#fff" fontWeight="bold" opacity="0.5">{value}</text>
-      
-      {/* Elementos decorativos das bordas */}
-      <circle cx="15" cy="10" r="2" fill="#fff" fillOpacity="0.08"/>
-      <circle cx="85" cy="15" r="1.5" fill="#fff" fillOpacity="0.08"/>
-      <circle cx="12" cy="40" r="1.8" fill="#fff" fillOpacity="0.08"/>
-      <circle cx="88" cy="35" r="2.2" fill="#fff" fillOpacity="0.08"/>
-      
-      {/* Padrão decorativo central simulando desenhos da nota */}
-      <ellipse cx="65" cy="25" rx="12" ry="8" fill="#fff" fillOpacity="0.06" filter={`url(#blur-${value})`}/>
-      <rect x="40" y="20" width="25" height="3" rx="1.5" fill="#fff" fillOpacity="0.08"/>
-      <rect x="35" y="26" width="15" height="2" rx="1" fill="#fff" fillOpacity="0.06"/>
-      
-      {/* Linhas decorativas simulando micro impressões */}
-      <line x1="25" y1="35" x2="45" y2="35" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.08"/>
-      <line x1="25" y1="37" x2="40" y2="37" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.06"/>
-      <line x1="25" y1="39" x2="35" y2="39" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.04"/>
-      
-      {/* Número de série mais realista */}
-      <text x="12" y="46" fontSize="3" fill="#fff" opacity="0.2" fontFamily="monospace">
-        {value === "100" ? "AA" : value === "50" ? "BB" : "CC"}{Math.floor(Math.random() * 10000000).toString().padStart(7, '0')}
-      </text>
-      
-      {/* Marca d'água central */}
-      <ellipse cx="75" cy="25" rx="8" ry="12" fill="#fff" fillOpacity="0.03" filter={`url(#blur-${value})`}/>
-      
-      {/* Elementos de segurança simulados */}
-      <rect x="70" y="8" width="20" height="1" rx="0.5" fill="#fff" fillOpacity="0.05"/>
-      <rect x="72" y="10" width="16" height="0.8" rx="0.4" fill="#fff" fillOpacity="0.04"/>
-      <rect x="74" y="12" width="12" height="0.6" rx="0.3" fill="#fff" fillOpacity="0.03"/>
-    </svg>
+        {/* Textura micro da nota */}
+        <path 
+          d="M8 4 Q60 -8 112 4 Q118 30 112 56 Q60 68 8 56 Q2 30 8 4 Z" 
+          fill={`url(#microTexture-${value}-${animationDelay})`}
+        />
+        
+        {/* Borda interna decorativa curvada */}
+        <path 
+          d="M12 8 Q60 -4 108 8 Q114 30 108 52 Q60 64 12 52 Q6 30 12 8 Z" 
+          fill="none"
+          stroke="#fff" 
+          strokeWidth="0.5" 
+          strokeOpacity="0.4"
+        />
+        
+        {/* Segunda borda interna */}
+        <path 
+          d="M16 12 Q60 0 104 12 Q110 30 104 48 Q60 60 16 48 Q10 30 16 12 Z" 
+          fill="none"
+          stroke="#fff" 
+          strokeWidth="0.3" 
+          strokeOpacity="0.2"
+        />
+        
+        {/* Marca do Banco Central do Brasil */}
+        <ellipse cx="25" cy="18" rx="8" ry="10" fill="#fff" fillOpacity="0.15" filter={`url(#blur-${value}-${animationDelay})`}/>
+        <text x="25" y="22" textAnchor="middle" fontSize="4" fill="#fff" opacity="0.3" fontWeight="bold">BCB</text>
+        
+        {/* Símbolo R$ */}
+        <text x="20" y="35" fontSize="8" fill="#fff" fontWeight="bold" opacity="0.7">R$</text>
+        
+        {/* Valor da nota - grande e centralizado */}
+        <text x="60" y="38" textAnchor="middle" fontSize="20" fill="#fff" fontWeight="bold" opacity="0.8" fontFamily="serif">{value}</text>
+        
+        {/* Elementos decorativos das bordas - cantos */}
+        <circle cx="18" cy="15" r="2.5" fill="#fff" fillOpacity="0.15"/>
+        <circle cx="102" cy="18" r="2" fill="#fff" fillOpacity="0.15"/>
+        <circle cx="15" cy="45" r="2.2" fill="#fff" fillOpacity="0.15"/>
+        <circle cx="105" cy="42" r="2.8" fill="#fff" fillOpacity="0.15"/>
+        
+        {/* Padrão decorativo central - marca d'água */}
+        <ellipse cx="80" cy="30" rx="15" ry="12" fill="#fff" fillOpacity="0.08" filter={`url(#blur-${value}-${animationDelay})`}/>
+        <ellipse cx="85" cy="35" rx="8" ry="6" fill="#fff" fillOpacity="0.05"/>
+        
+        {/* Linhas de segurança */}
+        <rect x="45" y="25" width="30" height="4" rx="2" fill="#fff" fillOpacity="0.12"/>
+        <rect x="40" y="32" width="20" height="2.5" rx="1.25" fill="#fff" fillOpacity="0.08"/>
+        <rect x="48" y="37" width="15" height="2" rx="1" fill="#fff" fillOpacity="0.06"/>
+        
+        {/* Micro linhas de impressão */}
+        <line x1="30" y1="45" x2="55" y2="45" stroke="#fff" strokeWidth="0.4" strokeOpacity="0.15"/>
+        <line x1="30" y1="47" x2="50" y2="47" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.12"/>
+        <line x1="30" y1="49" x2="45" y2="49" stroke="#fff" strokeWidth="0.3" strokeOpacity="0.08"/>
+        
+        {/* Número de série realista */}
+        <text x="15" y="54" fontSize="3.5" fill="#fff" opacity="0.35" fontFamily="monospace" letterSpacing="0.5">
+          {value === "100" ? "AA" : value === "50" ? "BB" : "CC"}{Math.floor(Math.random() * 100000000).toString().padStart(8, '0')}A
+        </text>
+        
+        {/* Código de barras simulado */}
+        <g opacity="0.2">
+          {[...Array(12)].map((_, i) => (
+            <rect 
+              key={i} 
+              x={75 + i * 2} 
+              y={48} 
+              width={i % 3 === 0 ? 1.5 : 0.8} 
+              height={8} 
+              fill="#fff"
+            />
+          ))}
+        </g>
+        
+        {/* Marca d'água central adicional */}
+        <ellipse cx="90" cy="25" rx="10" ry="15" fill="#fff" fillOpacity="0.04" filter={`url(#blur-${value}-${animationDelay})`}/>
+        
+        {/* Elementos holográficos simulados */}
+        <ellipse cx="85" cy="15" rx="6" ry="3" fill="#fff" fillOpacity="0.08" transform="rotate(45 85 15)"/>
+        <ellipse cx="95" cy="45" rx="4" ry="2" fill="#fff" fillOpacity="0.06" transform="rotate(-30 95 45)"/>
+        
+        {/* Faixa de segurança */}
+        <rect x="75" y="10" width="25" height="1.5" rx="0.75" fill="#fff" fillOpacity="0.1"/>
+        <rect x="77" y="13" width="21" height="1" rx="0.5" fill="#fff" fillOpacity="0.08"/>
+        <rect x="79" y="16" width="17" height="0.8" rx="0.4" fill="#fff" fillOpacity="0.06"/>
+        
+        {/* Padrões fractais nas bordas */}
+        <path d="M12 8 Q15 10 18 8 Q21 6 24 8" stroke="#fff" strokeWidth="0.3" fill="none" opacity="0.1"/>
+        <path d="M96 52 Q99 50 102 52 Q105 54 108 52" stroke="#fff" strokeWidth="0.3" fill="none" opacity="0.1"/>
+      </svg>
+    </div>
   );
 
   return (
@@ -199,51 +262,39 @@ const EntrepreneurshipSection = () => {
 
         {/* Commission Section with Money Background */}
         <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
-          {/* Animated Real Notes Background */}
-          <div className="absolute inset-0 overflow-hidden opacity-35">
-            {/* Notas de R$ 100 */}
-            {[...Array(8)].map((_, i) => (
-              <div
+          {/* Animated Real Notes Background - Mais realistas */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Notas de R$ 100 - Verde escuro */}
+            {[...Array(12)].map((_, i) => (
+              <RealNote 
                 key={`note-100-${i}`}
-                className="absolute money-animation"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 8}s`,
-                  animationDuration: `${6 + Math.random() * 4}s`,
-                }}
-              >
-                <RealNote value="100" color="#1a472a" />
-              </div>
+                value="100" 
+                color="#1a472a"
+                animationDelay={Math.random() * 10}
+                animationDuration={8 + Math.random() * 6}
+              />
             ))}
             
-            {/* Notas de R$ 50 */}
-            {[...Array(6)].map((_, i) => (
-              <div
+            {/* Notas de R$ 50 - Verde médio */}
+            {[...Array(10)].map((_, i) => (
+              <RealNote 
                 key={`note-50-${i}`}
-                className="absolute money-animation"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 6}s`,
-                  animationDuration: `${5 + Math.random() * 3}s`,
-                }}
-              >
-                <RealNote value="50" color="#2d5a3d" />
-              </div>
+                value="50" 
+                color="#2d5a3d"
+                animationDelay={Math.random() * 8}
+                animationDuration={7 + Math.random() * 5}
+              />
             ))}
             
-            {/* Notas de R$ 20 */}
-            {[...Array(5)].map((_, i) => (
-              <div
+            {/* Notas de R$ 20 - Verde claro */}
+            {[...Array(8)].map((_, i) => (
+              <RealNote 
                 key={`note-20-${i}`}
-                className="absolute money-animation"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 10}s`,
-                  animationDuration: `${4 + Math.random() * 3}s`,
-                }}
-              >
-                <RealNote value="20" color="#00a85c" />
-              </div>
+                value="20" 
+                color="#22c55e"
+                animationDelay={Math.random() * 12}
+                animationDuration={6 + Math.random() * 4}
+              />
             ))}
           </div>
 

@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { MapPin, Zap, Calculator, TrendingDown, Building } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -12,14 +12,29 @@ const StateCoverageSimulator = () => {
   const [showResult, setShowResult] = useState(false);
 
   const stateData = {
+    'Acre': {
+      distributors: [{ name: 'Energisa', discount: 15 }]
+    },
+    'Alagoas': {
+      distributors: [{ name: 'Equatorial', discount: 15 }]
+    },
+    'Amapá': {
+      distributors: [{ name: 'CEA', discount: 15 }]
+    },
+    'Amazonas': {
+      distributors: [{ name: 'Amazonas Energia', discount: 15 }]
+    },
     'Bahia': {
       distributors: [{ name: 'Coelba (Neoenergia)', discount: 15 }]
     },
-    'Brasília (DF)': {
-      distributors: [{ name: 'CEB (Neoenergia)', discount: 15 }]
-    },
     'Ceará': {
       distributors: [{ name: 'Enel', discount: 15 }]
+    },
+    'Distrito Federal': {
+      distributors: [{ name: 'CEB (Neoenergia)', discount: 15 }]
+    },
+    'Espírito Santo': {
+      distributors: [{ name: 'EDP', discount: 15 }]
     },
     'Goiás': {
       distributors: [{ name: 'Equatorial', discount: 15 }]
@@ -42,6 +57,9 @@ const StateCoverageSimulator = () => {
     'Pará': {
       distributors: [{ name: 'Equatorial', discount: 15 }]
     },
+    'Paraíba': {
+      distributors: [{ name: 'Energisa', discount: 15 }]
+    },
     'Paraná': {
       distributors: [
         { name: 'Copel', discount: 15 },
@@ -54,8 +72,26 @@ const StateCoverageSimulator = () => {
     'Piauí': {
       distributors: [{ name: 'Equatorial', discount: 15 }]
     },
+    'Rio de Janeiro': {
+      distributors: [
+        { name: 'Light', discount: 15 },
+        { name: 'Enel', discount: 15 }
+      ]
+    },
     'Rio Grande do Norte': {
       distributors: [{ name: 'Cosern (Neoenergia)', discount: 15 }]
+    },
+    'Rio Grande do Sul': {
+      distributors: [
+        { name: 'RGE', discount: 15 },
+        { name: 'CEEE', discount: 15 }
+      ]
+    },
+    'Rondônia': {
+      distributors: [{ name: 'Energisa', discount: 15 }]
+    },
+    'Roraima': {
+      distributors: [{ name: 'Roraima Energia', discount: 15 }]
     },
     'Santa Catarina': {
       distributors: [{ name: 'Celesc', discount: 15 }]
@@ -103,25 +139,46 @@ const StateCoverageSimulator = () => {
   const yearlyEconomy = discountAmount * 12;
 
   return (
-    <Card className="bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 border-solarien-primary/30">
-      <CardHeader>
+    <Card className="bg-gradient-to-br from-white to-gray-50 border-2 border-solarien-primary/20 shadow-2xl">
+      <CardHeader className="bg-gradient-to-r from-solarien-primary/5 to-solarien-secondary/5 border-b border-solarien-primary/10">
         <CardTitle className="text-solarien-primary text-3xl flex items-center gap-3">
-          <MapPin className="w-10 h-10" />
-          Simulador de Cobertura Nacional
+          <div className="p-2 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full">
+            <Sparkles className="w-8 h-8 text-white" />
+          </div>
+          Simulador Nacional de Energia Solar
         </CardTitle>
-        <CardDescription className="text-gray-300 text-lg">
-          Descubra sua economia com energia solar por estado - Grupo B (Baixa Tensão)
+        <CardDescription className="text-gray-600 text-lg">
+          Descubra sua economia com energia solar - Cobertura em todos os 27 estados do Brasil
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="p-8 space-y-8">
+        {/* Hero Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="text-center p-6 bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-2xl border border-solarien-primary/20">
+            <Award className="w-12 h-12 text-solarien-primary mx-auto mb-3" />
+            <div className="text-3xl font-bold text-solarien-primary mb-1">15%</div>
+            <div className="text-gray-600 font-medium">Desconto Garantido</div>
+          </div>
+          <div className="text-center p-6 bg-gradient-to-br from-solarien-secondary/10 to-solarien-tertiary/10 rounded-2xl border border-solarien-secondary/20">
+            <MapPin className="w-12 h-12 text-solarien-secondary mx-auto mb-3" />
+            <div className="text-3xl font-bold text-solarien-secondary mb-1">27</div>
+            <div className="text-gray-600 font-medium">Estados Cobertos</div>
+          </div>
+          <div className="text-center p-6 bg-gradient-to-br from-solarien-tertiary/10 to-solarien-primary/10 rounded-2xl border border-solarien-tertiary/20">
+            <Building className="w-12 h-12 text-solarien-tertiary mx-auto mb-3" />
+            <div className="text-3xl font-bold text-solarien-tertiary mb-1">35+</div>
+            <div className="text-gray-600 font-medium">Distribuidoras</div>
+          </div>
+        </div>
+
         {/* State Selection Grid */}
         <div>
-          <h3 className="text-white text-xl font-semibold mb-4 flex items-center gap-2">
-            <Building className="w-6 h-6 text-solarien-primary" />
-            Estados com Cobertura
+          <h3 className="text-gray-800 text-2xl font-bold mb-6 flex items-center gap-3">
+            <Target className="w-7 h-7 text-solarien-primary" />
+            Selecione seu Estado
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {Object.keys(stateData).map((state) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+            {Object.keys(stateData).sort().map((state) => (
               <Button
                 key={state}
                 variant={selectedState === state ? "default" : "outline"}
@@ -129,15 +186,15 @@ const StateCoverageSimulator = () => {
                   setSelectedState(state);
                   setShowResult(false);
                 }}
-                className={`h-auto p-3 text-left ${
+                className={`h-auto p-4 text-left transition-all duration-300 hover:scale-105 ${
                   selectedState === state
-                    ? 'bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black'
-                    : 'border-solarien-primary/30 text-white hover:bg-solarien-primary/10 hover:border-solarien-primary'
+                    ? 'bg-gradient-to-r from-solarien-primary to-solarien-secondary text-white shadow-lg shadow-solarien-primary/25'
+                    : 'border-2 border-solarien-primary/20 text-gray-700 hover:bg-solarien-primary/5 hover:border-solarien-primary/40'
                 }`}
               >
                 <div className="w-full">
-                  <div className="font-semibold text-sm">{state}</div>
-                  <div className="text-xs opacity-70">
+                  <div className="font-bold text-sm mb-1">{state}</div>
+                  <div className="text-xs opacity-80">
                     {stateData[state as keyof typeof stateData].distributors.length} distribuidora{stateData[state as keyof typeof stateData].distributors.length > 1 ? 's' : ''}
                   </div>
                 </div>
@@ -148,18 +205,18 @@ const StateCoverageSimulator = () => {
 
         {/* Selected State Details */}
         {selectedState && (
-          <div className="bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-xl p-6 border border-solarien-primary/20">
-            <h4 className="text-white text-xl font-bold mb-4 flex items-center gap-2">
-              <MapPin className="w-6 h-6 text-solarien-primary" />
+          <div className="bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 rounded-2xl p-8 border-2 border-solarien-primary/20 shadow-lg">
+            <h4 className="text-gray-800 text-2xl font-bold mb-6 flex items-center gap-3">
+              <MapPin className="w-7 h-7 text-solarien-primary" />
               {selectedState}
             </h4>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
-                <h5 className="text-solarien-primary font-semibold mb-2">Distribuidoras Disponíveis:</h5>
-                <div className="flex flex-wrap gap-2">
+                <h5 className="text-solarien-primary font-bold text-lg mb-3">Distribuidoras Disponíveis:</h5>
+                <div className="flex flex-wrap gap-3">
                   {stateData[selectedState as keyof typeof stateData].distributors.map((distributor, index) => (
-                    <Badge key={index} variant="secondary" className="bg-solarien-primary/20 text-solarien-primary border-solarien-primary/30">
+                    <Badge key={index} className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-white px-4 py-2 text-sm font-semibold">
                       {distributor.name} - {distributor.discount}% desconto
                     </Badge>
                   ))}
@@ -168,28 +225,28 @@ const StateCoverageSimulator = () => {
 
               {/* Simulator Section */}
               {!showResult ? (
-                <div className="space-y-4 bg-green-800/20 rounded-lg p-4">
-                  <h5 className="text-white font-semibold flex items-center gap-2">
-                    <Calculator className="w-5 h-5 text-solarien-primary" />
+                <div className="space-y-6 bg-white/70 rounded-xl p-6 border border-solarien-primary/20">
+                  <h5 className="text-gray-800 font-bold text-xl flex items-center gap-3">
+                    <Calculator className="w-6 h-6 text-solarien-primary" />
                     Simule sua Economia
                   </h5>
                   
-                  <div className="bg-yellow-100 border border-yellow-400 rounded-lg p-3">
-                    <p className="text-sm text-yellow-800">
-                      <strong>Importante:</strong> Digite o valor médio anual da sua conta de luz dos últimos 12 meses para uma simulação mais precisa.
+                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-4">
+                    <p className="text-sm text-yellow-800 font-medium">
+                      <strong>💡 Dica importante:</strong> Digite o valor médio anual da sua conta de luz dos últimos 12 meses para uma simulação mais precisa.
                     </p>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-white mb-2">
+                    <label className="block text-sm font-bold text-gray-700 mb-3">
                       Valor médio da sua conta de luz (R$)
                     </label>
                     <Input
                       type="number"
-                      placeholder="Ex: 350"
+                      placeholder="Ex: 350,00"
                       value={billValue}
                       onChange={(e) => setBillValue(e.target.value)}
-                      className="text-lg text-center border-solarien-primary/30 focus:border-solarien-primary bg-green-800/30 text-white placeholder-gray-400"
+                      className="text-xl text-center border-2 border-solarien-primary/30 focus:border-solarien-primary bg-white h-14 text-gray-800 placeholder-gray-400 font-semibold"
                       min="0"
                       step="0.01"
                     />
@@ -198,77 +255,85 @@ const StateCoverageSimulator = () => {
                   <Button 
                     onClick={calculateEconomy}
                     disabled={!billValue || parseFloat(billValue.replace(',', '.')) <= 0}
-                    className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-white font-bold py-4 text-lg rounded-xl hover:shadow-xl hover:shadow-solarien-primary/30 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Zap className="w-5 h-5 mr-2" />
-                    Calcular Economia
+                    <Zap className="w-6 h-6 mr-3" />
+                    Calcular Minha Economia
                   </Button>
                 </div>
               ) : (
-                <div className="space-y-6 bg-green-800/20 rounded-lg p-4">
+                <div className="space-y-6 bg-white/70 rounded-xl p-6 border border-solarien-primary/20">
                   <div className="text-center">
-                    <TrendingDown className="w-12 h-12 text-solarien-primary mx-auto mb-4" />
-                    <h5 className="text-xl font-bold text-solarien-primary mb-4">
-                      Sua Economia em {selectedState}
+                    <div className="inline-flex p-4 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mb-4">
+                      <TrendingDown className="w-12 h-12 text-white" />
+                    </div>
+                    <h5 className="text-2xl font-bold text-solarien-primary mb-2">
+                      🎉 Sua Economia em {selectedState}
                     </h5>
+                    <p className="text-gray-600">Com 15% de desconto garantido</p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/20 rounded-xl p-6 space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <div className="text-sm text-gray-300">Conta Atual</div>
-                        <div className="text-xl font-bold text-white">
+                  <div className="bg-gradient-to-br from-solarien-primary/10 to-solarien-secondary/10 rounded-2xl p-8 space-y-6 border border-solarien-primary/20">
+                    <div className="grid grid-cols-2 gap-6">
+                      <div className="text-center p-4 bg-white/80 rounded-xl">
+                        <div className="text-sm text-gray-600 font-semibold mb-2">Conta Atual</div>
+                        <div className="text-2xl font-bold text-gray-800">
                           R$ {billValueNum.toFixed(2).replace('.', ',')}
                         </div>
                       </div>
-                      <div className="text-center">
-                        <div className="text-sm text-gray-300">Nova Conta</div>
-                        <div className="text-xl font-bold text-solarien-primary">
+                      <div className="text-center p-4 bg-white/80 rounded-xl">
+                        <div className="text-sm text-gray-600 font-semibold mb-2">Nova Conta</div>
+                        <div className="text-2xl font-bold text-solarien-primary">
                           R$ {newBillValue.toFixed(2).replace('.', ',')}
                         </div>
                       </div>
                     </div>
 
-                    <div className="text-center border-t border-solarien-primary/20 pt-4">
-                      <div className="text-sm text-gray-300">💰 Economia Mensal</div>
-                      <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent">
+                    <div className="text-center border-t-2 border-solarien-primary/20 pt-6">
+                      <div className="text-lg text-gray-600 font-semibold mb-2">💰 Economia Mensal</div>
+                      <div className="text-4xl font-bold bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent mb-2">
                         R$ {discountAmount.toFixed(2).replace('.', ',')}
                       </div>
-                      <div className="text-sm text-solarien-primary mt-1">15% de desconto</div>
+                      <div className="text-lg text-solarien-primary font-bold">15% de desconto</div>
                     </div>
 
-                    <div className="text-center bg-gradient-to-r from-solarien-primary/30 to-solarien-secondary/30 rounded-lg p-4">
-                      <div className="text-sm text-gray-300">🎯 Economia Anual</div>
-                      <div className="text-4xl font-bold bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent animate-pulse">
+                    <div className="text-center bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 rounded-2xl p-6 border border-solarien-primary/30">
+                      <div className="text-lg text-gray-700 font-semibold mb-2">🎯 Economia Anual</div>
+                      <div className="text-5xl font-bold bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent animate-pulse">
                         R$ {yearlyEconomy.toFixed(2).replace('.', ',')}
                       </div>
+                      <div className="text-sm text-gray-600 mt-2">Valor que você economizará em 12 meses</div>
                     </div>
 
-                    <div className="bg-solarien-primary/10 rounded-lg p-4">
-                      <h6 className="text-white font-semibold mb-2">Distribuidoras em {selectedState}:</h6>
-                      <div className="space-y-1">
+                    <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 rounded-xl p-4 border border-solarien-primary/20">
+                      <h6 className="text-gray-800 font-bold mb-3 flex items-center gap-2">
+                        <Building className="w-5 h-5 text-solarien-primary" />
+                        Distribuidoras em {selectedState}:
+                      </h6>
+                      <div className="space-y-2">
                         {stateData[selectedState as keyof typeof stateData].distributors.map((distributor, index) => (
-                          <div key={index} className="text-sm text-gray-300">
-                            • {distributor.name}
+                          <div key={index} className="text-sm text-gray-700 flex items-center gap-2">
+                            <div className="w-2 h-2 bg-solarien-primary rounded-full"></div>
+                            <span className="font-medium">{distributor.name}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="flex gap-4">
                     <Button 
                       onClick={resetSimulator}
                       variant="outline"
-                      className="flex-1 border-solarien-primary/30 text-solarien-primary hover:bg-solarien-primary/10"
+                      className="flex-1 border-2 border-solarien-primary/30 text-solarien-primary hover:bg-solarien-primary/5 font-bold py-3"
                     >
                       Nova Simulação
                     </Button>
                     <Button 
-                      className="flex-1 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold"
+                      className="flex-1 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-white font-bold py-3 hover:shadow-xl hover:shadow-solarien-primary/30 transition-all duration-300"
                       onClick={handleWhatsAppContact}
                     >
-                      Contratar Agora
+                      💬 Contratar Agora
                     </Button>
                   </div>
                 </div>
@@ -278,20 +343,24 @@ const StateCoverageSimulator = () => {
         )}
 
         {/* Coverage Summary */}
-        <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 rounded-xl p-6 border border-solarien-primary/20">
-          <h4 className="text-solarien-primary text-xl font-bold mb-4">Resumo da Cobertura Nacional</h4>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-solarien-primary mb-2">17</div>
-              <div className="text-gray-300">Estados Cobertos</div>
+        <div className="bg-gradient-to-r from-solarien-primary/5 to-solarien-secondary/5 rounded-2xl p-8 border-2 border-solarien-primary/20">
+          <h4 className="text-solarien-primary text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional Completa</h4>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center p-4 bg-white/70 rounded-xl">
+              <div className="text-3xl font-bold text-solarien-primary mb-2">27</div>
+              <div className="text-gray-600 font-semibold">Estados Cobertos</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-solarien-secondary mb-2">25</div>
-              <div className="text-gray-300">Distribuidoras Parceiras</div>
+            <div className="text-center p-4 bg-white/70 rounded-xl">
+              <div className="text-3xl font-bold text-solarien-secondary mb-2">35+</div>
+              <div className="text-gray-600 font-semibold">Distribuidoras</div>
             </div>
-            <div className="text-center">
+            <div className="text-center p-4 bg-white/70 rounded-xl">
               <div className="text-3xl font-bold text-solarien-tertiary mb-2">15%</div>
-              <div className="text-gray-300">Desconto Garantido</div>
+              <div className="text-gray-600 font-semibold">Desconto</div>
+            </div>
+            <div className="text-center p-4 bg-white/70 rounded-xl">
+              <div className="text-3xl font-bold text-solarien-primary mb-2">100%</div>
+              <div className="text-gray-600 font-semibold">Renovável</div>
             </div>
           </div>
         </div>

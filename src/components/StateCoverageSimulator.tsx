@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -153,7 +152,7 @@ const StateCoverageSimulator = () => {
                 className={`h-auto p-4 text-left transition-all duration-300 hover:scale-105 ${
                   selectedState === state
                     ? 'bg-gradient-to-r from-[#00844e] to-[#02ff91] text-white shadow-lg shadow-[#00844e]/25'
-                    : 'border-2 border-[#00844e]/20 text-gray-700 hover:bg-[#00844e]/5 hover:border-[#00844e]/40'
+                    : 'bg-[#00844e] text-[#02ff91] border-2 border-[#00844e]/20 hover:bg-[#00844e]/90 hover:border-[#00844e]/40'
                 }`}
               >
                 <div className="w-full">

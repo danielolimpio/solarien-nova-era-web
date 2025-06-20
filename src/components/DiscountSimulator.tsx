@@ -23,10 +23,6 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
     }
   };
 
-  const discountAmount = parseFloat(billValue.replace(',', '.')) * 0.15;
-  const newBillValue = parseFloat(billValue.replace(',', '.')) - discountAmount;
-  const yearlyEconomy = discountAmount * 12;
-
   const resetSimulator = () => {
     setBillValue('');
     setShowResult(false);
@@ -40,11 +36,19 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
   };
 
   const handleWhatsAppContact = () => {
+    const value = parseFloat(billValue.replace(',', '.'));
+    const discountAmount = value * 0.15;
     const phoneNumber = '+5511997361698';
     const message = `Olá! Gostaria de contratar o serviço de energia solar. Simulei uma economia de R$ ${discountAmount.toFixed(2).replace('.', ',')} mensais na minha conta de luz.`;
     const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  // Calculate values
+  const billValueNum = parseFloat(billValue.replace(',', '.')) || 0;
+  const discountAmount = billValueNum * 0.15;
+  const newBillValue = billValueNum - discountAmount;
+  const yearlyEconomy = discountAmount * 12;
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -82,7 +86,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                   </p>
                 </div>
                 <p className="text-gray-600">
-                  Grupo B - Desconto de 15% na tarifa de energia
+                  Grupo B - Desconto de {discount} na tarifa de energia
                 </p>
               </div>
 
@@ -104,7 +108,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
 
                 <Button 
                   onClick={calculateDiscount}
-                  disabled={!billValue || parseFloat(billValue) <= 0}
+                  disabled={!billValue || parseFloat(billValue.replace(',', '.')) <= 0}
                   className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
                 >
                   <Zap className="w-5 h-5 mr-2" />
@@ -126,7 +130,7 @@ const DiscountSimulator = ({ children, state, discount = '15%' }: DiscountSimula
                   <div className="text-center">
                     <div className="text-sm text-gray-600">Conta Atual</div>
                     <div className="text-xl font-bold text-gray-800">
-                      R$ {parseFloat(billValue).toFixed(2).replace('.', ',')}
+                      R$ {billValueNum.toFixed(2).replace('.', ',')}
                     </div>
                   </div>
                   <div className="text-center">

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import DiscountSimulator from './DiscountSimulator';
@@ -175,7 +176,7 @@ const HeroSection = () => {
         <div className="relative z-10 text-center px-4 pt-20">
           <div className="max-w-4xl mx-auto">
             {/* Animated Typing Text */}
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight min-h-[2em] flex items-center justify-center">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight min-h-[2em] flex items-center justify-center">
               <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent">
                 {displayText}
                 <span className="animate-pulse">|</span>

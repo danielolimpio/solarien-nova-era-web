@@ -8,28 +8,57 @@ const Footer = () => {
 
   const handleLinkClick = (link: string) => {
     if (link === 'Home') {
-      // Scroll to top of page smoothly
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else if (link === 'Serviços') {
-      // Scroll to the National Simulator section
-      const element = document.getElementById('servicos');
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+      // Always navigate to home page, then scroll to top
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
         });
+      }, 100);
+    } else if (link === 'Serviços') {
+      // Navigate to home first if not already there, then scroll to services
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById('servicos');
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById('servicos');
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       }
     } else if (link === 'Usinas') {
-      // Scroll to the Solar Plants section
-      const solarPlantsSection = document.querySelector('.py-20.bg-gray-900');
-      if (solarPlantsSection) {
-        solarPlantsSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      // Navigate to home first if not already there, then scroll to solar plants
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById('usinas');
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById('usinas');
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       }
     } else if (link === 'FAQ') {
       navigate('/faq');
@@ -47,6 +76,8 @@ const Footer = () => {
       navigate('/como-funciona');
     } else if (link === 'Envie o Feedback') {
       navigate('/feedback');
+    } else if (link === 'Depoimentos') {
+      navigate('/depoimentos');
     } else if (link === 'Portal do Cliente') {
       window.open('https://painel.solarien.com.br/login', '_blank');
     }
@@ -130,7 +161,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente'].includes(link) ? (
+                    {['Home', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import DiscountSimulator from './DiscountSimulator';
@@ -176,14 +177,14 @@ const HeroSection = () => {
         <div className="relative z-10 text-center px-4 pt-20">
           <div className="max-w-4xl mx-auto">
             {/* Animated Typing Text */}
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight min-h-[2em] flex items-center justify-center">
-              <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight min-h-[2.5em] flex items-center justify-center overflow-visible">
+              <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent overflow-visible">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
               Gestão de contratos e consultoria energética com{' '}
               <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent font-semibold">
                 migração gratuita
@@ -253,3 +254,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

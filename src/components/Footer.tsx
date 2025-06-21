@@ -8,7 +8,29 @@ const Footer = () => {
 
   const handleLinkClick = (link: string) => {
     if (link === 'Home') {
-      navigate('/');
+      // Scroll to top of page smoothly
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else if (link === 'Serviços') {
+      // Scroll to the National Simulator section
+      const element = document.getElementById('servicos');
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else if (link === 'Usinas') {
+      // Scroll to the Solar Plants section
+      const solarPlantsSection = document.querySelector('.py-20.bg-gray-900');
+      if (solarPlantsSection) {
+        solarPlantsSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     } else if (link === 'FAQ') {
       navigate('/faq');
     } else if (link === 'Termos de Uso') {
@@ -108,7 +130,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente'].includes(link) ? (
+                    {['Home', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

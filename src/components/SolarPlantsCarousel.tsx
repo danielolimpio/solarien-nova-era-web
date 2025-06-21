@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const SolarPlantsCarousel = () => {
@@ -47,7 +48,7 @@ const SolarPlantsCarousel = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
+    <section id="usinas" className="py-20 bg-gray-900 relative overflow-hidden">
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900"></div>
       

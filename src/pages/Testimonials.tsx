@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import Header from '../components/Header';
@@ -36,7 +37,7 @@ const Testimonials = () => {
       position: "Diretor Comercial",
       company: "Metalúrgica Forte Ltda",
       location: "Campinas, SP",
-      image: "/lovable-uploads/b4d43014-0588-4c31-a322-9ef6f3cdae53.png",
+      image: "/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png",
       testimonial: "Como indústria metalúrgica, nosso consumo energético é altíssimo. A Solarien conseguiu uma negociação no mercado livre que nos trouxe uma economia mensal de R$ 12 mil! O processo foi rápido, em apenas 45 dias estávamos com a nova modalidade ativa. A expertise da equipe fez toda diferença.",
       savings: "28%",
       service: "Mercado Livre"
@@ -58,7 +59,7 @@ const Testimonials = () => {
       position: "Proprietário",
       company: "Supermercado Economia",
       location: "Porto Alegre, RS",
-      image: "/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png",
+      image: "/lovable-uploads/b4d43014-0588-4c31-a322-9ef6f3cdae53.png",
       testimonial: "Com 3 unidades de supermercado, nossa conta de energia era um dos maiores custos operacionais. A energia por assinatura da Solarien reduziu nossos gastos em 25%! A equipe é muito atenciosa, sempre nos mantendo informados sobre o processo. Hoje indicamos para outros comerciantes da região.",
       savings: "25%",
       service: "Energia por Assinatura"

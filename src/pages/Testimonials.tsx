@@ -145,8 +145,8 @@ const Testimonials = () => {
       <section className="py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
-            alt="Pessoa segurando conta de energia"
+            src="/lovable-uploads/1caf31f7-cfd2-4c3f-8dea-efc4c62b37b1.png"
+            alt="Economia de energia - lâmpada com símbolo de dólar"
             className="w-full h-full object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>

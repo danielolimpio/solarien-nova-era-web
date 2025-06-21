@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import Header from '../components/Header';
@@ -211,7 +212,7 @@ const Testimonials = () => {
                   <div className="lg:w-2/3">
                     <div className="flex mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-6 h-6 text-[#02ff91] fill-current" />
                       ))}
                     </div>
                     <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed italic mb-6">
@@ -224,7 +225,7 @@ const Testimonials = () => {
                 <div className="flex justify-between items-center mt-8">
                   <button
                     onClick={prevTestimonial}
-                    className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-[#02ff91]"
                   >
                     <ChevronLeft className="w-5 h-5" />
                     Anterior
@@ -267,9 +268,14 @@ const Testimonials = () => {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Junte-se a centenas de empresários que já reduziram significativamente seus custos com energia
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 text-lg">
+          <a
+            href="https://wa.me/5511997361698"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 text-lg"
+          >
             Solicite Sua Análise Gratuita
-          </button>
+          </a>
         </div>
       </section>
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import Header from '../components/Header';
@@ -15,7 +14,7 @@ const Testimonials = () => {
       position: "CEO",
       company: "Silva & Associados Contabilidade",
       location: "São Paulo, SP",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/0df96018-53de-4236-9144-decea5df4962.png",
       testimonial: "A Solarien foi fundamental para reduzir os custos do nosso escritório. Conseguimos uma economia de 32% na conta de energia e o processo foi surpreendentemente simples. A equipe nos acompanhou em cada etapa, desde a análise inicial até a migração completa. Recomendo para qualquer empresário que busca reduzir custos operacionais.",
       savings: "32%",
       service: "Mercado Livre"
@@ -26,7 +25,7 @@ const Testimonials = () => {
       position: "Proprietária",
       company: "Padaria Pão Dourado",
       location: "Belo Horizonte, MG",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/d7e167c0-e56b-4126-9008-dc77cba89c01.png",
       testimonial: "Nossa padaria tinha uma conta de energia muito alta devido aos fornos e equipamentos. Com a energia por assinatura da Solarien, economizamos R$ 600 por mês! O atendimento foi excepcional, sem burocracia e com total transparência. O suporte pós-migração é impecável, sempre disponíveis para esclarecer dúvidas.",
       savings: "23%",
       service: "Energia por Assinatura"
@@ -37,7 +36,7 @@ const Testimonials = () => {
       position: "Diretor Comercial",
       company: "Metalúrgica Forte Ltda",
       location: "Campinas, SP",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/b4d43014-0588-4c31-a322-9ef6f3cdae53.png",
       testimonial: "Como indústria metalúrgica, nosso consumo energético é altíssimo. A Solarien conseguiu uma negociação no mercado livre que nos trouxe uma economia mensal de R$ 12 mil! O processo foi rápido, em apenas 45 dias estávamos com a nova modalidade ativa. A expertise da equipe fez toda diferença.",
       savings: "28%",
       service: "Mercado Livre"
@@ -48,7 +47,7 @@ const Testimonials = () => {
       position: "Administradora",
       company: "Clínica Médica Vida Plena",
       location: "Fortaleza, CE",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/37671407-af35-48b0-9839-0da200f8681b.png",
       testimonial: "Nossa clínica tinha equipamentos que consomem muita energia. A Solarien analisou nosso perfil e nos colocou no mercado livre com uma economia incrível de 31%. O que mais me impressionou foi a agilidade e o acompanhamento constante. Zero burocracia, tudo online e muito profissional.",
       savings: "31%",
       service: "Mercado Livre"
@@ -59,7 +58,7 @@ const Testimonials = () => {
       position: "Proprietário",
       company: "Supermercado Economia",
       location: "Porto Alegre, RS",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png",
       testimonial: "Com 3 unidades de supermercado, nossa conta de energia era um dos maiores custos operacionais. A energia por assinatura da Solarien reduziu nossos gastos em 25%! A equipe é muito atenciosa, sempre nos mantendo informados sobre o processo. Hoje indicamos para outros comerciantes da região.",
       savings: "25%",
       service: "Energia por Assinatura"
@@ -70,7 +69,7 @@ const Testimonials = () => {
       position: "Gerente Geral",
       company: "Hotel Recanto Verde",
       location: "Gramado, RS",
-      image: "https://images.unsplash.com/photo-1494790108755-2616c95107e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/51406d1c-99e8-4b60-a2ea-6b33ed130fb4.png",
       testimonial: "Nosso hotel tinha custos altíssimos com energia, especialmente na alta temporada. A Solarien conseguiu uma economia de 33% através do mercado livre. O suporte foi excepcional, nos explicaram todos os detalhes e acompanharam todo o processo. Agora podemos investir mais na experiência dos nossos hóspedes.",
       savings: "33%",
       service: "Mercado Livre"
@@ -81,7 +80,7 @@ const Testimonials = () => {
       position: "Sócio-Proprietário",
       company: "Academia Fitness Pro",
       location: "Brasília, DF",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/a6e126ef-b2da-47cd-915d-36d98522f185.png",
       testimonial: "Com ar condicionado, esteiras e equipamentos funcionando o dia todo, nossa conta de energia era pesada. A equipe da Solarien foi muito profissional, conseguimos 22% de economia com a energia por assinatura. O processo foi transparente e rápido, sem complicações burocráticas.",
       savings: "22%",
       service: "Energia por Assinatura"
@@ -92,7 +91,7 @@ const Testimonials = () => {
       position: "Diretora",
       company: "Escola Criança Feliz",
       location: "Recife, PE",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/2c448ca4-ad05-4092-bc49-f6f2ca22b61b.png",
       testimonial: "Como escola privada, precisávamos reduzir custos para manter mensalidades acessíveis. A Solarien nos ajudou a economizar 35% na conta de energia através do mercado livre. O atendimento foi humanizado, entenderam nossas necessidades educacionais. Processo simples e resultado excelente!",
       savings: "35%",
       service: "Mercado Livre"
@@ -103,7 +102,7 @@ const Testimonials = () => {
       position: "Proprietário",
       company: "Oficina Almeida Motors",
       location: "Salvador, BA",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/5168e505-2e4e-46a1-b602-41a04d13c708.png",
       testimonial: "Nossa oficina tem equipamentos pesados que consomem muita energia. A Solarien conseguiu uma economia de 24% com energia por assinatura. O que mais me chamou atenção foi a honestidade da equipe, sem promessas irreais. Cumpriram exatamente o que prometeram, com suporte contínuo.",
       savings: "24%",
       service: "Energia por Assinatura"
@@ -114,7 +113,7 @@ const Testimonials = () => {
       position: "Administradora",
       company: "Condomínio Residencial Jardins",
       location: "Curitiba, PR",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/7fdd1da8-17da-43a3-bbe6-55b91b05a25c.png",
       testimonial: "Administrar um condomínio com 200 apartamentos é desafiador, especialmente com os custos de energia das áreas comuns. A Solarien conseguiu reduzir nossa conta em 34% através do mercado livre. A transparência no processo e o suporte constante fizeram toda diferença. Recomendo sem hesitar!",
       savings: "34%",
       service: "Mercado Livre"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import DiscountSimulator from './DiscountSimulator';
+import { CircleDollarSign, Wrench, SquareSlash } from 'lucide-react';
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState('');
@@ -8,9 +9,9 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   
   const texts = [
-    'Energia Solar do Futuro',
-    'Economia Garantida até 45%',
-    'Portabilidade 100% Gratuita',
+    'Energia do Futuro',
+    'Economia Garantida',
+    'Portabilidade Grátis',
     'Suporte Humanizado'
   ];
 
@@ -181,13 +182,29 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
               Gestão de contratos e consultoria energética com{' '}
               <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent font-semibold">
                 migração gratuita
               </span>{' '}
               para energia por assinatura e mercado livre
             </p>
+
+            {/* New Benefits Section with Icons */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
+              <div className="flex items-center gap-2">
+                <CircleDollarSign className="w-5 h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium">Sem Custos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Wrench className="w-5 h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium">Sem Obras</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <SquareSlash className="w-5 h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium">Sem Placas</span>
+              </div>
+            </div>
             
             {/* Enhanced Buttons with Neon Effect */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">

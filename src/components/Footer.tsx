@@ -25,6 +25,8 @@ const Footer = () => {
       navigate('/como-funciona');
     } else if (link === 'Envie o Feedback') {
       navigate('/feedback');
+    } else if (link === 'Portal do Cliente') {
+      window.open('https://painel.solarien.com.br/login', '_blank');
     }
   };
 
@@ -106,7 +108,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback'].includes(link) ? (
+                    {['Home', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

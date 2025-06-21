@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -27,7 +28,6 @@ const LicenseSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-solarien-secondary/10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Target circles background - centered with section and responsive */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-full h-full flex items-center justify-center" style={{ top: '60px' }}>
           {/* Large circles for desktop */}
@@ -151,12 +151,15 @@ const LicenseSection = () => {
 
           {/* CTA Button - Only SEJA UM LICENCIADO button */}
           <div className="flex justify-center items-center mb-8">
-            <Button 
-              className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect"
-              onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
+            <a
+              href="https://painel.solarien.com.br/solarien"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              SEJA UM LICENCIADO
-            </Button>
+              <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
+                SEJA UM LICENCIADO
+              </Button>
+            </a>
           </div>
 
           {/* Icons below the button */}

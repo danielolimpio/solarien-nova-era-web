@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket } from 'lucide-react';
+import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
 
 const EntrepreneurshipSection = () => {
@@ -187,6 +187,14 @@ const EntrepreneurshipSection = () => {
             Profissionais estão transformando o mercado com energia solar compartilhada, um modelo revolucionário que gera fortunas. 
             O Mercado Livre de Energia é a nova forma acessível e lucrativa para empreendedores.
           </p>
+          
+          {/* Download PDF Button */}
+          <div className="flex justify-center mb-8">
+            <button className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300">
+              <Download className="w-5 h-5" />
+              <span className="font-medium">Baixar Apresentação PDF</span>
+            </button>
+          </div>
         </div>
 
         {/* Benefits Grid */}
@@ -273,9 +281,15 @@ const EntrepreneurshipSection = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
-            QUERO EMPREENDER AGORA
-          </Button>
+          <a
+            href="https://painel.solarien.com.br/solarien"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
+              QUERO EMPREENDER AGORA
+            </Button>
+          </a>
           
           <p className="text-gray-400 mt-6 text-lg">
             Comece sua jornada de sucesso no mercado livre de energia

@@ -95,12 +95,22 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="px-4 py-2 text-white font-bold hover:text-solarien-primary transition-colors duration-300">
+            <a
+              href="https://painel.solarien.com.br/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-white font-bold hover:text-solarien-primary transition-colors duration-300"
+            >
               Entrar
-            </button>
-            <button className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse">
+            </a>
+            <a
+              href="https://painel.solarien.com.br/solarien"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse"
+            >
               Cadastrar
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -126,12 +136,22 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-green-700/30">
-                <button className="p-3 text-white font-bold hover:bg-green-800 rounded-lg transition-colors duration-300">
+                <a
+                  href="https://painel.solarien.com.br/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 text-white font-bold hover:bg-green-800 rounded-lg transition-colors duration-300 text-center"
+                >
                   Entrar
-                </button>
-                <button className="p-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg">
+                </a>
+                <a
+                  href="https://painel.solarien.com.br/solarien"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg text-center"
+                >
                   Cadastrar
-                </button>
+                </a>
               </div>
             </nav>
           </div>

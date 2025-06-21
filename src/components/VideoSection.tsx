@@ -15,7 +15,6 @@ const VideoSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/85 to-solarien-primary/10"></div>
       </div>
 
-      {/* Floating Energy Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-radial from-solarien-primary/20 via-solarien-primary/10 to-transparent rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-2/3 right-1/3 w-24 h-24 bg-gradient-radial from-solarien-secondary/15 via-solarien-secondary/8 to-transparent rounded-full blur-lg animate-pulse delay-1000"></div>
@@ -58,9 +57,19 @@ const VideoSection = () => {
             
             {/* Video Description */}
             <div className="mt-6 text-center">
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Assista ao vídeo e entenda como a <span className="text-gradient font-semibold">Solarien Energy</span> está revolucionando o mercado de energia limpa no Brasil.
               </p>
+              
+              {/* CTA Button */}
+              <a
+                href="https://wa.me/5511997361698"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold text-lg rounded-2xl hover:shadow-lg hover:shadow-solarien-primary/50 transition-all duration-300 transform hover:scale-105"
+              >
+                Quero Economizar Agora
+              </a>
             </div>
           </div>
           

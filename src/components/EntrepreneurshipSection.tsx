@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -190,10 +189,15 @@ const EntrepreneurshipSection = () => {
           
           {/* Download PDF Button */}
           <div className="flex justify-center mb-8">
-            <button className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300">
+            <a
+              href="https://drive.google.com/file/d/1We9W89nqwsFpjlzYVdi5Bb_FKuGrK5pL/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300"
+            >
               <Download className="w-5 h-5" />
               <span className="font-medium">Baixar Apresentação PDF</span>
-            </button>
+            </a>
           </div>
         </div>
 

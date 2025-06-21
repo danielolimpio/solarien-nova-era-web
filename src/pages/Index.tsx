@@ -1,3 +1,4 @@
+
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -10,6 +11,7 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { Separator } from '../components/ui/separator';
 import VideoSection from '../components/VideoSection';
+import StateCoverageSimulator from '../components/StateCoverageSimulator';
 
 const Index = () => {
   return (
@@ -21,7 +23,12 @@ const Index = () => {
       <div id="parcerias">
         <PartnersCarousel />
       </div>
-      <SolarPlantsCarousel />
+      <div id="simulador">
+        <StateCoverageSimulator />
+      </div>
+      <div data-section="usinas-solares">
+        <SolarPlantsCarousel />
+      </div>
       <BrazilMap />
       <div id="licenciado">
         <EntrepreneurshipSection />

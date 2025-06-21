@@ -1,4 +1,3 @@
-
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
@@ -10,6 +9,7 @@ import LicenseSection from '../components/LicenseSection';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import { Separator } from '../components/ui/separator';
+import VideoSection from '../components/VideoSection';
 
 const Index = () => {
   return (
@@ -17,6 +17,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <AboutSection />
+      <VideoSection />
       <div id="parcerias">
         <PartnersCarousel />
       </div>

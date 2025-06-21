@@ -8,10 +8,10 @@ const HeroSection = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   
   const texts = [
-    'A Energia Solar do Futuro',
-    'Economia Garantida de 45%',
-    'Migração Gratuita Garantida',
-    'Suporte 24h Disponível'
+    'Energia Solar do Futuro',
+    'Economia Garantida até 45%',
+    'Portabilidade 100% Gratuita',
+    'Suporte Humanizado'
   ];
 
   const handleSaibaMaisClick = () => {
@@ -209,16 +209,16 @@ const HeroSection = () => {
           {/* Enhanced Statistics */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">45%</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">Até 45%</div>
               <div className="text-gray-300 text-sm md:text-base">Economia Garantida</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">24h</div>
-              <div className="text-gray-300 text-sm md:text-base">Suporte Disponível</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">100k</div>
+              <div className="text-gray-300 text-sm md:text-base">Clientes Migraram</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">100+</div>
-              <div className="text-gray-300 text-sm md:text-base">Cidades Atendidas</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">4200</div>
+              <div className="text-gray-300 text-sm md:text-base">Cidades Atingidas</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">95%</div>

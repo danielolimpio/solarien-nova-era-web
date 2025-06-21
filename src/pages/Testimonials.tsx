@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import Header from '../components/Header';
@@ -13,12 +12,12 @@ const Testimonials = () => {
       id: 1,
       name: "Carlos Eduardo Silva",
       position: "CEO",
-      company: "Silva & Associados Contabilidade",
+      company: "Silva & Associados Confecções",
       location: "São Paulo, SP",
       image: "/lovable-uploads/0df96018-53de-4236-9144-decea5df4962.png",
-      testimonial: "A Solarien foi fundamental para reduzir os custos do nosso escritório. Conseguimos uma economia de 32% na conta de energia e o processo foi surpreendentemente simples. A equipe nos acompanhou em cada etapa, desde a análise inicial até a migração completa. Recomendo para qualquer empresário que busca reduzir custos operacionais.",
-      savings: "32%",
-      service: "Mercado Livre"
+      testimonial: "Nossa indústria de confecções tinha custos elevados com energia devido às máquinas de costura e equipamentos de produção. A Solarien conseguiu reduzir nossos gastos em 15% com a energia por assinatura. O processo foi simples e transparente, com acompanhamento completo da equipe. Agora conseguimos ser mais competitivos no mercado têxtil.",
+      savings: "15%",
+      service: "Energia por Assinatura"
     },
     {
       id: 2,
@@ -93,18 +92,18 @@ const Testimonials = () => {
       company: "Escola Criança Feliz",
       location: "Recife, PE",
       image: "/lovable-uploads/2c448ca4-ad05-4092-bc49-f6f2ca22b61b.png",
-      testimonial: "Como escola privada, precisávamos reduzir custos para manter mensalidades acessíveis. A Solarien nos ajudou a economizar 35% na conta de energia através do mercado livre. O atendimento foi humanizado, entenderam nossas necessidades educacionais. Processo simples e resultado excelente!",
-      savings: "35%",
-      service: "Mercado Livre"
+      testimonial: "Como escola privada, precisávamos reduzir custos para manter mensalidades acessíveis. A Solarien nos ajudou a economizar 15% na conta de energia através da energia por assinatura. O atendimento foi humanizado, entenderam nossas necessidades educacionais. Processo simples e resultado excelente!",
+      savings: "15%",
+      service: "Energia por Assinatura"
     },
     {
       id: 9,
       name: "Ricardo Almeida",
       position: "Proprietário",
-      company: "Oficina Almeida Motors",
+      company: "Cafeteria Grão Dourado",
       location: "Salvador, BA",
       image: "/lovable-uploads/5168e505-2e4e-46a1-b602-41a04d13c708.png",
-      testimonial: "Nossa oficina tem equipamentos pesados que consomem muita energia. A Solarien conseguiu uma economia de 24% com energia por assinatura. O que mais me chamou atenção foi a honestidade da equipe, sem promessas irreais. Cumpriram exatamente o que prometeram, com suporte contínuo.",
+      testimonial: "Nossa cafeteria possui equipamentos que demandam muita energia, como máquinas de café expresso, geladeiras e ar condicionado. A Solarien conseguiu uma economia de 24% com energia por assinatura. O que mais me impressionou foi a transparência da equipe, sem promessas irreais. Cumpriram exatamente o que prometeram, com suporte contínuo.",
       savings: "24%",
       service: "Energia por Assinatura"
     },

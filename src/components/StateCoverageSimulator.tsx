@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -463,7 +461,7 @@ const StateCoverageSimulator = () => {
 
           {/* Coverage Summary */}
           <div className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 rounded-2xl p-8 border-2 border-[#00844e]/20">
-            <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B (B1, B2, B3, B4)</h4>
+            <h4 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent">🇧🇷 Cobertura Nacional - Grupo B (B1, B2, B3, B4)</h4>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-white/70 rounded-xl">
                 <div className="text-3xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">{"< 2,3"}</div>
@@ -490,4 +488,3 @@ const StateCoverageSimulator = () => {
 };
 
 export default StateCoverageSimulator;
-

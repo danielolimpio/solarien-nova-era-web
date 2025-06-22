@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -75,6 +74,13 @@ const StateCoverageSimulator = () => {
     'Tocantins': {
       distributors: [{ name: 'Energisa', discount: 15 }]
     }
+  };
+
+  // Function to get display name for states (abbreviated for mobile)
+  const getStateDisplayName = (state: string) => {
+    if (state === 'Mato Grosso do Sul') return 'MS';
+    if (state === 'Rio Grande do Norte') return 'RN';
+    return state;
   };
 
   const calculateEconomy = () => {
@@ -300,7 +306,7 @@ const StateCoverageSimulator = () => {
                   }`}
                 >
                   <div className="w-full">
-                    <div className="font-bold text-sm mb-1">{state}</div>
+                    <div className="font-bold text-sm mb-1">{getStateDisplayName(state)}</div>
                     <div className="text-xs opacity-80">
                       {stateData[state as keyof typeof stateData].distributors.length} distribuidora{stateData[state as keyof typeof stateData].distributors.length > 1 ? 's' : ''}
                     </div>

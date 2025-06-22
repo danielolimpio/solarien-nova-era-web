@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const SolarPlantsCarousel = () => {
@@ -54,7 +55,7 @@ const SolarPlantsCarousel = () => {
         <img 
           src="/lovable-uploads/ffac10ad-534c-488d-9cc2-e63ccb047edc.png" 
           alt="Solar transparency overlay" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen"
         />
       </div>
       

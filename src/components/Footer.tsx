@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Footer = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLinkClick = (link: string) => {
     if (link === 'Home') {
@@ -16,6 +17,50 @@ const Footer = () => {
           behavior: 'smooth'
         });
       }, 100);
+    } else if (link === 'Sobre') {
+      // Always navigate to home first, then scroll to about section
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById('sobre');
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById('sobre');
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    } else if (link === 'Licenciados') {
+      // Always navigate to home first, then scroll to entrepreneurship section (Oportunidade de Negócio)
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById('licenciado');
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById('licenciado');
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
     } else if (link === 'Serviços') {
       // Navigate to home first if not already there, then scroll to services
       if (window.location.pathname !== '/') {
@@ -60,27 +105,56 @@ const Footer = () => {
           });
         }
       }
-    } else if (link === 'FAQ') {
-      navigate('/faq');
-    } else if (link === 'Termos de Uso') {
-      navigate('/terms');
-    } else if (link === 'Política de Privacidade') {
-      navigate('/privacy');
-    } else if (link === 'Política de Cookies') {
-      navigate('/cookies');
-    } else if (link === 'Política de Transparência') {
-      navigate('/transparency');
+    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback'].includes(link)) {
+      // Navigate to respective pages and scroll to top
+      let route = '';
+      switch (link) {
+        case 'Como Funciona':
+          route = '/como-funciona';
+          break;
+        case 'Depoimentos':
+          route = '/depoimentos';
+          break;
+        case 'FAQ':
+          route = '/faq';
+          break;
+        case 'Termos de Uso':
+          route = '/terms';
+          break;
+        case 'Política de Privacidade':
+          route = '/privacy';
+          break;
+        case 'Política de Cookies':
+          route = '/cookies';
+          break;
+        case 'Política de Transparência':
+          route = '/transparency';
+          break;
+        case 'Envie o Feedback':
+          route = '/feedback';
+          break;
+      }
+      
+      navigate(route);
+      // Scroll to top after navigation
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (link === 'Contatos') {
       navigate('/contact');
-    } else if (link === 'Como Funciona') {
-      navigate('/como-funciona');
-    } else if (link === 'Envie o Feedback') {
-      navigate('/feedback');
-    } else if (link === 'Depoimentos') {
-      navigate('/depoimentos');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (link === 'Portal do Cliente') {
       window.open('https://painel.solarien.com.br/login', '_blank');
     }
+    setIsMobileMenuOpen(false);
   };
 
   const footerLinks = {
@@ -161,7 +235,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos'].includes(link) ? (
+                    {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -465,19 +466,19 @@ const StateCoverageSimulator = () => {
             <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B (B1, B2, B3, B4)</h4>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#00844e] mb-2">{"< 2,3"}</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">{"< 2,3"}</div>
                 <div className="text-gray-600 font-semibold">kV Tensão nominal</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#02ff91] mb-2">12</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">12</div>
                 <div className="text-gray-600 font-semibold">Meses Fidelidade</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#00844e] mb-2">150kWh</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">150kWh</div>
                 <div className="text-gray-600 font-semibold">Consumo Mínimo por mês</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#02ff91] mb-2">90 dias</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">90 dias</div>
                 <div className="text-gray-600 font-semibold">Início da Injeção</div>
               </div>
             </div>
@@ -489,3 +490,4 @@ const StateCoverageSimulator = () => {
 };
 
 export default StateCoverageSimulator;
+

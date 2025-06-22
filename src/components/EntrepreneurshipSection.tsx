@@ -139,6 +139,84 @@ const EntrepreneurshipSection = () => {
     </div>
   );
 
+  // Premium Golden Trophy Icon Component
+  const PremiumTrophyIcon = () => (
+    <div className="relative">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFD700" />
+            <stop offset="25%" stopColor="#FFA500" />
+            <stop offset="50%" stopColor="#FFD700" />
+            <stop offset="75%" stopColor="#DAA520" />
+            <stop offset="100%" stopColor="#B8860B" />
+          </linearGradient>
+          <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFF8DC" />
+            <stop offset="50%" stopColor="#FFD700" />
+            <stop offset="100%" stopColor="#DAA520" />
+          </linearGradient>
+          <radialGradient id="shine" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8"/>
+            <stop offset="50%" stopColor="#FFD700" stopOpacity="0.3"/>
+            <stop offset="100%" stopColor="#DAA520" stopOpacity="0.1"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge> 
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="shadow">
+            <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#B8860B" floodOpacity="0.4"/>
+          </filter>
+        </defs>
+        
+        {/* Trophy Base */}
+        <rect x="30" y="60" width="20" height="8" rx="2" fill="url(#goldGradient)" filter="url(#shadow)"/>
+        <rect x="25" y="68" width="30" height="6" rx="3" fill="url(#goldGradient)" filter="url(#shadow)"/>
+        
+        {/* Trophy Stem */}
+        <rect x="37" y="52" width="6" height="12" fill="url(#goldGradient)"/>
+        
+        {/* Trophy Cup */}
+        <path d="M20 25 Q20 15 30 15 L50 15 Q60 15 60 25 L60 40 Q60 50 50 52 L30 52 Q20 50 20 40 Z" fill="url(#goldGradient)" filter="url(#glow)"/>
+        
+        {/* Trophy Handles */}
+        <path d="M15 25 Q10 25 10 30 L10 35 Q10 40 15 40" stroke="url(#goldRim)" strokeWidth="3" fill="none"/>
+        <path d="M65 25 Q70 25 70 30 L70 35 Q70 40 65 40" stroke="url(#goldRim)" strokeWidth="3" fill="none"/>
+        
+        {/* Trophy Rim */}
+        <ellipse cx="40" cy="25" rx="20" ry="3" fill="url(#goldRim)"/>
+        
+        {/* Decorative Elements */}
+        <circle cx="40" cy="35" r="8" fill="none" stroke="url(#goldRim)" strokeWidth="2" opacity="0.7"/>
+        <path d="M35 30 L40 35 L45 30" stroke="url(#goldRim)" strokeWidth="2" fill="none"/>
+        
+        {/* Crown on top */}
+        <path d="M32 15 L35 8 L40 12 L45 8 L48 15" fill="url(#goldGradient)" filter="url(#glow)"/>
+        <circle cx="35" cy="8" r="2" fill="#FFD700"/>
+        <circle cx="40" cy="12" r="2" fill="#FFD700"/>
+        <circle cx="45" cy="8" r="2" fill="#FFD700"/>
+        
+        {/* Shine effect */}
+        <ellipse cx="35" cy="30" rx="12" ry="15" fill="url(#shine)" opacity="0.6"/>
+        
+        {/* Star decorations */}
+        <path d="M25 35 L27 37 L30 35 L27 33 Z" fill="#FFF8DC" opacity="0.8"/>
+        <path d="M50 35 L52 37 L55 35 L52 33 Z" fill="#FFF8DC" opacity="0.8"/>
+        
+        {/* Dollar sign in center */}
+        <text x="40" y="40" textAnchor="middle" fontSize="12" fill="#B8860B" fontWeight="bold">$</text>
+      </svg>
+      
+      {/* Glow effect around the icon */}
+      <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl scale-150"></div>
+      <div className="absolute inset-0 bg-yellow-300/10 rounded-full blur-2xl scale-200"></div>
+    </div>
+  );
+
   return (
     <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001a0e 0%, #002113 50%, #003d20 100%)' }}>
       {/* Animated Background Elements */}
@@ -239,12 +317,8 @@ const EntrepreneurshipSection = () => {
           <div className="text-center relative z-10">
             <div className="flex items-center justify-center mb-6">
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-yellow-300/50">
-                  <Crown className="w-10 h-10 text-yellow-900" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 to-transparent rounded-full"></div>
-                </div>
-                <div className="absolute -inset-2 bg-yellow-400/20 rounded-full blur-lg"></div>
-                <p className="text-yellow-400 text-xs font-semibold mt-3 tracking-wide">
+                <PremiumTrophyIcon />
+                <p className="text-yellow-400 text-xs font-semibold mt-4 tracking-wide">
                   A Melhor Comissão do Mercado
                 </p>
               </div>

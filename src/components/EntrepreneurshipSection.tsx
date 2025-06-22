@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -169,7 +170,9 @@ const EntrepreneurshipSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-solarien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
-            <Zap className="w-5 h-5 text-solarien-primary" />
+            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+              <Zap className="w-4 h-4 text-green-800" />
+            </div>
             <span className="text-solarien-primary font-medium">Oportunidade de Negócio</span>
           </div>
           
@@ -195,7 +198,9 @@ const EntrepreneurshipSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300"
             >
-              <Download className="w-5 h-5" />
+              <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                <Download className="w-4 h-4 text-green-800" />
+              </div>
               <span className="font-medium">Baixar Apresentação PDF</span>
             </a>
           </div>
@@ -210,8 +215,8 @@ const EntrepreneurshipSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-green-900/50 to-green-800/30 backdrop-blur-sm border border-solarien-primary/30 rounded-2xl p-6 hover:border-solarien-primary/50 transition-all duration-500 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-8 h-8 text-black" />
+                <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                  <benefit.icon className="w-8 h-8 text-green-800" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
                 <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
@@ -234,9 +239,15 @@ const EntrepreneurshipSection = () => {
 
           <div className="text-center relative z-10">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <Banknote className="w-12 h-12 text-solarien-primary" />
-              <Star className="w-8 h-8 text-solarien-secondary animate-pulse" />
-              <Award className="w-10 h-10 text-solarien-primary" />
+              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                <Banknote className="w-8 h-8 text-green-800" />
+              </div>
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                <Star className="w-6 h-6 text-green-800" />
+              </div>
+              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                <Award className="w-7 h-7 text-green-800" />
+              </div>
             </div>
             
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
@@ -288,19 +299,19 @@ const EntrepreneurshipSection = () => {
           <div className="flex justify-center items-center gap-8 mt-8">
             <div className="flex flex-col items-center">
               <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse">
-                <Rocket className="w-4 h-4 text-black" />
+                <Rocket className="w-4 h-4 text-green-800" />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Inovação</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-300">
-                <Zap className="w-4 h-4 text-black" />
+                <Zap className="w-4 h-4 text-green-800" />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Energia</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-500">
-                <Target className="w-4 h-4 text-black" />
+                <Target className="w-4 h-4 text-green-800" />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Objetivo</span>
             </div>

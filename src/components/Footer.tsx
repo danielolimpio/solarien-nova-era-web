@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -267,7 +268,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/solarienoficial/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
@@ -276,7 +277,7 @@ const Footer = () => {
                 <Facebook className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/solarienoficial/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
@@ -285,7 +286,7 @@ const Footer = () => {
                 <Instagram className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@solarienenergy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
@@ -294,7 +295,7 @@ const Footer = () => {
                 <Youtube className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
               </a>
               <a
-                href="https://x.com"
+                href="https://x.com/solarienoficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"

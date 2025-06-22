@@ -138,13 +138,13 @@ const SolarPlantsCarousel = () => {
           ))}
         </div>
 
-        {/* Navigation Dots - Reduzidos para tamanho menor */}
+        {/* Navigation Dots - Reduzidos para tamanho muito menor */}
         <div className="flex justify-center mt-8 space-x-4">
           {solarPlants.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`w-0.5 h-0.5 rounded-full transition-all duration-300 ${
+              className={`w-0.1 h-0.1 rounded-full transition-all duration-300 ${
                 index === activeIndex 
                   ? 'bg-solarien-primary scale-125 animate-[pulse_4s_ease-in-out_infinite]' 
                   : 'bg-gray-500 hover:bg-gray-400'

@@ -1,11 +1,12 @@
 
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle, Circle, Percent, Clock, Calendar } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle, Circle, Percent, Clock, Calendar } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -109,7 +110,7 @@ const StateCoverageSimulator = () => {
         <CardHeader className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 border-b border-[#00844e]/10">
           <CardTitle className="text-[#00844e] text-3xl flex items-center gap-3">
             <div className="p-2 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full">
-              <Sparkles className="w-8 h-8 text-white" />
+              <Calculator className="w-8 h-8 text-white" />
             </div>
             Simulador Nacional de Energia Solar
           </CardTitle>
@@ -482,3 +483,4 @@ const StateCoverageSimulator = () => {
 };
 
 export default StateCoverageSimulator;
+

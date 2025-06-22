@@ -159,7 +159,8 @@ const StateCoverageSimulator = () => {
                       <div className="font-bold text-gray-800">A</div>
                     </div>
                     <div className="text-sm text-gray-700 font-semibold mb-1">Alta e Média Tensão</div>
-                    <div className="text-xs text-gray-600">⚠️ Apenas informativo</div>
+                    <div className="text-xs text-gray-600 mb-1">Desconto até 45%</div>
+                    <div className="text-xs text-blue-600 font-medium">💬 Consulte representante</div>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -9,8 +10,8 @@ const PartnersCarousel = () => {
       logo: '/lovable-uploads/e3b594d4-f1a6-4d70-adc3-141c679ec79d.png'
     },
     {
-      name: 'Enel',
-      logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
+      name: 'Elektro',
+      logo: '/lovable-uploads/e9a8b182-db53-4a89-95ab-79afaea484c6.png'
     },
     {
       name: 'Equatorial',
@@ -41,8 +42,8 @@ const PartnersCarousel = () => {
       logo: '/lovable-uploads/16985188-0aa0-4c38-baf1-dccef3fd31cb.png'
     },
     {
-      name: 'Elektro',
-      logo: '/lovable-uploads/e9a8b182-db53-4a89-95ab-79afaea484c6.png'
+      name: 'Enel',
+      logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
     }
   ];
 

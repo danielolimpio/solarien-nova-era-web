@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
 
@@ -41,11 +42,11 @@ const AboutSection = () => {
               <div className="text-sm text-gray-600">Usinas Solares</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-secondary mb-2 group-hover:scale-110 transition-transform">95%</div>
-              <div className="text-sm text-gray-600">Economia Média</div>
+              <div className="text-3xl font-bold text-solarien-secondary mb-2 group-hover:scale-110 transition-transform">3B+</div>
+              <div className="text-sm text-gray-600">Faturamento Anual</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-tertiary mb-2 group-hover:scale-110 transition-transform">10k+</div>
+              <div className="text-3xl font-bold text-solarien-tertiary mb-2 group-hover:scale-110 transition-transform">100k+</div>
               <div className="text-sm text-gray-600">Clientes Ativos</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">

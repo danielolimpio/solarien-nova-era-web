@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
 
@@ -54,6 +53,11 @@ const AboutSection = () => {
               <div className="text-sm text-gray-600">Energia Limpa</div>
             </div>
           </div>
+          
+          {/* Partnership Text */}
+          <p className="text-lg text-gray-700 mt-8 font-medium">
+            Parceria com as maiores comercializadoras do mercado
+          </p>
         </div>
 
         {/* Enhanced Company Presentation */}

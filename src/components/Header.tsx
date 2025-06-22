@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -118,7 +117,7 @@ const Header = () => {
           {/* Mobile Menu Button - Melhorado para touch */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-3 rounded-lg hover:bg-green-800 transition-colors duration-300 touch-friendly"
+            className="lg:hidden p-3 rounded-lg hover:bg-green-800 transition-colors duration-300 touch-friendly z-50"
             aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {isMobileMenuOpen ? (
@@ -131,7 +130,7 @@ const Header = () => {
 
         {/* Mobile Menu - Otimizado para todos os dispositivos móveis */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg" style={{ backgroundColor: '#002113' }}>
+          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40" style={{ backgroundColor: '#002113' }}>
             <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
               {menuItems.map((item) => (
                 <button

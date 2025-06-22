@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -156,7 +155,7 @@ const PartnersCarousel = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 touch-friendly ${
+              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 touch-friendly ${
                 index === currentIndex ? 'bg-solarien-primary' : 'bg-gray-300'
               }`}
               aria-label={`Slide ${index + 1}`}

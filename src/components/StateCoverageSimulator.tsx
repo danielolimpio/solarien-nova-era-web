@@ -1,9 +1,10 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -112,6 +113,12 @@ const StateCoverageSimulator = () => {
         </CardTitle>
         <CardDescription className="text-gray-600 text-lg">
           Descubra sua economia com energia solar - Cobertura em 17 estados do Brasil
+          <br />
+          <span className="font-semibold text-[#00844e] flex items-center gap-2 mt-2">
+            <Home className="w-4 h-4" />
+            Grupo B - Baixa Tensão para Residências e Pequenos Comércios
+            <Store className="w-4 h-4" />
+          </span>
         </CardDescription>
       </CardHeader>
       <CardContent className="p-8 space-y-8">
@@ -131,6 +138,29 @@ const StateCoverageSimulator = () => {
             <Building className="w-12 h-12 text-[#00844e] mx-auto mb-3" />
             <div className="text-3xl font-bold text-[#00844e] mb-1">23</div>
             <div className="text-gray-600 font-medium">Distribuidoras</div>
+          </div>
+        </div>
+
+        {/* Group B Info Banner */}
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-200 rounded-2xl p-6 mb-8">
+          <div className="flex items-center gap-4">
+            <div className="flex gap-2">
+              <div className="p-3 bg-blue-100 rounded-full">
+                <Home className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="p-3 bg-green-100 rounded-full">
+                <Store className="w-6 h-6 text-green-600" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Grupo B - Baixa Tensão</h3>
+              <p className="text-gray-700 font-medium">
+                ⚡ Ideal para <strong>residências</strong> e <strong>pequenos comércios</strong>
+              </p>
+              <p className="text-sm text-gray-600 mt-1">
+                Desconto de 15% aplicável a unidades do Grupo B (consumidores de baixa tensão)
+              </p>
+            </div>
           </div>
         </div>
 
@@ -191,18 +221,22 @@ const StateCoverageSimulator = () => {
                 <div className="space-y-6 bg-white/70 rounded-xl p-6 border border-[#00844e]/20">
                   <h5 className="text-gray-800 font-bold text-xl flex items-center gap-3">
                     <Calculator className="w-6 h-6 text-[#00844e]" />
-                    Simule sua Economia
+                    Simule sua Economia - Grupo B
                   </h5>
                   
                   <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-4">
                     <p className="text-sm text-yellow-800 font-medium">
                       <strong>💡 Dica importante:</strong> Digite o valor médio anual da sua conta de luz dos últimos 12 meses para uma simulação mais precisa.
+                      <br />
+                      <span className="text-xs mt-1 block">
+                        ⚡ Válido para consumidores do Grupo B (Baixa Tensão) - Residências e Pequenos Comércios
+                      </span>
                     </p>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-3">
-                      Valor médio da sua conta de luz (R$)
+                      Valor médio da sua conta de luz (R$) - Grupo B
                     </label>
                     <Input
                       type="number"
@@ -221,7 +255,7 @@ const StateCoverageSimulator = () => {
                     className="w-full bg-gradient-to-r from-[#00844e] to-[#02ff91] text-white font-bold py-4 text-lg rounded-xl hover:shadow-xl hover:shadow-[#00844e]/30 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Zap className="w-6 h-6 mr-3" />
-                    Calcular Minha Economia
+                    Calcular Minha Economia - Grupo B
                   </Button>
                 </div>
               ) : (
@@ -233,7 +267,7 @@ const StateCoverageSimulator = () => {
                     <h5 className="text-2xl font-bold text-[#00844e] mb-2">
                       🎉 Sua Economia em {selectedState}
                     </h5>
-                    <p className="text-gray-600">Com 15% de desconto garantido</p>
+                    <p className="text-gray-600">Grupo B - 15% de desconto garantido</p>
                   </div>
 
                   <div className="bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl p-8 space-y-6 border border-[#00844e]/20">
@@ -257,7 +291,7 @@ const StateCoverageSimulator = () => {
                       <div className="text-4xl font-bold bg-gradient-to-r from-[#00844e] to-[#02ff91] bg-clip-text text-transparent mb-2">
                         R$ {discountAmount.toFixed(2).replace('.', ',')}
                       </div>
-                      <div className="text-lg text-[#00844e] font-bold">15% de desconto</div>
+                      <div className="text-lg text-[#00844e] font-bold">Grupo B - 15% de desconto</div>
                     </div>
 
                     <div className="text-center bg-gradient-to-r from-[#00844e]/20 to-[#02ff91]/20 rounded-2xl p-6 border border-[#00844e]/30">
@@ -307,7 +341,7 @@ const StateCoverageSimulator = () => {
 
         {/* Coverage Summary */}
         <div className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 rounded-2xl p-8 border-2 border-[#00844e]/20">
-          <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional</h4>
+          <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B</h4>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center p-4 bg-white/70 rounded-xl">
               <div className="text-3xl font-bold text-[#00844e] mb-2">17</div>

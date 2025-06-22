@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Users, Target, Eye, Award, Zap, Shield, MessageCircle, Coins, FileText, Leaf } from 'lucide-react';
+import { Users, Target, Eye, Award, Zap, Shield, MessageCircle, DollarSign, FileText, Leaf } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -130,7 +129,7 @@ const AboutSection = () => {
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-secondary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Coins className="w-7 h-7 text-white" />
+                  <DollarSign className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Economia</h4>

@@ -34,11 +34,11 @@ const BrazilMap = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <h3 className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-3 cursor-help hover:text-blue-700 transition-colors">
-                    <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                    <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                       <Factory className="w-6 h-6" style={{ color: '#002113' }} />
                     </div>
                     Grupo A - Alta e Média Tensão
-                    <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                    <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_0.5s]">
                       <HelpCircle className="w-3 h-3" style={{ color: '#002113' }} />
                     </div>
                   </h3>
@@ -63,7 +63,7 @@ const BrazilMap = () => {
             <div className="bg-white/80 rounded-xl p-6 border border-blue-100 mb-4">
               <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="text-center p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-[pulse_4s_ease-in-out_infinite]">
                     <Percent className="w-6 h-6" style={{ color: '#002113' }} />
                   </div>
                   <div className="text-2xl font-bold text-green-700 mb-1">Até 45%</div>
@@ -71,7 +71,7 @@ const BrazilMap = () => {
                 </div>
                 
                 <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-[pulse_4s_ease-in-out_infinite_0.5s]">
                     <Calendar className="w-6 h-6" style={{ color: '#002113' }} />
                   </div>
                   <div className="text-2xl font-bold text-blue-700 mb-1">5 anos</div>
@@ -79,7 +79,7 @@ const BrazilMap = () => {
                 </div>
                 
                 <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                  <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3 animate-[pulse_4s_ease-in-out_infinite_1s]">
                     <Clock className="w-6 h-6" style={{ color: '#002113' }} />
                   </div>
                   <div className="text-2xl font-bold text-purple-700 mb-1">180 dias</div>
@@ -90,7 +90,7 @@ const BrazilMap = () => {
               {/* 100% Gratuito Badge */}
               <div className="text-center mb-6">
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
-                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                     <Award className="w-4 h-4" style={{ color: '#002113' }} />
                   </div>
                   <span className="text-lg text-solarien-primary">100% GRATUITO</span>
@@ -100,19 +100,19 @@ const BrazilMap = () => {
               {/* Sem Custos Features */}
               <div className="flex flex-wrap justify-center gap-4 text-center">
                 <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border">
-                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                     <Shield className="w-4 h-4" style={{ color: '#002113' }} />
                   </div>
                   <span className="text-sm font-medium text-gray-700">Sem Custos</span>
                 </div>
                 <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border">
-                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_0.5s]">
                     <Wrench className="w-4 h-4" style={{ color: '#002113' }} />
                   </div>
                   <span className="text-sm font-medium text-gray-700">Sem Obras</span>
                 </div>
                 <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full border">
-                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                  <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_1s]">
                     <Zap className="w-4 h-4" style={{ color: '#002113' }} />
                   </div>
                   <span className="text-sm font-medium text-gray-700">Sem Placas</span>
@@ -132,7 +132,7 @@ const BrazilMap = () => {
                 onClick={handleWhatsAppGroupA}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-8 text-lg rounded-xl hover:shadow-xl hover:shadow-blue-600/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto"
               >
-                <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                   <Factory className="w-4 h-4" style={{ color: '#002113' }} />
                 </div>
                 Solicitar Avaliação Gratuita - Grupo A

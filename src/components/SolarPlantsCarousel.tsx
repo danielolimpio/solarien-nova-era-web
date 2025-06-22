@@ -64,7 +64,7 @@ const SolarPlantsCarousel = () => {
       <div className="w-full px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+            <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
               <Sun className="w-6 h-6" style={{ color: '#002113' }} />
             </div>
             <span className="text-gradient">Usinas</span> <span className="text-white">Solares</span>
@@ -132,7 +132,7 @@ const SolarPlantsCarousel = () => {
 
               {/* Active Indicator */}
               <div className={`absolute top-6 right-6 w-4 h-4 rounded-full transition-all duration-500 ${
-                activeIndex === index ? 'bg-solarien-primary scale-125 animate-pulse' : 'bg-white/50'
+                activeIndex === index ? 'bg-solarien-primary scale-125 animate-[pulse_4s_ease-in-out_infinite]' : 'bg-white/50'
               }`}></div>
             </div>
           ))}
@@ -146,7 +146,7 @@ const SolarPlantsCarousel = () => {
               onClick={() => setActiveIndex(index)}
               className={`w-4 h-4 rounded-full transition-all duration-300 ${
                 index === activeIndex 
-                  ? 'bg-solarien-primary scale-125 animate-pulse' 
+                  ? 'bg-solarien-primary scale-125 animate-[pulse_4s_ease-in-out_infinite]' 
                   : 'bg-gray-500 hover:bg-gray-400'
               }`}
             />

@@ -170,7 +170,7 @@ const EntrepreneurshipSection = () => {
         {/* Header Section */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-solarien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
-            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
               <Zap className="w-4 h-4" style={{ color: '#002113' }} />
             </div>
             <span className="text-solarien-primary font-medium">Oportunidade de Negócio</span>
@@ -198,7 +198,7 @@ const EntrepreneurshipSection = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300"
             >
-              <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                 <Download className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="font-medium">Baixar Apresentação PDF</span>
@@ -215,7 +215,7 @@ const EntrepreneurshipSection = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-green-900/50 to-green-800/30 backdrop-blur-sm border border-solarien-primary/30 rounded-2xl p-6 hover:border-solarien-primary/50 transition-all duration-500 transform hover:scale-105">
-                <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                <div className={`w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-[pulse_4s_ease-in-out_infinite_${index * 0.5}s]`}>
                   <benefit.icon className="w-8 h-8" style={{ color: '#002113' }} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
@@ -239,13 +239,13 @@ const EntrepreneurshipSection = () => {
 
           <div className="text-center relative z-10">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
                 <Banknote className="w-8 h-8" style={{ color: '#002113' }} />
               </div>
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_0.5s]">
                 <Star className="w-6 h-6" style={{ color: '#002113' }} />
               </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_1s]">
                 <Award className="w-7 h-7" style={{ color: '#002113' }} />
               </div>
             </div>
@@ -298,19 +298,19 @@ const EntrepreneurshipSection = () => {
           {/* Icons below the text */}
           <div className="flex justify-center items-center gap-8 mt-8">
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite]">
                 <Rocket className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Inovação</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-300">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite_0.5s]">
                 <Zap className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Energia</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-pulse delay-500">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite_1s]">
                 <Target className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Objetivo</span>

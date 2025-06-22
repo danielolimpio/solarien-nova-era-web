@@ -33,14 +33,14 @@ export default defineConfig(({ mode }) => ({
         }
       }
     },
-    // Minificação otimizada
-    minify: 'terser',
-    terserOptions: {
+    // Minificação apenas em produção
+    minify: mode === 'production' ? 'terser' : false,
+    terserOptions: mode === 'production' ? {
       compress: {
-        drop_console: mode === 'production',
+        drop_console: true,
         drop_debugger: true
       }
-    },
+    } : undefined,
     // Otimização de assets
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000

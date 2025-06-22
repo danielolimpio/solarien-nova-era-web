@@ -51,6 +51,16 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* Melhora a responsividade em dispositivos móveis */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    /* Prevenção de zoom horizontal em iOS */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     @apply bg-background text-foreground font-montserrat;
     background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
@@ -59,13 +69,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    /* Melhora a responsividade em dispositivos móveis */
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+    /* Prevenção de scroll lateral */
+    overflow-x: hidden;
+    /* Melhoria para dispositivos touch */
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Otimização para imagens */
@@ -73,6 +80,29 @@
     max-width: 100%;
     height: auto;
     display: block;
+    /* Lazy loading nativo */
+    loading: lazy;
+    /* Decodificação assíncrona */
+    decoding: async;
+  }
+
+  /* Otimização para inputs em iOS */
+  input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Prevenção de zoom em inputs no iOS */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="text"], 
+    input[type="email"], 
+    input[type="number"], 
+    input[type="tel"], 
+    textarea {
+      font-size: 16px;
+    }
   }
 }
 
@@ -96,22 +126,6 @@
   .glow-effect:hover {
     box-shadow: 0 0 30px rgba(2, 255, 145, 0.8), 0 0 60px rgba(2, 255, 145, 0.5), 0 0 90px rgba(2, 255, 145, 0.3);
   }
-  
-  .nav-hover {
-    @apply relative overflow-hidden;
-  }
-  
-  .nav-hover::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-solarien-primary to-solarien-secondary;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: -1;
-  }
-  
-  .nav-hover:hover::before {
-    transform: translateX(0);
-  }
 
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
@@ -133,24 +147,26 @@
 
   /* Melhorias de responsividade para todos os dispositivos */
   .responsive-container {
-    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
 
   .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6;
   }
 
   .responsive-text {
-    @apply text-sm sm:text-base md:text-lg;
+    @apply text-xs sm:text-sm md:text-base lg:text-lg;
   }
 
   .responsive-heading {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
   }
 
   /* Otimizações para dispositivos touch */
   .touch-friendly {
-    @apply min-h-[44px] min-w-[44px];
+    @apply min-h-[44px] min-w-[44px] cursor-pointer;
+    /* Área de toque mínima recomendada */
+    touch-action: manipulation;
   }
 
   /* Melhorias para iOS Safari */
@@ -159,5 +175,63 @@
     padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+  }
+
+  /* Performance otimizada para animações */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* Prevenção de layout shift */
+  .prevent-layout-shift {
+    contain: layout style paint;
+  }
+
+  /* Otimização para carregamento de conteúdo */
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+}
+
+/* Media queries específicas para diferentes dispositivos */
+@media (max-width: 374px) {
+  .text-2xs {
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-container {
+    @apply px-2;
+  }
+}
+
+/* Otimizações para dispositivos com alta densidade de pixels */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-optimized {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Otimizações para modo escuro (se necessário no futuro) */
+@media (prefers-color-scheme: dark) {
+  .auto-dark-mode {
+    color-scheme: dark;
+  }
+}
+
+/* Redução de movimento para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

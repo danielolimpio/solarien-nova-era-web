@@ -87,7 +87,7 @@ const BrazilMap = () => {
 
               {/* 100% Gratuito Badge */}
               <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-400 to-yellow-500 text-white font-bold py-3 px-6 rounded-full shadow-lg">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-bold py-3 px-6 rounded-full shadow-lg">
                   <Award className="w-5 h-5" />
                   <span className="text-lg">100% GRATUITO</span>
                 </div>

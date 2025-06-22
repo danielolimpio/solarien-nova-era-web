@@ -139,76 +139,159 @@ const EntrepreneurshipSection = () => {
     </div>
   );
 
-  // Premium Golden Trophy Icon Component
+  // Premium Sophisticated Trophy Icon Component
   const PremiumTrophyIcon = () => (
     <div className="flex justify-center">
-      <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFD700" />
-            <stop offset="25%" stopColor="#FFA500" />
-            <stop offset="50%" stopColor="#FFD700" />
-            <stop offset="75%" stopColor="#DAA520" />
+          {/* Enhanced Gold Gradient */}
+          <linearGradient id="premiumGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFF700" />
+            <stop offset="15%" stopColor="#FFD700" />
+            <stop offset="35%" stopColor="#FFA500" />
+            <stop offset="50%" stopColor="#FF8C00" />
+            <stop offset="65%" stopColor="#FFD700" />
+            <stop offset="80%" stopColor="#DAA520" />
             <stop offset="100%" stopColor="#B8860B" />
           </linearGradient>
-          <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFF8DC" />
-            <stop offset="50%" stopColor="#FFD700" />
-            <stop offset="100%" stopColor="#DAA520" />
+          
+          {/* Luxury Base Gradient */}
+          <linearGradient id="luxuryBase" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#CD7F32" />
+            <stop offset="30%" stopColor="#B8860B" />
+            <stop offset="70%" stopColor="#DAA520" />
+            <stop offset="100%" stopColor="#8B4513" />
           </linearGradient>
-          <radialGradient id="shine" cx="30%" cy="30%" r="70%">
+          
+          {/* Platinum Rim */}
+          <linearGradient id="platinumRim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#E5E4E2" />
+            <stop offset="25%" stopColor="#FFFFFF" />
+            <stop offset="50%" stopColor="#C0C0C0" />
+            <stop offset="75%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#A8A8A8" />
+          </linearGradient>
+          
+          {/* Diamond Shine */}
+          <radialGradient id="diamondShine" cx="25%" cy="25%" r="60%">
             <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8"/>
-            <stop offset="50%" stopColor="#FFD700" stopOpacity="0.3"/>
+            <stop offset="30%" stopColor="#E6E6FA" stopOpacity="0.5"/>
+            <stop offset="60%" stopColor="#FFD700" stopOpacity="0.3"/>
             <stop offset="100%" stopColor="#DAA520" stopOpacity="0.1"/>
           </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          
+          {/* Premium Shadow */}
+          <filter id="premiumShadow">
+            <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#B8860B" floodOpacity="0.4"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#8B4513" floodOpacity="0.6"/>
+          </filter>
+          
+          {/* Glow Effect */}
+          <filter id="goldGlow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
             <feMerge> 
               <feMergeNode in="coloredBlur"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
-          <filter id="shadow">
-            <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#B8860B" floodOpacity="0.4"/>
+          
+          {/* Emboss Effect */}
+          <filter id="emboss">
+            <feConvolveMatrix kernelMatrix="3 0 0 0 0 0 0 0 -3"/>
           </filter>
         </defs>
         
-        {/* Trophy Base */}
-        <rect x="30" y="60" width="20" height="8" rx="2" fill="url(#goldGradient)" filter="url(#shadow)"/>
-        <rect x="25" y="68" width="30" height="6" rx="3" fill="url(#goldGradient)" filter="url(#shadow)"/>
+        {/* Trophy Base - Multi-layered */}
+        <ellipse cx="45" cy="78" rx="18" ry="4" fill="url(#luxuryBase)" filter="url(#premiumShadow)"/>
+        <rect x="30" y="72" width="30" height="8" rx="4" fill="url(#premiumGold)" filter="url(#premiumShadow)"/>
+        <rect x="35" y="68" width="20" height="6" rx="3" fill="url(#platinumRim)"/>
         
-        {/* Trophy Stem */}
-        <rect x="37" y="52" width="6" height="12" fill="url(#goldGradient)"/>
+        {/* Trophy Base Decorations */}
+        <rect x="32" y="74" width="26" height="2" rx="1" fill="url(#platinumRim)" opacity="0.8"/>
+        <circle cx="38" cy="75" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <circle cx="45" cy="75" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <circle cx="52" cy="75" r="1" fill="#FFFFFF" opacity="0.6"/>
         
-        {/* Trophy Cup */}
-        <path d="M20 25 Q20 15 30 15 L50 15 Q60 15 60 25 L60 40 Q60 50 50 52 L30 52 Q20 50 20 40 Z" fill="url(#goldGradient)" filter="url(#glow)"/>
+        {/* Trophy Stem - Enhanced */}
+        <rect x="41" y="58" width="8" height="16" rx="2" fill="url(#premiumGold)" filter="url(#goldGlow)"/>
+        <rect x="42" y="59" width="6" height="14" rx="1" fill="url(#platinumRim)" opacity="0.3"/>
         
-        {/* Trophy Handles */}
-        <path d="M15 25 Q10 25 10 30 L10 35 Q10 40 15 40" stroke="url(#goldRim)" strokeWidth="3" fill="none"/>
-        <path d="M65 25 Q70 25 70 30 L70 35 Q70 40 65 40" stroke="url(#goldRim)" strokeWidth="3" fill="none"/>
+        {/* Trophy Cup - Main Body */}
+        <path d="M20 28 Q20 18 30 16 L60 16 Q70 18 70 28 L70 45 Q70 55 60 58 L30 58 Q20 55 20 45 Z" 
+              fill="url(#premiumGold)" 
+              filter="url(#goldGlow)"
+              stroke="url(#platinumRim)" 
+              strokeWidth="1"/>
         
-        {/* Trophy Rim */}
-        <ellipse cx="40" cy="25" rx="20" ry="3" fill="url(#goldRim)"/>
+        {/* Trophy Cup - Inner Details */}
+        <path d="M25 32 Q25 22 32 20 L58 20 Q65 22 65 32 L65 48 Q65 54 58 56 L32 56 Q25 54 25 48 Z" 
+              fill="none" 
+              stroke="url(#platinumRim)" 
+              strokeWidth="1.5" 
+              opacity="0.6"/>
         
-        {/* Decorative Elements */}
-        <circle cx="40" cy="35" r="8" fill="none" stroke="url(#goldRim)" strokeWidth="2" opacity="0.7"/>
-        <path d="M35 30 L40 35 L45 30" stroke="url(#goldRim)" strokeWidth="2" fill="none"/>
+        {/* Ornate Handles - More Sophisticated */}
+        <path d="M15 30 Q8 30 8 37 L8 42 Q8 49 15 49 Q18 49 18 46 Q18 43 15 43 Q12 43 12 40 L12 36 Q12 33 15 33" 
+              fill="url(#premiumGold)" 
+              stroke="url(#platinumRim)" 
+              strokeWidth="1"
+              filter="url(#goldGlow)"/>
+        <path d="M75 30 Q82 30 82 37 L82 42 Q82 49 75 49 Q72 49 72 46 Q72 43 75 43 Q78 43 78 40 L78 36 Q78 33 75 33" 
+              fill="url(#premiumGold)" 
+              stroke="url(#platinumRim)" 
+              strokeWidth="1"
+              filter="url(#goldGlow)"/>
         
-        {/* Crown on top */}
-        <path d="M32 15 L35 8 L40 12 L45 8 L48 15" fill="url(#goldGradient)" filter="url(#glow)"/>
-        <circle cx="35" cy="8" r="2" fill="#FFD700"/>
-        <circle cx="40" cy="12" r="2" fill="#FFD700"/>
-        <circle cx="45" cy="8" r="2" fill="#FFD700"/>
+        {/* Handle Decorations */}
+        <circle cx="15" cy="36" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+        <circle cx="75" cy="36" r="1.5" fill="#FFFFFF" opacity="0.5"/>
         
-        {/* Shine effect */}
-        <ellipse cx="35" cy="30" rx="12" ry="15" fill="url(#shine)" opacity="0.6"/>
+        {/* Trophy Rim - Enhanced */}
+        <ellipse cx="45" cy="28" rx="25" ry="4" fill="url(#platinumRim)" filter="url(#goldGlow)"/>
+        <ellipse cx="45" cy="27" rx="23" ry="3" fill="url(#premiumGold)" opacity="0.7"/>
         
-        {/* Star decorations */}
-        <path d="M25 35 L27 37 L30 35 L27 33 Z" fill="#FFF8DC" opacity="0.8"/>
-        <path d="M50 35 L52 37 L55 35 L52 33 Z" fill="#FFF8DC" opacity="0.8"/>
+        {/* Ornate Crown Top */}
+        <path d="M30 16 L35 6 L40 10 L45 4 L50 10 L55 6 L60 16" 
+              fill="url(#premiumGold)" 
+              filter="url(#goldGlow)"
+              stroke="url(#platinumRim)" 
+              strokeWidth="0.5"/>
         
-        {/* Dollar sign in center */}
-        <text x="40" y="40" textAnchor="middle" fontSize="12" fill="#B8860B" fontWeight="bold">$</text>
+        {/* Crown Jewels */}
+        <circle cx="35" cy="6" r="2.5" fill="#FF1493" opacity="0.8"/>
+        <circle cx="45" cy="4" r="3" fill="#00BFFF" opacity="0.8"/>
+        <circle cx="55" cy="6" r="2.5" fill="#32CD32" opacity="0.8"/>
+        
+        {/* Crown Details */}
+        <path d="M32 12 L38 12 M42 12 L48 12 M52 12 L58 12" stroke="url(#platinumRim)" strokeWidth="1" opacity="0.6"/>
+        
+        {/* Central Medallion */}
+        <circle cx="45" cy="38" r="10" fill="none" stroke="url(#platinumRim)" strokeWidth="2" opacity="0.8"/>
+        <circle cx="45" cy="38" r="8" fill="url(#diamondShine)" opacity="0.3"/>
+        
+        {/* Ornate Center Pattern */}
+        <path d="M38 35 L45 38 L52 35 M38 41 L45 38 L52 41 M42 32 L45 38 L48 32 M42 44 L45 38 L48 44" 
+              stroke="url(#platinumRim)" 
+              strokeWidth="1.5" 
+              opacity="0.7"/>
+        
+        {/* Diamond Shine Effect */}
+        <ellipse cx="40" cy="33" rx="8" ry="12" fill="url(#diamondShine)" opacity="0.4"/>
+        
+        {/* Luxury Side Decorations */}
+        <circle cx="30" cy="38" r="2" fill="#FFFFFF" opacity="0.4"/>
+        <circle cx="60" cy="38" r="2" fill="#FFFFFF" opacity="0.4"/>
+        <path d="M25 42 L30 38 L25 34" stroke="url(#platinumRim)" strokeWidth="1.5" opacity="0.5"/>
+        <path d="M65 42 L60 38 L65 34" stroke="url(#platinumRim)" strokeWidth="1.5" opacity="0.5"/>
+        
+        {/* Premium Dollar Symbol */}
+        <text x="45" y="43" textAnchor="middle" fontSize="14" fill="#B8860B" fontWeight="bold" 
+              stroke="#FFFFFF" strokeWidth="0.5" opacity="0.9">$</text>
+        
+        {/* Final Luxury Accents */}
+        <circle cx="35" cy="25" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <circle cx="55" cy="25" r="1" fill="#FFFFFF" opacity="0.6"/>
+        <rect x="40" y="50" width="10" height="2" rx="1" fill="url(#platinumRim)" opacity="0.5"/>
       </svg>
     </div>
   );

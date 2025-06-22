@@ -14,8 +14,9 @@ const HowItWorks = () => {
   const navigate = useNavigate();
 
   const distributors = [
-    'CPFL Energia', 'Energisa', 'Light', 'AES Brasil', 'Equatorial Energia',
-    'Cemig', 'Copel', 'Celesc', 'RGE', 'CEB', 'Celpe', 'Coelba', 'Cosern'
+    'CPFL Paulista', 'Energisa', 'Copel', 'Equatorial Energia',
+    'Cemig', 'Celesc', 'CEB', 'Celpe', 'Coelba', 'Cosern',
+    'Neoenergia', 'Elektro', 'Enel'
   ];
 
   const energyGroups = [

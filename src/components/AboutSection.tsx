@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
+import { Users, Target, Eye, Award, Zap, Shield, MessageCircle, PiggyBank, FileText, Leaf } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -119,41 +120,41 @@ const AboutSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Users className="w-7 h-7 text-white" />
+                  <MessageCircle className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Atendimento</h4>
-                  <p className="text-gray-600">Personalizado 24/7</p>
+                  <p className="text-gray-600">Personalizado</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-secondary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Target className="w-7 h-7 text-white" />
+                  <PiggyBank className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 text-lg">Resultados</h4>
-                  <p className="text-gray-600">100% Garantidos</p>
+                  <h4 className="font-bold text-gray-800 text-lg">Economia</h4>
+                  <p className="text-gray-600">100% Garantida</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-tertiary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-7 h-7 text-white" />
+                  <Leaf className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 text-lg">Tecnologia</h4>
-                  <p className="text-gray-600">Última Geração</p>
+                  <h4 className="font-bold text-gray-800 text-lg">Energia</h4>
+                  <p className="text-gray-600">100% Sustentável</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary/80 to-solarien-secondary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Award className="w-7 h-7 text-white" />
+                  <FileText className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800 text-lg">Qualidade</h4>
-                  <p className="text-gray-600">Certificada ISO</p>
+                  <h4 className="font-bold text-gray-800 text-lg">Contrato</h4>
+                  <p className="text-gray-600">100% Digital</p>
                 </div>
               </div>
             </div>

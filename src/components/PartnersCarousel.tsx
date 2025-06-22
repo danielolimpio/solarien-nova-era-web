@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -6,44 +5,44 @@ const PartnersCarousel = () => {
 
   const partners = [
     {
-      name: 'CPFL Energia',
-      logo: '/lovable-uploads/e3658109-3b3e-4c5d-b1d4-3dc59ab8cdd3.png'
+      name: 'CPFL Paulista',
+      logo: '/lovable-uploads/e3b594d4-f1a6-4d70-adc3-141c679ec79d.png'
     },
     {
       name: 'Enel',
-      logo: '/lovable-uploads/4ba25f0c-48df-448c-bc43-ef950a861b83.png'
+      logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
     },
     {
       name: 'Equatorial',
-      logo: '/lovable-uploads/37c6cbac-89ea-4a8b-a8c2-4b4920db0e91.png'
+      logo: '/lovable-uploads/e1b46b57-c34a-45d1-97ca-5ed24dc933b1.png'
     },
     {
       name: 'Energisa',
-      logo: '/lovable-uploads/a6cf21ff-4709-40dd-ad43-dfddc9efc2b1.png'
+      logo: '/lovable-uploads/9b091af4-d60e-4e28-aa5c-9c770a9811bb.png'
     },
     {
       name: 'Copel',
-      logo: '/lovable-uploads/b1cd18e3-0db0-44b7-a87a-08e9e9598387.png'
+      logo: '/lovable-uploads/489829d7-f934-4173-be27-1afcd1ff5868.png'
     },
     {
       name: 'Cemig',
-      logo: '/lovable-uploads/e209420d-ae97-4ae5-a886-589a6cbe5bfd.png'
+      logo: '/lovable-uploads/c2fd2f8e-4e33-4b3a-80e9-4a0aeefc32a8.png'
     },
     {
       name: 'Neoenergia',
-      logo: '/lovable-uploads/a63a765e-b3b7-47b9-8823-a554fbacaaf5.png'
+      logo: '/lovable-uploads/7888696b-6fb2-4e12-bb93-82cc34080259.png'
     },
     {
       name: 'Celesc',
-      logo: '/lovable-uploads/d828b2af-a1c3-491b-99f9-a63a6d3d2e7f.png'
+      logo: '/lovable-uploads/698f64a7-9fae-4e06-b3e4-03d4dc4ef08f.png'
     },
     {
       name: 'Coelba',
-      logo: '/lovable-uploads/bd5aafb2-99d6-4f3e-a189-759b2a83ae1f.png'
+      logo: '/lovable-uploads/16985188-0aa0-4c38-baf1-dccef3fd31cb.png'
     },
     {
       name: 'Elektro',
-      logo: '/lovable-uploads/1e4d5e65-1fdf-40a6-9c11-8bb7381454e2.png'
+      logo: '/lovable-uploads/e9a8b182-db53-4a89-95ab-79afaea484c6.png'
     }
   ];
 

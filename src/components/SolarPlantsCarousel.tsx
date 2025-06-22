@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Sun } from 'lucide-react';
 
 const SolarPlantsCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -62,11 +63,13 @@ const SolarPlantsCarousel = () => {
       {/* Full width container */}
       <div className="w-full px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">Nossas</span> <span className="text-white">Usinas Solares</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3">
+            <Sun className="text-solarien-primary w-8 h-8 md:w-10 md:h-10" />
+            <span className="text-gradient">Usinas</span> <span className="text-white">Solares</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Conheça alguns dos projetos de energia solar que estamos desenvolvendo pelo Brasil
+            Mais de 2000 usinas solares parceiras<br />
+            espalhadas em todo Brasil
           </p>
         </div>
 

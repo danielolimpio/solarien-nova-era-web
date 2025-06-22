@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -70,12 +71,12 @@ const Header = () => {
     }`} style={{ backgroundColor: '#002113' }}>
       <div className="responsive-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo - Aumentado o tamanho no mobile */}
-          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+          {/* Logo - Aumentado e movido para direita no mobile */}
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0">
             <img 
               src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
               alt="Solarien Energy" 
-              className="h-10 sm:h-10 md:h-12 w-auto"
+              className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
             />

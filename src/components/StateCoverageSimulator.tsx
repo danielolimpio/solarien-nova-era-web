@@ -123,9 +123,7 @@ const StateCoverageSimulator = () => {
             Descubra sua economia com energia solar - Cobertura em 17 estados do Brasil
             <br />
             <span className="font-semibold text-[#00844e] flex items-center gap-2 mt-2">
-              <Home className="w-5 h-5 sm:w-4 sm:h-4" />
               Grupo B - Baixa Tensão (Residências, Comércios, Rural e Iluminação Pública)
-              <Store className="w-5 h-5 sm:w-4 sm:h-4" />
             </span>
           </CardDescription>
         </CardHeader>

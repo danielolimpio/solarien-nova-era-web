@@ -23,7 +23,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced Header with Stats */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-solarien-primary/30 mb-6" style={{ backgroundColor: '#002113' }}>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-solarien-primary/30 mb-6 animate-soft-pulse" style={{ backgroundColor: '#002113' }}>
             <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
               <Award className="w-3 h-3" style={{ color: 'rgb(0, 33, 19)' }} />
             </div>
@@ -39,26 +39,26 @@ const AboutSection = () => {
           
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group animate-soft-pulse">
               <div className="text-3xl font-bold text-solarien-primary mb-2">2000+</div>
               <div className="text-sm text-gray-600">Usinas Solares</div>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group animate-soft-pulse">
               <div className="text-3xl font-bold text-solarien-secondary mb-2">3B+</div>
               <div className="text-sm text-gray-600">Faturamento Anual</div>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group animate-soft-pulse">
               <div className="text-3xl font-bold text-solarien-tertiary mb-2">100k+</div>
               <div className="text-sm text-gray-600">Clientes Ativos</div>
             </div>
-            <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group animate-soft-pulse">
               <div className="text-3xl font-bold text-solarien-primary mb-2">100%</div>
               <div className="text-sm text-gray-600">Energia Limpa</div>
             </div>
           </div>
           
           {/* Partnership Text */}
-          <p className="text-xl font-medium text-solarien-primary mt-8 tracking-wide font-mono">
+          <p className="text-xl font-medium text-solarien-primary mt-8 tracking-wide font-mono animate-soft-pulse">
             Parceria com as maiores comercializadoras do mercado
           </p>
         </div>
@@ -66,7 +66,7 @@ const AboutSection = () => {
         {/* Enhanced Company Presentation */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           {/* Left side - Enhanced Square Building Image with overlay */}
-          <div className="relative group">
+          <div className="relative group animate-soft-pulse">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
               <img 
                 src="/lovable-uploads/bde4e76d-6c52-45a3-8064-269c8716a781.png" 
@@ -105,7 +105,7 @@ const AboutSection = () => {
 
           {/* Right side - Enhanced Company Description */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:shadow-2xl transition-all duration-300 group">
+            <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:shadow-2xl transition-all duration-300 group animate-gentle-glow">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
                   <Users className="w-8 h-8" style={{ color: 'rgb(0, 33, 19)' }} />
@@ -124,7 +124,7 @@ const AboutSection = () => {
 
             {/* Enhanced Key Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group animate-soft-pulse">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MessageCircle className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
@@ -134,7 +134,7 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-secondary/10 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-secondary/10 hover:shadow-lg transition-all duration-300 group animate-soft-pulse">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <DollarSign className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
@@ -144,7 +144,7 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-tertiary/10 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-tertiary/10 hover:shadow-lg transition-all duration-300 group animate-soft-pulse">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Leaf className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
@@ -154,7 +154,7 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
+              <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group animate-soft-pulse">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary/80 to-solarien-secondary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <FileText className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
@@ -169,7 +169,7 @@ const AboutSection = () => {
 
         {/* Enhanced Mission and Vision Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="relative bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 border border-solarien-primary/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden">
+          <div className="relative bg-gradient-to-br from-solarien-primary/5 to-solarien-secondary/5 border border-solarien-primary/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden animate-gentle-glow">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-solarien-primary to-transparent rounded-full"></div>
@@ -187,7 +187,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="relative bg-gradient-to-br from-solarien-secondary/5 to-solarien-tertiary/5 border border-solarien-secondary/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden">
+          <div className="relative bg-gradient-to-br from-solarien-secondary/5 to-solarien-tertiary/5 border border-solarien-secondary/20 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden animate-gentle-glow">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-solarien-secondary to-transparent rounded-full"></div>

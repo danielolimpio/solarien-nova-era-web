@@ -167,16 +167,16 @@ const HeroSection = () => {
 
         {/* Enhanced Energy Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-[#02ff91]/30 via-[#02ff91]/15 to-transparent rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-radial from-[#00c26f]/20 via-[#00c26f]/10 to-transparent rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-radial from-[#00844e]/15 via-[#00844e]/8 to-transparent rounded-full blur-xl animate-pulse delay-2000"></div>
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-[#02ff91]/30 via-[#02ff91]/15 to-transparent rounded-full blur-3xl animate-soft-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-radial from-[#00c26f]/20 via-[#00c26f]/10 to-transparent rounded-full blur-2xl animate-soft-pulse delay-1000"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-radial from-[#00844e]/15 via-[#00844e]/8 to-transparent rounded-full blur-xl animate-soft-pulse delay-2000"></div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 pt-32 md:pt-20">
           <div className="max-w-4xl mx-auto">
             {/* Animated Typing Text */}
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight flex items-center justify-center overflow-visible pb-2">
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight flex items-center justify-center overflow-visible pb-2 animate-soft-pulse">
               <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent overflow-visible">
                 {displayText}
                 <span className="animate-pulse">|</span>
@@ -192,7 +192,7 @@ const HeroSection = () => {
             </p>
 
             {/* New Benefits Section with Icons - Responsive Layout */}
-            <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 mb-12">
+            <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 mb-12 animate-soft-pulse">
               <div className="flex items-center gap-1 sm:gap-2">
                 <CircleDollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-[#02ff91]" />
                 <span className="text-gray-300 font-medium text-sm sm:text-base">Sem Custos</span>
@@ -210,13 +210,13 @@ const HeroSection = () => {
             {/* Enhanced Buttons with Neon Effect */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <DiscountSimulator>
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl animate-pulse border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect animate-gentle-glow">
                   Simular Economia
                 </Button>
               </DiscountSimulator>
               <Button 
                 variant="outline" 
-                className="w-full sm:w-auto border-3 border-[#02ff91] text-[#02ff91] hover:bg-gradient-to-r hover:from-[#02ff91] hover:to-[#00c26f] hover:text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl animate-pulse hover:shadow-[#02ff91]/50 glow-effect"
+                className="w-full sm:w-auto border-3 border-[#02ff91] text-[#02ff91] hover:bg-gradient-to-r hover:from-[#02ff91] hover:to-[#00c26f] hover:text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-[#02ff91]/50 glow-effect animate-gentle-glow"
                 onClick={handleSaibaMaisClick}
               >
                 Saiba Mais
@@ -226,19 +226,19 @@ const HeroSection = () => {
           
           {/* Enhanced Statistics */}
           <div className="mt-16 pb-8 md:pb-0 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
+            <div className="text-center animate-soft-pulse">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">Até 45%</div>
               <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Economia Garantida</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-soft-pulse">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">100k</div>
               <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Clientes Migraram</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-soft-pulse">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">4200</div>
               <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Cidades Atingidas</div>
             </div>
-            <div className="text-center">
+            <div className="text-center animate-soft-pulse">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">95%</div>
               <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Taxa de Migração</div>
             </div>

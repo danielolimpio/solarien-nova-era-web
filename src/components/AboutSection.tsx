@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
 
@@ -61,7 +62,7 @@ const AboutSection = () => {
         </div>
 
         {/* Enhanced Company Presentation */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           {/* Left side - Enhanced Square Building Image with overlay */}
           <div className="relative group">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">

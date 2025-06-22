@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
 
@@ -57,7 +55,7 @@ const AboutSection = () => {
           </div>
           
           {/* Partnership Text */}
-          <p className="text-xl font-bold text-solarien-primary mt-8 tracking-wide font-sans">
+          <p className="text-xl font-medium text-solarien-primary mt-8 tracking-wide font-mono">
             Parceria com as maiores comercializadoras do mercado
           </p>
         </div>
@@ -206,4 +204,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-

@@ -243,7 +243,7 @@ const EntrepreneurshipSection = () => {
                   <img 
                     src="/lovable-uploads/ab5673f2-4fef-4c94-8931-cf04fbdef957.png" 
                     alt="Trophy" 
-                    className="w-32 h-32 object-contain"
+                    className="w-20 h-20 object-contain"
                   />
                 </div>
                 <p className="text-yellow-400 text-sm font-light mt-4 tracking-wide font-mono">

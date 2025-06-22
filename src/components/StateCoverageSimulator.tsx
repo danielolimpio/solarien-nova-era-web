@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -126,21 +127,21 @@ const StateCoverageSimulator = () => {
           {/* Hero Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="text-center p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl border border-[#00844e]/20">
-              <div className="p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div className="p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <Percent className="w-6 h-6 text-white" />
               </div>
               <div className="text-3xl font-bold text-[#00844e] mb-1">15%</div>
               <div className="text-gray-600 font-medium">Desconto Garantido</div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-[#02ff91]/10 to-[#00844e]/10 rounded-2xl border border-[#02ff91]/20">
-              <div className="p-3 bg-gradient-to-br from-[#02ff91] to-[#00844e] rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div className="p-3 bg-gradient-to-br from-[#02ff91] to-[#00844e] rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div className="text-3xl font-bold text-[#02ff91] mb-1">17</div>
               <div className="text-gray-600 font-medium">Estados Cobertos</div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl border border-[#00844e]/20">
-              <div className="p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+              <div className="p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <Zap className="w-6 h-6 text-white" />
               </div>
               <div className="text-3xl font-bold text-[#00844e] mb-1">23</div>

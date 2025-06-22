@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield, MessageCircle, DollarSign, FileText, Leaf } from 'lucide-react';
 
@@ -30,7 +31,7 @@ const AboutSection = () => {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient">Sobre</span> <span className="text-gray-800">Nós</span>
+            <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Sobre</span> <span className="text-gray-800">Nós</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-12">
             Mudando a forma de consumo de energia, oferecendo soluções inovadoras e econômicas para todos os perfis de clientes, construindo um futuro mais sustentável.
@@ -109,7 +110,7 @@ const AboutSection = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
                   <Users className="w-8 h-8" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
-                <h3 className="text-3xl font-bold text-solarien-primary">
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">
                   Quem Somos
                 </h3>
               </div>
@@ -179,7 +180,7 @@ const AboutSection = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
                 <Target className="w-10 h-10" style={{ color: 'rgb(0, 33, 19)' }} />
               </div>
-              <h3 className="text-3xl font-bold text-solarien-primary">Missão</h3>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Missão</h3>
             </div>
             <p className="text-gray-700 leading-relaxed text-lg relative z-10">
               Nossa missão é democratizar o acesso à energia limpa, proporcionando soluções inovadoras e eficientes que promovem economia e sustentabilidade para nossos clientes e o meio ambiente.
@@ -197,7 +198,7 @@ const AboutSection = () => {
               <div className="w-20 h-20 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
                 <Eye className="w-10 h-10" style={{ color: 'rgb(0, 33, 19)' }} />
               </div>
-              <h3 className="text-3xl font-bold text-solarien-secondary">Visão</h3>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Visão</h3>
             </div>
             <p className="text-gray-700 leading-relaxed text-lg relative z-10">
               Ser referência global em soluções energéticas inteligentes, liderando a transição para um modelo sustentável e transformando o mercado de energia com inovação e excelência.

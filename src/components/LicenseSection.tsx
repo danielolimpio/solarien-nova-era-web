@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -30,19 +31,19 @@ const LicenseSection = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-full h-full flex items-center justify-center" style={{ top: '60px' }}>
           {/* Large circles for desktop */}
-          <div className="hidden md:block absolute w-[1400px] h-[1400px] border border-[#02ff91] rounded-full opacity-10" style={{ 
+          <div className="hidden md:block absolute w-[1400px] h-[1400px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite'
           }}></div>
-          <div className="hidden md:block absolute w-[1200px] h-[1200px] border border-[#00c26f] rounded-full opacity-12" style={{ 
+          <div className="hidden md:block absolute w-[1200px] h-[1200px] border border-[#00c26f] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.4s'
           }}></div>
-          <div className="hidden md:block absolute w-[1000px] h-[1000px] border border-[#00844e] rounded-full opacity-15" style={{ 
+          <div className="hidden md:block absolute w-[1000px] h-[1000px] border border-[#00844e] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.8s'
           }}></div>
-          <div className="hidden md:block absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-18" style={{ 
+          <div className="hidden md:block absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 1.2s'
           }}></div>
@@ -50,41 +51,41 @@ const LicenseSection = () => {
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 1.6s'
           }}></div>
-          <div className="hidden md:block absolute w-[480px] h-[480px] border border-[#00844e] rounded-full opacity-25" style={{ 
+          <div className="hidden md:block absolute w-[480px] h-[480px] border border-[#00844e] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 2.0s'
           }}></div>
-          <div className="hidden md:block absolute w-[360px] h-[360px] border border-[#02ff91] rounded-full opacity-28" style={{ 
+          <div className="hidden md:block absolute w-[360px] h-[360px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 2.4s'
           }}></div>
-          <div className="hidden md:block absolute w-[240px] h-[240px] border border-[#00c26f] rounded-full opacity-30" style={{ 
+          <div className="hidden md:block absolute w-[240px] h-[240px] border border-[#00c26f] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 2.8s'
           }}></div>
-          <div className="hidden md:block absolute w-[160px] h-[160px] border border-[#00844e] rounded-full opacity-35" style={{ 
+          <div className="hidden md:block absolute w-[160px] h-[160px] border border-[#00844e] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 3.2s'
           }}></div>
-          <div className="hidden md:block absolute w-[80px] h-[80px] border border-[#02ff91] rounded-full opacity-40" style={{ 
+          <div className="hidden md:block absolute w-[80px] h-[80px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 3.6s'
           }}></div>
 
           {/* Medium circles for tablet */}
-          <div className="hidden sm:block md:hidden absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-10" style={{ 
+          <div className="hidden sm:block md:hidden absolute w-[800px] h-[800px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite'
           }}></div>
-          <div className="hidden sm:block md:hidden absolute w-[650px] h-[650px] border border-[#00c26f] rounded-full opacity-12" style={{ 
+          <div className="hidden sm:block md:hidden absolute w-[650px] h-[650px] border border-[#00c26f] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.4s'
           }}></div>
-          <div className="hidden sm:block md:hidden absolute w-[500px] h-[500px] border border-[#00844e] rounded-full opacity-15" style={{ 
+          <div className="hidden sm:block md:hidden absolute w-[500px] h-[500px] border border-[#00844e] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.8s'
           }}></div>
-          <div className="hidden sm:block md:hidden absolute w-[350px] h-[350px] border border-[#02ff91] rounded-full opacity-18" style={{ 
+          <div className="hidden sm:block md:hidden absolute w-[350px] h-[350px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 1.2s'
           }}></div>
@@ -94,19 +95,19 @@ const LicenseSection = () => {
           }}></div>
 
           {/* Small circles for mobile */}
-          <div className="block sm:hidden absolute w-[400px] h-[400px] border border-[#02ff91] rounded-full opacity-10" style={{ 
+          <div className="block sm:hidden absolute w-[400px] h-[400px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite'
           }}></div>
-          <div className="block sm:hidden absolute w-[320px] h-[320px] border border-[#00c26f] rounded-full opacity-12" style={{ 
+          <div className="block sm:hidden absolute w-[320px] h-[320px] border border-[#00c26f] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.4s'
           }}></div>
-          <div className="block sm:hidden absolute w-[240px] h-[240px] border border-[#00844e] rounded-full opacity-15" style={{ 
+          <div className="block sm:hidden absolute w-[240px] h-[240px] border border-[#00844e] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 0.8s'
           }}></div>
-          <div className="block sm:hidden absolute w-[180px] h-[180px] border border-[#02ff91] rounded-full opacity-18" style={{ 
+          <div className="block sm:hidden absolute w-[180px] h-[180px] border border-[#02ff91] rounded-full opacity-20" style={{ 
             borderWidth: '1px',
             animation: 'target-pulse 4s ease-in-out infinite 1.2s'
           }}></div>

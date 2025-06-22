@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const SolarPlantsCarousel = () => {
@@ -49,8 +48,15 @@ const SolarPlantsCarousel = () => {
 
   return (
     <section id="usinas" className="py-20 bg-gray-900 relative overflow-hidden">
-      {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900"></div>
+      {/* Background with subtle gradient and transparency overlay */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900"></div>
+        <img 
+          src="/lovable-uploads/ffac10ad-534c-488d-9cc2-e63ccb047edc.png" 
+          alt="Solar transparency overlay" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay"
+        />
+      </div>
       
       {/* Full width container */}
       <div className="w-full px-4 relative z-10">

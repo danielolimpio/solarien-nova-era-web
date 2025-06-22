@@ -38,7 +38,9 @@ const BrazilMap = () => {
                       <Factory className="w-6 h-6" style={{ color: '#002113' }} />
                     </div>
                     Grupo A - Alta e Média Tensão
-                    <HelpCircle className="w-5 h-5 text-blue-600 opacity-70" />
+                    <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
+                      <HelpCircle className="w-3 h-3" style={{ color: '#002113' }} />
+                    </div>
                   </h3>
                 </TooltipTrigger>
                 <TooltipContent className="max-w-xs p-4">
@@ -91,7 +93,7 @@ const BrazilMap = () => {
                   <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
                     <Award className="w-4 h-4" style={{ color: '#002113' }} />
                   </div>
-                  <span className="text-lg" style={{ color: '#002113' }}>100% GRATUITO</span>
+                  <span className="text-lg text-solarien-primary">100% GRATUITO</span>
                 </div>
               </div>
 

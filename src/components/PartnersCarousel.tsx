@@ -62,6 +62,15 @@ const PartnersCarousel = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-solarien-primary/5"></div>
       </div>
 
+      {/* Wind Turbine Image */}
+      <div className="absolute right-0 bottom-0 h-full w-auto pointer-events-none z-5">
+        <img 
+          src="/lovable-uploads/b6e6ba38-4115-45c3-8473-d0b3ab7fa6e6.png" 
+          alt="Wind turbine" 
+          className="h-full w-auto object-contain object-bottom opacity-30"
+        />
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -72,7 +81,7 @@ const PartnersCarousel = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden max-w-5xl mx-auto">
           <div 
             className="flex transition-transform duration-1000 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}

@@ -58,19 +58,19 @@ Atualmente, podem migrar para o Mercado Livre:
 
 A migração para o Mercado Livre envolve várias etapas importantes:
 
-1. **Análise de Viabilidade**: Verificação do perfil de consumo e potencial de economia
-2. **Escolha do Agente**: Seleção do comercializador ou gerador
-3. **Negociação**: Definição de preços, prazos e condições
-4. **Formalização**: Assinatura do contrato de compra e venda de energia
-5. **Comunicação**: Informação à distribuidora sobre a migração
+1. Análise de Viabilidade: Verificação do perfil de consumo e potencial de economia
+2. Escolha do Agente: Seleção do comercializador ou gerador
+3. Negociação: Definição de preços, prazos e condições
+4. Formalização: Assinatura do contrato de compra e venda de energia
+5. Comunicação: Informação à distribuidora sobre a migração
 
 ## Desafios e Cuidados
 
 Embora o Mercado Livre ofereça grandes vantagens, é importante estar atento a alguns aspectos:
 
-- **Gestão de Contratos**: Necessidade de acompanhamento constante
-- **Exposição ao PLD**: Risco de variação do Preço de Liquidação das Diferenças
-- **Sazonalidade**: Variações no consumo podem impactar os custos
+- Gestão de Contratos: Necessidade de acompanhamento constante
+- Exposição ao PLD: Risco de variação do Preço de Liquidação das Diferenças
+- Sazonalidade: Variações no consumo podem impactar os custos
 
 ## O Futuro do Mercado Livre
 
@@ -138,10 +138,10 @@ Os créditos de energia são automaticamente aplicados na conta de luz do consum
 
 A energia por assinatura é especialmente vantajosa para:
 
-- **Locatários**: Que não podem instalar painéis solares
-- **Condomínios**: Com dificuldades técnicas para instalação
-- **Empresas**: Que buscam sustentabilidade sem investimento
-- **Residências**: Em locais com sombreamento ou orientação inadequada
+- Locatários: Que não podem instalar painéis solares
+- Condomínios: Com dificuldades técnicas para instalação
+- Empresas: Que buscam sustentabilidade sem investimento
+- Residências: Em locais com sombreamento ou orientação inadequada
 
 ## Aspectos Regulatórios
 
@@ -222,17 +222,17 @@ Antes da Lei 14.300/2022, a geração distribuída era regulamentada apenas por 
 
 A lei estabelece definições claras para:
 
-**Microgeração Distribuída**: Central geradora com potência instalada menor ou igual a 75 kW
+Microgeração Distribuída: Central geradora com potência instalada menor ou igual a 75 kW
 
-**Minigeração Distribuída**: Central geradora com potência instalada superior a 75 kW e menor ou igual a 5 MW
+Minigeração Distribuída: Central geradora com potência instalada superior a 75 kW e menor ou igual a 5 MW
 
 ### Sistema de Compensação de Energia Elétrica (SCEE)
 
 O SCEE é regulamentado com os seguintes princípios:
 
-1. **Autoconsumo Local**: Prioridade para o consumo da energia gerada na própria unidade
-2. **Compensação de Excedentes**: Energia não consumida é injetada na rede e vira crédito
-3. **Validade dos Créditos**: 60 meses para utilização dos créditos energéticos
+1. Autoconsumo Local: Prioridade para o consumo da energia gerada na própria unidade
+2. Compensação de Excedentes: Energia não consumida é injetada na rede e vira crédito
+3. Validade dos Créditos: 60 meses para utilização dos créditos energéticos
 
 ## Regras de Transição
 
@@ -240,16 +240,16 @@ O SCEE é regulamentado com os seguintes princípios:
 
 A lei estabelece um período de transição de 23 anos, dividido em fases:
 
-**Fase 1 (2023-2024)**:
+Fase 1 (2023-2024):
 - Cobrança gradual dos custos de uso do sistema de distribuição
 - Início: 15% dos custos
 - Crescimento: 15% ao ano
 
-**Fase 2 (2025-2031)**:
+Fase 2 (2025-2031):
 - Cobrança de 30% a 90% dos custos
 - Incremento anual definido pela ANEEL
 
-**Fase 3 (2032-2045)**:
+Fase 3 (2032-2045):
 - Cobrança integral dos custos do sistema
 - Revisão periódica das regras
 
@@ -277,16 +277,16 @@ Condomínios e edifícios com geração compartilhada.
 ## Benefícios e Direitos Assegurados
 
 ### Para os Consumidores
-- **Direito à compensação**: Energia injetada vira crédito
-- **Portabilidade**: Possibilidade de transferir créditos
-- **Flexibilidade**: Diferentes modalidades de geração
-- **Transparência**: Informações claras na conta de energia
+- Direito à compensação: Energia injetada vira crédito
+- Portabilidade: Possibilidade de transferir créditos
+- Flexibilidade: Diferentes modalidades de geração
+- Transparência: Informações claras na conta de energia
 
 ### Para o Setor
-- **Segurança Jurídica**: Marco legal robusto
-- **Previsibilidade**: Regras claras de longo prazo
-- **Sustentabilidade**: Incentivo às energias renováveis
-- **Inovação**: Estímulo ao desenvolvimento tecnológico
+- Segurança Jurídica: Marco legal robusto
+- Previsibilidade: Regras claras de longo prazo
+- Sustentabilidade: Incentivo às energias renováveis
+- Inovação: Estímulo ao desenvolvimento tecnológico
 
 ## Impactos da Lei no Mercado
 
@@ -309,22 +309,22 @@ A lei proporcionou:
 ## Desafios e Oportunidades
 
 ### Desafios
-- **Adaptação às Novas Regras**: Empresas e consumidores precisam se adequar
-- **Financiamento**: Necessidade de linhas de crédito específicas
-- **Grid Parity**: Manutenção da atratividade econômica
+- Adaptação às Novas Regras: Empresas e consumidores precisam se adequar
+- Financiamento: Necessidade de linhas de crédito específicas
+- Grid Parity: Manutenção da atratividade econômica
 
 ### Oportunidades
-- **Mercado Expandido**: Potencial para milhões de consumidores
-- **Inovação**: Novos produtos e serviços
-- **Sustentabilidade**: Contribuição para metas climáticas
+- Mercado Expandido: Potencial para milhões de consumidores
+- Inovação: Novos produtos e serviços
+- Sustentabilidade: Contribuição para metas climáticas
 
 ## Regulamentação Complementar
 
 A ANEEL publicou diversas resoluções complementares:
 
-- **REN 1.059/2023**: Atualização das regras técnicas
-- **REN 1.000/2021**: Procedimentos de conexão
-- **Módulo 3 do PRODIST**: Requisitos técnicos
+- REN 1.059/2023: Atualização das regras técnicas
+- REN 1.000/2021: Procedimentos de conexão
+- Módulo 3 do PRODIST: Requisitos técnicos
 
 ## Perspectivas Futuras
 

@@ -1,5 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,6 +77,16 @@ const PartnersCarousel = () => {
     return () => clearInterval(interval);
   }, [totalSlides]);
 
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? totalSlides - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  };
+
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
       {/* Background image - Otimizada para performance */}
@@ -113,6 +123,24 @@ const PartnersCarousel = () => {
         </div>
 
         <div className="relative overflow-hidden max-w-6xl mx-auto">
+          {/* Previous Arrow */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-solarien-primary/40 transition-all duration-300 opacity-70 hover:opacity-100 shadow-lg"
+            aria-label="Slide anterior"
+          >
+            <ChevronLeft className="w-4 h-4 text-gray-600" />
+          </button>
+
+          {/* Next Arrow */}
+          <button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-solarien-primary/40 transition-all duration-300 opacity-70 hover:opacity-100 shadow-lg"
+            aria-label="Próximo slide"
+          >
+            <ChevronRight className="w-4 h-4 text-gray-600" />
+          </button>
+
           <div 
             className="flex transition-transform duration-1000 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}

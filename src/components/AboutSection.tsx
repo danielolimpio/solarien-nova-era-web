@@ -57,7 +57,7 @@ const AboutSection = () => {
           </div>
           
           {/* Partnership Text */}
-          <p className="text-lg text-gray-700 mt-8 font-medium">
+          <p className="text-xl font-bold text-solarien-primary mt-8 tracking-wide font-sans">
             Parceria com as maiores comercializadoras do mercado
           </p>
         </div>

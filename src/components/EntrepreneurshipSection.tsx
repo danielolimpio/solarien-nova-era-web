@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -176,12 +177,12 @@ const EntrepreneurshipSection = () => {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-gradient block mb-2">Energia para</span>
+            <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent block mb-2">Energia para</span>
             <span className="text-white">Empreender</span>
           </h2>
           
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-8">
-            <span className="text-gradient">Empreender para</span> Compartilhar
+            <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Empreender para</span> Compartilhar
           </h3>
           
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -246,17 +247,17 @@ const EntrepreneurshipSection = () => {
                     className="w-20 h-20 object-contain"
                   />
                 </div>
-                <p className="text-yellow-600 text-sm font-bold mt-4 tracking-wide font-mono bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
+                <p className="text-sm font-bold mt-4 tracking-wide font-mono bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">
                   A Melhor Comissão do Mercado
                 </p>
               </div>
             </div>
             
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-gradient">Ganhos 1ª Fatura</span>
+              <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Ganhos 1ª Fatura</span>
             </h3>
             
-            <div className="text-6xl md:text-8xl font-bold text-gradient mb-4">
+            <div className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-4">
               ATÉ 80%
             </div>
             

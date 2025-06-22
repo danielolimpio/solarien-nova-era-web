@@ -1,3 +1,4 @@
+
 import React from 'react';
 import StateCoverageSimulator from './StateCoverageSimulator';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
@@ -17,7 +18,7 @@ const BrazilMap = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:animate-soft-pulse transition-all duration-300">
-              <span className="text-gradient">Simulador</span> <span className="text-gray-800">Nacional</span>
+              <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Simulador</span> <span className="text-gray-800">Nacional</span>
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Descubra o desconto disponível em seu estado e simule sua economia com energia solar. 
@@ -65,7 +66,7 @@ const BrazilMap = () => {
                   <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mx-auto mb-3">
                     <Percent className="w-6 h-6" style={{ color: 'rgb(0, 33, 19)' }} />
                   </div>
-                  <div className="text-2xl font-bold text-green-700 mb-1">Até 45%</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-1">Até 45%</div>
                   <div className="text-gray-600 font-medium">Economia</div>
                 </div>
                 
@@ -132,7 +133,7 @@ const BrazilMap = () => {
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-8 text-lg rounded-xl hover:shadow-xl hover:shadow-blue-600/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 mx-auto hover:animate-gentle-glow"
               >
                 <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                  <Factory className="w-4 h-4" style={{ color: 'rgb(0, 33, 19)' }} />
+                  <Factory className="w-4 h-4" style={{ color: 'rgb(0, 33,19)' }} />
                 </div>
                 Solicitar Avaliação Gratuita - Grupo A
               </button>

@@ -139,7 +139,7 @@ const EntrepreneurshipSection = () => {
     </div>
   );
 
-  // Premium Sophisticated Trophy Icon Component
+  // Premium Golden Trophy Icon Component
   const PremiumTrophyIcon = () => (
     <div className="flex justify-center">
       <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,20 +185,6 @@ const EntrepreneurshipSection = () => {
             <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#B8860B" floodOpacity="0.4"/>
             <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor="#8B4513" floodOpacity="0.6"/>
           </filter>
-          
-          {/* Glow Effect */}
-          <filter id="goldGlow">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-            <feMerge> 
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-          
-          {/* Emboss Effect */}
-          <filter id="emboss">
-            <feConvolveMatrix kernelMatrix="3 0 0 0 0 0 0 0 -3"/>
-          </filter>
         </defs>
         
         {/* Trophy Base - Multi-layered */}
@@ -213,13 +199,12 @@ const EntrepreneurshipSection = () => {
         <circle cx="52" cy="75" r="1" fill="#FFFFFF" opacity="0.6"/>
         
         {/* Trophy Stem - Enhanced */}
-        <rect x="41" y="58" width="8" height="16" rx="2" fill="url(#premiumGold)" filter="url(#goldGlow)"/>
+        <rect x="41" y="58" width="8" height="16" rx="2" fill="url(#premiumGold)"/>
         <rect x="42" y="59" width="6" height="14" rx="1" fill="url(#platinumRim)" opacity="0.3"/>
         
         {/* Trophy Cup - Main Body */}
         <path d="M20 28 Q20 18 30 16 L60 16 Q70 18 70 28 L70 45 Q70 55 60 58 L30 58 Q20 55 20 45 Z" 
               fill="url(#premiumGold)" 
-              filter="url(#goldGlow)"
               stroke="url(#platinumRim)" 
               strokeWidth="1"/>
         
@@ -230,30 +215,27 @@ const EntrepreneurshipSection = () => {
               strokeWidth="1.5" 
               opacity="0.6"/>
         
-        {/* Ornate Handles - More Sophisticated */}
+        {/* Ornate Handles */}
         <path d="M15 30 Q8 30 8 37 L8 42 Q8 49 15 49 Q18 49 18 46 Q18 43 15 43 Q12 43 12 40 L12 36 Q12 33 15 33" 
               fill="url(#premiumGold)" 
               stroke="url(#platinumRim)" 
-              strokeWidth="1"
-              filter="url(#goldGlow)"/>
+              strokeWidth="1"/>
         <path d="M75 30 Q82 30 82 37 L82 42 Q82 49 75 49 Q72 49 72 46 Q72 43 75 43 Q78 43 78 40 L78 36 Q78 33 75 33" 
               fill="url(#premiumGold)" 
               stroke="url(#platinumRim)" 
-              strokeWidth="1"
-              filter="url(#goldGlow)"/>
+              strokeWidth="1"/>
         
         {/* Handle Decorations */}
         <circle cx="15" cy="36" r="1.5" fill="#FFFFFF" opacity="0.5"/>
         <circle cx="75" cy="36" r="1.5" fill="#FFFFFF" opacity="0.5"/>
         
         {/* Trophy Rim - Enhanced */}
-        <ellipse cx="45" cy="28" rx="25" ry="4" fill="url(#platinumRim)" filter="url(#goldGlow)"/>
+        <ellipse cx="45" cy="28" rx="25" ry="4" fill="url(#platinumRim)"/>
         <ellipse cx="45" cy="27" rx="23" ry="3" fill="url(#premiumGold)" opacity="0.7"/>
         
         {/* Ornate Crown Top */}
         <path d="M30 16 L35 6 L40 10 L45 4 L50 10 L55 6 L60 16" 
               fill="url(#premiumGold)" 
-              filter="url(#goldGlow)"
               stroke="url(#platinumRim)" 
               strokeWidth="0.5"/>
         

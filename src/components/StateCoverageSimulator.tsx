@@ -79,63 +79,63 @@ const StateCoverageSimulator = () => {
   const energyGroups = [
     {
       id: 'grupo-a',
-      title: 'Grupo A – Alta e Média Tensão',
+      title: 'Grupo A',
       clientType: 'Empresas e Indústrias',
       color: 'blue',
-      icon: '🔵',
+      icon: '🟢',
       tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.',
       allowsSimulation: false,
       discount: 'até 45%'
     },
     {
       id: 'grupo-b1',
-      title: 'Grupo B1 – Residencial',
+      title: 'Grupo B1',
       clientType: 'Casas e Apartamentos',
       color: 'green',
       icon: '🟢',
       tooltip: 'Residências urbanas, apartamentos, condomínios.',
       allowsSimulation: true,
-      discount: '15%'
+      discount: 'até 25%'
     },
     {
       id: 'grupo-b2',
-      title: 'Grupo B2 – Rural',
+      title: 'Grupo B2',
       clientType: 'Propriedades Rurais',
-      color: 'yellow',
-      icon: '🟡',
+      color: 'green',
+      icon: '🟢',
       tooltip: 'Sítios, fazendas, agroindústrias, cooperativas rurais.',
       allowsSimulation: true,
-      discount: '15%'
+      discount: 'até 25%'
     },
     {
       id: 'grupo-b3',
-      title: 'Grupo B3 – Demais Classes',
+      title: 'Grupo B3',
       clientType: 'Comércio e Serviços',
-      color: 'orange',
-      icon: '🟠',
+      color: 'green',
+      icon: '🟢',
       tooltip: 'Pequenos comércios, padarias, salões, escolas particulares.',
       allowsSimulation: true,
-      discount: '15%'
+      discount: 'até 25%'
     },
     {
       id: 'grupo-b4a',
-      title: 'Grupo B4a – Iluminação Pública',
+      title: 'Grupo B4a',
       clientType: 'Iluminação pública',
-      color: 'red',
-      icon: '🔴',
+      color: 'green',
+      icon: '🟢',
       tooltip: 'Postes de luz, praças públicas, túneis.',
       allowsSimulation: true,
-      discount: '15%'
+      discount: 'até 25%'
     },
     {
       id: 'grupo-b4b',
-      title: 'Grupo B4b – Serviços Públicos',
+      title: 'Grupo B4b',
       clientType: 'Serviços públicos',
-      color: 'purple',
-      icon: '🟣',
+      color: 'green',
+      icon: '🟢',
       tooltip: 'Semáforos, câmeras de segurança, fontes luminosas públicas.',
       allowsSimulation: true,
-      discount: '15%'
+      discount: 'até 25%'
     }
   ];
 
@@ -209,7 +209,7 @@ const StateCoverageSimulator = () => {
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <Percent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">15%</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">25%</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Desconto Garantido</div>
             </div>
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-[#02ff91]/10 to-[#00844e]/10 rounded-xl sm:rounded-2xl border border-[#02ff91]/20">
@@ -245,8 +245,10 @@ const StateCoverageSimulator = () => {
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-lg">{group.icon}</span>
-                      <h4 className="font-semibold text-sm">{group.title}</h4>
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#00844e] to-[#02ff91] flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-white"></div>
+                      </div>
+                      <h4 className="font-semibold text-sm text-[#00844e]">{group.title}</h4>
                     </div>
                     <Tooltip>
                       <TooltipTrigger asChild>

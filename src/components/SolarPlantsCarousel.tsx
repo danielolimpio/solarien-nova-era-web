@@ -65,7 +65,7 @@ const SolarPlantsCarousel = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-pulse">
-              <Sun className="w-6 h-6 text-green-800" />
+              <Sun className="w-6 h-6" style={{ color: '#002113' }} />
             </div>
             <span className="text-gradient">Usinas</span> <span className="text-white">Solares</span>
           </h2>

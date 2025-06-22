@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -81,7 +82,7 @@ const PartnersCarousel = () => {
             <span className="text-gradient">Parceiros</span> <span className="text-gray-800">Distribuidoras</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Conectamos você às principais distribuidoras de energia do Brasil
+            Você continua utilizando a mesma rede de distribuição convencional
           </p>
         </div>
 
@@ -134,3 +135,4 @@ const PartnersCarousel = () => {
 };
 
 export default PartnersCarousel;
+

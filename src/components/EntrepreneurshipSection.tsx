@@ -220,31 +220,16 @@ const EntrepreneurshipSection = () => {
           ))}
         </div>
 
-        {/* Commission Section with Static Money Background */}
-        <div className="bg-gradient-to-r from-green-900/40 via-green-800/30 to-green-900/40 backdrop-blur-sm border border-solarien-primary/30 rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
-          {/* Static Real Notes Background */}
-          <div className="absolute inset-0 overflow-hidden">
-            {/* Notas de R$ 100 - Verde escuro */}
-            <StaticRealNote value="100" color="#1a472a" left="5%" top="10%" rotation={15} />
-            <StaticRealNote value="100" color="#1a472a" left="75%" top="15%" rotation={-20} />
-            <StaticRealNote value="100" color="#1a472a" left="20%" top="70%" rotation={25} />
-            <StaticRealNote value="100" color="#1a472a" left="85%" top="75%" rotation={-15} />
-            <StaticRealNote value="100" color="#1a472a" left="45%" top="5%" rotation={30} />
-            <StaticRealNote value="100" color="#1a472a" left="60%" top="85%" rotation={-25} />
-            
-            {/* Notas de R$ 50 - Verde médio */}
-            <StaticRealNote value="50" color="#2d5a3d" left="15%" top="25%" rotation={-10} />
-            <StaticRealNote value="50" color="#2d5a3d" left="65%" top="30%" rotation={20} />
-            <StaticRealNote value="50" color="#2d5a3d" left="10%" top="55%" rotation={-30} />
-            <StaticRealNote value="50" color="#2d5a3d" left="80%" top="50%" rotation={18} />
-            <StaticRealNote value="50" color="#2d5a3d" left="35%" top="80%" rotation={-12} />
-            
-            {/* Notas de R$ 20 - Verde claro */}
-            <StaticRealNote value="20" color="#22c55e" left="30%" top="20%" rotation={12} />
-            <StaticRealNote value="20" color="#22c55e" left="70%" top="60%" rotation={-22} />
-            <StaticRealNote value="20" color="#22c55e" left="5%" top="40%" rotation={28} />
-            <StaticRealNote value="20" color="#22c55e" left="90%" top="35%" rotation={-8} />
-            <StaticRealNote value="20" color="#22c55e" left="50%" top="90%" rotation={16} />
+        {/* Commission Section with Money Background */}
+        <div className="relative rounded-3xl p-8 md:p-12 mb-12 overflow-hidden">
+          {/* Money Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/329fed93-8f70-40a5-af74-d24ce55136f1.png" 
+              alt="Money background" 
+              className="w-full h-full object-cover brightness-[0.15]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
           </div>
 
           <div className="text-center relative z-10">

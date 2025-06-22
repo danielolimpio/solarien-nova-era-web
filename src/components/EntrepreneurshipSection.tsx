@@ -141,7 +141,7 @@ const EntrepreneurshipSection = () => {
 
   // Premium Golden Trophy Icon Component
   const PremiumTrophyIcon = () => (
-    <div className="relative">
+    <div className="flex justify-center">
       <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -210,10 +210,6 @@ const EntrepreneurshipSection = () => {
         {/* Dollar sign in center */}
         <text x="40" y="40" textAnchor="middle" fontSize="12" fill="#B8860B" fontWeight="bold">$</text>
       </svg>
-      
-      {/* Glow effect around the icon */}
-      <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl scale-150"></div>
-      <div className="absolute inset-0 bg-yellow-300/10 rounded-full blur-2xl scale-200"></div>
     </div>
   );
 
@@ -315,8 +311,8 @@ const EntrepreneurshipSection = () => {
           </div>
 
           <div className="text-center relative z-10">
-            <div className="flex items-center justify-center mb-6">
-              <div className="relative">
+            <div className="flex justify-center mb-6">
+              <div className="text-center">
                 <PremiumTrophyIcon />
                 <p className="text-yellow-400 text-xs font-semibold mt-4 tracking-wide">
                   A Melhor Comissão do Mercado

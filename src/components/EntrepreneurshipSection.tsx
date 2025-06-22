@@ -169,7 +169,9 @@ const EntrepreneurshipSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-solarien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 bg-s
+
+larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
             <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
               <Zap className="w-4 h-4" style={{ color: '#002113' }} />
             </div>

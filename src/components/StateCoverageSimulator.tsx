@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -80,6 +81,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-a',
       title: 'Grupo A – Alta e Média Tensão',
+      clientType: 'Empresas e Indústrias',
       color: 'blue',
       icon: '🔵',
       tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.',
@@ -90,6 +92,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-b1',
       title: 'Grupo B1 – Residencial',
+      clientType: 'Casas e Apartamentos',
       color: 'green',
       icon: '🟢',
       tooltip: 'Residências urbanas, apartamentos, condomínios.',
@@ -99,6 +102,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-b2',
       title: 'Grupo B2 – Rural',
+      clientType: 'Propriedades Rurais',
       color: 'yellow',
       icon: '🟡',
       tooltip: 'Sítios, fazendas, agroindústrias, cooperativas rurais.',
@@ -108,6 +112,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-b3',
       title: 'Grupo B3 – Demais Classes',
+      clientType: 'Comércio e Serviços',
       color: 'orange',
       icon: '🟠',
       tooltip: 'Pequenos comércios, padarias, salões, escolas particulares.',
@@ -117,6 +122,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-b4a',
       title: 'Grupo B4a – Iluminação Pública',
+      clientType: 'Iluminação pública',
       color: 'red',
       icon: '🔴',
       tooltip: 'Postes de luz, praças públicas, túneis.',
@@ -126,6 +132,7 @@ const StateCoverageSimulator = () => {
     {
       id: 'grupo-b4b',
       title: 'Grupo B4b – Serviços Públicos',
+      clientType: 'Serviços públicos',
       color: 'purple',
       icon: '🟣',
       tooltip: 'Semáforos, câmeras de segurança, fontes luminosas públicas.',
@@ -253,6 +260,11 @@ const StateCoverageSimulator = () => {
                         <p className="text-sm">{group.tooltip}</p>
                       </TooltipContent>
                     </Tooltip>
+                  </div>
+                  
+                  {/* Client Type */}
+                  <div className="mb-3 p-2 bg-white/60 rounded">
+                    <span className="text-xs font-bold text-gray-700">{group.clientType}</span>
                   </div>
                   
                   {/* Simulation Status and Discount */}

@@ -40,19 +40,19 @@ const AboutSection = () => {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-primary mb-2 group-hover:scale-110 transition-transform">2000+</div>
+              <div className="text-3xl font-bold text-solarien-primary mb-2 animate-[pulse_4s_ease-in-out_infinite]">2000+</div>
               <div className="text-sm text-gray-600">Usinas Solares</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-secondary mb-2 group-hover:scale-110 transition-transform">3B+</div>
+              <div className="text-3xl font-bold text-solarien-secondary mb-2 animate-[pulse_4s_ease-in-out_infinite]">3B+</div>
               <div className="text-sm text-gray-600">Faturamento Anual</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-tertiary mb-2 group-hover:scale-110 transition-transform">100k+</div>
+              <div className="text-3xl font-bold text-solarien-tertiary mb-2 animate-[pulse_4s_ease-in-out_infinite]">100k+</div>
               <div className="text-sm text-gray-600">Clientes Ativos</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-3xl font-bold text-solarien-primary mb-2 group-hover:scale-110 transition-transform">100%</div>
+              <div className="text-3xl font-bold text-solarien-primary mb-2 animate-[pulse_4s_ease-in-out_infinite]">100%</div>
               <div className="text-sm text-gray-600">Energia Limpa</div>
             </div>
           </div>

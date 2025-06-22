@@ -1,11 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, Search, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,6 +57,16 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log('Searching for:', searchQuery);
+      // Here you can implement the search functionality
+      setSearchQuery('');
+      setIsSearchOpen(false);
+    }
+  };
+
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'Sobre', id: 'sobre' },
@@ -93,8 +104,41 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* Search and CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
+            {/* Search Component */}
+            <div className="relative flex items-center">
+              {isSearchOpen ? (
+                <form onSubmit={handleSearchSubmit} className="flex items-center">
+                  <input
+                    type="text"
+                    placeholder="Buscar..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-64 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-solarien-primary transition-all duration-300"
+                    autoFocus
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSearchOpen(false);
+                      setSearchQuery('');
+                    }}
+                    className="ml-2 p-2 text-white hover:text-solarien-primary transition-colors duration-300"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </form>
+              ) : (
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  className="p-2 text-white hover:text-solarien-primary transition-colors duration-300"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
             <a
               href="https://painel.solarien.com.br/login"
               target="_blank"
@@ -126,6 +170,25 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg" style={{ backgroundColor: '#002113' }}>
             <nav className="flex flex-col p-4 space-y-2">
+              {/* Mobile Search */}
+              <div className="pb-4 border-b border-green-700/30 mb-2">
+                <form onSubmit={handleSearchSubmit} className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    placeholder="Buscar..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="flex-1 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-solarien-primary"
+                  />
+                  <button
+                    type="submit"
+                    className="p-2 text-white hover:text-solarien-primary transition-colors duration-300"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
+                </form>
+              </div>
+
               {menuItems.map((item) => (
                 <button
                   key={item.name}

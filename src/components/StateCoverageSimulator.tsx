@@ -77,6 +77,63 @@ const StateCoverageSimulator = () => {
     }
   };
 
+  const energyGroups = [
+    {
+      id: 'grupo-a',
+      title: 'Grupo A – Alta e Média Tensão',
+      color: 'blue',
+      icon: '🔵',
+      tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.'
+    },
+    {
+      id: 'grupo-b1',
+      title: 'Grupo B1 – Residencial',
+      color: 'green',
+      icon: '🟢',
+      tooltip: 'Residências urbanas, apartamentos, condomínios.'
+    },
+    {
+      id: 'grupo-b2',
+      title: 'Grupo B2 – Rural',
+      color: 'yellow',
+      icon: '🟡',
+      tooltip: 'Sítios, fazendas, agroindústrias, cooperativas rurais.'
+    },
+    {
+      id: 'grupo-b3',
+      title: 'Grupo B3 – Demais Classes',
+      color: 'orange',
+      icon: '🟠',
+      tooltip: 'Pequenos comércios, padarias, salões, escolas particulares.'
+    },
+    {
+      id: 'grupo-b4a',
+      title: 'Grupo B4a – Iluminação Pública',
+      color: 'red',
+      icon: '🔴',
+      tooltip: 'Postes de luz, praças públicas, túneis.'
+    },
+    {
+      id: 'grupo-b4b',
+      title: 'Grupo B4b – Serviços Públicos',
+      color: 'purple',
+      icon: '🟣',
+      tooltip: 'Semáforos, câmeras de segurança, fontes luminosas públicas.'
+    }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colorMap = {
+      blue: 'border-blue-200 bg-blue-50 text-blue-800',
+      green: 'border-green-200 bg-green-50 text-green-800',
+      yellow: 'border-yellow-200 bg-yellow-50 text-yellow-800',
+      orange: 'border-orange-200 bg-orange-50 text-orange-800',
+      red: 'border-red-200 bg-red-50 text-red-800',
+      purple: 'border-purple-200 bg-purple-50 text-purple-800'
+    };
+    return colorMap[color as keyof typeof colorMap] || 'border-gray-200 bg-gray-50 text-gray-800';
+  };
+
   // Function to get display name for states (abbreviated for mobile)
   const getStateDisplayName = (state: string) => {
     if (state === 'Mato Grosso do Sul') return 'Mato G. do Sul';
@@ -151,6 +208,42 @@ const StateCoverageSimulator = () => {
               </div>
               <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">23</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Distribuidoras</div>
+            </div>
+          </div>
+
+          {/* Energy Groups Block */}
+          <div className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-[#00844e]/20">
+            <h3 className="text-[#00844e] text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+              <Target className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#00844e]" />
+              Grupos de Energia Elétrica
+            </h3>
+            <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6">
+              Conheça todos os grupos tarifários e suas características
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {energyGroups.map((group) => (
+                <div
+                  key={group.id}
+                  className={`p-4 rounded-lg border-2 ${getColorClasses(group.color)} transition-all duration-300 hover:shadow-lg`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg">{group.icon}</span>
+                      <h4 className="font-semibold text-sm">{group.title}</h4>
+                    </div>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button className="text-gray-500 hover:text-gray-700 transition-colors">
+                          <HelpCircle className="w-4 h-4" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent side="top" className="max-w-xs">
+                        <p className="text-sm">{group.tooltip}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

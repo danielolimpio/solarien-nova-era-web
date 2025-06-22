@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -86,8 +85,7 @@ const StateCoverageSimulator = () => {
       icon: '🔵',
       tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.',
       allowsSimulation: false,
-      discount: 'até 45%',
-      note: 'Para esse grupo não é possível realizar simulação, consultar um Licenciado'
+      discount: 'até 45%'
     },
     {
       id: 'grupo-b1',
@@ -243,7 +241,7 @@ const StateCoverageSimulator = () => {
               {energyGroups.map((group) => (
                 <div
                   key={group.id}
-                  className={`p-4 rounded-lg border-2 ${getColorClasses(group.color)} transition-all duration-300 hover:shadow-lg`}
+                  className={`p-4 rounded-xl border-2 ${getColorClasses(group.color)} transition-all duration-300 hover:shadow-lg hover:scale-105`}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -263,37 +261,32 @@ const StateCoverageSimulator = () => {
                   </div>
                   
                   {/* Client Type */}
-                  <div className="mb-3 p-2 bg-white/60 rounded">
+                  <div className="mb-3 p-2 bg-white/80 rounded-lg">
                     <span className="text-xs font-bold text-gray-700">{group.clientType}</span>
                   </div>
                   
-                  {/* Simulation Status and Discount */}
+                  {/* Features Grid */}
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      {group.allowsSimulation ? (
-                        <Check className="w-4 h-4 text-green-600" />
-                      ) : (
-                        <X className="w-4 h-4 text-red-600" />
-                      )}
-                      <span className="text-xs font-medium">
-                        {group.allowsSimulation ? 'Aceita simulação' : 'Não aceita simulação'}
-                      </span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <Percent className="w-4 h-4 text-blue-600" />
-                      <span className="text-xs font-medium">
-                        Desconto: {group.discount}
-                      </span>
-                    </div>
-                    
-                    {group.note && (
-                      <div className="bg-yellow-50 border border-yellow-200 rounded p-2 mt-2">
-                        <p className="text-xs text-yellow-800 font-medium">
-                          ⚠️ {group.note}
-                        </p>
+                    <div className="flex items-center justify-between p-2 bg-white/60 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        {group.allowsSimulation ? (
+                          <Check className="w-4 h-4 text-green-600" />
+                        ) : (
+                          <X className="w-4 h-4 text-red-600" />
+                        )}
+                        <span className="text-xs font-medium">
+                          {group.allowsSimulation ? 'Aceita simulação' : 'Não aceita simulação'}
+                        </span>
                       </div>
-                    )}
+                    </div>
+                    
+                    <div className="flex items-center justify-between p-2 bg-white/60 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <Percent className="w-4 h-4 text-blue-600" />
+                        <span className="text-xs font-medium">Desconto:</span>
+                      </div>
+                      <span className="text-sm font-bold text-blue-700">{group.discount}</span>
+                    </div>
                   </div>
                 </div>
               ))}

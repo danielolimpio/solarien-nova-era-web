@@ -11,7 +11,7 @@ const HeroSection = () => {
   
   const texts = [
     'Energia do Futuro',
-    'Economia até 45%',
+    'Reduza até 45%',
     'Migração Grátis!',
     'Suporte Rápido'
   ];

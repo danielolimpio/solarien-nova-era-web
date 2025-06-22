@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Target, Eye } from 'lucide-react';
 
@@ -25,14 +26,14 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* Company Presentation with Futuristic Building Mockup */}
+        {/* Company Presentation with Building Image */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left side - Square Building Image */}
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
               <img 
-                src="/lovable-uploads/033ede5a-9cc5-494b-ba09-435877b6a870.png" 
-                alt="Fachada futurista da Solarien Energy" 
+                src="/lovable-uploads/c3d950ed-3360-4e3b-938b-d2b77b09aff7.png" 
+                alt="Edifício corporativo moderno" 
                 className="w-full h-full object-cover"
               />
               

@@ -107,7 +107,7 @@ const AboutSection = () => {
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 border border-gradient-to-r border-solarien-primary/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:shadow-2xl transition-all duration-300 group hover:animate-gentle-glow">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
                   <Users className="w-8 h-8" style={{ color: '#015c3b' }} />
                 </div>
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">
@@ -124,8 +124,8 @@ const AboutSection = () => {
 
             {/* Enhanced Key Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-center space-x-4 p-6 bg-green-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center space-x-4 p-6 bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 rounded-2xl border border-solarien-primary/20 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
+                <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MessageCircle className="w-7 h-7" style={{ color: '#015c3b' }} />
                 </div>
                 <div>
@@ -134,8 +134,8 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-green-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center space-x-4 p-6 bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 rounded-2xl border border-solarien-secondary/20 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
+                <div className="w-14 h-14 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <DollarSign className="w-7 h-7" style={{ color: '#015c3b' }} />
                 </div>
                 <div>
@@ -144,8 +144,8 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-green-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center space-x-4 p-6 bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 rounded-2xl border border-solarien-tertiary/20 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
+                <div className="w-14 h-14 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Leaf className="w-7 h-7" style={{ color: '#015c3b' }} />
                 </div>
                 <div>
@@ -154,8 +154,8 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 p-6 bg-green-50 rounded-2xl border border-green-100 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center space-x-4 p-6 bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 rounded-2xl border border-solarien-primary/20 hover:shadow-lg transition-all duration-300 group hover:animate-soft-pulse">
+                <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary/80 to-solarien-secondary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <FileText className="w-7 h-7" style={{ color: '#015c3b' }} />
                 </div>
                 <div>
@@ -169,7 +169,7 @@ const AboutSection = () => {
 
         {/* Enhanced Mission and Vision Cards */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="relative bg-green-50 border border-green-100 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:animate-gentle-glow">
+          <div className="relative bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 border border-solarien-primary/30 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:animate-gentle-glow">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-solarien-primary to-transparent rounded-full"></div>
@@ -177,7 +177,7 @@ const AboutSection = () => {
             </div>
             
             <div className="flex items-center mb-8 relative z-10">
-              <div className="w-20 h-20 bg-green-100 rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
                 <Target className="w-10 h-10" style={{ color: '#015c3b' }} />
               </div>
               <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Missão</h3>
@@ -187,7 +187,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="relative bg-green-50 border border-green-100 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:animate-gentle-glow">
+          <div className="relative bg-gradient-to-br from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-opacity-10 border border-solarien-secondary/30 rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:animate-gentle-glow">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute top-0 left-0 w-28 h-28 bg-gradient-to-br from-solarien-secondary to-transparent rounded-full"></div>
@@ -195,7 +195,7 @@ const AboutSection = () => {
             </div>
             
             <div className="flex items-center mb-8 relative z-10">
-              <div className="w-20 h-20 bg-green-100 rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+              <div className="w-20 h-20 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
                 <Eye className="w-10 h-10" style={{ color: '#015c3b' }} />
               </div>
               <h3 className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Visão</h3>

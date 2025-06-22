@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -463,12 +462,12 @@ const StateCoverageSimulator = () => {
                 <div className="text-gray-600 font-semibold">Meses Fidelidade</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#00844e] mb-2">150</div>
-                <div className="text-gray-600 font-semibold">kWh/mês Consumo Mínimo</div>
+                <div className="text-3xl font-bold text-[#00844e] mb-2">150kWh</div>
+                <div className="text-gray-600 font-semibold">Consumo Mínimo por mês</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#02ff91] mb-2">90</div>
-                <div className="text-gray-600 font-semibold">dias início da injeção</div>
+                <div className="text-3xl font-bold text-[#02ff91] mb-2">90 dias</div>
+                <div className="text-gray-600 font-semibold">Início da Injeção</div>
               </div>
             </div>
           </div>

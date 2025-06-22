@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Search, Tag, Filter, BookOpen } from 'lucide-react';
@@ -109,9 +110,11 @@ const Blog = () => {
   const categories = ['Todos', ...Array.from(new Set(blogPosts.map(post => post.category)))];
 
   const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch = searchTerm === '' || 
+                         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                         post.category.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'Todos' || post.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -122,6 +125,14 @@ const Blog = () => {
 
   const handlePostClick = (postId: string) => {
     navigate(`/blog/${postId}`);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const clearSearch = () => {
+    setSearchTerm('');
   };
 
   return (
@@ -151,14 +162,24 @@ const Blog = () => {
             {/* Search and Filter */}
             <div className="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto mb-8">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
                 <Input
                   type="text"
                   placeholder="Buscar artigos..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-slate-800/50 border-slate-700 text-white placeholder-gray-400 focus:border-solarien-primary"
+                  onChange={handleSearchChange}
+                  className="pl-10 pr-10 bg-slate-800/50 border-slate-700 text-white placeholder-gray-400 focus:border-solarien-primary focus:ring-2 focus:ring-solarien-primary/20"
                 />
+                {searchTerm && (
+                  <button
+                    onClick={clearSearch}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                )}
               </div>
               <div className="flex gap-2 flex-wrap justify-center lg:justify-start">
                 {categories.map(category => (
@@ -178,6 +199,18 @@ const Blog = () => {
                 ))}
               </div>
             </div>
+
+            {/* Search Results Info */}
+            {searchTerm && (
+              <div className="text-center mb-6">
+                <p className="text-gray-300">
+                  {filteredPosts.length === 0 
+                    ? `Nenhum resultado encontrado para "${searchTerm}"` 
+                    : `${filteredPosts.length} resultado${filteredPosts.length > 1 ? 's' : ''} encontrado${filteredPosts.length > 1 ? 's' : ''} para "${searchTerm}"`
+                  }
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -188,8 +221,24 @@ const Blog = () => {
           {filteredPosts.length === 0 ? (
             <div className="text-center py-20">
               <BookOpen className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-400 mb-2">Nenhum artigo encontrado</h3>
-              <p className="text-gray-500">Tente ajustar sua busca ou filtro.</p>
+              <h3 className="text-2xl font-semibold text-gray-400 mb-2">
+                {searchTerm ? 'Nenhum artigo encontrado' : 'Nenhum artigo disponível'}
+              </h3>
+              <p className="text-gray-500">
+                {searchTerm 
+                  ? 'Tente usar outras palavras-chave ou limpar a busca.' 
+                  : 'Tente ajustar sua busca ou filtro.'
+                }
+              </p>
+              {searchTerm && (
+                <Button 
+                  onClick={clearSearch}
+                  variant="outline"
+                  className="mt-4 border-slate-700 text-gray-300 hover:bg-slate-800/50"
+                >
+                  Limpar busca
+                </Button>
+              )}
             </div>
           ) : (
             <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">

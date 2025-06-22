@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -78,8 +79,8 @@ const StateCoverageSimulator = () => {
 
   // Function to get display name for states (abbreviated for mobile)
   const getStateDisplayName = (state: string) => {
-    if (state === 'Mato Grosso do Sul') return 'MS';
-    if (state === 'Rio Grande do Norte') return 'RN';
+    if (state === 'Mato Grosso do Sul') return 'Mato G. do Sul';
+    if (state === 'Rio Grande do Norte') return 'Rio G. do Norte';
     return state;
   };
 

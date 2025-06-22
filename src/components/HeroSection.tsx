@@ -225,22 +225,22 @@ const HeroSection = () => {
           </div>
           
           {/* Enhanced Statistics */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="mt-16 pb-8 md:pb-0 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">Até 45%</div>
-              <div className="text-gray-300 text-sm md:text-base">Economia Garantida</div>
+              <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Economia Garantida</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">100k</div>
-              <div className="text-gray-300 text-sm md:text-base">Clientes Migraram</div>
+              <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Clientes Migraram</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">4200</div>
-              <div className="text-gray-300 text-sm md:text-base">Cidades Atingidas</div>
+              <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Cidades Atingidas</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent mb-2">95%</div>
-              <div className="text-gray-300 text-sm md:text-base">Taxa de Migração</div>
+              <div className="text-gray-300 text-sm md:text-base mb-4 md:mb-0">Taxa de Migração</div>
             </div>
           </div>
         </div>

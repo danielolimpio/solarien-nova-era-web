@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download, Crown } from 'lucide-react';
+import { Zap, Users, Target, TrendingUp, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
 
 const EntrepreneurshipSection = () => {
@@ -139,136 +139,230 @@ const EntrepreneurshipSection = () => {
     </div>
   );
 
-  // Realistic Trophy Icon Component
-  const RealisticTrophyIcon = () => (
+  // Ultra Realistic Trophy Icon Component
+  const UltraRealisticTrophyIcon = () => (
     <div className="flex justify-center">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          {/* Realistic Gold Gradients */}
-          <linearGradient id="goldMain" x1="20%" y1="0%" x2="80%" y2="100%">
+          {/* Ultra Realistic Gold Gradients */}
+          <radialGradient id="ultraGoldMain" cx="30%" cy="20%" r="70%">
             <stop offset="0%" stopColor="#FFF8DC" />
-            <stop offset="10%" stopColor="#FFD700" />
-            <stop offset="25%" stopColor="#DAA520" />
+            <stop offset="5%" stopColor="#FFFACD" />
+            <stop offset="15%" stopColor="#FFD700" />
+            <stop offset="30%" stopColor="#DAA520" />
             <stop offset="50%" stopColor="#B8860B" />
-            <stop offset="75%" stopColor="#CD853F" />
-            <stop offset="90%" stopColor="#8B4513" />
+            <stop offset="70%" stopColor="#CD853F" />
+            <stop offset="85%" stopColor="#8B4513" />
             <stop offset="100%" stopColor="#654321" />
+          </radialGradient>
+          
+          <radialGradient id="ultraGoldHighlight" cx="25%" cy="15%" r="40%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.9"/>
+            <stop offset="20%" stopColor="#FFFACD" stopOpacity="0.7"/>
+            <stop offset="50%" stopColor="#FFD700" stopOpacity="0.5"/>
+            <stop offset="100%" stopColor="#DAA520" stopOpacity="0.3"/>
+          </radialGradient>
+          
+          <linearGradient id="ultraGoldReflection" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.8"/>
+            <stop offset="25%" stopColor="#FFFACD" stopOpacity="0.6"/>
+            <stop offset="50%" stopColor="#FFD700" stopOpacity="0.4"/>
+            <stop offset="75%" stopColor="#DAA520" stopOpacity="0.2"/>
+            <stop offset="100%" stopColor="#B8860B" stopOpacity="0.1"/>
           </linearGradient>
           
-          <linearGradient id="goldLight" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#FFFACD" />
-            <stop offset="30%" stopColor="#FFD700" />
-            <stop offset="70%" stopColor="#DAA520" />
-            <stop offset="100%" stopColor="#B8860B" />
+          <radialGradient id="ultraGoldShadow" cx="70%" cy="80%" r="60%">
+            <stop offset="0%" stopColor="#654321" stopOpacity="0.8"/>
+            <stop offset="40%" stopColor="#8B4513" stopOpacity="0.6"/>
+            <stop offset="70%" stopColor="#A0522D" stopOpacity="0.4"/>
+            <stop offset="100%" stopColor="#CD853F" stopOpacity="0.2"/>
+          </radialGradient>
+          
+          <linearGradient id="ultraBaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1C1C1C" />
+            <stop offset="20%" stopColor="#2F1B14" />
+            <stop offset="40%" stopColor="#5D4E37" />
+            <stop offset="60%" stopColor="#8B4513" />
+            <stop offset="80%" stopColor="#A0522D" />
+            <stop offset="100%" stopColor="#D2691E" />
           </linearGradient>
           
-          <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8860B" />
-            <stop offset="50%" stopColor="#8B4513" />
-            <stop offset="100%" stopColor="#654321" />
-          </linearGradient>
+          {/* Ultra Realistic Shadows and Effects */}
+          <filter id="ultraDropShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+            <feOffset dx="3" dy="8" result="offset"/>
+            <feFlood floodColor="rgba(0,0,0,0.7)"/>
+            <feComposite in2="offset" operator="in"/>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
           
-          <linearGradient id="baseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2F1B14" />
-            <stop offset="30%" stopColor="#5D4E37" />
-            <stop offset="70%" stopColor="#8B4513" />
-            <stop offset="100%" stopColor="#A0522D" />
-          </linearGradient>
-          
-          {/* Realistic Shadow */}
-          <ellipse id="baseShadow" cx="50" cy="92" rx="25" ry="6" fill="rgba(0,0,0,0.3)"/>
-          
-          {/* 3D Effect Filters */}
-          <filter id="innerShadow">
-            <feOffset dx="0" dy="2"/>
-            <feGaussianBlur stdDeviation="1" result="offset-blur"/>
-            <feFlood floodColor="#654321" floodOpacity="0.4"/>
+          <filter id="ultraInnerShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feOffset dx="0" dy="3"/>
+            <feGaussianBlur stdDeviation="2" result="offset-blur"/>
+            <feFlood floodColor="#4A2C17" floodOpacity="0.6"/>
             <feComposite in2="offset-blur" operator="in"/>
           </filter>
           
-          <filter id="highlight">
-            <feGaussianBlur stdDeviation="1"/>
-            <feSpecularLighting result="specOut" in="blur" specularConstant="2" specularExponent="20" lightingColor="white">
-              <fePointLight x="30" y="20" z="50"/>
+          <filter id="ultraBevel" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+            <feSpecularLighting result="specOut" in="blur" specularConstant="2.5" specularExponent="25" lightingColor="#FFFFFF">
+              <fePointLight x="25" y="15" z="60"/>
             </feSpecularLighting>
+            <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+            <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
           </filter>
           
-          <filter id="dropShadow">
-            <feDropShadow dx="2" dy="6" stdDeviation="4" floodColor="rgba(0,0,0,0.5)" floodOpacity="0.8"/>
+          <filter id="ultraGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
           </filter>
+          
+          {/* Base Shadow */}
+          <ellipse id="ultraBaseShadow" cx="60" cy="110" rx="35" ry="8" fill="rgba(0,0,0,0.4)"/>
+          
+          {/* Texture Patterns */}
+          <pattern id="goldTexture" patternUnits="userSpaceOnUse" width="4" height="4">
+            <rect width="4" height="4" fill="url(#ultraGoldMain)"/>
+            <circle cx="2" cy="2" r="0.5" fill="#FFFACD" opacity="0.3"/>
+            <rect x="0" y="0" width="1" height="1" fill="#FFD700" opacity="0.2"/>
+            <rect x="3" y="3" width="1" height="1" fill="#DAA520" opacity="0.2"/>
+          </pattern>
+          
+          <pattern id="brushedMetal" patternUnits="userSpaceOnUse" width="2" height="20">
+            <rect width="2" height="20" fill="url(#ultraGoldMain)"/>
+            <rect x="0" y="0" width="1" height="20" fill="#FFFFFF" opacity="0.1"/>
+            <rect x="1" y="0" width="1" height="20" fill="#000000" opacity="0.05"/>
+          </pattern>
         </defs>
         
         {/* Base Shadow */}
-        <use href="#baseShadow"/>
+        <use href="#ultraBaseShadow"/>
         
-        {/* Trophy Base - Wooden/Bronze */}
-        <rect x="25" y="80" width="50" height="15" rx="7" fill="url(#baseGradient)" filter="url(#dropShadow)"/>
-        <rect x="27" y="82" width="46" height="11" rx="5" fill="url(#goldDark)" opacity="0.6"/>
+        {/* Trophy Base - Ultra Detailed */}
+        <rect x="25" y="95" width="70" height="20" rx="10" fill="url(#ultraBaseGradient)" filter="url(#ultraDropShadow)"/>
+        <rect x="27" y="97" width="66" height="16" rx="8" fill="url(#ultraGoldShadow)"/>
+        <rect x="29" y="99" width="62" height="12" rx="6" fill="url(#brushedMetal)"/>
         
-        {/* Base Details */}
-        <rect x="30" y="84" width="40" height="2" rx="1" fill="#FFD700" opacity="0.4"/>
-        <rect x="35" y="87" width="30" height="1" rx="0.5" fill="#FFF8DC" opacity="0.3"/>
+        {/* Base Decorative Elements */}
+        <rect x="35" y="101" width="50" height="3" rx="1.5" fill="url(#ultraGoldHighlight)"/>
+        <rect x="40" y="105" width="40" height="2" rx="1" fill="#FFFFFF" opacity="0.4"/>
+        <rect x="45" y="108" width="30" height="1" rx="0.5" fill="#FFFACD" opacity="0.6"/>
         
-        {/* Trophy Stem */}
-        <rect x="45" y="65" width="10" height="18" rx="2" fill="url(#goldMain)" filter="url(#innerShadow)"/>
-        <rect x="46" y="66" width="8" height="16" rx="1" fill="url(#goldLight)" opacity="0.5"/>
+        {/* Base Side Details */}
+        <circle cx="35" cy="105" r="2" fill="url(#ultraGoldHighlight)" opacity="0.8"/>
+        <circle cx="85" cy="105" r="2" fill="url(#ultraGoldHighlight)" opacity="0.8"/>
+        <rect x="32" y="103" width="3" height="4" rx="1.5" fill="url(#ultraGoldShadow)"/>
+        <rect x="85" y="103" width="3" height="4" rx="1.5" fill="url(#ultraGoldShadow)"/>
         
-        {/* Main Trophy Cup - More Realistic Shape */}
-        <path d="M25 35 Q25 20 35 18 L65 18 Q75 20 75 35 L75 55 Q75 65 65 68 L35 68 Q25 65 25 55 Z" 
-              fill="url(#goldMain)" 
-              filter="url(#dropShadow)"/>
+        {/* Trophy Stem - Ultra Detailed */}
+        <rect x="52" y="75" width="16" height="25" rx="3" fill="url(#ultraGoldMain)" filter="url(#ultraBevel)"/>
+        <rect x="54" y="77" width="12" height="21" rx="2" fill="url(#ultraGoldHighlight)" opacity="0.6"/>
+        <rect x="56" y="79" width="8" height="17" rx="1" fill="url(#goldTexture)"/>
         
-        {/* Cup Inner Shadow */}
-        <path d="M28 38 Q28 23 36 21 L64 21 Q72 23 72 38 L72 58 Q72 64 64 66 L36 66 Q28 64 28 58 Z" 
-              fill="url(#goldDark)" 
-              opacity="0.3"/>
+        {/* Stem Details */}
+        <rect x="55" y="82" width="10" height="2" rx="1" fill="url(#ultraGoldReflection)"/>
+        <rect x="55" y="87" width="10" height="2" rx="1" fill="url(#ultraGoldReflection)"/>
+        <rect x="55" y="92" width="10" height="2" rx="1" fill="url(#ultraGoldReflection)"/>
         
-        {/* Cup Highlight */}
-        <path d="M30 40 Q30 25 38 23 L50 23 Q55 25 55 40 L55 50 Q55 55 50 57 L38 57 Q30 55 30 50 Z" 
-              fill="url(#goldLight)" 
-              opacity="0.4"/>
+        {/* Main Trophy Cup - Ultra Realistic Shape */}
+        <path d="M25 40 Q25 22 38 18 L82 18 Q95 22 95 40 L95 65 Q95 78 82 82 L38 82 Q25 78 25 65 Z" 
+              fill="url(#ultraGoldMain)" 
+              filter="url(#ultraDropShadow)"/>
         
-        {/* Realistic Handles */}
-        <path d="M18 38 Q12 38 10 44 L10 50 Q12 56 18 56 Q22 56 22 52 Q22 48 18 48 Q15 48 15 45 L15 41 Q15 38 18 38" 
-              fill="url(#goldMain)" 
-              filter="url(#innerShadow)"/>
-        <path d="M82 38 Q88 38 90 44 L90 50 Q88 56 82 56 Q78 56 78 52 Q78 48 82 48 Q85 48 85 45 L85 41 Q85 38 82 38" 
-              fill="url(#goldMain)" 
-              filter="url(#innerShadow)"/>
+        {/* Cup Inner Shadow and Depth */}
+        <path d="M30 43 Q30 25 40 21 L80 21 Q90 25 90 43 L90 68 Q90 76 80 79 L40 79 Q30 76 30 68 Z" 
+              fill="url(#ultraGoldShadow)"/>
         
-        {/* Handle Details */}
-        <circle cx="18" cy="42" r="2" fill="url(#goldLight)" opacity="0.6"/>
-        <circle cx="82" cy="42" r="2" fill="url(#goldLight)" opacity="0.6"/>
+        {/* Cup Main Highlight */}
+        <path d="M35 45 Q35 27 43 23 L77 23 Q85 27 85 45 L85 70 Q85 74 77 76 L43 76 Q35 74 35 70 Z" 
+              fill="url(#goldTexture)"/>
         
-        {/* Trophy Rim */}
-        <ellipse cx="50" cy="35" rx="25" ry="5" fill="url(#goldLight)" filter="url(#highlight)"/>
-        <ellipse cx="50" cy="33" rx="23" ry="4" fill="url(#goldMain)"/>
+        {/* Cup Major Reflection */}
+        <path d="M38 48 Q38 30 45 26 L60 26 Q67 30 67 48 L67 60 Q67 65 60 67 L45 67 Q38 65 38 60 Z" 
+              fill="url(#ultraGoldReflection)" 
+              opacity="0.7"/>
         
-        {/* Decorative Band */}
-        <rect x="30" y="45" width="40" height="4" rx="2" fill="url(#goldDark)" opacity="0.6"/>
-        <rect x="32" y="46" width="36" height="2" rx="1" fill="#FFD700" opacity="0.8"/>
+        {/* Ultra Realistic Handles */}
+        <path d="M15 45 Q8 45 5 52 L5 60 Q8 67 15 67 Q20 67 20 62 Q20 57 15 57 Q12 57 12 54 L12 50 Q12 45 15 45" 
+              fill="url(#ultraGoldMain)" 
+              filter="url(#ultraBevel)"/>
+        <path d="M105 45 Q112 45 115 52 L115 60 Q112 67 105 67 Q100 67 100 62 Q100 57 105 57 Q108 57 108 54 L108 50 Q108 45 105 45" 
+              fill="url(#ultraGoldMain)" 
+              filter="url(#ultraBevel)"/>
         
-        {/* Center Medallion - More Realistic */}
-        <circle cx="50" cy="47" r="10" fill="url(#goldDark)" filter="url(#innerShadow)"/>
-        <circle cx="50" cy="47" r="8" fill="url(#goldMain)"/>
-        <circle cx="50" cy="47" r="6" fill="url(#goldLight)" opacity="0.7"/>
+        {/* Handle Decorative Details */}
+        <circle cx="15" cy="49" r="3" fill="url(#ultraGoldHighlight)" opacity="0.8"/>
+        <circle cx="105" cy="49" r="3" fill="url(#ultraGoldHighlight)" opacity="0.8"/>
+        <circle cx="15" cy="63" r="2" fill="url(#ultraGoldShadow)" opacity="0.6"/>
+        <circle cx="105" cy="63" r="2" fill="url(#ultraGoldShadow)" opacity="0.6"/>
         
-        {/* Dollar Symbol - Embossed */}
-        <text x="50" y="52" textAnchor="middle" fontSize="12" fill="url(#goldDark)" fontWeight="bold">$</text>
-        <text x="49" y="51" textAnchor="middle" fontSize="12" fill="#FFD700" fontWeight="bold">$</text>
+        {/* Handle Texture */}
+        <rect x="13" y="47" width="4" height="18" rx="2" fill="url(#brushedMetal)" opacity="0.3"/>
+        <rect x="103" y="47" width="4" height="18" rx="2" fill="url(#brushedMetal)" opacity="0.3"/>
         
-        {/* Realistic Reflections */}
-        <path d="M35 25 Q45 20 55 25 L55 35 Q45 30 35 35 Z" fill="#FFFACD" opacity="0.3"/>
-        <ellipse cx="42" cy="30" rx="3" ry="8" fill="#FFFFFF" opacity="0.4"/>
+        {/* Trophy Rim - Ultra Detailed */}
+        <ellipse cx="60" cy="40" rx="35" ry="7" fill="url(#ultraGoldHighlight)" filter="url(#ultraGlow)"/>
+        <ellipse cx="60" cy="38" rx="33" ry="6" fill="url(#ultraGoldMain)"/>
+        <ellipse cx="60" cy="36" rx="31" ry="5" fill="url(#ultraGoldReflection)" opacity="0.8"/>
+        
+        {/* Rim Details */}
+        <ellipse cx="60" cy="35" rx="29" ry="3" fill="#FFFFFF" opacity="0.6"/>
+        <ellipse cx="60" cy="34" rx="27" ry="2" fill="url(#ultraGoldHighlight)"/>
+        
+        {/* Decorative Band - Ultra Detailed */}
+        <rect x="30" y="52" width="60" height="8" rx="4" fill="url(#ultraGoldShadow)"/>
+        <rect x="32" y="54" width="56" height="4" rx="2" fill="url(#goldTexture)"/>
+        <rect x="34" y="55" width="52" height="2" rx="1" fill="url(#ultraGoldHighlight)"/>
+        
+        {/* Band Decorative Elements */}
+        <circle cx="40" cy="56" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+        <circle cx="60" cy="56" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+        <circle cx="80" cy="56" r="1.5" fill="#FFFFFF" opacity="0.8"/>
+        
+        {/* Center Medallion - Ultra Realistic */}
+        <circle cx="60" cy="56" r="15" fill="url(#ultraGoldShadow)" filter="url(#ultraInnerShadow)"/>
+        <circle cx="60" cy="56" r="13" fill="url(#ultraGoldMain)"/>
+        <circle cx="60" cy="56" r="11" fill="url(#goldTexture)"/>
+        <circle cx="60" cy="56" r="9" fill="url(#ultraGoldHighlight)" opacity="0.8"/>
+        
+        {/* Medallion Inner Ring */}
+        <circle cx="60" cy="56" r="7" fill="none" stroke="url(#ultraGoldReflection)" strokeWidth="1" opacity="0.6"/>
+        <circle cx="60" cy="56" r="5" fill="none" stroke="#FFFFFF" strokeWidth="0.5" opacity="0.8"/>
+        
+        {/* Dollar Symbol - Embossed and Detailed */}
+        <text x="60" y="63" textAnchor="middle" fontSize="16" fill="url(#ultraGoldShadow)" fontWeight="bold" fontFamily="serif">$</text>
+        <text x="59" y="62" textAnchor="middle" fontSize="16" fill="#FFD700" fontWeight="bold" fontFamily="serif">$</text>
+        <text x="58" y="61" textAnchor="middle" fontSize="16" fill="#FFFFFF" fontWeight="bold" fontFamily="serif" opacity="0.6">$</text>
+        
+        {/* Ultra Realistic Reflections */}
+        <path d="M40 28 Q55 20 70 28 L70 45 Q55 35 40 45 Z" fill="url(#ultraGoldReflection)" opacity="0.5"/>
+        <ellipse cx="50" cy="35" rx="4" ry="12" fill="#FFFFFF" opacity="0.6"/>
+        <ellipse cx="70" cy="40" rx="3" ry="8" fill="#FFFFFF" opacity="0.4"/>
+        
+        {/* Side Reflections */}
+        <rect x="28" y="45" width="2" height="25" rx="1" fill="url(#ultraGoldReflection)" opacity="0.4"/>
+        <rect x="90" y="45" width="2" height="25" rx="1" fill="url(#ultraGoldReflection)" opacity="0.4"/>
         
         {/* Bottom Reflection */}
-        <ellipse cx="50" cy="60" rx="15" ry="3" fill="url(#goldDark)" opacity="0.4"/>
+        <ellipse cx="60" cy="75" rx="20" ry="4" fill="url(#ultraGoldShadow)" opacity="0.3"/>
+        <ellipse cx="60" cy="74" rx="15" ry="2" fill="#FFFFFF" opacity="0.2"/>
         
-        {/* Side Engravings */}
-        <rect x="30" y="52" width="8" height="1" rx="0.5" fill="url(#goldDark)" opacity="0.5"/>
-        <rect x="62" y="52" width="8" height="1" rx="0.5" fill="url(#goldDark)" opacity="0.5"/>
-        <rect x="30" y="55" width="6" height="1" rx="0.5" fill="url(#goldDark)" opacity="0.4"/>
-        <rect x="64" y="55" width="6" height="1" rx="0.5" fill="url(#goldDark)" opacity="0.4"/>
+        {/* Engraved Details */}
+        <rect x="35" y="64" width="12" height="1.5" rx="0.75" fill="url(#ultraGoldShadow)" opacity="0.6"/>
+        <rect x="73" y="64" width="12" height="1.5" rx="0.75" fill="url(#ultraGoldShadow)" opacity="0.6"/>
+        <rect x="35" y="68" width="10" height="1" rx="0.5" fill="url(#ultraGoldShadow)" opacity="0.5"/>
+        <rect x="75" y="68" width="10" height="1" rx="0.5" fill="url(#ultraGoldShadow)" opacity="0.5"/>
+        <rect x="35" y="71" width="8" height="1" rx="0.5" fill="url(#ultraGoldShadow)" opacity="0.4"/>
+        <rect x="77" y="71" width="8" height="1" rx="0.5" fill="url(#ultraGoldShadow)" opacity="0.4"/>
+        
+        {/* Final Glow Effect */}
+        <circle cx="60" cy="56" r="50" fill="none" stroke="url(#ultraGoldHighlight)" strokeWidth="0.5" opacity="0.2" filter="url(#ultraGlow)"/>
       </svg>
     </div>
   );
@@ -373,8 +467,8 @@ const EntrepreneurshipSection = () => {
           <div className="text-center relative z-10">
             <div className="flex justify-center mb-6">
               <div className="text-center">
-                <RealisticTrophyIcon />
-                <p className="text-yellow-400 text-sm font-normal mt-4 tracking-wide font-mono">
+                <UltraRealisticTrophyIcon />
+                <p className="text-yellow-400 text-sm font-light mt-4 tracking-wide font-mono">
                   A Melhor Comissão do Mercado
                 </p>
               </div>

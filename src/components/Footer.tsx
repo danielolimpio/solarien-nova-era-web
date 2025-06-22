@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -106,7 +105,7 @@ const Footer = () => {
           });
         }
       }
-    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback'].includes(link)) {
+    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Blog/Notícias'].includes(link)) {
       // Navigate to respective pages and scroll to top
       let route = '';
       switch (link) {
@@ -133,6 +132,9 @@ const Footer = () => {
           break;
         case 'Envie o Feedback':
           route = '/feedback';
+          break;
+        case 'Blog/Notícias':
+          route = '/blog';
           break;
       }
       
@@ -236,7 +238,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link}>
-                    {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados'].includes(link) ? (
+                    {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados', 'Blog/Notícias'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

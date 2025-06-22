@@ -95,7 +95,7 @@ const DiscountSimulator = ({ children, selectedState, discount = '15%' }: Discou
               disabled={!billValue || parseFloat(billValue.replace(',', '.')) <= 0}
               className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
             >
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-5 h-5 mr-2" style={{ color: 'rgb(0, 33, 19)' }} />
               Calcular Economia
             </Button>
           </div>
@@ -214,7 +214,7 @@ const DiscountSimulator = ({ children, selectedState, discount = '15%' }: Discou
                   disabled={!billValue || parseFloat(billValue.replace(',', '.')) <= 0}
                   className="w-full bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
                 >
-                  <Zap className="w-5 h-5 mr-2" />
+                  <Zap className="w-5 h-5 mr-2" style={{ color: 'rgb(0, 33, 19)' }} />
                   Calcular Economia
                 </Button>
               </div>

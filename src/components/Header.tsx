@@ -118,7 +118,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-green-800 transition-colors duration-300"
           >
-            <Menu className="w-6 h-6 text-white" />
+            <Menu className="w-6 h-6" style={{ color: 'rgb(0, 33, 19)' }} />
           </button>
         </div>
 

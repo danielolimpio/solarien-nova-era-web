@@ -53,7 +53,7 @@ const CookieConsent = () => {
                 onClick={handleClose}
                 className="text-gray-400 hover:text-white h-8 w-8 p-0"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4" style={{ color: 'rgb(0, 33, 19)' }} />
               </Button>
             </div>
           </CardHeader>
@@ -114,14 +114,14 @@ const CookieConsent = () => {
                     size="sm"
                     className="text-gray-400 hover:text-solarien-primary text-xs flex items-center gap-1 justify-center"
                   >
-                    <Settings className="w-3 h-3" />
+                    <Settings className="w-3 h-3" style={{ color: 'rgb(0, 33, 19)' }} />
                     Minhas opções
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-slate-900 border-solarien-primary/30 text-white max-w-md">
                   <DialogHeader>
                     <DialogTitle className="text-solarien-primary flex items-center gap-2">
-                      <Settings className="w-5 h-5" />
+                      <Settings className="w-5 h-5" style={{ color: 'rgb(0, 33, 19)' }} />
                       Preferências de Cookies
                     </DialogTitle>
                   </DialogHeader>

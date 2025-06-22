@@ -25,7 +25,7 @@ const AboutSection = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-solarien-primary/30 mb-6" style={{ backgroundColor: '#002113' }}>
             <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-              <Award className="w-3 h-3 text-white" />
+              <Award className="w-3 h-3" style={{ color: 'rgb(0, 33, 19)' }} />
             </div>
             <span className="text-sm font-semibold text-solarien-primary">Liderança em Energia Sustentável</span>
           </div>
@@ -82,7 +82,7 @@ const AboutSection = () => {
               <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                    <Zap className="w-3 h-3 text-white" />
+                    <Zap className="w-3 h-3" style={{ color: 'rgb(0, 33, 19)' }} />
                   </div>
                   <span className="text-sm font-semibold text-gray-800">Tecnologia Avançada</span>
                 </div>
@@ -91,7 +91,7 @@ const AboutSection = () => {
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 transform translate-y-4 group-hover:translate-y-0">
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                    <Shield className="w-3 h-3 text-white" />
+                    <Shield className="w-3 h-3" style={{ color: 'rgb(0, 33, 19)' }} />
                   </div>
                   <span className="text-sm font-semibold text-gray-800">Qualidade Garantida</span>
                 </div>
@@ -108,7 +108,7 @@ const AboutSection = () => {
             <div className="bg-gradient-to-r from-solarien-primary/10 to-solarien-secondary/10 border border-solarien-primary/20 rounded-3xl p-8 shadow-xl backdrop-blur-sm hover:shadow-2xl transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
-                  <Users className="w-8 h-8 text-white" />
+                  <Users className="w-8 h-8" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
                 <h3 className="text-3xl font-bold text-solarien-primary">
                   Quem Somos
@@ -126,7 +126,7 @@ const AboutSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <MessageCircle className="w-7 h-7 text-white" />
+                  <MessageCircle className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Atendimento</h4>
@@ -136,7 +136,7 @@ const AboutSection = () => {
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-secondary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <DollarSign className="w-7 h-7 text-white" />
+                  <DollarSign className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Economia</h4>
@@ -146,7 +146,7 @@ const AboutSection = () => {
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-tertiary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-tertiary to-solarien-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Leaf className="w-7 h-7 text-white" />
+                  <Leaf className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Energia</h4>
@@ -156,7 +156,7 @@ const AboutSection = () => {
               
               <div className="flex items-center space-x-4 p-6 bg-white/70 rounded-2xl border border-solarien-primary/10 hover:shadow-lg transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-r from-solarien-primary/80 to-solarien-secondary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="w-7 h-7 text-white" />
+                  <FileText className="w-7 h-7" style={{ color: 'rgb(0, 33, 19)' }} />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Contrato</h4>
@@ -178,7 +178,7 @@ const AboutSection = () => {
             
             <div className="flex items-center mb-8 relative z-10">
               <div className="w-20 h-20 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                <Target className="w-10 h-10 text-white" />
+                <Target className="w-10 h-10" style={{ color: 'rgb(0, 33, 19)' }} />
               </div>
               <h3 className="text-3xl font-bold text-solarien-primary">Missão</h3>
             </div>
@@ -196,7 +196,7 @@ const AboutSection = () => {
             
             <div className="flex items-center mb-8 relative z-10">
               <div className="w-20 h-20 bg-gradient-to-r from-solarien-secondary to-solarien-tertiary rounded-3xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
-                <Eye className="w-10 h-10 text-white" />
+                <Eye className="w-10 h-10" style={{ color: 'rgb(0, 33, 19)' }} />
               </div>
               <h3 className="text-3xl font-bold text-solarien-secondary">Visão</h3>
             </div>

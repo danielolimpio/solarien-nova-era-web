@@ -117,7 +117,7 @@ As mudanças posicionam o Brasil como líder mundial em inovação no setor elé
 ## Conclusão
 
 A Medida Provisória nº 1.300/2025 representa uma evolução natural e necessária do setor elétrico brasileiro. Suas disposições prometem criar um ambiente mais competitivo, sustentável e inovador, beneficiando consumidores, empresas e a sociedade como um todo. O sucesso de sua implementação dependerá da colaboração entre governo, setor privado e sociedade civil para superar os desafios e aproveitar as oportunidades que se apresentam.`,
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/lovable-uploads/83d68f1c-b8a9-441e-bd03-c276d396d3f9.png',
     date: '2025-01-20',
     readTime: '15 min',
     category: 'Legislação',
@@ -387,7 +387,7 @@ Crescente demanda por energia renovável em todos os subgrupos está impulsionan
 ## Conclusão
 
 Compreender os subgrupos do Mercado Livre de Energia é fundamental para navegar com sucesso neste ambiente competitivo. Cada categoria oferece oportunidades únicas de economia e flexibilidade, mas também apresenta desafios específicos que devem ser cuidadosamente considerados. A consultoria especializada é essencial para maximizar os benefícios da migração e garantir o sucesso da operação no Mercado Livre, independentemente do subgrupo em que o consumidor se encontra.`,
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/lovable-uploads/ba1d97ab-490c-4e0d-bf90-e0561bdfb29a.png',
     date: '2025-01-16',
     readTime: '14 min',
     category: 'Mercado Livre',
@@ -555,7 +555,7 @@ Atualização contínua do marco regulatório para acompanhar a evolução do me
 ## Conclusão
 
 A abertura total do Mercado Livre de Energia em 2028 representa uma oportunidade histórica para modernizar definitivamente o setor elétrico brasileiro. Os benefícios potenciais são enormes: redução de custos, aumento da competitividade, aceleração da transição energética e democratização do acesso à energia limpa. O sucesso desta transformação dependerá da preparação adequada de todos os atores envolvidos e da implementação cuidadosa de mecanismos de proteção e estabilidade. O Brasil tem a oportunidade de se tornar uma referência mundial em mercados energéticos liberalizados, combinando competitividade com sustentabilidade e inclusão social.`,
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/lovable-uploads/02722964-8945-4234-aeb3-a6b0c0594321.png',
     date: '2025-01-14',
     readTime: '16 min',
     category: 'Mercado Livre',
@@ -832,7 +832,7 @@ Ferramentas low-code/no-code permitindo:
 ## Conclusão
 
 A transformação digital do Mercado Livre de Energia representa uma oportunidade histórica para criar um setor mais eficiente, sustentável e competitivo. As tecnologias emergentes não apenas otimizam operações existentes, mas criam possibilidades inteiramente novas de valor e inovação. O sucesso nesta transformação exigirá investimentos significativos, mudança cultural e colaboração entre todos os stakeholders do setor. Empresas que abraçarem proativamente esta revolução digital estarão melhor posicionadas para liderar o futuro energético do Brasil, enquanto aquelas que resistirem podem enfrentar obsolescência em um mercado cada vez mais competitivo e tecnologicamente avançado.`,
-    image: 'https://images.unsplash.com/photo-1518183214770-9cffbec72538?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: '/lovable-uploads/5069835f-93b4-40ab-8413-19af53f2ef6f.png',
     date: '2025-01-12',
     readTime: '18 min',
     category: 'Tecnologia',

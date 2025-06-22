@@ -40,19 +40,19 @@ const AboutSection = () => {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
-              <div className="text-3xl font-bold text-solarien-primary mb-2">2000+</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">2000+</div>
               <div className="text-sm text-gray-600">Usinas Solares</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
-              <div className="text-3xl font-bold text-solarien-secondary mb-2">3B+</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">3B+</div>
               <div className="text-sm text-gray-600">Faturamento Anual</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
-              <div className="text-3xl font-bold text-solarien-tertiary mb-2">100k+</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">100k+</div>
               <div className="text-sm text-gray-600">Clientes Ativos</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
-              <div className="text-3xl font-bold text-solarien-primary mb-2">100%</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">100%</div>
               <div className="text-sm text-gray-600">Energia Limpa</div>
             </div>
           </div>

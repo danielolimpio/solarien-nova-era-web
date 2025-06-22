@@ -70,12 +70,12 @@ const Header = () => {
     }`} style={{ backgroundColor: '#002113' }}>
       <div className="responsive-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo - Otimizado para todos os dispositivos */}
+          {/* Logo - Aumentado o tamanho no mobile */}
           <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <img 
               src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
               alt="Solarien Energy" 
-              className="h-8 sm:h-10 md:h-12 w-auto"
+              className="h-10 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
             />

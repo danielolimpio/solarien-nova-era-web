@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -116,7 +116,7 @@ const StateCoverageSimulator = () => {
           <br />
           <span className="font-semibold text-[#00844e] flex items-center gap-2 mt-2">
             <Home className="w-4 h-4" />
-            Grupo B - Baixa Tensão para Residências e Pequenos Comércios
+            Grupo B - Baixa Tensão (Residências, Comércios, Rural e Iluminação Pública)
             <Store className="w-4 h-4" />
           </span>
         </CardDescription>
@@ -141,26 +141,58 @@ const StateCoverageSimulator = () => {
           </div>
         </div>
 
-        {/* Group B Info Banner */}
+        {/* Detailed Group B Subgroups Info */}
         <div className="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-200 rounded-2xl p-6 mb-8">
-          <div className="flex items-center gap-4">
-            <div className="flex gap-2">
-              <div className="p-3 bg-blue-100 rounded-full">
-                <Home className="w-6 h-6 text-blue-600" />
+          <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">Grupo B - Baixa Tensão (Subgrupos Atendidos)</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white/80 rounded-xl p-4 border border-blue-100">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 bg-blue-100 rounded-full">
+                  <Home className="w-5 h-5 text-blue-600" />
+                </div>
+                <div className="font-bold text-gray-800">B1</div>
               </div>
-              <div className="p-3 bg-green-100 rounded-full">
-                <Store className="w-6 h-6 text-green-600" />
+              <div className="text-sm text-gray-700 font-semibold mb-1">Residencial</div>
+              <div className="text-xs text-gray-600">Consumidores residenciais</div>
+            </div>
+            
+            <div className="bg-white/80 rounded-xl p-4 border border-green-100">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 bg-green-100 rounded-full">
+                  <Tractor className="w-5 h-5 text-green-600" />
+                </div>
+                <div className="font-bold text-gray-800">B2</div>
               </div>
+              <div className="text-sm text-gray-700 font-semibold mb-1">Rural</div>
+              <div className="text-xs text-gray-600">Agricultura, pecuária, agroindústria</div>
             </div>
-            <div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Grupo B - Baixa Tensão</h3>
-              <p className="text-gray-700 font-medium">
-                ⚡ Ideal para <strong>residências</strong> e <strong>pequenos comércios</strong>
-              </p>
-              <p className="text-sm text-gray-600 mt-1">
-                Desconto de 15% aplicável a unidades do Grupo B (consumidores de baixa tensão)
-              </p>
+            
+            <div className="bg-white/80 rounded-xl p-4 border border-orange-100">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 bg-orange-100 rounded-full">
+                  <Store className="w-5 h-5 text-orange-600" />
+                </div>
+                <div className="font-bold text-gray-800">B3</div>
+              </div>
+              <div className="text-sm text-gray-700 font-semibold mb-1">Demais</div>
+              <div className="text-xs text-gray-600">Comércio, serviços, pequenas indústrias</div>
             </div>
+            
+            <div className="bg-white/80 rounded-xl p-4 border border-purple-100">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 bg-purple-100 rounded-full">
+                  <Lightbulb className="w-5 h-5 text-purple-600" />
+                </div>
+                <div className="font-bold text-gray-800">B4</div>
+              </div>
+              <div className="text-sm text-gray-700 font-semibold mb-1">Iluminação Pública</div>
+              <div className="text-xs text-gray-600">Poder público</div>
+            </div>
+          </div>
+          <div className="text-center mt-4 p-3 bg-gradient-to-r from-[#00844e]/10 to-[#02ff91]/10 rounded-lg border border-[#00844e]/20">
+            <p className="text-sm text-gray-700 font-medium">
+              ⚡ <strong>Desconto de 15%</strong> aplicável a todos os subgrupos do Grupo B (Baixa Tensão)
+            </p>
           </div>
         </div>
 
@@ -221,7 +253,7 @@ const StateCoverageSimulator = () => {
                 <div className="space-y-6 bg-white/70 rounded-xl p-6 border border-[#00844e]/20">
                   <h5 className="text-gray-800 font-bold text-xl flex items-center gap-3">
                     <Calculator className="w-6 h-6 text-[#00844e]" />
-                    Simule sua Economia - Grupo B
+                    Simule sua Economia - Grupo B (B1, B2, B3, B4)
                   </h5>
                   
                   <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-4">
@@ -229,7 +261,7 @@ const StateCoverageSimulator = () => {
                       <strong>💡 Dica importante:</strong> Digite o valor médio anual da sua conta de luz dos últimos 12 meses para uma simulação mais precisa.
                       <br />
                       <span className="text-xs mt-1 block">
-                        ⚡ Válido para consumidores do Grupo B (Baixa Tensão) - Residências e Pequenos Comércios
+                        ⚡ Válido para todos os subgrupos do Grupo B: B1 (Residencial), B2 (Rural), B3 (Comércio/Serviços), B4 (Iluminação Pública)
                       </span>
                     </p>
                   </div>
@@ -267,7 +299,7 @@ const StateCoverageSimulator = () => {
                     <h5 className="text-2xl font-bold text-[#00844e] mb-2">
                       🎉 Sua Economia em {selectedState}
                     </h5>
-                    <p className="text-gray-600">Grupo B - 15% de desconto garantido</p>
+                    <p className="text-gray-600">Grupo B - 15% de desconto garantido (B1, B2, B3, B4)</p>
                   </div>
 
                   <div className="bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl p-8 space-y-6 border border-[#00844e]/20">
@@ -341,7 +373,7 @@ const StateCoverageSimulator = () => {
 
         {/* Coverage Summary */}
         <div className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 rounded-2xl p-8 border-2 border-[#00844e]/20">
-          <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B</h4>
+          <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B (B1, B2, B3, B4)</h4>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center p-4 bg-white/70 rounded-xl">
               <div className="text-3xl font-bold text-[#00844e] mb-2">17</div>

@@ -146,132 +146,127 @@ const StateCoverageSimulator = () => {
           <div className="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-200 rounded-2xl p-6 mb-8">
             <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">Classificação dos Consumidores de Energia Elétrica</h3>
             
-            {/* Grupo A - Info Only */}
-            <div className="mb-6 p-4 bg-gradient-to-r from-blue-100/50 to-blue-50/50 rounded-xl border border-blue-200">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="flex items-center gap-2 cursor-help">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-blue-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
                       <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
-                      <span className="font-bold text-blue-700 text-lg">Grupo A – Alta e Média Tensão</span>
-                      <HelpCircle className="w-4 h-4 text-blue-500" />
+                      <div className="p-2 bg-blue-100 rounded-full">
+                        <Building className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">A</div>
                     </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.</p>
-                  </TooltipContent>
-                </Tooltip>
-              </div>
-              <div className="text-center text-sm text-blue-600 font-medium bg-blue-100/70 rounded-lg p-2">
-                ⚠️ Informativo - Simulação não disponível para este grupo
-              </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Alta e Média Tensão</div>
+                    <div className="text-xs text-gray-600">⚠️ Apenas informativo</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.</p>
+                </TooltipContent>
+              </Tooltip>
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-green-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <div className="p-2 bg-green-100 rounded-full">
+                        <Home className="w-5 h-5 text-green-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">B1</div>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Residencial</div>
+                    <div className="text-xs text-gray-600">✅ Simulação disponível</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Residências urbanas, apartamentos, condomínios.</p>
+                </TooltipContent>
+              </Tooltip>
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-yellow-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <div className="p-2 bg-yellow-100 rounded-full">
+                        <Tractor className="w-5 h-5 text-yellow-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">B2</div>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Rural</div>
+                    <div className="text-xs text-gray-600">✅ Simulação disponível</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Sítios, fazendas, agroindústrias, cooperativas rurais.</p>
+                </TooltipContent>
+              </Tooltip>
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-orange-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
+                      <div className="p-2 bg-orange-100 rounded-full">
+                        <Store className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">B3</div>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Demais Classes</div>
+                    <div className="text-xs text-gray-600">✅ Simulação disponível</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Pequenos comércios, padarias, salões, escolas particulares.</p>
+                </TooltipContent>
+              </Tooltip>
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-red-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                      <div className="p-2 bg-red-100 rounded-full">
+                        <Lightbulb className="w-5 h-5 text-red-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">B4a</div>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Iluminação Pública</div>
+                    <div className="text-xs text-gray-600">✅ Simulação disponível</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Postes de luz, praças públicas, túneis.</p>
+                </TooltipContent>
+              </Tooltip>
+              
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-white/80 rounded-xl p-4 border border-purple-100 cursor-help hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <div className="p-2 bg-purple-100 rounded-full">
+                        <Factory className="w-5 h-5 text-purple-600" />
+                      </div>
+                      <div className="font-bold text-gray-800">B4b</div>
+                    </div>
+                    <div className="text-sm text-gray-700 font-semibold mb-1">Serviços Públicos</div>
+                    <div className="text-xs text-gray-600">✅ Simulação disponível</div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-sm">Semáforos, câmeras de segurança, fontes luminosas públicas.</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
-
-            {/* Grupo B - Available for Simulation */}
-            <div className="bg-gradient-to-r from-green-100/50 to-green-50/50 rounded-xl border border-green-200 p-4">
-              <h4 className="text-lg font-bold text-green-700 mb-4 text-center">🟢 Grupo B - Baixa Tensão (Disponível para Simulação)</h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white/80 rounded-xl p-4 border border-green-100 cursor-help hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-                        <div className="p-2 bg-green-100 rounded-full">
-                          <Home className="w-5 h-5 text-green-600" />
-                        </div>
-                        <div className="font-bold text-gray-800">B1</div>
-                      </div>
-                      <div className="text-sm text-gray-700 font-semibold mb-1">Residencial</div>
-                      <div className="text-xs text-gray-600">Consumidores residenciais</div>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Residências urbanas, apartamentos, condomínios.</p>
-                  </TooltipContent>
-                </Tooltip>
-                
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white/80 rounded-xl p-4 border border-yellow-100 cursor-help hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
-                        <div className="p-2 bg-yellow-100 rounded-full">
-                          <Tractor className="w-5 h-5 text-yellow-600" />
-                        </div>
-                        <div className="font-bold text-gray-800">B2</div>
-                      </div>
-                      <div className="text-sm text-gray-700 font-semibold mb-1">Rural</div>
-                      <div className="text-xs text-gray-600">Agricultura, pecuária, agroindústria</div>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Sítios, fazendas, agroindústrias, cooperativas rurais.</p>
-                  </TooltipContent>
-                </Tooltip>
-                
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white/80 rounded-xl p-4 border border-orange-100 cursor-help hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
-                        <div className="p-2 bg-orange-100 rounded-full">
-                          <Store className="w-5 h-5 text-orange-600" />
-                        </div>
-                        <div className="font-bold text-gray-800">B3</div>
-                      </div>
-                      <div className="text-sm text-gray-700 font-semibold mb-1">Demais Classes</div>
-                      <div className="text-xs text-gray-600">Comércio, serviços, pequenas indústrias</div>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Pequenos comércios, padarias, salões, escolas particulares.</p>
-                  </TooltipContent>
-                </Tooltip>
-                
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white/80 rounded-xl p-4 border border-red-100 cursor-help hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-                        <div className="p-2 bg-red-100 rounded-full">
-                          <Lightbulb className="w-5 h-5 text-red-600" />
-                        </div>
-                        <div className="font-bold text-gray-800">B4a</div>
-                      </div>
-                      <div className="text-sm text-gray-700 font-semibold mb-1">Iluminação Pública</div>
-                      <div className="text-xs text-gray-600">Poder público</div>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Postes de luz, praças públicas, túneis.</p>
-                  </TooltipContent>
-                </Tooltip>
-                
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <div className="bg-white/80 rounded-xl p-4 border border-purple-100 cursor-help hover:shadow-md transition-shadow">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
-                        <div className="p-2 bg-purple-100 rounded-full">
-                          <Factory className="w-5 h-5 text-purple-600" />
-                        </div>
-                        <div className="font-bold text-gray-800">B4b</div>
-                      </div>
-                      <div className="text-sm text-gray-700 font-semibold mb-1">Serviços Públicos</div>
-                      <div className="text-xs text-gray-600">Poder público</div>
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-sm">Semáforos, câmeras de segurança, fontes luminosas públicas.</p>
-                  </TooltipContent>
-                </Tooltip>
-              </div>
-              <div className="text-center mt-4 p-3 bg-gradient-to-r from-[#00844e]/10 to-[#02ff91]/10 rounded-lg border border-[#00844e]/20">
-                <p className="text-sm text-gray-700 font-medium">
-                  ⚡ <strong>Desconto de 15%</strong> aplicável a todos os subgrupos do Grupo B (Baixa Tensão)
-                </p>
-              </div>
+            
+            <div className="text-center mt-4 p-3 bg-gradient-to-r from-[#00844e]/10 to-[#02ff91]/10 rounded-lg border border-[#00844e]/20">
+              <p className="text-sm text-gray-700 font-medium">
+                ⚡ <strong>Desconto de 15%</strong> aplicável a todos os subgrupos do Grupo B (Baixa Tensão)
+              </p>
             </div>
           </div>
 

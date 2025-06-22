@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download } from 'lucide-react';
+import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download, Crown } from 'lucide-react';
 import { Button } from './ui/button';
 
 const EntrepreneurshipSection = () => {
@@ -237,15 +237,16 @@ const EntrepreneurshipSection = () => {
           </div>
 
           <div className="text-center relative z-10">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                <Banknote className="w-8 h-8" style={{ color: '#002113' }} />
-              </div>
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                <Star className="w-6 h-6" style={{ color: '#002113' }} />
-              </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
-                <Award className="w-7 h-7" style={{ color: '#002113' }} />
+            <div className="flex items-center justify-center mb-6">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-4 border-yellow-300/50">
+                  <Crown className="w-10 h-10 text-yellow-900" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/30 to-transparent rounded-full"></div>
+                </div>
+                <div className="absolute -inset-2 bg-yellow-400/20 rounded-full blur-lg"></div>
+                <p className="text-yellow-400 text-xs font-semibold mt-3 tracking-wide">
+                  A Melhor Comissão do Mercado
+                </p>
               </div>
             </div>
             

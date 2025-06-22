@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -149,13 +150,13 @@ const PartnersCarousel = () => {
           </div>
         </div>
 
-        {/* Indicators - Reduzidos para tamanho menor */}
+        {/* Indicators - Reduzidos para tamanho muito menor */}
         <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-friendly ${
+              className={`w-1 h-1 rounded-full transition-all duration-300 touch-friendly ${
                 index === currentIndex ? 'bg-solarien-primary' : 'bg-gray-300'
               }`}
               aria-label={`Slide ${index + 1}`}

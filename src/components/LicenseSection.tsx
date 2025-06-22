@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Shield, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Button } from './ui/button';
@@ -156,7 +155,7 @@ const LicenseSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
+              <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-12 py-6 text-lg rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
                 SEJA UM LICENCIADO
               </Button>
             </a>

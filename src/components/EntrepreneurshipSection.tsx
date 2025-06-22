@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -289,7 +288,7 @@ const EntrepreneurshipSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-16 py-8 text-2xl rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
+            <Button className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-primary text-black font-bold px-12 py-6 text-lg rounded-2xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-solarien-primary/50 glow-effect">
               QUERO EMPREENDER AGORA
             </Button>
           </a>

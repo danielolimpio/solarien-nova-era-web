@@ -18,6 +18,14 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		screens: {
+			'xs': '475px',
+			'sm': '640px',
+			'md': '768px',
+			'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px',
+		},
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
@@ -71,6 +79,14 @@ export default {
 			},
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],
+			},
+			fontSize: {
+				'2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+			},
+			spacing: {
+				'18': '4.5rem',
+				'88': '22rem',
+				'128': '32rem',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -142,6 +158,10 @@ export default {
 					'50%': { 
 						boxShadow: '0 0 15px rgba(2, 255, 145, 0.5)'
 					}
+				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
 				}
 			},
 			animation: {
@@ -154,7 +174,8 @@ export default {
 				'energy-pulse': 'energy-pulse 2s infinite',
 				'target-pulse': 'target-pulse 4s ease-in-out infinite',
 				'soft-pulse': 'soft-pulse 3s ease-in-out infinite',
-				'gentle-glow': 'gentle-glow 4s ease-in-out infinite'
+				'gentle-glow': 'gentle-glow 4s ease-in-out infinite',
+				'shimmer': 'shimmer 2s infinite'
 			}
 		}
 	},

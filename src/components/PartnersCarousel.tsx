@@ -149,13 +149,13 @@ const PartnersCarousel = () => {
           </div>
         </div>
 
-        {/* Indicators - Melhorados para touch */}
+        {/* Indicators - Reduzidos para tamanho menor */}
         <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 touch-friendly ${
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-friendly ${
                 index === currentIndex ? 'bg-solarien-primary' : 'bg-gray-300'
               }`}
               aria-label={`Slide ${index + 1}`}

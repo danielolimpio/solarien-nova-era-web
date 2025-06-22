@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -245,10 +246,16 @@ const StateCoverageSimulator = () => {
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#00844e] to-[#02ff91] flex items-center justify-center">
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                        group.id === 'grupo-a' 
+                          ? 'bg-gradient-to-br from-blue-500 to-blue-700' 
+                          : 'bg-gradient-to-br from-[#00844e] to-[#02ff91]'
+                      }`}>
                         <div className="w-3 h-3 rounded-full bg-white"></div>
                       </div>
-                      <h4 className="font-semibold text-sm text-[#00844e]">{group.title}</h4>
+                      <h4 className={`font-semibold text-sm ${
+                        group.id === 'grupo-a' ? 'text-blue-700' : 'text-[#00844e]'
+                      }`}>{group.title}</h4>
                     </div>
                     <Tooltip>
                       <TooltipTrigger asChild>

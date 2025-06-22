@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle, Circle, Percent } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle, Circle, Percent, Clock, Calendar } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -454,20 +454,20 @@ const StateCoverageSimulator = () => {
             <h4 className="text-[#00844e] text-2xl font-bold mb-6 text-center">🇧🇷 Cobertura Nacional - Grupo B (B1, B2, B3, B4)</h4>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#00844e] mb-2">17</div>
-                <div className="text-gray-600 font-semibold">Estados Cobertos</div>
+                <div className="text-3xl font-bold text-[#00844e] mb-2">< 2,3</div>
+                <div className="text-gray-600 font-semibold">kV Tensão nominal</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#02ff91] mb-2">23</div>
-                <div className="text-gray-600 font-semibold">Distribuidoras</div>
+                <div className="text-3xl font-bold text-[#02ff91] mb-2">12</div>
+                <div className="text-gray-600 font-semibold">Meses Fidelidade</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#00844e] mb-2">15%</div>
-                <div className="text-gray-600 font-semibold">Desconto</div>
+                <div className="text-3xl font-bold text-[#00844e] mb-2">150</div>
+                <div className="text-gray-600 font-semibold">kWh/mês Consumo Mínimo</div>
               </div>
               <div className="text-center p-4 bg-white/70 rounded-xl">
-                <div className="text-3xl font-bold text-[#02ff91] mb-2">100%</div>
-                <div className="text-gray-600 font-semibold">Renovável</div>
+                <div className="text-3xl font-bold text-[#02ff91] mb-2">90</div>
+                <div className="text-gray-600 font-semibold">dias início da injeção</div>
               </div>
             </div>
           </div>

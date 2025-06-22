@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, Search, Tag, Filter, BookOpen } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Filter, Tag, BookOpen } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SearchInput from '../components/SearchInput';
 import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
 
 interface BlogPost {
   id: string;
@@ -127,8 +126,8 @@ const Blog = () => {
     navigate(`/blog/${postId}`);
   };
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
   };
 
   const clearSearch = () => {
@@ -161,26 +160,12 @@ const Blog = () => {
 
             {/* Search and Filter */}
             <div className="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto mb-8">
-              <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 z-10" />
-                <Input
-                  type="text"
-                  placeholder="Buscar artigos..."
-                  value={searchTerm}
-                  onChange={handleSearchChange}
-                  className="pl-12 pr-10 h-12 bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-gray-300 focus:border-solarien-primary focus:ring-2 focus:ring-solarien-primary/20 focus:bg-white/20 transition-all duration-300"
-                />
-                {searchTerm && (
-                  <button
-                    onClick={clearSearch}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors z-10"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                )}
-              </div>
+              <SearchInput
+                value={searchTerm}
+                onChange={handleSearchChange}
+                onClear={clearSearch}
+                placeholder="Buscar artigos..."
+              />
               <div className="flex gap-2 flex-wrap justify-center lg:justify-start">
                 {categories.map(category => (
                   <Button

@@ -162,18 +162,18 @@ const Blog = () => {
             {/* Search and Filter */}
             <div className="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto mb-8">
               <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 z-10" />
                 <Input
                   type="text"
                   placeholder="Buscar artigos..."
                   value={searchTerm}
                   onChange={handleSearchChange}
-                  className="pl-10 pr-10 bg-slate-800/50 border-slate-700 text-white placeholder-gray-400 focus:border-solarien-primary focus:ring-2 focus:ring-solarien-primary/20"
+                  className="pl-12 pr-10 h-12 bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-gray-300 focus:border-solarien-primary focus:ring-2 focus:ring-solarien-primary/20 focus:bg-white/20 transition-all duration-300"
                 />
                 {searchTerm && (
                   <button
                     onClick={clearSearch}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors z-10"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -189,8 +189,8 @@ const Blog = () => {
                     variant={selectedCategory === category ? "default" : "outline"}
                     size="sm"
                     className={selectedCategory === category 
-                      ? "bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black border-0" 
-                      : "border-slate-700 text-gray-300 hover:bg-slate-800/50"
+                      ? "bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black border-0 h-12" 
+                      : "border-white/20 text-gray-300 hover:bg-white/10 hover:border-solarien-primary/50 h-12"
                     }
                   >
                     <Filter className="w-3 h-3 mr-1" />

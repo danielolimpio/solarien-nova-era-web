@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Users, Target, Eye, Award, Zap, Shield } from 'lucide-react';
 
@@ -22,7 +23,7 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Enhanced Header with Stats */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-solarien-primary/30 mb-6" style={{ backgroundColor: '#002113' }}>
             <Award className="w-5 h-5 text-solarien-primary" />
             <span className="text-sm font-semibold text-solarien-primary">Liderança em Energia Sustentável</span>
@@ -205,3 +206,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, Share2, BookOpen, Tag, User } from 'lucide-react';
@@ -401,12 +400,6 @@ const BlogPost = () => {
             {paragraph.replace('### ', '')}
           </h3>
         );
-      } else if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-        return (
-          <h4 key={index} className="text-xl font-semibold text-solarien-secondary mb-3 mt-4">
-            {paragraph.replace(/\*\*/g, '')}
-          </h4>
-        );
       } else if (paragraph.startsWith('- ')) {
         return (
           <li key={index} className="text-gray-300 mb-2 ml-6 list-disc">
@@ -428,9 +421,11 @@ const BlogPost = () => {
           );
         }
       } else if (paragraph.trim()) {
+        // Process bold text by converting **text** to <strong>text</strong>
+        const processedText = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
         return (
-          <p key={index} className="text-gray-300 mb-4 leading-relaxed">
-            {paragraph}
+          <p key={index} className="text-gray-300 mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: processedText }}>
           </p>
         );
       }

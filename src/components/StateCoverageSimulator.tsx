@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -108,7 +109,7 @@ const StateCoverageSimulator = () => {
         <CardHeader className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 border-b border-[#00844e]/10">
           <CardTitle className="text-[#00844e] text-3xl flex items-center gap-3">
             <div className="p-2 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full">
-              <Calculator className="w-8 h-8 text-white" />
+              <Calculator className="w-8 h-8" style={{ color: 'rgb(0, 33, 19)' }} />
             </div>
             Simulador Nacional de Energia Solar
           </CardTitle>

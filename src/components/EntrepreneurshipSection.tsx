@@ -246,7 +246,7 @@ const EntrepreneurshipSection = () => {
                     className="w-20 h-20 object-contain"
                   />
                 </div>
-                <p className="text-yellow-400 text-sm font-light mt-4 tracking-wide font-mono">
+                <p className="text-yellow-600 text-sm font-bold mt-4 tracking-wide font-mono bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                   A Melhor Comissão do Mercado
                 </p>
               </div>

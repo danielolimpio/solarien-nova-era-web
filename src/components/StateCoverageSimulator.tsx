@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Target, Award, Percent, Clock, Calendar, HelpCircle, Circle } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Target, Award, Percent, Clock, Calendar, HelpCircle, Circle, Check, X } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -83,42 +82,55 @@ const StateCoverageSimulator = () => {
       title: 'Grupo A – Alta e Média Tensão',
       color: 'blue',
       icon: '🔵',
-      tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.'
+      tooltip: 'Grandes indústrias, shoppings, universidades, mineradoras, redes de hospitais.',
+      allowsSimulation: false,
+      discount: 'até 45%',
+      note: 'Para esse grupo não é possível realizar simulação, consultar um Licenciado'
     },
     {
       id: 'grupo-b1',
       title: 'Grupo B1 – Residencial',
       color: 'green',
       icon: '🟢',
-      tooltip: 'Residências urbanas, apartamentos, condomínios.'
+      tooltip: 'Residências urbanas, apartamentos, condomínios.',
+      allowsSimulation: true,
+      discount: '15%'
     },
     {
       id: 'grupo-b2',
       title: 'Grupo B2 – Rural',
       color: 'yellow',
       icon: '🟡',
-      tooltip: 'Sítios, fazendas, agroindústrias, cooperativas rurais.'
+      tooltip: 'Sítios, fazendas, agroindústrias, cooperativas rurais.',
+      allowsSimulation: true,
+      discount: '15%'
     },
     {
       id: 'grupo-b3',
       title: 'Grupo B3 – Demais Classes',
       color: 'orange',
       icon: '🟠',
-      tooltip: 'Pequenos comércios, padarias, salões, escolas particulares.'
+      tooltip: 'Pequenos comércios, padarias, salões, escolas particulares.',
+      allowsSimulation: true,
+      discount: '15%'
     },
     {
       id: 'grupo-b4a',
       title: 'Grupo B4a – Iluminação Pública',
       color: 'red',
       icon: '🔴',
-      tooltip: 'Postes de luz, praças públicas, túneis.'
+      tooltip: 'Postes de luz, praças públicas, túneis.',
+      allowsSimulation: true,
+      discount: '15%'
     },
     {
       id: 'grupo-b4b',
       title: 'Grupo B4b – Serviços Públicos',
       color: 'purple',
       icon: '🟣',
-      tooltip: 'Semáforos, câmeras de segurança, fontes luminosas públicas.'
+      tooltip: 'Semáforos, câmeras de segurança, fontes luminosas públicas.',
+      allowsSimulation: true,
+      discount: '15%'
     }
   ];
 
@@ -226,7 +238,7 @@ const StateCoverageSimulator = () => {
                   key={group.id}
                   className={`p-4 rounded-lg border-2 ${getColorClasses(group.color)} transition-all duration-300 hover:shadow-lg`}
                 >
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-lg">{group.icon}</span>
                       <h4 className="font-semibold text-sm">{group.title}</h4>
@@ -241,6 +253,35 @@ const StateCoverageSimulator = () => {
                         <p className="text-sm">{group.tooltip}</p>
                       </TooltipContent>
                     </Tooltip>
+                  </div>
+                  
+                  {/* Simulation Status and Discount */}
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      {group.allowsSimulation ? (
+                        <Check className="w-4 h-4 text-green-600" />
+                      ) : (
+                        <X className="w-4 h-4 text-red-600" />
+                      )}
+                      <span className="text-xs font-medium">
+                        {group.allowsSimulation ? 'Aceita simulação' : 'Não aceita simulação'}
+                      </span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <Percent className="w-4 h-4 text-blue-600" />
+                      <span className="text-xs font-medium">
+                        Desconto: {group.discount}
+                      </span>
+                    </div>
+                    
+                    {group.note && (
+                      <div className="bg-yellow-50 border border-yellow-200 rounded p-2 mt-2">
+                        <p className="text-xs text-yellow-800 font-medium">
+                          ⚠️ {group.note}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

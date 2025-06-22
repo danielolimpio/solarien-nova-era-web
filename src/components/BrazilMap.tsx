@@ -26,33 +26,6 @@ const BrazilMap = () => {
 
         <StateCoverageSimulator />
 
-        {/* Compact Stats Block */}
-        <div className="bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl p-6 border border-[#00844e]/20 mt-16 max-w-4xl mx-auto">
-          <h3 className="text-xl font-bold text-[#00844e] mb-4 text-center">🇧🇷 Nossa Cobertura Nacional</h3>
-          <div className="flex flex-wrap justify-center gap-6 text-center">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-[#00844e] rounded-full"></div>
-              <span className="font-bold text-[#00844e] text-lg">17</span>
-              <span className="text-gray-700 text-sm">Estados</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-[#02ff91] rounded-full"></div>
-              <span className="font-bold text-[#02ff91] text-lg">4200+</span>
-              <span className="text-gray-700 text-sm">Municípios</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-[#00844e] rounded-full"></div>
-              <span className="font-bold text-[#00844e] text-lg">6k+</span>
-              <span className="text-gray-700 text-sm">Clientes</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-[#02ff91] rounded-full"></div>
-              <span className="font-bold text-[#02ff91] text-lg">15%</span>
-              <span className="text-gray-700 text-sm">Desconto Grupo B</span>
-            </div>
-          </div>
-        </div>
-
         {/* Grupo A Information */}
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 rounded-2xl p-6 mt-8 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center flex items-center justify-center gap-3">

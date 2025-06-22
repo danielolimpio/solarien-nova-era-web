@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle } from 'lucide-react';
+import { MapPin, Zap, Calculator, TrendingDown, Building, Sparkles, Target, Award, Home, Store, Tractor, Factory, Lightbulb, HelpCircle, Balloon, Percent, Tower } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
   const [selectedState, setSelectedState] = useState('');
@@ -126,7 +126,10 @@ const StateCoverageSimulator = () => {
           {/* Hero Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="text-center p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl border border-[#00844e]/20">
-              <Award className="w-12 h-12 text-[#00844e] mx-auto mb-3" />
+              <div className="relative w-12 h-12 mx-auto mb-3">
+                <Balloon className="w-12 h-12 text-[#00844e] absolute" />
+                <Percent className="w-6 h-6 text-[#00844e] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+              </div>
               <div className="text-3xl font-bold text-[#00844e] mb-1">15%</div>
               <div className="text-gray-600 font-medium">Desconto Garantido</div>
             </div>
@@ -136,7 +139,7 @@ const StateCoverageSimulator = () => {
               <div className="text-gray-600 font-medium">Estados Cobertos</div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-2xl border border-[#00844e]/20">
-              <Building className="w-12 h-12 text-[#00844e] mx-auto mb-3" />
+              <Tower className="w-12 h-12 text-[#00844e] mx-auto mb-3" />
               <div className="text-3xl font-bold text-[#00844e] mb-1">23</div>
               <div className="text-gray-600 font-medium">Distribuidoras</div>
             </div>

@@ -40,6 +40,10 @@ const PartnersCarousel = () => {
     {
       name: 'Coelba',
       logo: '/lovable-uploads/bd5aafb2-99d6-4f3e-a189-759b2a83ae1f.png'
+    },
+    {
+      name: 'Elektro',
+      logo: '/lovable-uploads/1e4d5e65-1fdf-40a6-9c11-8bb7381454e2.png'
     }
   ];
 

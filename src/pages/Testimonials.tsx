@@ -222,21 +222,21 @@ const Testimonials = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="flex justify-between items-center mt-8">
+                <div className="flex flex-col sm:flex-row justify-between items-center mt-8 gap-4">
                   <button
                     onClick={prevTestimonial}
-                    className="flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-[#02ff91]"
+                    className="flex items-center gap-2 px-4 sm:px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-[#02ff91] text-sm sm:text-base"
                   >
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                     Anterior
                   </button>
 
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 order-first sm:order-none">
                     {testimonials.map((_, index) => (
                       <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
+                        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                           index === currentIndex 
                             ? 'bg-solarien-primary' 
                             : 'bg-gray-300 hover:bg-gray-400'
@@ -247,10 +247,10 @@ const Testimonials = () => {
 
                   <button
                     onClick={nextTestimonial}
-                    className="flex items-center gap-2 px-6 py-3 bg-solarien-primary hover:bg-solarien-primary/90 text-black rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 sm:px-6 py-3 bg-solarien-primary hover:bg-solarien-primary/90 text-black rounded-lg transition-colors text-sm sm:text-base"
                   >
                     Próximo
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
               </div>

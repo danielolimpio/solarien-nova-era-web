@@ -105,30 +105,32 @@ const Header = () => {
           </nav>
 
           {/* Search and CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 relative">
             {/* Search Component */}
-            <div className="relative flex items-center">
+            <div className="relative">
               {isSearchOpen ? (
-                <form onSubmit={handleSearchSubmit} className="flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Buscar..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-64 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-solarien-primary transition-all duration-300"
-                    autoFocus
-                  />
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setIsSearchOpen(false);
-                      setSearchQuery('');
-                    }}
-                    className="ml-2 p-2 text-white hover:text-solarien-primary transition-colors duration-300"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-                </form>
+                <div className="absolute right-0 top-0 z-50">
+                  <form onSubmit={handleSearchSubmit} className="flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-1">
+                    <input
+                      type="text"
+                      placeholder="Buscar..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-64 px-3 py-2 bg-transparent text-white placeholder-gray-300 focus:outline-none"
+                      autoFocus
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearchQuery('');
+                      }}
+                      className="p-2 text-white hover:text-solarien-primary transition-colors duration-300"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </form>
+                </div>
               ) : (
                 <button
                   onClick={() => setIsSearchOpen(true)}

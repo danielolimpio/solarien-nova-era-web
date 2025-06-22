@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Star, Award, Banknote, Rocket, Download } from 'lucide-react';
 import { Button } from './ui/button';
@@ -144,10 +143,10 @@ const EntrepreneurshipSection = () => {
     <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001a0e 0%, #002113 50%, #003d20 100%)' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-solarien-primary/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute top-1/3 right-20 w-24 h-24 bg-solarien-secondary/15 rounded-full blur-lg animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-solarien-primary/5 rounded-full blur-2xl animate-pulse delay-2000"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-28 h-28 bg-solarien-secondary/10 rounded-full blur-xl animate-pulse delay-3000"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-solarien-primary/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/3 right-20 w-24 h-24 bg-solarien-secondary/15 rounded-full blur-lg"></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-solarien-primary/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-28 h-28 bg-solarien-secondary/10 rounded-full blur-xl"></div>
         
         {/* Floating energy particles */}
         <div className="absolute inset-0">
@@ -169,10 +168,8 @@ const EntrepreneurshipSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-s
-
-larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
-            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
+          <div className="inline-flex items-center gap-2 bg-solarien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
+            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
               <Zap className="w-4 h-4" style={{ color: '#002113' }} />
             </div>
             <span className="text-solarien-primary font-medium">Oportunidade de Negócio</span>
@@ -200,7 +197,7 @@ larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300"
             >
-              <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
+              <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
                 <Download className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="font-medium">Baixar Apresentação PDF</span>
@@ -217,7 +214,7 @@ larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-solarien-primary/20 to-solarien-secondary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-green-900/50 to-green-800/30 backdrop-blur-sm border border-solarien-primary/30 rounded-2xl p-6 hover:border-solarien-primary/50 transition-all duration-500 transform hover:scale-105">
-                <div className={`w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 animate-[pulse_4s_ease-in-out_infinite_${index * 0.5}s]`}>
+                <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <benefit.icon className="w-8 h-8" style={{ color: '#002113' }} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
@@ -241,13 +238,13 @@ larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6"
 
           <div className="text-center relative z-10">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite]">
+              <div className="w-12 h-12 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
                 <Banknote className="w-8 h-8" style={{ color: '#002113' }} />
               </div>
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_0.5s]">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
                 <Star className="w-6 h-6" style={{ color: '#002113' }} />
               </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center animate-[pulse_4s_ease-in-out_infinite_1s]">
+              <div className="w-10 h-10 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
                 <Award className="w-7 h-7" style={{ color: '#002113' }} />
               </div>
             </div>
@@ -300,19 +297,19 @@ larien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6"
           {/* Icons below the text */}
           <div className="flex justify-center items-center gap-8 mt-8">
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite]">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2">
                 <Rocket className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Inovação</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite_0.5s]">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2">
                 <Zap className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Energia</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2 animate-[pulse_4s_ease-in-out_infinite_1s]">
+              <div className="w-8 h-8 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center mb-2">
                 <Target className="w-4 h-4" style={{ color: '#002113' }} />
               </div>
               <span className="text-solarien-primary text-sm font-medium">Objetivo</span>

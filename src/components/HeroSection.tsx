@@ -11,9 +11,9 @@ const HeroSection = () => {
   
   const texts = [
     'Energia do Futuro',
-    'Economia Garantida',
-    'Portabilidade Grátis',
-    'Suporte Humanizado'
+    'Economia até 45%',
+    'Migração Grátis!',
+    'Suporte Rápido'
   ];
 
   const handleSaibaMaisClick = () => {
@@ -173,7 +173,7 @@ const HeroSection = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-4 pt-20">
+        <div className="relative z-10 text-center px-4 pt-32 md:pt-20">
           <div className="max-w-4xl mx-auto">
             {/* Animated Typing Text */}
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight flex items-center justify-center overflow-visible pb-2">
@@ -191,19 +191,19 @@ const HeroSection = () => {
               para energia por assinatura e mercado livre
             </p>
 
-            {/* New Benefits Section with Icons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
-              <div className="flex items-center gap-2">
-                <CircleDollarSign className="w-5 h-5 text-[#02ff91]" />
-                <span className="text-gray-300 font-medium">Sem Custos</span>
+            {/* New Benefits Section with Icons - Responsive Layout */}
+            <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 mb-12">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <CircleDollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium text-sm sm:text-base">Sem Custos</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Wrench className="w-5 h-5 text-[#02ff91]" />
-                <span className="text-gray-300 font-medium">Sem Obras</span>
+              <div className="flex items-center gap-1 sm:gap-2">
+                <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium text-sm sm:text-base">Sem Obras</span>
               </div>
-              <div className="flex items-center gap-2">
-                <SquareSlash className="w-5 h-5 text-[#02ff91]" />
-                <span className="text-gray-300 font-medium">Sem Placas</span>
+              <div className="flex items-center gap-1 sm:gap-2">
+                <SquareSlash className="w-4 h-4 sm:w-5 sm:h-5 text-[#02ff91]" />
+                <span className="text-gray-300 font-medium text-sm sm:text-base">Sem Placas</span>
               </div>
             </div>
             

@@ -175,9 +175,9 @@ const HeroSection = () => {
         {/* Content */}
         <div className="relative z-10 text-center px-4 pt-32 md:pt-20">
           <div className="max-w-4xl mx-auto">
-            {/* Animated Typing Text */}
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight flex items-center justify-center overflow-visible pb-2 hover:animate-soft-pulse transition-all duration-300">
-              <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent overflow-visible">
+            {/* Animated Typing Text - Fixed overflow and line-height */}
+            <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight flex items-center justify-center min-h-[1.3em] pb-4 hover:animate-soft-pulse transition-all duration-300">
+              <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent block leading-[1.2] pb-2">
                 {displayText}
                 <span className="animate-pulse">|</span>
               </span>

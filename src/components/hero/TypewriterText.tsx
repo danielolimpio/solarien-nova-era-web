@@ -36,7 +36,6 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({ texts }) => {
     <h1 className="text-4xl md:text-7xl font-bold text-white mb-0 leading-tight flex items-center justify-center min-h-[1.3em] hover:animate-soft-pulse transition-all duration-300">
       <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent block leading-[1.2]">
         {displayText}
-        <span className="animate-pulse">|</span>
       </span>
     </h1>
   );

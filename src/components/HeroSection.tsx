@@ -1,14 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from './ui/button';
 import DiscountSimulator from './DiscountSimulator';
 import { CircleDollarSign, Wrench, SquareSlash } from 'lucide-react';
+import TypewriterText from './hero/TypewriterText';
 
 const HeroSection = () => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  
   const texts = [
     'Energia do Futuro',
     'Reduza até 45%',
@@ -23,28 +20,6 @@ const HeroSection = () => {
     window.open(whatsappUrl, '_blank');
   };
 
-  useEffect(() => {
-    const currentText = texts[currentIndex];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayText.length < currentText.length) {
-          setDisplayText(currentText.slice(0, displayText.length + 1));
-        } else {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
-        } else {
-          setIsDeleting(false);
-          setCurrentIndex((currentIndex + 1) % texts.length);
-        }
-      }
-    }, isDeleting ? 50 : 100);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, currentIndex, isDeleting, texts]);
-
   return (
     <>
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -58,113 +33,6 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
         </div>
 
-        {/* Ultra Realistic Solar Rays Animation */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Raios primários ultra-finos */}
-          {[...Array(40)].map((_, i) => (
-            <div
-              key={`sunray-primary-${i}`}
-              className="absolute"
-              style={{
-                left: `${Math.random() * 120 - 10}%`,
-                top: `-30%`,
-                width: '0.2px',
-                height: '130%',
-                animationDelay: `${Math.random() * 40}s`,
-                animationDuration: `${35 + Math.random() * 25}s`,
-                transform: `rotate(${12 + Math.random() * 8}deg) translateY(-60px)`,
-                opacity: Math.random() * 0.15 + 0.10,
-                borderRadius: '50% 50% 50% 50% / 90% 90% 10% 10%',
-                background: 'linear-gradient(to bottom, rgba(255, 215, 0, 0.18) 0%, rgba(255, 223, 127, 0.12) 25%, rgba(255, 235, 157, 0.08) 60%, transparent 100%)',
-                animation: `sunrayFall ${35 + Math.random() * 25}s linear infinite`,
-              }}
-            />
-          ))}
-          
-          {/* Raios secundários dourados */}
-          {[...Array(25)].map((_, i) => (
-            <div
-              key={`sunray-gold-${i}`}
-              className="absolute"
-              style={{
-                left: `${Math.random() * 115 - 7}%`,
-                top: `-25%`,
-                width: '0.3px',
-                height: '125%',
-                animationDelay: `${Math.random() * 30}s`,
-                animationDuration: `${25 + Math.random() * 20}s`,
-                transform: `rotate(${10 + Math.random() * 6}deg) translateY(-45px)`,
-                opacity: Math.random() * 0.18 + 0.12,
-                borderRadius: '50% 50% 50% 50% / 85% 85% 15% 15%',
-                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.22) 0%, rgba(255, 215, 0, 0.18) 20%, rgba(255, 223, 127, 0.14) 50%, rgba(255, 235, 157, 0.08) 80%, transparent 100%)',
-                animation: `sunrayFall ${25 + Math.random() * 20}s linear infinite`,
-              }}
-            />
-          ))}
-          
-          {/* Raios mais espessos para profundidade */}
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={`sunray-thick-${i}`}
-              className="absolute"
-              style={{
-                left: `${Math.random() * 110 - 5}%`,
-                top: `-35%`,
-                width: '0.5px',
-                height: '135%',
-                animationDelay: `${Math.random() * 50}s`,
-                animationDuration: `${20 + Math.random() * 15}s`,
-                transform: `rotate(${8 + Math.random() * 4}deg) translateY(-50px)`,
-                opacity: Math.random() * 0.20 + 0.15,
-                borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
-                background: 'linear-gradient(to bottom, rgba(255, 193, 7, 0.25) 0%, rgba(255, 215, 0, 0.20) 15%, rgba(255, 223, 127, 0.15) 40%, rgba(255, 235, 157, 0.10) 70%, transparent 100%)',
-                animation: `sunrayFall ${20 + Math.random() * 15}s linear infinite`,
-              }}
-            />
-          ))}
-          
-          {/* Micro raios ambiente ultra-sutis */}
-          {[...Array(60)].map((_, i) => (
-            <div
-              key={`sunray-micro-${i}`}
-              className="absolute"
-              style={{
-                left: `${Math.random() * 130 - 15}%`,
-                top: `-20%`,
-                width: '0.15px',
-                height: '120%',
-                animationDelay: `${Math.random() * 60}s`,
-                animationDuration: `${50 + Math.random() * 30}s`,
-                transform: `rotate(${15 + Math.random() * 10}deg) translateY(-30px)`,
-                opacity: Math.random() * 0.10 + 0.08,
-                borderRadius: '50% 50% 50% 50% / 95% 95% 5% 5%',
-                background: 'linear-gradient(to bottom, rgba(255, 245, 178, 0.12) 0%, rgba(255, 235, 157, 0.08) 50%, transparent 100%)',
-                animation: `sunrayFall ${50 + Math.random() * 30}s linear infinite`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* CSS Animation for ultra-realistic sun rays */}
-        <style>{`
-          @keyframes sunrayFall {
-            0% {
-              transform: translateY(-130vh) rotate(var(--rotation, 12deg));
-              opacity: 0;
-            }
-            8% {
-              opacity: var(--max-opacity, 0.15);
-            }
-            92% {
-              opacity: var(--max-opacity, 0.15);
-            }
-            100% {
-              transform: translateY(130vh) rotate(var(--rotation, 12deg));
-              opacity: 0;
-            }
-          }
-        `}</style>
-
         {/* Enhanced Energy Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-radial from-[#02ff91]/30 via-[#02ff91]/15 to-transparent rounded-full blur-3xl animate-soft-pulse"></div>
@@ -175,13 +43,8 @@ const HeroSection = () => {
         {/* Content */}
         <div className="relative z-10 text-center px-4 pt-32 md:pt-20">
           <div className="max-w-4xl mx-auto">
-            {/* Animated Typing Text - Fixed overflow and line-height */}
-            <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight flex items-center justify-center min-h-[1.3em] pb-4 hover:animate-soft-pulse transition-all duration-300">
-              <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent block leading-[1.2] pb-2">
-                {displayText}
-                <span className="animate-pulse">|</span>
-              </span>
-            </h1>
+            {/* Animated Typing Text */}
+            <TypewriterText texts={texts} />
             
             <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
               Gestão de contratos e consultoria energética com{' '}

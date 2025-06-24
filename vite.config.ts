@@ -12,8 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -21,38 +20,76 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Otimizações de build para melhor performance
+    // Otimizações críticas de performance
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-toast', '@radix-ui/react-accordion'],
-          icons: ['lucide-react'],
-          charts: ['recharts']
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+          'ui-components': [
+            '@radix-ui/react-dialog', 
+            '@radix-ui/react-toast', 
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-progress',
+            '@radix-ui/react-select'
+          ],
+          'icons': ['lucide-react'],
+          'charts': ['recharts'],
+          'forms': ['react-hook-form', '@hookform/resolvers'],
+          'email': ['@emailjs/browser']
         }
       }
     },
-    // Minificação apenas em produção
-    minify: mode === 'production' ? 'terser' : false,
-    terserOptions: mode === 'production' ? {
+    // Compressão e minificação otimizada
+    minify: 'terser',
+    terserOptions: {
       compress: {
-        drop_console: true,
-        drop_debugger: true
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
+        passes: 2
+      },
+      mangle: {
+        safari10: true
+      },
+      format: {
+        comments: false
       }
-    } : undefined,
-    // Otimização de assets
-    assetsInlineLimit: 4096,
-    chunkSizeWarningLimit: 1000
+    },
+    // Otimizações de assets críticas
+    assetsInlineLimit: 2048, // Reduzido para melhor cache
+    chunkSizeWarningLimit: 800, // Mais rigoroso
+    cssCodeSplit: true,
+    sourcemap: mode === 'development',
+    // Configurações de output otimizadas
+    target: 'es2020',
+    cssMinify: 'lightningcss'
   },
-  // Otimizações gerais
+  // Otimizações de dependências críticas
   optimizeDeps: {
     include: [
       'react',
       'react-dom',
       'react-router-dom',
       'lucide-react',
-      '@tanstack/react-query'
-    ]
+      '@tanstack/react-query',
+      '@emailjs/browser'
+    ],
+    exclude: ['@vite/client', '@vite/env']
+  },
+  // Configurações de CSS otimizadas
+  css: {
+    devSourcemap: mode === 'development',
+    preprocessorOptions: {
+      css: {
+        // Otimizações CSS
+        charset: false
+      }
+    }
+  },
+  // Configurações de performance
+  esbuild: {
+    drop: mode === 'production' ? ['console', 'debugger'] : [],
+    legalComments: 'none'
   }
 }));

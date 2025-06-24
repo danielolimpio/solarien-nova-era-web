@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,33 +8,30 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
   }, []);
 
-  const handleScrollToSection = (sectionId: string) => {
-    // If it's the contact section, navigate to the contact page
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  const handleScrollToSection = useCallback((sectionId: string) => {
     if (sectionId === 'contato') {
       navigate('/contact');
       setIsMobileMenuOpen(false);
       return;
     }
 
-    // If it's the home section, navigate to the home page
     if (sectionId === 'home') {
       navigate('/');
       setIsMobileMenuOpen(false);
       return;
     }
 
-    // Check if we're not on the home page
     if (window.location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -54,24 +51,30 @@ const Header = () => {
       }
     }
     setIsMobileMenuOpen(false);
-  };
+  }, [navigate]);
 
-  const menuItems = [
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
+
+  const menuItems = useMemo(() => [
     { name: 'Home', id: 'home' },
     { name: 'Sobre', id: 'sobre' },
     { name: 'Parcerias', id: 'parcerias' },
     { name: 'Serviços', id: 'servicos' },
     { name: 'Licenciado', id: 'licenciado' },
     { name: 'Contato', id: 'contato' }
-  ];
+  ], []);
+
+  const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ios-safe-area ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ios-safe-area will-change-transform ${
       isScrolled ? 'backdrop-blur-md border-b shadow-lg' : 'backdrop-blur-sm'
-    }`} style={{ backgroundColor: '#002113' }}>
+    }`} style={headerStyle}>
       <div className="responsive-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo - Aumentado e movido para direita no mobile */}
+          {/* Logo otimizado */}
           <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0">
             <img 
               src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
@@ -79,23 +82,26 @@ const Header = () => {
               className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
+              fetchPriority="high"
+              width={48}
+              height={48}
             />
           </div>
 
-          {/* Desktop Navigation - Otimizado para tablets e desktops */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {menuItems.map((item) => (
               <button
-                key={item.name}
+                key={item.id}
                 onClick={() => handleScrollToSection(item.id)}
-                className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly"
+                className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly will-change-transform"
               >
                 {item.name}
               </button>
             ))}
           </nav>
 
-          {/* CTA Buttons - Melhorado para tablets */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <a
               href="https://painel.solarien.com.br/login"
@@ -109,15 +115,15 @@ const Header = () => {
               href="https://painel.solarien.com.br/solarien"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse text-sm lg:text-base touch-friendly"
+              className="px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse text-sm lg:text-base touch-friendly will-change-transform"
             >
               Cadastrar
             </a>
           </div>
 
-          {/* Mobile Menu Button - Melhorado para touch */}
+          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
             className="lg:hidden p-3 rounded-lg hover:bg-green-800 transition-colors duration-300 touch-friendly z-50"
             aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           >
@@ -129,13 +135,13 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Otimizado para todos os dispositivos móveis */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40" style={{ backgroundColor: '#002113' }}>
+          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40 will-change-transform" style={headerStyle}>
             <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
               {menuItems.map((item) => (
                 <button
-                  key={item.name}
+                  key={item.id}
                   onClick={() => handleScrollToSection(item.id)}
                   className="p-4 rounded-lg hover:bg-green-800 transition-colors duration-300 text-left text-white font-bold touch-friendly"
                 >
@@ -168,4 +174,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

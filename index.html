@@ -7,18 +7,60 @@
     <title>Solarien Energy - Energia Solar e Mercado Livre</title>
     <meta name="description" content="Solarien Energy - Gestão de contratos e consultoria energética. Migração gratuita para energia por assinatura e mercado livre." />
     <meta name="author" content="Solarien Energy" />
-
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"></noscript>
+    
+    <!-- Preload imagem crítica do logo -->
+    <link rel="preload" href="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" as="image" fetchpriority="high">
+    
+    <!-- DNS prefetch para domínios externos -->
+    <link rel="dns-prefetch" href="//images.unsplash.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preconnect para recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Meta tags para performance -->
+    <meta name="theme-color" content="#002113">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph otimizado -->
     <meta property="og:title" content="Solarien Energy - Energia Solar e Mercado Livre" />
     <meta property="og:description" content="Gestão de contratos e consultoria energética. Migração gratuita para energia por assinatura e mercado livre." />
     <meta property="og:type" content="website" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:image" content="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    
+    <!-- Critical CSS inline seria aqui se necessário -->
+    <style>
+      /* Critical CSS para evitar FOUC */
+      body { 
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
+        overflow-x: hidden;
+      }
+      .loading-fallback {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading-fallback">
+        <div style="color: #02ff91; font-size: 18px;">Carregando...</div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

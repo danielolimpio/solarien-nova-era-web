@@ -1,35 +1,68 @@
+
+import React, { Suspense } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import PartnersCarousel from '../components/PartnersCarousel';
-import SolarPlantsCarousel from '../components/SolarPlantsCarousel';
-import BrazilMap from '../components/BrazilMap';
-import EntrepreneurshipSection from '../components/EntrepreneurshipSection';
-import LicenseSection from '../components/LicenseSection';
-import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
+import LoadingSpinner from '../components/LoadingSpinner';
 import { Separator } from '../components/ui/separator';
-import VideoSection from '../components/VideoSection';
+
+// Lazy loading para componentes não críticos
+const AboutSection = React.lazy(() => import('../components/AboutSection'));
+const PartnersCarousel = React.lazy(() => import('../components/PartnersCarousel'));
+const SolarPlantsCarousel = React.lazy(() => import('../components/SolarPlantsCarousel'));
+const BrazilMap = React.lazy(() => import('../components/BrazilMap'));
+const EntrepreneurshipSection = React.lazy(() => import('../components/EntrepreneurshipSection'));
+const LicenseSection = React.lazy(() => import('../components/LicenseSection'));
+const Footer = React.lazy(() => import('../components/Footer'));
+const WhatsAppFloat = React.lazy(() => import('../components/WhatsAppFloat'));
+const VideoSection = React.lazy(() => import('../components/VideoSection'));
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <AboutSection />
-      <VideoSection />
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <AboutSection />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <VideoSection />
+      </Suspense>
+      
       <div id="parcerias">
-        <PartnersCarousel />
+        <Suspense fallback={<LoadingSpinner />}>
+          <PartnersCarousel />
+        </Suspense>
       </div>
-      <SolarPlantsCarousel />
-      <BrazilMap />
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <SolarPlantsCarousel />
+      </Suspense>
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <BrazilMap />
+      </Suspense>
+      
       <div id="licenciado">
-        <EntrepreneurshipSection />
+        <Suspense fallback={<LoadingSpinner />}>
+          <EntrepreneurshipSection />
+        </Suspense>
       </div>
-      <LicenseSection />
+      
+      <Suspense fallback={<LoadingSpinner />}>
+        <LicenseSection />
+      </Suspense>
+      
       <Separator className="h-1 bg-gradient-to-r from-transparent via-solarien-primary to-transparent opacity-60" />
-      <Footer />
-      <WhatsAppFloat />
+      
+      <Suspense fallback={<div className="h-20" />}>
+        <Footer />
+      </Suspense>
+      
+      <Suspense fallback={<div />}>
+        <WhatsAppFloat />
+      </Suspense>
     </div>
   );
 };

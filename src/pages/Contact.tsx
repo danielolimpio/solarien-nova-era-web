@@ -48,13 +48,12 @@ const Contact = () => {
         'template_vskkgic',
         {
           to_email: 'contato@solarien.com.br',
-          from_name: values.name,
-          from_email: values.email,
-          reply_to: values.email,
+          name: values.name,
+          email: values.email,
           phone: values.phone,
           subject: values.subject,
           message: values.message,
-          to_name: 'Equipe Solarien'
+          reply_to: values.email
         },
         'cZ2wsFAjNlCiZaIIG'
       );

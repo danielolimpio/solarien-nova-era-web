@@ -33,20 +33,29 @@ const HeroSection = () => {
     { value: '95%', label: 'Taxa de Migração' }
   ], []);
 
-  const backgroundImageStyle = useMemo(() => ({
-    backgroundImage: 'url(https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)',
-    filter: 'brightness(0.3)'
-  }), []);
-
   return (
     <>
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden content-visibility-auto">
-        {/* Background otimizado */}
+        {/* Background otimizado com srcset responsivo */}
         <div className="absolute inset-0">
-          <div 
-            className="w-full h-full bg-cover bg-center will-change-transform"
-            style={backgroundImageStyle}
-          />
+          <picture>
+            <source 
+              media="(max-width: 768px)" 
+              srcSet="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+            />
+            <source 
+              media="(min-width: 769px)" 
+              srcSet="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              alt="Background solar"
+              className="w-full h-full object-cover will-change-transform brightness-[0.3]"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90" />
         </div>
 

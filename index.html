@@ -8,25 +8,30 @@
     <meta name="description" content="Solarien Energy - Gestão de contratos e consultoria energética. Migração gratuita para energia por assinatura e mercado livre." />
     <meta name="author" content="Solarien Energy" />
     
-    <!-- Preload crítico -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"></noscript>
+    <!-- Preload crítico otimizado -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
     
-    <!-- Preload imagem crítica do logo -->
+    <!-- Preload imagens críticas -->
     <link rel="preload" href="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" as="image" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" as="image" media="(max-width: 768px)">
+    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" as="image" media="(min-width: 769px)">
     
-    <!-- DNS prefetch para domínios externos -->
+    <!-- DNS prefetch otimizado -->
     <link rel="dns-prefetch" href="//images.unsplash.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//wa.me">
     
-    <!-- Preconnect para recursos críticos -->
+    <!-- Preconnect crítico -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
     
-    <!-- Meta tags para performance -->
+    <!-- Meta tags otimizadas -->
     <meta name="theme-color" content="#002113">
     <meta name="robots" content="index, follow">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- Open Graph otimizado -->
     <meta property="og:title" content="Solarien Energy - Energia Solar e Mercado Livre" />
@@ -34,16 +39,16 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" />
     
-    <!-- Favicon atualizado -->
+    <!-- Favicon otimizado -->
     <link rel="icon" href="/lovable-uploads/5bbb6ff4-9134-46c1-88d0-f52d8a3b48df.png" type="image/png">
     
-    <!-- Critical CSS inline seria aqui se necessário -->
+    <!-- Critical CSS inline otimizado -->
     <style>
-      /* Critical CSS para evitar FOUC */
       body { 
         font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
         overflow-x: hidden;
+        font-display: swap;
       }
       .loading-fallback {
         display: flex;
@@ -51,6 +56,10 @@
         align-items: center;
         height: 100vh;
         background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
+      }
+      img {
+        content-visibility: auto;
+        contain-intrinsic-size: 300px 200px;
       }
     </style>
   </head>

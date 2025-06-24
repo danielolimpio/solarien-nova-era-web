@@ -13,8 +13,19 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    let ticking = false;
+    const scrollListener = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', scrollListener, { passive: true });
+    return () => window.removeEventListener('scroll', scrollListener);
   }, [handleScroll]);
 
   const handleScrollToSection = useCallback((sectionId: string) => {
@@ -82,7 +93,7 @@ const Header = () => {
               className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
-              fetchPriority="high"
+              fetchpriority="high"
               width={48}
               height={48}
             />

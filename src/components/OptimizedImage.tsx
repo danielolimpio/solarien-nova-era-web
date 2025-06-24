@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -26,6 +26,37 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [isInView, setIsInView] = useState(priority);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Intersection Observer para lazy loading mais eficiente
+  useEffect(() => {
+    if (priority || isInView) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { 
+        rootMargin: '50px',
+        threshold: 0.1
+      }
+    );
+
+    const currentRef = imgRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [priority, isInView]);
 
   const handleLoad = useCallback(() => {
     setIsLoaded(true);
@@ -35,11 +66,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     setHasError(true);
   }, []);
 
-  // Otimização: usar aspect-ratio para evitar layout shift
   const aspectRatio = width && height ? `${width}/${height}` : undefined;
 
   return (
     <div 
+      ref={imgRef}
       className={`relative overflow-hidden ${className}`}
       style={{ aspectRatio }}
     >
@@ -50,7 +81,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         />
       )}
       
-      {!hasError ? (
+      {!hasError && isInView ? (
         <img
           src={src}
           alt={alt}
@@ -67,16 +98,16 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           onLoad={handleLoad}
           onError={handleError}
         />
-      ) : (
+      ) : hasError ? (
         <div 
           className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400"
           style={{ aspectRatio }}
         >
           <span className="text-sm">Imagem não disponível</span>
         </div>
-      )}
+      ) : null}
     </div>
   );
 };
 
-export default OptimizedImage;
+export default React.memo(OptimizedImage);

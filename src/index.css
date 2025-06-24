@@ -107,24 +107,6 @@
     box-shadow: 0 0 30px rgba(2, 255, 145, 0.8), 0 0 60px rgba(2, 255, 145, 0.5), 0 0 90px rgba(2, 255, 145, 0.3);
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(51, 65, 85, 0.3);
-    border-radius: 3px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #10b981, #059669);
-    border-radius: 3px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #059669, #047857);
-  }
-
   .responsive-container {
     @apply w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
   }
@@ -132,13 +114,6 @@
   .touch-friendly {
     @apply min-h-[44px] min-w-[44px] cursor-pointer;
     touch-action: manipulation;
-  }
-
-  .ios-safe-area {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
   }
 
   .will-change-transform {
@@ -159,29 +134,9 @@
   }
 }
 
-@media (max-width: 374px) {
-  .text-2xs {
-    font-size: 0.625rem;
-    line-height: 0.875rem;
-  }
-}
-
 @media (max-width: 640px) {
   .responsive-container {
     @apply px-2;
-  }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .high-dpi-optimized {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .auto-dark-mode {
-    color-scheme: dark;
   }
 }
 

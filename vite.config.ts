@@ -20,13 +20,12 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Otimizações críticas de performance
     rollupOptions: {
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'router': ['react-router-dom'],
-          'ui-components': [
+          'ui-vendor': [
             '@radix-ui/react-dialog', 
             '@radix-ui/react-toast', 
             '@radix-ui/react-accordion',
@@ -36,35 +35,40 @@ export default defineConfig(({ mode }) => ({
           'icons': ['lucide-react'],
           'charts': ['recharts'],
           'forms': ['react-hook-form', '@hookform/resolvers'],
-          'email': ['@emailjs/browser']
+          'email': ['@emailjs/browser'],
+          'utils': ['class-variance-authority', 'clsx', 'tailwind-merge']
         }
       }
     },
-    // Compressão e minificação otimizada
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: mode === 'production',
         drop_debugger: mode === 'production',
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info'] : [],
-        passes: 2
+        pure_funcs: mode === 'production' ? ['console.log', 'console.info', 'console.warn'] : [],
+        passes: 3,
+        unsafe: true,
+        unsafe_comps: true,
+        unsafe_math: true,
+        hoist_funs: true,
+        reduce_vars: true,
+        collapse_vars: true
       },
       mangle: {
-        safari10: true
+        safari10: true,
+        toplevel: true
       },
       format: {
         comments: false
       }
     },
-    // Otimizações de assets críticas
-    assetsInlineLimit: 2048, // Reduzido para melhor cache
-    chunkSizeWarningLimit: 800, // Mais rigoroso
+    assetsInlineLimit: 1024,
+    chunkSizeWarningLimit: 600,
     cssCodeSplit: true,
-    sourcemap: mode === 'development',
-    // Configurações de output otimizadas
-    target: 'es2020'
+    sourcemap: false,
+    target: 'es2020',
+    reportCompressedSize: false
   },
-  // Otimizações de dependências críticas
   optimizeDeps: {
     include: [
       'react',
@@ -76,19 +80,19 @@ export default defineConfig(({ mode }) => ({
     ],
     exclude: ['@vite/client', '@vite/env']
   },
-  // Configurações de CSS otimizadas
   css: {
-    devSourcemap: mode === 'development',
+    devSourcemap: false,
     preprocessorOptions: {
       css: {
-        // Otimizações CSS
         charset: false
       }
     }
   },
-  // Configurações de performance
   esbuild: {
     drop: mode === 'production' ? ['console', 'debugger'] : [],
-    legalComments: 'none'
+    legalComments: 'none',
+    minifyIdentifiers: true,
+    minifySyntax: true,
+    minifyWhitespace: true
   }
 }));

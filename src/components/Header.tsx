@@ -93,7 +93,7 @@ const Header = () => {
               className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
-              fetchpriority="high"
+              fetchPriority="high"
               width={48}
               height={48}
             />

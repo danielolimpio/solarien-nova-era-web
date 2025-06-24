@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,26 +41,33 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await emailjs.send(
+      console.log('Enviando email com os dados:', values);
+      
+      const result = await emailjs.send(
         'service_vvxglpf',
         'template_vskkgic',
         {
+          to_email: 'contato@solarien.com.br',
           from_name: values.name,
           from_email: values.email,
+          reply_to: values.email,
           phone: values.phone,
           subject: values.subject,
           message: values.message,
+          to_name: 'Equipe Solarien'
         },
         'cZ2wsFAjNlCiZaIIG'
       );
 
+      console.log('Email enviado com sucesso:', result);
+      
       toast({
         title: "Mensagem enviada!",
         description: "Entraremos em contato em breve.",
       });
       form.reset();
     } catch (error) {
-      console.error('Erro ao enviar email:', error);
+      console.error('Erro detalhado ao enviar email:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: "Tente novamente mais tarde.",

@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { sendNewsletterEmail } from '../services/emailService';
-import { useToast } from "@/hooks/use-toast";
 
 const Footer = () => {
   const [email, setEmail] = useState('');
-  const [isSubmittingNewsletter, setIsSubmittingNewsletter] = useState(false);
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { toast } = useToast();
 
   const handleLinkClick = (link: string) => {
     if (link === 'Home') {
@@ -170,38 +166,10 @@ const Footer = () => {
     'Políticas': ['Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback']
   };
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!email) {
-      toast({
-        title: "Email obrigatório",
-        description: "Por favor, insira seu email para se inscrever.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmittingNewsletter(true);
-    console.log('Inscrevendo na newsletter:', email);
-    
-    try {
-      await sendNewsletterEmail({ email });
-      toast({
-        title: "Inscrição realizada com sucesso!",
-        description: "Você receberá nossas novidades em breve.",
-      });
-      setEmail('');
-    } catch (error) {
-      console.error('Erro ao inscrever na newsletter:', error);
-      toast({
-        title: "Erro ao inscrever",
-        description: "Tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmittingNewsletter(false);
-    }
+    console.log('Newsletter signup:', email);
+    setEmail('');
   };
 
   const scrollToTop = () => {
@@ -252,14 +220,12 @@ const Footer = () => {
                   placeholder="Seu melhor e-mail"
                   className="flex-1 px-4 py-3 bg-green-800 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white placeholder-gray-400"
                   required
-                  disabled={isSubmittingNewsletter}
                 />
                 <button
                   type="submit"
-                  disabled={isSubmittingNewsletter}
-                  className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 whitespace-nowrap disabled:opacity-50"
+                  className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 whitespace-nowrap"
                 >
-                  {isSubmittingNewsletter ? 'Enviando...' : 'Assinar'}
+                  Assinar
                 </button>
               </form>
             </div>

@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { ArrowLeft, MessageSquare, Star, ThumbsUp, TrendingUp, Users, Target, BarChart3 } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Star, ThumbsUp, TrendingUp, Users, Target, BarChart3, Smile, Meh, Frown, Heart, CheckCircle, AlertCircle, XCircle, Monitor, Headphones, DollarSign, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -189,10 +190,10 @@ const Feedback = () => {
                 <h3 className="text-white text-lg font-semibold">1. Como você avalia nossa plataforma?</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { value: 'excellent', label: 'Excelente', icon: '⭐' },
-                    { value: 'good', label: 'Boa', icon: '👍' },
-                    { value: 'average', label: 'Regular', icon: '👌' },
-                    { value: 'poor', label: 'Ruim', icon: '👎' }
+                    { value: 'excellent', label: 'Excelente', icon: Star, color: 'text-yellow-400' },
+                    { value: 'good', label: 'Boa', icon: Smile, color: 'text-green-400' },
+                    { value: 'average', label: 'Regular', icon: Meh, color: 'text-orange-400' },
+                    { value: 'poor', label: 'Ruim', icon: Frown, color: 'text-red-400' }
                   ].map((option) => (
                     <Button
                       key={option.value}
@@ -205,7 +206,7 @@ const Feedback = () => {
                       }`}
                     >
                       <div className="text-center">
-                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <option.icon className={`w-8 h-8 mb-2 mx-auto ${option.color}`} />
                         <div className="font-semibold">{option.label}</div>
                       </div>
                     </Button>
@@ -218,10 +219,10 @@ const Feedback = () => {
                 <h3 className="text-white text-lg font-semibold">2. Você recomendaria nossos serviços?</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { value: 'definitely', label: 'Definitivamente', icon: '💯' },
-                    { value: 'probably', label: 'Provavelmente', icon: '👍' },
-                    { value: 'maybe', label: 'Talvez', icon: '🤔' },
-                    { value: 'no', label: 'Não', icon: '❌' }
+                    { value: 'definitely', label: 'Definitivamente', icon: Heart, color: 'text-red-400' },
+                    { value: 'probably', label: 'Provavelmente', icon: CheckCircle, color: 'text-green-400' },
+                    { value: 'maybe', label: 'Talvez', icon: AlertCircle, color: 'text-yellow-400' },
+                    { value: 'no', label: 'Não', icon: XCircle, color: 'text-red-400' }
                   ].map((option) => (
                     <Button
                       key={option.value}
@@ -234,7 +235,7 @@ const Feedback = () => {
                       }`}
                     >
                       <div className="text-center">
-                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <option.icon className={`w-8 h-8 mb-2 mx-auto ${option.color}`} />
                         <div className="font-semibold">{option.label}</div>
                       </div>
                     </Button>
@@ -247,10 +248,10 @@ const Feedback = () => {
                 <h3 className="text-white text-lg font-semibold">3. O que podemos melhorar?</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { value: 'website', label: 'Website', icon: '💻' },
-                    { value: 'support', label: 'Atendimento', icon: '🎧' },
-                    { value: 'prices', label: 'Preços', icon: '💰' },
-                    { value: 'process', label: 'Processo', icon: '⚙️' }
+                    { value: 'website', label: 'Website', icon: Monitor, color: 'text-blue-400' },
+                    { value: 'support', label: 'Atendimento', icon: Headphones, color: 'text-purple-400' },
+                    { value: 'prices', label: 'Preços', icon: DollarSign, color: 'text-green-400' },
+                    { value: 'process', label: 'Processo', icon: Settings, color: 'text-gray-400' }
                   ].map((option) => (
                     <Button
                       key={option.value}
@@ -263,7 +264,7 @@ const Feedback = () => {
                       }`}
                     >
                       <div className="text-center">
-                        <div className="text-2xl mb-2">{option.icon}</div>
+                        <option.icon className={`w-8 h-8 mb-2 mx-auto ${option.color}`} />
                         <div className="font-semibold">{option.label}</div>
                       </div>
                     </Button>

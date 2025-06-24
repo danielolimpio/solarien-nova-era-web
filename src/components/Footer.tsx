@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { toast } = useToast();
 
   const handleLinkClick = (link: string) => {
     if (link === 'Home') {
@@ -166,10 +169,35 @@ const Footer = () => {
     'Políticas': ['Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback']
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Newsletter signup:', email);
-    setEmail('');
+    
+    try {
+      await emailjs.send(
+        'service_vvxglpf',
+        'template_vskkgic',
+        {
+          from_name: 'Newsletter Subscriber',
+          from_email: email,
+          subject: 'Newsletter Subscription',
+          message: `Nova inscrição na newsletter: ${email}`,
+        },
+        'cZ2wsFAjNlCiZaIIG'
+      );
+
+      toast({
+        title: "Inscrição realizada!",
+        description: "Você foi inscrito na nossa newsletter.",
+      });
+      setEmail('');
+    } catch (error) {
+      console.error('Erro ao inscrever na newsletter:', error);
+      toast({
+        title: "Erro na inscrição",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    }
   };
 
   const scrollToTop = () => {

@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
@@ -33,6 +35,7 @@ interface PollMetrics {
 
 const Feedback = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [feedback, setFeedback] = useState('');
   const [quizAnswers, setQuizAnswers] = useState({
     satisfaction: '',
@@ -101,16 +104,41 @@ const Feedback = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Feedback submitted:', { feedback, quizAnswers });
-    alert('Obrigado pelo seu feedback!');
-    setFeedback('');
-    setQuizAnswers({
-      satisfaction: '',
-      recommendation: '',
-      improvements: ''
-    });
+    
+    try {
+      await emailjs.send(
+        'service_vvxglpf',
+        'template_vskkgic',
+        {
+          from_name: 'Feedback User',
+          from_email: 'feedback@solarien.com.br',
+          subject: 'Novo Feedback',
+          message: `Feedback recebido: ${feedback}\n\nRespostas do Quiz:\nSatisfação: ${quizAnswers.satisfaction}\nRecomendação: ${quizAnswers.recommendation}\nMelhorias: ${quizAnswers.improvements}`,
+        },
+        'cZ2wsFAjNlCiZaIIG'
+      );
+
+      toast({
+        title: "Feedback enviado!",
+        description: "Obrigado pelo seu feedback!",
+      });
+      
+      setFeedback('');
+      setQuizAnswers({
+        satisfaction: '',
+        recommendation: '',
+        improvements: ''
+      });
+    } catch (error) {
+      console.error('Erro ao enviar feedback:', error);
+      toast({
+        title: "Erro ao enviar feedback",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    }
   };
 
   const calculatePercentage = (value: number, total: number) => {

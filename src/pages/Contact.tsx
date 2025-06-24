@@ -12,6 +12,7 @@ import * as z from "zod";
 import { Mail, Phone, Clock, ArrowLeft, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
@@ -39,13 +40,34 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-    form.reset();
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      await emailjs.send(
+        'service_vvxglpf',
+        'template_vskkgic',
+        {
+          from_name: values.name,
+          from_email: values.email,
+          phone: values.phone,
+          subject: values.subject,
+          message: values.message,
+        },
+        'cZ2wsFAjNlCiZaIIG'
+      );
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactInfo = [

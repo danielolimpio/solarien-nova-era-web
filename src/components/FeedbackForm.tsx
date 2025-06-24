@@ -40,9 +40,7 @@ const FeedbackForm = () => {
     
     try {
       await sendFeedbackEmail({
-        name: values.name,
-        email: values.email,
-        feedback: values.feedback,
+        ...values,
         rating: rating > 0 ? rating : undefined,
       });
       toast({

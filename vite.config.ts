@@ -62,8 +62,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: mode === 'development',
     // Configurações de output otimizadas
-    target: 'es2020',
-    cssMinify: 'lightningcss'
+    target: 'es2020'
   },
   // Otimizações de dependências críticas
   optimizeDeps: {

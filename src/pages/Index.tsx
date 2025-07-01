@@ -83,44 +83,83 @@ const Index = () => {
   React.useEffect(() => {
     // Preload primeiro componente lazy
     import('../components/AboutSection');
+    
+    // Adicionar dados estruturados específicos da página
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Solarien Energy - Energia Solar e Mercado Livre",
+      "description": "Migração gratuita para energia solar e mercado livre com economia garantida de até 45%",
+      "url": "https://solarien.com.br/",
+      "mainEntity": {
+        "@type": "Service",
+        "name": "Consultoria em Energia Solar",
+        "description": "Serviços de migração para energia solar e mercado livre sem custos",
+        "provider": {
+          "@type": "Organization",
+          "name": "Solarien Energy"
+        }
+      }
+    });
+    document.head.appendChild(script);
+    
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
   }, []);
 
   return (
     <div className="min-h-screen">
       <Header />
-      <HeroSection />
-      
-      <Suspense fallback={<OptimizedFallback />}>
-        <AboutSection />
-      </Suspense>
-      
-      <Suspense fallback={<OptimizedFallback />}>
-        <VideoSection />
-      </Suspense>
-      
-      <div id="parcerias">
-        <Suspense fallback={<OptimizedFallback />}>
-          <PartnersCarousel />
-        </Suspense>
-      </div>
-      
-      <Suspense fallback={<OptimizedFallback />}>
-        <SolarPlantsCarousel />
-      </Suspense>
-      
-      <Suspense fallback={<OptimizedFallback />}>
-        <BrazilMap />
-      </Suspense>
-      
-      <div id="licenciado">
-        <Suspense fallback={<OptimizedFallback />}>
-          <EntrepreneurshipSection />
-        </Suspense>
-      </div>
-      
-      <Suspense fallback={<OptimizedFallback />}>
-        <LicenseSection />
-      </Suspense>
+      <main>
+        <HeroSection />
+        
+        <section id="sobre" aria-labelledby="sobre-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <AboutSection />
+          </Suspense>
+        </section>
+        
+        <section id="video" aria-labelledby="video-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <VideoSection />
+          </Suspense>
+        </section>
+        
+        <section id="parcerias" aria-labelledby="parcerias-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <PartnersCarousel />
+          </Suspense>
+        </section>
+        
+        <section id="usinas-solares" aria-labelledby="usinas-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <SolarPlantsCarousel />
+          </Suspense>
+        </section>
+        
+        <section id="cobertura" aria-labelledby="cobertura-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <BrazilMap />
+          </Suspense>
+        </section>
+        
+        <section id="licenciado" aria-labelledby="licenciado-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <EntrepreneurshipSection />
+          </Suspense>
+        </section>
+        
+        <section id="licencas" aria-labelledby="licencas-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <LicenseSection />
+          </Suspense>
+        </section>
+      </main>
       
       <Separator className="h-1 bg-gradient-to-r from-transparent via-solarien-primary to-transparent opacity-60" />
       

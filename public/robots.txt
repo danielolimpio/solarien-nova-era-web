@@ -1,4 +1,15 @@
 
+User-agent: *
+Allow: /
+
+# Bloquear arquivos desnecessários para SEO
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.tsx$
+Disallow: /*.ts$
+Disallow: /node_modules/
+
+# Permitir bots específicos importantes
 User-agent: Googlebot
 Allow: /
 
@@ -11,7 +22,14 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
+User-agent: WhatsApp
+Allow: /
+
+# Sitemap
 Sitemap: https://solarien.com.br/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1

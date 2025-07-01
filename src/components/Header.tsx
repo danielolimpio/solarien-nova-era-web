@@ -69,56 +69,64 @@ const Header = () => {
   }, []);
 
   const menuItems = useMemo(() => [
-    { name: 'Home', id: 'home' },
-    { name: 'Sobre', id: 'sobre' },
-    { name: 'Parcerias', id: 'parcerias' },
-    { name: 'Serviços', id: 'servicos' },
-    { name: 'Licenciado', id: 'licenciado' },
-    { name: 'Contato', id: 'contato' }
+    { name: 'Home', id: 'home', description: 'Página inicial da Solarien Energy' },
+    { name: 'Sobre', id: 'sobre', description: 'Conheça a Solarien Energy' },
+    { name: 'Parcerias', id: 'parcerias', description: 'Nossos parceiros em energia solar' },
+    { name: 'Serviços', id: 'servicos', description: 'Serviços de energia solar e mercado livre' },
+    { name: 'Licenciado', id: 'licenciado', description: 'Informações sobre licenciamento' },
+    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco' }
   ], []);
 
   const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ios-safe-area will-change-transform ${
-      isScrolled ? 'backdrop-blur-md border-b shadow-lg' : 'backdrop-blur-sm'
-    }`} style={headerStyle}>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ios-safe-area will-change-transform ${
+        isScrolled ? 'backdrop-blur-md border-b shadow-lg' : 'backdrop-blur-sm'
+      }`} 
+      style={headerStyle}
+      role="banner"
+    >
       <div className="responsive-container">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo otimizado */}
-          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0">
+          {/* Logo otimizado com schema */}
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0" itemScope itemType="https://schema.org/Organization">
             <img 
               src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
-              alt="Solarien Energy" 
+              alt="Solarien Energy - Logo empresa energia solar e mercado livre" 
               className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
               fetchPriority="high"
               width={48}
               height={48}
+              itemProp="logo"
             />
+            <span className="sr-only" itemProp="name">Solarien Energy</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+          {/* Desktop Navigation com estrutura semântica */}
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8" role="navigation" aria-label="Menu principal">
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScrollToSection(item.id)}
                 className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly will-change-transform"
+                aria-label={item.description}
               >
                 {item.name}
               </button>
             ))}
           </nav>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons otimizados */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <a
               href="https://painel.solarien.com.br/login"
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 lg:px-4 py-2 text-white font-bold hover:text-solarien-primary transition-colors duration-300 text-sm lg:text-base touch-friendly"
+              aria-label="Entrar no painel do cliente Solarien"
             >
               Entrar
             </a>
@@ -127,6 +135,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse text-sm lg:text-base touch-friendly will-change-transform"
+              aria-label="Cadastrar-se na Solarien Energy"
             >
               Cadastrar
             </a>
@@ -137,6 +146,8 @@ const Header = () => {
             onClick={toggleMobileMenu}
             className="lg:hidden p-3 rounded-lg hover:bg-green-800 transition-colors duration-300 touch-friendly z-50"
             aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-white" />
@@ -148,13 +159,20 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40 will-change-transform" style={headerStyle}>
+          <div 
+            id="mobile-menu"
+            className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40 will-change-transform" 
+            style={headerStyle}
+            role="navigation"
+            aria-label="Menu mobile"
+          >
             <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
               {menuItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleScrollToSection(item.id)}
                   className="p-4 rounded-lg hover:bg-green-800 transition-colors duration-300 text-left text-white font-bold touch-friendly"
+                  aria-label={item.description}
                 >
                   {item.name}
                 </button>
@@ -165,6 +183,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 text-white font-bold hover:bg-green-800 rounded-lg transition-colors duration-300 text-center touch-friendly"
+                  aria-label="Entrar no painel do cliente"
                 >
                   Entrar
                 </a>
@@ -173,6 +192,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg text-center touch-friendly"
+                  aria-label="Cadastrar-se na Solarien"
                 >
                   Cadastrar
                 </a>

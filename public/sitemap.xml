@@ -1,11 +1,17 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://solarien.com.br/</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png</image:loc>
+      <image:title>Solarien Energy - Energia Solar e Mercado Livre</image:title>
+      <image:caption>Logo da Solarien Energy, empresa especializada em energia solar e mercado livre</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://solarien.com.br/faq</loc>

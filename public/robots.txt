@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Priorizar conteúdo importante para SEO
+Crawl-delay: 1
+
 # Bloquear arquivos desnecessários para SEO
 Disallow: /src/
 Disallow: /*.json$
@@ -12,9 +15,11 @@ Disallow: /node_modules/
 # Permitir bots específicos importantes
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
@@ -28,8 +33,10 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Sitemap
+# Sitemap otimizado
 Sitemap: https://solarien.com.br/sitemap.xml
 
-# Crawl-delay para evitar sobrecarga
-Crawl-delay: 1
+# SEO hints para energia solar e mercado livre
+# energia-solar mercado-livre-energia economia-conta-luz
+# energia-limpa energia-renovavel sustentabilidade
+# energia-por-assinatura consultoria-energetica

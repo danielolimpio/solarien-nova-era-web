@@ -69,12 +69,12 @@ const Header = () => {
   }, []);
 
   const menuItems = useMemo(() => [
-    { name: 'Home', id: 'home', description: 'Página inicial da Solarien Energy' },
-    { name: 'Sobre', id: 'sobre', description: 'Conheça a Solarien Energy' },
-    { name: 'Parcerias', id: 'parcerias', description: 'Nossos parceiros em energia solar' },
-    { name: 'Serviços', id: 'servicos', description: 'Serviços de energia solar e mercado livre' },
-    { name: 'Licenciado', id: 'licenciado', description: 'Informações sobre licenciamento' },
-    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco' }
+    { name: 'Home', id: 'home', description: 'Página inicial da Solarien Energy', url: 'https://solarien.com.br/' },
+    { name: 'Sobre', id: 'sobre', description: 'Conheça a Solarien Energy', url: 'https://solarien.com.br/#sobre' },
+    { name: 'Parcerias', id: 'parcerias', description: 'Nossos parceiros em energia solar', url: 'https://solarien.com.br/#parcerias' },
+    { name: 'Serviços', id: 'servicos', description: 'Serviços de energia solar e mercado livre', url: 'https://solarien.com.br/#servicos' },
+    { name: 'Licenciado', id: 'licenciado', description: 'Informações sobre licenciamento', url: 'https://solarien.com.br/#licenciado' },
+    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contact' }
   ], []);
 
   const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);
@@ -105,14 +105,22 @@ const Header = () => {
             <span className="sr-only" itemProp="name">Solarien Energy</span>
           </div>
 
-          {/* Desktop Navigation com estrutura semântica */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8" role="navigation" aria-label="Menu principal">
+          {/* Desktop Navigation com estrutura semântica otimizada para Sitelinks */}
+          <nav 
+            className="hidden lg:flex items-center space-x-4 xl:space-x-8" 
+            role="navigation" 
+            aria-label="Menu principal"
+            itemScope 
+            itemType="https://schema.org/SiteNavigationElement"
+          >
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScrollToSection(item.id)}
                 className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly will-change-transform"
                 aria-label={item.description}
+                itemProp="name"
+                data-sitelink-url={item.url}
               >
                 {item.name}
               </button>
@@ -127,6 +135,8 @@ const Header = () => {
               rel="noopener noreferrer"
               className="px-3 lg:px-4 py-2 text-white font-bold hover:text-solarien-primary transition-colors duration-300 text-sm lg:text-base touch-friendly"
               aria-label="Entrar no painel do cliente Solarien"
+              itemProp="url"
+              data-sitelink="portal-cliente"
             >
               Entrar
             </a>
@@ -136,6 +146,8 @@ const Header = () => {
               rel="noopener noreferrer"
               className="px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse text-sm lg:text-base touch-friendly will-change-transform"
               aria-label="Cadastrar-se na Solarien Energy"
+              itemProp="url"
+              data-sitelink="cadastro"
             >
               Cadastrar
             </a>
@@ -165,6 +177,8 @@ const Header = () => {
             style={headerStyle}
             role="navigation"
             aria-label="Menu mobile"
+            itemScope 
+            itemType="https://schema.org/SiteNavigationElement"
           >
             <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
               {menuItems.map((item) => (
@@ -173,6 +187,8 @@ const Header = () => {
                   onClick={() => handleScrollToSection(item.id)}
                   className="p-4 rounded-lg hover:bg-green-800 transition-colors duration-300 text-left text-white font-bold touch-friendly"
                   aria-label={item.description}
+                  itemProp="name"
+                  data-sitelink-url={item.url}
                 >
                   {item.name}
                 </button>
@@ -184,6 +200,8 @@ const Header = () => {
                   rel="noopener noreferrer"
                   className="p-4 text-white font-bold hover:bg-green-800 rounded-lg transition-colors duration-300 text-center touch-friendly"
                   aria-label="Entrar no painel do cliente"
+                  itemProp="url"
+                  data-sitelink="portal-cliente"
                 >
                   Entrar
                 </a>
@@ -193,6 +211,8 @@ const Header = () => {
                   rel="noopener noreferrer"
                   className="p-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg text-center touch-friendly"
                   aria-label="Cadastrar-se na Solarien"
+                  itemProp="url"
+                  data-sitelink="cadastro"
                 >
                   Cadastrar
                 </a>

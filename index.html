@@ -40,7 +40,7 @@
     <meta name="twitter:description" content="Economia até 45% na conta de luz com migração gratuita para energia solar" />
     <meta name="twitter:image" content="https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" />
     
-    <!-- Schema.org estruturado otimizado -->
+    <!-- Schema.org estruturado otimizado para Sitelinks -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,7 +61,11 @@
         "addressCountry": "BR"
       },
       "sameAs": [
-        "https://painel.solarien.com.br"
+        "https://painel.solarien.com.br",
+        "https://www.facebook.com/solarienoficial/",
+        "https://www.instagram.com/solarienoficial/",
+        "https://www.youtube.com/@solarienenergy",
+        "https://x.com/solarienoficial"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -90,7 +94,7 @@
     }
     </script>
 
-    <!-- Schema adicional para energia renovável -->
+    <!-- Schema estruturado para WebSite com Sitelinks -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -107,7 +111,85 @@
       "publisher": {
         "@type": "Organization",
         "name": "Solarien Energy"
-      }
+      },
+      "mainEntity": [
+        {
+          "@type": "WebPage",
+          "name": "Home",
+          "url": "https://solarien.com.br/",
+          "description": "Página inicial da Solarien Energy - Energia Solar e Mercado Livre"
+        },
+        {
+          "@type": "WebPage", 
+          "name": "Como Funciona",
+          "url": "https://solarien.com.br/como-funciona",
+          "description": "Entenda como funciona nosso processo de migração para energia solar"
+        },
+        {
+          "@type": "WebPage",
+          "name": "FAQ",
+          "url": "https://solarien.com.br/faq", 
+          "description": "Perguntas frequentes sobre energia solar e mercado livre"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Contato",
+          "url": "https://solarien.com.br/contact",
+          "description": "Entre em contato com a Solarien Energy"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Depoimentos",
+          "url": "https://solarien.com.br/depoimentos",
+          "description": "Veja depoimentos de clientes satisfeitos"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Blog",
+          "url": "https://solarien.com.br/blog",
+          "description": "Notícias e artigos sobre energia solar e sustentabilidade"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema para Breadcrumbs Navigation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://solarien.com.br/"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Energia Solar",
+          "item": "https://solarien.com.br/#sobre"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "Mercado Livre",
+          "item": "https://solarien.com.br/#servicos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Como Funciona", 
+          "item": "https://solarien.com.br/como-funciona"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contato",
+          "item": "https://solarien.com.br/contact"
+        }
+      ]
     }
     </script>
     
@@ -190,6 +272,14 @@
         height: 1px; 
         overflow: hidden; 
       }
+      /* Otimização para Sitelinks */
+      nav[role="navigation"] {
+        visibility: visible !important;
+      }
+      .sitelinks-navigation {
+        font-weight: 600;
+        text-decoration: none;
+      }
     </style>
   </head>
 
@@ -212,6 +302,20 @@
       <span>economia conta luz residencial comercial</span>
       <span>energia por assinatura sem investimento</span>
     </div>
+
+    <!-- Navegação estruturada para Sitelinks -->
+    <nav class="seo-hidden sitelinks-navigation" aria-label="Navegação principal do site" role="navigation">
+      <ul itemScope itemType="https://schema.org/SiteNavigationElement">
+        <li itemProp="name"><a href="https://solarien.com.br/" itemProp="url">Home - Energia Solar</a></li>
+        <li itemProp="name"><a href="https://solarien.com.br/como-funciona" itemProp="url">Como Funciona</a></li>
+        <li itemProp="name"><a href="https://solarien.com.br/faq" itemProp="url">Perguntas Frequentes</a></li>
+        <li itemProp="name"><a href="https://solarien.com.br/contact" itemProp="url">Contato</a></li>
+        <li itemProp="name"><a href="https://solarien.com.br/depoimentos" itemProp="url">Depoimentos</a></li>
+        <li itemProp="name"><a href="https://solarien.com.br/blog" itemProp="url">Blog</a></li>
+        <li itemProp="name"><a href="https://painel.solarien.com.br/login" itemProp="url">Portal do Cliente</a></li>
+        <li itemProp="name"><a href="https://painel.solarien.com.br/solarien" itemProp="url">Cadastro</a></li>
+      </ul>
+    </nav>
     
     <div id="root">
       <div class="loading-fallback">

@@ -9,6 +9,14 @@ import { Separator } from '../components/ui/separator';
 const AboutSection = React.lazy(() => 
   import('../components/AboutSection').then(module => {
     // Preload próximo componente
+    import('../components/SEOOptimizedContent');
+    return module;
+  })
+);
+
+const SEOOptimizedContent = React.lazy(() => 
+  import('../components/SEOOptimizedContent').then(module => {
+    // Preload próximo componente
     import('../components/PartnersCarousel');
     return module;
   })
@@ -84,22 +92,45 @@ const Index = () => {
     // Preload primeiro componente lazy
     import('../components/AboutSection');
     
-    // Adicionar dados estruturados específicos da página
+    // Adicionar dados estruturados específicos da página com palavras-chave
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Solarien Energy - Energia Solar e Mercado Livre",
-      "description": "Migração gratuita para energia solar e mercado livre com economia garantida de até 45%",
+      "name": "Solarien Energy - Energia Solar por Assinatura e Mercado Livre de Energia",
+      "description": "Líder em energia solar por assinatura e mercado livre de energia com migração gratuita e economia garantida até 45%. Energia limpa e renovável.",
       "url": "https://solarien.com.br/",
+      "keywords": "energia solar, energia por assinatura, mercado livre de energia, economia de energia, energia limpa, energia renovável",
       "mainEntity": {
         "@type": "Service",
-        "name": "Consultoria em Energia Solar",
-        "description": "Serviços de migração para energia solar e mercado livre sem custos",
+        "name": "Energia Solar por Assinatura",
+        "description": "Serviços de migração para energia solar por assinatura e mercado livre sem custos com economia garantida",
         "provider": {
           "@type": "Organization",
-          "name": "Solarien Energy"
+          "name": "Solarien Energy",
+          "alternateName": ["Solarien", "Solarien Energia"]
+        },
+        "areaServed": "Brasil",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços de Energia Renovável",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Migração para Energia Solar por Assinatura"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Consultoria em Mercado Livre de Energia"
+              }
+            }
+          ]
         }
       }
     });
@@ -121,6 +152,13 @@ const Index = () => {
         <section id="sobre" aria-labelledby="sobre-heading">
           <Suspense fallback={<OptimizedFallback />}>
             <AboutSection />
+          </Suspense>
+        </section>
+        
+        {/* Nova seção SEO otimizada */}
+        <section id="energia-solar-assinatura" aria-labelledby="energia-solar-heading">
+          <Suspense fallback={<OptimizedFallback />}>
+            <SEOOptimizedContent />
           </Suspense>
         </section>
         

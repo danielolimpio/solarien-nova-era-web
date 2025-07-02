@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -291,8 +292,16 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t pt-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-gray-300 text-sm font-medium">
-              Copyright 2025 | Todos direitos reservados.
+            <div className="text-gray-300 text-sm font-medium text-center md:text-left">
+              Copyright 2025 | Todos direitos reservados. | Desenvolvido por{' '}
+              <a 
+                href="https://danielolimpio.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-solarien-primary hover:text-solarien-secondary transition-colors duration-300 font-semibold"
+              >
+                Daniel Olímpio
+              </a>
             </div>
             
             {/* Social Links */}

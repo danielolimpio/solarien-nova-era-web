@@ -2,12 +2,6 @@
 User-agent: *
 Allow: /
 
-# Permitir acesso a todas as páginas importantes para SEO
-Allow: /energia-solar-assinatura
-Allow: /mercado-livre-energia  
-Allow: /economia-energia
-Allow: /energia-limpa-renovavel
-
 # Bloquear arquivos desnecessários para SEO
 Disallow: /src/
 Disallow: /*.json$
@@ -34,7 +28,7 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Sitemap otimizado
+# Sitemap
 Sitemap: https://solarien.com.br/sitemap.xml
 
 # Crawl-delay para evitar sobrecarga

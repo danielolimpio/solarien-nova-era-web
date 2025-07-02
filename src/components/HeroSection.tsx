@@ -7,15 +7,15 @@ import TypewriterText from './hero/TypewriterText';
 
 const HeroSection = () => {
   const texts = useMemo(() => [
-    'Energia Solar por Assinatura',
-    'Mercado Livre de Energia',
-    'Economia até 45%',
-    'Energia Limpa e Renovável'
+    'Energia do Futuro',
+    'Reduza até 45%',
+    'Migração Grátis!',
+    'Suporte Rápido'
   ], []);
 
   const handleSaibaMaisClick = useCallback(() => {
     const phoneNumber = '+5511997361698';
-    const message = 'Olá! Gostaria de saber mais sobre energia solar por assinatura e mercado livre de energia para economizar na conta de luz.';
+    const message = 'Olá! Gostaria de saber mais sobre energia limpa e economia na conta de luz.';
     const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }, []);
@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   const statisticsData = useMemo(() => [
     { value: 'Até 45%', label: 'Economia Garantida' },
-    { value: '100k+', label: 'Clientes Migraram' },
+    { value: '100k', label: 'Clientes Migraram' },
     { value: '4200', label: 'Cidades Atingidas' },
     { value: '95%', label: 'Taxa de Migração' }
   ], []);
@@ -49,7 +49,7 @@ const HeroSection = () => {
             />
             <img
               src="https://images.unsplash.com/photo-1509391366360-2e759784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-              alt="Energia solar por assinatura - painéis solares gerando energia limpa e renovável para economia na conta de luz"
+              alt="Painéis solares fotovoltaicos gerando energia limpa e renovável"
               className="w-full h-full object-cover will-change-transform brightness-[0.3]"
               loading="eager"
               decoding="async"
@@ -66,23 +66,23 @@ const HeroSection = () => {
           <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-gradient-radial from-[#00844e]/15 via-[#00844e]/8 to-transparent rounded-full blur-xl animate-soft-pulse delay-2000" />
         </div>
 
-        {/* Conteúdo principal com estrutura semântica otimizada para SEO */}
+        {/* Conteúdo principal com estrutura semântica otimizada */}
         <header className="relative z-10 text-center px-4 pt-32 md:pt-20">
           <div className="max-w-4xl mx-auto">
-            {/* H1 otimizado para palavras-chave estratégicas */}
+            {/* H1 otimizado para SEO */}
             <h1 className="sr-only">
-              Solarien Energy - Energia Solar por Assinatura e Mercado Livre de Energia com Economia até 45% na Conta de Luz - Energia Limpa e Renovável
+              Solarien Energy - Energia Solar e Mercado Livre de Energia com Economia até 45% na Conta de Luz
             </h1>
             
-            {/* Texto animado com palavras-chave */}
+            {/* Texto animado */}
             <TypewriterText texts={texts} />
             
             <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-              <strong>A Solarien Energy é líder em energia solar por assinatura e mercado livre de energia</strong> com{' '}
+              <strong>Gestão de contratos e consultoria energética</strong> com{' '}
               <span className="bg-gradient-to-r from-[#02ff91] via-[#00c26f] to-[#00844e] bg-clip-text text-transparent font-semibold">
-                migração gratuita para energia limpa e renovável
+                migração gratuita para energia por assinatura e mercado livre
               </span>{' '}
-              - <em>Economia de energia garantida até 45% sem custos, sem obras, sem instalação de placas solares</em>
+              - <em>Sem custos, sem obras, sem instalação de placas solares</em>
             </p>
 
             {/* Seção de benefícios com schema estruturado */}
@@ -96,23 +96,23 @@ const HeroSection = () => {
               ))}
             </div>
             
-            {/* Botões otimizados com texto descritivo para SEO */}
+            {/* Botões otimizados com texto descritivo */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <DiscountSimulator>
                 <Button 
                   className="w-full sm:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect hover:animate-gentle-glow will-change-transform"
-                  aria-label="Simular economia com energia solar por assinatura e mercado livre de energia"
+                  aria-label="Simular economia na conta de luz com energia solar"
                 >
-                  Simular Economia com Energia Solar
+                  Simular Economia na Conta de Luz
                 </Button>
               </DiscountSimulator>
               <Button 
                 variant="outline" 
                 className="w-full sm:w-auto border-3 border-[#02ff91] text-[#02ff91] hover:bg-gradient-to-r hover:from-[#02ff91] hover:to-[#00c26f] hover:text-black font-bold px-12 py-6 text-xl rounded-2xl transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-[#02ff91]/50 glow-effect hover:animate-gentle-glow will-change-transform"
                 onClick={handleSaibaMaisClick}
-                aria-label="Saiba mais sobre energia solar por assinatura e mercado livre"
+                aria-label="Saiba mais sobre energia solar e mercado livre"
               >
-                Energia Limpa e Renovável
+                Saiba Mais sobre Energia Solar
               </Button>
             </div>
           </div>

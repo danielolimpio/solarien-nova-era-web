@@ -133,8 +133,8 @@ const About = () => {
                 </div>
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png" 
-                    alt="Missão Solarien Energy" 
+                    src="/lovable-uploads/01cf340a-bb1b-43df-b89a-91684583fe6a.png" 
+                    alt="Missão Solarien Energy - 100% Sustentável" 
                     className="rounded-2xl shadow-2xl"
                     loading="lazy"
                   />

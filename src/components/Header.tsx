@@ -30,7 +30,7 @@ const Header = () => {
 
   const handleScrollToSection = useCallback((sectionId: string) => {
     if (sectionId === 'contato') {
-      navigate('/contact');
+      navigate('/contato');
       setIsMobileMenuOpen(false);
       return;
     }
@@ -74,7 +74,7 @@ const Header = () => {
     { name: 'Parcerias', id: 'parcerias', description: 'Nossos parceiros em energia solar', url: 'https://solarien.com.br/#parcerias' },
     { name: 'Serviços', id: 'servicos', description: 'Serviços de energia solar e mercado livre', url: 'https://solarien.com.br/#servicos' },
     { name: 'Licenciado', id: 'licenciado', description: 'Informações sobre licenciamento', url: 'https://solarien.com.br/#licenciado' },
-    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contact' }
+    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contato' }
   ], []);
 
   const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);

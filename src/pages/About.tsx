@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,7 +7,7 @@ const About = () => {
   const values = [
     {
       icon: Sun,
-      title: "Sustentabilidade",
+      title: "Sustentabilidade", 
       description: "Comprometidos com um futuro mais verde e sustentável através da energia solar"
     },
     {
@@ -30,29 +29,19 @@ const About = () => {
 
   const timeline = [
     {
-      year: "2020",
-      title: "Fundação da Solarien",
-      description: "Nascemos com o propósito de democratizar o acesso à energia limpa no Brasil"
-    },
-    {
-      year: "2021",
-      title: "Primeiros Contratos",
-      description: "Iniciamos nossa operação com os primeiros contratos de energia por assinatura"
-    },
-    {
-      year: "2022",
-      title: "Expansão Nacional",
-      description: "Expandimos nossa operação para todo o território nacional"
-    },
-    {
       year: "2023",
-      title: "Marco de 1000 Clientes",
-      description: "Atingimos a marca de 1000 clientes atendidos em todo o Brasil"
+      title: "Ínicio da Jornada",
+      description: "Iniciamos no mercado de energia limpa com os primeiros contratos"
     },
     {
-      year: "2024",
-      title: "Líder de Mercado",
-      description: "Nos consolidamos como referência em gestão energética e energia por assinatura"
+      year: "2024", 
+      title: "Expansão Nacional",
+      description: "Expandimos nossa operação em rede para todo o território nacional"
+    },
+    {
+      year: "2025",
+      title: "Operação Própria",
+      description: "Nos consolidamos como referência em gestão de contratos energéticos"
     }
   ];
 
@@ -82,7 +71,7 @@ const About = () => {
               </p>
               <div className="grid md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-solarien-primary mb-2">5+</div>
+                  <div className="text-4xl font-bold text-solarien-primary mb-2">3+</div>
                   <div className="text-gray-300">Anos de Experiência</div>
                 </div>
                 <div className="text-center">

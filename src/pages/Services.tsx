@@ -114,7 +114,7 @@ const Services = () => {
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/lovable-uploads/60cfbf44-9aea-402c-9cea-dc463d264cab.png" 
+              src="/lovable-uploads/939095a5-bbfa-4af3-a5bc-86bbbefab2d2.png" 
               alt="Serviços Solarien Energy" 
               className="w-full h-full object-cover opacity-30"
               loading="lazy"

@@ -157,7 +157,7 @@ const Licensed = () => {
                 </div>
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/b5ba95d7-b811-4245-aa1e-bf25b1372da2.png" 
+                    src="/lovable-uploads/dd91c0ca-f624-4e08-93dc-300635b098c4.png" 
                     alt="Requisitos Licenciado Solarien" 
                     className="rounded-2xl shadow-2xl"
                     loading="lazy"

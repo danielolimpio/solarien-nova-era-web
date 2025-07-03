@@ -64,7 +64,7 @@ const About = () => {
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png" 
+              src="/lovable-uploads/00c148a8-b0fa-4818-a6ee-85e977a4c451.png" 
               alt="Energia Solar Solarien" 
               className="w-full h-full object-cover opacity-30"
               loading="lazy"
@@ -133,7 +133,7 @@ const About = () => {
                 </div>
                 <div className="relative">
                   <img 
-                    src="/lovable-uploads/37c6cbac-89ea-4a8b-a8c2-4b4920db0e91.png" 
+                    src="/lovable-uploads/5172e657-5908-42ac-a8ce-de3b2ffa4b91.png" 
                     alt="Missão Solarien Energy" 
                     className="rounded-2xl shadow-2xl"
                     loading="lazy"

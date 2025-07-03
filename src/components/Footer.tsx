@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -22,93 +21,37 @@ const Footer = () => {
         });
       }, 100);
     } else if (link === 'Sobre') {
-      // Always navigate to home first, then scroll to about section
-      if (window.location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.getElementById('sobre');
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        }, 100);
-      } else {
-        const element = document.getElementById('sobre');
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+      navigate('/sobre');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (link === 'Licenciados') {
-      // Always navigate to home first, then scroll to entrepreneurship section (Oportunidade de Negócio)
-      if (window.location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.getElementById('licenciado');
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        }, 100);
-      } else {
-        const element = document.getElementById('licenciado');
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+      navigate('/licenciado');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (link === 'Serviços') {
-      // Navigate to home first if not already there, then scroll to services
-      if (window.location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.getElementById('servicos');
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        }, 100);
-      } else {
-        const element = document.getElementById('servicos');
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+      navigate('/servicos');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (link === 'Usinas') {
-      // Navigate to home first if not already there, then scroll to solar plants
-      if (window.location.pathname !== '/') {
-        navigate('/');
-        setTimeout(() => {
-          const element = document.getElementById('usinas');
-          if (element) {
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        }, 100);
-      } else {
-        const element = document.getElementById('usinas');
-        if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
+      navigate('/usinas');
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 100);
     } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Blog/Notícias'].includes(link)) {
       // Navigate to respective pages and scroll to top
       let route = '';
@@ -123,16 +66,16 @@ const Footer = () => {
           route = '/faq';
           break;
         case 'Termos de Uso':
-          route = '/terms';
+          route = '/termos-de-uso';
           break;
         case 'Política de Privacidade':
-          route = '/privacy';
+          route = '/politica-de-privacidade';
           break;
         case 'Política de Cookies':
-          route = '/cookies';
+          route = '/politica-de-cookies';
           break;
         case 'Política de Transparência':
-          route = '/transparency';
+          route = '/politica-de-transparencia';
           break;
         case 'Envie o Feedback':
           route = '/feedback';
@@ -151,7 +94,7 @@ const Footer = () => {
         });
       }, 100);
     } else if (link === 'Contatos') {
-      navigate('/contact');
+      navigate('/contato');
       setTimeout(() => {
         window.scrollTo({
           top: 0,

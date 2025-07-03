@@ -14,61 +14,85 @@
     </image:image>
   </url>
   <url>
-    <loc>https://solarien.com.br/como-funciona</loc>
+    <loc>https://solarien.com.br/sobre/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/faq</loc>
+    <loc>https://solarien.com.br/servicos/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/contact</loc>
+    <loc>https://solarien.com.br/licenciado/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/depoimentos</loc>
+    <loc>https://solarien.com.br/usinas/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://solarien.com.br/como-funciona/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://solarien.com.br/faq/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://solarien.com.br/contato/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://solarien.com.br/depoimentos/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/blog</loc>
+    <loc>https://solarien.com.br/blog/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/transparency</loc>
+    <loc>https://solarien.com.br/politica-de-transparencia/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/feedback</loc>
+    <loc>https://solarien.com.br/feedback/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/terms</loc>
+    <loc>https://solarien.com.br/termos-de-uso/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/privacy</loc>
+    <loc>https://solarien.com.br/politica-de-privacidade/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://solarien.com.br/cookies</loc>
+    <loc>https://solarien.com.br/politica-de-cookies/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

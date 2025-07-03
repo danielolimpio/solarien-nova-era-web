@@ -12,6 +12,15 @@ Disallow: /*.tsx$
 Disallow: /*.ts$
 Disallow: /node_modules/
 
+# Bloquear links específicos indesejados
+Disallow: /category/
+Disallow: /author/
+Disallow: /o-marco-legal-da-geracao-distribuida-no-brasil/
+Disallow: /energia-injetada-e-o-futuro-da-sustentabilidade-e-economia-no-setor-eletrico/
+Disallow: /entenda-os-subgrupos-do-mercado-livre-de-energia/
+Disallow: /eergx_template/
+Disallow: /painel.solarien.com.br/register/MARCELOPURGA
+
 # Permitir bots específicos importantes
 User-agent: Googlebot
 Allow: /

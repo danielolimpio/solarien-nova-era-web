@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -209,7 +210,11 @@ const Licensed = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
+                    <img 
+                      src="/lovable-uploads/e3d9a3c1-73b1-4698-8ee5-ac655f832465.png" 
+                      alt="Carlos Silveira" 
+                      className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+                    />
                     <h3 className="text-white font-bold text-lg">Carlos Silveira</h3>
                     <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>
@@ -219,7 +224,11 @@ const Licensed = () => {
                 </div>
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
+                    <img 
+                      src="/lovable-uploads/5e176f78-4742-4f8b-8c76-a8b9d2c956f4.png" 
+                      alt="Mayra Santos" 
+                      className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+                    />
                     <h3 className="text-white font-bold text-lg">Mayra Santos</h3>
                     <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>
@@ -230,7 +239,11 @@ const Licensed = () => {
                 </div>
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
+                    <img 
+                      src="/lovable-uploads/610577b6-6a23-483b-8218-a84bf11031dd.png" 
+                      alt="Jonathan Oliveira" 
+                      className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+                    />
                     <h3 className="text-white font-bold text-lg">Jonathan Oliveira</h3>
                     <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>

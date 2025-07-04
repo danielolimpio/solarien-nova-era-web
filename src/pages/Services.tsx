@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -12,7 +11,7 @@ const Services = () => {
       description: "Acesso à energia limpa sem investimento inicial, instalação ou manutenção",
       features: [
         "Sem custos de instalação",
-        "Economia de até 30% na conta de luz",
+        "Economia de até 25% na conta de luz",
         "Energia 100% renovável",
         "Sem obras ou reformas",
         "Migração gratuita"
@@ -21,10 +20,10 @@ const Services = () => {
     },
     {
       icon: TrendingDown,
-      title: "Mercado Livre de Energia",
-      description: "Liberdade para escolher seu fornecedor de energia e economizar até 40%",
+      title: "Mercado Livre de Energia", 
+      description: "Liberdade para escolher seu fornecedor de energia e economizar até 45%",
       features: [
-        "Economia de até 40%",
+        "Economia de até 45%",
         "Contratos personalizados",
         "Consultoria especializada",
         "Gestão completa do processo",
@@ -67,7 +66,7 @@ const Services = () => {
       description: "Avaliamos seu perfil de consumo e identificamos oportunidades de economia"
     },
     {
-      step: "2",
+      step: "2", 
       title: "Proposta Personalizada",
       description: "Desenvolvemos uma solução sob medida para suas necessidades específicas"
     },
@@ -135,7 +134,7 @@ const Services = () => {
                   <div className="text-gray-300">Energia Renovável</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-solarien-primary mb-2">40%</div>
+                  <div className="text-4xl font-bold text-solarien-primary mb-2">45%</div>
                   <div className="text-gray-300">Economia Máxima</div>
                 </div>
                 <div className="text-center">
@@ -261,17 +260,17 @@ const Services = () => {
                     <tr className="border-b border-green-700/30">
                       <td className="p-6 text-gray-300">Investimento Inicial</td>
                       <td className="p-6 text-center text-green-400">R$ 0,00</td>
-                      <td className="p-6 text-center text-yellow-400">Variável</td>
+                      <td className="p-6 text-center text-green-400">R$ 0,00</td>
                     </tr>
                     <tr className="border-b border-green-700/30">
                       <td className="p-6 text-gray-300">Economia Máxima</td>
-                      <td className="p-6 text-center text-white">Até 30%</td>
-                      <td className="p-6 text-center text-white">Até 40%</td>
+                      <td className="p-6 text-center text-white">Até 25%</td>
+                      <td className="p-6 text-center text-white">Até 45%</td>
                     </tr>
                     <tr className="border-b border-green-700/30">
                       <td className="p-6 text-gray-300">Instalação</td>
                       <td className="p-6 text-center text-green-400">Não necessária</td>
-                      <td className="p-6 text-center text-yellow-400">Pode ser necessária</td>
+                      <td className="p-6 text-center text-green-400">Não necessária</td>
                     </tr>
                     <tr>
                       <td className="p-6 text-gray-300">Ideal para</td>

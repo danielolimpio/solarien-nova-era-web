@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,7 +7,7 @@ const Licensed = () => {
   const benefits = [
     {
       icon: TrendingUp,
-      title: "Alta Rentabilidade",
+      title: "Alta Rentabilidade", 
       description: "Ganhos atrativos com modelo de negócio comprovado e crescimento sustentável"
     },
     {
@@ -30,7 +29,7 @@ const Licensed = () => {
 
   const requirements = [
     "Experiência em vendas ou relacionamento comercial",
-    "Disponibilidade para dedicação ao negócio",
+    "Disponibilidade para dedicação ao negócio", 
     "Investimento inicial acessível",
     "Compromisso com qualidade e excelência no atendimento",
     "Interesse genuíno em sustentabilidade e energia renovável"
@@ -43,7 +42,7 @@ const Licensed = () => {
       description: "Preencha nosso formulário e participe do processo de seleção"
     },
     {
-      step: "2",
+      step: "2", 
       title: "Treinamento Inicial",
       description: "Capacitação completa sobre nossos produtos e metodologias"
     },
@@ -211,19 +210,18 @@ const Licensed = () => {
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
-                    <h3 className="text-white font-bold text-lg">Carlos Silva</h3>
-                    <p className="text-solarien-primary text-sm">Licenciado há 2 anos</p>
+                    <h3 className="text-white font-bold text-lg">Carlos Silveira</h3>
+                    <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>
                   <p className="text-gray-300 text-center italic">
-                    "A Solarien mudou minha vida profissional. Em 2 anos como licenciado, 
-                    consegui triplicar minha renda e ajudar centenas de famílias a economizar energia."
+                    "A Solarien mudou minha vida profissional, consegui triplicar minha renda e ajudar dezenas de famílias a economizar energia."
                   </p>
                 </div>
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
-                    <h3 className="text-white font-bold text-lg">Maria Santos</h3>
-                    <p className="text-solarien-primary text-sm">Licenciada há 3 anos</p>
+                    <h3 className="text-white font-bold text-lg">Mayra Santos</h3>
+                    <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>
                   <p className="text-gray-300 text-center italic">
                     "O suporte da Solarien é excepcional. Desde o treinamento até o dia a dia, 
@@ -233,8 +231,8 @@ const Licensed = () => {
                 <div className="bg-green-800/30 p-6 rounded-2xl border border-green-700/50">
                   <div className="text-center mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full mx-auto mb-4"></div>
-                    <h3 className="text-white font-bold text-lg">João Oliveira</h3>
-                    <p className="text-solarien-primary text-sm">Licenciado há 1 ano</p>
+                    <h3 className="text-white font-bold text-lg">Jonathan Oliveira</h3>
+                    <p className="text-solarien-primary text-sm">Licenciado Autorizado</p>
                   </div>
                   <p className="text-gray-300 text-center italic">
                     "Trabalhar com energia renovável me dá propósito. Além dos ganhos financeiros, 

@@ -78,9 +78,11 @@ const PartnersCarousel = () => {
 
       <div className="responsive-container relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="responsive-heading font-bold mb-4 bg-green-950">
-            <span className="text-gradient">Distribuidoras</span> <span className="text-gray-800">Parceiras</span>
-          </h2>
+          <div className="inline-block bg-green-900/90 px-6 py-3 rounded-xl border border-green-700/50 backdrop-blur-sm shadow-lg">
+            <h2 className="responsive-heading font-bold text-white mb-0">
+              <span className="text-green-100">Distribuidoras</span> <span className="text-white">Parceiras</span>
+            </h2>
+          </div>
           <p className="text-gray-600 responsive-text max-w-2xl mx-auto leading-relaxed">
             Você continua utilizando a mesma rede de distribuição convencional
           </p>

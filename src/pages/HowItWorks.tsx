@@ -321,7 +321,7 @@ const HowItWorks = () => {
                       </tr>
                       <tr className="border-b border-green-800/50">
                         <td className="p-4 text-gray-300">Desconto</td>
-                        <td className="p-4 text-solarien-primary font-semibold">Até 15%</td>
+                        <td className="p-4 text-solarien-primary font-semibold">Até 25%</td>
                         <td className="p-4 text-solarien-secondary font-semibold">Até 45%</td>
                       </tr>
                       <tr className="border-b border-green-800/50">

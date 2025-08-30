@@ -1,7 +1,6 @@
 
 import React, { useCallback, useMemo } from 'react';
 import { Button } from './ui/button';
-import DiscountSimulator from './DiscountSimulator';
 import { CircleDollarSign, Wrench, SquareSlash } from 'lucide-react';
 import TypewriterText from './hero/TypewriterText';
 
@@ -116,15 +115,14 @@ const HeroSection = () => {
             
             {/* Botões - responsivos com melhor spacing */}
             <div className="flex flex-col sm:flex-col md:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center mb-8 sm:mb-12 md:mb-16">
-              <DiscountSimulator>
-                <Button 
-                  className="w-full sm:w-full md:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 md:hover:scale-110 shadow-2xl border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect hover:animate-gentle-glow will-change-transform"
-                  aria-label="Simular economia na conta de luz com energia solar"
-                  data-seo-action="simular-economia-energia-solar"
-                >
-                  Simular Economia na Conta de Luz
-                </Button>
-              </DiscountSimulator>
+              <Button 
+                className="w-full sm:w-full md:w-auto bg-gradient-to-r from-[#02ff91] to-[#00c26f] hover:from-[#00c26f] hover:to-[#00844e] text-black font-bold px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 md:hover:scale-110 shadow-2xl border-2 border-[#02ff91] hover:border-[#00c26f] glow-effect hover:animate-gentle-glow will-change-transform"
+                aria-label="Contatar para mais informações sobre energia solar"
+                data-seo-action="contatar-energia-solar"
+                onClick={handleSaibaMaisClick}
+              >
+                Entre em Contato
+              </Button>
               <Button 
                 variant="outline" 
                 className="w-full sm:w-full md:w-auto border-2 md:border-3 border-[#02ff91] text-[#02ff91] hover:bg-gradient-to-r hover:from-[#02ff91] hover:to-[#00c26f] hover:text-black font-bold px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl rounded-lg sm:rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 md:hover:scale-110 shadow-2xl hover:shadow-[#02ff91]/50 glow-effect hover:animate-gentle-glow will-change-transform"

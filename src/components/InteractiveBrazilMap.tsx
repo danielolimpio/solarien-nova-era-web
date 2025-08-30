@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { MapPin, Zap, TrendingUp, Users, Building2, CheckCircle } from 'lucide-react';
-import DiscountSimulator from './DiscountSimulator';
 
 const InteractiveBrazilMap = () => {
   const [selectedState, setSelectedState] = useState<string | null>(null);
@@ -153,17 +152,6 @@ const InteractiveBrazilMap = () => {
                   </div>
                 </div>
 
-                {showSimulator && (
-                  <div className="mt-6">
-                    <DiscountSimulator>
-                      <div className="text-center mb-4">
-                        <h3 className="text-solarien-primary text-xl font-bold">
-                          Simule sua economia em {stateData[selectedState].name}
-                        </h3>
-                      </div>
-                    </DiscountSimulator>
-                  </div>
-                )}
               </CardContent>
             </Card>
           )}

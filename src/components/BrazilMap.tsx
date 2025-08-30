@@ -18,10 +18,10 @@ const BrazilMap = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 hover:animate-soft-pulse transition-all duration-300">
-              <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Simulador</span> <span className="text-gray-800">Nacional</span>
+              <span className="bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">Cobertura</span> <span className="text-gray-800">Nacional</span>
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Descubra o desconto disponível em seu estado e simule sua economia com energia solar. 
+              Descubra o desconto disponível em seu estado com energia solar. 
               Atendemos 17 estados com desconto garantido de 15%.
             </p>
           </div>

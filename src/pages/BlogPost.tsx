@@ -765,7 +765,6 @@ Plataformas digitais oferecem:
 - Chatbots com processamento de linguagem natural
 - Resolução automática de problemas comuns
 - Acesso 24/7 a informações de conta
-- Simuladores de economia energética
 
 ## Sustentabilidade Digital
 

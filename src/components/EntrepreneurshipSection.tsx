@@ -192,7 +192,7 @@ const EntrepreneurshipSection = () => {
           {/* Download PDF Button */}
           <div className="flex justify-center mb-8">
             <a
-              href="https://drive.google.com/file/d/1We9W89nqwsFpjlzYVdi5Bb_FKuGrK5pL/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1jgaxdHykiAGWVat_Ro2k9BhkEvcadOZ1/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-solarien-primary/20 border border-solarien-primary/40 rounded-lg text-solarien-primary hover:bg-solarien-primary/30 transition-all duration-300"

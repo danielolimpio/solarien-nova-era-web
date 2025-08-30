@@ -13,35 +13,38 @@ const StateCoverageSimulator = () => {
   const [showResult, setShowResult] = useState(false);
 
   const stateData = {
+    'Alagoas': {
+      distributors: [{ name: 'Energisa', discount: 16 }]
+    },
     'Bahia': {
-      distributors: [{ name: 'Coelba (Neoenergia)', discount: 15 }]
+      distributors: [{ name: 'Coelba (Neoenergia)', discount: 25 }]
     },
     'Distrito Federal': {
-      distributors: [{ name: 'CEB (Neoenergia)', discount: 15 }]
+      distributors: [{ name: 'CEB (Neoenergia)', discount: 12 }]
     },
     'Ceará': {
-      distributors: [{ name: 'Enel', discount: 15 }]
+      distributors: [{ name: 'Enel', discount: 25 }]
     },
     'Goiás': {
-      distributors: [{ name: 'Equatorial', discount: 15 }]
+      distributors: [{ name: 'Equatorial', discount: 25 }]
     },
     'Maranhão': {
       distributors: [{ name: 'Equatorial', discount: 15 }]
     },
     'Mato Grosso': {
-      distributors: [{ name: 'Energisa', discount: 15 }]
+      distributors: [{ name: 'Energisa', discount: 25 }]
     },
     'Mato Grosso do Sul': {
-      distributors: [{ name: 'Energisa', discount: 15 }]
+      distributors: [{ name: 'Energisa', discount: 18 }]
     },
     'Minas Gerais': {
       distributors: [
-        { name: 'Cemig', discount: 15 },
-        { name: 'Energisa', discount: 15 }
+        { name: 'Cemig', discount: 25 },
+        { name: 'Energisa', discount: 25 }
       ]
     },
     'Pará': {
-      distributors: [{ name: 'Equatorial', discount: 15 }]
+      distributors: [{ name: 'Equatorial', discount: 12 }]
     },
     'Paraná': {
       distributors: [
@@ -50,13 +53,13 @@ const StateCoverageSimulator = () => {
       ]
     },
     'Pernambuco': {
-      distributors: [{ name: 'Celpe (Neoenergia)', discount: 15 }]
+      distributors: [{ name: 'Celpe (Neoenergia)', discount: 25 }]
     },
     'Piauí': {
-      distributors: [{ name: 'Equatorial', discount: 15 }]
+      distributors: [{ name: 'Equatorial', discount: 12 }]
     },
     'Rio Grande do Norte': {
-      distributors: [{ name: 'Cosern (Neoenergia)', discount: 15 }]
+      distributors: [{ name: 'Cosern (Neoenergia)', discount: 12 }]
     },
     'Santa Catarina': {
       distributors: [{ name: 'Celesc', discount: 15 }]
@@ -73,16 +76,16 @@ const StateCoverageSimulator = () => {
       ]
     },
     'Sergipe': {
-      distributors: [{ name: 'Energisa', discount: 15 }]
+      distributors: [{ name: 'Energisa', discount: 10 }]
     },
     'Tocantins': {
-      distributors: [{ name: 'Energisa', discount: 15 }]
+      distributors: [{ name: 'Energisa', discount: 10 }]
     },
     'Rio de Janeiro': {
-      distributors: [{ name: 'Enel', discount: 15 }]
+      distributors: [{ name: 'Enel', discount: 10 }]
     },
     'Espírito Santo': {
-      distributors: [{ name: 'Energisa', discount: 15 }]
+      distributors: [{ name: 'EDP', discount: 10 }]
     }
   };
 
@@ -205,7 +208,7 @@ const StateCoverageSimulator = () => {
             <span className="leading-tight">Simulador Nacional de Energia Solar</span>
           </CardTitle>
           <CardDescription className="text-gray-600 text-sm sm:text-base lg:text-lg">
-            Descubra sua economia com energia solar - Cobertura em 19 estados do Brasil
+            Descubra sua economia com energia solar - Cobertura em 20 estados do Brasil
             <br />
             <span className="font-semibold text-[#00844e] flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-xs sm:text-sm">
               Grupo B - Baixa Tensão (Residências, Comércios, Rural e Iluminação Pública)
@@ -226,14 +229,14 @@ const StateCoverageSimulator = () => {
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#02ff91] to-[#00844e] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">19</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">20</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Estados Cobertos</div>
             </div>
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-xl sm:rounded-2xl border border-[#00844e]/20">
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <Zap className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">27</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">28</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Distribuidoras</div>
             </div>
           </div>

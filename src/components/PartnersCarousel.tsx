@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Users } from 'lucide-react';
 
 const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,8 +114,15 @@ const PartnersCarousel = () => {
 
       <div className="responsive-container relative z-10">
         <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 bg-solarien-primary/20 border border-solarien-primary/30 rounded-full px-6 py-2 mb-6">
+            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
+              <Users className="w-4 h-4" style={{ color: '#002113' }} />
+            </div>
+            <span className="text-solarien-primary font-medium">Distribuidoras Parceiras</span>
+          </div>
+          
           <h2 className="responsive-heading font-bold mb-4">
-            <span className="text-gradient">Distribuidoras</span> <span className="text-gray-800">Parceiras</span>
+            <span className="text-gradient">Sua Energia</span> <span className="text-gray-800">Nossa Parceria</span>
           </h2>
           <p className="text-gray-600 responsive-text max-w-2xl mx-auto leading-relaxed">
             Você continua utilizando a mesma rede de distribuição convencional

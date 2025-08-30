@@ -28,39 +28,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', scrollListener);
   }, [handleScroll]);
 
-  const handleScrollToSection = useCallback((sectionId: string) => {
-    if (sectionId === 'contato') {
-      navigate('/contato');
-      setIsMobileMenuOpen(false);
-      return;
-    }
-
-    if (sectionId === 'home') {
-      navigate('/');
-      setIsMobileMenuOpen(false);
-      return;
-    }
-
-    if (window.location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }
+  const handleNavigation = useCallback((route: string) => {
+    navigate(route);
     setIsMobileMenuOpen(false);
   }, [navigate]);
 
@@ -69,12 +38,12 @@ const Header = () => {
   }, []);
 
   const menuItems = useMemo(() => [
-    { name: 'Home', id: 'home', description: 'Página inicial da Solarien Energy', url: 'https://solarien.com.br/' },
-    { name: 'Sobre', id: 'sobre', description: 'Conheça a Solarien Energy', url: 'https://solarien.com.br/#sobre' },
-    { name: 'Parcerias', id: 'parcerias', description: 'Nossos parceiros em energia solar', url: 'https://solarien.com.br/#parcerias' },
-    { name: 'Serviços', id: 'servicos', description: 'Serviços de energia solar e mercado livre', url: 'https://solarien.com.br/#servicos' },
-    { name: 'Licenciado', id: 'licenciado', description: 'Informações sobre licenciamento', url: 'https://solarien.com.br/#licenciado' },
-    { name: 'Contato', id: 'contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contato' }
+    { name: 'Home', route: '/', description: 'Página inicial da Solarien Energy', url: 'https://solarien.com.br/' },
+    { name: 'Sobre', route: '/sobre', description: 'Conheça a Solarien Energy', url: 'https://solarien.com.br/sobre' },
+    { name: 'Parcerias', route: '/usinas', description: 'Nossos parceiros em energia solar', url: 'https://solarien.com.br/usinas' },
+    { name: 'Serviços', route: '/servicos', description: 'Serviços de energia solar e mercado livre', url: 'https://solarien.com.br/servicos' },
+    { name: 'Licenciado', route: '/licenciado', description: 'Informações sobre licenciamento', url: 'https://solarien.com.br/licenciado' },
+    { name: 'Contato', route: '/contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contato' }
   ], []);
 
   const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);
@@ -115,8 +84,8 @@ const Header = () => {
           >
             {menuItems.map((item) => (
               <button
-                key={item.id}
-                onClick={() => handleScrollToSection(item.id)}
+                key={item.route}
+                onClick={() => handleNavigation(item.route)}
                 className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly will-change-transform"
                 aria-label={item.description}
                 itemProp="name"
@@ -183,8 +152,8 @@ const Header = () => {
             <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
               {menuItems.map((item) => (
                 <button
-                  key={item.id}
-                  onClick={() => handleScrollToSection(item.id)}
+                  key={item.route}
+                  onClick={() => handleNavigation(item.route)}
                   className="p-4 rounded-lg hover:bg-green-800 transition-colors duration-300 text-left text-white font-bold touch-friendly"
                   aria-label={item.description}
                   itemProp="name"

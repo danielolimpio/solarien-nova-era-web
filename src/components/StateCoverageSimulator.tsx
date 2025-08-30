@@ -66,7 +66,10 @@ const StateCoverageSimulator = () => {
         { name: 'CPFL Paulista', discount: 15 },
         { name: 'Elektro (Neoenergia)', discount: 15 },
         { name: 'Energisa', discount: 15 },
-        { name: 'Copel', discount: 15 }
+        { name: 'Copel', discount: 15 },
+        { name: 'CPFL Piratininga', discount: 15 },
+        { name: 'EDP', discount: 10 },
+        { name: 'ENEL', discount: 10 }
       ]
     },
     'Sergipe': {

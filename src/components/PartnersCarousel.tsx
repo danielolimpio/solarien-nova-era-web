@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const partners = [{
@@ -78,10 +78,11 @@ const PartnersCarousel = () => {
 
       <div className="responsive-container relative z-10">
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-block bg-green-900/90 px-6 py-3 rounded-xl border border-green-700/50 backdrop-blur-sm shadow-lg">
-            <h2 className="responsive-heading font-bold text-white mb-0">
-              <span className="text-green-100">Distribuidoras</span> <span className="text-white">Parceiras</span>
-            </h2>
+          <div className="inline-flex items-center gap-2 rounded-full px-6 py-2 mb-6" style={{ backgroundColor: '#002113' }}>
+            <div className="w-6 h-6 bg-gradient-to-br from-solarien-primary to-solarien-secondary rounded-full flex items-center justify-center">
+              <Zap className="w-4 h-4" style={{ color: '#002113' }} />
+            </div>
+            <span className="text-solarien-primary font-medium">Distribuidoras Parceiras</span>
           </div>
           <p className="text-gray-600 responsive-text max-w-2xl mx-auto leading-relaxed">
             Você continua utilizando a mesma rede de distribuição convencional

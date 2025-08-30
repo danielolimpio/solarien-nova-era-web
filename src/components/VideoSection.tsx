@@ -43,7 +43,7 @@ const VideoSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-solarien-primary/30">
               <AspectRatio ratio={16/9}>
                 <iframe
-                  src="https://www.youtube.com/embed/tzu8S27mAyk?rel=0&modestbranding=1&showinfo=0"
+                  src="https://www.youtube.com/embed/F2uVQecpZ4M?rel=0&modestbranding=1&showinfo=0"
                   title="Solarien Energy - Nossa História"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

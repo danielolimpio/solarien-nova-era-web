@@ -233,7 +233,7 @@ const HowItWorks = () => {
                     <ul className="space-y-2 text-gray-300">
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-solarien-primary" />
-                        Desconto de até 15%
+                        Desconto de até 25%
                       </li>
                       <li className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-solarien-primary" />

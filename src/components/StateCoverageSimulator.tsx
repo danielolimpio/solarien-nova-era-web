@@ -74,6 +74,12 @@ const StateCoverageSimulator = () => {
     },
     'Tocantins': {
       distributors: [{ name: 'Energisa', discount: 15 }]
+    },
+    'Rio de Janeiro': {
+      distributors: [{ name: 'Enel', discount: 15 }]
+    },
+    'Espírito Santo': {
+      distributors: [{ name: 'Energisa', discount: 15 }]
     }
   };
 
@@ -196,7 +202,7 @@ const StateCoverageSimulator = () => {
             <span className="leading-tight">Simulador Nacional de Energia Solar</span>
           </CardTitle>
           <CardDescription className="text-gray-600 text-sm sm:text-base lg:text-lg">
-            Descubra sua economia com energia solar - Cobertura em 17 estados do Brasil
+            Descubra sua economia com energia solar - Cobertura em 19 estados do Brasil
             <br />
             <span className="font-semibold text-[#00844e] flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-xs sm:text-sm">
               Grupo B - Baixa Tensão (Residências, Comércios, Rural e Iluminação Pública)
@@ -217,7 +223,7 @@ const StateCoverageSimulator = () => {
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#02ff91] to-[#00844e] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">17</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">19</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Estados Cobertos</div>
             </div>
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-xl sm:rounded-2xl border border-[#00844e]/20">

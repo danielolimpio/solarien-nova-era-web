@@ -25,14 +25,6 @@ const PartnersCarousel = React.lazy(() =>
 const SolarPlantsCarousel = React.lazy(() => 
   import('../components/SolarPlantsCarousel').then(module => {
     // Preload próximo componente
-    import('../components/BrazilMap');
-    return module;
-  })
-);
-
-const BrazilMap = React.lazy(() => 
-  import('../components/BrazilMap').then(module => {
-    // Preload próximo componente
     import('../components/EntrepreneurshipSection');
     return module;
   })
@@ -139,12 +131,6 @@ const Index = () => {
         <section id="usinas-solares" aria-labelledby="usinas-heading">
           <Suspense fallback={<OptimizedFallback />}>
             <SolarPlantsCarousel />
-          </Suspense>
-        </section>
-        
-        <section id="cobertura" aria-labelledby="cobertura-heading">
-          <Suspense fallback={<OptimizedFallback />}>
-            <BrazilMap />
           </Suspense>
         </section>
         

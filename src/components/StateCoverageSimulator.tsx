@@ -217,14 +217,14 @@ const StateCoverageSimulator = () => {
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#02ff91] to-[#00844e] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">19</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#02ff91] mb-1">17</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Estados Cobertos</div>
             </div>
             <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-[#00844e]/10 to-[#02ff91]/10 rounded-xl sm:rounded-2xl border border-[#00844e]/20">
               <div className="p-2 sm:p-3 bg-gradient-to-br from-[#00844e] to-[#02ff91] rounded-full w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
                 <Zap className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{ color: '#015c3b' }} />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">23</div>
+              <div className="text-2xl sm:text-3xl font-bold text-[#00844e] mb-1">27</div>
               <div className="text-gray-600 font-medium text-xs sm:text-sm">Distribuidoras</div>
             </div>
           </div>

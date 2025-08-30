@@ -196,7 +196,7 @@ const StateCoverageSimulator = () => {
             <span className="leading-tight">Simulador Nacional de Energia Solar</span>
           </CardTitle>
           <CardDescription className="text-gray-600 text-sm sm:text-base lg:text-lg">
-            Descubra sua economia com energia solar - Cobertura em 17 estados do Brasil
+            Descubra sua economia com energia solar - Cobertura em 19 estados do Brasil
             <br />
             <span className="font-semibold text-[#00844e] flex items-center gap-1 sm:gap-2 mt-1 sm:mt-2 text-xs sm:text-sm">
               Grupo B - Baixa Tensão (Residências, Comércios, Rural e Iluminação Pública)

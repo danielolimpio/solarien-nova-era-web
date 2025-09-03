@@ -35,6 +35,9 @@ const PartnersCarousel = () => {
   }, {
     name: 'Light',
     logo: '/lovable-uploads/db66c2d1-2e4b-40b1-ab3b-9bfd7df28e4a.png'
+  }, {
+    name: 'CPFL Piratininga',
+    logo: '/lovable-uploads/8f128a3d-37f5-44b3-9e31-b11c8d3af105.png'
   }];
 
   // Configuração responsiva para diferentes tamanhos de tela

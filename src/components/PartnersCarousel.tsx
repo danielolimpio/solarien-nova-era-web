@@ -32,6 +32,9 @@ const PartnersCarousel = () => {
   }, {
     name: 'Enel',
     logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
+  }, {
+    name: 'Light',
+    logo: '/lovable-uploads/db66c2d1-2e4b-40b1-ab3b-9bfd7df28e4a.png'
   }];
 
   // Configuração responsiva para diferentes tamanhos de tela

@@ -135,6 +135,18 @@ const PartnersCarousel = () => {
           length: totalSlides
         }).map((_, index) => <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-solarien-primary scale-110' : 'bg-gray-400'}`} aria-label={`Slide ${index + 1}`} />)}
         </div>
+
+        {/* Botão Ver Mapa de Descontos */}
+        <div className="flex justify-center mt-8 sm:mt-10">
+          <a
+            href="https://drive.google.com/file/d/1uuMcodSlA23tK0grM3JesLxiNc-yxnQt/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 bg-solarien-primary text-white font-medium rounded-lg hover:bg-solarien-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Ver Mapa de Descontos
+          </a>
+        </div>
       </div>
     </section>;
 };

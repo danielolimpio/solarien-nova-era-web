@@ -41,6 +41,12 @@ const PartnersCarousel = () => {
   }, {
     name: 'EDP',
     logo: '/lovable-uploads/37c4c532-2e09-48c1-8923-b19903e8d75b.png'
+  }, {
+    name: 'Neoenergia Brasília',
+    logo: '/lovable-uploads/a95cc55e-8b0c-43b0-bc70-94a68c6d1136.png'
+  }, {
+    name: 'COSERN',
+    logo: '/lovable-uploads/13f4f575-48aa-4162-ba85-9cbc2a8949d6.png'
   }];
 
   // Configuração responsiva para diferentes tamanhos de tela

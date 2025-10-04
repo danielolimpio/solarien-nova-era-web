@@ -97,6 +97,16 @@ const blogPosts: BlogPost[] = [
     readTime: '12 min',
     category: 'Legislação',
     tags: ['Lei 14.300', 'Legislação', 'Geração Distribuída', 'Marco Legal']
+  },
+  {
+    id: 'fontes-energia-renovaveis-nao-renovaveis',
+    title: 'Fontes de Energia Renováveis e Não Renováveis: Um Guia Completo para Entender o Futuro da Energia',
+    excerpt: 'Descubra as diferenças entre fontes renováveis e não renováveis e como a energia solar, biomassa e outras soluções sustentáveis estão transformando o mercado energético brasileiro.',
+    image: '/lovable-uploads/fontes-energia-renovaveis.jpg',
+    date: '2025-01-15',
+    readTime: '15 min',
+    category: 'Educação',
+    tags: ['Energia Renovável', 'Energia Solar', 'Biomassa', 'Sustentabilidade', 'Mercado Livre']
   }
 ];
 

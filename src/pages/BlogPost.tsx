@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, Share2, BookOpen, Tag, User } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Button } from '../components/ui/button';
@@ -1615,6 +1616,65 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <Helmet>
+        {/* Meta Tags Dinâmicas para SEO */}
+        <title>{post.title} | Solarien Energy Blog</title>
+        <meta name="description" content={post.excerpt} />
+        <meta name="keywords" content={post.tags.join(', ')} />
+        <link rel="canonical" href={`https://solarien.com.br/blog/${post.id}`} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:url" content={`https://solarien.com.br/blog/${post.id}`} />
+        <meta property="og:image" content={post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`} />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        <meta property="article:section" content={post.category} />
+        {post.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`} />
+        
+        {/* Schema.org Article Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`,
+            "datePublished": post.date,
+            "dateModified": post.date,
+            "author": {
+              "@type": "Organization",
+              "name": post.author,
+              "url": "https://solarien.com.br"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Solarien Energy",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://solarien.com.br/blog/${post.id}`
+            },
+            "articleSection": post.category,
+            "keywords": post.tags.join(', ')
+          })}
+        </script>
+      </Helmet>
+      
       <Header />
       
       {/* Hero Section */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Filter, Tag, BookOpen } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SearchInput from '../components/SearchInput';
@@ -156,6 +157,27 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <Helmet>
+        {/* Meta Tags para SEO do Blog */}
+        <title>Blog Solarien Energy - Notícias e Artigos sobre Energia Solar e Mercado Livre</title>
+        <meta name="description" content="Fique por dentro das últimas novidades do mercado energético brasileiro. Análises especializadas, insights do setor e tendências sobre energia solar, mercado livre e sustentabilidade." />
+        <meta name="keywords" content="blog energia solar, mercado livre energia, notícias energia renovável, artigos sustentabilidade, economia energia elétrica" />
+        <link rel="canonical" href="https://solarien.com.br/blog" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Blog Solarien Energy - Conhecimento em Energia" />
+        <meta property="og:description" content="Análises especializadas, insights do setor e tendências que moldam o futuro da energia no Brasil" />
+        <meta property="og:url" content="https://solarien.com.br/blog" />
+        <meta property="og:image" content="https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog Solarien Energy" />
+        <meta name="twitter:description" content="Fique por dentro das últimas novidades do mercado energético brasileiro" />
+        <meta name="twitter:image" content="https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" />
+      </Helmet>
+      
       <Header />
       
       {/* Hero Section */}

@@ -221,8 +221,6 @@
     
     <!-- Preload imagens críticas -->
     <link rel="preload" href="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" as="image" fetchpriority="high">
-    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" as="image" media="(max-width: 768px)">
-    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" as="image" media="(min-width: 769px)">
     
     <!-- DNS prefetch otimizado -->
     <link rel="dns-prefetch" href="//images.unsplash.com">
@@ -265,16 +263,6 @@
         content-visibility: auto;
         contain-intrinsic-size: 300px 200px;
       }
-      /* Keywords ocultas para SEO */
-      .seo-hidden { 
-        position: absolute; 
-        left: -10000px; 
-        top: auto; 
-        width: 1px; 
-        height: 1px; 
-        overflow: hidden; 
-      }
-      /* Otimização para Sitelinks */
       nav[role="navigation"] {
         visibility: visible !important;
       }
@@ -290,33 +278,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T63LR4Z9"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
-    <!-- Keywords ocultas estratégicas para SEO -->
-    <div class="seo-hidden" aria-hidden="true">
-      <span>igreen energy alternativa sustentável</span>
-      <span>lex alexandria soluções energéticas</span>
-      <span>alexandria energia consultoria especializada</span>
-      <span>lex energia mercado livre</span>
-      <span>enerzee economia energética</span>
-      <span>matrix energia sistema inovador</span>
-      <span>reenergisa energia renovável</span>
-      <span>axs energia soluções sustentáveis</span>
-      <span>raizen energia alternativa limpa</span>
-      <span>marketing de rede energia solar</span>
-      <span>marketing multinivel energia limpa</span>
-      <span>multinível energia sustentável</span>
-      <span>mmn energia renovável</span>
-      <span>energia solar fotovoltaica brasil</span>
-      <span>mercado livre energia elétrica</span>
-      <span>energia limpa renovável sustentável</span>
-      <span>economia conta luz residencial comercial</span>
-      <span>energia por assinatura sem investimento</span>
-      <span>sistema multinível energia verde</span>
-      <span>rede colaborativa energia solar</span>
-    </div>
 
     <!-- Navegação estruturada para Sitelinks -->
-    <nav class="seo-hidden sitelinks-navigation" aria-label="Navegação principal do site" role="navigation">
+    <nav class="sr-only sitelinks-navigation" aria-label="Navegação principal do site" role="navigation">
       <ul itemScope itemType="https://schema.org/SiteNavigationElement">
         <li itemProp="name"><a href="https://solarien.com.br/" itemProp="url">Home - Energia Solar</a></li>
         <li itemProp="name"><a href="https://solarien.com.br/como-funciona" itemProp="url">Como Funciona</a></li>

@@ -19,6 +19,16 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: 'mercado-livre-energia-2027',
+    title: 'Mercado Livre de Energia 2027: Economia de R$ 35 Bi por Ano',
+    excerpt: 'Abertura Total do Mercado Livre de Energia trará Economia de R$ 35 Bilhões por Ano: O que Você Precisa Saber',
+    image: '/lovable-uploads/mercado-livre-energia-2027.jpg',
+    date: '2025-01-22',
+    readTime: '20 min',
+    category: 'Mercado Livre',
+    tags: ['Mercado Livre de Energia', 'Economia', 'MP 1.300/2025', 'Abertura 2027']
+  },
+  {
     id: 'mp-1300-2025',
     title: 'Medida Provisória nº 1.300 de 21 de maio de 2025: Revolução no Setor Elétrico Brasileiro',
     excerpt: 'Análise completa da MP 1.300/2025 que promete revolucionar o mercado de energia elétrica brasileiro com novas diretrizes para o setor.',

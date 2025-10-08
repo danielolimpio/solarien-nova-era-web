@@ -21,6 +21,213 @@ interface BlogPost {
 // Same blog posts data as in Blog.tsx
 const blogPosts: BlogPost[] = [
   {
+    id: 'mercado-livre-energia-2027',
+    title: 'Mercado Livre de Energia 2027: Economia de R$ 35 Bi por Ano',
+    excerpt: 'Abertura Total do Mercado Livre de Energia trará Economia de R$ 35 Bilhões por Ano: O que Você Precisa Saber',
+    content: `A energia elétrica é um dos pilares da economia moderna — e também um dos maiores custos mensais para famílias, pequenos negócios e indústrias. No Brasil, porém, um cenário está prestes a mudar de forma histórica. Em 2027, o Mercado Livre de Energia será aberto para todos os consumidores, incluindo residências, comércios de bairro e produtores rurais. Essa mudança, prevista na Medida Provisória nº 1.300/2025, tem potencial para gerar uma economia anual de R$ 35 bilhões para os brasileiros — e você, provavelmente, está entre os beneficiados.
+
+Mas o que isso significa na prática? Como funciona o Mercado Livre de Energia? Quem pode migrar, quando e por que isso gera tanta economia? Neste artigo, vamos desvendar tudo com clareza, dados atualizados e orientações práticas para você se preparar para essa transformação histórica no setor elétrico brasileiro.
+
+## O que é o Mercado Livre de Energia?
+
+Antes de entender a abertura total, é essencial compreender o que é o Mercado Livre de Energia.
+
+Atualmente, o Brasil opera com dois modelos de contratação de energia elétrica:
+
+**Mercado Regulado (Ambiente de Contratação Regulada – ACR):**
+É o modelo tradicional, onde a distribuidora local (como Enel, Neoenergia, CPFL, Light, etc.) cobra uma tarifa definida pela Agência Nacional de Energia Elétrica (ANEEL). A maioria dos consumidores residenciais e pequenos negócios está aqui.
+
+**Mercado Livre (Ambiente de Contratação Livre – ACL):**
+Neste modelo, o consumidor escolhe diretamente seu comercializador de energia e negocia preços, prazos e condições do contrato. Até hoje, apenas grandes indústrias e empresas com demanda acima de 500 kW (Grupo A) têm acesso a esse mercado.
+
+Ou seja: menos de 1% dos consumidores brasileiros podiam escolher seu fornecedor de energia. Isso está prestes a mudar — e de forma radical.
+
+## Abertura Total do Mercado Livre: Cronograma Oficial
+
+A abertura gradual do Mercado Livre para o Grupo B (consumidores de baixa tensão) foi oficializada pelo Ministério de Minas e Energia (MME) e está prevista na MP 1.300/2025, que aguarda aprovação definitiva no Congresso Nacional.
+
+O cronograma é o seguinte:
+
+### Agosto de 2026
+Indústrias e comércios que consomem em baixa tensão (Grupo B) poderão migrar para o Mercado Livre.
+
+### Dezembro de 2027
+Todos os demais consumidores do Grupo B, incluindo residências, condomínios, microempreendedores (MEIs) e produtores rurais, terão direito à portabilidade da conta de luz.
+
+**Importante:** Embora a Medida Provisória tenha efeito imediato, ela precisa ser convertida em lei pelo Congresso até 120 dias após sua publicação. Caso contrário, perde validade. Porém, dada a ampla base de apoio técnico e político, a expectativa é de aprovação.
+
+## Por que a Abertura do Mercado Livre é uma Revolução?
+
+Durante décadas, o consumidor brasileiro foi tratado como um "tomador passivo" de energia. Você paga o que a distribuidora cobra — sem opção de escolha, sem negociação, sem alternativas.
+
+Com a abertura total, o setor elétrico passará a funcionar como a telefonia móvel: você escolhe a operadora (comercializadora) com base em preço, serviço, transparência e benefícios.
+
+### Benefícios imediatos:
+- Redução média de 22,9% na conta de luz (dados de 2023)
+- Economia potencial de até 30% para muitos perfis
+- Mais de R$ 35 bilhões em economia coletiva por ano
+- Estímulo à concorrência saudável entre comercializadoras
+- Inclusão energética para classes historicamente excluídas
+
+## Quem se Beneficia com a Abertura do Mercado Livre?
+
+A universalização do acesso ao Mercado Livre não é apenas uma mudança técnica — é uma política de justiça social e econômica. Veja quem ganha:
+
+### Consumidores Residenciais (Classe C e D)
+- Mais de 70 milhões de unidades consumidoras
+- Representam 92% dos domicílios brasileiros
+- Economia estimada: R$ 22 bilhões por ano
+
+Muitas famílias da classe média pagam caro pela energia, mas não têm acesso à tarifa social nem recursos para instalar placas solares. Agora, poderão escolher um fornecedor mais barato — sem obras, sem investimento inicial.
+
+### Pequenos Negócios e Comércios
+- Mais de 6 milhões de estabelecimentos
+- Incluem padarias, salões de beleza, lojas de bairro, oficinas
+- Economia potencial: R$ 13 bilhões/ano
+- Potencial de criação de 290 mil novos empregos
+
+### Indústrias de Pequeno e Médio Porte
+- 410 mil indústrias ainda no mercado regulado
+- Economia estimada: R$ 4 bilhões/ano
+- Geração de 90 mil novos postos de trabalho
+
+### Produtores Rurais
+- 5 milhões de unidades rurais
+- Economia anual: R$ 3 bilhões
+- Especialmente impactantes para pequenos produtores com fatura abaixo de R$ 290/mês
+
+**Total geral:** Mais de 150 milhões de brasileiros deixarão de ser "reféns" da tarifa regulada.
+
+## Como Funcionará na Prática? Um Exemplo Real
+
+Imagine que você é dono de uma padaria em João Pessoa. Atualmente, paga R$ 1.200 por mês de energia à distribuidora local.
+
+Com a abertura do Mercado Livre em 2026, você poderá:
+
+1. Comparar ofertas de comercializadoras credenciadas na CCEE (Câmara de Comercialização de Energia Elétrica)
+2. Escolher um contrato com desconto de 25% sobre a tarifa atual
+3. Economizar R$ 300/mês — ou R$ 3.600 por ano
+4. Reinvestir esse valor em melhorias, estoque ou contratação de um novo funcionário
+
+Tudo isso sem trocar fiação, sem instalar equipamentos, sem burocracia excessiva. A única mudança será o nome do emissor da fatura — e o valor bem mais baixo.
+
+## Diferenças entre Mercado Regulado e Mercado Livre
+
+| Característica | Mercado Regulado | Mercado Livre |
+|---------------|------------------|---------------|
+| **Quem define o preço?** | ANEEL + distribuidora | Você + comercializadora |
+| **Liberdade de escolha** | Não | Sim |
+| **Contrato fixo?** | Não (tarifa varia todo mês) | Sim (pode ser fixo ou variável) |
+| **Transparência** | Baixa (encargos embutidos) | Alta (valores detalhados) |
+| **Acesso** | Todos (Grupo B) | Até 2027: apenas Grupo A |
+
+Com a abertura, o Grupo B passará a ter os mesmos direitos do Grupo A — finalmente.
+
+## Mitos Comuns sobre o Mercado Livre de Energia
+
+### "Só grandes empresas podem entrar."
+**Verdade:** Até 2027, sim. Depois, não. A partir de 2026/2027, qualquer consumidor do Grupo B poderá migrar.
+
+### "Vou perder a qualidade do serviço da distribuidora."
+**Falso.** A distribuidora continua responsável pela manutenção da rede, leitura do medidor e atendimento técnico. Só muda quem fornece a energia — não quem entrega.
+
+### "É complicado migrar."
+**Não é.** O processo será simplificado, com assistência de comercializadoras e plataformas digitais. Muitas já oferecem simuladores online.
+
+### "Vou pagar mais caro."
+**Improvável.** Estudos do MME e da CCEE mostram que o Mercado Livre é sistematicamente mais barato que o regulado, especialmente em momentos de alta hidrologia (quando há mais energia barata disponível).
+
+## Como se Preparar para a Abertura do Mercado Livre?
+
+Você não precisa esperar até 2027 para se preparar. Aqui estão 5 passos práticos:
+
+### 1. Conheça seu perfil de consumo
+Verifique sua fatura de energia:
+- Qual é seu consumo médio mensal (kWh)?
+- Qual é sua demanda contratada (se aplicável)?
+- Você está no Grupo A ou B? (normalmente, residências são Grupo B)
+
+### 2. Monitore seu histórico de faturas
+Guarde os últimos 12 meses de contas. Isso ajudará a comparar ofertas com precisão.
+
+### 3. Pesquise comercializadoras confiáveis
+A CCEE mantém uma lista atualizada de agentes autorizados. Evite empresas não regulamentadas.
+
+### 4. Entenda os tipos de contrato
+- **Preço fixo:** Ideal para quem quer previsibilidade
+- **Preço variável (spot):** Pode ser mais barato em meses com energia abundante
+- **Híbrido:** Combinação dos dois
+
+### 5. Considere soluções complementares
+Mesmo no Mercado Livre, você pode combinar com energia solar por assinatura, baterias ou eficiência energética para reduzir ainda mais custos.
+
+## Impacto Macroeconômico: Além da Economia na Conta
+
+A abertura do Mercado Livre não beneficia apenas o bolso do consumidor. Ela tem efeitos sistêmicos positivos:
+
+- **Redução da inflação:** A energia elétrica compõe o IPCA. Menos gastos = menor pressão inflacionária
+- **Geração de empregos:** Estimativa de 380 mil novos postos de trabalho até 2030
+- **Atração de investimentos:** Mais concorrência atrai capital privado para o setor energético
+- **Sustentabilidade:** Comercializadoras oferecerão planos com energia 100% renovável (solar, eólica, biomassa)
+
+## A Lei 9.074 e os 30 Anos de Espera
+
+Em 2025, o Brasil celebra 30 anos da Lei 9.074/1995, que criou as bases para o Mercado Livre. Porém, durante três décadas, o acesso foi restrito a uma elite energética.
+
+A abertura total corrige essa anomalia histórica e coloca o Brasil em linha com países como Estados Unidos, Alemanha, Espanha e Chile, onde consumidores residenciais já escolhem seu fornecedor há anos.
+
+Como disse o Ministério de Minas e Energia:
+
+> "O setor elétrico é repleto de desigualdades — e elas afetam a desigualdade social do país como um todo. É um momento para corrigir isso."
+
+## Conclusão: Uma Oportunidade Única para o Consumidor Brasileiro
+
+A abertura total do Mercado Livre de Energia é muito mais que uma reforma técnica. É um ato de democratização, que devolve ao cidadão o direito de escolher — e economizar.
+
+Com R$ 35 bilhões em economia anual, 380 mil novos empregos e inclusão energética para 150 milhões de pessoas, essa mudança tem potencial para transformar a realidade econômica de famílias, negócios e regiões inteiras.
+
+Se você é consumidor residencial, empresário, produtor rural ou gestor público: prepare-se. Em menos de dois anos, sua conta de luz poderá ser significativamente menor — basta estar informado e agir no momento certo.
+
+A energia do futuro é limpa, barata e escolhida por você. E esse futuro começa em 2026.
+
+## Perguntas Frequentes (FAQ)
+
+### 1. O que é o Mercado Livre de Energia?
+É um modelo em que o consumidor escolhe diretamente seu fornecedor de energia, negociando preço, prazo e condições do contrato — ao invés de pagar uma tarifa definida pela distribuidora.
+
+### 2. Quando o Mercado Livre será aberto para residências?
+A partir de dezembro de 2027, todas as residências (Grupo B) poderão migrar para o Mercado Livre, conforme previsto na MP 1.300/2025.
+
+### 3. Vou precisar instalar placas solares ou fazer obras?
+Não. A migração para o Mercado Livre não exige nenhuma alteração na sua instalação elétrica. A distribuidora continua responsável pela rede e manutenção.
+
+### 4. A qualidade do serviço vai piorar?
+Não. A distribuidora local (Enel, CPFL, etc.) continua cuidando da infraestrutura, leitura do medidor e atendimento técnico. Só muda quem fornece a energia.
+
+### 5. Como faço para migrar?
+Você precisará:
+- Escolher uma comercializadora credenciada na CCEE
+- Assinar um contrato
+- Solicitar a migração (o processo será digital e simplificado)
+
+Muitas empresas já oferecem simuladores online gratuitos.
+
+### 6. Posso voltar para o mercado regulado depois?
+Sim. A legislação prevê um período de carência (geralmente 12 meses), após o qual você pode retornar ao mercado regulado, se desejar.
+
+### 7. Quanto posso economizar?
+Estudos indicam economia média de 22,9%, podendo chegar a 30% dependendo do perfil de consumo e das condições do mercado no momento da contratação.
+
+### 8. A MP 1.300/2025 já está valendo?
+Sim, como Medida Provisória, ela tem efeito imediato, mas precisa ser aprovada pelo Congresso em até 120 dias para se tornar lei permanente.`,
+    image: '/lovable-uploads/mercado-livre-energia-2027.jpg',
+    date: '2025-01-22',
+    readTime: '20 min',
+    category: 'Mercado Livre',
+    author: 'Equipe Solarien',
+    tags: ['Mercado Livre de Energia', 'Economia na Conta de Luz', 'Abertura do Mercado Livre 2027', 'MP 1.300/2025']
+  },
+  {
     id: 'mp-1300-2025',
     title: 'Medida Provisória nº 1.300 de 21 de maio de 2025: Revolução no Setor Elétrico Brasileiro',
     excerpt: 'Análise completa da MP 1.300/2025 que promete revolucionar o mercado de energia elétrica brasileiro com novas diretrizes para o setor.',

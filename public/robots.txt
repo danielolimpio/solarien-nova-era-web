@@ -1,27 +1,26 @@
 
 User-agent: *
 Allow: /
-
-# Priorizar conteúdo importante para SEO
 Crawl-delay: 1
 
-# Bloquear arquivos desnecessários para SEO
+# Bloqueios técnicos (arquivos/pastas de desenvolvimento)
 Disallow: /src/
 Disallow: /*.json$
 Disallow: /*.tsx$
 Disallow: /*.ts$
 Disallow: /node_modules/
 
-# Bloquear links específicos indesejados
+# Bloqueios de conteúdo duplicado ou irrelevante para SEO
 Disallow: /category/
 Disallow: /author/
+Disallow: /eergx_template/
+
+# Bloqueios de URLs específicas (artigos ou páginas desatualizadas ou não indexáveis)
 Disallow: /o-marco-legal-da-geracao-distribuida-no-brasil/
 Disallow: /energia-injetada-e-o-futuro-da-sustentabilidade-e-economia-no-setor-eletrico/
 Disallow: /entenda-os-subgrupos-do-mercado-livre-de-energia/
-Disallow: /eergx_template/
-Disallow: /painel.solarien.com.br/register/MARCELOPURGA
 
-# Permitir bots específicos importantes
+# Permissões específicas para bots principais
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
@@ -42,10 +41,5 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Sitemap otimizado
+# Sitemap
 Sitemap: https://solarien.com.br/sitemap.xml
-
-# SEO hints para energia solar e mercado livre
-# energia-solar mercado-livre-energia economia-conta-luz
-# energia-limpa energia-renovavel sustentabilidade
-# energia-por-assinatura consultoria-energetica

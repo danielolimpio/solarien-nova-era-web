@@ -84,8 +84,7 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     sourcemap: false,
     target: 'es2020',
-    reportCompressedSize: false,
-    cssMinify: 'lightningcss'
+    reportCompressedSize: false
   },
   optimizeDeps: {
     include: [

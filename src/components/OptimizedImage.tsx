@@ -41,8 +41,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         }
       },
       { 
-        rootMargin: '50px',
-        threshold: 0.1
+        rootMargin: '100px',
+        threshold: 0.01
       }
     );
 
@@ -74,9 +74,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       className={`relative overflow-hidden ${className}`}
       style={{ aspectRatio }}
     >
-      {!isLoaded && !hasError && (
+      {!isLoaded && !hasError && isInView && (
         <div 
-          className="absolute inset-0 bg-gray-200 animate-pulse rounded"
+          className="absolute inset-0 bg-gray-800/20 animate-pulse rounded"
           style={{ aspectRatio }}
         />
       )}

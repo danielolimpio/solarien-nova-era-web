@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
   },
   plugins: [
     react(),
@@ -37,7 +40,21 @@ export default defineConfig(({ mode }) => ({
           'forms': ['react-hook-form', '@hookform/resolvers'],
           'email': ['@emailjs/browser'],
           'utils': ['class-variance-authority', 'clsx', 'tailwind-merge']
-        }
+        },
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/i.test(assetInfo.name)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.name)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       }
     },
     minify: 'terser',
@@ -62,12 +79,13 @@ export default defineConfig(({ mode }) => ({
         comments: false
       }
     },
-    assetsInlineLimit: 1024,
+    assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 600,
     cssCodeSplit: true,
     sourcemap: false,
     target: 'es2020',
-    reportCompressedSize: false
+    reportCompressedSize: false,
+    cssMinify: 'lightningcss'
   },
   optimizeDeps: {
     include: [

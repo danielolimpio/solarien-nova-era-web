@@ -219,16 +219,15 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
     
-    <!-- Preload imagens críticas -->
+    <!-- Preload imagens críticas com alta prioridade -->
     <link rel="preload" href="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" as="image" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" as="image" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" href="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" as="image" media="(min-width: 769px)" fetchpriority="high">
     
-    <!-- DNS prefetch otimizado -->
-    <link rel="dns-prefetch" href="//images.unsplash.com">
+    <!-- DNS prefetch otimizado - apenas críticos -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//wa.me">
-    <link rel="dns-prefetch" href="//www.google-analytics.com">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
     
     <!-- Preconnect crítico -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,18 +245,71 @@
     
     <!-- Critical CSS inline otimizado -->
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body { 
         font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
         overflow-x: hidden;
         font-display: swap;
+        margin: 0;
+        padding: 0;
       }
       .loading-fallback {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
         background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
+        text-align: center;
+        padding: 20px;
+      }
+      .loading-fallback h1 {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        font-weight: 700;
+        background: linear-gradient(to right, #02ff91, #00c26f, #00844e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      .loading-fallback p {
+        color: #d1d5db;
+        font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+        max-width: 600px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.6;
+      }
+      .loading-fallback .cta-button {
+        display: inline-block;
+        background: linear-gradient(to right, #02ff91, #00c26f);
+        color: #000;
+        font-weight: 700;
+        padding: 0.875rem 2rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+      .loading-fallback .cta-button:hover {
+        transform: scale(1.05);
+      }
+      .loading-spinner {
+        margin-top: 2rem;
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(2, 255, 145, 0.3);
+        border-top-color: #02ff91;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
       img {
         content-visibility: auto;
@@ -295,7 +347,10 @@
     
     <div id="root">
       <div class="loading-fallback">
-        <div style="color: #02ff91; font-size: 18px;">Carregando...</div>
+        <h1>Energia do Futuro</h1>
+        <p>Gestão de contratos e consultoria energética com <strong>migração gratuita</strong>. Economia garantida de até 45% na conta de luz.</p>
+        <a href="https://wa.me/5511997361698?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20energia%20limpa" class="cta-button">Entre em Contato</a>
+        <div class="loading-spinner"></div>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>

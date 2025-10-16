@@ -175,6 +175,10 @@ const Footer = () => {
                 src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
                 alt="Solarien Energy" 
                 className="h-12 w-auto"
+                width="151"
+                height="48"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">

@@ -26,21 +26,46 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router': ['react-router-dom'],
-          'ui-vendor': [
-            '@radix-ui/react-dialog', 
-            '@radix-ui/react-toast', 
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-progress',
-            '@radix-ui/react-select'
-          ],
-          'icons': ['lucide-react'],
-          'charts': ['recharts'],
-          'forms': ['react-hook-form', '@hookform/resolvers'],
-          'email': ['@emailjs/browser'],
-          'utils': ['class-variance-authority', 'clsx', 'tailwind-merge']
+        manualChunks: (id) => {
+          // Split React core
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'react-vendor';
+          }
+          // Split router separately
+          if (id.includes('node_modules/react-router-dom/')) {
+            return 'router';
+          }
+          // Split Radix UI components into smaller chunks
+          if (id.includes('@radix-ui/react-dialog')) return 'ui-dialog';
+          if (id.includes('@radix-ui/react-toast')) return 'ui-toast';
+          if (id.includes('@radix-ui/react-accordion')) return 'ui-accordion';
+          if (id.includes('@radix-ui/react-progress')) return 'ui-progress';
+          if (id.includes('@radix-ui/react-select')) return 'ui-select';
+          if (id.includes('@radix-ui/')) return 'ui-other';
+          // Split icons
+          if (id.includes('lucide-react')) {
+            return 'icons';
+          }
+          // Split charts
+          if (id.includes('recharts')) {
+            return 'charts';
+          }
+          // Split forms
+          if (id.includes('react-hook-form') || id.includes('@hookform/resolvers')) {
+            return 'forms';
+          }
+          // Split email
+          if (id.includes('@emailjs/browser')) {
+            return 'email';
+          }
+          // Split utilities
+          if (id.includes('class-variance-authority') || id.includes('clsx') || id.includes('tailwind-merge')) {
+            return 'utils';
+          }
+          // Split other node_modules into smaller chunks
+          if (id.includes('node_modules')) {
+            return 'vendor-other';
+          }
         },
         assetFileNames: (assetInfo) => {
           if (!assetInfo.name) return `assets/[name]-[hash][extname]`;

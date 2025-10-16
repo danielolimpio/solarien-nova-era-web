@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, Filter, Tag, BookOpen } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
@@ -133,7 +133,7 @@ const blogPosts: BlogPost[] = [
 ];
 
 const Blog = () => {
-  const navigate = useNavigate();
+  // navigation via Link instead of useNavigate
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -154,9 +154,7 @@ const Blog = () => {
     setIsLoaded(true);
   }, []);
 
-  const handlePostClick = (postId: string) => {
-    navigate(`/blog/${postId}`);
-  };
+  // handle navigation via Link components
 
   const handleSearchChange = (value: string) => {
     setSearchTerm(value);
@@ -289,13 +287,13 @@ const Blog = () => {
           ) : (
             <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {filteredPosts.map((post, index) => (
-                <article 
+                <Link 
+                  to={`/blog/${post.id}`}
                   key={post.id}
-                  className={`group cursor-pointer transform transition-all duration-700 hover:scale-105 ${
+                  className={`group block transform transition-all duration-700 hover:scale-105 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
-                  onClick={() => handlePostClick(post.id)}
                 >
                   <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden hover:border-solarien-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-solarien-primary/10">
                     <div className="relative overflow-hidden">
@@ -345,17 +343,12 @@ const Blog = () => {
                       </div>
                       
                       <div className="flex items-center justify-between">
-                        <Button 
-                          variant="ghost" 
-                          className="text-solarien-primary hover:text-solarien-secondary hover:bg-solarien-primary/10 p-0"
-                        >
-                          Ler mais
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
+                        <span className="text-solarien-primary group-hover:text-solarien-secondary">Ler mais</span>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           )}

@@ -46,21 +46,17 @@ De início, achava que era algo fora da minha realidade, cheio de papelada, cont
 
 Empresas como a Solarien Energy oferecem **migração gratuita** e acompanham todos os passos, ajudando com a papelada e a escolha do melhor contrato. O segredo é ter um parceiro que entende do assunto e faz questão de explicar tudo com clareza. E boa parte desse trabalho é digital, prático, muito longe daquele cenário de pilhas de documentos.
 
-Para entender mais sobre como funciona a gestão dos contratos, você pode consultar nosso guia completo sobre [gestão de contratos de energia](/servicos).
-
 ### 3. Mudando pro livre, você perde qualidade ou corre risco de ficar sem energia
 
 Essa é clássica. Eu temia que, contratando energia por fora, estaria mais exposto a apagões ou falhas, mas **não é assim**. A entrega da energia continua sendo feita pela mesma distribuidora da sua região.
 
-Ou seja, na ponta do consumo, nada muda: a mesma manutenção, as mesmas equipes e os mesmos padrões de qualidade. Os contratos tratam apenas da origem e do preço da energia, não da infraestrutura da rede. Você pode saber mais sobre isso em nosso artigo sobre [como funciona o mercado livre de energia](/blog/mercado-livre-energia).
+Ou seja, na ponta do consumo, nada muda: a mesma manutenção, as mesmas equipes e os mesmos padrões de qualidade. Os contratos tratam apenas da origem e do preço da energia, não da infraestrutura da rede.
 
 ### 4. Mercado livre é só pra quem entende de energia
 
 Sinceramente, no começo eu achava que só engenheiros elétricos ou executivos com tempo sobrando iam dar conta de gerenciar contratos nesse mercado. Mas logo percebi que **não precisava ser um especialista** para buscar economia.
 
-Com apoio de consultorias confiáveis como a Solarien Energy, a gestão dos contratos e a escolha das melhores ofertas acontecem de modo transparente e didático. Se você entende sua própria conta de energia e busca orientação, consegue sim aproveitar os benefícios. 
-
-A [transformação digital do mercado livre](/blog/transformacao-digital-mercado-livre) tornou tudo ainda mais acessível, com plataformas intuitivas e suporte especializado.
+Com apoio de consultorias confiáveis como a Solarien Energy, a gestão dos contratos e a escolha das melhores ofertas acontecem de modo transparente e didático. Se você entende sua própria conta de energia e busca orientação, consegue sim aproveitar os benefícios.
 
 ### 5. Economizar no mercado livre não é garantido
 
@@ -84,13 +80,11 @@ Essa ideia de futuro distante costumava travar meus planos. Muitos dizem que ain
 
 Há previsão de [abertura total do mercado para todos os consumidores](/blog/abertura-total-2028), inclusive residenciais, nos próximos anos. Ou seja, as oportunidades já estão disponíveis para muitos. Consumidores atentos já estão colhendo os frutos agora.
 
-A recente [Medida Provisória nº 1.300/2025](/blog/mp-1300-2025) acelerou ainda mais esse processo, consolidando o marco regulatório e garantindo mais segurança jurídica para todos os participantes.
-
 ## Outros pontos que sempre me perguntam
 
-Além dos mitos acima, há questões que aparecem em toda conversa sobre o tema. Para quem busca mais detalhes ou quer entender números e cases reais, sugiro uma leitura sobre os diferentes tipos de [fontes de energia renováveis e não renováveis](/blog/fontes-energia-renovaveis-nao-renovaveis).
+Além dos mitos acima, há questões que aparecem em toda conversa sobre o tema. Para quem busca mais detalhes ou quer entender números e cases reais, vale a pena conhecer os diferentes tipos de [fontes de energia renováveis e não renováveis](/blog/fontes-energia-renovaveis-nao-renovaveis) disponíveis no mercado.
 
-História de cliente, análise de vantagens, explicação sobre contratos: tudo isso ajuda a decidir com mais confiança. Outro ponto importante é entender como a [energia injetada](/blog/energia-injetada-futuro) se relaciona com o mercado livre e pode gerar ainda mais economia.
+História de cliente, análise de vantagens, explicação sobre contratos: tudo isso ajuda a decidir com mais confiança.
 
 ## Conclusão: vale a pena desconfiar dos mitos?
 

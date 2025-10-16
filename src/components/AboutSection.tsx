@@ -72,6 +72,10 @@ const AboutSection = () => {
                 src="/lovable-uploads/bde4e76d-6c52-45a3-8064-269c8716a781.png" 
                 alt="Edifício corporativo moderno" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
               />
               
               {/* Enhanced glass reflection effects */}

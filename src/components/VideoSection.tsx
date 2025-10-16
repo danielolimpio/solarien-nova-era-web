@@ -16,7 +16,7 @@ const VideoSection = () => {
       {/* Wind Farm Background */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70" 
           alt="Wind turbines landscape" 
           className="w-full h-full object-cover opacity-20"
           loading="lazy"

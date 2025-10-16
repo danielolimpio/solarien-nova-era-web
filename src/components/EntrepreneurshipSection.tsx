@@ -232,6 +232,8 @@ const EntrepreneurshipSection = () => {
               src="/lovable-uploads/329fed93-8f70-40a5-af74-d24ce55136f1.png" 
               alt="Money background" 
               className="w-full h-full object-cover brightness-[0.15]"
+              width="800"
+              height="1600"
               loading="lazy"
               decoding="async"
             />

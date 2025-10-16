@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const FAQ = () => {
   const navigate = useNavigate();
@@ -100,8 +102,17 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Perguntas Frequentes - FAQ Solarien Energy"
+        description="Tire suas dúvidas sobre energia solar por assinatura, mercado livre de energia e marketing de rede. Respostas completas sobre como economizar na conta de luz."
+        keywords="faq energia solar, dúvidas energia assinatura, perguntas mercado livre energia, como funciona solarien, multinível solarien"
+        canonical="https://solarien.com.br/faq"
+      />
       <Header />
       <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         {/* Header */}
         <div className="container mx-auto px-4 py-8">
           <div className="flex items-center gap-4 mb-8">

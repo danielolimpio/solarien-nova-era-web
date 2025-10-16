@@ -2,6 +2,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { Award, Shield, CheckCircle, Users, TrendingUp, Zap } from 'lucide-react';
 
 const Licensed = () => {
@@ -61,8 +63,17 @@ const Licensed = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Seja um Licenciado Solarien - Oportunidade de Negócio"
+        description="Torne-se um licenciado Solarien e empreenda no setor de energia renovável. Baixo investimento, alta rentabilidade e suporte completo. Saiba como se tornar um parceiro."
+        keywords="licenciado solarien, franquia energia solar, oportunidade negócio energia, empreender energia renovável, parceiro solarien"
+        canonical="https://solarien.com.br/licenciado"
+      />
       <Header />
       <main className="pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0">

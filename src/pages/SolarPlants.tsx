@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SolarPlantsCarousel from '../components/SolarPlantsCarousel';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { Sun, MapPin, Zap, TreePine, Factory, Users } from 'lucide-react';
 
 const SolarPlants = () => {
@@ -96,8 +98,17 @@ const SolarPlants = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Usinas Solares Parceiras - Rede Nacional"
+        description="Conheça a maior rede de usinas solares do Brasil. Mais de 2000 usinas parceiras gerando energia limpa e renovável em todo território nacional com tecnologia de ponta."
+        keywords="usinas solares brasil, usinas fotovoltaicas, rede usinas solares, energia solar brasil, geração solar distribuída"
+        canonical="https://solarien.com.br/usinas"
+      />
       <Header />
       <main className="pt-20">
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#002113' }}>
           <div className="absolute inset-0">

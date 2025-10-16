@@ -4,6 +4,7 @@ import { Calendar, Clock, ArrowLeft, Share2, BookOpen, Tag, User } from 'lucide-
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { Button } from '../components/ui/button';
 
 interface BlogPost {
@@ -1677,8 +1678,12 @@ const BlogPost = () => {
       
       <Header />
       
+      <div className="container mx-auto px-4 pt-24">
+        <Breadcrumbs />
+      </div>
+      
       {/* Hero Section */}
-      <div className="pt-24 pb-12 relative overflow-hidden">
+      <div className="pb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-solarien-primary/10 via-solarien-secondary/5 to-solarien-tertiary/10"></div>
         <div className="absolute inset-0">
           <img 

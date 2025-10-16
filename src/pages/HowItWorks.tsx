@@ -9,6 +9,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import StateCoverageSimulator from '../components/StateCoverageSimulator';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
@@ -79,8 +81,17 @@ const HowItWorks = () => {
   return (
     <TooltipProvider>
       <div className="min-h-screen">
+        <SEO
+          title="Como Funciona a Energia Solar por Assinatura"
+          description="Entenda como funciona a energia solar por assinatura e mercado livre de energia. Processo simples, economia garantida e sem investimento inicial. Saiba mais sobre grupos A e B."
+          keywords="como funciona energia solar, energia por assinatura, mercado livre energia, grupo a grupo b, economia energia elétrica"
+          canonical="https://solarien.com.br/como-funciona"
+        />
         <Header />
         <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+          <div className="container mx-auto px-4 py-4">
+            <Breadcrumbs />
+          </div>
           <div className="container mx-auto px-4 py-8">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8">

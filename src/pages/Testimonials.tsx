@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -139,7 +141,17 @@ const Testimonials = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Depoimentos de Clientes - Casos de Sucesso"
+        description="Conheça os depoimentos de empresários que reduziram significativamente seus custos com energia. Casos reais de economia com energia solar e mercado livre de energia."
+        keywords="depoimentos energia solar, casos sucesso energia, economia conta luz, testemunhos clientes solarien, avaliações energia solar"
+        canonical="https://solarien.com.br/depoimentos"
+      />
       <Header />
+      
+      <div className="container mx-auto px-4 pt-24">
+        <Breadcrumbs />
+      </div>
       
       {/* Hero Section */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 relative overflow-hidden">

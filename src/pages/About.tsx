@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { Sun, Shield, Users, Award, Target, Heart } from 'lucide-react';
 
 const About = () => {
@@ -47,8 +49,17 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Sobre a Solarien Energy"
+        description="Especialistas em gestão de contratos energéticos e consultoria em energia, oferecendo soluções completas em energia por assinatura e mercado livre de energia para todo o Brasil."
+        keywords="solarien energy, gestão energética, consultoria energia, energia renovável brasil, história solarien"
+        canonical="https://solarien.com.br/sobre"
+      />
       <Header />
       <main className="pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0">

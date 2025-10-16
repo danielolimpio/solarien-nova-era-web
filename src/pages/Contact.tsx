@@ -15,6 +15,8 @@ import emailjs from '@emailjs/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
@@ -104,8 +106,17 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Entre em Contato - Solarien Energy"
+        description="Entre em contato com a Solarien Energy. Tire suas dúvidas sobre energia solar, mercado livre de energia e economia na conta de luz. Atendimento pelo WhatsApp, telefone ou email."
+        keywords="contato solarien, falar com solarien, whatsapp energia solar, telefone solarien, email solarien"
+        canonical="https://solarien.com.br/contato"
+      />
       <Header />
       <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="flex items-center gap-4 mb-8">

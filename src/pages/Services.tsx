@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { Zap, Shield, TrendingDown, Users, CheckCircle, Calculator, Clock, Award } from 'lucide-react';
 
 const Services = () => {
@@ -107,8 +109,17 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Serviços de Energia Solar e Mercado Livre"
+        description="Soluções completas em energia renovável e gestão energética: energia por assinatura, mercado livre de energia, gestão de contratos e consultoria energética para todo o Brasil."
+        keywords="energia por assinatura, mercado livre de energia, gestão de contratos energéticos, consultoria energética, energia solar brasil"
+        canonical="https://solarien.com.br/servicos"
+      />
       <Header />
       <main className="pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0">

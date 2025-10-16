@@ -23,6 +23,114 @@ interface BlogPost {
 // Same blog posts data as in Blog.tsx
 const blogPosts: BlogPost[] = [
   {
+    id: '7-mitos-mercado-livre-energia',
+    title: '7 mitos que você deve esquecer sobre Mercado Livre de Energia',
+    excerpt: 'Descubra a verdade sobre o mercado livre de energia. Desmistificamos 7 mitos que te impedem de economizar na conta de luz. Saiba como migrar sem complicações.',
+    content: `Quando decidi pesquisar sobre novas maneiras de economizar na conta de energia, topei com inúmeras histórias desencontradas sobre o mercado livre de energia. Confesso: uma parte de mim ficou cheia de dúvidas. Parecia que todo mundo tinha uma história pra contar, uma opinião forte a dar ou um aviso dramático pra fazer. Mas, com o tempo e muita curiosidade, percebi que parte dessa insegurança vinha de mitos que as pessoas repetem sem pensar muito.
+
+Nesse artigo, quero convidar você a repensar algumas dessas ideias, mostrar o que realmente acontece e, quem sabe, abrir uma porta para novas possibilidades de economia e autonomia. A própria Solarien Energy nasceu dessa inquietação, ajudando pessoas a fazer escolhas mais inteligentes sobre energia sem medo de complicação.
+
+## Desmistificando o mercado livre: o que me falaram (e não era bem assim)
+
+Pensando nisso, separei aqueles sete mitos que mais ouvi e que, sinceramente, vejo muita gente ainda acreditando. Se algum deles já passou pela sua cabeça, saiba que não está sozinho.
+
+### 1. Só grandes empresas podem participar
+
+Durante muito tempo, eu também pensei assim. Era comum ouvir que o mercado livre só era acessível a gigantes da indústria, aqueles que consomem energia de forma insana. Mas a verdade é que **qualquer empresa com demanda contratada mínima pode migrar para o mercado livre**. 
+
+Pequenas e médias empresas, e até condomínios, podem participar quando atenderem aos requisitos da distribuidora local e têm uma demanda mínima, o que hoje, aliás, já ficou muito mais baixo. Com a [abertura total do mercado prevista para 2027](/blog/mercado-livre-energia-2027), até consumidores residenciais poderão escolher seu fornecedor de energia.
+
+### 2. O processo de migração é burocrático e caro
+
+De início, achava que era algo fora da minha realidade, cheio de papelada, contratos confusos e taxas escondidas. Mas percebi que, hoje, o processo ficou muito mais claro. 
+
+Empresas como a Solarien Energy oferecem **migração gratuita** e acompanham todos os passos, ajudando com a papelada e a escolha do melhor contrato. O segredo é ter um parceiro que entende do assunto e faz questão de explicar tudo com clareza. E boa parte desse trabalho é digital, prático, muito longe daquele cenário de pilhas de documentos.
+
+Para entender mais sobre como funciona a gestão dos contratos, você pode consultar nosso guia completo sobre [gestão de contratos de energia](/servicos).
+
+### 3. Mudando pro livre, você perde qualidade ou corre risco de ficar sem energia
+
+Essa é clássica. Eu temia que, contratando energia por fora, estaria mais exposto a apagões ou falhas, mas **não é assim**. A entrega da energia continua sendo feita pela mesma distribuidora da sua região.
+
+Ou seja, na ponta do consumo, nada muda: a mesma manutenção, as mesmas equipes e os mesmos padrões de qualidade. Os contratos tratam apenas da origem e do preço da energia, não da infraestrutura da rede. Você pode saber mais sobre isso em nosso artigo sobre [como funciona o mercado livre de energia](/blog/mercado-livre-energia).
+
+### 4. Mercado livre é só pra quem entende de energia
+
+Sinceramente, no começo eu achava que só engenheiros elétricos ou executivos com tempo sobrando iam dar conta de gerenciar contratos nesse mercado. Mas logo percebi que **não precisava ser um especialista** para buscar economia.
+
+Com apoio de consultorias confiáveis como a Solarien Energy, a gestão dos contratos e a escolha das melhores ofertas acontecem de modo transparente e didático. Se você entende sua própria conta de energia e busca orientação, consegue sim aproveitar os benefícios. 
+
+A [transformação digital do mercado livre](/blog/transformacao-digital-mercado-livre) tornou tudo ainda mais acessível, com plataformas intuitivas e suporte especializado.
+
+### 5. Economizar no mercado livre não é garantido
+
+Ouvi de muita gente: "você entra e fica refém do mercado, podendo até pagar mais". Mas, honestamente, a lógica é de **livre negociação**, ou seja, você pode negociar com diferentes fornecedores para encontrar as melhores condições.
+
+A orientação de equipes especializadas ajuda a analisar históricos de preços e tendências, aumentando sua chance de economia. Em alguns casos, já vi clientes reduzirem até **45% na conta mensal**. Contratos flexíveis tornam o mercado mais acessível, e cresce cada vez mais o número de pequenas e médias empresas economizando de verdade.
+
+Para consumidores que ainda não podem migrar para o mercado livre, a [energia por assinatura](/blog/energia-por-assinatura) é uma excelente alternativa para começar a economizar imediatamente.
+
+### 6. Depois de migrar, você não pode voltar atrás
+
+Esse mito me assustava. Quem nunca ouviu "migrou? Agora aguenta"? Mas a verdade é que **existem regras claras para reverter a migração**, respeitando prazos e formalidades da Aneel e da distribuidora, claro. Não é um processo instantâneo, mas não há aquela sensação de salto sem volta.
+
+Além disso, a própria análise de viabilidade pode ser ajustada antes do contrato, reduzindo riscos. É um contrato, sim, mas não uma sentença perpétua. E se ele for bem negociado desde o começo, a vontade de voltar ao mercado cativo geralmente não aparece.
+
+Para entender melhor os diferentes perfis de consumo e suas possibilidades, confira nosso guia sobre os [subgrupos do mercado livre](/blog/subgrupos-mercado-livre).
+
+### 7. O mercado livre só vai crescer daqui muitos anos
+
+Essa ideia de futuro distante costumava travar meus planos. Muitos dizem que ainda vai demorar, mas o que vejo é **diferente**. O ambiente já é consolidado e vem batendo recordes de adesão todos os anos. 
+
+Há previsão de [abertura total do mercado para todos os consumidores](/blog/abertura-total-2028), inclusive residenciais, nos próximos anos. Ou seja, as oportunidades já estão disponíveis para muitos. Consumidores atentos já estão colhendo os frutos agora.
+
+A recente [Medida Provisória nº 1.300/2025](/blog/mp-1300-2025) acelerou ainda mais esse processo, consolidando o marco regulatório e garantindo mais segurança jurídica para todos os participantes.
+
+## Outros pontos que sempre me perguntam
+
+Além dos mitos acima, há questões que aparecem em toda conversa sobre o tema. Para quem busca mais detalhes ou quer entender números e cases reais, sugiro uma leitura sobre os diferentes tipos de [fontes de energia renováveis e não renováveis](/blog/fontes-energia-renovaveis-nao-renovaveis).
+
+História de cliente, análise de vantagens, explicação sobre contratos: tudo isso ajuda a decidir com mais confiança. Outro ponto importante é entender como a [energia injetada](/blog/energia-injetada-futuro) se relaciona com o mercado livre e pode gerar ainda mais economia.
+
+## Conclusão: vale a pena desconfiar dos mitos?
+
+Eu cheguei à conclusão, após anos vendo esse mercado amadurecer, que **grande parte do receio das pessoas vem justamente da falta de informação clara**. Muitas vezes, um mito apresentado como verdade afasta consumidores e empresas de oportunidades reais de redução de custos e maior autonomia.
+
+O mais seguro sempre é buscar informação de quem acompanha todas as mudanças e cuida do processo com seriedade. Aqui na Solarien Energy, esse é nosso compromisso: mostrar, explicar, negociar, acompanhar, pra que qualquer consumidor possa avançar sem receio.
+
+**Informação confiável é poder de escolha.**
+
+Se você gostou desse conteúdo ou quer conhecer outros pontos sobre contratos e oportunidades, recomendo dar uma olhada em outros [artigos já publicados no nosso blog](/blog). Ou, ainda melhor, [converse com nosso time](/contato) e descubra na prática como transformar sua relação com a energia. Sua próxima economia começa com uma decisão informada!
+
+## Perguntas frequentes sobre o mercado livre de energia
+
+### O que é o mercado livre de energia?
+
+O mercado livre de energia é um ambiente no qual consumidores podem escolher de quem comprar energia elétrica e negociar condições de preço, volume e prazo diretamente com fornecedores. Assim, cada cliente pode buscar ofertas mais vantajosas e personalizadas, diferente do modelo tradicional em que a distribuidora local define tudo.
+
+### Vale a pena migrar para o mercado livre?
+
+Na minha experiência, para muitos perfis de consumo, vale sim. Quem migra com orientação especializada costuma ver redução significativa na conta de luz e maior controle das despesas energéticas. Porém, é importante avaliar o perfil da sua empresa ou condomínio antes de tomar a decisão, verificando consumo, previsibilidade e abertura contratual.
+
+### Como funciona a compra de energia livre?
+
+A compra funciona por meio de contratos fechados diretamente com empresas geradoras ou comercializadoras de energia. O consumidor negocia preço, volume e vigência de acordo com sua estratégia. A entrega da energia acontece normalmente através da distribuidora local, sem alteração da infraestrutura.
+
+### Quais são os riscos do mercado livre?
+
+Riscos existem, claro: preço pode oscilar e é importante entender bem o contrato para evitar surpresas. Com apoio de consultoria e escolha cuidadosa de fornecedores, os riscos caem bastante e podem ser gerenciados. O segredo está em se informar, simular cenários e ter suporte técnico confiável.
+
+### Quem pode aderir ao mercado livre de energia?
+
+Atualmente, empresas e consumidores que atingem demanda mínima de energia (normalmente a partir de 500 kW) podem migrar, mas essa regra vem mudando com ajustes regulatórios. Pequenas e médias empresas, shoppings, escolas, hospitais e condomínios já começam a aderir em muitas regiões. O público residencial ainda aguarda regulamentação completa, mas a previsão é de abertura total em breve.`,
+    image: '/lovable-uploads/7-mitos-mercado-livre-energia.jpg',
+    date: '2025-01-24',
+    readTime: '12 min',
+    category: 'Mercado Livre',
+    author: 'Equipe Solarien',
+    tags: ['Mercado Livre de Energia', 'Mitos', 'Economia', 'Migração', 'Dúvidas Comuns']
+  },
+  {
     id: 'mercado-livre-energia-2027',
     title: 'Mercado Livre de Energia 2027: Economia de R$ 35 Bi por Ano',
     excerpt: 'Abertura Total do Mercado Livre de Energia trará Economia de R$ 35 Bilhões por Ano: O que Você Precisa Saber',

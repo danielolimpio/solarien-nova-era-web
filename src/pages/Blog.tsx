@@ -21,6 +21,16 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: '7-mitos-mercado-livre-energia',
+    title: '7 mitos que você deve esquecer sobre Mercado Livre de Energia',
+    excerpt: 'Descubra a verdade sobre o mercado livre de energia. Desmistificamos 7 mitos que te impedem de economizar na conta de luz. Saiba como migrar sem complicações.',
+    image: '/lovable-uploads/7-mitos-mercado-livre-energia.jpg',
+    date: '2025-01-24',
+    readTime: '12 min',
+    category: 'Mercado Livre',
+    tags: ['Mercado Livre de Energia', 'Mitos', 'Economia', 'Migração', 'Dúvidas Comuns']
+  },
+  {
     id: 'mercado-livre-energia-2027',
     title: 'Mercado Livre de Energia 2027: Economia de R$ 35 Bi por Ano',
     excerpt: 'Abertura Total do Mercado Livre de Energia trará Economia de R$ 35 Bilhões por Ano: O que Você Precisa Saber',

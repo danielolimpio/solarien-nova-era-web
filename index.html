@@ -195,28 +195,13 @@
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="L1saH8eeVTgOhI0PuTOyqG6xrgOCfUrmYqtvRvj2oJ4" />
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T63LR4Z9');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Preconnect for third-party analytics -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://analytics.ahrefs.com">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BWQ7M92JC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4BWQ7M92JC');
-    </script>
-    
-    <!-- Ahrefs Analytics -->
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="pam1p6SIf6gLxZn8T5QUGg" async></script>
-    
-    <!-- Preload crítico otimizado para performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Critical font preload -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
     
     <!-- Preload imagens críticas com alta prioridade -->
@@ -254,9 +239,16 @@
         font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         background: linear-gradient(135deg, rgb(8, 12, 23) 0%, rgb(15, 23, 42) 50%, rgb(8, 12, 23) 100%);
         overflow-x: hidden;
-        font-display: swap;
         margin: 0;
         padding: 0;
+        min-height: 100vh;
+      }
+      @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Montserrat'), url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
       }
       .loading-fallback {
         display: flex;
@@ -354,5 +346,36 @@
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Deferred Analytics - Load after page paint -->
+    <script>
+      window.addEventListener('load', function() {
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T63LR4Z9');
+        
+        // Google Analytics
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4BWQ7M92JC';
+        document.head.appendChild(gtagScript);
+        gtagScript.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BWQ7M92JC');
+        };
+        
+        // Ahrefs Analytics
+        var ahrefsScript = document.createElement('script');
+        ahrefsScript.async = true;
+        ahrefsScript.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefsScript.setAttribute('data-key', 'pam1p6SIf6gLxZn8T5QUGg');
+        document.head.appendChild(ahrefsScript);
+      });
+    </script>
   </body>
 </html>

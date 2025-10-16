@@ -1,71 +1,74 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Zap } from 'lucide-react';
+import { useScreenSize } from '@/hooks/useScreenSize';
 const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const partners = [{
-    name: 'CPFL Paulista',
-    logo: '/lovable-uploads/e3b594d4-f1a6-4d70-adc3-141c679ec79d.png'
-  }, {
-    name: 'Elektro',
-    logo: '/lovable-uploads/e9a8b182-db53-4a89-95ab-79afaea484c6.png'
-  }, {
-    name: 'Equatorial',
-    logo: '/lovable-uploads/e1b46b57-c34a-45d1-97ca-5ed24dc933b1.png'
-  }, {
-    name: 'Energisa',
-    logo: '/lovable-uploads/9b091af4-d60e-4e28-aa5c-9c770a9811bb.png'
-  }, {
-    name: 'Copel',
-    logo: '/lovable-uploads/489829d7-f934-4173-be27-1afcd1ff5868.png'
-  }, {
-    name: 'Cemig',
-    logo: '/lovable-uploads/c2fd2f8e-4e33-4b3a-80e9-4a0aeefc32a8.png'
-  }, {
-    name: 'Neoenergia',
-    logo: '/lovable-uploads/7888696b-6fb2-4e12-bb93-82cc34080259.png'
-  }, {
-    name: 'Celesc',
-    logo: '/lovable-uploads/698f64a7-9fae-4e06-b3e4-03d4dc4ef08f.png'
-  }, {
-    name: 'Coelba',
-    logo: '/lovable-uploads/16985188-0aa0-4c38-baf1-dccef3fd31cb.png'
-  }, {
-    name: 'Enel',
-    logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
-  }, {
-    name: 'Light',
-    logo: '/lovable-uploads/db66c2d1-2e4b-40b1-ab3b-9bfd7df28e4a.png'
-  }, {
-    name: 'CPFL Piratininga',
-    logo: '/lovable-uploads/8f128a3d-37f5-44b3-9e31-b11c8d3af105.png'
-  }, {
-    name: 'EDP',
-    logo: '/lovable-uploads/37c4c532-2e09-48c1-8923-b19903e8d75b.png'
-  }, {
-    name: 'Neoenergia Brasília',
-    logo: '/lovable-uploads/a95cc55e-8b0c-43b0-bc70-94a68c6d1136.png'
-  }, {
-    name: 'COSERN',
-    logo: '/lovable-uploads/13f4f575-48aa-4162-ba85-9cbc2a8949d6.png'
-  }];
+  const { width } = useScreenSize();
+  const partners = [
+    {
+      name: 'CPFL Paulista',
+      logo: '/lovable-uploads/e3b594d4-f1a6-4d70-adc3-141c679ec79d.png'
+    },
+    {
+      name: 'Elektro',
+      logo: '/lovable-uploads/e9a8b182-db53-4a89-95ab-79afaea484c6.png'
+    },
+    {
+      name: 'Equatorial',
+      logo: '/lovable-uploads/e1b46b57-c34a-45d1-97ca-5ed24dc933b1.png'
+    },
+    {
+      name: 'Energisa',
+      logo: '/lovable-uploads/9b091af4-d60e-4e28-aa5c-9c770a9811bb.png'
+    },
+    {
+      name: 'Copel',
+      logo: '/lovable-uploads/489829d7-f934-4173-be27-1afcd1ff5868.png'
+    },
+    {
+      name: 'Cemig',
+      logo: '/lovable-uploads/c2fd2f8e-4e33-4b3a-80e9-4a0aeefc32a8.png'
+    },
+    {
+      name: 'Neoenergia',
+      logo: '/lovable-uploads/7888696b-6fb2-4e12-bb93-82cc34080259.png'
+    },
+    {
+      name: 'Celesc',
+      logo: '/lovable-uploads/698f64a7-9fae-4e06-b3e4-03d4dc4ef08f.png'
+    },
+    {
+      name: 'Coelba',
+      logo: '/lovable-uploads/16985188-0aa0-4c38-baf1-dccef3fd31cb.png'
+    },
+    {
+      name: 'Enel',
+      logo: '/lovable-uploads/e70579a1-fb07-4f3a-aa6a-0f789d66e11a.png'
+    },
+    {
+      name: 'Light',
+      logo: '/lovable-uploads/db66c2d1-2e4b-40b1-ab3b-9bfd7df28e4a.png'
+    },
+    {
+      name: 'CPFL Piratininga',
+      logo: '/lovable-uploads/8f128a3d-37f5-44b3-9e31-b11c8d3af105.png'
+    },
+    {
+      name: 'EDP',
+      logo: '/lovable-uploads/37c4c532-2e09-48c1-8923-b19903e8d75b.png'
+    },
+    {
+      name: 'Neoenergia Brasília',
+      logo: '/lovable-uploads/a95cc55e-8b0c-43b0-bc70-94a68c6d1136.png'
+    },
+    {
+      name: 'COSERN',
+      logo: '/lovable-uploads/13f4f575-48aa-4162-ba85-9cbc2a8949d6.png'
+    }
+  ];
 
-  // Configuração responsiva para diferentes tamanhos de tela
-  const getItemsPerSlide = () => {
-    if (typeof window === 'undefined') return 5;
-    const width = window.innerWidth;
-    if (width < 640) return 2; // Mobile: 2 itens
-    if (width < 768) return 3; // SM: 3 itens
-    if (width < 1024) return 4; // MD: 4 itens
-    return 5; // LG+: 5 itens
-  };
-  const [itemsPerSlide, setItemsPerSlide] = useState(getItemsPerSlide());
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerSlide(getItemsPerSlide());
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // Configuração responsiva baseada no hook useScreenSize (evita forced reflows)
+  const itemsPerSlide = width < 640 ? 2 : width < 768 ? 3 : width < 1024 ? 4 : 5;
   const totalSlides = Math.ceil(partners.length / itemsPerSlide);
   useEffect(() => {
     const interval = setInterval(() => {

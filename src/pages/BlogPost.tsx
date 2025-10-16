@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, Share2, BookOpen, Tag, User } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
@@ -1654,6 +1654,43 @@ const BlogPost = () => {
     );
   }
 
+  const processMarkdownLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      
+      // Add the link
+      const linkText = match[1];
+      const linkUrl = match[2];
+      
+      parts.push(
+        <Link 
+          key={match.index} 
+          to={linkUrl}
+          className="text-solarien-primary hover:text-solarien-secondary underline transition-colors"
+        >
+          {linkText}
+        </Link>
+      );
+      
+      lastIndex = match.index + match[0].length;
+    }
+    
+    // Add remaining text after the last link
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+    
+    return parts.length > 0 ? parts : text;
+  };
+
   const formatContent = (content: string) => {
     return content.split('\n').map((paragraph, index) => {
       if (paragraph.startsWith('## ')) {
@@ -1671,7 +1708,7 @@ const BlogPost = () => {
       } else if (paragraph.startsWith('- ')) {
         return (
           <li key={index} className="text-gray-300 mb-2 ml-6 list-disc">
-            {paragraph.replace('- ', '')}
+            {processMarkdownLinks(paragraph.replace('- ', ''))}
           </li>
         );
       } else if (paragraph.includes('|')) {
@@ -1691,7 +1728,7 @@ const BlogPost = () => {
       } else if (paragraph.trim()) {
         return (
           <p key={index} className="text-gray-300 mb-4 leading-relaxed">
-            {paragraph}
+            {processMarkdownLinks(paragraph)}
           </p>
         );
       }

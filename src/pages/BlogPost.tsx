@@ -36,7 +36,7 @@ Pensando nisso, separei aqueles sete mitos que mais ouvi e que, sinceramente, ve
 
 ### 1. Só grandes empresas podem participar
 
-Durante muito tempo, eu também pensei assim. Era comum ouvir que o mercado livre só era acessível a gigantes da indústria, aqueles que consomem energia de forma insana. Mas a verdade é que **qualquer empresa com demanda contratada mínima pode migrar para o mercado livre**. 
+Durante muito tempo, eu também pensei assim. Era comum ouvir que o mercado livre só era acessível a gigantes da indústria, aqueles que consomem energia de forma insana. Mas a verdade é que qualquer empresa com demanda contratada mínima pode migrar para o mercado livre. 
 
 Pequenas e médias empresas, e até condomínios, podem participar quando atenderem aos requisitos da distribuidora local e têm uma demanda mínima, o que hoje, aliás, já ficou muito mais baixo. Com a [abertura total do mercado prevista para 2027](/blog/mercado-livre-energia-2027), até consumidores residenciais poderão escolher seu fornecedor de energia.
 
@@ -44,31 +44,31 @@ Pequenas e médias empresas, e até condomínios, podem participar quando atende
 
 De início, achava que era algo fora da minha realidade, cheio de papelada, contratos confusos e taxas escondidas. Mas percebi que, hoje, o processo ficou muito mais claro. 
 
-Empresas como a Solarien Energy oferecem **migração gratuita** e acompanham todos os passos, ajudando com a papelada e a escolha do melhor contrato. O segredo é ter um parceiro que entende do assunto e faz questão de explicar tudo com clareza. E boa parte desse trabalho é digital, prático, muito longe daquele cenário de pilhas de documentos.
+Empresas como a Solarien Energy oferecem migração gratuita e acompanham todos os passos, ajudando com a papelada e a escolha do melhor contrato. O segredo é ter um parceiro que entende do assunto e faz questão de explicar tudo com clareza. E boa parte desse trabalho é digital, prático, muito longe daquele cenário de pilhas de documentos.
 
 ### 3. Mudando pro livre, você perde qualidade ou corre risco de ficar sem energia
 
-Essa é clássica. Eu temia que, contratando energia por fora, estaria mais exposto a apagões ou falhas, mas **não é assim**. A entrega da energia continua sendo feita pela mesma distribuidora da sua região.
+Essa é clássica. Eu temia que, contratando energia por fora, estaria mais exposto a apagões ou falhas, mas não é assim. A entrega da energia continua sendo feita pela mesma distribuidora da sua região.
 
 Ou seja, na ponta do consumo, nada muda: a mesma manutenção, as mesmas equipes e os mesmos padrões de qualidade. Os contratos tratam apenas da origem e do preço da energia, não da infraestrutura da rede.
 
 ### 4. Mercado livre é só pra quem entende de energia
 
-Sinceramente, no começo eu achava que só engenheiros elétricos ou executivos com tempo sobrando iam dar conta de gerenciar contratos nesse mercado. Mas logo percebi que **não precisava ser um especialista** para buscar economia.
+Sinceramente, no começo eu achava que só engenheiros elétricos ou executivos com tempo sobrando iam dar conta de gerenciar contratos nesse mercado. Mas logo percebi que não precisava ser um especialista para buscar economia.
 
 Com apoio de consultorias confiáveis como a Solarien Energy, a gestão dos contratos e a escolha das melhores ofertas acontecem de modo transparente e didático. Se você entende sua própria conta de energia e busca orientação, consegue sim aproveitar os benefícios.
 
 ### 5. Economizar no mercado livre não é garantido
 
-Ouvi de muita gente: "você entra e fica refém do mercado, podendo até pagar mais". Mas, honestamente, a lógica é de **livre negociação**, ou seja, você pode negociar com diferentes fornecedores para encontrar as melhores condições.
+Ouvi de muita gente: "você entra e fica refém do mercado, podendo até pagar mais". Mas, honestamente, a lógica é de livre negociação, ou seja, você pode negociar com diferentes fornecedores para encontrar as melhores condições.
 
-A orientação de equipes especializadas ajuda a analisar históricos de preços e tendências, aumentando sua chance de economia. Em alguns casos, já vi clientes reduzirem até **45% na conta mensal**. Contratos flexíveis tornam o mercado mais acessível, e cresce cada vez mais o número de pequenas e médias empresas economizando de verdade.
+A orientação de equipes especializadas ajuda a analisar históricos de preços e tendências, aumentando sua chance de economia. Em alguns casos, já vi clientes reduzirem até 45% na conta mensal. Contratos flexíveis tornam o mercado mais acessível, e cresce cada vez mais o número de pequenas e médias empresas economizando de verdade.
 
 Para consumidores que ainda não podem migrar para o mercado livre, a [energia por assinatura](/blog/energia-por-assinatura) é uma excelente alternativa para começar a economizar imediatamente.
 
 ### 6. Depois de migrar, você não pode voltar atrás
 
-Esse mito me assustava. Quem nunca ouviu "migrou? Agora aguenta"? Mas a verdade é que **existem regras claras para reverter a migração**, respeitando prazos e formalidades da Aneel e da distribuidora, claro. Não é um processo instantâneo, mas não há aquela sensação de salto sem volta.
+Esse mito me assustava. Quem nunca ouviu "migrou? Agora aguenta"? Mas a verdade é que existem regras claras para reverter a migração, respeitando prazos e formalidades da Aneel e da distribuidora, claro. Não é um processo instantâneo, mas não há aquela sensação de salto sem volta.
 
 Além disso, a própria análise de viabilidade pode ser ajustada antes do contrato, reduzindo riscos. É um contrato, sim, mas não uma sentença perpétua. E se ele for bem negociado desde o começo, a vontade de voltar ao mercado cativo geralmente não aparece.
 
@@ -76,7 +76,7 @@ Para entender melhor os diferentes perfis de consumo e suas possibilidades, conf
 
 ### 7. O mercado livre só vai crescer daqui muitos anos
 
-Essa ideia de futuro distante costumava travar meus planos. Muitos dizem que ainda vai demorar, mas o que vejo é **diferente**. O ambiente já é consolidado e vem batendo recordes de adesão todos os anos. 
+Essa ideia de futuro distante costumava travar meus planos. Muitos dizem que ainda vai demorar, mas o que vejo é diferente. O ambiente já é consolidado e vem batendo recordes de adesão todos os anos. 
 
 Há previsão de [abertura total do mercado para todos os consumidores](/blog/abertura-total-2028), inclusive residenciais, nos próximos anos. Ou seja, as oportunidades já estão disponíveis para muitos. Consumidores atentos já estão colhendo os frutos agora.
 
@@ -88,11 +88,11 @@ História de cliente, análise de vantagens, explicação sobre contratos: tudo 
 
 ## Conclusão: vale a pena desconfiar dos mitos?
 
-Eu cheguei à conclusão, após anos vendo esse mercado amadurecer, que **grande parte do receio das pessoas vem justamente da falta de informação clara**. Muitas vezes, um mito apresentado como verdade afasta consumidores e empresas de oportunidades reais de redução de custos e maior autonomia.
+Eu cheguei à conclusão, após anos vendo esse mercado amadurecer, que grande parte do receio das pessoas vem justamente da falta de informação clara. Muitas vezes, um mito apresentado como verdade afasta consumidores e empresas de oportunidades reais de redução de custos e maior autonomia.
 
 O mais seguro sempre é buscar informação de quem acompanha todas as mudanças e cuida do processo com seriedade. Aqui na Solarien Energy, esse é nosso compromisso: mostrar, explicar, negociar, acompanhar, pra que qualquer consumidor possa avançar sem receio.
 
-**Informação confiável é poder de escolha.**
+Informação confiável é poder de escolha.
 
 Se você gostou desse conteúdo ou quer conhecer outros pontos sobre contratos e oportunidades, recomendo dar uma olhada em outros [artigos já publicados no nosso blog](/blog). Ou, ainda melhor, [converse com nosso time](/contato) e descubra na prática como transformar sua relação com a energia. Sua próxima economia começa com uma decisão informada!
 
@@ -138,10 +138,10 @@ Antes de entender a abertura total, é essencial compreender o que é o Mercado 
 
 Atualmente, o Brasil opera com dois modelos de contratação de energia elétrica:
 
-**Mercado Regulado (Ambiente de Contratação Regulada – ACR):**
+Mercado Regulado (Ambiente de Contratação Regulada – ACR):
 É o modelo tradicional, onde a distribuidora local (como Enel, Neoenergia, CPFL, Light, etc.) cobra uma tarifa definida pela Agência Nacional de Energia Elétrica (ANEEL). A maioria dos consumidores residenciais e pequenos negócios está aqui.
 
-**Mercado Livre (Ambiente de Contratação Livre – ACL):**
+Mercado Livre (Ambiente de Contratação Livre – ACL):
 Neste modelo, o consumidor escolhe diretamente seu comercializador de energia e negocia preços, prazos e condições do contrato. Até hoje, apenas grandes indústrias e empresas com demanda acima de 500 kW (Grupo A) têm acesso a esse mercado.
 
 Ou seja: menos de 1% dos consumidores brasileiros podiam escolher seu fornecedor de energia. Isso está prestes a mudar — e de forma radical.
@@ -158,7 +158,7 @@ Indústrias e comércios que consomem em baixa tensão (Grupo B) poderão migrar
 ### Dezembro de 2027
 Todos os demais consumidores do Grupo B, incluindo residências, condomínios, microempreendedores (MEIs) e produtores rurais, terão direito à portabilidade da conta de luz.
 
-**Importante:** Embora a Medida Provisória tenha efeito imediato, ela precisa ser convertida em lei pelo Congresso até 120 dias após sua publicação. Caso contrário, perde validade. Porém, dada a ampla base de apoio técnico e político, a expectativa é de aprovação.
+Importante: Embora a Medida Provisória tenha efeito imediato, ela precisa ser convertida em lei pelo Congresso até 120 dias após sua publicação. Caso contrário, perde validade. Porém, dada a ampla base de apoio técnico e político, a expectativa é de aprovação.
 
 ## Por que a Abertura do Mercado Livre é uma Revolução?
 
@@ -200,7 +200,7 @@ Muitas famílias da classe média pagam caro pela energia, mas não têm acesso 
 - Economia anual: R$ 3 bilhões
 - Especialmente impactantes para pequenos produtores com fatura abaixo de R$ 290/mês
 
-**Total geral:** Mais de 150 milhões de brasileiros deixarão de ser "reféns" da tarifa regulada.
+Total geral: Mais de 150 milhões de brasileiros deixarão de ser "reféns" da tarifa regulada.
 
 ## Como Funcionará na Prática? Um Exemplo Real
 
@@ -219,27 +219,27 @@ Tudo isso sem trocar fiação, sem instalar equipamentos, sem burocracia excessi
 
 | Característica | Mercado Regulado | Mercado Livre |
 |---------------|------------------|---------------|
-| **Quem define o preço?** | ANEEL + distribuidora | Você + comercializadora |
-| **Liberdade de escolha** | Não | Sim |
-| **Contrato fixo?** | Não (tarifa varia todo mês) | Sim (pode ser fixo ou variável) |
-| **Transparência** | Baixa (encargos embutidos) | Alta (valores detalhados) |
-| **Acesso** | Todos (Grupo B) | Até 2027: apenas Grupo A |
+| Quem define o preço? | ANEEL + distribuidora | Você + comercializadora |
+| Liberdade de escolha | Não | Sim |
+| Contrato fixo? | Não (tarifa varia todo mês) | Sim (pode ser fixo ou variável) |
+| Transparência | Baixa (encargos embutidos) | Alta (valores detalhados) |
+| Acesso | Todos (Grupo B) | Até 2027: apenas Grupo A |
 
 Com a abertura, o Grupo B passará a ter os mesmos direitos do Grupo A — finalmente.
 
 ## Mitos Comuns sobre o Mercado Livre de Energia
 
 ### "Só grandes empresas podem entrar."
-**Verdade:** Até 2027, sim. Depois, não. A partir de 2026/2027, qualquer consumidor do Grupo B poderá migrar.
+Verdade: Até 2027, sim. Depois, não. A partir de 2026/2027, qualquer consumidor do Grupo B poderá migrar.
 
 ### "Vou perder a qualidade do serviço da distribuidora."
-**Falso.** A distribuidora continua responsável pela manutenção da rede, leitura do medidor e atendimento técnico. Só muda quem fornece a energia — não quem entrega.
+Falso. A distribuidora continua responsável pela manutenção da rede, leitura do medidor e atendimento técnico. Só muda quem fornece a energia — não quem entrega.
 
 ### "É complicado migrar."
-**Não é.** O processo será simplificado, com assistência de comercializadoras e plataformas digitais. Muitas já oferecem simuladores online.
+Não é. O processo será simplificado, com assistência de comercializadoras e plataformas digitais. Muitas já oferecem simuladores online.
 
 ### "Vou pagar mais caro."
-**Improvável.** Estudos do MME e da CCEE mostram que o Mercado Livre é sistematicamente mais barato que o regulado, especialmente em momentos de alta hidrologia (quando há mais energia barata disponível).
+Improvável. Estudos do MME e da CCEE mostram que o Mercado Livre é sistematicamente mais barato que o regulado, especialmente em momentos de alta hidrologia (quando há mais energia barata disponível).
 
 ## Como se Preparar para a Abertura do Mercado Livre?
 
@@ -258,9 +258,9 @@ Guarde os últimos 12 meses de contas. Isso ajudará a comparar ofertas com prec
 A CCEE mantém uma lista atualizada de agentes autorizados. Evite empresas não regulamentadas.
 
 ### 4. Entenda os tipos de contrato
-- **Preço fixo:** Ideal para quem quer previsibilidade
-- **Preço variável (spot):** Pode ser mais barato em meses com energia abundante
-- **Híbrido:** Combinação dos dois
+- Preço fixo: Ideal para quem quer previsibilidade
+- Preço variável (spot): Pode ser mais barato em meses com energia abundante
+- Híbrido: Combinação dos dois
 
 ### 5. Considere soluções complementares
 Mesmo no Mercado Livre, você pode combinar com energia solar por assinatura, baterias ou eficiência energética para reduzir ainda mais custos.
@@ -269,10 +269,10 @@ Mesmo no Mercado Livre, você pode combinar com energia solar por assinatura, ba
 
 A abertura do Mercado Livre não beneficia apenas o bolso do consumidor. Ela tem efeitos sistêmicos positivos:
 
-- **Redução da inflação:** A energia elétrica compõe o IPCA. Menos gastos = menor pressão inflacionária
-- **Geração de empregos:** Estimativa de 380 mil novos postos de trabalho até 2030
-- **Atração de investimentos:** Mais concorrência atrai capital privado para o setor energético
-- **Sustentabilidade:** Comercializadoras oferecerão planos com energia 100% renovável (solar, eólica, biomassa)
+- Redução da inflação: A energia elétrica compõe o IPCA. Menos gastos = menor pressão inflacionária
+- Geração de empregos: Estimativa de 380 mil novos postos de trabalho até 2030
+- Atração de investimentos: Mais concorrência atrai capital privado para o setor energético
+- Sustentabilidade: Comercializadoras oferecerão planos com energia 100% renovável (solar, eólica, biomassa)
 
 ## A Lei 9.074 e os 30 Anos de Espera
 
@@ -1579,8 +1579,8 @@ Quem nunca sofreu com o calor escaldante do verão e a conta de luz no fim do m�
 
 O ar condicionado solar é uma realidade. Existem duas formas principais de usá-lo:
 
-- **Ar condicionado com placa solar**: o aparelho convencional é alimentado por um sistema fotovoltaico conectado à rede.
-- **Ar condicionado solar direto**: modelos especiais que funcionam com corrente contínua (CC), ligados diretamente aos painéis, sem necessidade de inversor.
+- Ar condicionado com placa solar: o aparelho convencional é alimentado por um sistema fotovoltaico conectado à rede.
+- Ar condicionado solar direto: modelos especiais que funcionam com corrente contínua (CC), ligados diretamente aos painéis, sem necessidade de inversor.
 
 Ambas as opções são viáveis, mas a primeira é mais comum no Brasil. Com um sistema bem dimensionado, você pode deixar o ar condicionado com placa solar ligado o dia todo sem medo!
 
@@ -1596,11 +1596,11 @@ E não se esqueça: adotar energia limpa não é só sobre salvar o planeta — 
 
 Se você ficou interessado em migrar para as fontes renovaveis, aqui vão algumas dicas práticas:
 
-1. **Faça um diagnóstico do seu consumo**: veja sua conta de luz dos últimos 12 meses.
-2. **Peça orçamentos**: compare pelo menos 3 empresas especializadas em minhacasa solar.
-3. **Verifique a qualidade dos equipamentos**: especialmente do inversor placa solar e dos painéis.
-4. **Considere soluções híbridas**: com baterias, você tem energia até em apagões.
-5. **Aproveite o mercado livre de energia como funciona**: se for empresário, essa pode ser sua maior economia.
+1. Faça um diagnóstico do seu consumo: veja sua conta de luz dos últimos 12 meses.
+2. Peça orçamentos: compare pelo menos 3 empresas especializadas em minhacasa solar.
+3. Verifique a qualidade dos equipamentos: especialmente do inversor placa solar e dos painéis.
+4. Considere soluções híbridas: com baterias, você tem energia até em apagões.
+5. Aproveite o mercado livre de energia como funciona: se for empresário, essa pode ser sua maior economia.
 
 ## Conclusão: A Escolha É Sua — e Ela Importa
 

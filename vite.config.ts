@@ -83,28 +83,7 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/js/[name]-[hash].js',
       }
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: mode === 'production',
-        drop_debugger: mode === 'production',
-        pure_funcs: mode === 'production' ? ['console.log', 'console.info', 'console.warn'] : [],
-        passes: 3,
-        unsafe: true,
-        unsafe_comps: true,
-        unsafe_math: true,
-        hoist_funs: true,
-        reduce_vars: true,
-        collapse_vars: true
-      },
-      mangle: {
-        safari10: true,
-        toplevel: true
-      },
-      format: {
-        comments: false
-      }
-    },
+    minify: true,
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 600,
     cssCodeSplit: true,

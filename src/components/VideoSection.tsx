@@ -11,6 +11,8 @@ const VideoSection = () => {
           src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
           alt="Wind turbines landscape" 
           className="w-full h-full object-cover opacity-20"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/85 to-solarien-primary/10"></div>
       </div>

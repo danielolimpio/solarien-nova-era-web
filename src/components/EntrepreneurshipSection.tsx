@@ -232,6 +232,8 @@ const EntrepreneurshipSection = () => {
               src="/lovable-uploads/329fed93-8f70-40a5-af74-d24ce55136f1.png" 
               alt="Money background" 
               className="w-full h-full object-cover brightness-[0.15]"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
           </div>
@@ -244,6 +246,8 @@ const EntrepreneurshipSection = () => {
                     src="/lovable-uploads/ab5673f2-4fef-4c94-8931-cf04fbdef957.png" 
                     alt="Trophy" 
                     className="w-20 h-20 object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-sm font-bold mt-4 tracking-wide font-mono bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent">

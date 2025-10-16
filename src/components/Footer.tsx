@@ -159,6 +159,8 @@ const Footer = () => {
           src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
           alt="Painéis Solares"
           className="w-full h-full object-cover opacity-30"
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

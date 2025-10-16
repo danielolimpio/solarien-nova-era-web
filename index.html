@@ -309,8 +309,7 @@
       .loading-spinner {
         display: none;
       }
-      /* Hide loading fallback once React loads */
-      #root:not(:empty) .loading-fallback {
+      #root[data-mounted="true"] .loading-fallback {
         display: none;
       }
       img {

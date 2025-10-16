@@ -3,8 +3,12 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-createRoot(document.getElementById("root")!).render(
+const rootEl = document.getElementById("root")!;
+const root = createRoot(rootEl);
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+// Mark app as mounted to hide the initial HTML fallback safely
+rootEl.setAttribute('data-mounted', 'true');

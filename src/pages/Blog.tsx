@@ -216,29 +216,33 @@ const Blog = () => {
             </p>
 
             {/* Search and Filter */}
-            <div className="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto mb-8">
-              <SearchInput
-                value={searchTerm}
-                onChange={handleSearchChange}
-                onClear={clearSearch}
-                placeholder="Buscar artigos..."
-              />
-              <div className="flex gap-2 flex-wrap justify-center lg:justify-start">
-                {categories.map(category => (
-                  <Button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    className={selectedCategory === category 
-                      ? "bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black border-0 h-12" 
-                      : "border-white/20 text-gray-300 hover:bg-white/10 hover:border-solarien-primary/50 h-12"
-                    }
-                  >
-                    <Filter className="w-3 h-3 mr-1" />
-                    {category}
-                  </Button>
-                ))}
+            <div className="flex flex-col gap-4 max-w-5xl mx-auto mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                <div className="w-full sm:w-64">
+                  <SearchInput
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    onClear={clearSearch}
+                    placeholder="Buscar artigos..."
+                  />
+                </div>
+                <div className="flex gap-2 flex-wrap justify-center">
+                  {categories.map(category => (
+                    <Button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      variant={selectedCategory === category ? "default" : "outline"}
+                      size="sm"
+                      className={selectedCategory === category 
+                        ? "bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black border-0 h-9 px-4 text-sm" 
+                        : "border-white/20 text-gray-300 hover:bg-white/10 hover:border-solarien-primary/50 h-9 px-4 text-sm"
+                      }
+                    >
+                      <Filter className="w-3 h-3 mr-1.5" />
+                      {category}
+                    </Button>
+                  ))}
+                </div>
               </div>
             </div>
 

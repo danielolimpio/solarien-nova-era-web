@@ -61,13 +61,13 @@ const Header = () => {
           {/* Logo otimizado com schema */}
           <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0" itemScope itemType="https://schema.org/Organization">
             <img 
-              src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
+              src="/lovable-uploads/solarien-logo-new.png" 
               alt="Solarien Energy - Logo empresa energia solar e mercado livre" 
               className="h-12 sm:h-10 md:h-12 w-auto"
               loading="eager"
               decoding="async"
               fetchPriority="high"
-              width={48}
+              width={151}
               height={48}
               itemProp="logo"
             />

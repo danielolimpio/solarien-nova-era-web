@@ -172,7 +172,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <img 
-                src="/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png" 
+                src="/lovable-uploads/solarien-logo-new.png" 
                 alt="Solarien Energy" 
                 className="h-12 w-auto"
                 width="151"

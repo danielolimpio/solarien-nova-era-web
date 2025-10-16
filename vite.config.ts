@@ -26,51 +26,12 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Split React core
-          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
-            return 'react-vendor';
-          }
-          // Split router separately
-          if (id.includes('node_modules/react-router-dom/')) {
-            return 'router';
-          }
-          // Split Radix UI components into smaller chunks
-          if (id.includes('@radix-ui/react-dialog')) return 'ui-dialog';
-          if (id.includes('@radix-ui/react-toast')) return 'ui-toast';
-          if (id.includes('@radix-ui/react-accordion')) return 'ui-accordion';
-          if (id.includes('@radix-ui/react-progress')) return 'ui-progress';
-          if (id.includes('@radix-ui/react-select')) return 'ui-select';
-          if (id.includes('@radix-ui/')) return 'ui-other';
-          // Split icons
-          if (id.includes('lucide-react')) {
-            return 'icons';
-          }
-          // Split charts
-          if (id.includes('recharts')) {
-            return 'charts';
-          }
-          // Split forms
-          if (id.includes('react-hook-form') || id.includes('@hookform/resolvers')) {
-            return 'forms';
-          }
-          // Split email
-          if (id.includes('@emailjs/browser')) {
-            return 'email';
-          }
-          // Split utilities
-          if (id.includes('class-variance-authority') || id.includes('clsx') || id.includes('tailwind-merge')) {
-            return 'utils';
-          }
-          // Split other node_modules into smaller chunks
-          if (id.includes('node_modules')) {
-            return 'vendor-other';
-          }
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react/jsx-runtime'],
+          'router': ['react-router-dom'],
         },
         assetFileNames: (assetInfo) => {
           if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
           if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico|webp)$/i.test(assetInfo.name)) {
             return `assets/images/[name]-[hash][extname]`;
           }
@@ -83,13 +44,18 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/js/[name]-[hash].js',
       }
     },
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
     assetsInlineLimit: 4096,
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 1000,
     cssCodeSplit: true,
     sourcemap: false,
     target: 'es2020',
-    reportCompressedSize: false
   },
   optimizeDeps: {
     include: [
@@ -98,11 +64,9 @@ export default defineConfig(({ mode }) => ({
       'react/jsx-runtime',
       'react-router-dom',
       'lucide-react',
-      '@tanstack/react-query',
       '@emailjs/browser'
     ],
     exclude: ['@vite/client', '@vite/env'],
-    force: true
   },
   css: {
     devSourcemap: false,
@@ -113,10 +77,6 @@ export default defineConfig(({ mode }) => ({
     }
   },
   esbuild: {
-    drop: mode === 'production' ? ['console', 'debugger'] : [],
-    legalComments: 'none',
-    minifyIdentifiers: mode === 'production',
-    minifySyntax: mode === 'production',
-    minifyWhitespace: mode === 'production'
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
 }));

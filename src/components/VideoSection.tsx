@@ -1,8 +1,16 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { AspectRatio } from './ui/aspect-ratio';
+import { Play } from 'lucide-react';
 
 const VideoSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoId = 'F2uVQecpZ4M';
+
+  const handleLoadVideo = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <section className="py-20 bg-gray-900 relative overflow-hidden">
       {/* Wind Farm Background */}
@@ -44,13 +52,40 @@ const VideoSection = () => {
             {/* Video Wrapper */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-solarien-primary/30">
               <AspectRatio ratio={16/9}>
-                <iframe
-                  src="https://www.youtube.com/embed/F2uVQecpZ4M?rel=0&modestbranding=1&showinfo=0"
-                  title="Solarien Energy - Nossa História"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                {!isVideoLoaded ? (
+                  // Facade: YouTube thumbnail with play button
+                  <button
+                    onClick={handleLoadVideo}
+                    className="relative w-full h-full group cursor-pointer"
+                    aria-label="Carregar vídeo do YouTube"
+                  >
+                    {/* YouTube thumbnail */}
+                    <img
+                      src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                      alt="Solarien Energy - Nossa História"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                      decoding="async"
+                    />
+                    {/* Dark overlay on hover */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300"></div>
+                    {/* Play button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                        <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                      </div>
+                    </div>
+                  </button>
+                ) : (
+                  // Actual YouTube iframe loaded on click
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
+                    title="Solarien Energy - Nossa História"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                )}
               </AspectRatio>
               
               {/* Glow effect overlay */}

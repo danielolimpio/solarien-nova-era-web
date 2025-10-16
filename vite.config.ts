@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    dedupe: ["react", "react-dom"],
+    dedupe: ["react", "react-dom", "react/jsx-runtime"],
   },
   build: {
     rollupOptions: {
@@ -116,12 +116,14 @@ export default defineConfig(({ mode }) => ({
     include: [
       'react',
       'react-dom',
+      'react/jsx-runtime',
       'react-router-dom',
       'lucide-react',
       '@tanstack/react-query',
       '@emailjs/browser'
     ],
-    exclude: ['@vite/client', '@vite/env']
+    exclude: ['@vite/client', '@vite/env'],
+    force: true
   },
   css: {
     devSourcemap: false,

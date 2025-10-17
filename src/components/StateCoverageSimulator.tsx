@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Badge } from './ui/badge';
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from './ui/tooltip';
 import { MapPin, Zap, Calculator, TrendingDown, Building, Target, Award, Percent, Clock, Calendar, HelpCircle, Circle, Check, X } from 'lucide-react';
 
 const StateCoverageSimulator = () => {
@@ -198,6 +198,7 @@ const StateCoverageSimulator = () => {
   const yearlyEconomy = discountAmount * 12;
 
   return (
+    <TooltipProvider>
       <Card className="bg-gradient-to-br from-white to-gray-50 border-2 border-[#00844e]/20 shadow-2xl mx-2 sm:mx-4 lg:mx-8">
         <CardHeader className="bg-gradient-to-r from-[#00844e]/5 to-[#02ff91]/5 border-b border-[#00844e]/10 p-4 sm:p-6">
           <CardTitle className="text-[#00844e] text-xl sm:text-2xl lg:text-3xl flex items-center gap-2 sm:gap-3">
@@ -497,6 +498,7 @@ const StateCoverageSimulator = () => {
           </div>
         </CardContent>
       </Card>
+    </TooltipProvider>
   );
 };
 

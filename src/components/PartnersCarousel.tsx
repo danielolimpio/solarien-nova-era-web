@@ -1,7 +1,14 @@
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import ceeeLogo from '@/assets/ceee-logo.png';
 import rgeLogo from '@/assets/rge-logo.png';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 const PartnersCarousel = () => {
   const partners = [
     {
@@ -74,29 +81,7 @@ const PartnersCarousel = () => {
     }
   ];
 
-  // Duplicar os parceiros para criar o efeito infinito
-  const duplicatedPartners = [...partners, ...partners, ...partners];
-
   return <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
-      <style>{`
-        @keyframes scroll-infinite {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-33.333%);
-          }
-        }
-        
-        .animate-scroll-infinite {
-          animation: scroll-infinite 60s linear infinite;
-          will-change: transform;
-        }
-        
-        .animate-scroll-infinite:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
       {/* Background image - Otimizada para performance */}
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Solar panels background" className="w-full h-full object-cover opacity-10" loading="lazy" decoding="async" />
@@ -121,28 +106,41 @@ const PartnersCarousel = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll-infinite">
-            {duplicatedPartners.map((partner, index) => (
-              <div 
-                key={`${partner.name}-${index}`} 
-                className="flex-shrink-0 w-40 sm:w-48 lg:w-52 mx-2 sm:mx-3 bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-3 sm:p-4 lg:p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg"
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name} 
-                    className="max-w-full max-h-full object-contain" 
-                    loading="lazy" 
-                    decoding="async" 
-                  />
-                </div>
-                <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300 text-xs sm:text-sm lg:text-base">
-                  {partner.name}
-                </h3>
-              </div>
-            ))}
-          </div>
+        <div className="relative px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 sm:-ml-3">
+              {partners.map((partner, index) => (
+                <CarouselItem key={index} className="pl-2 sm:pl-3 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                  <div className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-3 sm:p-4 lg:p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg h-full">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name} 
+                        className="max-w-full max-h-full object-contain" 
+                        loading="lazy" 
+                        decoding="async" 
+                      />
+                    </div>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300 text-xs sm:text-sm lg:text-base">
+                      {partner.name}
+                    </h3>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-solarien-primary text-white hover:bg-solarien-primary/90 border-none shadow-lg">
+              <ChevronLeft className="w-6 h-6" />
+            </CarouselPrevious>
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-solarien-primary text-white hover:bg-solarien-primary/90 border-none shadow-lg">
+              <ChevronRight className="w-6 h-6" />
+            </CarouselNext>
+          </Carousel>
         </div>
 
         {/* Botão Ver Mapa de Descontos */}

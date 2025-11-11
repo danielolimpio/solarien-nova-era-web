@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import { useScreenSize } from '@/hooks/useScreenSize';
+import ceeeLogo from '@/assets/ceee-logo.png';
+import rgeLogo from '@/assets/rge-logo.png';
 const PartnersCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { width } = useScreenSize();
@@ -64,6 +66,14 @@ const PartnersCarousel = () => {
     {
       name: 'COSERN',
       logo: '/lovable-uploads/13f4f575-48aa-4162-ba85-9cbc2a8949d6.png'
+    },
+    {
+      name: 'CEEE',
+      logo: ceeeLogo
+    },
+    {
+      name: 'RGE',
+      logo: rgeLogo
     }
   ];
 

@@ -80,34 +80,21 @@ const PartnersCarousel = () => {
   return <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
       <style>{`
         @keyframes scroll-infinite {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
-            transform: translateX(-${partners.length * 200}px);
+          to {
+            transform: translateX(-33.333%);
           }
         }
         
         .animate-scroll-infinite {
-          animation: scroll-infinite 40s linear infinite;
+          animation: scroll-infinite 60s linear infinite;
+          will-change: transform;
         }
         
         .animate-scroll-infinite:hover {
           animation-play-state: paused;
-        }
-        
-        @media (max-width: 640px) {
-          @keyframes scroll-infinite {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-${partners.length * 160}px);
-            }
-          }
-          .animate-scroll-infinite {
-            animation: scroll-infinite 50s linear infinite;
-          }
         }
       `}</style>
       {/* Background image - Otimizada para performance */}

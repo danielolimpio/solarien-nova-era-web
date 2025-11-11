@@ -43,8 +43,6 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      console.log('Enviando email com os dados:', values);
-      
       const result = await emailjs.send(
         'service_vvxglpf',
         'template_vskkgic',
@@ -59,8 +57,6 @@ const Contact = () => {
         },
         'cZ2wsFAjNlCiZaIIG'
       );
-
-      console.log('Email enviado com sucesso:', result);
       
       toast({
         title: "Mensagem enviada!",
@@ -68,7 +64,6 @@ const Contact = () => {
       });
       form.reset();
     } catch (error) {
-      console.error('Erro detalhado ao enviar email:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: "Tente novamente mais tarde.",

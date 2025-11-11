@@ -17,8 +17,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
   placeholder = "Buscar...",
   className = ""
 }) => {
-  console.log('SearchInput render - value:', value); // Debug log
-  
   return (
     <div className={`relative flex-1 ${className}`}>
       <div className="relative">
@@ -27,10 +25,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
           type="text"
           placeholder={placeholder}
           value={value}
-          onChange={(e) => {
-            console.log('Input change:', e.target.value); // Debug log
-            onChange(e.target.value);
-          }}
+          onChange={(e) => onChange(e.target.value)}
           style={{
             backgroundColor: '#ffffff',
             color: '#000000',
@@ -45,10 +40,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         />
         {value && (
           <button
-            onClick={() => {
-              console.log('Clear button clicked'); // Debug log
-              onClear();
-            }}
+            onClick={onClear}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 transition-colors z-10 p-1"
             type="button"
           >

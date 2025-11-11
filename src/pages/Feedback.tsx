@@ -133,7 +133,6 @@ const Feedback = () => {
         improvements: ''
       });
     } catch (error) {
-      console.error('Erro ao enviar feedback:', error);
       toast({
         title: "Erro ao enviar feedback",
         description: "Tente novamente mais tarde.",

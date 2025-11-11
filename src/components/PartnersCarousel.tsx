@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, Zap } from 'lucide-react';
-import { useScreenSize } from '@/hooks/useScreenSize';
+import React from 'react';
+import { Zap } from 'lucide-react';
 import ceeeLogo from '@/assets/ceee-logo.png';
 import rgeLogo from '@/assets/rge-logo.png';
 const PartnersCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { width } = useScreenSize();
   const partners = [
     {
       name: 'CPFL Paulista',
@@ -77,22 +74,42 @@ const PartnersCarousel = () => {
     }
   ];
 
-  // Configuração responsiva baseada no hook useScreenSize (evita forced reflows)
-  const itemsPerSlide = width < 640 ? 2 : width < 768 ? 3 : width < 1024 ? 4 : 5;
-  const totalSlides = Math.ceil(partners.length / itemsPerSlide);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
-    }, 4000); // Aumentei para 4 segundos para melhor UX
-    return () => clearInterval(interval);
-  }, [totalSlides]);
-  const goToPrevious = () => {
-    setCurrentIndex(prevIndex => prevIndex === 0 ? totalSlides - 1 : prevIndex - 1);
-  };
-  const goToNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex + 1) % totalSlides);
-  };
+  // Duplicar os parceiros para criar o efeito infinito
+  const duplicatedPartners = [...partners, ...partners, ...partners];
+
   return <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
+      <style>{`
+        @keyframes scroll-infinite {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${partners.length * 200}px);
+          }
+        }
+        
+        .animate-scroll-infinite {
+          animation: scroll-infinite 40s linear infinite;
+        }
+        
+        .animate-scroll-infinite:hover {
+          animation-play-state: paused;
+        }
+        
+        @media (max-width: 640px) {
+          @keyframes scroll-infinite {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-${partners.length * 160}px);
+            }
+          }
+          .animate-scroll-infinite {
+            animation: scroll-infinite 50s linear infinite;
+          }
+        }
+      `}</style>
       {/* Background image - Otimizada para performance */}
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Solar panels background" className="w-full h-full object-cover opacity-10" loading="lazy" decoding="async" />
@@ -117,42 +134,28 @@ const PartnersCarousel = () => {
           </p>
         </div>
 
-        <div className="relative overflow-hidden max-w-6xl mx-auto">
-          {/* Previous Arrow */}
-          <button onClick={goToPrevious} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-solarien-primary/40 transition-all duration-300 opacity-70 hover:opacity-100 shadow-lg" aria-label="Slide anterior">
-            <ChevronLeft className="w-4 h-4 text-gray-600" />
-          </button>
-
-          {/* Next Arrow */}
-          <button onClick={goToNext} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white hover:border-solarien-primary/40 transition-all duration-300 opacity-70 hover:opacity-100 shadow-lg" aria-label="Próximo slide">
-            <ChevronRight className="w-4 h-4 text-gray-600" />
-          </button>
-
-          <div className="flex transition-transform duration-1000 ease-in-out" style={{
-          transform: `translateX(-${currentIndex * 100}%)`
-        }}>
-            {Array.from({
-            length: totalSlides
-          }).map((_, slideIndex) => <div key={slideIndex} className="w-full flex-shrink-0">
-                <div className={`grid gap-4 sm:gap-6 ${itemsPerSlide === 2 ? 'grid-cols-2' : itemsPerSlide === 3 ? 'grid-cols-3' : itemsPerSlide === 4 ? 'grid-cols-4' : 'grid-cols-5'}`}>
-                  {partners.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map(partner => <div key={partner.name} className="bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-3 sm:p-4 lg:p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-2 sm:mb-4 flex items-center justify-center">
-                        <img src={partner.logo} alt={partner.name} className="max-w-full max-h-full object-contain" loading="lazy" decoding="async" />
-                      </div>
-                      <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300 text-xs sm:text-sm lg:text-base">
-                        {partner.name}
-                      </h3>
-                    </div>)}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll-infinite">
+            {duplicatedPartners.map((partner, index) => (
+              <div 
+                key={`${partner.name}-${index}`} 
+                className="flex-shrink-0 w-40 sm:w-48 lg:w-52 mx-2 sm:mx-3 bg-white/90 backdrop-blur-sm border border-solarien-primary/20 rounded-xl p-3 sm:p-4 lg:p-6 text-center hover:bg-solarien-primary/10 hover:border-solarien-primary/40 transition-all duration-300 transform hover:scale-105 cursor-pointer group shadow-lg"
+              >
+                <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-2 sm:mb-3 flex items-center justify-center">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="max-w-full max-h-full object-contain" 
+                    loading="lazy" 
+                    decoding="async" 
+                  />
                 </div>
-              </div>)}
+                <h3 className="font-semibold text-gray-800 group-hover:text-solarien-primary transition-colors duration-300 text-xs sm:text-sm lg:text-base">
+                  {partner.name}
+                </h3>
+              </div>
+            ))}
           </div>
-        </div>
-
-        {/* Indicators - Ajustados para tamanho médio */}
-        <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
-          {Array.from({
-          length: totalSlides
-        }).map((_, index) => <button key={index} onClick={() => setCurrentIndex(index)} className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-solarien-primary scale-110' : 'bg-gray-400'}`} aria-label={`Slide ${index + 1}`} />)}
         </div>
 
         {/* Botão Ver Mapa de Descontos */}

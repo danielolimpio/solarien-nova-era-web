@@ -83,6 +83,9 @@ const Footer = () => {
         case 'Blog/Notícias':
           route = '/blog';
           break;
+        case 'Mapa do Site':
+          route = '/sitemap';
+          break;
       }
       
       navigate(route);
@@ -110,7 +113,7 @@ const Footer = () => {
   const footerLinks = {
     'Institucional': ['Home', 'Sobre', 'Serviços', 'Usinas', 'Contatos', 'FAQ'],
     'Plataforma': ['Como Funciona', 'Licenciados', 'Depoimentos', 'Portal do Cliente', 'Blog/Notícias'],
-    'Políticas': ['Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback']
+    'Políticas': ['Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Mapa do Site']
   };
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -214,9 +217,9 @@ const Footer = () => {
             <div key={category}>
               <h3 className="text-lg font-bold text-white mb-4">{category}</h3>
               <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
-                    {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados', 'Blog/Notícias'].includes(link) ? (
+                  {links.map((link) => (
+                    <li key={link}>
+                      {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados', 'Blog/Notícias', 'Mapa do Site'].includes(link) ? (
                       <button
                         onClick={() => handleLinkClick(link)}
                         className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"

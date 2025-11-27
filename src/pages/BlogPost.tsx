@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedPosts from '../components/RelatedPosts';
 import { Button } from '../components/ui/button';
-
 interface BlogPost {
   id: string;
   title: string;
@@ -1903,6 +1903,13 @@ const BlogPost = () => {
               {formatContent(post.content)}
             </div>
           </div>
+
+          {/* Related Posts Section */}
+          <RelatedPosts
+            currentPostId={post.id}
+            currentCategory={post.category}
+            allPosts={blogPosts}
+          />
 
           {/* Back to Blog Button */}
           <div className="text-center mt-12">

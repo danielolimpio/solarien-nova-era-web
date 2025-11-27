@@ -52,7 +52,7 @@ const Footer = () => {
           behavior: 'smooth'
         });
       }, 100);
-    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Blog/Notícias'].includes(link)) {
+    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Blog/Notícias', 'Mapa do Site'].includes(link)) {
       // Navigate to respective pages and scroll to top
       let route = '';
       switch (link) {

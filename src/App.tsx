@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Licensed from "./pages/Licensed";
 import SolarPlants from "./pages/SolarPlants";
+import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -47,6 +48,7 @@ const App = () => (
       <Route path="/servicos" element={<Services />} />
       <Route path="/licenciado" element={<Licensed />} />
       <Route path="/usinas" element={<SolarPlants />} />
+      <Route path="/sitemap" element={<Sitemap />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>

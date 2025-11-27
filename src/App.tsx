@@ -2,6 +2,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -26,6 +27,7 @@ import CookieConsent from "./components/CookieConsent";
 
 const App = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/faq" element={<FAQ />} />

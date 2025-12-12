@@ -21,7 +21,7 @@ const SEO: React.FC<SEOProps> = ({
   description,
   keywords,
   canonical,
-  ogImage = 'https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png',
+  ogImage = 'https://solarien.com.br/og-image.jpg',
   ogType = 'website',
   article
 }) => {

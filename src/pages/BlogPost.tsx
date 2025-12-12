@@ -1627,8 +1627,8 @@ Deixe seu comentário abaixo ou entre em contato com um especialista. A transiç
   {
     id: 'entenda-cliente-antes-vender',
     title: 'Entenda o Cliente Antes de Vender: A Chave para Conversões na Solarien Energy',
-    excerpt: 'Aprenda a reconhecer o perfil do cliente e use a abordagem certa para vender energia solar com mais eficiência e empatia.',
-    content: `Vender energia solar não é só falar de painéis, economia ou tecnologia.
+    excerpt: 'Aprenda a reconhecer o perfil do cliente e use a abordagem certa para vender energia por assinatura com mais eficiência e empatia.',
+    content: `Vender energia por assinatura não é só falar de economia ou tecnologia.
 
 É, antes de tudo, entender com quem você está falando.
 
@@ -1648,16 +1648,16 @@ Quando alguém entra em contato, ele está em um desses quatro estados emocionai
 
 ### 1. Desligado
 
-Não entendeu o que é energia solar ou não vê relação com a própria vida.
+Não entendeu o que é energia por assinatura ou não vê relação com a própria vida.
 
 Frases típicas:
 
-- "Energia solar? Como assim?"
+- "Energia por assinatura? Como assim?"
 - "Isso é coisa de rico, né?"
 
 O que fazer: Simplifique ao máximo. Use analogias do dia a dia. Não fale de tecnologia — fale de resultado.
 
-> "Imagina só: sua conta de luz com até 95% de desconto. Vou te explicar em 30 segundos."
+> "Imagina só: sua conta de luz com até 45% de desconto, sem pagar nada, sem obras, sem burocracia. Vou te explicar em 30 segundos."
 
 ### 2. Interessado
 
@@ -1670,7 +1670,7 @@ Frases típicas:
 
 O que fazer: Mostre o caminho prático. Ofereça uma simulação rápida com a conta dele.
 
-> "Me manda uma foto da sua conta de luz que eu mostro exatamente quanto você pagaria com a gente."
+> "Me manda uma foto da sua conta de luz que eu mostro exatamente quanto você pagaria com a gente. É só uma portabilidade gratuita, sem custo nenhum."
 
 ### 3. Desconfiado
 
@@ -1680,11 +1680,11 @@ Frases típicas:
 
 - "Isso é seguro mesmo?"
 - "Não quero dor de cabeça."
-- "Vou perder energia se chover?"
+- "Vou ficar sem energia?"
 
 O que fazer: Tranquilize. Reforce que a distribuidora continua a mesma, a energia não some, e não há custo inicial.
 
-> "É normal ter esse receio. A concessionária continua igual — só muda quem paga a conta. Nada muda na sua casa."
+> "É normal ter esse receio. A concessionária continua igual — só muda quem gera a energia. Nada muda na sua casa, não tem obra, não tem instalação. Tudo respaldado pela Lei 14.300."
 
 ### 4. Pronto para fechar
 
@@ -1698,7 +1698,7 @@ Frases típicas:
 
 O que fazer: Seja rápido, objetivo e direto ao ponto.
 
-> "Perfeito! Me manda sua conta de luz e eu gero a simulação agora — em menos de 5 minutos."
+> "Perfeito! Me manda sua conta de luz e eu gero a simulação agora — em menos de 5 minutos. A portabilidade é gratuita."
 
 ## O que o Cliente Realmente Quer?
 
@@ -1706,10 +1706,10 @@ Além do estado emocional, é essencial descobrir o que motiva a pessoa. São se
 
 | Perfil | Motivação Principal |
 |--------|---------------------|
-| Economia | Quer reduzir a conta de luz |
+| Economia | Quer reduzir a conta de luz em até 45% |
 | Segurança | Quer garantia, estabilidade e zero risco |
-| Simplicidade | Quer um processo fácil, sem burocracia |
-| Sustentabilidade | Se importa com o meio ambiente |
+| Simplicidade | Quer um processo fácil, sem burocracia e sem custos |
+| Sustentabilidade | Se importa com o meio ambiente e energia limpa |
 | Modernidade | Gosta de estar à frente, usando o que há de novo |
 | Indicação | Veio porque um amigo ou familiar já usou |
 
@@ -1737,7 +1737,7 @@ E clientes que se sentem ajudados fecham mais rápido, com menos objeções e ma
 
 ## Respostas Práticas para Cada Tipo de Cliente
 
-Na venda de energia solar, não existe um discurso único que funcione para todo mundo. Cada cliente pensa de um jeito, tem dúvidas diferentes e precisa de uma abordagem personalizada. O segredo está em escutar com atenção, identificar rapidamente o tipo de pessoa com quem você está falando e adaptar sua fala na hora. Veja como fazer isso de forma simples e eficaz.
+Na venda de energia por assinatura, não existe um discurso único que funcione para todo mundo. Cada cliente pensa de um jeito, tem dúvidas diferentes e precisa de uma abordagem personalizada. O segredo está em escutar com atenção, identificar rapidamente o tipo de pessoa com quem você está falando e adaptar sua fala na hora. Veja como fazer isso de forma simples e eficaz.
 
 ### 1. Cliente que diz: "Não entendi direito... Pode explicar de novo? Sou leigo nisso."
 
@@ -1745,7 +1745,7 @@ O que ele sente: Falta de conhecimento e receio de tomar uma decisão errada.
 
 Como responder:
 
-> "Sem problema! Vou explicar como se estivesse contando pra um amigo. Em 30 segundos, você vai entender tudo direitinho."
+> "Sem problema! É simples: você continua recebendo energia normalmente da sua distribuidora, mas passa a consumir energia de uma usina solar. O desconto vem direto na conta — sem obra, sem instalação, sem custo. Tudo regulamentado pela Lei 14.300."
 
 Isso acalma, tira a vergonha de não saber e cria confiança.
 
@@ -1755,7 +1755,7 @@ O que ele sente: Desconfiança e desejo de segurança.
 
 Como responder:
 
-> "Ótima pergunta! Muita gente pensa isso no começo. Vou te mostrar exatamente onde está a garantia e por que é tudo regulado e seguro."
+> "Ótima pergunta! Muita gente pensa isso no começo. É tudo regulado pela Aneel e pela Lei 14.300. Você não paga nada pra entrar, não tem fidelidade absurda, e pode cancelar quando quiser. Vou te mostrar o contrato."
 
 Validar a dúvida mostra respeito — não force a barra.
 
@@ -1765,7 +1765,7 @@ O que ele sente: Medo da burocracia e de complicação futura.
 
 Como responder:
 
-> "Se algo der errado, eu cuido disso por você. Mas olha só: o processo é todo digital, sem papelada, e o suporte é rápido. Vou te mostrar passo a passo."
+> "Se algo der errado, eu cuido disso por você. Mas olha só: o processo é todo digital, sem papelada, e o suporte é rápido. A portabilidade é gratuita e a sua distribuidora continua a mesma."
 
 Mostre que ele não está sozinho.
 
@@ -1775,7 +1775,7 @@ O que ele sente: Busca por propósito e alinhamento com valores pessoais.
 
 Como responder:
 
-> "Perfeito! Com a energia solar compartilhada, você economiza e ajuda a expandir a geração limpa no Brasil. Cada kWh que você usa é um voto pela sustentabilidade."
+> "Perfeito! Com a energia por assinatura, você economiza e ajuda a expandir a geração limpa no Brasil. Cada kWh que você usa vem de uma usina solar — é um voto pela sustentabilidade sem precisar instalar nada."
 
 Aqui, o fechamento vem pela identificação com uma causa maior.
 
@@ -1785,7 +1785,7 @@ O que ele sente: Necessidade de velocidade e objetividade.
 
 Como responder:
 
-> "Certo! Me diz o valor médio da sua conta de luz que eu já calculo a economia pra você em 20 segundos."
+> "Certo! Me diz o valor médio da sua conta de luz que eu já calculo a economia pra você em 20 segundos. Pode chegar até 45% de desconto."
 
 Entregue ritmo e seja direto — ele vai respeitar sua eficiência.
 
@@ -1795,7 +1795,7 @@ O que ele sente: Curiosidade misturada com ceticismo.
 
 Como responder:
 
-> "É exatamente o que aconteceu com o Pix no começo: parecia estranho, mas hoje todo mundo usa. A energia solar compartilhada está nesse mesmo momento — nova, mas já regulada e vantajosa."
+> "É exatamente o que aconteceu com o Pix no começo: parecia estranho, mas hoje todo mundo usa. A energia por assinatura está nesse mesmo momento — nova, mas já regulada pela Lei 14.300 e muito vantajosa."
 
 Mostre que a novidade vira rotina.
 
@@ -1805,7 +1805,7 @@ O que ele sente: Foco imediato em economia.
 
 Como responder:
 
-> "Claro! O desconto é garantido — você vai ver na sua próxima conta. Mas quero te mostrar algo a mais: além de pagar menos, você ainda tem estabilidade no preço da energia."
+> "Claro! O desconto pode chegar até 45% — você vai ver na sua próxima conta. E o melhor: não paga nada pra começar, não tem obra, não tem taxa de adesão."
 
 Vá além do "quanto", mostre o "porquê" e o "depois".
 
@@ -1815,13 +1815,13 @@ O que ele sente: Preocupação com a credibilidade da empresa.
 
 Como responder:
 
-> "Você continua recebendo energia da mesma distribuidora de sempre. A diferença é que agora o desconto vem de uma usina solar parceira, registrada e fiscalizada. Nada muda na sua casa — só o valor da conta cai."
+> "Você continua recebendo energia da mesma distribuidora de sempre. A diferença é que agora o desconto vem de uma usina solar parceira, registrada e fiscalizada pela Aneel. Nada muda na sua casa — só o valor da conta cai. Tudo amparado pela Lei 14.300."
 
 Reduza o medo do novo reforçando o que já é conhecido.
 
 ## Conclusão
 
-Vender energia solar não é só falar de tecnologia ou economia. É entender quem está do outro lado — suas dores, desejos e forma de pensar.
+Vender energia por assinatura não é só falar de tecnologia ou economia. É entender quem está do outro lado — suas dores, desejos e forma de pensar.
 
 Com essas respostas simples e humanas, você transforma objeções em oportunidades e constrói relacionamentos reais, não apenas vendas.
 
@@ -1829,17 +1829,17 @@ Na [Solarien Energy](/), acreditamos que a energia do futuro é limpa, justa e f
 
 ## Perguntas Frequentes
 
-### Qual a melhor forma de abordar um cliente que não conhece energia solar?
+### Qual a melhor forma de abordar um cliente que não conhece energia por assinatura?
 
-Simplifique a explicação ao máximo e foque no resultado (economia), não na tecnologia. Use frases curtas e analogias do dia a dia.
+Simplifique a explicação ao máximo e foque no resultado (economia de até 45%), não na tecnologia. Reforce que não tem custo, não tem obra, e a portabilidade é gratuita.
 
-### Como lidar com clientes desconfiados sobre energia solar?
+### Como lidar com clientes desconfiados sobre energia por assinatura?
 
-Valide a preocupação dele, mostre que é normal ter esse receio, e reforce que a distribuidora de energia continua a mesma — sem mudanças na casa dele.
+Valide a preocupação dele, mostre que é normal ter esse receio, e reforce que tudo é regulamentado pela Lei 14.300 e pela Aneel — a distribuidora continua a mesma.
 
 ### O que fazer quando o cliente só quer saber do preço?
 
-Seja direto e objetivo. Calcule a economia rapidamente e, depois de apresentar o valor, mostre os benefícios adicionais como estabilidade de preço.
+Seja direto e objetivo. Calcule a economia rapidamente e, depois de apresentar o valor, mostre que não há custos de adesão nem obras necessárias.
 
 ### Como identificar o perfil do cliente rapidamente?
 
@@ -1853,7 +1853,7 @@ Porque as decisões de compra são emocionais. Quando você adapta sua comunica�
     readTime: '14 min',
     category: 'Vendas',
     author: 'Equipe Solarien',
-    tags: ['Vendas', 'Atendimento ao Cliente', 'Conversão', 'Energia Solar', 'Técnicas de Vendas']
+    tags: ['Vendas', 'Atendimento ao Cliente', 'Conversão', 'Energia por Assinatura', 'Mercado Livre de Energia']
   }
 ];
 

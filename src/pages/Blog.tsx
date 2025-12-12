@@ -21,6 +21,16 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: 'entenda-cliente-antes-vender',
+    title: 'Entenda o Cliente Antes de Vender: A Chave para Conversões na Solarien Energy',
+    excerpt: 'Aprenda a reconhecer o perfil do cliente e use a abordagem certa para vender energia solar com mais eficiência e empatia.',
+    image: '/lovable-uploads/entenda-cliente-antes-vender-solarien.jpg',
+    date: '2025-01-28',
+    readTime: '10 min',
+    category: 'Vendas',
+    tags: ['Vendas', 'Energia Solar', 'Conversão', 'Atendimento', 'Estratégia']
+  },
+  {
     id: '7-mitos-mercado-livre-energia',
     title: '7 mitos que você deve esquecer sobre Mercado Livre de Energia',
     excerpt: 'Descubra a verdade sobre o mercado livre de energia. Desmistificamos 7 mitos que te impedem de economizar na conta de luz. Saiba como migrar sem complicações.',

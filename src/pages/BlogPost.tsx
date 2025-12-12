@@ -1625,7 +1625,7 @@ Deixe seu comentário abaixo ou entre em contato com um especialista. A transiç
     tags: ['Energia Renovável', 'Energia Solar', 'Biomassa', 'Sustentabilidade', 'Mercado Livre']
   },
   {
-    id: 'entenda-cliente-antes-de-vender',
+    id: 'entenda-cliente-antes-vender',
     title: 'Entenda o Cliente Antes de Vender: A Chave para Conversões na Solarien Energy',
     excerpt: 'Aprenda a reconhecer o perfil do cliente e use a abordagem certa para vender energia solar com mais eficiência e empatia.',
     content: `Vender energia solar não é só falar de painéis, economia ou tecnologia.

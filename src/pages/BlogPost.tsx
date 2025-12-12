@@ -1985,6 +1985,15 @@ const BlogPost = () => {
     }
   };
 
+  // Gerar URL absoluta para a imagem
+  const getAbsoluteImageUrl = (imagePath: string) => {
+    if (imagePath.startsWith('http')) return imagePath;
+    return `https://solarien.com.br${imagePath}`;
+  };
+
+  const absoluteImageUrl = getAbsoluteImageUrl(post.image);
+  const canonicalUrl = `https://solarien.com.br/blog/${post.id}`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Helmet>
@@ -1992,14 +2001,21 @@ const BlogPost = () => {
         <title>{post.title} | Solarien Energy Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(', ')} />
-        <link rel="canonical" href={`https://solarien.com.br/blog/${post.id}`} />
+        <link rel="canonical" href={canonicalUrl} />
         
-        {/* Open Graph / Facebook */}
+        {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
+        <meta property="og:title" content={`${post.title} | Solarien Energy`} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={`https://solarien.com.br/blog/${post.id}`} />
-        <meta property="og:image" content={post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={absoluteImageUrl} />
+        <meta property="og:image:secure_url" content={absoluteImageUrl} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={post.title} />
+        <meta property="og:site_name" content="Solarien Energy" />
+        <meta property="og:locale" content="pt_BR" />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={post.author} />
         <meta property="article:section" content={post.category} />
@@ -2009,9 +2025,12 @@ const BlogPost = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:site" content="@solarienoficial" />
+        <meta name="twitter:creator" content="@solarienoficial" />
+        <meta name="twitter:title" content={`${post.title} | Solarien Energy`} />
         <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`} />
+        <meta name="twitter:image" content={absoluteImageUrl} />
+        <meta name="twitter:image:alt" content={post.title} />
         
         {/* Schema.org Article Markup */}
         <script type="application/ld+json">
@@ -2020,7 +2039,7 @@ const BlogPost = () => {
             "@type": "Article",
             "headline": post.title,
             "description": post.excerpt,
-            "image": post.image.startsWith('http') ? post.image : `https://solarien.com.br${post.image}`,
+            "image": [absoluteImageUrl],
             "datePublished": post.date,
             "dateModified": post.date,
             "author": {
@@ -2038,7 +2057,7 @@ const BlogPost = () => {
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://solarien.com.br/blog/${post.id}`
+              "@id": canonicalUrl
             },
             "articleSection": post.category,
             "keywords": post.tags.join(', ')

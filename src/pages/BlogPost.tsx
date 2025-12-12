@@ -1650,11 +1650,12 @@ Quando alguém entra em contato, ele está em um desses quatro estados emocionai
 
 Não entendeu o que é energia solar ou não vê relação com a própria vida.
 
-**Frases típicas:**
+Frases típicas:
+
 - "Energia solar? Como assim?"
 - "Isso é coisa de rico, né?"
 
-👉 **O que fazer:** Simplifique ao máximo. Use analogias do dia a dia. Não fale de tecnologia — fale de resultado.
+O que fazer: Simplifique ao máximo. Use analogias do dia a dia. Não fale de tecnologia — fale de resultado.
 
 > "Imagina só: sua conta de luz com até 95% de desconto. Vou te explicar em 30 segundos."
 
@@ -1662,11 +1663,12 @@ Não entendeu o que é energia solar ou não vê relação com a própria vida.
 
 Está curioso, quer entender como funciona, mas ainda não decidiu nada.
 
-**Frases típicas:**
+Frases típicas:
+
 - "Como que isso funciona?"
 - "Quanto eu economizaria?"
 
-👉 **O que fazer:** Mostre o caminho prático. Ofereça uma simulação rápida com a conta dele.
+O que fazer: Mostre o caminho prático. Ofereça uma simulação rápida com a conta dele.
 
 > "Me manda uma foto da sua conta de luz que eu mostro exatamente quanto você pagaria com a gente."
 
@@ -1674,12 +1676,13 @@ Está curioso, quer entender como funciona, mas ainda não decidiu nada.
 
 Tem medo de golpe, burocracia ou mudança repentina.
 
-**Frases típicas:**
+Frases típicas:
+
 - "Isso é seguro mesmo?"
 - "Não quero dor de cabeça."
 - "Vou perder energia se chover?"
 
-👉 **O que fazer:** Tranquilize. Reforce que a distribuidora continua a mesma, a energia não some, e não há custo inicial.
+O que fazer: Tranquilize. Reforce que a distribuidora continua a mesma, a energia não some, e não há custo inicial.
 
 > "É normal ter esse receio. A concessionária continua igual — só muda quem paga a conta. Nada muda na sua casa."
 
@@ -1687,12 +1690,13 @@ Tem medo de golpe, burocracia ou mudança repentina.
 
 Já entendeu, confia e quer resolver logo.
 
-**Frases típicas:**
+Frases típicas:
+
 - "Me manda a simulação."
 - "Dá pra fazer hoje?"
 - "O que você precisa de mim?"
 
-👉 **O que fazer:** Seja rápido, objetivo e direto ao ponto.
+O que fazer: Seja rápido, objetivo e direto ao ponto.
 
 > "Perfeito! Me manda sua conta de luz e eu gero a simulação agora — em menos de 5 minutos."
 
@@ -1702,12 +1706,12 @@ Além do estado emocional, é essencial descobrir o que motiva a pessoa. São se
 
 | Perfil | Motivação Principal |
 |--------|---------------------|
-| **Economia** | Quer reduzir a conta de luz |
-| **Segurança** | Quer garantia, estabilidade e zero risco |
-| **Simplicidade** | Quer um processo fácil, sem burocracia |
-| **Sustentabilidade** | Se importa com o meio ambiente |
-| **Modernidade** | Gosta de estar à frente, usando o que há de novo |
-| **Indicação** | Veio porque um amigo ou familiar já usou |
+| Economia | Quer reduzir a conta de luz |
+| Segurança | Quer garantia, estabilidade e zero risco |
+| Simplicidade | Quer um processo fácil, sem burocracia |
+| Sustentabilidade | Se importa com o meio ambiente |
+| Modernidade | Gosta de estar à frente, usando o que há de novo |
+| Indicação | Veio porque um amigo ou familiar já usou |
 
 Você não precisa adivinhar. Basta fazer perguntas simples:
 
@@ -1723,9 +1727,9 @@ Porque ninguém compra por lógica pura.
 
 As decisões são emocionais, guiadas por:
 
-- **Medo** (de errar)
-- **Desejo** (de economizar ou inovar)
-- **Confiança** (em quem está oferecendo)
+- Medo (de errar)
+- Desejo (de economizar ou inovar)
+- Confiança (em quem está oferecendo)
 
 Quando você ajusta sua comunicação ao estado e à motivação do cliente, você para de vender... e começa a ajudar.
 
@@ -1737,83 +1741,83 @@ Na venda de energia solar, não existe um discurso único que funcione para todo
 
 ### 1. Cliente que diz: "Não entendi direito... Pode explicar de novo? Sou leigo nisso."
 
-**O que ele sente:** Falta de conhecimento e receio de tomar uma decisão errada.
+O que ele sente: Falta de conhecimento e receio de tomar uma decisão errada.
 
-**Como responder:**
+Como responder:
 
 > "Sem problema! Vou explicar como se estivesse contando pra um amigo. Em 30 segundos, você vai entender tudo direitinho."
 
-→ Isso acalma, tira a vergonha de não saber e cria confiança.
+Isso acalma, tira a vergonha de não saber e cria confiança.
 
 ### 2. Cliente que diz: "Isso é bom demais pra ser verdade... Tem alguma pegadinha?"
 
-**O que ele sente:** Desconfiança e desejo de segurança.
+O que ele sente: Desconfiança e desejo de segurança.
 
-**Como responder:**
+Como responder:
 
 > "Ótima pergunta! Muita gente pensa isso no começo. Vou te mostrar exatamente onde está a garantia e por que é tudo regulado e seguro."
 
-→ Validar a dúvida mostra respeito — não force a barra.
+Validar a dúvida mostra respeito — não force a barra.
 
 ### 3. Cliente que diz: "E se der problema? Quem eu procuro? Vai me dar dor de cabeça?"
 
-**O que ele sente:** Medo da burocracia e de complicação futura.
+O que ele sente: Medo da burocracia e de complicação futura.
 
-**Como responder:**
+Como responder:
 
 > "Se algo der errado, eu cuido disso por você. Mas olha só: o processo é todo digital, sem papelada, e o suporte é rápido. Vou te mostrar passo a passo."
 
-→ Mostre que ele não está sozinho.
+Mostre que ele não está sozinho.
 
 ### 4. Cliente que diz: "Quero algo que faça bem pro planeta. Isso ajuda o meio ambiente?"
 
-**O que ele sente:** Busca por propósito e alinhamento com valores pessoais.
+O que ele sente: Busca por propósito e alinhamento com valores pessoais.
 
-**Como responder:**
+Como responder:
 
 > "Perfeito! Com a energia solar compartilhada, você economiza e ajuda a expandir a geração limpa no Brasil. Cada kWh que você usa é um voto pela sustentabilidade."
 
-→ Aqui, o fechamento vem pela identificação com uma causa maior.
+Aqui, o fechamento vem pela identificação com uma causa maior.
 
 ### 5. Cliente que diz: "Não gosto de enrolação. Quero saber logo quanto vou economizar."
 
-**O que ele sente:** Necessidade de velocidade e objetividade.
+O que ele sente: Necessidade de velocidade e objetividade.
 
-**Como responder:**
+Como responder:
 
 > "Certo! Me diz o valor médio da sua conta de luz que eu já calculo a economia pra você em 20 segundos."
 
-→ Entregue ritmo e seja direto — ele vai respeitar sua eficiência.
+Entregue ritmo e seja direto — ele vai respeitar sua eficiência.
 
 ### 6. Cliente que diz: "Se é tão bom, por que todo mundo ainda não usa?"
 
-**O que ele sente:** Curiosidade misturada com ceticismo.
+O que ele sente: Curiosidade misturada com ceticismo.
 
-**Como responder:**
+Como responder:
 
 > "É exatamente o que aconteceu com o Pix no começo: parecia estranho, mas hoje todo mundo usa. A energia solar compartilhada está nesse mesmo momento — nova, mas já regulada e vantajosa."
 
-→ Mostre que a novidade vira rotina.
+Mostre que a novidade vira rotina.
 
 ### 7. Cliente que diz: "Só me interessa se tiver desconto. Quanto eu ganho?"
 
-**O que ele sente:** Foco imediato em economia.
+O que ele sente: Foco imediato em economia.
 
-**Como responder:**
+Como responder:
 
 > "Claro! O desconto é garantido — você vai ver na sua próxima conta. Mas quero te mostrar algo a mais: além de pagar menos, você ainda tem estabilidade no preço da energia."
 
-→ Vá além do "quanto", mostre o "porquê" e o "depois".
+Vá além do "quanto", mostre o "porquê" e o "depois".
 
 ### 8. Cliente que diz: "Quem está por trás disso? É seguro mesmo?"
 
-**O que ele sente:** Preocupação com a credibilidade da empresa.
+O que ele sente: Preocupação com a credibilidade da empresa.
 
-**Como responder:**
+Como responder:
 
 > "Você continua recebendo energia da mesma distribuidora de sempre. A diferença é que agora o desconto vem de uma usina solar parceira, registrada e fiscalizada. Nada muda na sua casa — só o valor da conta cai."
 
-→ Reduza o medo do novo reforçando o que já é conhecido.
+Reduza o medo do novo reforçando o que já é conhecido.
 
 ## Conclusão
 

@@ -41,5 +41,34 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Sitemap
+# Crawlers de IA - Permitir acesso
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap e LLMs
 Sitemap: https://solarien.com.br/sitemap.xml
+LLMsTxt: https://solarien.com.br/llms.txt

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Solarien Energy",
+  "name_for_model": "solarien_energy",
+  "description_for_human": "Solarien Energy - Migração gratuita para energia solar e mercado livre com economia de até 45% na conta de luz.",
+  "description_for_model": "Solarien Energy é uma empresa brasileira de energia renovável que oferece serviços de migração para o mercado livre de energia e energia solar por assinatura. Especializada em consultoria energética para empresas, a Solarien garante economia de até 45% na conta de luz sem custos de adesão. Atua em todo o Brasil com parcerias junto às principais geradoras de energia. Serviços incluem: migração para mercado livre de energia, energia solar por assinatura, consultoria energética, gestão de contratos de energia e licenciamento de usinas solares.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://solarien.com.br/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://solarien.com.br/og-image.jpg",
+  "contact_email": "contato@solarien.com.br",
+  "legal_info_url": "https://solarien.com.br/termos"
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "name": "Solarien Energy",
+  "description": "Solarien Energy - Empresa brasileira de energia renovável especializada em migração para mercado livre de energia e energia solar. Economia garantida de até 45% na conta de luz.",
+  "url": "https://solarien.com.br",
+  "provider": {
+    "name": "Solarien Energy",
+    "url": "https://solarien.com.br"
+  },
+  "capabilities": {
+    "content": {
+      "type": "website",
+      "description": "Site institucional com informações sobre serviços de energia solar e mercado livre de energia no Brasil.",
+      "topics": [
+        "energia solar",
+        "mercado livre de energia",
+        "energia renovável",
+        "geração distribuída",
+        "consultoria energética",
+        "usinas solares",
+        "economia na conta de luz",
+        "sustentabilidade"
+      ],
+      "languages": ["pt-BR"],
+      "coverage": "Brasil"
+    }
+  },
+  "resources": [
+    {
+      "name": "Página Inicial",
+      "url": "https://solarien.com.br/",
+      "description": "Visão geral dos serviços de energia solar e mercado livre"
+    },
+    {
+      "name": "Sobre",
+      "url": "https://solarien.com.br/sobre/",
+      "description": "História, missão e valores da Solarien Energy"
+    },
+    {
+      "name": "Serviços",
+      "url": "https://solarien.com.br/servicos/",
+      "description": "Detalhes dos serviços de migração energética e consultoria"
+    },
+    {
+      "name": "FAQ",
+      "url": "https://solarien.com.br/faq",
+      "description": "Perguntas frequentes sobre energia solar e mercado livre"
+    },
+    {
+      "name": "Blog",
+      "url": "https://solarien.com.br/blog",
+      "description": "Artigos e conteúdo educacional sobre energia renovável"
+    },
+    {
+      "name": "Contato",
+      "url": "https://solarien.com.br/contato/",
+      "description": "Formulário de contato e informações para atendimento"
+    }
+  ],
+  "llms_txt": "https://solarien.com.br/llms.txt",
+  "sitemap": "https://solarien.com.br/sitemap.xml",
+  "robots_txt": "https://solarien.com.br/robots.txt"
+}

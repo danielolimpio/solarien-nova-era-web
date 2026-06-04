@@ -35,19 +35,25 @@ A Solarien Energy atua no setor de energia renovável no Brasil, facilitando a t
 - **Localização**: Brasil (atendimento nacional)
 - **Setor**: Energia renovável, energia solar, mercado livre de energia
 
-## Páginas Importantes
+## Pages
 
-- Página Inicial: https://solarien.com.br/
-- Sobre: https://solarien.com.br/sobre/
-- Serviços: https://solarien.com.br/servicos/
-- Contato: https://solarien.com.br/contato/
-- Blog: https://solarien.com.br/blog
-- FAQ: https://solarien.com.br/faq
-- Como Funciona: https://solarien.com.br/como-funciona
-- Usinas Solares: https://solarien.com.br/usinas-solares
-- Depoimentos: https://solarien.com.br/depoimentos
-- Seja Licenciado: https://solarien.com.br/seja-licenciado
-- Transparência: https://solarien.com.br/transparencia
+- [Início](/): Página inicial da Solarien Energy — economia garantida de até 45% na conta de luz com energia solar e mercado livre.
+- [Sobre](/sobre/): Conheça a Solarien Energy, nossa missão, visão e equipe especializada em energia renovável.
+- [Serviços](/servicos/): Serviços de migração para mercado livre de energia, energia solar por assinatura e consultoria energética.
+- [Como Funciona](/como-funciona/): Entenda passo a passo como funciona a migração para energia solar e mercado livre.
+- [Usinas](/usinas/): Conheça as usinas solares parceiras da Solarien Energy em todo o Brasil.
+- [Depoimentos](/depoimentos/): Cases e depoimentos de clientes que economizaram com a Solarien Energy.
+- [Seja Licenciado](/licenciado/): Torne-se um licenciado Solarien e ofereça energia solar para seus clientes.
+- [Blog](/blog/): Artigos e notícias sobre energia solar, mercado livre de energia e sustentabilidade.
+- [FAQ](/faq/): Perguntas frequentes sobre energia solar, mercado livre e os serviços da Solarien Energy.
+- [Contato](/contato/): Entre em contato com a equipe da Solarien Energy para uma consultoria gratuita.
+
+## Optional
+
+- [Política de Privacidade](/politica-de-privacidade/): Política de privacidade e proteção de dados da Solarien Energy.
+- [Termos de Uso](/termos-de-uso/): Termos e condições de uso do site Solarien Energy.
+- [Política de Cookies](/politica-de-cookies/): Informações sobre o uso de cookies no site Solarien Energy.
+- [Política de Transparência](/politica-de-transparencia/): Compromisso com transparência na comunicação da Solarien Energy.
 
 ## Palavras-chave
 

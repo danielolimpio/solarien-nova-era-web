@@ -134,6 +134,11 @@ const FAQ = () => {
             </div>
           </div>
 
+          {/* H2 para corrigir hierarquia de headings */}
+          <h2 className="text-2xl font-bold text-solarien-primary mb-6">
+            Tire suas dúvidas sobre nossos serviços
+          </h2>
+
           {/* FAQ Tabs */}
           <Tabs defaultValue="energy" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-8 bg-green-800">

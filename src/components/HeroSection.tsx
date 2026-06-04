@@ -75,9 +75,9 @@ const HeroSection = () => {
         {/* Conteúdo principal - completamente responsivo */}
         <header className="relative z-10 text-center px-3 sm:px-4 md:px-6 lg:px-8 pt-20 sm:pt-22 md:pt-24 lg:pt-20">
           <div className="max-w-4xl mx-auto">
-            {/* H1 otimizado para SEO */}
-            <h1 className="sr-only" itemProp="name">
-              Solarien Energy - Energia Solar e Mercado Livre de Energia com Economia até 45% na Conta de Luz - Alternativa sustentável a igreen energy, lex alexandria, alexandria energia, lex energia e enerzee
+            {/* H1 principal visível e conciso */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center" itemProp="name">
+              Solarien Energy — Economia Garantida em Energia Solar
             </h1>
             
             {/* Texto animado com atributos SEO - responsivo */}

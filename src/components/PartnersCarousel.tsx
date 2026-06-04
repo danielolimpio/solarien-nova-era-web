@@ -101,6 +101,9 @@ const PartnersCarousel = () => {
             </div>
             <span className="text-solarien-primary font-medium">Distribuidoras Parceiras</span>
           </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+            Nossas <span className="bg-gradient-to-r from-solarien-primary to-solarien-secondary bg-clip-text text-transparent">Parcerias</span>
+          </h2>
           <p className="text-gray-600 responsive-text max-w-2xl mx-auto leading-relaxed">
             Você continua utilizando a mesma rede de distribuição convencional
           </p>

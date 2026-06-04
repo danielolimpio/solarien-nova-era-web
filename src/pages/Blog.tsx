@@ -178,7 +178,7 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Helmet>
         {/* Meta Tags para SEO do Blog */}
-        <title>Blog Solarien Energy - Notícias e Artigos sobre Energia Solar e Mercado Livre</title>
+        <title>Blog Solarien — Energia Solar e Mercado Livre</title>
         <meta name="description" content="Fique por dentro das últimas novidades do mercado energético brasileiro. Análises especializadas, insights do setor e tendências sobre energia solar, mercado livre e sustentabilidade." />
         <meta name="keywords" content="blog energia solar, mercado livre energia, notícias energia renovável, artigos sustentabilidade, economia energia elétrica" />
         <link rel="canonical" href="https://solarien.com.br/blog" />

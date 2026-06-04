@@ -1993,12 +1993,16 @@ const BlogPost = () => {
 
   const absoluteImageUrl = getAbsoluteImageUrl(post.image);
   const canonicalUrl = `https://solarien.com.br/blog/${post.id}`;
+  const suffix = ' | Solarien';
+  const seoTitle = (post.title + suffix).length > 60
+    ? `${post.title.substring(0, 60 - suffix.length - 1).trimEnd()}…${suffix}`
+    : `${post.title}${suffix}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <Helmet>
         {/* Meta Tags Dinâmicas para SEO */}
-        <title>{post.title} | Solarien Energy Blog</title>
+        <title>{seoTitle}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(', ')} />
         <link rel="canonical" href={canonicalUrl} />

@@ -129,7 +129,7 @@ const LicenseSection = () => {
             BENEFÍCIOS
           </h3>
           
-          <p className="text-lg text-gray-600 mb-12">
+          <p className="text-lg text-gray-300 mb-12">
             <strong>Todos benefícios inclusos ao adquirir a licença</strong>
           </p>
 

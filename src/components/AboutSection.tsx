@@ -41,19 +41,19 @@ const AboutSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
               <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">2000+</div>
-              <div className="text-sm text-gray-600">Usinas Solares</div>
+              <div className="text-sm text-gray-300">Usinas Solares</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-secondary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
               <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">3B+</div>
-              <div className="text-sm text-gray-600">Faturamento Anual</div>
+              <div className="text-sm text-gray-300">Faturamento Anual</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-tertiary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
               <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">100k+</div>
-              <div className="text-sm text-gray-600">Clientes Ativos</div>
+              <div className="text-sm text-gray-300">Clientes Ativos</div>
             </div>
             <div className="bg-white/60 backdrop-blur-sm border border-solarien-primary/20 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 group hover:animate-soft-pulse">
               <div className="text-3xl font-bold bg-gradient-to-r from-solarien-primary via-solarien-secondary to-solarien-tertiary bg-clip-text text-transparent mb-2">100%</div>
-              <div className="text-sm text-gray-600">Energia Limpa</div>
+              <div className="text-sm text-gray-300">Energia Limpa</div>
             </div>
           </div>
           
@@ -134,7 +134,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Atendimento</h4>
-                  <p className="text-gray-600">Personalizado</p>
+                  <p className="text-gray-300">Personalizado</p>
                 </div>
               </div>
               
@@ -144,7 +144,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Economia</h4>
-                  <p className="text-gray-600">100% Garantida</p>
+                  <p className="text-gray-300">100% Garantida</p>
                 </div>
               </div>
               
@@ -154,7 +154,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Energia</h4>
-                  <p className="text-gray-600">100% Sustentável</p>
+                  <p className="text-gray-300">100% Sustentável</p>
                 </div>
               </div>
               
@@ -164,7 +164,7 @@ const AboutSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 text-lg">Contrato</h4>
-                  <p className="text-gray-600">100% Digital</p>
+                  <p className="text-gray-300">100% Digital</p>
                 </div>
               </div>
             </div>

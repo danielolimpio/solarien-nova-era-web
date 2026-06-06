@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -99,6 +100,23 @@ const Contact = () => {
     }
   ];
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Solarien Energy",
+    "telephone": "+55-11-99736-1698",
+    "email": "contato@solarien.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Julia Freire, 1200 - Expedicionários",
+      "addressLocality": "João Pessoa",
+      "addressRegion": "PB",
+      "addressCountry": "BR"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "url": "https://solarien.com.br/"
+  };
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -107,6 +125,9 @@ const Contact = () => {
         keywords="contato solarien, falar com solarien, whatsapp energia solar, telefone solarien, email solarien"
         canonical="https://solarien.com.br/contato"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+      </Helmet>
       <Header />
       <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
         <div className="container mx-auto px-4 py-4">

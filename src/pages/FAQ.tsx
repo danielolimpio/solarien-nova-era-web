@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -100,6 +101,31 @@ const FAQ = () => {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Perguntas Frequentes - Solarien Energy",
+    "url": "https://solarien.com.br/faq",
+    "mainEntity": [
+      ...energyFAQ.map(faq => ({
+        "@type": "Question" as const,
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer" as const,
+          "text": faq.answer
+        }
+      })),
+      ...networkFAQ.map(faq => ({
+        "@type": "Question" as const,
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer" as const,
+          "text": faq.answer
+        }
+      }))
+    ]
+  };
+
   return (
     <div className="min-h-screen">
       <SEO
@@ -108,6 +134,9 @@ const FAQ = () => {
         keywords="faq energia solar, dúvidas energia assinatura, perguntas mercado livre energia, como funciona solarien, multinível solarien"
         canonical="https://solarien.com.br/faq"
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <Header />
       <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
         <div className="container mx-auto px-4 py-4">

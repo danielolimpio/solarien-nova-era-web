@@ -56,6 +56,8 @@ const HeroSection = () => {
               src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
               alt="Painéis solares fotovoltaicos gerando energia limpa e renovável sustentável para economia na conta de luz"
               className="w-full h-full object-cover will-change-transform brightness-[0.3]"
+              width={1200}
+              height={800}
               loading="eager"
               decoding="async"
               fetchPriority="high"

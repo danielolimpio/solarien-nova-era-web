@@ -83,7 +83,7 @@ const HowItWorks = () => {
         <SEO
           title="Como Funciona a Energia Solar por Assinatura"
           description="Entenda como funciona a energia solar por assinatura e mercado livre de energia. Processo simples, economia garantida e sem investimento inicial. Saiba mais sobre grupos A e B."
-          keywords="como funciona energia solar, energia por assinatura, mercado livre energia, grupo a grupo b, economia energia elétrica"
+          keywords="como funciona mercado livre de energia, como migrar para mercado livre, energia por assinatura como funciona, como economizar conta de luz empresa, lei 14300 explicada, geração distribuída como funciona, autoconsumo remoto, créditos de energia, compensação SCEE, grupo A alta tensão, grupo B baixa tensão, consumidor livre, consumidor especial, passos migração ACL, prazo migração mercado livre, contrato bilateral, viabilidade migração"
           canonical="https://solarien.com.br/como-funciona"
         />
         <Header />

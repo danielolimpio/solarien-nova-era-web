@@ -112,7 +112,7 @@ const Services = () => {
       <SEO
         title="Serviços de Energia Solar e Mercado Livre"
         description="Soluções completas em energia renovável e gestão energética: energia por assinatura, mercado livre de energia, gestão de contratos e consultoria energética para todo o Brasil."
-        keywords="energia por assinatura, mercado livre de energia, gestão de contratos energéticos, consultoria energética, energia solar brasil"
+        keywords="mercado livre de energia, energia por assinatura, energia solar compartilhada, geração distribuída, lei 14300, autoconsumo remoto, consumidor livre, consumidor especial, comercializadora energia, contrato bilateral energia, gestão contratos energéticos, consultoria mercado livre, consultoria energética empresarial, migração mercado livre, viabilidade energética, diagnóstico energético, análise fatura energia, sazonalização, flexibilidade contratual, garantia física, encargos setoriais, CCEE, ANEEL, PLD, modalidade tarifária, demanda contratada, energia industrial, energia comercial, ROI energia solar, payback solar, broker energia"
         canonical="https://solarien.com.br/servicos"
       />
       <Header />

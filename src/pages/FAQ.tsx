@@ -131,7 +131,7 @@ const FAQ = () => {
       <SEO
         title="Perguntas Frequentes - FAQ Solarien Energy"
         description="Tire suas dúvidas sobre energia solar por assinatura, mercado livre de energia e marketing de rede. Respostas completas sobre como economizar na conta de luz."
-        keywords="faq energia solar, dúvidas energia assinatura, perguntas mercado livre energia, como funciona solarien, multinível solarien"
+        keywords="faq mercado livre de energia, dúvidas energia por assinatura, perguntas frequentes geração distribuída, como funciona lei 14300, quem pode migrar mercado livre, como economizar na conta de luz, perguntas energia solar compartilhada, posso cancelar energia por assinatura, fidelidade mercado livre, prazo migração ACL, quanto economiza mercado livre, vale a pena energia por assinatura, consultoria energética perguntas, multinível solarien"
         canonical="https://solarien.com.br/faq"
       />
       <Helmet>

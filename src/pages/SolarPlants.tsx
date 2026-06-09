@@ -101,7 +101,7 @@ const SolarPlants = () => {
       <SEO
         title="Usinas Solares Parceiras - Rede Nacional"
         description="Conheça a maior rede de usinas solares do Brasil. Mais de 2000 usinas parceiras gerando energia limpa e renovável em todo território nacional com tecnologia de ponta."
-        keywords="usinas solares brasil, usinas fotovoltaicas, rede usinas solares, energia solar brasil, geração solar distribuída"
+        keywords="usinas solares parceiras, fazenda solar Brasil, geração distribuída fotovoltaica, usina fotovoltaica licenciada, mini geração solar, micro geração solar, usina solar compensação SCEE, parque solar, planta solar comercial, autoconsumo remoto, créditos energia distribuídos, energia limpa rede nacional"
         canonical="https://solarien.com.br/usinas"
       />
       <Header />

@@ -144,7 +144,7 @@ const Testimonials = () => {
       <SEO
         title="Depoimentos de Clientes - Casos de Sucesso"
         description="Conheça os depoimentos de empresários que reduziram significativamente seus custos com energia. Casos reais de economia com energia solar e mercado livre de energia."
-        keywords="depoimentos energia solar, casos sucesso energia, economia conta luz, testemunhos clientes solarien, avaliações energia solar"
+        keywords="depoimentos energia solar, casos de sucesso mercado livre, cases economia energia, clientes solarien, avaliações energia por assinatura, resultados economia conta luz, testemunhos consultoria energética, empresas que migraram mercado livre, redução conta de luz empresa"
         canonical="https://solarien.com.br/depoimentos"
       />
       <Header />

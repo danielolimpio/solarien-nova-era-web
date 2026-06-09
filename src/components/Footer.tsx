@@ -241,6 +241,24 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* SEO: soluções rich anchor block */}
+        <nav aria-label="Soluções em energia" className="border-t pt-8 mb-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.2)' }}>
+          <h3 className="text-lg font-bold text-white mb-4">Soluções Solarien</h3>
+          <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-300">
+            <li><Link to="/servicos" className="hover:text-solarien-primary">Mercado Livre de Energia</Link></li>
+            <li><Link to="/servicos" className="hover:text-solarien-primary">Energia Solar por Assinatura</Link></li>
+            <li><Link to="/servicos" className="hover:text-solarien-primary">Geração Distribuída</Link></li>
+            <li><Link to="/servicos" className="hover:text-solarien-primary">Consultoria Energética Empresarial</Link></li>
+            <li><Link to="/servicos" className="hover:text-solarien-primary">Gestão de Contratos de Energia</Link></li>
+            <li><Link to="/como-funciona" className="hover:text-solarien-primary">Como Migrar para o Mercado Livre</Link></li>
+            <li><Link to="/como-funciona" className="hover:text-solarien-primary">Lei 14.300 e Geração Compartilhada</Link></li>
+            <li><Link to="/usinas" className="hover:text-solarien-primary">Usinas Solares Parceiras</Link></li>
+            <li><Link to="/licenciado" className="hover:text-solarien-primary">Seja um Licenciado Solarien</Link></li>
+            <li><Link to="/faq" className="hover:text-solarien-primary">Dúvidas sobre Energia por Assinatura</Link></li>
+          </ul>
+        </nav>
+
+
         {/* Bottom Bar */}
         <div className="border-t pt-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">

@@ -122,7 +122,7 @@ const Contact = () => {
       <SEO
         title="Entre em Contato - Solarien Energy"
         description="Entre em contato com a Solarien Energy. Tire suas dúvidas sobre energia solar, mercado livre de energia e economia na conta de luz. Atendimento pelo WhatsApp, telefone ou email."
-        keywords="contato solarien, falar com solarien, whatsapp energia solar, telefone solarien, email solarien"
+        keywords="contato solarien energy, consultoria mercado livre de energia, orçamento energia por assinatura, simular economia conta de luz, falar com especialista em energia, WhatsApp Solarien, telefone Solarien, atendimento mercado livre, suporte energia renovável, consultoria gratuita energia"
         canonical="https://solarien.com.br/contato"
       />
       <Helmet>

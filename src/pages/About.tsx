@@ -52,7 +52,7 @@ const About = () => {
       <SEO
         title="Sobre a Solarien Energy"
         description="Especialistas em gestão de contratos energéticos e consultoria em energia, oferecendo soluções completas em energia por assinatura e mercado livre de energia para todo o Brasil."
-        keywords="solarien energy, gestão energética, consultoria energia, energia renovável brasil, história solarien"
+        keywords="solarien energy, empresa mercado livre energia, especialista energia por assinatura, consultoria mercado livre, missão visão valores solarien, equipe solarien, história solarien, energia renovável Brasil, comercializadora energia, gestão contratos energéticos, energia solar compartilhada, geração distribuída"
         canonical="https://solarien.com.br/sobre"
       />
       <Header />

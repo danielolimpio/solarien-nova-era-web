@@ -66,7 +66,7 @@ const Licensed = () => {
       <SEO
         title="Seja um Licenciado Solarien - Oportunidade de Negócio"
         description="Torne-se um licenciado Solarien e empreenda no setor de energia renovável. Baixo investimento, alta rentabilidade e suporte completo. Saiba como se tornar um parceiro."
-        keywords="licenciado solarien, franquia energia solar, oportunidade negócio energia, empreender energia renovável, parceiro solarien"
+        keywords="seja licenciado solarien, oportunidade negócio energia, empreender mercado livre energia, parceria energia solar por assinatura, comissionamento energia, broker energia revenda, representante comercial energia, marketing rede energia, programa parceiros energia renovável, lucrar com energia limpa, indicar energia por assinatura"
         canonical="https://solarien.com.br/licenciado"
       />
       <Header />

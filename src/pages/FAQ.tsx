@@ -55,8 +55,53 @@ const FAQ = () => {
     {
       question: "Existe suporte da Solarien para tirar dúvidas?",
       answer: "Sim! Temos um atendimento exclusivo via WhatsApp no número: +55 (11) 99736-1698. Ao iniciar o contato, nosso bot solicita seu CPF ou CNPJ para identificação, e um atendente entra em contato."
+    },
+    {
+      question: "O que é o Mercado Livre de Energia (ACL)?",
+      answer: "É o Ambiente de Contratação Livre, onde consumidores podem escolher seu fornecedor de energia, negociar preço, prazo e volume diretamente com geradoras e comercializadoras, reduzindo custos em até 45% frente ao mercado cativo."
+    },
+    {
+      question: "Quem pode migrar para o Mercado Livre de Energia em 2026?",
+      answer: "Qualquer consumidor do Grupo A (alta tensão) já pode migrar como Consumidor Livre ou Especial. Consumidores do Grupo B também já têm acesso através de comercializadoras varejistas, conforme a abertura progressiva do mercado."
+    },
+    {
+      question: "Quanto tempo leva a migração para o mercado livre?",
+      answer: "O processo completo de migração leva, em média, de 60 a 180 dias, considerando denúncia à distribuidora, adequação do SMF, modelagem comercial e início do suprimento pela nova comercializadora."
+    },
+    {
+      question: "Qual a diferença entre energia por assinatura e mercado livre?",
+      answer: "A energia por assinatura usa geração distribuída solar (Lei 14.300) e gera créditos de energia que abatem sua conta — ideal para pequenos e médios consumidores. O mercado livre é a contratação direta de energia (ACL), indicado para empresas com maior consumo."
+    },
+    {
+      question: "O que é a Lei 14.300 e como ela afeta a geração distribuída?",
+      answer: "A Lei 14.300/2022 instituiu o marco legal da microgeração e minigeração distribuída no Brasil, regulamentando o Sistema de Compensação de Energia Elétrica (SCEE), o autoconsumo remoto, a geração compartilhada e a cobrança gradual da TUSD Fio B."
+    },
+    {
+      question: "Como funciona a geração compartilhada de energia solar?",
+      answer: "Você adere a uma usina solar parceira; a energia gerada é injetada na rede e convertida em créditos de energia que abatem sua conta de luz proporcionalmente à sua cota, sem instalar placas no telhado."
+    },
+    {
+      question: "Vale a pena migrar para energia solar por assinatura?",
+      answer: "Sim, especialmente quando há economia recorrente sem investimento inicial. A Solarien analisa sua fatura e indica se o desconto compensa, considerando consumo, distribuidora e tarifa aplicada."
+    },
+    {
+      question: "Como reduzir a conta de luz da minha empresa em 2026?",
+      answer: "As três principais alavancas são: migração ao mercado livre de energia (até 45%), energia por assinatura via geração distribuída (até 25%) e gestão de eficiência energética (ajuste de demanda contratada, fator de potência e tarifa)."
+    },
+    {
+      question: "Energia por assinatura tem fidelidade ou multa?",
+      answer: "A Solarien não cobra multa fora do período padrão de fidelização, e o cancelamento é simples. Antes de assinar qualquer contrato, sempre validamos prazos e condições com o cliente."
+    },
+    {
+      question: "O que são CCEE, ANEEL, PLD e encargos setoriais?",
+      answer: "CCEE é a Câmara de Comercialização de Energia Elétrica (faz a liquidação financeira do ACL). ANEEL é o regulador do setor. PLD é o Preço de Liquidação das Diferenças. Encargos setoriais são tributos do setor (CDE, P&D, etc.) que incidem sobre o consumo."
+    },
+    {
+      question: "A Solarien atende em todo o Brasil?",
+      answer: "Sim. Atendemos mercado livre de energia em todo território nacional e energia por assinatura nos 16 estados onde há cobertura de usinas parceiras."
     }
   ];
+
 
   const networkFAQ = [
     {

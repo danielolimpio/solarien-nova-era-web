@@ -13,7 +13,7 @@ const Services = () => {
       description: "Acesso à energia limpa sem investimento inicial, instalação ou manutenção",
       features: [
         "Sem custos de instalação",
-        "Economia de até 25% na conta de luz",
+        "Economia de até 35% na conta de luz",
         "Energia 100% renovável",
         "Sem obras ou reformas",
         "Migração gratuita"
@@ -35,14 +35,14 @@ const Services = () => {
     },
     {
       icon: Shield,
-      title: "Gestão de Contratos",
-      description: "Gerenciamento completo dos seus contratos energéticos com total transparência",
+      title: "Restituição de Créditos!",
+      description: "Recuperação de créditos de energia de cobranças indevidas analisadas nos últimos 10 anos",
       features: [
-        "Análise detalhada de contratos",
-        "Otimização de custos",
-        "Monitoramento contínuo",
-        "Relatórios mensais",
-        "Suporte especializado"
+        "Auditoria Técnica de 5 a 10 anos",
+        "Identificação de Inconsistências",
+        "Recuperação Administrativa ANEEL",
+        "Zero Custo para o Cliente",
+        "Prazo típico 60 a 180 dias"
       ],
       color: "from-purple-400 to-pink-500"
     },

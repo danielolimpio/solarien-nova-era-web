@@ -48,14 +48,14 @@ const Services = () => {
     },
     {
       icon: Users,
-      title: "Consultoria Energética",
-      description: "Assessoria completa para otimizar seu consumo e reduzir custos energéticos",
+      title: "Restituição de Créditos Eletrobrás",
+      description: "Recuperação de créditos compulsórios de energia da Eletrobras dos anos de 1987 e 1994",
       features: [
-        "Diagnóstico energético",
-        "Análise de viabilidade",
-        "Planejamento estratégico",
-        "Implementação de soluções",
-        "Acompanhamento de resultados"
+        "Auditoria Histórica de até 40 anos",
+        "Identificação de Créditos da Eletrobras",
+        "Possibilidade de Venda do Crédito",
+        "Sem Custo Inicial para Análise",
+        "Pagamento à Vista em 7 dias"
       ],
       color: "from-indigo-400 to-cyan-500"
     }

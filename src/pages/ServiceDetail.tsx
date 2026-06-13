@@ -18,9 +18,10 @@ import {
   FileText,
   LineChart,
   Sparkles,
+  LucideIcon,
 } from 'lucide-react';
 
-const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const iconMap: Record<string, LucideIcon> = {
   Zap,
   Network,
   ReceiptText,

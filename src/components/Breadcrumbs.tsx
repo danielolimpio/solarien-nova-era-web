@@ -15,6 +15,7 @@ const Breadcrumbs = () => {
   const routeNames: { [key: string]: string } = {
     'faq': 'Perguntas Frequentes',
     'contact': 'Contato',
+    'contato': 'Contato',
     'terms': 'Termos de Serviço',
     'privacy': 'Política de Privacidade',
     'cookies': 'Política de Cookies',
@@ -22,7 +23,16 @@ const Breadcrumbs = () => {
     'transparency': 'Transparência',
     'feedback': 'Feedback',
     'depoimentos': 'Depoimentos',
-    'blog': 'Blog'
+    'blog': 'Blog',
+    'servicos': 'Serviços',
+    'sobre': 'Sobre',
+    'usinas': 'Usinas',
+    'licenciado': 'Licenciado',
+    'energia-por-assinatura': 'Energia por Assinatura',
+    'mercado-livre-de-energia': 'Mercado Livre de Energia',
+    'restituicao-creditos-rci-e': 'Restituição RCI - E',
+    'restituicao-creditos-eletrobras': 'Restituição Eletrobrás',
+    'restituicao-creditos-rci-a': 'Restituição RCI - A',
   };
 
   if (pathnames.length === 0) {

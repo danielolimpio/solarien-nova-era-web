@@ -1,121 +1,51 @@
-
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Cookie } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Cookie } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import Breadcrumbs from '../components/Breadcrumbs';
+import SEO from '../components/SEO';
+import { PageShell, PageHero, PremiumSection } from '../components/premium/PremiumUI';
 
-const Cookies = () => {
-  const navigate = useNavigate();
+const sections = [
+  { h: '1. Introdução', p: 'A Solarien utiliza cookies para melhorar a experiência dos visitantes em nosso site, personalizar conteúdo e garantir o funcionamento eficiente da plataforma.' },
+  { h: '2. O que são Cookies?', p: 'Cookies são pequenos arquivos de texto armazenados em seu dispositivo quando você acessa nosso site. Eles ajudam a otimizar sua navegação e a reconhecer suas preferências.' },
+  { h: '3. Como utilizamos os Cookies?', p: 'Essenciais para o funcionamento adequado do site; de desempenho para análise; de funcionalidade para personalização; e de publicidade para apresentar conteúdo relevante.' },
+  { h: '4. Gerenciamento de Cookies', p: 'Você pode configurar seu navegador para recusar ou excluir cookies a qualquer momento. Algumas funcionalidades do site podem ser afetadas ao desativá-los.' },
+  { h: '5. Atualizações', p: 'Esta política pode ser atualizada periodicamente para refletir mudanças tecnológicas ou regulamentares.' },
+  { h: '6. Contato', p: 'E-mail: contato@solarien.com.br · Telefone: +55 (11) 99736-1698' },
+];
 
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
-        <div className="container mx-auto px-4 py-8">
-          {/* Header */}
-          <div className="flex items-center gap-4 mb-8">
-            <Button
-              variant="outline"
-              onClick={() => navigate('/')}
-              className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar
-            </Button>
-            <div>
-              <h1 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
-                <Cookie className="w-10 h-10 text-solarien-primary" />
-                Política de Cookies
-              </h1>
-              <p className="text-gray-300">
-                Saiba como usamos cookies para personalizar sua navegação e garantir uma experiência segura e eficiente no site.
-              </p>
-            </div>
-          </div>
-
-          <Card className="bg-green-800/20 border-green-700">
-            <CardHeader>
-              <CardTitle className="text-solarien-primary">
-                Política de Cookies
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-invert max-w-none">
-              <div className="text-gray-300 space-y-6 leading-relaxed">
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">1. Introdução</h2>
-                  <p>
-                    A Solarien utiliza cookies para melhorar a experiência dos visitantes em nosso site, personalizar conteúdo e análises, bem como garantir um funcionamento eficiente da plataforma. Esta Política de Cookies explica o que são cookies, como os utilizamos e como você pode gerenciá-los.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">2. O que são Cookies?</h2>
-                  <p>
-                    Cookies são pequenos arquivos de texto armazenados em seu dispositivo quando você acessa nosso site. Eles contêm informações que ajudam a otimizar sua navegação e permitem que o site reconheça suas preferências em visitas futuras.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">3. Como utilizamos os Cookies?</h2>
-                  <p>
-                    A Solarien utiliza cookies para diversos fins, incluindo:
-                  </p>
-                  <p>
-                    <strong>Cookies Essenciais:</strong> Necessários para o funcionamento adequado do site, garantindo segurança e acesso a funcionalidades essenciais.
-                  </p>
-                  <p>
-                    <strong>Cookies de Desempenho:</strong> Coletam informações sobre como os visitantes utilizam o site, ajudando a melhorar a experiência do usuário.
-                  </p>
-                  <p>
-                    <strong>Cookies de Funcionalidade:</strong> Permitem que o site lembre suas escolhas e preferências, proporcionando uma navegação personalizada.
-                  </p>
-                  <p>
-                    <strong>Cookies de Publicidade:</strong> Utilizados para apresentar conteúdo e anúncios personalizados com base nos seus interesses.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">4. Gerenciamento de Cookies</h2>
-                  <p>
-                    Você pode configurar seu navegador para recusar ou excluir cookies a qualquer momento. No entanto, ao desativar certos cookies, algumas funcionalidades do site podem ser afetadas. Para ajustar suas preferências, consulte as configurações do seu navegador.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">5. Atualizações da Política de Cookies</h2>
-                  <p>
-                    Esta política pode ser atualizada periodicamente para refletir mudanças tecnológicas ou regulamentares. Recomendamos que você revise esta página regularmente para estar informado sobre como usamos cookies.
-                  </p>
-                </section>
-
-                <section>
-                  <h2 className="text-xl font-bold text-white mb-4">6. Contato</h2>
-                  <p>
-                    Caso tenha dúvidas sobre nossa Política de Cookies, entre em contato conosco através de:
-                  </p>
-                  <p>
-                    E-mail: contato@solarien.com.br
-                  </p>
-                  <p>
-                    Telefone: +55(11) 99736-1698
-                  </p>
-                  <p className="mt-4 font-semibold text-solarien-primary">
-                    Ao continuar utilizando nosso site, você concorda com o uso de cookies conforme descrito nesta política.
-                  </p>
-                </section>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+const Cookies = () => (
+  <div className="min-h-screen">
+    <SEO title="Política de Cookies - Solarien" description="Saiba como usamos cookies." keywords="política cookies solarien" canonical="https://solarien.com.br/politica-de-cookies" />
+    <Header />
+    <PageShell>
+      <div className="container mx-auto px-4 py-4">
+        <Breadcrumbs />
       </div>
-      <Footer />
-      <WhatsAppFloat />
-    </div>
-  );
-};
+      <PageHero
+        eyebrow="Políticas"
+        title={<span className="inline-flex items-center gap-3"><Cookie className="w-10 h-10 text-solarien-primary" strokeWidth={1.25} />Política de Cookies</span>}
+        subtitle="Como usamos cookies para personalizar sua navegação e garantir uma experiência segura."
+      />
+      <PremiumSection label="Documento">
+        <div className="border border-white/10 bg-[#002113] p-10 md:p-14 space-y-10 max-w-4xl mx-auto">
+          {sections.map((s) => (
+            <section key={s.h}>
+              <h2 className="text-xl font-light text-white tracking-tight mb-3">{s.h}</h2>
+              <p className="text-white/70 font-light leading-relaxed">{s.p}</p>
+            </section>
+          ))}
+          <p className="text-solarien-primary font-light text-sm border-t border-white/10 pt-6">
+            Ao continuar utilizando nosso site, você concorda com o uso de cookies conforme descrito nesta política.
+          </p>
+        </div>
+      </PremiumSection>
+    </PageShell>
+    <Footer />
+    <WhatsAppFloat />
+  </div>
+);
 
 export default Cookies;

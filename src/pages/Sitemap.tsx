@@ -1,12 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Building2, Zap, BookOpen, ShieldCheck, ArrowRight, LucideIcon } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import { Map, Home, Building2, Zap, HelpCircle, Phone, Users, BookOpen, FileText, Shield } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import {
+  PageShell,
+  PageHero,
+  PremiumSection,
+  PremiumGrid,
+  PremiumCard,
+  PremiumIconBadge,
+} from '@/components/premium/PremiumUI';
 
 const Sitemap = () => {
-  const sitemapSections = [
+  const sections: { title: string; icon: LucideIcon; links: { name: string; path: string }[] }[] = [
     {
       title: 'Institucional',
       icon: Building2,
@@ -15,7 +24,7 @@ const Sitemap = () => {
         { name: 'Sobre Nós', path: '/sobre' },
         { name: 'Serviços', path: '/servicos' },
         { name: 'Contato', path: '/contato' },
-      ]
+      ],
     },
     {
       title: 'Soluções',
@@ -24,7 +33,7 @@ const Sitemap = () => {
         { name: 'Como Funciona', path: '/como-funciona' },
         { name: 'Usinas Solares', path: '/usinas' },
         { name: 'Seja Licenciado', path: '/licenciado' },
-      ]
+      ],
     },
     {
       title: 'Conteúdo',
@@ -32,96 +41,73 @@ const Sitemap = () => {
       links: [
         { name: 'Blog / Notícias', path: '/blog' },
         { name: 'Depoimentos', path: '/depoimentos' },
-        { name: 'FAQ - Perguntas Frequentes', path: '/faq' },
+        { name: 'FAQ', path: '/faq' },
         { name: 'Feedback', path: '/feedback' },
-      ]
+      ],
     },
     {
       title: 'Políticas e Termos',
-      icon: Shield,
+      icon: ShieldCheck,
       links: [
         { name: 'Termos de Uso', path: '/termos-de-uso' },
         { name: 'Política de Privacidade', path: '/politica-de-privacidade' },
         { name: 'Política de Cookies', path: '/politica-de-cookies' },
         { name: 'Política de Transparência', path: '/politica-de-transparencia' },
-      ]
+      ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Mapa do Site – Solarien Energy"
-        description="Navegue por todas as páginas do site da Solarien Energy. Encontre informações sobre energia solar, mercado livre de energia, serviços e muito mais."
-        keywords="mapa do site, sitemap, solarien, navegação, páginas"
+    <div className="min-h-screen">
+      <SEO
+        title="Mapa do Site - Solarien Energy"
+        description="Navegue por todas as páginas do site da Solarien Energy."
+        keywords="mapa do site, sitemap, solarien"
         canonical="https://solarien.com.br/sitemap"
       />
-      
       <Header />
-      
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-solarien-primary/10 mb-6">
-              <Map className="w-8 h-8 text-solarien-primary" />
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Mapa do Site – Solarien Energy
-            </h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Navegue facilmente por todas as seções do nosso site. Encontre rapidamente as informações que você procura sobre energia solar e mercado livre de energia.
-            </p>
-          </div>
+      <PageShell>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
+        </div>
 
-          {/* Sitemap Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {sitemapSections.map((section) => (
-              <div 
-                key={section.title}
-                className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-solarien-primary/10 flex items-center justify-center">
-                    <section.icon className="w-5 h-5 text-solarien-primary" />
-                  </div>
-                  <h2 className="text-lg font-semibold text-foreground">
-                    {section.title}
-                  </h2>
-                </div>
-                <ul className="space-y-2">
-                  {section.links.map((link) => (
+        <PageHero
+          eyebrow="Mapa do Site"
+          title="Navegue por todo o site."
+          subtitle="Encontre rapidamente as informações que você procura sobre nossas soluções em energia."
+        />
+
+        <PremiumSection label="Páginas">
+          <PremiumGrid cols={4}>
+            {sections.map((s) => (
+              <PremiumCard key={s.title}>
+                <PremiumIconBadge Icon={s.icon} />
+                <h2 className="text-lg font-light text-white tracking-tight mb-4">{s.title}</h2>
+                <ul className="space-y-3">
+                  {s.links.map((link) => (
                     <li key={link.path}>
                       <Link
                         to={link.path}
-                        className="text-muted-foreground hover:text-solarien-primary transition-colors duration-200 text-sm flex items-center gap-2"
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="text-white/70 hover:text-white font-light text-sm flex items-center gap-2 group"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-solarien-primary/50" />
+                        <ArrowRight className="w-3 h-3 text-solarien-primary group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                         {link.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </PremiumCard>
             ))}
-          </div>
+          </PremiumGrid>
 
-          {/* Additional Info */}
-          <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground">
-              Não encontrou o que procura?{' '}
-              <Link 
-                to="/contato" 
-                className="text-solarien-primary hover:underline font-medium"
-              >
-                Entre em contato conosco
-              </Link>
-            </p>
-          </div>
-        </div>
-      </main>
-
+          <p className="text-white/55 font-light text-sm text-center mt-10">
+            Não encontrou o que procura?{' '}
+            <Link to="/contato" className="text-solarien-primary hover:text-white">
+              Entre em contato
+            </Link>
+          </p>
+        </PremiumSection>
+      </PageShell>
       <Footer />
     </div>
   );

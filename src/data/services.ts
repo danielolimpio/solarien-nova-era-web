@@ -205,8 +205,8 @@ export const services: ServiceDetail[] = [
   {
     slug: 'restituicao-creditos-rci-e',
     iconName: 'ReceiptText',
-    shortTitle: 'Restituição de Créditos RCI - E',
-    title: 'Restituição de Créditos RCI - E (Energia)',
+    shortTitle: 'Restituição de Créditos RCI\u00A0-\u00A0E',
+    title: 'Restituição de Créditos RCI\u00A0-\u00A0E (Energia)',
     tagline: 'Recuperação administrativa de créditos de energia.',
     description:
       'Recuperação administrativas de créditos de energia de cobranças indevidas analisadas nos últimos 10 anos',

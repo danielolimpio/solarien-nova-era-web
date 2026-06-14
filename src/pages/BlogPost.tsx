@@ -1871,13 +1871,13 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#002113' }}>
         <Header />
         <div className="text-center pt-24">
-          <BookOpen className="w-16 h-16 text-gray-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-400 mb-2">Artigo não encontrado</h2>
-          <p className="text-gray-500 mb-6">O artigo que você está procurando não existe.</p>
-          <Button onClick={() => navigate('/blog')} className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black hover:shadow-lg hover:shadow-solarien-primary/25">
+          <BookOpen className="w-12 h-12 text-white/30 mx-auto mb-4" strokeWidth={1.25} />
+          <h2 className="text-2xl font-light text-white tracking-tight mb-2">Artigo não encontrado</h2>
+          <p className="text-white/60 font-light mb-6">O artigo que você está procurando não existe.</p>
+          <Button onClick={() => navigate('/blog')} className="bg-solarien-primary text-black hover:bg-white">
             Voltar ao Blog
           </Button>
         </div>
@@ -1999,185 +1999,113 @@ const BlogPost = () => {
     : `${post.title}${suffix}`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen">
       <Helmet>
-        {/* Meta Tags Dinâmicas para SEO */}
-        <title>{seoTitle}</title>
+        <title>{post.title} — Blog Solarien</title>
         <meta name="description" content={post.excerpt} />
-        <meta name="keywords" content={post.tags.join(', ')} />
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* Open Graph / Facebook / WhatsApp */}
+        <link rel="canonical" href={`https://solarien.com.br/blog/${post.id}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${post.title} | Solarien Energy`} />
+        <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={absoluteImageUrl} />
-        <meta property="og:image:secure_url" content={absoluteImageUrl} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={post.title} />
-        <meta property="og:site_name" content="Solarien Energy" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="article:published_time" content={post.date} />
-        <meta property="article:author" content={post.author} />
-        <meta property="article:section" content={post.category} />
-        {post.tags.map(tag => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@solarienoficial" />
-        <meta name="twitter:creator" content="@solarienoficial" />
-        <meta name="twitter:title" content={`${post.title} | Solarien Energy`} />
-        <meta name="twitter:description" content={post.excerpt} />
-        <meta name="twitter:image" content={absoluteImageUrl} />
-        <meta name="twitter:image:alt" content={post.title} />
-        
-        {/* Schema.org Article Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": post.title,
-            "description": post.excerpt,
-            "image": [absoluteImageUrl],
-            "datePublished": post.date,
-            "dateModified": post.date,
-            "author": {
-              "@type": "Organization",
-              "name": post.author,
-              "url": "https://solarien.com.br"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Solarien Energy",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://solarien.com.br/lovable-uploads/7035cd87-6220-43bb-b629-649ce81e59d8.png"
-              }
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": canonicalUrl
-            },
-            "articleSection": post.category,
-            "keywords": post.tags.join(', ')
-          })}
-        </script>
+        <meta property="og:image" content={getAbsoluteImageUrl(post.image)} />
       </Helmet>
-      
+
       <Header />
-      
-      <div className="container mx-auto px-4 pt-24">
-        <Breadcrumbs />
-      </div>
-      
-      {/* Hero Section */}
-      <div className="pb-12 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-solarien-primary/10 via-solarien-secondary/5 to-solarien-tertiary/10"></div>
-        <div className="absolute inset-0">
-          <img 
-            src={post.image} 
-            alt={post.title}
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/60"></div>
+      <main className="pt-20" style={{ backgroundColor: '#002113' }}>
+        <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs />
         </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className={`max-w-4xl mx-auto transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <Button
-              onClick={() => navigate('/blog')}
-              variant="ghost"
-              className="mb-6 text-solarien-primary hover:text-solarien-secondary hover:bg-solarien-primary/10"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar ao Blog
-            </Button>
-            
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-solarien-primary/20 to-solarien-secondary/20 backdrop-blur-sm border border-solarien-primary/30 rounded-full px-4 py-2 mb-6">
-              <Tag className="w-4 h-4 text-solarien-primary" />
-              <span className="text-sm font-semibold text-solarien-primary">{post.category}</span>
-            </div>
-            
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              {post.title}
-            </h1>
-            
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {post.excerpt}
-            </p>
 
-            <div className="flex flex-wrap items-center gap-6 text-gray-400 mb-8">
-              <div className="flex items-center gap-2">
-                <User className="w-5 h-5" />
-                <span>{post.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span>{post.readTime}</span>
-              </div>
+        <section className="py-16 border-b border-white/10 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={post.image} alt={post.title} className="w-full h-full object-cover opacity-[0.10]" loading="eager" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#002113]" />
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto">
               <Button
-                onClick={handleShare}
                 variant="ghost"
-                size="sm"
-                className="text-gray-400 hover:text-solarien-primary"
+                onClick={() => navigate('/blog')}
+                className="mb-8 text-white/70 hover:text-white hover:bg-white/5 -ml-3 font-light"
               >
-                <Share2 className="w-4 h-4 mr-2" />
-                Compartilhar
+                <ArrowLeft className="w-4 h-4 mr-2" strokeWidth={1.5} />
+                Voltar ao blog
               </Button>
-            </div>
 
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map(tag => (
-                <span 
-                  key={tag}
-                  className="bg-slate-700/50 text-gray-300 px-3 py-1 rounded-full text-sm"
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 text-xs uppercase tracking-[0.2em] text-white/60 mb-8">
+                <Tag className="w-3 h-3" strokeWidth={1.5} />
+                {post.category}
+              </div>
+
+              <h1 className="text-3xl md:text-5xl font-light text-white tracking-tight leading-tight mb-6">
+                {post.title}
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed mb-10 max-w-3xl">
+                {post.excerpt}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-white/55 font-light text-sm border-t border-white/10 pt-6">
+                <div className="flex items-center gap-2">
+                  <User className="w-4 h-4" strokeWidth={1.5} />
+                  <span>{post.author}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" strokeWidth={1.5} />
+                  <span>{new Date(post.date).toLocaleDateString('pt-BR')}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" strokeWidth={1.5} />
+                  <span>{post.readTime}</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigator.share?.({ title: post.title, url: window.location.href })}
+                  className="text-white/55 hover:text-white hover:bg-white/5 font-light ml-auto"
                 >
-                  {tag}
-                </span>
-              ))}
+                  <Share2 className="w-4 h-4 mr-2" strokeWidth={1.5} />
+                  Compartilhar
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-2 mt-6">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="border border-white/15 text-white/65 px-3 py-1 text-[11px] uppercase tracking-[0.16em] font-light">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* Article Content */}
-      <div className="container mx-auto px-4 pb-20">
-        <div className="max-w-4xl mx-auto">
-          <div className={`bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 lg:p-12 transform transition-all duration-1000 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="prose prose-lg prose-invert max-w-none">
-              {formatContent(post.content)}
+        <section className="py-20 border-b border-white/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <article className="border border-white/10 bg-[#002113] p-8 md:p-14">
+                <div className="prose prose-lg prose-invert max-w-none">
+                  {parseContent(post.content)}
+                </div>
+              </article>
+
+              <div className="mt-16">
+                <RelatedPosts currentPostId={post.id} category={post.category} />
+              </div>
+
+              <div className="text-center mt-16">
+                <Button
+                  onClick={() => navigate('/blog')}
+                  className="bg-solarien-primary text-black hover:bg-white px-8 py-3 font-medium"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" strokeWidth={2} />
+                  Voltar ao blog
+                </Button>
+              </div>
             </div>
           </div>
-
-          {/* Related Posts Section */}
-          <RelatedPosts
-            currentPostId={post.id}
-            currentCategory={post.category}
-            allPosts={blogPosts}
-          />
-
-          {/* Back to Blog Button */}
-          <div className="text-center mt-12">
-            <Button
-              onClick={() => navigate('/blog')}
-              className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black hover:shadow-lg hover:shadow-solarien-primary/25 px-8 py-3"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar ao Blog
-            </Button>
-          </div>
-        </div>
-      </div>
-
+        </section>
+      </main>
       <Footer />
     </div>
   );

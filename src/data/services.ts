@@ -21,6 +21,68 @@ export interface ServiceDetail {
 
 export const services: ServiceDetail[] = [
   {
+    slug: 'economia-de-agua-empresas',
+    iconName: 'Waves',
+    shortTitle: 'Economia de Água para Empresas',
+    title: 'Economia de Água para Empresas',
+    tagline: 'Reduza até 70% na conta de água da sua empresa.',
+    description:
+      'Reduza até 70% na Conta de Água da Sua Empresa com Soluções Simples',
+    features: [
+      'Identifique Vazamentos Ocultos',
+      'Dispositivos Economizadores',
+      'Monitoramento em Tempo Real',
+      'Sem Obras e Investimentos',
+      'Remuneração Pelo Sucesso',
+    ],
+    heroDescription:
+      'Nossa solução de Economia de Água para Empresas identifica vazamentos ocultos, instala dispositivos economizadores sem obras e implementa monitoramento em tempo real para reduzir sua conta de água em até 70%, sem custo inicial.',
+    metaDescription:
+      'Economia de Água para Empresas: reduza até 70% na conta de água com identificação de vazamentos, dispositivos economizadores e monitoramento em tempo real. Zero custo inicial.',
+    keywords:
+      'economia de água empresa, redução conta de água, vazamentos ocultos, dispositivos economizadores, monitoramento água, gestão hídrica empresas',
+    sections: [
+      {
+        title: 'Como funciona a Economia de Água',
+        body:
+          'Realizamos um diagnóstico completo do sistema hídrico da empresa, identificando vazamentos ocultos, pontos de desperdício e oportunidades de instalação de dispositivos economizadores. Todo o processo é feito sem obras, sem investimento inicial e com remuneração apenas pelo resultado obtido.',
+        bullets: [
+          'Mapeamento hidráulico completo do empreendimento',
+          'Instalação de arejadores e redutores de vazão sem quebra-quebra',
+          'Monitoramento em tempo real via sensores IoT',
+          'Relatórios mensais de consumo e economia alcançada',
+        ],
+      },
+      {
+        title: 'Tecnologias aplicadas',
+        body:
+          'Utilizamos arejadores de alta eficiência, válvulas redutoras de pressão, sensores de fluxo inteligentes e software de gestão hídrica para garantir a máxima redução de consumo sem prejudicar o conforto e a operação do negócio.',
+      },
+      {
+        title: 'Modelo de remuneração',
+        body:
+          'Não cobramos nada para instalação, manutenção ou monitoramento. Nossa remuneração é um percentual da economia real gerada mensalmente, com contrato transparente e sem fidelidade.',
+      },
+    ],
+    stats: [
+      { value: '70%', label: 'Economia máxima' },
+      { value: 'R$ 0', label: 'Investimento inicial' },
+      { value: '100%', label: 'Sem obras' },
+      { value: '30 dias', label: 'Primeira economia' },
+    ],
+    process: [
+      { step: '01', title: 'Diagnóstico hidráulico', description: 'Mapeamento completo da rede de água e identificação de vazamentos.' },
+      { step: '02', title: 'Instalação dos equipamentos', description: 'Dispositivos economizadores instalados em torneiras, chuveiros e descargas.' },
+      { step: '03', title: 'Monitoramento', description: 'Sensores IoT acompanham o consumo em tempo real 24/7.' },
+      { step: '04', title: 'Economia mensal', description: 'Você paga menos na conta de água e acompanha os resultados no painel.' },
+    ],
+    faq: [
+      { q: 'Preciso parar a operação para instalar?', a: 'Não. A instalação é rápida, silenciosa e não interfere na rotina da empresa.' },
+      { q: 'Funciona para qualquer tipo de empresa?', a: 'Sim. Atendemos comércios, indústrias, hospitais, hotéis, condomínios e escritórios.' },
+      { q: 'Qual o prazo para começar a economizar?', a: 'A primeira redução na fatura costuma aparecer já no primeiro mês após a instalação.' },
+    ],
+  },
+  {
     slug: 'energia-por-assinatura',
     iconName: 'Zap',
     shortTitle: 'Energia por Assinatura',
@@ -143,8 +205,8 @@ export const services: ServiceDetail[] = [
   {
     slug: 'restituicao-creditos-rci-e',
     iconName: 'ReceiptText',
-    shortTitle: 'Restituição de Créditos RCI - E',
-    title: 'Restituição de Créditos RCI - E (Energia)',
+    shortTitle: 'Restituição de Créditos RCI\u00A0-\u00A0E',
+    title: 'Restituição de Créditos RCI\u00A0-\u00A0E (Energia)',
     tagline: 'Recuperação administrativa de créditos de energia.',
     description:
       'Recuperação administrativas de créditos de energia de cobranças indevidas analisadas nos últimos 10 anos',
@@ -266,8 +328,8 @@ export const services: ServiceDetail[] = [
   {
     slug: 'restituicao-creditos-rci-a',
     iconName: 'Droplets',
-    shortTitle: 'Restituição de Créditos RCI - A',
-    title: 'Restituição de Créditos RCI - A (Água e Esgoto)',
+    shortTitle: 'Restituição de Créditos RCI\u00A0-\u00A0A',
+    title: 'Restituição de Créditos RCI\u00A0-\u00A0A (Água e Esgoto)',
     tagline: 'Recuperação administrativa de créditos de água e esgoto.',
     description:
       'Recuperação de créditos de água e esgoto de cobranças indevidas analisadas nos últimos 10 anos',

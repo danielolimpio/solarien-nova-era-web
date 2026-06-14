@@ -59,8 +59,22 @@ const Services = () => {
       slug: 'mercado-livre-de-energia',
     },
     {
+      icon: Waves,
+      title: 'Economia de Água para Empresas',
+      description:
+        'Reduza até 70% na Conta de Água da Sua Empresa com Soluções Simples',
+      features: [
+        'Identifique Vazamentos Ocultos',
+        'Dispositivos Economizadores',
+        'Monitoramento em Tempo Real',
+        'Sem Obras e Investimentos',
+        'Remuneração Pelo Sucesso',
+      ],
+      slug: 'economia-de-agua-empresas',
+    },
+    {
       icon: ReceiptText,
-      title: 'Restituição de Créditos RCI - E',
+      title: 'Restituição de Créditos RCI\u00A0-\u00A0E',
       description:
         'Recuperação administrativas de créditos de energia de cobranças indevidas analisadas nos últimos 10 anos',
       features: [
@@ -88,7 +102,7 @@ const Services = () => {
     },
     {
       icon: Droplets,
-      title: 'Restituição de Créditos RCI - A',
+      title: 'Restituição de Créditos RCI\u00A0-\u00A0A',
       description:
         'Recuperação de créditos de água e esgoto de cobranças indevidas analisadas nos últimos 10 anos',
       features: [

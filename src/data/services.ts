@@ -328,8 +328,8 @@ export const services: ServiceDetail[] = [
   {
     slug: 'restituicao-creditos-rci-a',
     iconName: 'Droplets',
-    shortTitle: 'Restituição de Créditos RCI - A',
-    title: 'Restituição de Créditos RCI - A (Água e Esgoto)',
+    shortTitle: 'Restituição de Créditos RCI\u00A0-\u00A0A',
+    title: 'Restituição de Créditos RCI\u00A0-\u00A0A (Água e Esgoto)',
     tagline: 'Recuperação administrativa de créditos de água e esgoto.',
     description:
       'Recuperação de créditos de água e esgoto de cobranças indevidas analisadas nos últimos 10 anos',

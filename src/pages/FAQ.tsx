@@ -1,317 +1,139 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Users, ArrowLeft } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { useNavigate } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Zap, Users, ArrowRight } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
+import {
+  PageShell,
+  PageHero,
+  PremiumSection,
+  PremiumCTA,
+} from '../components/premium/PremiumUI';
 
 const FAQ = () => {
-  const navigate = useNavigate();
+  const [tab, setTab] = useState<'energy' | 'network'>('energy');
 
   const energyFAQ = [
-    {
-      question: "Quais serviços a Solarien Energy oferece?",
-      answer: "A Solarien fornece energia renovável por assinatura para clientes dos Grupos A (alta tensão) em todo Brasil, e Grupo B (baixa tensão) em 16 estados. Oferecemos economia, sustentabilidade e flexibilidade sem precisar instalar placas solares."
-    },
-    {
-      question: "O que é o Mercado de Energia por Assinatura?",
-      answer: "É um modelo onde você recebe créditos de energia gerados por usinas solares conectadas à rede elétrica. Esses créditos são usados para reduzir sua conta de luz."
-    },
-    {
-      question: "Como funciona a emissão do boleto da Solarien?",
-      answer: "Recebemos os dados da distribuidora e cruzamos com as informações da usina. Com isso, geramos seu boleto com o valor referente aos créditos energéticos gerados."
-    },
-    {
-      question: "Quando recebo o boleto e como ele é enviado?",
-      answer: "Você recebe o boleto digital mensalmente pelo WhatsApp do titular do cadastro. Também pode optar por receber por e-mail."
-    },
-    {
-      question: "O que são ICMS, PIS, COFINS e Encargos Setoriais?",
-      answer: "São taxas obrigatórias definidas pelos governos federal e estadual, aplicadas no consumo de energia, independentemente da fonte."
-    },
-    {
-      question: "Quais são as vantagens da energia solar por assinatura?",
-      answer: "• Economia na conta de luz\n• Sem investimento inicial\n• Fonte limpa e renovável\n• Adesão rápida e sem burocracia\n• Sem contrato de fidelidade"
-    },
-    {
-      question: "A Solarien atua no Mercado Livre de Energia?",
-      answer: "Sim! Oferecemos soluções tanto para o mercado cativo quanto para o livre, ajudando empresas a migrarem e negociarem preços melhores."
-    },
-    {
-      question: "Como aderir à energia compartilhada?",
-      answer: "É rápido e 100% online:\n1. Informe seus dados e código da unidade consumidora\n2. Assine o contrato\n3. Aguarde a ativação"
-    },
-    {
-      question: "Posso cancelar minha assinatura quando quiser?",
-      answer: "Sim. Basta entrar em contato conosco. Não há multa se cancelar fora do período de fidelização."
-    },
-    {
-      question: "Existe suporte da Solarien para tirar dúvidas?",
-      answer: "Sim! Temos um atendimento exclusivo via WhatsApp no número: +55 (11) 99736-1698. Ao iniciar o contato, nosso bot solicita seu CPF ou CNPJ para identificação, e um atendente entra em contato."
-    },
-    {
-      question: "O que é o Mercado Livre de Energia (ACL)?",
-      answer: "É o Ambiente de Contratação Livre, onde consumidores podem escolher seu fornecedor de energia, negociar preço, prazo e volume diretamente com geradoras e comercializadoras, reduzindo custos em até 45% frente ao mercado cativo."
-    },
-    {
-      question: "Quem pode migrar para o Mercado Livre de Energia em 2026?",
-      answer: "Qualquer consumidor do Grupo A (alta tensão) já pode migrar como Consumidor Livre ou Especial. Consumidores do Grupo B também já têm acesso através de comercializadoras varejistas, conforme a abertura progressiva do mercado."
-    },
-    {
-      question: "Quanto tempo leva a migração para o mercado livre?",
-      answer: "O processo completo de migração leva, em média, de 60 a 180 dias, considerando denúncia à distribuidora, adequação do SMF, modelagem comercial e início do suprimento pela nova comercializadora."
-    },
-    {
-      question: "Qual a diferença entre energia por assinatura e mercado livre?",
-      answer: "A energia por assinatura usa geração distribuída solar (Lei 14.300) e gera créditos de energia que abatem sua conta — ideal para pequenos e médios consumidores. O mercado livre é a contratação direta de energia (ACL), indicado para empresas com maior consumo."
-    },
-    {
-      question: "O que é a Lei 14.300 e como ela afeta a geração distribuída?",
-      answer: "A Lei 14.300/2022 instituiu o marco legal da microgeração e minigeração distribuída no Brasil, regulamentando o Sistema de Compensação de Energia Elétrica (SCEE), o autoconsumo remoto, a geração compartilhada e a cobrança gradual da TUSD Fio B."
-    },
-    {
-      question: "Como funciona a geração compartilhada de energia solar?",
-      answer: "Você adere a uma usina solar parceira; a energia gerada é injetada na rede e convertida em créditos de energia que abatem sua conta de luz proporcionalmente à sua cota, sem instalar placas no telhado."
-    },
-    {
-      question: "Vale a pena migrar para energia solar por assinatura?",
-      answer: "Sim, especialmente quando há economia recorrente sem investimento inicial. A Solarien analisa sua fatura e indica se o desconto compensa, considerando consumo, distribuidora e tarifa aplicada."
-    },
-    {
-      question: "Como reduzir a conta de luz da minha empresa em 2026?",
-      answer: "As três principais alavancas são: migração ao mercado livre de energia (até 45%), energia por assinatura via geração distribuída (até 25%) e gestão de eficiência energética (ajuste de demanda contratada, fator de potência e tarifa)."
-    },
-    {
-      question: "Energia por assinatura tem fidelidade ou multa?",
-      answer: "A Solarien não cobra multa fora do período padrão de fidelização, e o cancelamento é simples. Antes de assinar qualquer contrato, sempre validamos prazos e condições com o cliente."
-    },
-    {
-      question: "O que são CCEE, ANEEL, PLD e encargos setoriais?",
-      answer: "CCEE é a Câmara de Comercialização de Energia Elétrica (faz a liquidação financeira do ACL). ANEEL é o regulador do setor. PLD é o Preço de Liquidação das Diferenças. Encargos setoriais são tributos do setor (CDE, P&D, etc.) que incidem sobre o consumo."
-    },
-    {
-      question: "A Solarien atende em todo o Brasil?",
-      answer: "Sim. Atendemos mercado livre de energia em todo território nacional e energia por assinatura nos 16 estados onde há cobertura de usinas parceiras."
-    }
+    { q: 'Quais serviços a Solarien Energy oferece?', a: 'A Solarien fornece energia renovável por assinatura para clientes dos Grupos A em todo Brasil, e Grupo B em 16 estados. Oferecemos economia, sustentabilidade e flexibilidade sem precisar instalar placas solares.' },
+    { q: 'O que é o Mercado de Energia por Assinatura?', a: 'É um modelo onde você recebe créditos de energia gerados por usinas solares conectadas à rede elétrica. Esses créditos são usados para reduzir sua conta de luz.' },
+    { q: 'Como funciona a emissão do boleto da Solarien?', a: 'Recebemos os dados da distribuidora e cruzamos com as informações da usina. Com isso, geramos seu boleto com o valor referente aos créditos energéticos gerados.' },
+    { q: 'Quando recebo o boleto e como ele é enviado?', a: 'Você recebe o boleto digital mensalmente pelo WhatsApp do titular do cadastro. Também pode optar por receber por e-mail.' },
+    { q: 'O que são ICMS, PIS, COFINS e Encargos Setoriais?', a: 'São taxas obrigatórias definidas pelos governos federal e estadual, aplicadas no consumo de energia, independentemente da fonte.' },
+    { q: 'Quais são as vantagens da energia solar por assinatura?', a: '• Economia na conta de luz\n• Sem investimento inicial\n• Fonte limpa e renovável\n• Adesão rápida e sem burocracia\n• Sem contrato de fidelidade' },
+    { q: 'A Solarien atua no Mercado Livre de Energia?', a: 'Sim! Oferecemos soluções tanto para o mercado cativo quanto para o livre, ajudando empresas a migrarem e negociarem preços melhores.' },
+    { q: 'Como aderir à energia compartilhada?', a: 'É rápido e 100% online:\n1. Informe seus dados e código da unidade consumidora\n2. Assine o contrato\n3. Aguarde a ativação' },
+    { q: 'Posso cancelar minha assinatura quando quiser?', a: 'Sim. Basta entrar em contato conosco. Não há multa se cancelar fora do período de fidelização.' },
+    { q: 'Existe suporte da Solarien para tirar dúvidas?', a: 'Sim! Temos um atendimento exclusivo via WhatsApp no número: +55 (11) 99736-1698.' },
+    { q: 'O que é o Mercado Livre de Energia (ACL)?', a: 'É o Ambiente de Contratação Livre, onde consumidores podem escolher seu fornecedor de energia, negociar preço, prazo e volume diretamente com geradoras e comercializadoras, reduzindo custos em até 45%.' },
+    { q: 'Quem pode migrar para o Mercado Livre de Energia em 2026?', a: 'Qualquer consumidor do Grupo A já pode migrar como Consumidor Livre ou Especial. Consumidores do Grupo B já têm acesso através de comercializadoras varejistas.' },
+    { q: 'Quanto tempo leva a migração para o mercado livre?', a: 'O processo completo leva, em média, de 60 a 180 dias, considerando denúncia à distribuidora, adequação do SMF, modelagem comercial e início do suprimento.' },
+    { q: 'Qual a diferença entre energia por assinatura e mercado livre?', a: 'A energia por assinatura usa geração distribuída solar (Lei 14.300) e gera créditos de energia que abatem sua conta. O mercado livre é a contratação direta de energia (ACL), indicado para empresas com maior consumo.' },
+    { q: 'O que é a Lei 14.300 e como ela afeta a geração distribuída?', a: 'A Lei 14.300/2022 instituiu o marco legal da microgeração e minigeração distribuída no Brasil, regulamentando o SCEE, o autoconsumo remoto, a geração compartilhada e a cobrança gradual da TUSD Fio B.' },
+    { q: 'Como funciona a geração compartilhada de energia solar?', a: 'Você adere a uma usina solar parceira; a energia gerada é injetada na rede e convertida em créditos que abatem sua conta de luz proporcionalmente à sua cota.' },
+    { q: 'Vale a pena migrar para energia solar por assinatura?', a: 'Sim, especialmente quando há economia recorrente sem investimento inicial. A Solarien analisa sua fatura e indica se o desconto compensa.' },
+    { q: 'Como reduzir a conta de luz da minha empresa em 2026?', a: 'Migração ao mercado livre (até 45%), energia por assinatura via geração distribuída (até 35%) e gestão de eficiência energética.' },
+    { q: 'Energia por assinatura tem fidelidade ou multa?', a: 'A Solarien não cobra multa fora do período padrão de fidelização, e o cancelamento é simples.' },
+    { q: 'O que são CCEE, ANEEL, PLD e encargos setoriais?', a: 'CCEE é a Câmara de Comercialização de Energia Elétrica. ANEEL é o regulador do setor. PLD é o Preço de Liquidação das Diferenças. Encargos setoriais são tributos do setor.' },
+    { q: 'A Solarien atende em todo o Brasil?', a: 'Sim. Atendemos mercado livre em todo território nacional e energia por assinatura nos 16 estados com cobertura de usinas parceiras.' },
   ];
 
-
   const networkFAQ = [
-    {
-      question: "O que é o Multinível da Solarien?",
-      answer: "É um sistema de indicações onde você ganha dinheiro ao indicar clientes e parceiros para a energia solar por assinatura."
-    },
-    {
-      question: "Como funcionam os ganhos?",
-      answer: "Você recebe comissões por cada cliente conectado e por novos participantes que entrarem na rede através de sua indicação."
-    },
-    {
-      question: "Quem pode participar?",
-      answer: "Qualquer pessoa maior de 18 anos pode participar, mesmo sem experiência prévia no setor de energia."
-    },
-    {
-      question: "Preciso investir algo para entrar?",
-      answer: "Sim. É necessário um investimento inicial para ter acesso à plataforma, materiais de apoio, treinamentos e ferramentas de vendas."
-    },
-    {
-      question: "Como acompanho meus ganhos e indicações?",
-      answer: "Você tem acesso a um painel exclusivo onde vê suas conexões, comissões acumuladas e o crescimento da sua rede."
-    },
-    {
-      question: "Quais são os tipos de ganhos?",
-      answer: "Você pode lucrar de 8 formas diferentes, incluindo:\n• Comissões diretas e indiretas\n• Bônus residuais\n• Bônus de liderança\n• Prêmios especiais"
-    },
-    {
-      question: "Como aumentar meus ganhos?",
-      answer: "Conectando mais clientes, ampliando sua rede de licenciados e subindo de nível dentro do programa."
-    },
-    {
-      question: "Existe suporte e treinamento?",
-      answer: "Sim! Oferecemos treinamentos online, materiais de apoio e suporte personalizado para ajudar no seu sucesso."
-    },
-    {
-      question: "Como são pagos os ganhos?",
-      answer: "• Bônus da rede de licenciados: diários\n• Bônus de conexões: mensais\n• Tudo pode ser recebido via Pix"
-    },
-    {
-      question: "Como me cadastro no Multinível Solarien?",
-      answer: "Basta clicar no link de indicação de quem te trouxe, preencher o formulário e começar a indicar. Se precisar de ajuda, entre em contato pelo WhatsApp: +55 (11) 99736-1698"
-    }
+    { q: 'O que é o Multinível da Solarien?', a: 'É um sistema de indicações onde você ganha ao indicar clientes e parceiros para a energia solar por assinatura.' },
+    { q: 'Como funcionam os ganhos?', a: 'Você recebe comissões por cada cliente conectado e por novos participantes que entrarem na rede através de sua indicação.' },
+    { q: 'Quem pode participar?', a: 'Qualquer pessoa maior de 18 anos pode participar, mesmo sem experiência prévia no setor de energia.' },
+    { q: 'Preciso investir algo para entrar?', a: 'Sim. É necessário um investimento inicial para ter acesso à plataforma, materiais de apoio, treinamentos e ferramentas de vendas.' },
+    { q: 'Como acompanho meus ganhos e indicações?', a: 'Você tem acesso a um painel exclusivo onde vê suas conexões, comissões acumuladas e o crescimento da sua rede.' },
+    { q: 'Quais são os tipos de ganhos?', a: 'Você pode lucrar de 8 formas diferentes: comissões diretas e indiretas, bônus residuais, bônus de liderança, prêmios especiais.' },
+    { q: 'Como aumentar meus ganhos?', a: 'Conectando mais clientes, ampliando sua rede de licenciados e subindo de nível dentro do programa.' },
+    { q: 'Existe suporte e treinamento?', a: 'Sim! Oferecemos treinamentos online, materiais de apoio e suporte personalizado.' },
+    { q: 'Como são pagos os ganhos?', a: '• Bônus da rede de licenciados: diários\n• Bônus de conexões: mensais\n• Tudo pode ser recebido via Pix' },
+    { q: 'Como me cadastro no Multinível Solarien?', a: 'Basta clicar no link de indicação de quem te trouxe, preencher o formulário e começar a indicar. Suporte: +55 (11) 99736-1698' },
   ];
 
   const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": "Perguntas Frequentes - Solarien Energy",
-    "url": "https://solarien.com.br/faq",
-    "mainEntity": [
-      ...energyFAQ.map(faq => ({
-        "@type": "Question" as const,
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer" as const,
-          "text": faq.answer
-        }
-      })),
-      ...networkFAQ.map(faq => ({
-        "@type": "Question" as const,
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer" as const,
-          "text": faq.answer
-        }
-      }))
-    ]
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [...energyFAQ, ...networkFAQ].map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   };
+
+  const list = tab === 'energy' ? energyFAQ : networkFAQ;
 
   return (
     <div className="min-h-screen">
       <SEO
         title="Perguntas Frequentes - FAQ Solarien Energy"
-        description="Tire suas dúvidas sobre energia solar por assinatura, mercado livre de energia e marketing de rede. Respostas completas sobre como economizar na conta de luz."
-        keywords="faq mercado livre de energia, dúvidas energia por assinatura, perguntas frequentes geração distribuída, como funciona lei 14300, quem pode migrar mercado livre, como economizar na conta de luz, perguntas energia solar compartilhada, posso cancelar energia por assinatura, fidelidade mercado livre, prazo migração ACL, quanto economiza mercado livre, vale a pena energia por assinatura, consultoria energética perguntas, multinível solarien"
+        description="Tire dúvidas sobre energia por assinatura, mercado livre e marketing de rede."
+        keywords="faq mercado livre energia, dúvidas energia por assinatura, perguntas frequentes geração distribuída"
         canonical="https://solarien.com.br/faq"
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
       <Header />
-      <div className="min-h-screen pt-20" style={{ backgroundColor: '#002113' }}>
+      <PageShell>
         <div className="container mx-auto px-4 py-4">
           <Breadcrumbs />
         </div>
-        {/* Header */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex items-center gap-4 mb-8">
-            <Button
-              variant="outline"
-              onClick={() => navigate('/')}
-              className="border-solarien-primary text-solarien-primary hover:bg-solarien-primary hover:text-black"
+
+        <PageHero
+          eyebrow="Dúvidas"
+          title="Perguntas frequentes."
+          subtitle="Tudo o que você precisa saber sobre energia por assinatura, mercado livre, geração distribuída e nosso programa de licenciados."
+        />
+
+        <PremiumSection label={tab === 'energy' ? 'Energia' : 'Multinível'}>
+          <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 mb-10">
+            <button
+              onClick={() => setTab('energy')}
+              className={`flex items-center justify-center gap-2 py-4 text-sm tracking-wide font-light transition-colors ${
+                tab === 'energy' ? 'bg-white/[0.04] text-white' : 'bg-[#002113] text-white/60 hover:text-white'
+              }`}
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar
-            </Button>
-            <div>
-              <h1 className="text-4xl font-bold text-white mb-2">
-                Perguntas Frequentes
-              </h1>
-              <p className="text-gray-300">
-                Encontre respostas para suas principais dúvidas
-              </p>
-            </div>
+              <Zap className="w-4 h-4" strokeWidth={1.5} />
+              Energia por Assinatura
+            </button>
+            <button
+              onClick={() => setTab('network')}
+              className={`flex items-center justify-center gap-2 py-4 text-sm tracking-wide font-light transition-colors ${
+                tab === 'network' ? 'bg-white/[0.04] text-white' : 'bg-[#002113] text-white/60 hover:text-white'
+              }`}
+            >
+              <Users className="w-4 h-4" strokeWidth={1.5} />
+              Marketing de Rede
+            </button>
           </div>
 
-          {/* H2 para corrigir hierarquia de headings */}
-          <h2 className="text-2xl font-bold text-solarien-primary mb-6">
-            Tire suas dúvidas sobre nossos serviços
-          </h2>
-
-          {/* FAQ Tabs */}
-          <Tabs defaultValue="energy" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8 bg-green-800">
-              <TabsTrigger 
-                value="energy" 
-                className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
-              >
-                <Zap className="w-4 h-4 mr-2" />
-                Energia por Assinatura
-              </TabsTrigger>
-              <TabsTrigger 
-                value="network" 
-                className="data-[state=active]:bg-solarien-primary data-[state=active]:text-black text-white font-semibold"
-              >
-                <Users className="w-4 h-4 mr-2" />
-                Marketing de Rede
-              </TabsTrigger>
-            </TabsList>
-
-            {/* Energy FAQ Tab */}
-            <TabsContent value="energy">
-              <Card className="bg-green-800/20 border-green-700">
-                <CardHeader>
-                  <CardTitle className="text-solarien-primary flex items-center gap-2">
-                    <Zap className="w-6 h-6" />
-                    Energia Solar por Assinatura
-                  </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    Tudo sobre descontos na conta de energia e como funciona nosso serviço
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Accordion type="single" collapsible className="w-full">
-                    {energyFAQ.map((faq, index) => (
-                      <AccordionItem key={index} value={`energy-${index}`} className="border-green-700">
-                        <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-300 whitespace-pre-line">
-                          {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            {/* Network Marketing FAQ Tab */}
-            <TabsContent value="network">
-              <Card className="bg-green-800/20 border-green-700">
-                <CardHeader>
-                  <CardTitle className="text-solarien-primary flex items-center gap-2">
-                    <Users className="w-6 h-6" />
-                    Multinível Solarien
-                  </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    Informações sobre o programa de indicações e ganhos
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Accordion type="single" collapsible className="w-full">
-                    {networkFAQ.map((faq, index) => (
-                      <AccordionItem key={index} value={`network-${index}`} className="border-green-700">
-                        <AccordionTrigger className="text-left text-white hover:text-solarien-primary">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-gray-300 whitespace-pre-line">
-                          {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-
-          {/* Contact CTA */}
-          <div className="mt-12 text-center">
-            <Card className="bg-gradient-to-r from-green-800/30 to-green-700/30 border-solarien-primary/30">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Não encontrou sua resposta?
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  Entre em contato conosco pelo WhatsApp e receba atendimento personalizado
-                </p>
-                <Button
-                  className="bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-bold px-8 py-3 text-lg rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300"
-                  onClick={() => window.open('https://wa.me/5511997361698', '_blank')}
-                >
-                  Falar no WhatsApp
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="border border-white/10">
+            <Accordion type="single" collapsible className="w-full">
+              {list.map((faq, i) => (
+                <AccordionItem key={i} value={`item-${i}`} className="border-b border-white/10 last:border-b-0 px-6">
+                  <AccordionTrigger className="text-left text-white font-light hover:text-solarien-primary text-base py-5">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-white/70 font-light whitespace-pre-line pb-5 leading-relaxed">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-        </div>
-      </div>
+        </PremiumSection>
+
+        <PremiumCTA
+          title="Ainda com dúvidas?"
+          description="Fale com nosso time pelo WhatsApp e receba atendimento personalizado."
+          primary={{ href: 'https://wa.me/5511997361698', label: 'Falar no WhatsApp' }}
+          secondary={{ to: '/contato', label: 'Enviar Mensagem' }}
+        />
+      </PageShell>
       <Footer />
       <WhatsAppFloat />
     </div>

@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -23,47 +22,52 @@ const Header = () => {
         ticking = true;
       }
     };
-    
     window.addEventListener('scroll', scrollListener, { passive: true });
     return () => window.removeEventListener('scroll', scrollListener);
   }, [handleScroll]);
 
-  const handleNavigation = useCallback((route: string) => {
-    navigate(route);
-    setIsMobileMenuOpen(false);
-  }, [navigate]);
+  const handleNavigation = useCallback(
+    (route: string) => {
+      navigate(route);
+      setIsMobileMenuOpen(false);
+    },
+    [navigate]
+  );
 
-  const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev);
-  }, []);
+  const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen((p) => !p), []);
 
-  const menuItems = useMemo(() => [
-    { name: 'Home', route: '/', description: 'Página inicial da Solarien Energy', url: 'https://solarien.com.br/' },
-    { name: 'Sobre', route: '/sobre', description: 'Conheça a Solarien Energy', url: 'https://solarien.com.br/sobre' },
-    { name: 'Parcerias', route: '/usinas', description: 'Nossos parceiros em energia solar', url: 'https://solarien.com.br/usinas' },
-    { name: 'Serviços', route: '/servicos', description: 'Serviços de energia solar e mercado livre', url: 'https://solarien.com.br/servicos' },
-    { name: 'Licenciado', route: '/licenciado', description: 'Informações sobre licenciamento', url: 'https://solarien.com.br/licenciado' },
-    { name: 'Contato', route: '/contato', description: 'Entre em contato conosco', url: 'https://solarien.com.br/contato' }
-  ], []);
+  const menuItems = useMemo(
+    () => [
+      { name: 'Home', route: '/' },
+      { name: 'Sobre', route: '/sobre' },
+      { name: 'Parcerias', route: '/usinas' },
+      { name: 'Serviços', route: '/servicos' },
+      { name: 'Licenciado', route: '/licenciado' },
+      { name: 'Contato', route: '/contato' },
+    ],
+    []
+  );
 
-  const headerStyle = useMemo(() => ({ backgroundColor: '#002113' }), []);
+  const headerStyle = useMemo(
+    () => ({ backgroundColor: '#002113' }),
+    []
+  );
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ios-safe-area will-change-transform ${
-        isScrolled ? 'backdrop-blur-md border-b shadow-lg' : 'backdrop-blur-sm'
-      }`} 
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ios-safe-area ${
+        isScrolled ? 'border-b border-white/10' : 'border-b border-transparent'
+      }`}
       style={headerStyle}
       role="banner"
     >
-      <div className="responsive-container">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo otimizado com schema */}
-          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 ml-2 sm:ml-0" itemScope itemType="https://schema.org/Organization">
-            <img 
-              src="/lovable-uploads/solarien-logo-new.png" 
-              alt="Solarien Energy - Logo empresa energia solar e mercado livre" 
-              className="h-12 sm:h-10 md:h-12 w-auto"
+          <div className="flex items-center flex-shrink-0" itemScope itemType="https://schema.org/Organization">
+            <img
+              src="/lovable-uploads/solarien-logo-new.png"
+              alt="Solarien Energy"
+              className="h-10 sm:h-11 w-auto"
               loading="eager"
               decoding="async"
               fetchPriority="high"
@@ -74,38 +78,28 @@ const Header = () => {
             <span className="sr-only" itemProp="name">Solarien Energy</span>
           </div>
 
-          {/* Desktop Navigation com estrutura semântica otimizada para Sitelinks */}
-          <nav 
-            className="hidden lg:flex items-center space-x-4 xl:space-x-8" 
-            role="navigation" 
+          <nav
+            className="hidden lg:flex items-center gap-1"
+            role="navigation"
             aria-label="Menu principal"
-            itemScope 
-            itemType="https://schema.org/SiteNavigationElement"
           >
             {menuItems.map((item) => (
               <button
                 key={item.route}
                 onClick={() => handleNavigation(item.route)}
-                className="px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 hover:bg-green-800 font-bold text-white hover:text-solarien-primary text-sm xl:text-base touch-friendly will-change-transform"
-                aria-label={item.description}
-                itemProp="name"
-                data-sitelink-url={item.url}
+                className="px-4 py-2 text-sm font-light tracking-wide text-white/80 hover:text-white transition-colors"
               >
                 {item.name}
               </button>
             ))}
           </nav>
 
-          {/* CTA Buttons otimizados */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="https://painel.solarien.com.br/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 lg:px-4 py-2 text-white font-bold hover:text-solarien-primary transition-colors duration-300 text-sm lg:text-base touch-friendly"
-              aria-label="Entrar no painel do cliente Solarien"
-              itemProp="url"
-              data-sitelink="portal-cliente"
+              className="px-4 py-2 text-sm font-light tracking-wide text-white/80 hover:text-white transition-colors"
             >
               Entrar
             </a>
@@ -113,75 +107,55 @@ const Header = () => {
               href="https://painel.solarien.com.br/solarien"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 animate-energy-pulse text-sm lg:text-base touch-friendly will-change-transform"
-              aria-label="Cadastrar-se na Solarien Energy"
-              itemProp="url"
-              data-sitelink="cadastro"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-solarien-primary text-black text-sm font-medium rounded-md hover:bg-white transition-colors"
             >
               Cadastrar
+              <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-3 rounded-lg hover:bg-green-800 transition-colors duration-300 touch-friendly z-50"
+            className="lg:hidden p-2 rounded-md border border-white/15 text-white"
             aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
-            ) : (
-              <Menu className="w-6 h-6 text-white" />
-            )}
+            {isMobileMenuOpen ? <X className="w-5 h-5" strokeWidth={1.5} /> : <Menu className="w-5 h-5" strokeWidth={1.5} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div 
+          <div
             id="mobile-menu"
-            className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-md border-b shadow-lg z-40 will-change-transform" 
+            className="lg:hidden absolute top-full left-0 right-0 border-t border-white/10"
             style={headerStyle}
             role="navigation"
             aria-label="Menu mobile"
-            itemScope 
-            itemType="https://schema.org/SiteNavigationElement"
           >
-            <nav className="flex flex-col p-4 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
+            <nav className="flex flex-col p-4 gap-1 max-h-[80vh] overflow-y-auto">
               {menuItems.map((item) => (
                 <button
                   key={item.route}
                   onClick={() => handleNavigation(item.route)}
-                  className="p-4 rounded-lg hover:bg-green-800 transition-colors duration-300 text-left text-white font-bold touch-friendly"
-                  aria-label={item.description}
-                  itemProp="name"
-                  data-sitelink-url={item.url}
+                  className="p-3 text-left text-white font-light tracking-wide hover:bg-white/[0.04] rounded-md"
                 >
                   {item.name}
                 </button>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-green-700/30">
+              <div className="flex flex-col gap-2 pt-3 mt-2 border-t border-white/10">
                 <a
                   href="https://painel.solarien.com.br/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 text-white font-bold hover:bg-green-800 rounded-lg transition-colors duration-300 text-center touch-friendly"
-                  aria-label="Entrar no painel do cliente"
-                  itemProp="url"
-                  data-sitelink="portal-cliente"
+                  className="p-3 text-white font-light tracking-wide rounded-md border border-white/20 text-center"
                 >
                   Entrar
                 </a>
                 <a
-                  href="https://painel.solarien.com.br/solarien"  
+                  href="https://painel.solarien.com.br/solarien"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg text-center touch-friendly"
-                  aria-label="Cadastrar-se na Solarien"
-                  itemProp="url"
-                  data-sitelink="cadastro"
+                  className="p-3 bg-solarien-primary text-black font-medium rounded-md text-center"
                 >
                   Cadastrar
                 </a>

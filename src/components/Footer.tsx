@@ -1,124 +1,56 @@
 import React, { useState } from 'react';
-import { Facebook, Instagram, Youtube, ArrowUp } from 'lucide-react';
+import { Facebook, Instagram, Youtube, ArrowUp, ArrowRight } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
 
-  const handleLinkClick = (link: string) => {
-    if (link === 'Home') {
-      // Always navigate to home page, then scroll to top
-      navigate('/');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Sobre') {
-      navigate('/sobre');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Licenciados') {
-      navigate('/licenciado');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Serviços') {
-      navigate('/servicos');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Usinas') {
-      navigate('/usinas');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (['Como Funciona', 'Depoimentos', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Blog/Notícias', 'Mapa do Site'].includes(link)) {
-      // Navigate to respective pages and scroll to top
-      let route = '';
-      switch (link) {
-        case 'Como Funciona':
-          route = '/como-funciona';
-          break;
-        case 'Depoimentos':
-          route = '/depoimentos';
-          break;
-        case 'FAQ':
-          route = '/faq';
-          break;
-        case 'Termos de Uso':
-          route = '/termos-de-uso';
-          break;
-        case 'Política de Privacidade':
-          route = '/politica-de-privacidade';
-          break;
-        case 'Política de Cookies':
-          route = '/politica-de-cookies';
-          break;
-        case 'Política de Transparência':
-          route = '/politica-de-transparencia';
-          break;
-        case 'Envie o Feedback':
-          route = '/feedback';
-          break;
-        case 'Blog/Notícias':
-          route = '/blog';
-          break;
-        case 'Mapa do Site':
-          route = '/sitemap';
-          break;
-      }
-      
-      navigate(route);
-      // Scroll to top after navigation
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Contatos') {
-      navigate('/contato');
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }, 100);
-    } else if (link === 'Portal do Cliente') {
-      window.open('https://painel.solarien.com.br/login', '_blank');
-    }
-    setIsMobileMenuOpen(false);
+  const go = (route: string) => {
+    navigate(route);
+    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
   };
 
-  const footerLinks = {
-    'Institucional': ['Home', 'Sobre', 'Serviços', 'Usinas', 'Contatos', 'FAQ'],
-    'Plataforma': ['Como Funciona', 'Licenciados', 'Depoimentos', 'Portal do Cliente', 'Blog/Notícias'],
-    'Políticas': ['Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Envie o Feedback', 'Mapa do Site']
-  };
+  const sections: { title: string; links: { label: string; action: () => void }[] }[] = [
+    {
+      title: 'Institucional',
+      links: [
+        { label: 'Home', action: () => go('/') },
+        { label: 'Sobre', action: () => go('/sobre') },
+        { label: 'Serviços', action: () => go('/servicos') },
+        { label: 'Usinas', action: () => go('/usinas') },
+        { label: 'Contato', action: () => go('/contato') },
+        { label: 'FAQ', action: () => go('/faq') },
+      ],
+    },
+    {
+      title: 'Plataforma',
+      links: [
+        { label: 'Como Funciona', action: () => go('/como-funciona') },
+        { label: 'Licenciados', action: () => go('/licenciado') },
+        { label: 'Depoimentos', action: () => go('/depoimentos') },
+        { label: 'Portal do Cliente', action: () => window.open('https://painel.solarien.com.br/login', '_blank') },
+        { label: 'Blog / Notícias', action: () => go('/blog') },
+      ],
+    },
+    {
+      title: 'Políticas',
+      links: [
+        { label: 'Termos de Uso', action: () => go('/termos-de-uso') },
+        { label: 'Política de Privacidade', action: () => go('/politica-de-privacidade') },
+        { label: 'Política de Cookies', action: () => go('/politica-de-cookies') },
+        { label: 'Política de Transparência', action: () => go('/politica-de-transparencia') },
+        { label: 'Envie o Feedback', action: () => go('/feedback') },
+        { label: 'Mapa do Site', action: () => go('/sitemap') },
+      ],
+    },
+  ];
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     try {
       await emailjs.send(
         'service_vvxglpf',
@@ -131,109 +63,68 @@ const Footer = () => {
         },
         'cZ2wsFAjNlCiZaIIG'
       );
-
-      toast({
-        title: "Inscrição realizada!",
-        description: "Você foi inscrito na nossa newsletter.",
-      });
+      toast({ title: 'Inscrição realizada!', description: 'Você foi inscrito na nossa newsletter.' });
       setEmail('');
-    } catch (error) {
-      console.error('Erro ao inscrever na newsletter:', error);
-      toast({
-        title: "Erro na inscrição",
-        description: "Tente novamente mais tarde.",
-        variant: "destructive",
-      });
+    } catch {
+      toast({ title: 'Erro na inscrição', description: 'Tente novamente mais tarde.', variant: 'destructive' });
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="border-t relative overflow-hidden" style={{ backgroundColor: '#002113', borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
-      {/* Solar Panels Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=70"
-          alt="Painéis Solares"
-          className="w-full h-full object-cover opacity-30"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-
-      {/* Background overlay with green transparency */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0, 33, 19, 0.75) 0%, rgba(0, 33, 19, 0.80) 100%)' }}></div>
-
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
+    <footer className="border-t border-white/10" style={{ backgroundColor: '#002113' }}>
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <img 
-                src="/lovable-uploads/solarien-logo-new.png" 
-                alt="Solarien Energy" 
-                className="h-12 w-auto"
-                width="151"
-                height="48"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Especialistas em gestão de contratos e consultoria energética. Oferecemos migração gratuita para energia por assinatura e mercado livre, atendendo todo o Brasil.
+            <img
+              src="/lovable-uploads/solarien-logo-new.png"
+              alt="Solarien Energy"
+              className="h-11 w-auto mb-6"
+              width={151}
+              height={48}
+              loading="lazy"
+              decoding="async"
+            />
+            <p className="text-white/65 font-light leading-relaxed mb-8 max-w-md text-sm">
+              Especialistas em gestão de contratos e consultoria energética. Migração gratuita para
+              energia por assinatura, mercado livre e recuperação de créditos em todo o Brasil.
             </p>
-            
-            {/* Newsletter */}
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-white mb-4">Newsletter</h3>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
+
+            <div>
+              <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">Newsletter</span>
+              <form onSubmit={handleNewsletter} className="mt-4 flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Seu melhor e-mail"
-                  className="flex-1 px-4 py-3 bg-green-800 border border-green-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-solarien-primary focus:border-transparent text-white placeholder-gray-400"
+                  className="flex-1 px-4 py-3 bg-transparent border border-white/15 rounded-md focus:outline-none focus:border-solarien-primary text-white placeholder:text-white/40 text-sm font-light"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-solarien-primary to-solarien-secondary text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-solarien-primary text-black font-medium rounded-md hover:bg-white transition-colors text-sm"
                 >
                   Assinar
+                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
                 </button>
               </form>
             </div>
           </div>
 
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="text-lg font-bold text-white mb-4">{category}</h3>
-              <ul className="space-y-2">
-                  {links.map((link) => (
-                    <li key={link}>
-                      {['Home', 'Sobre', 'Serviços', 'Usinas', 'FAQ', 'Termos de Uso', 'Política de Privacidade', 'Política de Cookies', 'Política de Transparência', 'Contatos', 'Como Funciona', 'Envie o Feedback', 'Portal do Cliente', 'Depoimentos', 'Licenciados', 'Blog/Notícias', 'Mapa do Site'].includes(link) ? (
-                      <button
-                        onClick={() => handleLinkClick(link)}
-                        className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium text-left"
-                      >
-                        {link}
-                      </button>
-                    ) : (
-                      <a
-                        href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="text-gray-300 hover:text-solarien-primary transition-colors duration-300 text-sm font-medium"
-                      >
-                        {link}
-                      </a>
-                    )}
+          {sections.map((s) => (
+            <div key={s.title}>
+              <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">{s.title}</span>
+              <ul className="mt-5 space-y-3">
+                {s.links.map((l) => (
+                  <li key={l.label}>
+                    <button
+                      onClick={l.action}
+                      className="text-white/65 hover:text-white transition-colors text-sm font-light text-left"
+                    >
+                      {l.label}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -241,87 +132,68 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* SEO: soluções rich anchor block */}
-        <nav aria-label="Soluções em energia" className="border-t pt-8 mb-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.2)' }}>
-          <h3 className="text-lg font-bold text-white mb-4">Soluções Solarien</h3>
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-300">
-            <li><Link to="/servicos" className="hover:text-solarien-primary">Mercado Livre de Energia</Link></li>
-            <li><Link to="/servicos" className="hover:text-solarien-primary">Energia Solar por Assinatura</Link></li>
-            <li><Link to="/servicos" className="hover:text-solarien-primary">Geração Distribuída</Link></li>
-            <li><Link to="/servicos" className="hover:text-solarien-primary">Consultoria Energética Empresarial</Link></li>
-            <li><Link to="/servicos" className="hover:text-solarien-primary">Gestão de Contratos de Energia</Link></li>
-            <li><Link to="/como-funciona" className="hover:text-solarien-primary">Como Migrar para o Mercado Livre</Link></li>
-            <li><Link to="/como-funciona" className="hover:text-solarien-primary">Lei 14.300 e Geração Compartilhada</Link></li>
-            <li><Link to="/usinas" className="hover:text-solarien-primary">Usinas Solares Parceiras</Link></li>
-            <li><Link to="/licenciado" className="hover:text-solarien-primary">Seja um Licenciado Solarien</Link></li>
-            <li><Link to="/faq" className="hover:text-solarien-primary">Dúvidas sobre Energia por Assinatura</Link></li>
+        <nav aria-label="Soluções em energia" className="border-t border-white/10 pt-10 mb-10">
+          <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">Soluções Solarien</span>
+          <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/65 font-light">
+            <li><Link to="/servicos" className="hover:text-white">Mercado Livre de Energia</Link></li>
+            <li><Link to="/servicos" className="hover:text-white">Energia por Assinatura</Link></li>
+            <li><Link to="/servicos" className="hover:text-white">Geração Distribuída</Link></li>
+            <li><Link to="/servicos" className="hover:text-white">Consultoria Energética</Link></li>
+            <li><Link to="/servicos" className="hover:text-white">Restituição de Créditos</Link></li>
+            <li><Link to="/como-funciona" className="hover:text-white">Como Migrar</Link></li>
+            <li><Link to="/como-funciona" className="hover:text-white">Lei 14.300</Link></li>
+            <li><Link to="/usinas" className="hover:text-white">Usinas Parceiras</Link></li>
+            <li><Link to="/licenciado" className="hover:text-white">Seja Licenciado</Link></li>
+            <li><Link to="/faq" className="hover:text-white">Dúvidas Frequentes</Link></li>
           </ul>
         </nav>
 
-
-        {/* Bottom Bar */}
-        <div className="border-t pt-8" style={{ borderTopColor: 'rgba(34, 197, 94, 0.3)' }}>
+        <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-gray-300 text-sm font-medium text-center md:text-left">
-              Copyright 2025 | Todos direitos reservados. | Desenvolvido por{' '}
-              <a 
-                href="https://danielolimpio.com/" 
-                target="_blank" 
+            <div className="text-white/55 text-xs font-light tracking-wide text-center md:text-left">
+              © 2025 Solarien Energy. Todos os direitos reservados. Desenvolvido por{' '}
+              <a
+                href="https://danielolimpio.com/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-solarien-primary hover:text-solarien-secondary transition-colors duration-300 font-semibold"
+                className="text-white/80 hover:text-solarien-primary"
               >
                 Daniel Olímpio
               </a>
             </div>
-            
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://www.facebook.com/solarienoficial/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
-              </a>
-              <a
-                href="https://www.instagram.com/solarienoficial/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
-              </a>
-              <a
-                href="https://www.youtube.com/@solarienenergy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-6 h-6 text-white group-hover:text-solarien-primary transition-colors duration-300" />
-              </a>
+
+            <div className="flex items-center gap-2">
+              {[
+                { href: 'https://www.facebook.com/solarienoficial/', Icon: Facebook, label: 'Facebook' },
+                { href: 'https://www.instagram.com/solarienoficial/', Icon: Instagram, label: 'Instagram' },
+                { href: 'https://www.youtube.com/@solarienenergy', Icon: Youtube, label: 'YouTube' },
+              ].map(({ href, Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-white/15 rounded-md flex items-center justify-center hover:border-white/40 hover:text-white text-white/70 transition-colors"
+                  aria-label={label}
+                >
+                  <Icon className="w-4 h-4" strokeWidth={1.5} />
+                </a>
+              ))}
               <a
                 href="https://x.com/solarienoficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-green-800 border border-green-700 rounded-lg flex items-center justify-center hover:bg-green-700 hover:border-solarien-primary/40 transition-all duration-300 group shadow-sm"
+                className="w-10 h-10 border border-white/15 rounded-md flex items-center justify-center hover:border-white/40 text-white/70 hover:text-white transition-colors text-xs font-light"
                 aria-label="X (Twitter)"
               >
-                <div className="w-6 h-6 bg-white group-hover:bg-solarien-primary rounded transition-colors duration-300 flex items-center justify-center">
-                  <span className="text-green-800 font-bold text-sm">X</span>
-                </div>
+                X
               </a>
-              
-              {/* Back to Top Button */}
               <button
                 onClick={scrollToTop}
-                className="w-12 h-12 bg-gradient-to-r from-solarien-primary to-solarien-secondary rounded-lg flex items-center justify-center hover:shadow-lg hover:shadow-solarien-primary/25 transition-all duration-300 ml-4"
+                className="w-10 h-10 ml-2 bg-solarien-primary text-black rounded-md flex items-center justify-center hover:bg-white transition-colors"
                 aria-label="Voltar ao topo"
               >
-                <ArrowUp className="w-6 h-6 text-black" />
+                <ArrowUp className="w-4 h-4" strokeWidth={2} />
               </button>
             </div>
           </div>

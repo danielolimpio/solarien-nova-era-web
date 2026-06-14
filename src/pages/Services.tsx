@@ -10,6 +10,7 @@ import {
   ReceiptText,
   Scale,
   Droplets,
+  Waves,
   CheckCircle2,
   ArrowRight,
   Calculator,

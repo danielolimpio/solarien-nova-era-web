@@ -2085,12 +2085,12 @@ const BlogPost = () => {
             <div className="max-w-4xl mx-auto">
               <article className="border border-white/10 bg-[#002113] p-8 md:p-14">
                 <div className="prose prose-lg prose-invert max-w-none">
-                  {parseContent(post.content)}
+                  {formatContent(post.content)}
                 </div>
               </article>
 
               <div className="mt-16">
-                <RelatedPosts currentPostId={post.id} category={post.category} />
+                <RelatedPosts currentPostId={post.id} currentCategory={post.category} allPosts={blogPosts} />
               </div>
 
               <div className="text-center mt-16">

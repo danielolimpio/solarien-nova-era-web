@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Separator } from '../components/ui/separator';
+
 
 // Lazy loading para componentes não críticos com preload estratégico
 const AboutSection = React.lazy(() => 
@@ -105,7 +105,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ backgroundColor: '#002113' }}>
       <Header />
       <main>
         <HeroSection />
@@ -147,11 +147,10 @@ const Index = () => {
         </section>
       </main>
       
-      <Separator className="h-1 bg-gradient-to-r from-transparent via-solarien-primary to-transparent opacity-60" />
-      
       <Suspense fallback={<div className="h-20" />}>
         <Footer />
       </Suspense>
+
       
       <Suspense fallback={<div />}>
         <WhatsAppFloat />

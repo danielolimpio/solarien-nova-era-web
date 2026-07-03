@@ -1,74 +1,109 @@
 
-# Plano: Expansão SEO Solarien — Curadoria de Centenas de Palavras-chave
+# Auditoria Técnica + Migração SPA → SSG (Pré-renderização)
 
-## Diagnóstico atual (GSC)
-- Apenas ~50 termos gerando impressões em 3 meses, dominados pela marca ("solarien", "solarien energy")
-- 1,39 mil impressões / 164 cliques / posição média 10,1 — site está na borda da página 1, falta volume de conteúdo
-- 40 páginas não indexadas vs 2 indexadas — problema crítico de indexação paralelo (404s antigos do WordPress)
-- Zero ranqueamento para termos genéricos de alto volume do setor
+**Prioridade absoluta:** preservar 100% do layout, identidade visual, animações, responsividade e comportamento. Nenhuma mudança de cores, tipografia, espaçamentos ou componentes. Toda otimização é incremental e reversível.
 
-## Objetivo
-Transformar o solarien.com.br em referência SEO no setor de energia, ranqueando para **centenas** de termos de Mercado Livre de Energia, Energia por Assinatura, Geração Distribuída, Economia de Energia, Portabilidade e Consultoria Energética — combinando keywords primárias (cabeça), secundárias (corpo) e cauda longa.
+---
 
-## Curadoria de palavras-chave (extraída dos 40+ sites concorrentes referenciados)
+## Diagnóstico atual
 
-### 1. Mercado Livre de Energia (primárias)
-mercado livre de energia, ACL, ambiente de contratação livre, migração mercado livre, consumidor livre, consumidor especial, mercado cativo vs livre, comercializadora de energia, gerador de energia, MWh, contrato bilateral de energia, CCEE, ANEEL, modalidade tarifária, demanda contratada, sobrecontratação, subcontratação, garantia física, encargos setoriais, MCP mercado de curto prazo, PLD preço de liquidação das diferenças, sazonalização, flexibilidade contratual.
+- **Stack:** React 18 + Vite 5 + React Router (`BrowserRouter`) → SPA pura. HTML servido é apenas `index.html` com `<div id="root">`, então crawlers que não executam JS bem (Bing, redes sociais, LLMs) recebem página vazia.
+- **SEO:** `react-helmet` injeta tags só client-side. `index.html` tem apenas metadados genéricos.
+- **Sitemap:** `public/sitemap.xml` estático, precisa refletir todas as rotas do `App.tsx` (inclui `/servicos/:slug`, `/blog/:id`).
+- **Deploy:** GitHub Actions → build Vite → FTP para Hostinger (`dangerous-clean-slate: true`). Compatível com SSG (gera HTML estático em `dist/`).
+- **Imagens:** sem `loading="lazy"` / `width`/`height` explícitos em vários lugares → risco de CLS.
+- **Robots.txt / .htaccess:** existem, precisam de ajustes finos (sitemap + headers de cache).
 
-### 2. Energia por Assinatura / Solar Compartilhada
-energia por assinatura, assinatura de energia solar, energia solar compartilhada, geração distribuída GD, autoconsumo remoto, geração compartilhada, consórcio de energia solar, fazenda solar, usina solar por assinatura, créditos de energia, compensação de energia elétrica, lei 14.300, marco legal GD, sistema de compensação SCEE, energia limpa por assinatura, sem investimento em painéis, desconto na conta de luz.
+---
 
-### 3. Economia de Energia
-como economizar energia, redução conta de luz, economia conta de energia empresa, dicas economia energia elétrica, eficiência energética, gestão de energia, auditoria energética, consumo consciente, bandeira tarifária, horário de ponta, tarifa branca, tarifa verde, tarifa azul, fator de potência, demanda reativa.
+## Estratégia escolhida: SSG com `vite-react-ssg`
 
-### 4. Geração Distribuída e Solar
-geração distribuída fotovoltaica, micro geração, mini geração, painel solar empresarial, usina solar fotovoltaica, sistema fotovoltaico, energia solar industrial, energia solar comercial, ROI energia solar, payback solar, financiamento energia solar, licenciamento usina solar, O&M usinas solares.
+**Por quê:** compatível com stack atual (React 18 + Vite + React Router + Helmet), gera 1 HTML por rota no build, zero mudança runtime no cliente (mesma SPA depois do hydrate), zero mudança no workflow (mesmo `npm run build` → `dist/`), zero backend (Hostinger estática funciona). Layout permanece idêntico pixel a pixel porque os componentes React não mudam.
 
-### 5. Portabilidade Energética / Migração
-portabilidade de energia, migração energética, troca de fornecedor de energia, livre escolha do consumidor, abertura mercado livre baixa tensão, mercado livre para PMEs, mercado livre residencial 2026, varejista de energia.
+Alternativas descartadas:
+- **Next.js:** exige reescrever roteamento inteiro → risco alto de regressão. ❌
+- **`vite-plugin-ssr` / Astro:** exige refatorar páginas. ❌
+- **`react-snap` / puppeteer prerender:** frágil, sem controle de meta por rota em build-time. ❌
 
-### 6. Consultoria Energética
-consultoria energética, consultoria mercado livre, consultoria em energia solar, gestão de contratos de energia, gestor de energia, broker de energia, assessoria energética, viabilidade energética, diagnóstico energético, análise de fatura de energia.
+---
 
-### 7. Long-tail (cauda longa) — exemplos
-"como migrar para o mercado livre de energia", "quanto se economiza no mercado livre de energia", "vale a pena energia por assinatura", "energia solar por assinatura sem instalar painéis", "como reduzir conta de luz da empresa em 40%", "diferença mercado livre e cativo", "consumidor especial pode migrar 2026", "economia de energia para indústrias", "energia compartilhada como funciona lei 14300", "consultoria mercado livre de energia preço", "melhor comercializadora de energia Brasil", "energia por assinatura sem fidelidade", "geração distribuída remota para empresas".
+## Escopo das mudanças
 
-## Implementação técnica
+### 1. Pré-renderização (SSG)
+- Adicionar `vite-react-ssg` (compatível com estrutura atual, apenas requer expor as rotas como array).
+- Refatorar `App.tsx` mínimo: extrair `routes` para `src/routes.tsx` como array `RouteRecord[]` (mesmas rotas, mesmos componentes). `BrowserRouter` → `createBrowserRouter` (comportamento idêntico).
+- `main.tsx` usa `ViteReactSSG` para hydrate no cliente e SSR no build.
+- Enumerar rotas dinâmicas (`/servicos/:slug` a partir de `src/data/services.ts`, `/blog/:id` a partir dos posts).
+- Build gera `dist/servicos/rci-e/index.html`, `dist/blog/mp-1300-2025/index.html`, etc.
 
-### A. Metadados sitewide (impacto imediato)
-1. `index.html` — title/description/keywords/og enriquecidos com termos primários
-2. Cada `public/*/index.html` (sobre, servicos, como-funciona, contato, faq, depoimentos, licenciado, usinas, blog) — meta title/description/keywords + Schema otimizados por tema
-3. `src/components/SEO.tsx` — expandir defaultKeywords e permitir keywords mais ricas por página
-4. `src/pages/*.tsx` — atualizar o `<SEO>` de cada página React com keywords secundárias e cauda longa específicas ao tema da página
+### 2. Head metadata por rota (`react-helmet-async`)
+- Trocar `react-helmet` → `react-helmet-async` (necessário para SSR) e envolver com `HelmetProvider`. **API idêntica** — nenhum componente `<SEO>` muda visualmente.
+- Confirmar que toda página já usa `<SEO>` (existe em Sitemap, Services etc.); adicionar `<SEO>` nas páginas que faltam.
+- Cada rota emite: `title`, `description`, `canonical` self-reference, `og:title/description/url/type`, `twitter:card`. Manter `og:image` global no `index.html`.
 
-### B. Conteúdo on-page (sinaliza relevância ao Google)
-1. Hero/seções de Index, Services, HowItWorks, Licensed: enriquecer com termos primários sem keyword stuffing — variantes naturais nos H2/H3 e parágrafos
-2. Footer: adicionar bloco "Soluções" com links âncora ricos em keywords (mercado livre, energia por assinatura, geração distribuída, etc.) — também ajuda crawling
-3. FAQ: adicionar 10+ Q&As novas com perguntas long-tail reais ("Como funciona migração para mercado livre?", "Quem pode aderir energia por assinatura?", "O que é geração compartilhada?", etc.) → também alimenta FAQPage schema
+### 3. Schema JSON-LD
+- `Organization` + `WebSite` global no `index.html`.
+- `BreadcrumbList` nas páginas internas (já há `Breadcrumbs`, adicionar JSON-LD equivalente).
+- `Article` nos posts de blog.
+- `Service` nas páginas `/servicos/:slug`.
+- `FAQPage` na `/faq`.
 
-### C. Sitemap & robots
-- Atualizar `public/sitemap.xml` com lastmod atualizado
-- `llms.txt` já feito anteriormente, manter
+### 4. Sitemap dinâmico + robots
+- Script `scripts/generate-sitemap.ts` executado em `prebuild`: lê `src/data/services.ts` e a lista de posts, gera `public/sitemap.xml` completo com todas as URLs reais (estáticas + dinâmicas), `lastmod` baseado em data atual.
+- Atualizar `robots.txt`: manter regras existentes, garantir `Sitemap:` correto.
 
-### D. JSON-LD Service / Product
-- Adicionar `Service` schema em `/servicos` com lista de `hasOfferCatalog` cobrindo: Mercado Livre, Energia por Assinatura, Consultoria, Licenciamento, Gestão de Contratos
-- WebSite + SearchAction já existe; reforçar `about` com keywords
+### 5. Imagens e Core Web Vitals
+- Adicionar `loading="lazy"` + `decoding="async"` + `width`/`height` em `<img>` que ainda não têm (varredura sistemática, sem trocar as imagens em si).
+- `<link rel="preload">` para hero LCP no `index.html`.
+- `fetchpriority="high"` no hero.
+- Não trocar formatos agora (evita risco de imagem quebrar) — apenas atributos.
 
-## Escopo do que NÃO está incluído
-- **Não vou criar artigos de blog novos** (cada artigo é trabalho substancial e o usuário tem um fluxo separado para blog). Posso fazer isso em entregas seguintes se quiser.
-- **Não mexo em layout/visual** — apenas SEO/metadados e enriquecimento textual sutil em seções existentes.
-- **Indexação 404 antiga (40 URLs do WordPress legado)** — recomendo tratar em PR separado com redirects 301 no `.htaccess`. Posso incluir se confirmar.
+### 6. Cache / compressão / .htaccess
+- Ajustar `.htaccess` na raiz `public/`: `mod_deflate` (gzip), `mod_expires` (cache 1 ano para assets com hash, no-cache para HTML), `Cache-Control` headers.
+- Confirmar SPA fallback ainda funcionando para rotas não pré-renderizadas (fallback para `index.html`).
 
-## Entregáveis desta execução
-1. SEO.tsx ampliado (default keywords sitewide com ~80 termos núcleo)
-2. Todos os `public/*/index.html` reescritos com title/description/keywords/OG específicos e ricos
-3. Todos os `src/pages/*.tsx` com `<SEO>` atualizado por tema
-4. FAQ.tsx — +10 Q&As long-tail (e schema atualizado)
-5. Footer — bloco de soluções com links âncora ricos
-6. sitemap.xml atualizado
-7. Service JSON-LD em /servicos
+### 7. Correções GSC comuns
+- Canonical self-reference em cada rota (resolve "duplicado sem canonical").
+- HTML pré-renderizado (resolve "página descoberta — não indexada" e "renderizada em branco").
+- `viewport` já OK; `mobile-friendly` mantido pois layout não muda.
+- Remover disallows agressivos desnecessários do `robots.txt` que possam bloquear conteúdo válido.
 
-## Próximo passo após aprovação
-Quer que eu também:
-- (a) inclua redirects 301 no `.htaccess` para os 40 URLs 404 do GSC (recupera autoridade)?
-- (b) gere 5–10 pautas de blog long-tail prontas para você publicar (sem escrever os artigos completos agora)?
+### 8. Workflow GitHub Actions / Hostinger
+- `npm install` → adiciona `vite-react-ssg` e `react-helmet-async`.
+- `npm run build` continua gerando `dist/` (agora com HTML por rota).
+- FTP publica `dist/` inalterado. **Sem mudanças no `.github/workflows/deploy.yml`.**
+- Adicionar `predev`/`prebuild` scripts para gerar sitemap.
+
+---
+
+## Validação (antes de considerar concluído)
+
+1. `npm run build` completa sem erros.
+2. Rodar Playwright: comparar screenshot da home antes/depois em 1280px e 375px — deve ser pixel-idêntico.
+3. Verificar `dist/index.html`, `dist/sobre/index.html`, `dist/servicos/rci-e/index.html` contêm o HTML renderizado com títulos/meta corretos (via `curl`/grep no arquivo).
+4. Verificar `dist/sitemap.xml` lista todas as rotas.
+5. Navegar no preview: clicar em links entre páginas — SPA client-side continua funcionando (hydrate).
+6. Console: zero erros.
+
+---
+
+## O que **não** vai mudar
+
+- Nenhum componente visual (`Header`, `Footer`, `PremiumUI`, páginas).
+- Nenhuma cor, fonte, espaçamento, animação.
+- `tailwind.config.ts`, `index.css`, tokens de design.
+- Comportamento de rotas do usuário (mesmas URLs).
+- Workflow do GitHub Actions.
+
+---
+
+## Entregável final
+
+Relatório em markdown ao final da implementação com:
+- Lista de arquivos alterados/criados.
+- HTML de exemplo antes/depois (mostra meta tags novos).
+- Rotas pré-renderizadas (contagem).
+- Checklist GSC corrigido.
+- Recomendações de próximos passos (ex.: gerar `og:image` reais, adicionar mais posts).
+
+Posso iniciar a implementação?

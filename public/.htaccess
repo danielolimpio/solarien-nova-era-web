@@ -24,8 +24,14 @@ RewriteRule ^(.*)$ $1/index.html [L]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# IMPORTANTE: NÃO há fallback para SPA
-# URLs inexistentes retornam 404 (comportamento correto para SEO)
+# SPA fallback SOMENTE para rotas dinâmicas (detalhes de serviços e posts do blog).
+# Demais URLs inexistentes continuam retornando 404 real (comportamento correto para SEO).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^servicos/[^/]+/?$ /index.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blog/[^/]+/?$ /index.html [L]
 
 # Compressão GZIP
 <IfModule mod_deflate.c>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
@@ -26,7 +26,8 @@ const SEO: React.FC<SEOProps> = ({
   article
 }) => {
   const fullTitle = title.includes('Solarien') ? title : `${title} | Solarien Energy`;
-  const canonicalUrl = canonical || `https://solarien.com.br${window.location.pathname}`;
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const canonicalUrl = canonical || `https://solarien.com.br${pathname}`;
 
   return (
     <Helmet>

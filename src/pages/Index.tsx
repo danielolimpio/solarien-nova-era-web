@@ -105,7 +105,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#002113' }}>
+    <div className="min-h-screen relative isolate" style={{ backgroundColor: '#002113' }}>
+      <PageBackground image={PAGE_BG.home} />
       <Header />
       <main>
         <HeroSection />

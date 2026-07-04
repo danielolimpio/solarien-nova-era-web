@@ -107,42 +107,52 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative isolate" style={{ backgroundColor: '#002113' }}>
-      <PageBackground image={PAGE_BG.home} />
       <Header />
       <main>
         <HeroSection />
-        
-        <section id="sobre" aria-labelledby="sobre-heading">
+
+        {/* SOBRE — imagem de painéis solares, tom médio */}
+        <section id="sobre" aria-labelledby="sobre-heading" className="relative isolate overflow-hidden">
+          <SectionBackground image={SECTION_BG.about} tone="medium" opacity={0.4} />
           <Suspense fallback={<OptimizedFallback />}>
             <AboutSection />
           </Suspense>
         </section>
-        
-        <section id="video" aria-labelledby="video-heading">
+
+        {/* VÍDEO — seção CLARA (branco) para quebrar o verde */}
+        <section id="video" aria-labelledby="video-heading" className="relative isolate overflow-hidden bg-[#f7f5f0]">
           <Suspense fallback={<OptimizedFallback />}>
             <VideoSection />
           </Suspense>
         </section>
-        
-        <section id="parcerias" aria-labelledby="parcerias-heading">
+
+        {/* PARCERIAS — imagem escritório moderno, tom escuro */}
+        <section id="parcerias" aria-labelledby="parcerias-heading" className="relative isolate overflow-hidden">
+          <SectionBackground image={SECTION_BG.partners} tone="dark" opacity={0.35} />
           <Suspense fallback={<OptimizedFallback />}>
             <PartnersCarousel />
           </Suspense>
         </section>
-        
-        <section id="usinas-solares" aria-labelledby="usinas-heading">
+
+        {/* USINAS — imagem turbinas eólicas, tom suave (destaque visual) */}
+        <section id="usinas-solares" aria-labelledby="usinas-heading" className="relative isolate overflow-hidden">
+          <SectionBackground image={SECTION_BG.plants} tone="soft" opacity={0.55} />
           <Suspense fallback={<OptimizedFallback />}>
             <SolarPlantsCarousel />
           </Suspense>
         </section>
-        
-        <section id="licenciado" aria-labelledby="licenciado-heading">
+
+        {/* LICENCIADO — imagem time em reunião, tom médio */}
+        <section id="licenciado" aria-labelledby="licenciado-heading" className="relative isolate overflow-hidden">
+          <SectionBackground image={SECTION_BG.entrepreneurship} tone="medium" opacity={0.4} />
           <Suspense fallback={<OptimizedFallback />}>
             <EntrepreneurshipSection />
           </Suspense>
         </section>
-        
-        <section id="licencas" aria-labelledby="licencas-heading">
+
+        {/* LICENÇAS — imagem skyline cidade, tom escuro */}
+        <section id="licencas" aria-labelledby="licencas-heading" className="relative isolate overflow-hidden">
+          <SectionBackground image={SECTION_BG.license} tone="dark" opacity={0.38} />
           <Suspense fallback={<OptimizedFallback />}>
             <LicenseSection />
           </Suspense>

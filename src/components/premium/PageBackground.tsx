@@ -24,7 +24,7 @@ const PageBackground: React.FC<PageBackgroundProps> = ({
   return (
     <div
       aria-hidden="true"
-      className={`${fixed ? 'fixed' : 'absolute'} inset-0 pointer-events-none overflow-hidden -z-0`}
+      className={`${fixed ? 'fixed' : 'absolute'} inset-0 pointer-events-none overflow-hidden -z-10`}
       style={{ backgroundColor: '#002113' }}
     >
       <img

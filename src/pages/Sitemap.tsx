@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import {
-import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -14,6 +13,7 @@ import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PremiumCard,
   PremiumIconBadge,
 } from '@/components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Sitemap = () => {
   const sections: { title: string; icon: LucideIcon; links: { name: string; path: string }[] }[] = [

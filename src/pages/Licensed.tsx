@@ -5,7 +5,6 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Award, ShieldCheck, CheckCircle2, Users, TrendingUp, Zap, LucideIcon } from 'lucide-react';
 import {
-import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -14,6 +13,7 @@ import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Licensed = () => {
   const benefits: { icon: LucideIcon; title: string; description: string }[] = [

@@ -8,7 +8,6 @@ import StateCoverageSimulator from '../components/StateCoverageSimulator';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
-import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -17,6 +16,7 @@ import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const HowItWorks = () => {
   const distributors = [

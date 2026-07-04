@@ -6,7 +6,6 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { getServiceBySlug, services } from '../data/services';
 import {
-import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   Zap,
   Network,
   ReceiptText,
@@ -21,6 +20,7 @@ import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   Sparkles,
   LucideIcon,
 } from 'lucide-react';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const iconMap: Record<string, LucideIcon> = {
   Zap,

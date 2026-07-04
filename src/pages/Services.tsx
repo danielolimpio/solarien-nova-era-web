@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
-import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   Zap,
   Network,
   ReceiptText,
@@ -20,6 +19,7 @@ import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   ShieldCheck,
   LucideIcon,
 } from 'lucide-react';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 interface ServiceCard {
   icon: LucideIcon;

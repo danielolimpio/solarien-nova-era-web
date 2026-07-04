@@ -12,16 +12,16 @@ interface PageBackgroundProps {
 }
 
 const TONES: Record<NonNullable<PageBackgroundProps['tone']>, string> = {
-  // Strong dark green wash — best for legibility of white text on busy imagery
-  dark: 'linear-gradient(180deg, rgba(0,33,19,0.82) 0%, rgba(0,33,19,0.72) 50%, rgba(0,33,19,0.88) 100%)',
+  // Dark green wash — legibility for white text
+  dark: 'linear-gradient(180deg, rgba(0,33,19,0.68) 0%, rgba(0,33,19,0.58) 50%, rgba(0,33,19,0.78) 100%)',
   // Medium — lets image breathe more
-  medium: 'linear-gradient(180deg, rgba(0,33,19,0.65) 0%, rgba(0,33,19,0.55) 50%, rgba(0,33,19,0.75) 100%)',
-  // Soft — image dominant, use for hero/showcase sections
-  soft: 'linear-gradient(180deg, rgba(0,33,19,0.45) 0%, rgba(0,20,12,0.35) 50%, rgba(0,33,19,0.6) 100%)',
+  medium: 'linear-gradient(180deg, rgba(0,33,19,0.52) 0%, rgba(0,33,19,0.42) 50%, rgba(0,33,19,0.62) 100%)',
+  // Soft — image dominant
+  soft: 'linear-gradient(180deg, rgba(0,33,19,0.38) 0%, rgba(0,20,12,0.28) 50%, rgba(0,33,19,0.5) 100%)',
   // Clean — near-white for light sections (requires dark text)
   clean: 'linear-gradient(180deg, rgba(250,250,248,0.94) 0%, rgba(245,245,240,0.92) 100%)',
-  // Warm — sepia/dawn tone for variety
-  warm: 'linear-gradient(180deg, rgba(30,20,10,0.70) 0%, rgba(50,30,15,0.60) 50%, rgba(20,15,5,0.80) 100%)',
+  // Warm — sepia/dawn variety
+  warm: 'linear-gradient(180deg, rgba(30,20,10,0.58) 0%, rgba(50,30,15,0.48) 50%, rgba(20,15,5,0.68) 100%)',
 };
 
 const PageBackground: React.FC<PageBackgroundProps> = ({

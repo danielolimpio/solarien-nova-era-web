@@ -27,7 +27,7 @@ const TONES: Record<NonNullable<PageBackgroundProps['tone']>, string> = {
 const PageBackground: React.FC<PageBackgroundProps> = ({
   image,
   alt = '',
-  opacity = 0.35,
+  opacity = 0.5,
   fixed = true,
   tone = 'dark',
 }) => {

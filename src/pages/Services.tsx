@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   Zap,
   Network,
   ReceiptText,
@@ -131,7 +132,8 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.services} />
       <SEO
         title="Serviços de Energia, Restituição e Mercado Livre"
         description="Soluções completas em energia renovável, mercado livre, restituição de créditos de energia (RCI-E), créditos da Eletrobrás e créditos de água e esgoto (RCI-A)."

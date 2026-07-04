@@ -12,6 +12,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -86,7 +87,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.contact} />
       <SEO
         title="Entre em Contato - Solarien Energy"
         description="Fale com a Solarien sobre energia solar, mercado livre e economia na conta de luz."

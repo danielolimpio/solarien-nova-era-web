@@ -8,6 +8,7 @@ import StateCoverageSimulator from '../components/StateCoverageSimulator';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -46,7 +47,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.howItWorks} />
       <SEO
         title="Como Funciona a Energia por Assinatura e Mercado Livre"
         description="Entenda como funciona a energia por assinatura e o mercado livre. Processo simples, economia garantida."

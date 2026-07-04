@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { getServiceBySlug, services } from '../data/services';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   Zap,
   Network,
   ReceiptText,
@@ -41,7 +42,8 @@ const ServiceDetail = () => {
   const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.services} />
       <SEO
         title={`${service.title} | Solarien Energy`}
         description={service.metaDescription}

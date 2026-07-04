@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import RelatedPosts from '../components/RelatedPosts';
 import { Button } from '../components/ui/button';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 interface BlogPost {
   id: string;
   title: string;
@@ -1999,7 +2000,8 @@ const BlogPost = () => {
     : `${post.title}${suffix}`;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.blog} />
       <Helmet>
         <title>{post.title} — Blog Solarien</title>
         <meta name="description" content={post.excerpt} />

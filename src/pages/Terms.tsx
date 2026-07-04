@@ -6,6 +6,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
 import { PageShell, PageHero, PremiumSection } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const sections = [
   { h: '1. Aceitação dos Termos', body: 'Ao utilizar os serviços da Solarien, você declara ter lido, compreendido e aceitado estes Termos.' },
@@ -21,7 +22,8 @@ const sections = [
 ];
 
 const Terms = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.legal} />
     <SEO title="Termos de Uso - Solarien" description="Termos e condições dos nossos serviços." keywords="termos de uso solarien" canonical="https://solarien.com.br/termos-de-uso" />
     <Header />
     <PageShell>

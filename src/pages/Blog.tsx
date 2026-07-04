@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import SearchInput from '../components/SearchInput';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PageShell, PageHero, PremiumSection } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 interface BlogPost {
   id: string;
@@ -48,7 +49,8 @@ const Blog = () => {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.blog} />
       <Helmet>
         <title>Blog Solarien — Energia Solar e Mercado Livre</title>
         <meta name="description" content="Análises, insights e tendências sobre energia solar, mercado livre e sustentabilidade." />

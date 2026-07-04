@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Sun, MapPin, Zap, TreePine, Factory, Users, LucideIcon } from 'lucide-react';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -39,7 +40,8 @@ const SolarPlants = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.solarPlants} />
       <SEO
         title="Usinas Solares Parceiras - Rede Nacional"
         description="Maior rede de usinas solares do Brasil. Mais de 2000 usinas parceiras."

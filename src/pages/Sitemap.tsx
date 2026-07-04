@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -58,7 +59,8 @@ const Sitemap = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.sitemap} />
       <SEO
         title="Mapa do Site - Solarien Energy"
         description="Navegue por todas as páginas do site da Solarien Energy."

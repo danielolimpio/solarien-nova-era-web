@@ -9,6 +9,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { PageShell, PageHero, PremiumSection, PremiumGrid, PremiumCard } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 interface Metrics {
   satisfaction: { excellent: number; good: number; average: number; poor: number };
@@ -105,7 +106,8 @@ const Feedback = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.feedback} />
       <SEO title="Envie seu Feedback - Solarien" description="Sua opinião é fundamental." keywords="feedback solarien" canonical="https://solarien.com.br/feedback" />
       <Header />
       <PageShell>

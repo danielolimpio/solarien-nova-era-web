@@ -6,6 +6,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -34,7 +35,8 @@ const Testimonials = () => {
   const t = items[index];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.testimonials} />
       <SEO
         title="Depoimentos de Clientes - Casos de Sucesso"
         description="Conheça depoimentos de empresários que reduziram custos com energia."

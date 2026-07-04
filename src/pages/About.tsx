@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Sun, ShieldCheck, Users, Award, Target, Heart, LucideIcon } from 'lucide-react';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -29,7 +30,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.about} />
       <SEO
         title="Sobre a Solarien Energy"
         description="Especialistas em gestão de contratos energéticos e consultoria em energia, oferecendo soluções completas em energia por assinatura e mercado livre."

@@ -8,6 +8,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
 import {
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
   PageShell,
   PageHero,
   PremiumSection,
@@ -67,7 +68,8 @@ const FAQ = () => {
   const list = tab === 'energy' ? energyFAQ : networkFAQ;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.faq} />
       <SEO
         title="Perguntas Frequentes - FAQ Solarien Energy"
         description="Tire dúvidas sobre energia por assinatura, mercado livre e marketing de rede."

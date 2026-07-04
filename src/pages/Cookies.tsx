@@ -6,6 +6,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
 import { PageShell, PageHero, PremiumSection } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const sections = [
   { h: '1. Introdução', p: 'A Solarien utiliza cookies para melhorar a experiência dos visitantes em nosso site, personalizar conteúdo e garantir o funcionamento eficiente da plataforma.' },
@@ -17,7 +18,8 @@ const sections = [
 ];
 
 const Cookies = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.legal} />
     <SEO title="Política de Cookies - Solarien" description="Saiba como usamos cookies." keywords="política cookies solarien" canonical="https://solarien.com.br/politica-de-cookies" />
     <Header />
     <PageShell>

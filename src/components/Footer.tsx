@@ -76,14 +76,15 @@ const Footer = () => {
     <footer className="relative isolate border-t border-white/10 overflow-hidden" style={{ backgroundColor: '#002113' }}>
       <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=70"
+          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=1920&q=80"
           alt=""
-          className="w-full h-full object-cover opacity-[0.12]"
+          className="w-full h-full object-cover"
+          style={{ opacity: 0.35 }}
           loading="lazy"
           decoding="async"
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,33,19,0.9) 0%, rgba(0,33,19,0.85) 100%)' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(2,255,145,0.08),_transparent_60%)]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,33,19,0.78) 0%, rgba(0,33,19,0.72) 50%, rgba(0,33,19,0.92) 100%)' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(2,255,145,0.12),_transparent_65%)]" />
       </div>
       <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-5 gap-12 mb-16">

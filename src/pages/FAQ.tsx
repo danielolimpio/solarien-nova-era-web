@@ -13,6 +13,7 @@ import {
   PremiumSection,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const FAQ = () => {
   const [tab, setTab] = useState<'energy' | 'network'>('energy');
@@ -67,7 +68,8 @@ const FAQ = () => {
   const list = tab === 'energy' ? energyFAQ : networkFAQ;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.faq} />
       <SEO
         title="Perguntas Frequentes - FAQ Solarien Energy"
         description="Tire dúvidas sobre energia por assinatura, mercado livre e marketing de rede."

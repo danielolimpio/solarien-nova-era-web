@@ -13,6 +13,7 @@ import {
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const About = () => {
   const values: { icon: LucideIcon; title: string; description: string }[] = [
@@ -29,7 +30,8 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.about} />
       <SEO
         title="Sobre a Solarien Energy"
         description="Especialistas em gestão de contratos energéticos e consultoria em energia, oferecendo soluções completas em energia por assinatura e mercado livre."

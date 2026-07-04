@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,7 +13,8 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen relative isolate flex flex-col">
+      <PageBackground image={PAGE_BG.notFound} />
       <Header />
       <main
         className="flex-1 flex items-center justify-center pt-20 pb-20"

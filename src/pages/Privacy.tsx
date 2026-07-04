@@ -6,6 +6,7 @@ import WhatsAppFloat from '../components/WhatsAppFloat';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
 import { PageShell, PageHero, PremiumSection } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const sections = [
   { h: '1. Coleta de Dados', body: 'Coletamos dados da conta de energia (número, unidade consumidora, histórico de consumo) e dados pessoais (nome completo, CPF, e-mail e WhatsApp), além do anexo da conta enviado no cadastro.' },
@@ -18,7 +19,8 @@ const sections = [
 ];
 
 const Privacy = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.legal} />
     <SEO title="Política de Privacidade - Solarien" description="Como protegemos suas informações." keywords="privacidade solarien, LGPD energia" canonical="https://solarien.com.br/politica-de-privacidade" />
     <Header />
     <PageShell>

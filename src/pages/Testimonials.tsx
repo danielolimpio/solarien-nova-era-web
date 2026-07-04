@@ -11,6 +11,7 @@ import {
   PremiumSection,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
@@ -34,7 +35,8 @@ const Testimonials = () => {
   const t = items[index];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.testimonials} />
       <SEO
         title="Depoimentos de Clientes - Casos de Sucesso"
         description="Conheça depoimentos de empresários que reduziram custos com energia."

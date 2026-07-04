@@ -13,6 +13,7 @@ import {
   PremiumCard,
   PremiumIconBadge,
 } from '@/components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Sitemap = () => {
   const sections: { title: string; icon: LucideIcon; links: { name: string; path: string }[] }[] = [
@@ -58,7 +59,8 @@ const Sitemap = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.sitemap} />
       <SEO
         title="Mapa do Site - Solarien Energy"
         description="Navegue por todas as páginas do site da Solarien Energy."

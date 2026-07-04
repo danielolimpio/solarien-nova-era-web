@@ -14,6 +14,7 @@ import {
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const SolarPlants = () => {
   const stats: { icon: LucideIcon; number: string; label: string; description: string }[] = [
@@ -39,7 +40,8 @@ const SolarPlants = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.solarPlants} />
       <SEO
         title="Usinas Solares Parceiras - Rede Nacional"
         description="Maior rede de usinas solares do Brasil. Mais de 2000 usinas parceiras."

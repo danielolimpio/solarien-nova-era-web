@@ -5,9 +5,11 @@ import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SEO from '../components/SEO';
 import { PageShell, PageHero, PremiumSection, PremiumGrid, PremiumCard, PremiumIconBadge } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Transparency = () => (
-  <div className="min-h-screen">
+  <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.legal} />
     <SEO title="Política de Transparência - Solarien" description="Como garantimos clareza e ética em nossos serviços." keywords="transparência solarien" canonical="https://solarien.com.br/politica-de-transparencia" />
     <Header />
     <PageShell>

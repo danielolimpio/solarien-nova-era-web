@@ -19,6 +19,7 @@ import {
   PremiumCard,
   PremiumIconBadge,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Nome deve ter pelo menos 2 caracteres'),
@@ -86,7 +87,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.contact} />
       <SEO
         title="Entre em Contato - Solarien Energy"
         description="Fale com a Solarien sobre energia solar, mercado livre e economia na conta de luz."

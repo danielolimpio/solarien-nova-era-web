@@ -19,6 +19,7 @@ import {
   ShieldCheck,
   LucideIcon,
 } from 'lucide-react';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 interface ServiceCard {
   icon: LucideIcon;
@@ -131,7 +132,8 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.services} />
       <SEO
         title="Serviços de Energia, Restituição e Mercado Livre"
         description="Soluções completas em energia renovável, mercado livre, restituição de créditos de energia (RCI-E), créditos da Eletrobrás e créditos de água e esgoto (RCI-A)."

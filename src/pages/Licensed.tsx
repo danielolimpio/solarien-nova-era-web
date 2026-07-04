@@ -13,6 +13,7 @@ import {
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const Licensed = () => {
   const benefits: { icon: LucideIcon; title: string; description: string }[] = [
@@ -44,7 +45,8 @@ const Licensed = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.licensed} />
       <SEO
         title="Seja um Licenciado Solarien - Oportunidade de Negócio"
         description="Torne-se licenciado Solarien e empreenda no setor de energia renovável."

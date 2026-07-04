@@ -16,6 +16,7 @@ import {
   PremiumIconBadge,
   PremiumCTA,
 } from '../components/premium/PremiumUI';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const HowItWorks = () => {
   const distributors = [
@@ -46,7 +47,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.howItWorks} />
       <SEO
         title="Como Funciona a Energia por Assinatura e Mercado Livre"
         description="Entenda como funciona a energia por assinatura e o mercado livre. Processo simples, economia garantida."

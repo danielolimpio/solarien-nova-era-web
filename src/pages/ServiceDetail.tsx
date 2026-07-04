@@ -20,6 +20,7 @@ import {
   Sparkles,
   LucideIcon,
 } from 'lucide-react';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 const iconMap: Record<string, LucideIcon> = {
   Zap,
@@ -41,7 +42,8 @@ const ServiceDetail = () => {
   const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative isolate">
+      <PageBackground image={PAGE_BG.services} />
       <SEO
         title={`${service.title} | Solarien Energy`}
         description={service.metaDescription}

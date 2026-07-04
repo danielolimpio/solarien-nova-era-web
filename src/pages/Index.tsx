@@ -3,6 +3,7 @@ import React, { Suspense } from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import LoadingSpinner from '../components/LoadingSpinner';
+import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 
 
 // Lazy loading para componentes não críticos com preload estratégico
@@ -105,7 +106,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#002113' }}>
+    <div className="min-h-screen relative isolate" style={{ backgroundColor: '#002113' }}>
+      <PageBackground image={PAGE_BG.home} />
       <Header />
       <main>
         <HeroSection />

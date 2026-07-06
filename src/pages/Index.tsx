@@ -111,48 +111,44 @@ const Index = () => {
       <main>
         <HeroSection />
 
-        {/* SOBRE — imagem de painéis solares, tom médio */}
-        <section id="sobre" aria-labelledby="sobre-heading" className="relative isolate overflow-hidden">
-          <SectionBackground image={SECTION_BG.about} tone="medium" opacity={0.4} />
+        {/* SOBRE — sem imagem de fundo, verde escuro (imagens vão nas caixas) */}
+        <section id="sobre" aria-labelledby="sobre-heading" className="relative isolate overflow-hidden" style={{ backgroundColor: '#002113' }}>
           <Suspense fallback={<OptimizedFallback />}>
             <AboutSection />
           </Suspense>
         </section>
 
-        {/* VÍDEO — seção CLARA (branco) para quebrar o verde */}
+        {/* VÍDEO — seção CLARA (branco) */}
         <section id="video" aria-labelledby="video-heading" className="relative isolate overflow-hidden bg-[#f7f5f0]">
           <Suspense fallback={<OptimizedFallback />}>
             <VideoSection />
           </Suspense>
         </section>
 
-        {/* PARCERIAS — imagem escritório moderno, tom escuro */}
+        {/* PARCERIAS — torres de energia com raios */}
         <section id="parcerias" aria-labelledby="parcerias-heading" className="relative isolate overflow-hidden">
-          <SectionBackground image={SECTION_BG.partners} tone="dark" opacity={0.35} />
+          <SectionBackground image="https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1920&q=75" tone="dark" opacity={0.55} />
           <Suspense fallback={<OptimizedFallback />}>
             <PartnersCarousel />
           </Suspense>
         </section>
 
-        {/* USINAS — imagem turbinas eólicas, tom suave (destaque visual) */}
-        <section id="usinas-solares" aria-labelledby="usinas-heading" className="relative isolate overflow-hidden">
-          <SectionBackground image={SECTION_BG.plants} tone="soft" opacity={0.55} />
+        {/* USINAS — seção branca */}
+        <section id="usinas-solares" aria-labelledby="usinas-heading" className="relative isolate overflow-hidden bg-white">
           <Suspense fallback={<OptimizedFallback />}>
             <SolarPlantsCarousel />
           </Suspense>
         </section>
 
-        {/* LICENCIADO — imagem time em reunião, tom médio */}
-        <section id="licenciado" aria-labelledby="licenciado-heading" className="relative isolate overflow-hidden">
-          <SectionBackground image={SECTION_BG.entrepreneurship} tone="medium" opacity={0.4} />
+        {/* LICENCIADO — verde escuro (imagens nas caixas) */}
+        <section id="licenciado" aria-labelledby="licenciado-heading" className="relative isolate overflow-hidden" style={{ backgroundColor: '#002113' }}>
           <Suspense fallback={<OptimizedFallback />}>
             <EntrepreneurshipSection />
           </Suspense>
         </section>
 
-        {/* LICENÇAS — imagem skyline cidade, tom escuro */}
-        <section id="licencas" aria-labelledby="licencas-heading" className="relative isolate overflow-hidden">
-          <SectionBackground image={SECTION_BG.license} tone="dark" opacity={0.38} />
+        {/* LICENÇAS — seção branca (imagem nas caixas) */}
+        <section id="licencas" aria-labelledby="licencas-heading" className="relative isolate overflow-hidden bg-white">
           <Suspense fallback={<OptimizedFallback />}>
             <LicenseSection />
           </Suspense>

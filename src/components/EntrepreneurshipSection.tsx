@@ -1,6 +1,6 @@
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Rocket, Download } from 'lucide-react';
-import { PremiumSection, PremiumCard, PremiumIconBadge, PrimaryButton, OutlineButton } from './premium/PremiumUI';
+import { PremiumSection, PremiumIconBadge, PrimaryButton, OutlineButton } from './premium/PremiumUI';
 
 const IMG_BENEFITS = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=75';
 const IMG_STATS = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=75';

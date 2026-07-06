@@ -36,38 +36,41 @@ const VideoSection = () => {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="border border-black/10 overflow-hidden shadow-sm">
-              <AspectRatio ratio={16 / 9}>
-                {!isVideoLoaded ? (
-                  <button
-                    onClick={() => setIsVideoLoaded(true)}
-                    className="relative w-full h-full group cursor-pointer"
-                    aria-label="Carregar vídeo do YouTube"
-                  >
-                    <img
-                      src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-                      alt="Solarien Energy - Nossa História"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 rounded-full border border-white/70 bg-black/40 backdrop-blur flex items-center justify-center group-hover:border-white transition-colors">
-                        <Play className="w-8 h-8 text-white ml-1" strokeWidth={1.25} />
+            {/* Vídeo com borda premium: moldura dupla + gradiente + sombra */}
+            <div className="relative p-[2px] rounded-xl bg-gradient-to-br from-solarien-primary via-emerald-400 to-solarien-primary shadow-[0_20px_60px_-15px_rgba(2,255,145,0.35)]">
+              <div className="rounded-[10px] overflow-hidden ring-1 ring-black/5 bg-black">
+                <AspectRatio ratio={16 / 9}>
+                  {!isVideoLoaded ? (
+                    <button
+                      onClick={() => setIsVideoLoaded(true)}
+                      className="relative w-full h-full group cursor-pointer"
+                      aria-label="Carregar vídeo do YouTube"
+                    >
+                      <img
+                        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                        alt="Solarien Energy - Nossa História"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-full border border-white/70 bg-black/40 backdrop-blur flex items-center justify-center group-hover:border-white transition-colors">
+                          <Play className="w-8 h-8 text-white ml-1" strokeWidth={1.25} />
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                ) : (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
-                    title="Solarien Energy - Nossa História"
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                )}
-              </AspectRatio>
+                    </button>
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&autoplay=1`}
+                      title="Solarien Energy - Nossa História"
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  )}
+                </AspectRatio>
+              </div>
             </div>
 
             <div className="text-center mt-10">
@@ -76,16 +79,28 @@ const VideoSection = () => {
               </PrimaryButton>
             </div>
 
-            <div className="mt-16 grid md:grid-cols-3 gap-px bg-black/10 border border-black/10">
-              {features.map(({ Icon, title, desc }) => (
-                <article key={title} className="bg-[#f7f5f0] p-8 flex flex-col hover:bg-white transition-colors">
-                  <div className="w-14 h-14 rounded-md border border-black/15 flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7 text-slate-900" strokeWidth={1.25} />
-                  </div>
-                  <h3 className="text-xl font-light text-slate-900 tracking-tight mb-2">{title}</h3>
-                  <p className="text-slate-600 font-light text-sm">{desc}</p>
-                </article>
-              ))}
+            {/* 3 caixas com UMA imagem compartilhada de background */}
+            <div className="mt-16 relative isolate overflow-hidden border border-black/10 rounded-md">
+              <img
+                src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1920&q=75"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover -z-10"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/80 to-white/85" />
+              <div className="grid md:grid-cols-3 gap-px bg-black/10">
+                {features.map(({ Icon, title, desc }) => (
+                  <article key={title} className="bg-[#f7f5f0]/85 backdrop-blur-sm p-8 flex flex-col hover:bg-white/90 transition-colors">
+                    <div className="w-14 h-14 rounded-md border border-black/15 flex items-center justify-center mb-6 bg-white/70">
+                      <Icon className="w-7 h-7 text-slate-900" strokeWidth={1.25} />
+                    </div>
+                    <h3 className="text-xl font-light text-slate-900 tracking-tight mb-2">{title}</h3>
+                    <p className="text-slate-700 font-light text-sm">{desc}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>

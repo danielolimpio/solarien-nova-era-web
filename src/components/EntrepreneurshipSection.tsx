@@ -1,6 +1,9 @@
 import React from 'react';
 import { Zap, Users, Target, TrendingUp, Rocket, Download } from 'lucide-react';
-import { PremiumSection, PremiumGrid, PremiumCard, PremiumIconBadge, PrimaryButton, OutlineButton } from './premium/PremiumUI';
+import { PremiumSection, PremiumIconBadge, PrimaryButton, OutlineButton } from './premium/PremiumUI';
+
+const IMG_BENEFITS = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=75';
+const IMG_STATS = 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=75';
 
 const benefits = [
   { Icon: Target, title: 'Seja um expert no mercado', description: 'Domine o Mercado Livre de Energia e torne-se referência.' },
@@ -44,15 +47,28 @@ const EntrepreneurshipSection = () => {
         </OutlineButton>
       </div>
 
-      <PremiumGrid cols={4}>
-        {benefits.map((b) => (
-          <PremiumCard key={b.title}>
-            <PremiumIconBadge Icon={b.Icon} />
-            <h3 className="text-lg font-light text-white tracking-tight mb-2">{b.title}</h3>
-            <p className="text-white/60 font-light text-sm">{b.description}</p>
-          </PremiumCard>
-        ))}
-      </PremiumGrid>
+      {/* 4 caixas de benefícios com UMA imagem compartilhada (fachada de vidro) */}
+      <div className="relative isolate overflow-hidden border border-white/10">
+        <img
+          src={IMG_BENEFITS}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          style={{ opacity: 0.5 }}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 -z-10" style={{ background: 'linear-gradient(180deg, rgba(0,33,19,0.72) 0%, rgba(0,33,19,0.78) 100%)' }} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          {benefits.map((b) => (
+            <article key={b.title} className="bg-[#002113]/70 backdrop-blur-sm p-8 flex flex-col">
+              <PremiumIconBadge Icon={b.Icon} />
+              <h3 className="text-lg font-light text-white tracking-tight mb-2">{b.title}</h3>
+              <p className="text-white/70 font-light text-sm">{b.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
 
       {/* Commission Highlight */}
       <div className="mt-16 border border-white/10 p-12 text-center">
@@ -60,15 +76,30 @@ const EntrepreneurshipSection = () => {
         <div className="text-sm uppercase tracking-[0.2em] text-white/70 mb-2">Ganhos 1ª Fatura</div>
         <div className="text-6xl md:text-8xl font-light text-white tracking-tight mb-4">Até 80%</div>
         <p className="text-white/70 font-light mb-10">de comissão sobre o valor faturável</p>
-        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 max-w-3xl mx-auto">
-          {commissionStats.map((s) => (
-            <div key={s.value} className="bg-[#002113] p-6">
-              <div className="text-lg font-light text-white">{s.value}</div>
-              <div className="text-xs uppercase tracking-[0.18em] text-white/50 mt-1">{s.label}</div>
-            </div>
-          ))}
+
+        {/* 3 caixas de comissões com UMA imagem compartilhada */}
+        <div className="relative isolate overflow-hidden border border-white/10 max-w-3xl mx-auto">
+          <img
+            src={IMG_STATS}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover -z-10"
+            style={{ opacity: 0.5 }}
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="absolute inset-0 -z-10" style={{ background: 'linear-gradient(180deg, rgba(0,33,19,0.72) 0%, rgba(0,33,19,0.78) 100%)' }} />
+          <div className="grid md:grid-cols-3 gap-px bg-white/10">
+            {commissionStats.map((s) => (
+              <div key={s.value} className="bg-[#002113]/70 backdrop-blur-sm p-6">
+                <div className="text-lg font-light text-white">{s.value}</div>
+                <div className="text-xs uppercase tracking-[0.18em] text-white/60 mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
 
       {/* CTA */}
       <div className="text-center mt-16">

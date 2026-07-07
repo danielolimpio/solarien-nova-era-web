@@ -43,7 +43,7 @@ function extractSlugs(file: string, pattern: RegExp): string[] {
 }
 
 const serviceSlugs = extractSlugs("src/data/services.ts", /slug:\s*['"]([^'"]+)['"]/g);
-const blogIds = extractSlugs("src/pages/BlogPost.tsx", /^\s{4}id:\s*['"]([^'"]+)['"]/gm);
+const blogIds = extractSlugs("src/data/blog-posts.ts", /^\s{4}id:\s*['"]([^'"]+)['"]/gm);
 
 const dynamicRoutes: Entry[] = [
   ...serviceSlugs.map((s) => ({ path: `/servicos/${s}`, changefreq: "monthly" as const, priority: "0.8" })),

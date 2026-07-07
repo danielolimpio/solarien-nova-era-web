@@ -1,6 +1,7 @@
 // Auto-extraído de BlogPost.tsx para reuso em SSG. Não editar aqui — editar em BlogPost.tsx antigamente; nova fonte de verdade é este arquivo.
 
 export interface BlogPost {
+  id: string;
   title: string;
   excerpt: string;
   content: string;

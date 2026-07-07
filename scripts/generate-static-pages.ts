@@ -8,7 +8,7 @@
  */
 import { writeFileSync, mkdirSync, readFileSync } from "fs";
 import { resolve, dirname } from "path";
-import { blogPosts } from "../src/pages/BlogPost";
+import { blogPosts } from "../src/data/blog-posts";
 import { services } from "../src/data/services";
 
 const BASE = "https://solarien.com.br";

@@ -22,7 +22,7 @@ interface BlogPost {
 }
 
 // Same blog posts data as in Blog.tsx
-const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPost[] = [
   {
     id: '7-mitos-mercado-livre-energia',
     title: '7 mitos que você deve esquecer sobre Mercado Livre de Energia',

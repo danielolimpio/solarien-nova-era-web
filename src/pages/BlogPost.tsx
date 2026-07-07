@@ -8,6 +8,8 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import RelatedPosts from '../components/RelatedPosts';
 import { Button } from '../components/ui/button';
 import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
+import { blogPosts, type BlogPost } from '@/data/blog-posts';
+export { blogPosts };
 interface BlogPost {
   id: string;
   title: string;

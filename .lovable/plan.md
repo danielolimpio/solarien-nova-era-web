@@ -1,109 +1,114 @@
+## Objetivo
 
-# Auditoria Técnica + Migração SPA → SSG (Pré-renderização)
+Tornar o site 100% indexável pelo Google, sem alterar visual, layout, funcionalidades ou processo de deploy. Corrigir os erros do Search Console e expandir conteúdo com 1.500+ termos-chave inseridos naturalmente em FAQs e artigos.
 
-**Prioridade absoluta:** preservar 100% do layout, identidade visual, animações, responsividade e comportamento. Nenhuma mudança de cores, tipografia, espaçamentos ou componentes. Toda otimização é incremental e reversível.
+## Diagnóstico atual (Search Console)
 
----
+- **14 páginas não indexadas / 2 indexadas** — o Google está enxergando o HTML "vazio" do SPA antes do React montar. Só a home e `/servicos` conseguem indexar de forma consistente.
+- **404 em 11 URLs**: `/about` (alias EN inexistente na build atual), `/feedback` (sem HTML estático), `/politica-de-transparencia/`, `/termos-de-uso`, e 7 posts do blog (`/blog/transformacao-digital-mercado-livre`, `/blog/7-mitos-mercado-livre-energia`, etc.). Existem os arquivos em `public/blog/index.html` mas **não** os `public/blog/<slug>/index.html` para cada post.
+- **"Rastreada mas não indexada"** em `/sobre`, `/servicos`, `/?q={search_term_string}` — sintoma clássico de SPA sem conteúdo no HTML inicial (o Google decide não indexar por baixo valor percebido).
+- **Sitemap** aponta 28 URLs mas a maioria devolve HTML idêntico ao da home (título/description iguais até o React montar).
 
-## Diagnóstico atual
+## Estratégia: SSG via pré-renderização (sem trocar de framework)
 
-- **Stack:** React 18 + Vite 5 + React Router (`BrowserRouter`) → SPA pura. HTML servido é apenas `index.html` com `<div id="root">`, então crawlers que não executam JS bem (Bing, redes sociais, LLMs) recebem página vazia.
-- **SEO:** `react-helmet` injeta tags só client-side. `index.html` tem apenas metadados genéricos.
-- **Sitemap:** `public/sitemap.xml` estático, precisa refletir todas as rotas do `App.tsx` (inclui `/servicos/:slug`, `/blog/:id`).
-- **Deploy:** GitHub Actions → build Vite → FTP para Hostinger (`dangerous-clean-slate: true`). Compatível com SSG (gera HTML estático em `dist/`).
-- **Imagens:** sem `loading="lazy"` / `width`/`height` explícitos em vários lugares → risco de CLS.
-- **Robots.txt / .htaccess:** existem, precisam de ajustes finos (sitemap + headers de cache).
+Vou usar **`vite-plugin-prerender`** (baseado em Puppeteer/react-snap). Ele:
 
----
+1. Roda o build normal do Vite (SPA continua funcionando igual em runtime).
+2. Depois do build, sobe um headless Chrome, visita cada rota, captura o HTML final já renderizado (com meta tags do Helmet, textos, imagens, backgrounds — tudo) e grava um `dist/<rota>/index.html`.
+3. O usuário navega no site como SPA (nada muda visualmente). O Google recebe HTML completo em cada URL.
 
-## Estratégia escolhida: SSG com `vite-react-ssg`
+**Por que essa abordagem:**
+- **Zero risco de quebrar layout** — o HTML gerado é o mesmo que o navegador do usuário já vê hoje. O React hidrata em cima.
+- **Zero mudança no processo de deploy** — continua sendo `npm run build` → `dist/` → hospedagem estática (`.htaccess` continua valendo).
+- **Zero mudança em componentes** — não precisa migrar para Next/Remix/Astro.
 
-**Por quê:** compatível com stack atual (React 18 + Vite + React Router + Helmet), gera 1 HTML por rota no build, zero mudança runtime no cliente (mesma SPA depois do hydrate), zero mudança no workflow (mesmo `npm run build` → `dist/`), zero backend (Hostinger estática funciona). Layout permanece idêntico pixel a pixel porque os componentes React não mudam.
+**Rotas pré-renderizadas** (todas as do `App.tsx`, exceto duplicatas EN):
+`/`, `/sobre`, `/servicos`, `/servicos/<slug>` (todos os slugs de `services.ts`), `/como-funciona`, `/usinas`, `/licenciado`, `/contato`, `/faq`, `/blog`, `/blog/<id>` (todos os posts), `/depoimentos`, `/feedback`, `/sitemap`, `/politica-de-transparencia`, `/politica-de-privacidade`, `/termos-de-uso`, `/politica-de-cookies`.
 
-Alternativas descartadas:
-- **Next.js:** exige reescrever roteamento inteiro → risco alto de regressão. ❌
-- **`vite-plugin-ssr` / Astro:** exige refatorar páginas. ❌
-- **`react-snap` / puppeteer prerender:** frágil, sem controle de meta por rota em build-time. ❌
+Total estimado: **~35 URLs** pré-renderizadas.
 
----
+## Correções específicas do Search Console
 
-## Escopo das mudanças
+| Erro GSC | Causa | Correção |
+|---|---|---|
+| 404 em `/blog/<slug>` (7 URLs) | SPA fallback do host não devolveu 200 estável | Pré-render gera `dist/blog/<slug>/index.html` real → 200 garantido |
+| 404 em `/about`, `/terms`, `/privacy` (aliases EN) | Rota React existe mas Google indexou variante antiga | Remover aliases EN das rotas do sitemap; canonical aponta para versão PT; redirecionamentos 301 no `.htaccess` de `/about → /sobre`, `/terms → /termos-de-uso`, `/privacy → /politica-de-privacidade` |
+| 404 em `/feedback` | Sem HTML estático no build antigo | Pré-render cria `dist/feedback/index.html` |
+| `/?q={search_term_string}` rastreada | JSON-LD SearchAction usa placeholder literal | Corrigir o SearchAction schema para o Google não tentar rastrear o placeholder |
+| "Rastreada mas não indexada" em `/sobre`, `/servicos` | HTML vazio | Pré-render entrega conteúdo real + meta única |
+| Sitemap com 28 entradas mas descoordenado | Ok em estrutura, apenas atualizar `lastmod` | `scripts/generate-sitemap.ts` já cobre — rodar no prebuild |
 
-### 1. Pré-renderização (SSG)
-- Adicionar `vite-react-ssg` (compatível com estrutura atual, apenas requer expor as rotas como array).
-- Refatorar `App.tsx` mínimo: extrair `routes` para `src/routes.tsx` como array `RouteRecord[]` (mesmas rotas, mesmos componentes). `BrowserRouter` → `createBrowserRouter` (comportamento idêntico).
-- `main.tsx` usa `ViteReactSSG` para hydrate no cliente e SSR no build.
-- Enumerar rotas dinâmicas (`/servicos/:slug` a partir de `src/data/services.ts`, `/blog/:id` a partir dos posts).
-- Build gera `dist/servicos/rci-e/index.html`, `dist/blog/mp-1300-2025/index.html`, etc.
+## Expansão SEO — 1.500+ termos naturais (sem "nuvens de palavras")
 
-### 2. Head metadata por rota (`react-helmet-async`)
-- Trocar `react-helmet` → `react-helmet-async` (necessário para SSR) e envolver com `HelmetProvider`. **API idêntica** — nenhum componente `<SEO>` muda visualmente.
-- Confirmar que toda página já usa `<SEO>` (existe em Sitemap, Services etc.); adicionar `<SEO>` nas páginas que faltam.
-- Cada rota emite: `title`, `description`, `canonical` self-reference, `og:title/description/url/type`, `twitter:card`. Manter `og:image` global no `index.html`.
+Curadoria por página, integrada organicamente em parágrafos, headings, FAQs e artigos. Núcleos temáticos:
 
-### 3. Schema JSON-LD
-- `Organization` + `WebSite` global no `index.html`.
-- `BreadcrumbList` nas páginas internas (já há `Breadcrumbs`, adicionar JSON-LD equivalente).
-- `Article` nos posts de blog.
-- `Service` nas páginas `/servicos/:slug`.
-- `FAQPage` na `/faq`.
+- **Primárias**: mercado livre de energia, energia por assinatura, energia compartilhada, geração distribuída, energia solar, energia renovável, energia fotovoltaica.
+- **Secundárias**: restituição de contas de energia, restituição de contas de água, economia de energia, economia de água, recuperação de créditos de energia, recuperação de créditos de água.
+- **Cauda longa** (exemplos, todos inseridos em contexto real): "como migrar para o mercado livre de energia sendo consumidor cativo", "quanto custa aderir a energia por assinatura sem instalar placas", "diferença entre geração distribuída e energia compartilhada na regulação da ANEEL", "como recuperar créditos de ICMS sobre TUSD e TUST", "energia fotovoltaica por assinatura para empresas do lucro real", "restituição de valores pagos indevidamente na conta de energia", etc.
 
-### 4. Sitemap dinâmico + robots
-- Script `scripts/generate-sitemap.ts` executado em `prebuild`: lê `src/data/services.ts` e a lista de posts, gera `public/sitemap.xml` completo com todas as URLs reais (estáticas + dinâmicas), `lastmod` baseado em data atual.
-- Atualizar `robots.txt`: manter regras existentes, garantir `Sitemap:` correto.
+**Onde entra o conteúdo novo** (sem mudar layout, apenas ampliando textos existentes e adicionando FAQs):
 
-### 5. Imagens e Core Web Vitals
-- Adicionar `loading="lazy"` + `decoding="async"` + `width`/`height` em `<img>` que ainda não têm (varredura sistemática, sem trocar as imagens em si).
-- `<link rel="preload">` para hero LCP no `index.html`.
-- `fetchpriority="high"` no hero.
-- Não trocar formatos agora (evita risco de imagem quebrar) — apenas atributos.
+1. **FAQ** — expandir de N para ~40 perguntas cobrindo cada tema (mercado livre, GD, energia compartilhada, restituições, créditos tributários, fotovoltaica). Componente visual atual preservado.
+2. **Blog** — reescrever/expandir os 7 posts existentes com introdução, subtítulos H2/H3, glossário no fim de cada artigo. Nenhum layout novo.
+3. **Serviços (`/servicos/<slug>`)** — cada página de serviço ganha 2 blocos de texto adicionais (descrição estendida + FAQ específica de 4-6 perguntas) usando os componentes que já existem.
+4. **Home** — o texto das seções atuais é enriquecido (não são adicionadas seções novas).
+5. **Sobre / Como Funciona / Licenciado / Usinas** — textos ampliados dentro dos blocos existentes.
 
-### 6. Cache / compressão / .htaccess
-- Ajustar `.htaccess` na raiz `public/`: `mod_deflate` (gzip), `mod_expires` (cache 1 ano para assets com hash, no-cache para HTML), `Cache-Control` headers.
-- Confirmar SPA fallback ainda funcionando para rotas não pré-renderizadas (fallback para `index.html`).
+**Regras de curadoria (SEO expert)**:
+- 1 keyword primária por página (no `<title>`, H1 e primeiro parágrafo).
+- 3-5 secundárias distribuídas em H2/H3 e corpo.
+- Densidade natural (≤2%). Sinônimos e variações semânticas (LSI).
+- Meta description única, 150-160 chars, com CTA.
+- Schema JSON-LD específico por página: `Organization` (home), `FAQPage` (FAQ e páginas de serviço), `Article` + `BreadcrumbList` (blog), `Service` (serviços).
+- Internal linking contextual entre artigos e páginas de serviço relacionadas.
 
-### 7. Correções GSC comuns
-- Canonical self-reference em cada rota (resolve "duplicado sem canonical").
-- HTML pré-renderizado (resolve "página descoberta — não indexada" e "renderizada em branco").
-- `viewport` já OK; `mobile-friendly` mantido pois layout não muda.
-- Remover disallows agressivos desnecessários do `robots.txt` que possam bloquear conteúdo válido.
+## Arquivos a mexer
 
-### 8. Workflow GitHub Actions / Hostinger
-- `npm install` → adiciona `vite-react-ssg` e `react-helmet-async`.
-- `npm run build` continua gerando `dist/` (agora com HTML por rota).
-- FTP publica `dist/` inalterado. **Sem mudanças no `.github/workflows/deploy.yml`.**
-- Adicionar `predev`/`prebuild` scripts para gerar sitemap.
+**Novos:**
+- `scripts/prerender.mjs` — script que roda após `vite build`, itera rotas e gera HTMLs.
+- `src/content/seo-copy.ts` — banco central dos textos ampliados por página (facilita revisão).
 
----
+**Editados** (só conteúdo/meta — nada de layout):
+- `package.json` — script `postbuild` chamando `prerender.mjs`.
+- `src/pages/FAQ.tsx` — passa a ler perguntas de um array expandido em `src/data/faq.ts`.
+- `src/data/services.ts` — descrição estendida + FAQ por serviço.
+- `src/pages/BlogPost.tsx` (dados dos posts) — corpo expandido.
+- `src/pages/Index.tsx`, `About.tsx`, `HowItWorks.tsx`, `Licensed.tsx`, `SolarPlants.tsx` — textos ampliados dentro dos componentes já existentes.
+- `src/components/SEO.tsx` — já suporta tudo que precisamos, sem mudança.
+- `public/.htaccess` — adicionar 3 redirects 301 EN→PT.
+- `public/robots.txt` — confirmar `Sitemap:` e allow.
 
-## Validação (antes de considerar concluído)
+**Removidos** (para não conflitar com o pré-render):
+- `public/blog/index.html`, `public/sobre/index.html`, `public/servicos/index.html`, etc. — os HTMLs estáticos manuais em `public/`. Serão substituídos pelo output do pré-render, garantindo sincronia com o React.
 
-1. `npm run build` completa sem erros.
-2. Rodar Playwright: comparar screenshot da home antes/depois em 1280px e 375px — deve ser pixel-idêntico.
-3. Verificar `dist/index.html`, `dist/sobre/index.html`, `dist/servicos/rci-e/index.html` contêm o HTML renderizado com títulos/meta corretos (via `curl`/grep no arquivo).
-4. Verificar `dist/sitemap.xml` lista todas as rotas.
-5. Navegar no preview: clicar em links entre páginas — SPA client-side continua funcionando (hydrate).
-6. Console: zero erros.
+## Garantias de que o layout NÃO quebra
 
----
+- Nada é alterado em `src/components/*` de UI (Header, Footer, Hero, backgrounds premium, seções). Só componentes textuais recebem mais conteúdo.
+- Pré-render captura o DOM já pintado — se está bonito no navegador, está bonito no HTML gerado.
+- `main.tsx` continua com `createRoot(...).render(...)` e agora com `hydrateRoot` fallback (react-snap padrão) — troca transparente.
+- Antes de finalizar, rodo `vite build && node scripts/prerender.mjs` e comparo screenshots (Playwright) de 5 rotas-chave contra a versão atual para validar visualmente.
 
-## O que **não** vai mudar
+## O que o usuário NÃO verá mudar
 
-- Nenhum componente visual (`Header`, `Footer`, `PremiumUI`, páginas).
-- Nenhuma cor, fonte, espaçamento, animação.
-- `tailwind.config.ts`, `index.css`, tokens de design.
-- Comportamento de rotas do usuário (mesmas URLs).
-- Workflow do GitHub Actions.
+- Visual, cores, fontes, imagens de fundo, animações, comportamento de navegação.
+- Nada no fluxo de publicar (Lovable Publish continua funcionando).
+- URLs (as mesmas de hoje).
 
----
+## O que o usuário verá mudar
 
-## Entregável final
+- Search Console: 404s caem para 0, "Rastreada mas não indexada" migra para "Indexada" em 1-3 semanas.
+- Impressões e cliques sobem por causa da amplitude de termos cobertos.
+- Cada aba do navegador com título/description próprios (hoje só a home tem).
 
-Relatório em markdown ao final da implementação com:
-- Lista de arquivos alterados/criados.
-- HTML de exemplo antes/depois (mostra meta tags novos).
-- Rotas pré-renderizadas (contagem).
-- Checklist GSC corrigido.
-- Recomendações de próximos passos (ex.: gerar `og:image` reais, adicionar mais posts).
+## Ordem de execução
 
-Posso iniciar a implementação?
+1. Instalar Puppeteer + criar `scripts/prerender.mjs` e `postbuild` no `package.json`.
+2. Ajustar `main.tsx` para usar `hydrateRoot` quando `#root` já tiver conteúdo.
+3. Rodar build local + prerender e validar 5 rotas visualmente.
+4. Remover HTMLs estáticos manuais de `public/`.
+5. Adicionar redirects 301 no `.htaccess`.
+6. Corrigir schema `SearchAction` (remover placeholder rastreável).
+7. Expandir conteúdo (FAQ → 40 perguntas, 7 blog posts, páginas de serviço) usando os componentes existentes.
+8. Rodar prerender final + validação visual final.
+
+Confirma que posso seguir com esse plano?

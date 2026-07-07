@@ -10,6 +10,14 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 # RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
+# Redirects 301 de aliases em inglês para versões em português (evita 404 no Google)
+RewriteRule ^about/?$ /sobre/ [L,R=301]
+RewriteRule ^contact/?$ /contato/ [L,R=301]
+RewriteRule ^terms/?$ /termos-de-uso/ [L,R=301]
+RewriteRule ^privacy/?$ /politica-de-privacidade/ [L,R=301]
+RewriteRule ^cookies/?$ /politica-de-cookies/ [L,R=301]
+RewriteRule ^transparency/?$ /politica-de-transparencia/ [L,R=301]
+
 # Adiciona barra final nas URLs (padronização)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$

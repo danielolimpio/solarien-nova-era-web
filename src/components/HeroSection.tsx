@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { ArrowRight, CircleDollarSign, Wrench, SquareSlash } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import TypewriterText from './hero/TypewriterText';

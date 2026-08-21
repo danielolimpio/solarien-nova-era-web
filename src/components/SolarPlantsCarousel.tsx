@@ -8,26 +8,28 @@ const solarPlants = [
   { id: 5, name: 'Usina Pernambuco', location: 'Pernambuco, Brasil', capacity: '780 MW', image: '/lovable-uploads/7af34aca-57a1-464a-b3a9-6b2a8d383e5a.png', description: 'Complexo fotovoltaico de grande porte contribuindo para o desenvolvimento regional sustentável.' },
 ];
 
-const SolarPlantsCarousel = () => {
+const SolarPlantsCarousel = ({ tone = 'light' as 'light' | 'dark' }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const isDark = tone === 'dark';
 
   return (
-    <section className="py-20 border-b border-black/10">
+    <section className={`py-20 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12">
             <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">Infraestrutura</span>
-            <div className="flex-1 h-px bg-black/10" />
+            <div className={`flex-1 h-px ${isDark ? 'bg-white/15' : 'bg-black/10'}`} />
           </div>
 
           <div className="text-center mb-12">
-            <h2 id="usinas-heading" className="text-4xl md:text-5xl font-light text-slate-900 tracking-tight mb-6">
+            <h2 id="usinas-heading" className={`text-4xl md:text-5xl font-light tracking-tight mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>
               Usinas Solares
             </h2>
-            <p className="text-lg text-slate-600 font-light max-w-3xl mx-auto">
+            <p className={`text-lg font-light max-w-3xl mx-auto ${isDark ? 'text-white/80' : 'text-slate-600'}`}>
               Mais de 2.000 usinas solares parceiras espalhadas por todo o Brasil gerando energia limpa e renovável.
             </p>
           </div>
+
 
           <div className="flex flex-col lg:flex-row gap-2 w-full" role="region" aria-label="Carrossel de usinas solares">
             {solarPlants.map((plant, index) => (

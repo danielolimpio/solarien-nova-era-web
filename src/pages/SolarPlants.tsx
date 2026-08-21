@@ -66,7 +66,7 @@ const SolarPlants = () => {
         />
 
         <div style={{ backgroundColor: '#002113' }}>
-          <SolarPlantsCarousel />
+          <SolarPlantsCarousel tone="dark" />
         </div>
 
         <PremiumSection label="Números">

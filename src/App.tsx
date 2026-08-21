@@ -19,6 +19,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Licensed from "./pages/Licensed";
+import Signup from "./pages/Signup";
 import SolarPlants from "./pages/SolarPlants";
 import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
@@ -51,6 +52,7 @@ const App = () => (
       <Route path="/servicos" element={<Services />} />
       <Route path="/servicos/:slug" element={<ServiceDetail />} />
       <Route path="/licenciado" element={<Licensed />} />
+      <Route path="/cadastro" element={<Signup />} />
       <Route path="/usinas" element={<SolarPlants />} />
       <Route path="/sitemap" element={<Sitemap />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

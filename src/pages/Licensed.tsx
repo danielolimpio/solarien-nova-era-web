@@ -12,6 +12,7 @@ import {
   PremiumCard,
   PremiumIconBadge,
   PremiumCTA,
+  PrimaryButton,
 } from '../components/premium/PremiumUI';
 import PageBackground, { PAGE_BG } from '@/components/premium/PageBackground';
 

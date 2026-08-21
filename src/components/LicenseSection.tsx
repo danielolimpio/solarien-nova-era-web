@@ -4,7 +4,7 @@ import { PrimaryButton } from './premium/PremiumUI';
 
 const benefits = [
   'Direito de uso da Marca Solarien Energy',
-  'Licença Vitalícia como Consultor Autorizado',
+  'Licença Gratuita e Vitalícia como Consultor Autorizado',
   'Backoffice Completo com Gestão de Ganhos',
   'Ganhos de Conexões e Indicações Atrativas',
   'Treinamentos e Atualizações Contínuas',
@@ -13,7 +13,7 @@ const benefits = [
   'Ferramentas com IA e integração ao WhatsApp',
   'Plano de carreira com bônus e incentivos',
   'Atendimento especializado para os seus Clientes',
-  'Comissões recorrentes por licenciados ativos',
+  'Comissões recorrentes por faturas ativas',
   'Rede própria com ganhos ilimitados em multinível',
   'Assessoria especializada e atendimento humanizado',
 ];
@@ -32,7 +32,7 @@ const LicenseSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-12">
-            <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">Programa de Licenciados</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-solarien-primary">Programa de Licenciados Grátis</span>
             <div className="flex-1 h-px bg-black/10" />
           </div>
 
@@ -41,7 +41,7 @@ const LicenseSection = () => {
               Seja um Licenciado
             </h2>
             <p className="text-lg text-slate-600 font-light">
-              Todos os benefícios inclusos ao adquirir a licença Solarien — construa uma carreira sólida no mercado de energia.
+              Todos os benefícios inclusos ao adquirir a licença Gratuita da Solarien — construa uma carreira sólida no mercado de energia.
             </p>
           </div>
 

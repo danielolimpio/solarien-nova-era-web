@@ -5,7 +5,7 @@ import TypewriterText from './hero/TypewriterText';
 
 const HeroSection = () => {
   const texts = useMemo(
-    () => ['Energia do Futuro', 'Reduza até 45%', 'Migração Grátis', 'Suporte 24/7'],
+    () => ['Energia do Futuro', 'Reduza até 45%', 'Migração Grátis', 'Licença Gratuita'],
     []
   );
 

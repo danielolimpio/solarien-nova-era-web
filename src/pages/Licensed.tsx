@@ -24,12 +24,18 @@ const Licensed = () => {
   ];
 
   const requirements = [
-    'Experiência em vendas ou relacionamento comercial',
-    'Disponibilidade para dedicação ao negócio',
-    'Investimento inicial acessível',
-    'Compromisso com qualidade e excelência',
-    'Interesse genuíno em sustentabilidade',
+    'Cadastro 100% gratuito — sem licença e sem mensalidade',
+    'Licença de consultor autorizado gratuita e vitalícia',
+    'Envio de faturas de energia a partir de 300 kWh',
+    'Comissão paga 45 dias após a assinatura do cliente',
+    'Ganhos recorrentes de rede em até 7 níveis por faturas ativas',
+    'Injeção de energia para o cliente em média 90 dias',
+    'Contas de Alta Tensão (Grupo A) analisadas por especialista',
+    'Contas do Grupo B com descontos fixos por distribuidora',
+    'Backoffice completo, treinamentos e materiais inclusos',
+    'Interesse genuíno em sustentabilidade e atendimento de qualidade',
   ];
+
 
   const steps = [
     { step: '01', title: 'Cadastro e Avaliação', description: 'Preencha o formulário e participe da seleção.' },

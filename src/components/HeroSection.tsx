@@ -84,13 +84,13 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-16">
-            <button
-              onClick={handleContact}
+            <Link
+              to="/cadastro"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-solarien-primary text-black font-medium rounded-md hover:bg-white transition-colors w-full sm:w-auto"
             >
-              Falar com Especialista
+              Cadastro Gratuito
               <ArrowRight className="w-4 h-4" strokeWidth={2} />
-            </button>
+            </Link>
             <Link
               to="/servicos"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/25 text-white rounded-md hover:bg-white/5 transition-colors w-full sm:w-auto"
@@ -98,6 +98,7 @@ const HeroSection = () => {
               Conhecer Soluções
             </Link>
           </div>
+
 
           <div className="grid grid-cols-2 md:grid-cols-4 max-w-3xl mx-auto divide-x divide-white/10 border-t border-white/10 pt-10">
             {stats.map((s) => (

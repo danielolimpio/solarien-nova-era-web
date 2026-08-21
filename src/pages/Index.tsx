@@ -5,64 +5,15 @@ import HeroSection from '../components/HeroSection';
 import LoadingSpinner from '../components/LoadingSpinner';
 import PageBackground, { SectionBackground, PAGE_BG, SECTION_BG } from '@/components/premium/PageBackground';
 
-
-// Lazy loading para componentes não críticos com preload estratégico
-const AboutSection = React.lazy(() => 
-  import('../components/AboutSection').then(module => {
-    // Preload próximo componente
-    import('../components/PartnersCarousel');
-    return module;
-  })
-);
-
-const PartnersCarousel = React.lazy(() => 
-  import('../components/PartnersCarousel').then(module => {
-    // Preload próximo componente
-    import('../components/SolarPlantsCarousel');
-    return module;
-  })
-);
-
-const SolarPlantsCarousel = React.lazy(() => 
-  import('../components/SolarPlantsCarousel').then(module => {
-    // Preload próximo componente
-    import('../components/EntrepreneurshipSection');
-    return module;
-  })
-);
-
-const EntrepreneurshipSection = React.lazy(() => 
-  import('../components/EntrepreneurshipSection').then(module => {
-    // Preload próximo componente
-    import('../components/LicenseSection');
-    return module;
-  })
-);
-
-const LicenseSection = React.lazy(() => 
-  import('../components/LicenseSection').then(module => {
-    // Preload próximo componente
-    import('../components/Footer');
-    return module;
-  })
-);
-
-const Footer = React.lazy(() => 
-  import('../components/Footer').then(module => {
-    // Preload próximo componente
-    import('../components/WhatsAppFloat');
-    return module;
-  })
-);
-
-const WhatsAppFloat = React.lazy(() => import('../components/WhatsAppFloat'));
-const VideoSection = React.lazy(() => 
-  import('../components/VideoSection').then(module => {
-    // Preload próximo componente
-    import('../components/PartnersCarousel');
-    return module;
-  })
-);
+// Imports estáticos: evita falhas de "dynamically imported module" com chunks em cache
+import AboutSection from '../components/AboutSection';
+import PartnersCarousel from '../components/PartnersCarousel';
+import SolarPlantsCarousel from '../components/SolarPlantsCarousel';
+import EntrepreneurshipSection from '../components/EntrepreneurshipSection';
+import LicenseSection from '../components/LicenseSection';
+import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
+import VideoSection from '../components/VideoSection';
 
 // Componente de fallback otimizado
 const OptimizedFallback = () => (
@@ -70,6 +21,7 @@ const OptimizedFallback = () => (
     <div className="w-6 h-6 border-2 border-solarien-primary border-t-transparent rounded-full animate-spin" />
   </div>
 );
+
 
 const Index = () => {
   // Preload de recursos críticos no mount

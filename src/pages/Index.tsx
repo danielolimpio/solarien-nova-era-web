@@ -24,10 +24,8 @@ const OptimizedFallback = () => (
 
 
 const Index = () => {
-  // Preload de recursos críticos no mount
   React.useEffect(() => {
-    // Preload primeiro componente lazy
-    import('../components/AboutSection');
+
     
     // Adicionar dados estruturados específicos da página
     const script = document.createElement('script');

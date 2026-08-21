@@ -108,7 +108,22 @@ const Licensed = () => {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 border border-white/12 rounded-md p-6 bg-white/[0.03]">
+                <div className="text-xs uppercase tracking-[0.18em] text-solarien-primary mb-3">Importante</div>
+                <p className="text-white/70 font-light text-sm leading-relaxed">
+                  Contas de Alta Tensão (Grupo A) são enviadas ao WhatsApp de suporte para análise individual com
+                  especialista. Contas do Grupo B seguem os descontos fixos da tabela de distribuidoras.
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <PrimaryButton as="link" to="/cadastro">
+                  Cadastro Gratuito
+                </PrimaryButton>
+              </div>
             </div>
+
             <div className="border border-white/10 p-1">
               <img
                 src="/lovable-uploads/dd91c0ca-f624-4e08-93dc-300635b098c4.png"

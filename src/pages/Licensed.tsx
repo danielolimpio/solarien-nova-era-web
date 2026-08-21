@@ -66,13 +66,13 @@ const Licensed = () => {
         </div>
 
         <PageHero
-          eyebrow="Programa de Licenciados"
-          title={<>Empreenda na revolução da energia limpa.</>}
-          subtitle="Torne-se um licenciado Solarien e tenha acesso a um modelo de negócio inovador, rentável e com propósito."
+          eyebrow="Programa de Licenciados Grátis"
+          title={<>Cadastro gratuito na revolução da energia limpa.</>}
+          subtitle="Torne-se um licenciado Solarien sem pagar nada: cadastro 100% gratuito, sem licença e sem mensalidade. Você ganha apenas pelas faturas."
           stats={[
-            { value: '100%', label: 'Online' },
-            { value: 'Pix', label: 'Pagamento' },
-            { value: '24/7', label: 'Suporte' },
+            { value: 'R$ 0', label: 'Cadastro' },
+            { value: '300 kWh', label: 'Fatura mínima' },
+            { value: '7 níveis', label: 'Ganhos em rede' },
           ]}
         />
 
@@ -88,16 +88,18 @@ const Licensed = () => {
           </PremiumGrid>
         </PremiumSection>
 
-        <PremiumSection label="Requisitos">
+        <PremiumSection label="Cadastro Gratuito">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight mb-6">
-                Quem buscamos
+                Como funciona o cadastro gratuito
               </h2>
               <p className="text-white/70 font-light leading-relaxed mb-8">
-                Buscamos parceiros comprometidos com a excelência e interessados em fazer parte da
-                transformação energética do Brasil.
+                Não cobramos licença nem mensalidade. Basta realizar o cadastro gratuito, enviar as faturas de
+                energia e acompanhar seus ganhos pelo backoffice — a remuneração vem da primeira fatura e de forma
+                recorrente, com rede em até 7 níveis.
               </p>
+
               <ul className="space-y-4">
                 {requirements.map((r) => (
                   <li key={r} className="flex items-start gap-3 text-white/80 font-light text-sm">

@@ -9,12 +9,8 @@ const HeroSection = () => {
     []
   );
 
-  const handleContact = useCallback(() => {
-    const url = `https://wa.me/5511997361698?text=${encodeURIComponent(
-      'Olá! Gostaria de saber mais sobre energia limpa e economia na conta de luz.'
-    )}`;
-    window.open(url, '_blank');
-  }, []);
+
+
 
   const benefits = useMemo(
     () => [

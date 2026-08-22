@@ -46,7 +46,7 @@ const FAQ = () => {
     { q: 'O que é o Multinível da Solarien?', a: 'É um sistema de indicações onde você ganha ao indicar clientes e parceiros para a energia solar por assinatura.' },
     { q: 'Como funcionam os ganhos?', a: 'Você recebe comissões por cada cliente conectado e por novos participantes que entrarem na rede através de sua indicação.' },
     { q: 'Quem pode participar?', a: 'Qualquer pessoa maior de 18 anos pode participar, mesmo sem experiência prévia no setor de energia.' },
-    { q: 'Preciso investir algo para entrar?', a: 'Sim. É necessário um investimento inicial para ter acesso à plataforma, materiais de apoio, treinamentos e ferramentas de vendas.' },
+    { q: 'Preciso investir algo para entrar?', a: 'Não. O cadastro na Solarien é 100% gratuito: não cobramos licença nem mensalidade. Você tem acesso à plataforma, materiais de apoio, treinamentos e ferramentas de vendas sem custo, e ganha apenas pelas faturas de energia.' },
     { q: 'Como acompanho meus ganhos e indicações?', a: 'Você tem acesso a um painel exclusivo onde vê suas conexões, comissões acumuladas e o crescimento da sua rede.' },
     { q: 'Quais são os tipos de ganhos?', a: 'Você pode lucrar de 8 formas diferentes: comissões diretas e indiretas, bônus residuais, bônus de liderança, prêmios especiais.' },
     { q: 'Como aumentar meus ganhos?', a: 'Conectando mais clientes, ampliando sua rede de licenciados e subindo de nível dentro do programa.' },
